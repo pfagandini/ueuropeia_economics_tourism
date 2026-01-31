@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "ueuropeia_economics_tourism"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - material.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

@@ -1,0 +1,436 @@
+---
+title: "Economics Fundamentals"
+subtitle: "Lecture 1: Introduction, Macro vs Micro, Scarcity and Efficiency"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    theme: default
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: true
+    footer: "Economics of Tourism | Lecture 1"
+    logo: ../images/logo.png
+---
+
+## Welcome to Economics! {.center}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Why study Economics?**
+
+- Understand government policies
+- Navigate global markets
+- Achieve business success
+- Master supply & demand
+- Understand inequality
+:::
+
+::: {.column width="50%"}
+![](https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600)
+:::
+::::
+
+::: {.notes}
+Economics is essential for management professionals to make informed decisions in an increasingly complex business environment.
+:::
+
+## What is Economics?
+
+**Economics studies how societies use scarce resources to produce valuable goods and distribute them among individuals**
+
+## What is Economics?
+
+Key aspects Economics addresses:
+
+- How institutions and technology influence **prices** and **resource allocation**
+- Behavior of **financial markets** and **capital allocation**
+- **Income redistribution** and social welfare
+- **Economic cycles**: unemployment and inflation
+- **International trade** and globalization effects
+- **Economic growth** in developing countries
+
+## The Two Branches of Economics
+
+:::: {.columns}
+::: {.column width="50%"}
+### Macroeconomics
+**The Big Picture**
+
+- Unemployment rates
+- Inflation trends
+- Budget deficits
+- Economic growth
+- International trade
+
+*Focus: Entire economy*
+:::
+
+::: {.column width="50%"}
+### Microeconomics
+**Individual Decisions**
+
+- Specific markets
+- Consumer behavior
+- Firm decisions
+- Pricing strategies
+- Competition analysis
+
+*Focus: Individual agents*
+:::
+::::
+
+## Macroeconomics in Tourism
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+library(ggplot2)
+library(dplyr)
+
+# Real data from INE Portugal & Turismo de Portugal
+tourism_data <- data.frame(
+  year = c(2019, 2020, 2021, 2022, 2023, 2024),
+  guests_millions = c(27, 10.5, 15.8, 26.5, 30.5, 31.6),  # Real INE data
+  revenue_billions = c(18.3, 7.6, 11.6, 22.0, 25.4, 27.7)  # Real Banco de Portugal data
+)
+
+ggplot(tourism_data, aes(x = year)) +
+  geom_line(aes(y = guests_millions, color = "Guests (millions)"), size = 1.5) +
+  geom_point(aes(y = guests_millions, color = "Guests (millions)"), size = 3) +
+  geom_line(aes(y = revenue_billions, color = "Revenue (€ billions)"), size = 1.5) +
+  geom_point(aes(y = revenue_billions, color = "Revenue (€ billions)"), size = 3) +
+  labs(title = "Portugal Tourism: Recovery After COVID-19",
+       subtitle = "Macroeconomic impact of tourism sector",
+       x = "Year",
+       y = "Value",
+       color = "Metric",
+       caption = "Sources: INE Portugal (guests); Banco de Portugal (revenue)") +
+  theme_minimal(base_size = 14) +
+  scale_color_manual(values = c("Guests (millions)" = "#e74c3c", 
+                                 "Revenue (€ billions)" = "#3498db")) +
+  theme(legend.position = "bottom",
+        plot.caption = element_text(size = 8, hjust = 0, color = "#666"))
+
+```
+
+**Source**: INE Portugal, 2025
+
+## Microeconomics in Tourism
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Hotel occupancy rates by segment
+hotel_data <- data.frame(
+  segment = c("Budget", "Economy", "Midscale", "Upscale"),
+  occupancy_2023 = c(72.1, 73.8, 72.7, 70.5),
+  occupancy_2024 = c(70.1, 73.1, 73.1, 74.2)
+)
+
+library(tidyr)
+hotel_long <- hotel_data %>%
+  pivot_longer(cols = starts_with("occupancy"), 
+               names_to = "year", 
+               values_to = "occupancy") %>%
+  mutate(year = ifelse(year == "occupancy_2023", "2023", "2024"))
+
+ggplot(hotel_long, aes(x = segment, y = occupancy, fill = year)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "European Hotel Occupancy Rates by Segment",
+       subtitle = "Microeconomic analysis: firm-level performance",
+       x = "Hotel Segment",
+       y = "Occupancy Rate (%)",
+       fill = "Year") +
+  theme_minimal(base_size = 14) +
+  scale_fill_manual(values = c("2023" = "#95a5a6", "2024" = "#27ae60")) +
+  theme(legend.position = "bottom") +
+  ylim(0, 100)
+```
+
+**Source**: STR Europe, 2024
+
+## The Fundamental Economic Problem
+
+### Scarcity
+
+> **Human wants are unlimited, but resources are limited**
+
+**The Principle of Scarcity**: Having more of one good usually means having less of another
+
+## The Fundamental Economic Problem
+
+This leads to:
+
+- **Trade-offs**: Choices involve compromises
+- **Cost-Benefit Analysis**: Action taken only if benefits exceed costs
+- **Efficiency**: Most effective use of society's resources
+
+## Scarcity in Tourism: Real Example
+
+**Lisbon Airport Capacity Constraints (2024)**
+
+:::: {.columns}
+::: {.column width="50%"}
+
+- Capacity: ~31M passengers/year
+- 2024: ~35M passengers
+- Growing demand but limited slots
+- Trade-off: More flights vs. congestion
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 5
+#| fig-height: 4
+
+capacity_data <- data.frame(
+  category = c("Capacity", "Actual (2024)", "Demand (2025)"),
+  passengers = c(31, 35, 36.1)
+)
+
+ggplot(capacity_data, aes(x = category, y = passengers, fill = category)) +
+  geom_bar(stat = "identity") +
+  geom_hline(yintercept = 31, linetype = "dashed", color = "red", size = 1) +
+  labs(title = "Lisbon Airport: Scarcity in Action",
+       y = "Passengers (millions)",
+       x = "") +
+  theme_minimal(base_size = 12) +
+  scale_fill_manual(values = c("#3498db", "#e74c3c", "#f39c12")) +
+  theme(legend.position = "none") +
+  annotate("text", x = 2, y = 32, label = "Capacity Limit", color = "red", size = 4)
+```
+:::
+::::
+
+## Efficiency
+
+:::{.callout}
+
+## Economic Efficiency
+
+Situation where the economy produces and consumes goods at socially optimal levels:
+
+* Getting the most out the available resources
+* Using the least for the current level of consumption
+
+:::
+
+## Efficiency
+
+**Characteristics**:
+
+- Cannot increase one person's welfare without harming another (This is known as Pareto Efficiency)
+- Resources used in most effective way
+- Society operates on Production Possibilities Frontier (PPF) (forthcoming)
+
+## Efficiency
+
+**In Tourism Context**:
+
+- Optimal allocation of hotel rooms
+- Efficient pricing of airline tickets
+- Balanced distribution of tourists across destinations
+
+## Efficiency vs. Inefficiency
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Example: hotel room pricing efficiency
+pricing_data <- data.frame(
+  strategy = rep(c("Fixed Pricing", "Dynamic Pricing"), each = 12),
+  month = rep(month.abb, 2),
+  occupancy = c(45, 48, 55, 52, 50, 85, 95, 92, 70, 55, 50, 60,  # Fixed
+                65, 68, 75, 72, 70, 90, 98, 95, 85, 75, 70, 78), # Dynamic
+  month_num = rep(1:12, 2)
+)
+
+ggplot(pricing_data, aes(x = month_num, y = occupancy, color = strategy, group = strategy)) +
+  geom_line(size = 1.5) +
+  geom_point(size = 3) +
+  labs(title = "Hotel Occupancy: Fixed vs. Dynamic Pricing",
+       subtitle = "Dynamic pricing improves efficiency through better resource allocation",
+       x = "Month",
+       y = "Occupancy Rate (%)",
+       color = "Pricing Strategy") +
+  scale_x_continuous(breaks = 1:12, labels = month.abb) +
+  theme_minimal(base_size = 14) +
+  scale_color_manual(values = c("Fixed Pricing" = "#e74c3c", 
+                                 "Dynamic Pricing" = "#27ae60")) +
+  theme(legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## The Three Economic Questions
+
+Every economy must answer:
+
+:::: {.columns}
+::: {.column width="33%"}
+### 1. WHAT?
+What goods to produce and in what quantity?
+
+*Tourism example*: More hotels or more museums?
+:::
+
+::: {.column width="33%"}
+### 2. HOW?
+How should goods be produced?
+
+*Tourism example*: Automated booking or human agents?
+:::
+
+::: {.column width="33%"}
+### 3. FOR WHOM?
+Who enjoys the goods produced?
+
+*Tourism example*: Luxury tourism or mass tourism?
+:::
+::::
+
+---
+
+These questions require economic decisions based on:
+
+- Available resources
+- Technology
+- Social preferences
+- Market mechanisms
+
+## Positive vs. Normative Economics
+
+Two different ways in which we can approach Economics.
+
+## Positive Economics
+**Describes facts**
+
+*Questions:*
+
+- Why do hotel managers earn more than cleaners?
+- Does tourism increase local incomes?
+- What happens to prices during high season?
+
+→ *Can be answered with data and analysis*
+
+
+
+## Normative Economics
+**Involves value judgments**
+
+*Questions:*
+
+- Should government limit Airbnb rentals?
+- Should tourism revenue be redistributed?
+- Should airlines be forced to reduce emissions?
+
+→ *Requires ethical and political debate*
+
+## Summary: Key Concepts
+
+1. **Economics** studies how societies allocate scarce resources
+2. **Macroeconomics** focuses on the entire economy (GDP, inflation, unemployment)
+3. **Microeconomics** focuses on individual decisions (firms, consumers, markets)
+4. **Scarcity** means unlimited wants with limited resources
+5. **Efficiency** means optimal use of resources (no waste)
+6. **Three Questions**: WHAT, HOW, FOR WHOM
+7. **Positive** vs. **Normative** analysis
+
+## Exercises {.center}
+
+**Time for practice!**
+
+Let's test your understanding with some questions.
+
+## Exercise 1: Multiple Choice
+
+**Question**: Which of the following is a **macroeconomic** question related to tourism?
+
+A. How should a hotel set its room prices?  
+B. Why did Portugal's tourism revenue fall in 2020?  
+C. Should a restaurant hire more waiters?  
+D. How do travelers choose between two airlines?
+
+::: {.fragment}
+**Answer: B**
+
+Explanation: Portugal's overall tourism revenue is an aggregate measure affecting the entire economy (macroeconomic). The others focus on individual firms/consumers (microeconomic).
+:::
+
+## Exercise 2: Multiple Choice
+
+**Question**: A museum in Lisbon has limited exhibition space. It must choose between hosting a modern art exhibition or a historical artifacts exhibition. This situation illustrates:
+
+A. Efficiency  
+B. Scarcity  
+C. Positive economics  
+D. Macroeconomics
+
+::: {.fragment}
+**Answer: B**
+
+Explanation: Limited space (scarce resource) forces a choice between alternatives. This is the fundamental problem of scarcity.
+:::
+
+## Exercise 3: Open Question
+
+**Scenario**: A low-cost airline operates flights between Lisbon and Paris. Currently, they charge €50 per ticket and sell 150 tickets per flight (capacity: 180 seats).
+
+**Questions**:
+
+a) Calculate current revenue per flight
+b) If they increase price to €60, demand falls to 120 tickets. Calculate new revenue.
+c) Which pricing is more efficient? Why?
+d) Is this a microeconomic or macroeconomic analysis?
+
+## Exercise 3: Solution
+
+**a) Current revenue**:
+
+$$\text{Revenue} = \text{Price} \times \text{Quantity} = 50 \times 150 = €7,500$$
+
+**b) New revenue at higher price**:
+
+$$\text{Revenue} = 60 \times 120 = €7,200$$
+
+**c) Efficiency analysis**:
+
+- First scenario (€50): Revenue €7,500, occupancy 83% (150/180)
+- Second scenario (€60): Revenue €7,200, occupancy 67% (120/180)
+
+The **first scenario is more efficient**: higher revenue AND better resource utilization (more seats filled).
+
+**d)** This is **microeconomic** analysis (focuses on individual firm's pricing decision).
+
+## Next Lecture
+
+**Lecture 2** (February 6, 2026):
+
+- Three Fundamental Economic Problems (detailed)
+- Market, Centralized, and Mixed Economies
+- Economic Systems Comparison
+
+**Preparation**: Think about how tourism businesses make decisions in different economic systems!
+
+## Thank You! {.center}
+
+**Questions?**
+
+*Contact*: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Thursday, February 6, 2026*

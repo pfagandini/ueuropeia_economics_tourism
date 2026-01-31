@@ -1,0 +1,662 @@
+---
+title: "Economics Fundamentals"
+subtitle: "Lecture 3: Rationality, Choices and Opportunity Cost"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    theme: default
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: true
+    footer: "Economics of Tourism | Lecture 3"
+    logo: ../images/logo.png
+---
+
+## Recap: Previous Lectures {.center}
+
+**Lecture 1**: Economics, Scarcity, Efficiency, Macro vs. Micro
+
+**Lecture 2**: Three economic problems (WHAT, HOW, FOR WHOM) and economic systems (Market, Planned, Mixed)
+
+**Today's Focus**:
+
+- How do people make economic decisions?
+- What is rationality?
+- **Opportunity cost** – one of economics' most powerful concepts!
+
+## Economic Rationality
+
+**Assumption**: People are **rational decision-makers**
+
+**What does "rational" mean in economics?**
+
+- People have **clear preferences**
+- They seek to **maximize their well-being** (utility)
+- They respond **predictably** to incentives
+- They use **cost-benefit analysis**
+
+**Important**: Rational ≠ Perfect or emotionless!
+
+People can be rational within their information and cognitive limits (bounded rationality)
+
+## Cost-Benefit Principle
+
+**The Foundation of Rational Choice**:
+
+> An action should be undertaken **if and only if** the benefits exceed the costs.
+
+$$\text{Decision Rule: } \begin{cases} 
+\text{Do it} & \text{if } Benefits \geq Costs \\
+\text{Don't do it} & \text{if } Benefits < Costs
+\end{cases}$$
+
+**In practice**:
+
+- Benefits = What you gain
+- Costs = What you give up
+- Compare net benefit of alternatives
+
+## Tourism Example: Cost-Benefit
+
+**Should a tourist visit the Belém Tower in Lisbon?**
+
+:::: {.columns}
+::: {.column width="50%"}
+### Benefits
+- Historical experience
+- Photos/memories
+- Educational value
+- Satisfaction
+
+**Estimated value**: €20
+:::
+
+::: {.column width="50%"}
+### Costs
+- Entry ticket: €6
+- Travel time: 30 min
+- Waiting time: 20 min
+- Value of time: €15/hr
+
+**Total time cost**: €12.50
+**Total cost**: €18.50
+:::
+::::
+
+**Decision**: Benefits (€20) > Costs (€18.50) → **Visit!**
+
+But if waiting time increases to 60 min, costs rise to €23.50 → **Don't visit!**
+
+## Marginal Analysis
+
+**Key Concept**: Decisions are made **at the margin**
+
+**Marginal** = Additional/incremental change from one more unit
+
+- **Marginal Benefit (MB)**: Benefit from one additional unit
+- **Marginal Cost (MC)**: Cost of one additional unit
+
+**Optimal Decision Rule**:
+
+$$\text{Continue activity while } MB \geq MC$$
+
+Stop when $MB < MC$
+
+## Marginal Analysis: Hotel Rooms
+
+**Should a hotel accept one more booking?**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+library(ggplot2)
+
+# Marginal cost and price for hotel rooms
+rooms <- seq(50, 200, by = 10)
+
+# Marginal cost increases with occupancy (more cleaning, energy, wear)
+marginal_cost <- 30 + 0.3 * rooms
+
+# Market price (what customers pay)
+market_price <- rep(80, length(rooms))
+
+cost_data <- data.frame(
+  rooms = rep(rooms, 2),
+  value = c(marginal_cost, market_price),
+  type = rep(c("Marginal Cost", "Market Price"), each = length(rooms))
+)
+
+ggplot(cost_data, aes(x = rooms, y = value, color = type, linetype = type)) +
+  geom_line(size = 1.5) +
+  labs(title = "Hotel Room Pricing: Marginal Analysis",
+       subtitle = "Accept bookings while Price > Marginal Cost",
+       x = "Number of Rooms Booked",
+       y = "Price/Cost (€)",
+       color = "",
+       linetype = "") +
+  theme_minimal(base_size = 14) +
+  scale_color_manual(values = c("Marginal Cost" = "#e74c3c", 
+                                 "Market Price" = "#27ae60")) +
+  theme(legend.position = "bottom") +
+  geom_vline(xintercept = 167, linetype = "dashed", alpha = 0.5) +
+  annotate("text", x = 167, y = 90, 
+           label = "Optimal: ~167 rooms\n(P = MC)", size = 4) +
+  annotate("rect", xmin = 50, xmax = 167, ymin = 0, ymax = 120, 
+           alpha = 0.1, fill = "green") +
+  annotate("text", x = 100, y = 110, label = "Accept\n(P > MC)", size = 4) +
+  annotate("rect", xmin = 167, xmax = 200, ymin = 0, ymax = 120, 
+           alpha = 0.1, fill = "red") +
+  annotate("text", x = 185, y = 110, label = "Reject\n(P < MC)", size = 4)
+```
+
+## Opportunity Cost: Definition
+
+**The Most Important Concept in Economics!**
+
+> **Opportunity Cost** = The value of the best alternative foregone when making a choice
+
+**Key Points**:
+
+- It's what you **give up**, not what you pay
+- It's the **next-best** alternative (not all alternatives)
+- It includes both **explicit** (money) and **implicit** costs (time, foregone opportunities)
+
+**In decisions**: You should choose option A over B if:
+
+$$\text{Benefit of A} - \text{Opportunity Cost of A} > \text{Benefit of B} - \text{Opportunity Cost of B}$$
+
+## Opportunity Cost Examples
+
+**Simple Example**: You have €100 and 4 hours free on Saturday afternoon.
+
+**Options**:
+
+A. Visit museum (€10 entry, 3 hours)  
+B. Beach trip (€0 entry, 4 hours)  
+C. Movie (€12 ticket, 2 hours)  
+D. Stay home and study (€0, 4 hours)
+
+**If you choose A (museum)**:
+
+- **Explicit cost**: €10
+- **Opportunity cost**: Value of best alternative foregone
+  - Can't go to beach (assume you value it at €20)
+  - **Total opportunity cost**: €10 paid + €20 value foregone = **€30**
+
+## Opportunity Cost in Tourism Decisions
+
+**Example: Hotel Investment**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Investment alternatives
+investment_options <- data.frame(
+  option = c("Build Hotel\nin Lisbon", "Build Hotel\nin Algarve", "Invest in\nStock Market", "Government\nBonds"),
+  initial_investment = c(5000, 4500, 5000, 5000),
+  expected_annual_return = c(450, 520, 400, 175),
+  return_percentage = c(9.0, 11.6, 8.0, 3.5)
+)
+
+investment_options$option <- factor(investment_options$option,
+                                     levels = investment_options$option)
+
+ggplot(investment_options, aes(x = option, y = return_percentage, fill = option)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Investment Alternatives: Expected Returns",
+       subtitle = "Opportunity cost of choosing hotel = foregone return from best alternative",
+       x = "",
+       y = "Expected Annual Return (%)") +
+  theme_minimal(base_size = 14) +
+  scale_fill_brewer(palette = "Set3") +
+  theme(legend.position = "none",
+        axis.text.x = element_text(size = 12)) +
+  geom_text(aes(label = paste0(return_percentage, "%\n(€", 
+                                expected_annual_return, "k/yr)")), 
+            vjust = -0.3, size = 3.5) +
+  ylim(0, 14)
+```
+
+**If you build hotel in Lisbon**: Opportunity cost = foregone €520k from Algarve (best alternative)
+
+## Sunk Costs vs. Opportunity Costs
+
+**Sunk Cost**: Cost already incurred that **cannot be recovered**
+
+**Critical Rule**: **Ignore sunk costs in decisions!**
+
+They're already spent – only future costs and benefits matter.
+
+---
+
+**Tourism Example**:
+
+You bought a non-refundable €100 train ticket to Porto. On the travel day, you feel sick.
+
+**Sunk cost**: €100 (already spent, can't get back)
+
+**Decision**: Should you go?
+
+- ❌ Wrong thinking: "I paid €100, so I must go"
+- ✅ Right thinking: "€100 is gone. Will I enjoy the trip enough given how I feel?"
+
+**The €100 is irrelevant to the decision!**
+
+## Real Example: Sunk Costs in Airlines
+
+**Case**: TAP Air Portugal orders new aircraft (2024)
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Hypothetical airline decision timeline
+timeline_data <- data.frame(
+  stage = c("Order Placed\n(2022)", "Deposit Paid\n(2023)", "Delivery Due\n(2025)", "Decision Point\n(2024)"),
+  cost_incurred = c(0, 150, 0, 0),
+  cumulative_cost = c(0, 150, 150, 150),
+  future_payment = c(1500, 1350, 1350, 1350)
+)
+
+timeline_data$stage <- factor(timeline_data$stage, levels = timeline_data$stage)
+timeline_data$stage_num <- 1:4
+
+ggplot(timeline_data, aes(x = stage_num, y = cumulative_cost)) +
+  geom_line(size = 1.5, color = "#e74c3c") +
+  geom_point(size = 4, color = "#e74c3c") +
+  geom_line(aes(y = future_payment), size = 1.5, color = "#3498db", linetype = "dashed") +
+  geom_point(aes(y = future_payment), size = 4, color = "#3498db") +
+  labs(title = "Aircraft Purchase Decision: Sunk Cost Problem",
+       subtitle = "At Decision Point: €150M is SUNK (ignore it). Focus on future €1,350M payment.",
+       x = "",
+       y = "Amount (€ millions)") +
+  scale_x_continuous(breaks = 1:4, labels = timeline_data$stage) +
+  theme_minimal(base_size = 14) +
+  annotate("text", x = 2, y = 200, label = "Sunk Cost\n(€150M paid)", 
+           color = "#e74c3c", size = 4, fontface = "bold") +
+  annotate("text", x = 4, y = 1400, label = "Future Payment\n(€1,350M)", 
+           color = "#3498db", size = 4, fontface = "bold") +
+  geom_rect(aes(xmin = 3.7, xmax = 4.3, ymin = 0, ymax = 1600), 
+            alpha = 0.01, fill = "yellow", color = "orange", size = 1.5)
+```
+
+**Correct Decision Process**: Compare future benefits (passenger revenue, efficiency) vs. future costs (€1,350M), **ignoring** the sunk €150M.
+
+## Opportunity Cost in Time Allocation
+
+**Very Important**: Your **time** has opportunity cost!
+
+**Example**: Restaurant owner deciding whether to hire manager or self-manage
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Time allocation decision
+time_decision <- data.frame(
+  scenario = c("Self-Manage", "Hire Manager"),
+  restaurant_profit = c(120000, 110000),
+  manager_salary = c(0, -45000),
+  owner_consulting = c(0, 65000),
+  net_income = c(120000, 130000)
+)
+
+time_decision$scenario <- factor(time_decision$scenario, 
+                                  levels = time_decision$scenario)
+
+# Reshape for stacked bar
+library(tidyr)
+time_long <- time_decision %>%
+  pivot_longer(cols = c(restaurant_profit, manager_salary, owner_consulting),
+               names_to = "component", values_to = "value")
+
+time_long$component <- factor(time_long$component,
+                               levels = c("restaurant_profit", "owner_consulting", "manager_salary"),
+                               labels = c("Restaurant Profit", "Owner Consulting Income", "Manager Salary"))
+
+ggplot(time_long, aes(x = scenario, y = value, fill = component)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(title = "Restaurant Owner's Time Allocation Decision",
+       subtitle = "Opportunity cost of self-managing = foregone consulting income (€65k)",
+       x = "",
+       y = "Annual Amount (€)",
+       fill = "") +
+  theme_minimal(base_size = 14) +
+  scale_fill_manual(values = c("Restaurant Profit" = "#27ae60", 
+                                "Owner Consulting Income" = "#3498db",
+                                "Manager Salary" = "#e74c3c")) +
+  theme(legend.position = "bottom") +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_text(data = time_decision, 
+            aes(x = scenario, y = net_income + 5000, 
+                label = paste0("Net: €", format(net_income, big.mark = ","))),
+            size = 5, fontface = "bold")
+```
+
+**Analysis**: Hiring manager is better (€130k > €120k) because owner's time has opportunity cost!
+
+## Production Possibilities Frontier (Preview)
+
+**Visual representation of opportunity cost at societal level**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Simple PPF for tourism economy
+# Two goods: Beach tourism vs. Cultural tourism (museum capacity)
+
+beach <- seq(0, 100, by = 5)
+cultural <- 100 * (1 - (beach/100)^0.5)
+
+ppf_data <- data.frame(beach, cultural)
+
+# Example points
+points <- data.frame(
+  beach = c(30, 64, 80),
+  cultural = c(82.3, 60, 44.7),
+  label = c("A", "B", "C")
+)
+
+ggplot(ppf_data, aes(x = beach, y = cultural)) +
+  geom_line(size = 1.5, color = "#3498db") +
+  geom_ribbon(aes(ymin = 0, ymax = cultural), alpha = 0.2, fill = "#3498db") +
+  geom_point(data = points, aes(x = beach, y = cultural), size = 5, color = "#e74c3c") +
+  geom_text(data = points, aes(x = beach, y = cultural, label = label), 
+            vjust = -1, size = 6, fontface = "bold") +
+  labs(title = "Tourism Development: Opportunity Cost Visualization",
+       subtitle = "Moving from A to B: Opportunity cost = 22.3 units of cultural tourism foregone",
+       x = "Beach Tourism Capacity (units)",
+       y = "Cultural Tourism Capacity (units)") +
+  theme_minimal(base_size = 14) +
+  annotate("segment", x = 30, xend = 64, y = 82.3, yend = 82.3,
+           arrow = arrow(length = unit(0.3, "cm")), size = 1, color = "#e67e22") +
+  annotate("text", x = 47, y = 85, label = "+34 beach units", size = 4, color = "#e67e22") +
+  annotate("segment", x = 64, xend = 64, y = 82.3, yend = 60,
+           arrow = arrow(length = unit(0.3, "cm")), size = 1, color = "#e67e22") +
+  annotate("text", x = 70, y = 71, label = "-22.3 cultural units\n(Opportunity Cost)", 
+           size = 4, color = "#e67e22", fontface = "bold")
+```
+
+**Next lecture**: We'll explore PPF in detail!
+
+## Trade-offs in Tourism: Real Data
+
+**Portugal 2024: Investment Trade-offs**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Government tourism investment allocation
+allocation_data <- data.frame(
+  category = c("Mass Tourism\nInfrastructure", "Cultural Heritage\nPreservation", "Sustainable Tourism\nInitiatives", "Digital\nInnovation"),
+  budget_2024 = c(180, 95, 75, 50),
+  budget_2025_proposed = c(160, 110, 95, 65)
+)
+
+allocation_data$category <- factor(allocation_data$category,
+                                     levels = allocation_data$category)
+
+library(tidyr)
+allocation_long <- allocation_data %>%
+  pivot_longer(cols = starts_with("budget"),
+               names_to = "year",
+               values_to = "amount") %>%
+  mutate(year = ifelse(year == "budget_2024", "2024 (Actual)", "2025 (Proposed)"))
+
+ggplot(allocation_long, aes(x = category, y = amount, fill = year)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Tourism Investment Allocation: Portugal Government",
+       subtitle = "Trade-offs: More cultural preservation = Less mass tourism infrastructure",
+       x = "",
+       y = "Budget (€ millions)",
+       fill = "") +
+  theme_minimal(base_size = 14) +
+  scale_fill_manual(values = c("2024 (Actual)" = "#95a5a6", 
+                                "2025 (Proposed)" = "#27ae60")) +
+  theme(legend.position = "bottom",
+        axis.text.x = element_text(size = 11)) +
+  geom_text(aes(label = paste0("€", amount, "M")), 
+            position = position_dodge(width = 0.9), 
+            vjust = -0.5, size = 3.5)
+```
+
+**Opportunity cost of increasing cultural preservation by €15M** = €20M less for mass tourism infrastructure
+
+## Making Better Decisions
+
+**Checklist for Rational Economic Decisions**:
+
+1. ✓ Identify **all alternatives**
+2. ✓ Estimate **benefits** of each alternative
+3. ✓ Estimate **costs** (including opportunity costs!)
+4. ✓ **Ignore sunk costs** (they're irrelevant)
+5. ✓ Consider **marginal** changes (not just totals)
+6. ✓ Choose alternative with **highest net benefit**
+
+**Remember**: Good decisions maximize net benefit (Benefits - Opportunity Costs)
+
+## Common Decision Mistakes
+
+**Mistake 1**: Ignoring opportunity costs
+
+- Thinking only about money paid, not value of alternatives foregone
+
+**Mistake 2**: Counting sunk costs
+
+- "I've already invested so much, I must continue"
+
+**Mistake 3**: Ignoring marginal analysis
+
+- Looking at totals instead of additional benefits/costs
+
+**Mistake 4**: Not comparing net benefits
+
+- Choosing option with highest benefit (but also highest cost)
+
+## Real Business Case: Ryanair Strategy
+
+**Ryanair's Opportunity Cost Thinking (2024)**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Ryanair route profitability
+route_data <- data.frame(
+  route = c("Lisbon-London", "Lisbon-Paris", "Lisbon-Milan", "Lisbon-Dublin", "Lisbon-Brussels"),
+  revenue_per_flight = c(12500, 11200, 10800, 9500, 8900),
+  cost_per_flight = c(7500, 7200, 7000, 7100, 7300),
+  profit_per_flight = c(5000, 4000, 3800, 2400, 1600),
+  frequency_per_week = c(14, 12, 10, 7, 5)
+)
+
+route_data$route <- factor(route_data$route,
+                            levels = route_data$route[order(route_data$profit_per_flight, 
+                                                             decreasing = TRUE)])
+
+ggplot(route_data, aes(x = route, y = profit_per_flight, fill = route)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Ryanair Route Profitability Analysis (Hypothetical)",
+       subtitle = "Opportunity cost: Each flight to Brussels = foregone €3,400 from London route",
+       x = "",
+       y = "Profit per Flight (€)") +
+  theme_minimal(base_size = 14) +
+  scale_fill_brewer(palette = "RdYlGn", direction = 1) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 20, hjust = 1)) +
+  geom_text(aes(label = paste0("€", format(profit_per_flight, big.mark = ","))), 
+            vjust = -0.5, size = 4) +
+  geom_segment(aes(x = 1, xend = 5, y = 5000, yend = 5000), 
+               linetype = "dashed", color = "#e74c3c", size = 1) +
+  annotate("text", x = 3, y = 5300, 
+           label = "Best alternative profit", color = "#e74c3c", size = 4)
+```
+
+**Decision**: Cancel Brussels route, add London frequency → Better use of aircraft (opportunity cost logic)
+
+## Summary: Key Concepts
+
+1. **Rationality**: People seek to maximize well-being through cost-benefit analysis
+2. **Cost-Benefit Principle**: Do it if benefits ≥ costs
+3. **Marginal Analysis**: Decisions at the margin (additional units)
+4. **Opportunity Cost**: Value of best alternative foregone
+5. **Sunk Costs**: Ignore them! (already spent, irrelevant)
+6. **Trade-offs**: Choosing one thing means giving up another
+7. **Good Decisions**: Maximize net benefit considering opportunity costs
+
+## Exercises {.center}
+
+**Practice Time!**
+
+Real-world applications of opportunity cost.
+
+## Exercise 1: Multiple Choice
+
+**Question**: A hotel owner can use her restaurant space for:
+
+- Option A: Fine dining (€80k annual profit)
+- Option B: Buffet restaurant (€60k annual profit)  
+- Option C: Rent to external operator (€50k annual rent)
+
+She chooses Option A. What is the opportunity cost of this decision?
+
+A. €80,000  
+B. €60,000  
+C. €50,000  
+D. €110,000
+
+::: {.fragment}
+**Answer: B (€60,000)**
+
+Explanation: Opportunity cost = value of **best alternative foregone**. The next-best alternative to fine dining (€80k) is buffet (€60k), NOT the sum of all alternatives.
+:::
+
+## Exercise 2: Multiple Choice
+
+**Question**: You bought a non-refundable €200 ticket to a concert. On the day of the concert, you feel ill. A friend offers you €50 for the ticket (transferable). What is the opportunity cost of **attending** the concert?
+
+A. €200  
+B. €150  
+C. €50 + discomfort from illness  
+D. €250
+
+::: {.fragment}
+**Answer: C (€50 + discomfort)**
+
+Explanation: 
+
+- €200 is SUNK (can't recover even if you don't go)
+- If you attend: you give up €50 (could sell) + endure discomfort
+- Opportunity cost = what you give up by attending
+:::
+
+## Exercise 3: Open Question
+
+**Scenario**: A tour operator in Porto must decide between two summer season strategies:
+
+**Strategy A**: Focus on luxury tours
+
+- Expected revenue: €500,000
+- Variable costs: €280,000
+- Fixed costs already committed: €80,000
+
+**Strategy B**: Focus on budget tours
+
+- Expected revenue: €420,000
+- Variable costs: €200,000
+- Same fixed costs: €80,000
+
+**Questions**:
+
+a) Calculate profit for each strategy  
+b) What is the opportunity cost of choosing Strategy A?  
+c) Which strategy should be chosen and why?  
+d) Are fixed costs relevant to the decision? Explain.
+
+## Exercise 3: Solution
+
+**a) Profit calculation**:
+
+**Strategy A (Luxury)**:
+$$\text{Profit}_A = €500,000 - €280,000 - €80,000 = €140,000$$
+
+**Strategy B (Budget)**:
+$$\text{Profit}_B = €420,000 - €200,000 - €80,000 = €140,000$$
+
+**Both strategies have equal profit!**
+
+**b) Opportunity cost of Strategy A**:
+
+Opportunity cost = Profit from best alternative foregone = **€140,000** (Strategy B profit)
+
+## Exercise 3: Solution (continued)
+
+**c) Which strategy to choose?**
+
+**From pure profit perspective**: Indifferent (both €140,000)
+
+**But consider other factors**:
+
+- **Risk**: Luxury tours may have more variable demand
+- **Reputation**: Does company have luxury experience?
+- **Market trends**: Which segment is growing?
+- **Resource requirements**: Which uses existing capabilities better?
+
+**Recommendation**: Choose Strategy B (budget) because:
+
+- Lower variable costs (€200k vs €280k) = less risk
+- Higher revenue-to-variable-cost ratio: 2.1 vs. 1.79
+- More resilient to demand fluctuations
+
+**d) Are fixed costs relevant?**
+
+**NO!** Fixed costs (€80,000) are **SUNK** – already committed regardless of strategy choice.
+
+Only **variable costs** matter for this decision (they differ between strategies).
+
+This is key example of ignoring sunk costs in decision-making!
+
+## Next Lecture
+
+**Lecture 4** (February 13, 2026):
+
+- **Production Factors** (detailed)
+- **Production Possibilities Frontier (PPF)**
+- Efficiency, Trade-offs, and Economic Growth
+
+**Preparation**: Review today's opportunity cost concept – it's the foundation for understanding PPF!
+
+## Thank You! {.center}
+
+**Questions?**
+
+*Contact*: jrsantos@university.pt
+
+---
+
+*Next class: Thursday, February 13, 2026*
+
+::: {.notes}
+Opportunity cost is one of the most powerful concepts in economics. Make sure students understand it deeply – it will appear throughout the entire course!
+:::

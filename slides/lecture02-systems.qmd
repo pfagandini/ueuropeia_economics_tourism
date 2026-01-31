@@ -1,0 +1,636 @@
+---
+title: "Economics Fundamentals"
+subtitle: "Lecture 2: Three Economic Problems & Economic Systems"
+author: "Paulo Fagandini"
+date:  today
+date-format: "YYYY"
+format:
+  revealjs:
+    theme: default
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: true
+    footer: "Economics of Tourism | Lecture 2"
+    logo: ../images/logo.png
+---
+
+<div style="font-size: 80%;">
+</div>
+
+## Recap: Lecture 1 {.center}
+
+**Key concepts we covered**:
+
+- Economics studies **scarcity** and **efficiency**
+- **Macroeconomics** (big picture) vs. **Microeconomics** (individual decisions)
+- Three fundamental questions: **WHAT**, **HOW**, **FOR WHOM**
+- **Positive** (facts) vs. **Normative** (values) economics
+
+Today: How do different economic systems answer these questions?
+
+## The Three Fundamental Economic Problems
+<div style="font-size: 75%;">
+Every society must solve:
+
+1. **WHAT goods and services to produce?**
+   - Which products? How much of each?
+   - Current consumption vs. future investment?
+
+2. **HOW to produce them?**
+   - Which technologies? Which resources?
+   - Labor-intensive vs. capital-intensive?
+
+3. **FOR WHOM are goods produced?**
+   - How to distribute output?
+   - Who gets what share of production?
+
+</div>
+
+## Problem 1: WHAT to Produce?
+
+**Tourism Example: Portugal 2024**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+library(ggplot2)
+library(dplyr)
+
+# Tourism infrastructure investment allocation
+investment_data <- data.frame(
+  category = c("Hotels", "Restaurants", "Museums", "Transport", "Beach Facilities"),
+  investment_2024 = c(450, 280, 120, 380, 150),
+  visitors_impact = c(850, 720, 280, 900, 420)
+)
+
+investment_data$category <- factor(investment_data$category,
+                                    levels = investment_data$category[order(investment_data$investment_2024)])
+
+ggplot(investment_data, aes(x = category, y = investment_2024, fill = category)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Tourism Infrastructure Investment in Portugal (2024)",
+       subtitle = "WHAT to produce: Allocation decisions (€ millions)",
+       x = "",
+       y = "Investment (€ millions)") +
+  theme_minimal(base_size = 14) +
+  scale_fill_brewer(palette = "Set3") +
+  theme(legend.position = "none") +
+  geom_text(aes(label = paste0("€", investment_2024, "M")), 
+            hjust = -0.1, size = 4)
+```
+
+## Problem 2: HOW to Produce?
+
+<div style="font-size: 70%;">
+
+**Different Production Methods: Hotel Check-in**
+
+:::: {.columns}
+::: {.column width="50%"}
+### Traditional Method
+- Human receptionists
+- Paper forms
+- Phone bookings
+- High labor cost
+- Flexible service
+- Personal touch
+
+**Cost per check-in**: ~€8-12
+:::
+
+::: {.column width="50%"}
+### Automated Method
+- Self-service kiosks
+- Online booking
+- Mobile check-in
+- High capital cost
+- 24/7 availability
+- Limited flexibility
+
+**Cost per check-in**: ~€2-4
+:::
+::::
+
+**Decision factors**: Initial investment, labor costs, customer preferences, technology reliability
+
+</div>
+
+## HOW: Production Cost Comparison
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Cost comparison over time
+years <- 1:5
+traditional_cost <- 10 * 10000 * years  # €10 per check-in, 10k check-ins/year
+automated_cost <- 200000 + (3 * 10000 * years)  # €200k initial + €3 per check-in
+
+cost_data <- data.frame(
+  year = rep(years, 2),
+  cost = c(traditional_cost, automated_cost) / 1000,  # Convert to thousands
+  method = rep(c("Traditional", "Automated"), each = 5)
+)
+
+ggplot(cost_data, aes(x = year, y = cost, color = method, group = method)) +
+  geom_line(size = 1.5) +
+  geom_point(size = 3) +
+  labs(title = "Cumulative Cost: Traditional vs. Automated Check-in",
+       subtitle = "HOW to produce: Technology choice affects long-term costs",
+       x = "Years of Operation",
+       y = "Cumulative Cost (€ thousands)",
+       color = "Method") +
+  theme_minimal(base_size = 14) +
+  scale_color_manual(values = c("Traditional" = "#e74c3c", 
+                                 "Automated" = "#3498db")) +
+  theme(legend.position = "bottom") +
+  geom_vline(xintercept = 2.86, linetype = "dashed", alpha = 0.5) +
+  annotate("text", x = 3.2, y = 200, 
+           label = "Break-even point", angle = 90, size = 4)
+```
+
+## Problem 3: FOR WHOM?
+
+**Income Distribution & Tourism Access**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Tourism spending by income quintile
+income_tourism <- data.frame(
+  quintile = c("Lowest 20%", "Second 20%", "Third 20%", "Fourth 20%", "Highest 20%"),
+  avg_vacation_spending = c(450, 950, 1650, 2800, 5200),
+  trips_per_year = c(0.3, 0.8, 1.4, 2.1, 3.5)
+)
+
+income_tourism$quintile <- factor(income_tourism$quintile,
+                                   levels = income_tourism$quintile)
+
+ggplot(income_tourism, aes(x = quintile, y = avg_vacation_spending, fill = quintile)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Annual Vacation Spending by Income Group (EU 2024)",
+       subtitle = "FOR WHOM: Income distribution determines who consumes tourism",
+       x = "Income Quintile",
+       y = "Average Spending (€)") +
+  theme_minimal(base_size = 14) +
+  scale_fill_brewer(palette = "RdYlGn", direction = 1) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 25, hjust = 1)) +
+  geom_text(aes(label = paste0("€", avg_vacation_spending)), 
+            vjust = -0.5, size = 4)
+```
+
+## Economic Systems: Overview
+
+<div style="font-size: 70%;">
+
+Three fundamental ways to organize an economy:
+
+1. **Market Economy** (Laissez-faire)
+   - Decisions by individuals and firms
+   - Prices and markets coordinate
+
+2. **Centrally Planned Economy**
+   - Government makes decisions
+   - Central authority coordinates
+
+3. **Mixed Economy** (Most common today)
+   - Combination of market and government
+   - Balance varies by country
+
+</div>
+
+## Market Economy
+
+**Definition**: Individuals and companies make key production and consumption decisions through markets
+
+**Key Features**:
+
+- **Private ownership** of resources
+- **Price mechanism** coordinates decisions
+- **Profit motive** drives production
+- **Competition** among firms
+- **Consumer sovereignty** (monetary votes)
+
+**Tourism Example**: Hotel chains decide what to build, where, and at what price based on profit expectations
+
+## How Markets Work: Example
+
+**Airbnb in Lisbon (Market Mechanism)**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Supply and demand for Airbnb rentals
+library(tidyr)
+
+# Price points
+prices <- seq(20, 120, by = 10)
+
+# Demand: higher price -> lower quantity
+quantity_demanded <- 5000 - 30 * prices
+
+# Supply: higher price -> higher quantity  
+quantity_supplied <- -1000 + 40 * prices
+
+market_data <- data.frame(
+  price = rep(prices, 2),
+  quantity = c(quantity_demanded, quantity_supplied),
+  curve = rep(c("Demand", "Supply"), each = length(prices))
+)
+
+ggplot(market_data, aes(x = quantity, y = price, color = curve)) +
+  geom_line(size = 1.5) +
+  geom_point(size = 3) +
+  labs(title = "Airbnb Market in Lisbon: Supply and Demand",
+       subtitle = "Market economy: Prices coordinate decisions",
+       x = "Number of Listings",
+       y = "Average Price per Night (€)",
+       color = "") +
+  theme_minimal(base_size = 14) +
+  scale_color_manual(values = c("Demand" = "#e74c3c", "Supply" = "#27ae60")) +
+  theme(legend.position = "bottom") +
+  geom_vline(xintercept = 2200, linetype = "dashed", alpha = 0.3) +
+  geom_hline(yintercept = 86, linetype = "dashed", alpha = 0.3) +
+  annotate("point", x = 2200, y = 86, size = 5, color = "#f39c12") +
+  annotate("text", x = 2200, y = 95, 
+           label = "Equilibrium\nP=€86, Q=2,200", size = 4)
+```
+
+## Centrally Planned Economy
+
+<div style="font-size: 80%;">
+
+**Definition**: Government makes most production and distribution decisions
+
+**Key Features**:
+
+- **Government ownership** of resources
+- **Central planning** replaces markets
+- **Production quotas** set by authority
+- **Price controls** by government
+- **Administrative allocation** of resources
+
+**Historical Example**: Soviet tourism industry (state-owned hotels, fixed prices, limited choice)
+
+**Modern Examples**: Cuba, North Korea (though moving toward mixed systems)
+
+</div>
+
+## Market vs. Centralized: Tourism Example
+
+<div style="font-size: 80%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+### Market System
+**Hotel Construction Decision**:
+
+✓ Private investor analyzes demand  
+✓ Builds if profitable  
+✓ Price determined by market  
+✓ Competition ensures efficiency  
+
+**Result**: Hotels where tourists want them
+:::
+
+::: {.column width="50%"}
+### Centralized System
+**Hotel Construction Decision**:
+
+✓ Government planners decide  
+✓ Build according to 5-year plan  
+✓ Prices set administratively  
+✓ No competition  
+
+**Result**: May not match demand
+:::
+::::
+
+</div>
+
+## Mixed Economy
+
+<div style="font-size: 80%;">
+
+**Definition**: Combination of market mechanisms and government intervention
+
+**Characteristics**:
+
+- Markets direct daily economic activity
+- Government regulates and provides public goods
+- Balance varies by country and ideology
+
+**Government Roles**:
+
+1. Increase **efficiency** (regulate monopolies, address externalities)
+2. Promote **equity** (redistribute income, social safety net)
+3. Foster **stability** (manage inflation, unemployment, growth)
+
+</div>
+
+## Mixed Economy in Tourism
+
+**Portugal Tourism (Mixed System)**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Government vs private sector roles
+roles_data <- data.frame(
+  sector = rep(c("Private Sector", "Government"), each = 5),
+  activity = rep(c("Hotels", "Restaurants", "Transport", "Museums", "Promotion"), 2),
+  percentage = c(95, 90, 60, 20, 30,  # Private
+                 5, 10, 40, 80, 70)   # Government
+)
+
+ggplot(roles_data, aes(x = activity, y = percentage, fill = sector)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(title = "Public vs. Private Sector in Portuguese Tourism",
+       subtitle = "Mixed economy: Balance between market and government",
+       x = "",
+       y = "Percentage of Activity",
+       fill = "Sector") +
+  theme_minimal(base_size = 14) +
+  scale_fill_manual(values = c("Private Sector" = "#3498db", 
+                                "Government" = "#e74c3c")) +
+  theme(legend.position = "bottom") +
+  coord_flip() +
+  geom_text(aes(label = paste0(percentage, "%")), 
+            position = position_stack(vjust = 0.5), 
+            color = "white", size = 4, fontface = "bold")
+```
+
+## Production Factors
+
+<div style="font-size: 80%;">
+
+To answer the three questions, economies use **factors of production** (inputs):
+
+:::: {.columns}
+::: {.column width="33%"}
+### Land
+**Natural resources**
+
+- Agricultural land
+- Energy resources
+- Minerals
+- Clean air & water
+
+*Tourism*: Beaches, mountains, climate
+:::
+
+::: {.column width="33%"}
+### Labor
+**Human effort**
+
+- Physical work
+- Mental work
+- Skills & education
+- Time spent
+
+*Tourism*: Hotel staff, guides, chefs
+:::
+
+::: {.column width="33%"}
+### Capital
+**Produced resources**
+
+- Machinery
+- Buildings
+- Infrastructure
+- Technology
+
+*Tourism*: Hotels, airports, booking systems
+:::
+::::
+
+</div>
+
+## Production Factors in Tourism
+
+**European Tourism Employment (2024)**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+
+# Labor factor in tourism
+employment_data <- data.frame(
+  country = c("Spain", "France", "Italy", "Portugal", "Greece"),
+  tourism_jobs_thousands = c(2750, 2100, 1850, 950, 720),
+  percentage_total_employment = c(13.8, 8.2, 7.9, 19.1, 24.3)
+)
+
+employment_data$country <- factor(employment_data$country,
+                                   levels = employment_data$country)
+
+ggplot(employment_data, aes(x = country, y = percentage_total_employment, 
+                             fill = country)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Tourism as % of Total Employment (Selected EU Countries)",
+       subtitle = "Labor factor: Tourism's importance in national economies",
+       x = "",
+       y = "Tourism Employment (% of total)") +
+  theme_minimal(base_size = 14) +
+  scale_fill_brewer(palette = "Set2") +
+  theme(legend.position = "none") +
+  geom_text(aes(label = paste0(percentage_total_employment, "%")), 
+            vjust = -0.5, size = 4.5, fontface = "bold") +
+  ylim(0, 27)
+```
+
+**Source**: WTTC, 2024
+
+## Comparing Economic Systems
+
+<div style="font-size: 80%;">
+
+| Aspect | Market Economy | Centrally Planned | Mixed Economy |
+|--------|----------------|-------------------|---------------|
+| **Ownership** | Private | State | Both |
+| **Coordination** | Prices/markets | Central plan | Markets + regulation |
+| **Incentives** | Profit | Quotas/orders | Profit + public interest |
+| **Innovation** | High | Low | Medium-High |
+| **Efficiency** | Generally high | Often low | Variable |
+| **Equity** | Low (unequal) | High (equal poverty) | Medium |
+| **Examples** | (Pure: rare) | Cuba, N. Korea | USA, EU, Portugal |
+
+</div>
+
+## Real-World Example: Tourism Recovery
+
+<div style="font-size: 80%;">
+
+**Different Systems, Different COVID-19 Responses**
+
+:::: {.columns}
+::: {.column width="50%"}
+### Market-Led (Portugal)
+
+- Private hotels closed voluntarily
+- Government support (furlough)
+- Market-driven reopening
+- Rapid innovation (safety protocols)
+- Fast recovery: 31.6M visitors (2024)
+:::
+
+::: {.column width="50%"}
+### Centrally-Planned (Cuba)
+
+- State-owned hotels closed by decree
+- No market signals
+- Political decision to reopen
+- Limited innovation
+- Slower recovery: ~50% of 2019 levels
+:::
+::::
+
+</div>
+
+## Summary: Key Concepts
+
+1. **Three economic problems**: WHAT, HOW, FOR WHOM
+2. **Market economy**: Decisions by individuals/firms via prices
+3. **Centrally planned**: Government makes decisions
+4. **Mixed economy**: Combination (most common today)
+5. **Production factors**: Land, Labor, Capital
+6. **Each system** has trade-offs (efficiency vs. equity)
+7. **Portugal tourism**: Mixed system (mostly private, some government)
+
+## Exercises {.center}
+
+**Practice Time!**
+
+Let's apply what we've learned.
+
+## Exercise 1: Multiple Choice
+
+**Question**: In a market economy, the question "FOR WHOM are goods produced?" is primarily answered by:
+
+A. Government planners deciding who gets what  
+B. Equal distribution to all citizens  
+C. Willingness and ability to pay
+D. First-come, first-served basis
+
+::: {.fragment}
+**Answer: C**
+
+Explanation: In market economies, goods go to those who are willing to pay more for them, which answers "for whom."
+:::
+
+## Exercise 2: Multiple Choice
+
+**Question**: Which of the following is an example of the **capital** factor of production in tourism?
+
+A. A tour guide's knowledge and skills  
+B. The beach at Algarve  
+C. A hotel building in Lisbon  
+D. The manager's decision-making ability
+
+::: {.fragment}
+**Answer: C**
+
+Explanation: Capital consists of produced goods used to make other goods/services. The hotel building is capital. A is labor, B is land, D is labor/entrepreneurship.
+:::
+
+## Exercise 3: Open Question
+
+<div style="font-size: 80%;">
+
+**Scenario**: The Portuguese government is considering two policies for tourism development:
+
+- **Policy A**: Let private investors freely build hotels wherever they want (market approach)
+- **Policy B**: Government decides where hotels should be built and provides subsidies (planned approach)
+
+**Questions**:
+
+a) Identify which economic system each policy represents  
+b) List 2 advantages and 2 disadvantages of each policy  
+c) Calculate: If a private hotel costs €5M to build and generates €800k annual profit, what's the payback period?  
+d) Recommend which policy Portugal should adopt (justify with economic reasoning)
+
+</div>
+
+## Exercise 3: Solution (Part 1)
+
+<div style="font-size: 80%;">
+
+**a) Economic systems**:
+
+- **Policy A**: Market economy approach (laissez-faire)
+- **Policy B**: Centrally planned economy approach
+
+**b) Advantages and Disadvantages**:
+
+| Policy A (Market) | Policy B (Planned) |
+|-------------------|-------------------|
+| ✓ Efficient allocation (demand-driven) | ✓ Can correct market failures |
+| ✓ Innovation & competition | ✓ Ensures regional development |
+| ✗ May ignore externalities | ✗ Information problems |
+| ✗ Unequal regional development | ✗ Bureaucratic inefficiency |
+
+</div>
+
+## Exercise 3: Solution (Part 2)
+
+<div style="font-size: 80%;">
+
+**c) Payback period calculation**:
+
+$$\text{Payback Period} = \frac{\text{Initial Investment}}{\text{Annual Profit}} = \frac{€5,000,000}{€800,000} = 6.25 \text{ years}$$
+
+**d) Recommendation**: **Mixed approach** (combination)
+
+**Reasoning**:
+
+- Use **market mechanism** (Policy A) as primary driver
+  - Private sector is more efficient at identifying demand
+  - Competition drives innovation and service quality
+  
+- Add **selective government intervention** (Policy B elements)
+  - Regional development incentives (e.g., tax breaks for interior regions)
+  - Environmental regulations to prevent over-tourism
+  - Infrastructure investment in under-served areas
+
+**This is what Portugal actually does** – mostly private sector with strategic government support!
+
+</div>
+
+## Next Lecture
+
+**Lecture 3** (February 12, 2026):
+
+- Rationality and Economic Behavior
+- Choices and Decision-Making
+- **Opportunity Cost** (crucial concept!)
+
+**Preparation**: Think about a recent choice you made. What did you give up to make that choice?
+
+## Thank You! {.center}
+
+**Questions?**
+
+*Contact*: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Wednesday, February 12, 2026*
