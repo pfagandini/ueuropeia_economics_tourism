@@ -319,6 +319,7 @@ time_decision$scenario <- factor(time_decision$scenario,
 
 # Reshape for stacked bar
 library(tidyr)
+library(dplyr)
 time_long <- time_decision %>%
   pivot_longer(cols = c(restaurant_profit, manager_salary, owner_consulting),
                names_to = "component", values_to = "value")
@@ -342,8 +343,9 @@ ggplot(time_long, aes(x = scenario, y = value, fill = component)) +
   geom_hline(yintercept = 0, color = "black") +
   geom_text(data = time_decision, 
             aes(x = scenario, y = net_income + 5000, 
-                label = paste0("Net: €", format(net_income, big.mark = ","))),
-            size = 5, fontface = "bold")
+                label = paste0("Net: €", format(net_income, big.mark = ",")),
+                fill = NULL),  # Add this line
+            size = 5, fontface = "bold", inherit.aes = FALSE)  # Add inherit.aes = FALSE
 ```
 
 **Analysis**: Hiring manager is better (€130k > €120k) because owner's time has opportunity cost!
@@ -651,7 +653,7 @@ This is key example of ignoring sunk costs in decision-making!
 
 **Questions?**
 
-*Contact*: jrsantos@university.pt
+*Contact*: paulo.fagandini@ext.universidadeeuropeia.pt
 
 ---
 

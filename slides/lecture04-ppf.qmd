@@ -418,8 +418,7 @@ ggplot(portugal_efficiency, aes(x = year)) +
   geom_line(aes(y = actual_output, color = "Actual Output"), 
             size = 1.5) +
   geom_point(aes(y = potential_output), size = 4, color = "#3498db") +
-  geom_point(aes(y = actual_output, shape = status), size = 5, 
-             aes(color = "Actual Output")) +
+  geom_point(aes(y = actual_output, shape = status, color = "Actual Output"), size = 5) +
   labs(title = "Portugal Tourism: Efficiency Analysis 2019-2024",
        subtitle = "COVID-19 pushed economy inside PPF (inefficient); recovery moved back to frontier",
        x = "Year",
@@ -823,7 +822,7 @@ New PPF might be:
 
 **Questions?**
 
-*Contact*: jrsantos@university.pt
+*Contact*: paulo.fagandini@ext.universidadeeuropeia.pt
 
 ---
 
