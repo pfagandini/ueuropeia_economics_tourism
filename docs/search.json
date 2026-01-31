@@ -369,5 +369,593 @@
     "title": "Economics Fundamentals",
     "section": "Normative Economics",
     "text": "Normative Economics\nInvolves value judgments\nQuestions:\n\nShould government limit Airbnb rentals?\nShould tourism revenue be redistributed?\nShould airlines be forced to reduce emissions?\n\n→ Requires ethical and political debate"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ueuropeia_economics_tourism",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#recap-lecture-1",
+    "href": "slides/lecture01-intro.html#recap-lecture-1",
+    "title": "Economics Fundamentals",
+    "section": "Recap: Lecture 1",
+    "text": "Recap: Lecture 1\nKey concepts we covered:\n\nEconomics studies scarcity and efficiency\nMacroeconomics (big picture) vs. Microeconomics (individual decisions)\nThree fundamental questions: WHAT, HOW, FOR WHOM\nPositive (facts) vs. Normative (values) economics\n\nToday: How do different economic systems answer these questions?"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#the-three-fundamental-economic-problems",
+    "href": "slides/lecture01-intro.html#the-three-fundamental-economic-problems",
+    "title": "Economics Fundamentals",
+    "section": "The Three Fundamental Economic Problems",
+    "text": "The Three Fundamental Economic Problems\n\nEvery society must solve:\n\nWHAT goods and services to produce?\n\nWhich products? How much of each?\nCurrent consumption vs. future investment?\n\nHOW to produce them?\n\nWhich technologies? Which resources?\nLabor-intensive vs. capital-intensive?\n\nFOR WHOM are goods produced?\n\nHow to distribute output?\nWho gets what share of production?"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#problem-1-what-to-produce",
+    "href": "slides/lecture01-intro.html#problem-1-what-to-produce",
+    "title": "Economics Fundamentals",
+    "section": "Problem 1: WHAT to Produce?",
+    "text": "Problem 1: WHAT to Produce?\nTourism Example: Portugal 2024\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# Tourism infrastructure investment allocation\ninvestment_data &lt;- data.frame(\n  category = c(\"Hotels\", \"Restaurants\", \"Museums\", \"Transport\", \"Beach Facilities\"),\n  investment_2024 = c(450, 280, 120, 380, 150),\n  visitors_impact = c(850, 720, 280, 900, 420)\n)\n\ninvestment_data$category &lt;- factor(investment_data$category,\n                                    levels = investment_data$category[order(investment_data$investment_2024)])\n\nggplot(investment_data, aes(x = category, y = investment_2024, fill = category)) +\n  geom_bar(stat = \"identity\") +\n  coord_flip() +\n  labs(title = \"Tourism Infrastructure Investment in Portugal (2024)\",\n       subtitle = \"WHAT to produce: Allocation decisions (€ millions)\",\n       x = \"\",\n       y = \"Investment (€ millions)\") +\n  theme_minimal(base_size = 14) +\n  scale_fill_brewer(palette = \"Set3\") +\n  theme(legend.position = \"none\") +\n  geom_text(aes(label = paste0(\"€\", investment_2024, \"M\")), \n            hjust = -0.1, size = 4)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#problem-2-how-to-produce",
+    "href": "slides/lecture01-intro.html#problem-2-how-to-produce",
+    "title": "Economics Fundamentals",
+    "section": "Problem 2: HOW to Produce?",
+    "text": "Problem 2: HOW to Produce?\n\nDifferent Production Methods: Hotel Check-in\n\n\nTraditional Method\n\nHuman receptionists\nPaper forms\nPhone bookings\nHigh labor cost\nFlexible service\nPersonal touch\n\nCost per check-in: ~€8-12\n\nAutomated Method\n\nSelf-service kiosks\nOnline booking\nMobile check-in\nHigh capital cost\n24/7 availability\nLimited flexibility\n\nCost per check-in: ~€2-4\n\nDecision factors: Initial investment, labor costs, customer preferences, technology reliability"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#how-production-cost-comparison",
+    "href": "slides/lecture01-intro.html#how-production-cost-comparison",
+    "title": "Economics Fundamentals",
+    "section": "HOW: Production Cost Comparison",
+    "text": "HOW: Production Cost Comparison\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Cost comparison over time\nyears &lt;- 1:5\ntraditional_cost &lt;- 10 * 10000 * years  # €10 per check-in, 10k check-ins/year\nautomated_cost &lt;- 200000 + (3 * 10000 * years)  # €200k initial + €3 per check-in\n\ncost_data &lt;- data.frame(\n  year = rep(years, 2),\n  cost = c(traditional_cost, automated_cost) / 1000,  # Convert to thousands\n  method = rep(c(\"Traditional\", \"Automated\"), each = 5)\n)\n\nggplot(cost_data, aes(x = year, y = cost, color = method, group = method)) +\n  geom_line(size = 1.5) +\n  geom_point(size = 3) +\n  labs(title = \"Cumulative Cost: Traditional vs. Automated Check-in\",\n       subtitle = \"HOW to produce: Technology choice affects long-term costs\",\n       x = \"Years of Operation\",\n       y = \"Cumulative Cost (€ thousands)\",\n       color = \"Method\") +\n  theme_minimal(base_size = 14) +\n  scale_color_manual(values = c(\"Traditional\" = \"#e74c3c\", \n                                 \"Automated\" = \"#3498db\")) +\n  theme(legend.position = \"bottom\") +\n  geom_vline(xintercept = 2.86, linetype = \"dashed\", alpha = 0.5) +\n  annotate(\"text\", x = 3.2, y = 200, \n           label = \"Break-even point\", angle = 90, size = 4)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#problem-3-for-whom",
+    "href": "slides/lecture01-intro.html#problem-3-for-whom",
+    "title": "Economics Fundamentals",
+    "section": "Problem 3: FOR WHOM?",
+    "text": "Problem 3: FOR WHOM?\nIncome Distribution & Tourism Access\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Tourism spending by income quintile\nincome_tourism &lt;- data.frame(\n  quintile = c(\"Lowest 20%\", \"Second 20%\", \"Third 20%\", \"Fourth 20%\", \"Highest 20%\"),\n  avg_vacation_spending = c(450, 950, 1650, 2800, 5200),\n  trips_per_year = c(0.3, 0.8, 1.4, 2.1, 3.5)\n)\n\nincome_tourism$quintile &lt;- factor(income_tourism$quintile,\n                                   levels = income_tourism$quintile)\n\nggplot(income_tourism, aes(x = quintile, y = avg_vacation_spending, fill = quintile)) +\n  geom_bar(stat = \"identity\") +\n  labs(title = \"Average Annual Vacation Spending by Income Group (EU 2024)\",\n       subtitle = \"FOR WHOM: Income distribution determines who consumes tourism\",\n       x = \"Income Quintile\",\n       y = \"Average Spending (€)\") +\n  theme_minimal(base_size = 14) +\n  scale_fill_brewer(palette = \"RdYlGn\", direction = 1) +\n  theme(legend.position = \"none\",\n        axis.text.x = element_text(angle = 25, hjust = 1)) +\n  geom_text(aes(label = paste0(\"€\", avg_vacation_spending)), \n            vjust = -0.5, size = 4)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#economic-systems-overview",
+    "href": "slides/lecture01-intro.html#economic-systems-overview",
+    "title": "Economics Fundamentals",
+    "section": "Economic Systems: Overview",
+    "text": "Economic Systems: Overview\n\nThree fundamental ways to organize an economy:\n\nMarket Economy (Laissez-faire)\n\nDecisions by individuals and firms\nPrices and markets coordinate\n\nCentrally Planned Economy\n\nGovernment makes decisions\nCentral authority coordinates\n\nMixed Economy (Most common today)\n\nCombination of market and government\nBalance varies by country"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#market-economy",
+    "href": "slides/lecture01-intro.html#market-economy",
+    "title": "Economics Fundamentals",
+    "section": "Market Economy",
+    "text": "Market Economy\nDefinition: Individuals and companies make key production and consumption decisions through markets\nKey Features:\n\nPrivate ownership of resources\nPrice mechanism coordinates decisions\nProfit motive drives production\nCompetition among firms\nConsumer sovereignty (monetary votes)\n\nTourism Example: Hotel chains decide what to build, where, and at what price based on profit expectations"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#how-markets-work-example",
+    "href": "slides/lecture01-intro.html#how-markets-work-example",
+    "title": "Economics Fundamentals",
+    "section": "How Markets Work: Example",
+    "text": "How Markets Work: Example\nAirbnb in Lisbon (Market Mechanism)\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Supply and demand for Airbnb rentals\nlibrary(tidyr)\n\n# Price points\nprices &lt;- seq(20, 120, by = 10)\n\n# Demand: higher price -&gt; lower quantity\nquantity_demanded &lt;- 5000 - 30 * prices\n\n# Supply: higher price -&gt; higher quantity  \nquantity_supplied &lt;- -1000 + 40 * prices\n\nmarket_data &lt;- data.frame(\n  price = rep(prices, 2),\n  quantity = c(quantity_demanded, quantity_supplied),\n  curve = rep(c(\"Demand\", \"Supply\"), each = length(prices))\n)\n\nggplot(market_data, aes(x = quantity, y = price, color = curve)) +\n  geom_line(size = 1.5) +\n  geom_point(size = 3) +\n  labs(title = \"Airbnb Market in Lisbon: Supply and Demand\",\n       subtitle = \"Market economy: Prices coordinate decisions\",\n       x = \"Number of Listings\",\n       y = \"Average Price per Night (€)\",\n       color = \"\") +\n  theme_minimal(base_size = 14) +\n  scale_color_manual(values = c(\"Demand\" = \"#e74c3c\", \"Supply\" = \"#27ae60\")) +\n  theme(legend.position = \"bottom\") +\n  geom_vline(xintercept = 2200, linetype = \"dashed\", alpha = 0.3) +\n  geom_hline(yintercept = 86, linetype = \"dashed\", alpha = 0.3) +\n  annotate(\"point\", x = 2200, y = 86, size = 5, color = \"#f39c12\") +\n  annotate(\"text\", x = 2200, y = 95, \n           label = \"Equilibrium\\nP=€86, Q=2,200\", size = 4)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#centrally-planned-economy",
+    "href": "slides/lecture01-intro.html#centrally-planned-economy",
+    "title": "Economics Fundamentals",
+    "section": "Centrally Planned Economy",
+    "text": "Centrally Planned Economy\n\nDefinition: Government makes most production and distribution decisions\nKey Features:\n\nGovernment ownership of resources\nCentral planning replaces markets\nProduction quotas set by authority\nPrice controls by government\nAdministrative allocation of resources\n\nHistorical Example: Soviet tourism industry (state-owned hotels, fixed prices, limited choice)\nModern Examples: Cuba, North Korea (though moving toward mixed systems)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#market-vs.-centralized-tourism-example",
+    "href": "slides/lecture01-intro.html#market-vs.-centralized-tourism-example",
+    "title": "Economics Fundamentals",
+    "section": "Market vs. Centralized: Tourism Example",
+    "text": "Market vs. Centralized: Tourism Example\n\n\n\nMarket System\nHotel Construction Decision:\n✓ Private investor analyzes demand\n✓ Builds if profitable\n✓ Price determined by market\n✓ Competition ensures efficiency\nResult: Hotels where tourists want them\n\nCentralized System\nHotel Construction Decision:\n✓ Government planners decide\n✓ Build according to 5-year plan\n✓ Prices set administratively\n✓ No competition\nResult: May not match demand"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#mixed-economy",
+    "href": "slides/lecture01-intro.html#mixed-economy",
+    "title": "Economics Fundamentals",
+    "section": "Mixed Economy",
+    "text": "Mixed Economy\n\nDefinition: Combination of market mechanisms and government intervention\nCharacteristics:\n\nMarkets direct daily economic activity\nGovernment regulates and provides public goods\nBalance varies by country and ideology\n\nGovernment Roles:\n\nIncrease efficiency (regulate monopolies, address externalities)\nPromote equity (redistribute income, social safety net)\nFoster stability (manage inflation, unemployment, growth)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#mixed-economy-in-tourism",
+    "href": "slides/lecture01-intro.html#mixed-economy-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Mixed Economy in Tourism",
+    "text": "Mixed Economy in Tourism\nPortugal Tourism (Mixed System)\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Government vs private sector roles\nroles_data &lt;- data.frame(\n  sector = rep(c(\"Private Sector\", \"Government\"), each = 5),\n  activity = rep(c(\"Hotels\", \"Restaurants\", \"Transport\", \"Museums\", \"Promotion\"), 2),\n  percentage = c(95, 90, 60, 20, 30,  # Private\n                 5, 10, 40, 80, 70)   # Government\n)\n\nggplot(roles_data, aes(x = activity, y = percentage, fill = sector)) +\n  geom_bar(stat = \"identity\", position = \"stack\") +\n  labs(title = \"Public vs. Private Sector in Portuguese Tourism\",\n       subtitle = \"Mixed economy: Balance between market and government\",\n       x = \"\",\n       y = \"Percentage of Activity\",\n       fill = \"Sector\") +\n  theme_minimal(base_size = 14) +\n  scale_fill_manual(values = c(\"Private Sector\" = \"#3498db\", \n                                \"Government\" = \"#e74c3c\")) +\n  theme(legend.position = \"bottom\") +\n  coord_flip() +\n  geom_text(aes(label = paste0(percentage, \"%\")), \n            position = position_stack(vjust = 0.5), \n            color = \"white\", size = 4, fontface = \"bold\")"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#production-factors",
+    "href": "slides/lecture01-intro.html#production-factors",
+    "title": "Economics Fundamentals",
+    "section": "Production Factors",
+    "text": "Production Factors\n\nTo answer the three questions, economies use factors of production (inputs):\n\n\nLand\nNatural resources\n\nAgricultural land\nEnergy resources\nMinerals\nClean air & water\n\nTourism: Beaches, mountains, climate\n\nLabor\nHuman effort\n\nPhysical work\nMental work\nSkills & education\nTime spent\n\nTourism: Hotel staff, guides, chefs\n\nCapital\nProduced resources\n\nMachinery\nBuildings\nInfrastructure\nTechnology\n\nTourism: Hotels, airports, booking systems"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#production-factors-in-tourism",
+    "href": "slides/lecture01-intro.html#production-factors-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Production Factors in Tourism",
+    "text": "Production Factors in Tourism\nEuropean Tourism Employment (2024)\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Labor factor in tourism\nemployment_data &lt;- data.frame(\n  country = c(\"Spain\", \"France\", \"Italy\", \"Portugal\", \"Greece\"),\n  tourism_jobs_thousands = c(2750, 2100, 1850, 950, 720),\n  percentage_total_employment = c(13.8, 8.2, 7.9, 19.1, 24.3)\n)\n\nemployment_data$country &lt;- factor(employment_data$country,\n                                   levels = employment_data$country)\n\nggplot(employment_data, aes(x = country, y = percentage_total_employment, \n                             fill = country)) +\n  geom_bar(stat = \"identity\") +\n  labs(title = \"Tourism as % of Total Employment (Selected EU Countries)\",\n       subtitle = \"Labor factor: Tourism's importance in national economies\",\n       x = \"\",\n       y = \"Tourism Employment (% of total)\") +\n  theme_minimal(base_size = 14) +\n  scale_fill_brewer(palette = \"Set2\") +\n  theme(legend.position = \"none\") +\n  geom_text(aes(label = paste0(percentage_total_employment, \"%\")), \n            vjust = -0.5, size = 4.5, fontface = \"bold\") +\n  ylim(0, 27)\nSource: WTTC, 2024"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#comparing-economic-systems",
+    "href": "slides/lecture01-intro.html#comparing-economic-systems",
+    "title": "Economics Fundamentals",
+    "section": "Comparing Economic Systems",
+    "text": "Comparing Economic Systems\n\n\n\n\n\n\n\n\n\n\nAspect\nMarket Economy\nCentrally Planned\nMixed Economy\n\n\n\n\nOwnership\nPrivate\nState\nBoth\n\n\nCoordination\nPrices/markets\nCentral plan\nMarkets + regulation\n\n\nIncentives\nProfit\nQuotas/orders\nProfit + public interest\n\n\nInnovation\nHigh\nLow\nMedium-High\n\n\nEfficiency\nGenerally high\nOften low\nVariable\n\n\nEquity\nLow (unequal)\nHigh (equal poverty)\nMedium\n\n\nExamples\n(Pure: rare)\nCuba, N. Korea\nUSA, EU, Portugal"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#real-world-example-tourism-recovery",
+    "href": "slides/lecture01-intro.html#real-world-example-tourism-recovery",
+    "title": "Economics Fundamentals",
+    "section": "Real-World Example: Tourism Recovery",
+    "text": "Real-World Example: Tourism Recovery\n\nDifferent Systems, Different COVID-19 Responses\n\n\nMarket-Led (Portugal)\n\nPrivate hotels closed voluntarily\nGovernment support (furlough)\nMarket-driven reopening\nRapid innovation (safety protocols)\nFast recovery: 31.6M visitors (2024)\n\n\nCentrally-Planned (Cuba)\n\nState-owned hotels closed by decree\nNo market signals\nPolitical decision to reopen\nLimited innovation\nSlower recovery: ~50% of 2019 levels"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#summary-key-concepts-1",
+    "href": "slides/lecture01-intro.html#summary-key-concepts-1",
+    "title": "Economics Fundamentals",
+    "section": "Summary: Key Concepts",
+    "text": "Summary: Key Concepts\n\nThree economic problems: WHAT, HOW, FOR WHOM\nMarket economy: Decisions by individuals/firms via prices\nCentrally planned: Government makes decisions\nMixed economy: Combination (most common today)\nProduction factors: Land, Labor, Capital\nEach system has trade-offs (efficiency vs. equity)\nPortugal tourism: Mixed system (mostly private, some government)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercises-1",
+    "href": "slides/lecture01-intro.html#exercises-1",
+    "title": "Economics Fundamentals",
+    "section": "Exercises",
+    "text": "Exercises\nPractice Time!\nLet’s apply what we’ve learned."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-1-multiple-choice-1",
+    "href": "slides/lecture01-intro.html#exercise-1-multiple-choice-1",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\nQuestion: In a market economy, the question “FOR WHOM are goods produced?” is primarily answered by:\nA. Government planners deciding who gets what\nB. Equal distribution to all citizens\nC. Willingness and ability to pay D. First-come, first-served basis\n\nAnswer: C\nExplanation: In market economies, goods go to those who are willing to pay more for them, which answers “for whom.”"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-2-multiple-choice-1",
+    "href": "slides/lecture01-intro.html#exercise-2-multiple-choice-1",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\nQuestion: Which of the following is an example of the capital factor of production in tourism?\nA. A tour guide’s knowledge and skills\nB. The beach at Algarve\nC. A hotel building in Lisbon\nD. The manager’s decision-making ability\n\nAnswer: C\nExplanation: Capital consists of produced goods used to make other goods/services. The hotel building is capital. A is labor, B is land, D is labor/entrepreneurship."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-open-question-1",
+    "href": "slides/lecture01-intro.html#exercise-3-open-question-1",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question",
+    "text": "Exercise 3: Open Question\n\nScenario: The Portuguese government is considering two policies for tourism development:\n\nPolicy A: Let private investors freely build hotels wherever they want (market approach)\nPolicy B: Government decides where hotels should be built and provides subsidies (planned approach)\n\nQuestions:\n\nIdentify which economic system each policy represents\n\nList 2 advantages and 2 disadvantages of each policy\n\nCalculate: If a private hotel costs €5M to build and generates €800k annual profit, what’s the payback period?\n\nRecommend which policy Portugal should adopt (justify with economic reasoning)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-solution-part-1",
+    "href": "slides/lecture01-intro.html#exercise-3-solution-part-1",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (Part 1)",
+    "text": "Exercise 3: Solution (Part 1)\n\na) Economic systems:\n\nPolicy A: Market economy approach (laissez-faire)\nPolicy B: Centrally planned economy approach\n\nb) Advantages and Disadvantages:\n\n\n\n\n\n\n\nPolicy A (Market)\nPolicy B (Planned)\n\n\n\n\n✓ Efficient allocation (demand-driven)\n✓ Can correct market failures\n\n\n✓ Innovation & competition\n✓ Ensures regional development\n\n\n✗ May ignore externalities\n✗ Information problems\n\n\n✗ Unequal regional development\n✗ Bureaucratic inefficiency"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-solution-part-2",
+    "href": "slides/lecture01-intro.html#exercise-3-solution-part-2",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (Part 2)",
+    "text": "Exercise 3: Solution (Part 2)\n\nc) Payback period calculation:\n\\[\\text{Payback Period} = \\frac{\\text{Initial Investment}}{\\text{Annual Profit}} = \\frac{€5,000,000}{€800,000} = 6.25 \\text{ years}\\]\nd) Recommendation: Mixed approach (combination)\nReasoning:\n\nUse market mechanism (Policy A) as primary driver\n\nPrivate sector is more efficient at identifying demand\nCompetition drives innovation and service quality\n\nAdd selective government intervention (Policy B elements)\n\nRegional development incentives (e.g., tax breaks for interior regions)\nEnvironmental regulations to prevent over-tourism\nInfrastructure investment in under-served areas\n\n\nThis is what Portugal actually does – mostly private sector with strategic government support!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#next-lecture-1",
+    "href": "slides/lecture01-intro.html#next-lecture-1",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nLecture 3 (February 12, 2026):\n\nRationality and Economic Behavior\nChoices and Decision-Making\nOpportunity Cost (crucial concept!)\n\nPreparation: Think about a recent choice you made. What did you give up to make that choice?"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#thank-you-1",
+    "href": "slides/lecture01-intro.html#thank-you-1",
+    "title": "Economics Fundamentals",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions?\nContact: paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#recap-previous-lectures",
+    "href": "slides/lecture01-intro.html#recap-previous-lectures",
+    "title": "Economics Fundamentals",
+    "section": "Recap: Previous Lectures",
+    "text": "Recap: Previous Lectures\nLecture 1: Economics, Scarcity, Efficiency, Macro vs. Micro\nLecture 2: Three economic problems (WHAT, HOW, FOR WHOM) and economic systems (Market, Planned, Mixed)\nToday’s Focus:\n\nHow do people make economic decisions?\nWhat is rationality?\nOpportunity cost – one of economics’ most powerful concepts!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#economic-rationality",
+    "href": "slides/lecture01-intro.html#economic-rationality",
+    "title": "Economics Fundamentals",
+    "section": "Economic Rationality",
+    "text": "Economic Rationality\nAssumption: People are rational decision-makers\nWhat does “rational” mean in economics?\n\nPeople have clear preferences\nThey seek to maximize their well-being (utility)\nThey respond predictably to incentives\nThey use cost-benefit analysis\n\nImportant: Rational ≠ Perfect or emotionless!\nPeople can be rational within their information and cognitive limits (bounded rationality)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#cost-benefit-principle",
+    "href": "slides/lecture01-intro.html#cost-benefit-principle",
+    "title": "Economics Fundamentals",
+    "section": "Cost-Benefit Principle",
+    "text": "Cost-Benefit Principle\nThe Foundation of Rational Choice:\n\nAn action should be undertaken if and only if the benefits exceed the costs.\n\n\\[\\text{Decision Rule: } \\begin{cases}\n\\text{Do it} & \\text{if } Benefits \\geq Costs \\\\\n\\text{Don't do it} & \\text{if } Benefits &lt; Costs\n\\end{cases}\\]\nIn practice:\n\nBenefits = What you gain\nCosts = What you give up\nCompare net benefit of alternatives"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#tourism-example-cost-benefit",
+    "href": "slides/lecture01-intro.html#tourism-example-cost-benefit",
+    "title": "Economics Fundamentals",
+    "section": "Tourism Example: Cost-Benefit",
+    "text": "Tourism Example: Cost-Benefit\nShould a tourist visit the Belém Tower in Lisbon?\n\n\nBenefits\n\nHistorical experience\nPhotos/memories\nEducational value\nSatisfaction\n\nEstimated value: €20\n\nCosts\n\nEntry ticket: €6\nTravel time: 30 min\nWaiting time: 20 min\nValue of time: €15/hr\n\nTotal time cost: €12.50 Total cost: €18.50\n\nDecision: Benefits (€20) &gt; Costs (€18.50) → Visit!\nBut if waiting time increases to 60 min, costs rise to €23.50 → Don’t visit!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#marginal-analysis",
+    "href": "slides/lecture01-intro.html#marginal-analysis",
+    "title": "Economics Fundamentals",
+    "section": "Marginal Analysis",
+    "text": "Marginal Analysis\nKey Concept: Decisions are made at the margin\nMarginal = Additional/incremental change from one more unit\n\nMarginal Benefit (MB): Benefit from one additional unit\nMarginal Cost (MC): Cost of one additional unit\n\nOptimal Decision Rule:\n\\[\\text{Continue activity while } MB \\geq MC\\]\nStop when \\(MB &lt; MC\\)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#marginal-analysis-hotel-rooms",
+    "href": "slides/lecture01-intro.html#marginal-analysis-hotel-rooms",
+    "title": "Economics Fundamentals",
+    "section": "Marginal Analysis: Hotel Rooms",
+    "text": "Marginal Analysis: Hotel Rooms\nShould a hotel accept one more booking?\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\nlibrary(ggplot2)\n\n# Marginal cost and price for hotel rooms\nrooms &lt;- seq(50, 200, by = 10)\n\n# Marginal cost increases with occupancy (more cleaning, energy, wear)\nmarginal_cost &lt;- 30 + 0.3 * rooms\n\n# Market price (what customers pay)\nmarket_price &lt;- rep(80, length(rooms))\n\ncost_data &lt;- data.frame(\n  rooms = rep(rooms, 2),\n  value = c(marginal_cost, market_price),\n  type = rep(c(\"Marginal Cost\", \"Market Price\"), each = length(rooms))\n)\n\nggplot(cost_data, aes(x = rooms, y = value, color = type, linetype = type)) +\n  geom_line(size = 1.5) +\n  labs(title = \"Hotel Room Pricing: Marginal Analysis\",\n       subtitle = \"Accept bookings while Price &gt; Marginal Cost\",\n       x = \"Number of Rooms Booked\",\n       y = \"Price/Cost (€)\",\n       color = \"\",\n       linetype = \"\") +\n  theme_minimal(base_size = 14) +\n  scale_color_manual(values = c(\"Marginal Cost\" = \"#e74c3c\", \n                                 \"Market Price\" = \"#27ae60\")) +\n  theme(legend.position = \"bottom\") +\n  geom_vline(xintercept = 167, linetype = \"dashed\", alpha = 0.5) +\n  annotate(\"text\", x = 167, y = 90, \n           label = \"Optimal: ~167 rooms\\n(P = MC)\", size = 4) +\n  annotate(\"rect\", xmin = 50, xmax = 167, ymin = 0, ymax = 120, \n           alpha = 0.1, fill = \"green\") +\n  annotate(\"text\", x = 100, y = 110, label = \"Accept\\n(P &gt; MC)\", size = 4) +\n  annotate(\"rect\", xmin = 167, xmax = 200, ymin = 0, ymax = 120, \n           alpha = 0.1, fill = \"red\") +\n  annotate(\"text\", x = 185, y = 110, label = \"Reject\\n(P &lt; MC)\", size = 4)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#opportunity-cost-definition",
+    "href": "slides/lecture01-intro.html#opportunity-cost-definition",
+    "title": "Economics Fundamentals",
+    "section": "Opportunity Cost: Definition",
+    "text": "Opportunity Cost: Definition\nThe Most Important Concept in Economics!\n\nOpportunity Cost = The value of the best alternative foregone when making a choice\n\nKey Points:\n\nIt’s what you give up, not what you pay\nIt’s the next-best alternative (not all alternatives)\nIt includes both explicit (money) and implicit costs (time, foregone opportunities)\n\nIn decisions: You should choose option A over B if:\n\\[\\text{Benefit of A} - \\text{Opportunity Cost of A} &gt; \\text{Benefit of B} - \\text{Opportunity Cost of B}\\]"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#opportunity-cost-examples",
+    "href": "slides/lecture01-intro.html#opportunity-cost-examples",
+    "title": "Economics Fundamentals",
+    "section": "Opportunity Cost Examples",
+    "text": "Opportunity Cost Examples\nSimple Example: You have €100 and 4 hours free on Saturday afternoon.\nOptions:\nA. Visit museum (€10 entry, 3 hours)\nB. Beach trip (€0 entry, 4 hours)\nC. Movie (€12 ticket, 2 hours)\nD. Stay home and study (€0, 4 hours)\nIf you choose A (museum):\n\nExplicit cost: €10\nOpportunity cost: Value of best alternative foregone\n\nCan’t go to beach (assume you value it at €20)\nTotal opportunity cost: €10 paid + €20 value foregone = €30"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#opportunity-cost-in-tourism-decisions",
+    "href": "slides/lecture01-intro.html#opportunity-cost-in-tourism-decisions",
+    "title": "Economics Fundamentals",
+    "section": "Opportunity Cost in Tourism Decisions",
+    "text": "Opportunity Cost in Tourism Decisions\nExample: Hotel Investment\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Investment alternatives\ninvestment_options &lt;- data.frame(\n  option = c(\"Build Hotel\\nin Lisbon\", \"Build Hotel\\nin Algarve\", \"Invest in\\nStock Market\", \"Government\\nBonds\"),\n  initial_investment = c(5000, 4500, 5000, 5000),\n  expected_annual_return = c(450, 520, 400, 175),\n  return_percentage = c(9.0, 11.6, 8.0, 3.5)\n)\n\ninvestment_options$option &lt;- factor(investment_options$option,\n                                     levels = investment_options$option)\n\nggplot(investment_options, aes(x = option, y = return_percentage, fill = option)) +\n  geom_bar(stat = \"identity\") +\n  labs(title = \"Investment Alternatives: Expected Returns\",\n       subtitle = \"Opportunity cost of choosing hotel = foregone return from best alternative\",\n       x = \"\",\n       y = \"Expected Annual Return (%)\") +\n  theme_minimal(base_size = 14) +\n  scale_fill_brewer(palette = \"Set3\") +\n  theme(legend.position = \"none\",\n        axis.text.x = element_text(size = 12)) +\n  geom_text(aes(label = paste0(return_percentage, \"%\\n(€\", \n                                expected_annual_return, \"k/yr)\")), \n            vjust = -0.3, size = 3.5) +\n  ylim(0, 14)\nIf you build hotel in Lisbon: Opportunity cost = foregone €520k from Algarve (best alternative)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#sunk-costs-vs.-opportunity-costs",
+    "href": "slides/lecture01-intro.html#sunk-costs-vs.-opportunity-costs",
+    "title": "Economics Fundamentals",
+    "section": "Sunk Costs vs. Opportunity Costs",
+    "text": "Sunk Costs vs. Opportunity Costs\nSunk Cost: Cost already incurred that cannot be recovered\nCritical Rule: Ignore sunk costs in decisions!\nThey’re already spent – only future costs and benefits matter."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#real-example-sunk-costs-in-airlines",
+    "href": "slides/lecture01-intro.html#real-example-sunk-costs-in-airlines",
+    "title": "Economics Fundamentals",
+    "section": "Real Example: Sunk Costs in Airlines",
+    "text": "Real Example: Sunk Costs in Airlines\nCase: TAP Air Portugal orders new aircraft (2024)\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Hypothetical airline decision timeline\ntimeline_data &lt;- data.frame(\n  stage = c(\"Order Placed\\n(2022)\", \"Deposit Paid\\n(2023)\", \"Delivery Due\\n(2025)\", \"Decision Point\\n(2024)\"),\n  cost_incurred = c(0, 150, 0, 0),\n  cumulative_cost = c(0, 150, 150, 150),\n  future_payment = c(1500, 1350, 1350, 1350)\n)\n\ntimeline_data$stage &lt;- factor(timeline_data$stage, levels = timeline_data$stage)\ntimeline_data$stage_num &lt;- 1:4\n\nggplot(timeline_data, aes(x = stage_num, y = cumulative_cost)) +\n  geom_line(size = 1.5, color = \"#e74c3c\") +\n  geom_point(size = 4, color = \"#e74c3c\") +\n  geom_line(aes(y = future_payment), size = 1.5, color = \"#3498db\", linetype = \"dashed\") +\n  geom_point(aes(y = future_payment), size = 4, color = \"#3498db\") +\n  labs(title = \"Aircraft Purchase Decision: Sunk Cost Problem\",\n       subtitle = \"At Decision Point: €150M is SUNK (ignore it). Focus on future €1,350M payment.\",\n       x = \"\",\n       y = \"Amount (€ millions)\") +\n  scale_x_continuous(breaks = 1:4, labels = timeline_data$stage) +\n  theme_minimal(base_size = 14) +\n  annotate(\"text\", x = 2, y = 200, label = \"Sunk Cost\\n(€150M paid)\", \n           color = \"#e74c3c\", size = 4, fontface = \"bold\") +\n  annotate(\"text\", x = 4, y = 1400, label = \"Future Payment\\n(€1,350M)\", \n           color = \"#3498db\", size = 4, fontface = \"bold\") +\n  geom_rect(aes(xmin = 3.7, xmax = 4.3, ymin = 0, ymax = 1600), \n            alpha = 0.01, fill = \"yellow\", color = \"orange\", size = 1.5)\nCorrect Decision Process: Compare future benefits (passenger revenue, efficiency) vs. future costs (€1,350M), ignoring the sunk €150M."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#opportunity-cost-in-time-allocation",
+    "href": "slides/lecture01-intro.html#opportunity-cost-in-time-allocation",
+    "title": "Economics Fundamentals",
+    "section": "Opportunity Cost in Time Allocation",
+    "text": "Opportunity Cost in Time Allocation\nVery Important: Your time has opportunity cost!\nExample: Restaurant owner deciding whether to hire manager or self-manage\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Time allocation decision\ntime_decision &lt;- data.frame(\n  scenario = c(\"Self-Manage\", \"Hire Manager\"),\n  restaurant_profit = c(120000, 110000),\n  manager_salary = c(0, -45000),\n  owner_consulting = c(0, 65000),\n  net_income = c(120000, 130000)\n)\n\ntime_decision$scenario &lt;- factor(time_decision$scenario, \n                                  levels = time_decision$scenario)\n\n# Reshape for stacked bar\nlibrary(tidyr)\ntime_long &lt;- time_decision %&gt;%\n  pivot_longer(cols = c(restaurant_profit, manager_salary, owner_consulting),\n               names_to = \"component\", values_to = \"value\")\n\ntime_long$component &lt;- factor(time_long$component,\n                               levels = c(\"restaurant_profit\", \"owner_consulting\", \"manager_salary\"),\n                               labels = c(\"Restaurant Profit\", \"Owner Consulting Income\", \"Manager Salary\"))\n\nggplot(time_long, aes(x = scenario, y = value, fill = component)) +\n  geom_bar(stat = \"identity\", position = \"stack\") +\n  labs(title = \"Restaurant Owner's Time Allocation Decision\",\n       subtitle = \"Opportunity cost of self-managing = foregone consulting income (€65k)\",\n       x = \"\",\n       y = \"Annual Amount (€)\",\n       fill = \"\") +\n  theme_minimal(base_size = 14) +\n  scale_fill_manual(values = c(\"Restaurant Profit\" = \"#27ae60\", \n                                \"Owner Consulting Income\" = \"#3498db\",\n                                \"Manager Salary\" = \"#e74c3c\")) +\n  theme(legend.position = \"bottom\") +\n  geom_hline(yintercept = 0, color = \"black\") +\n  geom_text(data = time_decision, \n            aes(x = scenario, y = net_income + 5000, \n                label = paste0(\"Net: €\", format(net_income, big.mark = \",\"))),\n            size = 5, fontface = \"bold\")\nAnalysis: Hiring manager is better (€130k &gt; €120k) because owner’s time has opportunity cost!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#production-possibilities-frontier-preview",
+    "href": "slides/lecture01-intro.html#production-possibilities-frontier-preview",
+    "title": "Economics Fundamentals",
+    "section": "Production Possibilities Frontier (Preview)",
+    "text": "Production Possibilities Frontier (Preview)\nVisual representation of opportunity cost at societal level\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Simple PPF for tourism economy\n# Two goods: Beach tourism vs. Cultural tourism (museum capacity)\n\nbeach &lt;- seq(0, 100, by = 5)\ncultural &lt;- 100 * (1 - (beach/100)^0.5)\n\nppf_data &lt;- data.frame(beach, cultural)\n\n# Example points\npoints &lt;- data.frame(\n  beach = c(30, 64, 80),\n  cultural = c(82.3, 60, 44.7),\n  label = c(\"A\", \"B\", \"C\")\n)\n\nggplot(ppf_data, aes(x = beach, y = cultural)) +\n  geom_line(size = 1.5, color = \"#3498db\") +\n  geom_ribbon(aes(ymin = 0, ymax = cultural), alpha = 0.2, fill = \"#3498db\") +\n  geom_point(data = points, aes(x = beach, y = cultural), size = 5, color = \"#e74c3c\") +\n  geom_text(data = points, aes(x = beach, y = cultural, label = label), \n            vjust = -1, size = 6, fontface = \"bold\") +\n  labs(title = \"Tourism Development: Opportunity Cost Visualization\",\n       subtitle = \"Moving from A to B: Opportunity cost = 22.3 units of cultural tourism foregone\",\n       x = \"Beach Tourism Capacity (units)\",\n       y = \"Cultural Tourism Capacity (units)\") +\n  theme_minimal(base_size = 14) +\n  annotate(\"segment\", x = 30, xend = 64, y = 82.3, yend = 82.3,\n           arrow = arrow(length = unit(0.3, \"cm\")), size = 1, color = \"#e67e22\") +\n  annotate(\"text\", x = 47, y = 85, label = \"+34 beach units\", size = 4, color = \"#e67e22\") +\n  annotate(\"segment\", x = 64, xend = 64, y = 82.3, yend = 60,\n           arrow = arrow(length = unit(0.3, \"cm\")), size = 1, color = \"#e67e22\") +\n  annotate(\"text\", x = 70, y = 71, label = \"-22.3 cultural units\\n(Opportunity Cost)\", \n           size = 4, color = \"#e67e22\", fontface = \"bold\")\nNext lecture: We’ll explore PPF in detail!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#trade-offs-in-tourism-real-data",
+    "href": "slides/lecture01-intro.html#trade-offs-in-tourism-real-data",
+    "title": "Economics Fundamentals",
+    "section": "Trade-offs in Tourism: Real Data",
+    "text": "Trade-offs in Tourism: Real Data\nPortugal 2024: Investment Trade-offs\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Government tourism investment allocation\nallocation_data &lt;- data.frame(\n  category = c(\"Mass Tourism\\nInfrastructure\", \"Cultural Heritage\\nPreservation\", \"Sustainable Tourism\\nInitiatives\", \"Digital\\nInnovation\"),\n  budget_2024 = c(180, 95, 75, 50),\n  budget_2025_proposed = c(160, 110, 95, 65)\n)\n\nallocation_data$category &lt;- factor(allocation_data$category,\n                                     levels = allocation_data$category)\n\nlibrary(tidyr)\nallocation_long &lt;- allocation_data %&gt;%\n  pivot_longer(cols = starts_with(\"budget\"),\n               names_to = \"year\",\n               values_to = \"amount\") %&gt;%\n  mutate(year = ifelse(year == \"budget_2024\", \"2024 (Actual)\", \"2025 (Proposed)\"))\n\nggplot(allocation_long, aes(x = category, y = amount, fill = year)) +\n  geom_bar(stat = \"identity\", position = \"dodge\") +\n  labs(title = \"Tourism Investment Allocation: Portugal Government\",\n       subtitle = \"Trade-offs: More cultural preservation = Less mass tourism infrastructure\",\n       x = \"\",\n       y = \"Budget (€ millions)\",\n       fill = \"\") +\n  theme_minimal(base_size = 14) +\n  scale_fill_manual(values = c(\"2024 (Actual)\" = \"#95a5a6\", \n                                \"2025 (Proposed)\" = \"#27ae60\")) +\n  theme(legend.position = \"bottom\",\n        axis.text.x = element_text(size = 11)) +\n  geom_text(aes(label = paste0(\"€\", amount, \"M\")), \n            position = position_dodge(width = 0.9), \n            vjust = -0.5, size = 3.5)\nOpportunity cost of increasing cultural preservation by €15M = €20M less for mass tourism infrastructure"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#making-better-decisions",
+    "href": "slides/lecture01-intro.html#making-better-decisions",
+    "title": "Economics Fundamentals",
+    "section": "Making Better Decisions",
+    "text": "Making Better Decisions\nChecklist for Rational Economic Decisions:\n\n✓ Identify all alternatives\n✓ Estimate benefits of each alternative\n✓ Estimate costs (including opportunity costs!)\n✓ Ignore sunk costs (they’re irrelevant)\n✓ Consider marginal changes (not just totals)\n✓ Choose alternative with highest net benefit\n\nRemember: Good decisions maximize net benefit (Benefits - Opportunity Costs)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#common-decision-mistakes",
+    "href": "slides/lecture01-intro.html#common-decision-mistakes",
+    "title": "Economics Fundamentals",
+    "section": "Common Decision Mistakes",
+    "text": "Common Decision Mistakes\nMistake 1: Ignoring opportunity costs\n\nThinking only about money paid, not value of alternatives foregone\n\nMistake 2: Counting sunk costs\n\n“I’ve already invested so much, I must continue”\n\nMistake 3: Ignoring marginal analysis\n\nLooking at totals instead of additional benefits/costs\n\nMistake 4: Not comparing net benefits\n\nChoosing option with highest benefit (but also highest cost)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#real-business-case-ryanair-strategy",
+    "href": "slides/lecture01-intro.html#real-business-case-ryanair-strategy",
+    "title": "Economics Fundamentals",
+    "section": "Real Business Case: Ryanair Strategy",
+    "text": "Real Business Case: Ryanair Strategy\nRyanair’s Opportunity Cost Thinking (2024)\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Ryanair route profitability\nroute_data &lt;- data.frame(\n  route = c(\"Lisbon-London\", \"Lisbon-Paris\", \"Lisbon-Milan\", \"Lisbon-Dublin\", \"Lisbon-Brussels\"),\n  revenue_per_flight = c(12500, 11200, 10800, 9500, 8900),\n  cost_per_flight = c(7500, 7200, 7000, 7100, 7300),\n  profit_per_flight = c(5000, 4000, 3800, 2400, 1600),\n  frequency_per_week = c(14, 12, 10, 7, 5)\n)\n\nroute_data$route &lt;- factor(route_data$route,\n                            levels = route_data$route[order(route_data$profit_per_flight, \n                                                             decreasing = TRUE)])\n\nggplot(route_data, aes(x = route, y = profit_per_flight, fill = route)) +\n  geom_bar(stat = \"identity\") +\n  labs(title = \"Ryanair Route Profitability Analysis (Hypothetical)\",\n       subtitle = \"Opportunity cost: Each flight to Brussels = foregone €3,400 from London route\",\n       x = \"\",\n       y = \"Profit per Flight (€)\") +\n  theme_minimal(base_size = 14) +\n  scale_fill_brewer(palette = \"RdYlGn\", direction = 1) +\n  theme(legend.position = \"none\",\n        axis.text.x = element_text(angle = 20, hjust = 1)) +\n  geom_text(aes(label = paste0(\"€\", format(profit_per_flight, big.mark = \",\"))), \n            vjust = -0.5, size = 4) +\n  geom_segment(aes(x = 1, xend = 5, y = 5000, yend = 5000), \n               linetype = \"dashed\", color = \"#e74c3c\", size = 1) +\n  annotate(\"text\", x = 3, y = 5300, \n           label = \"Best alternative profit\", color = \"#e74c3c\", size = 4)\nDecision: Cancel Brussels route, add London frequency → Better use of aircraft (opportunity cost logic)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#summary-key-concepts-2",
+    "href": "slides/lecture01-intro.html#summary-key-concepts-2",
+    "title": "Economics Fundamentals",
+    "section": "Summary: Key Concepts",
+    "text": "Summary: Key Concepts\n\nRationality: People seek to maximize well-being through cost-benefit analysis\nCost-Benefit Principle: Do it if benefits ≥ costs\nMarginal Analysis: Decisions at the margin (additional units)\nOpportunity Cost: Value of best alternative foregone\nSunk Costs: Ignore them! (already spent, irrelevant)\nTrade-offs: Choosing one thing means giving up another\nGood Decisions: Maximize net benefit considering opportunity costs"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercises-2",
+    "href": "slides/lecture01-intro.html#exercises-2",
+    "title": "Economics Fundamentals",
+    "section": "Exercises",
+    "text": "Exercises\nPractice Time!\nReal-world applications of opportunity cost."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-1-multiple-choice-2",
+    "href": "slides/lecture01-intro.html#exercise-1-multiple-choice-2",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\nQuestion: A hotel owner can use her restaurant space for:\n\nOption A: Fine dining (€80k annual profit)\nOption B: Buffet restaurant (€60k annual profit)\n\nOption C: Rent to external operator (€50k annual rent)\n\nShe chooses Option A. What is the opportunity cost of this decision?\nA. €80,000\nB. €60,000\nC. €50,000\nD. €110,000\n\nAnswer: B (€60,000)\nExplanation: Opportunity cost = value of best alternative foregone. The next-best alternative to fine dining (€80k) is buffet (€60k), NOT the sum of all alternatives."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-2-multiple-choice-2",
+    "href": "slides/lecture01-intro.html#exercise-2-multiple-choice-2",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\nQuestion: You bought a non-refundable €200 ticket to a concert. On the day of the concert, you feel ill. A friend offers you €50 for the ticket (transferable). What is the opportunity cost of attending the concert?\nA. €200\nB. €150\nC. €50 + discomfort from illness\nD. €250\n\nAnswer: C (€50 + discomfort)\nExplanation:\n\n€200 is SUNK (can’t recover even if you don’t go)\nIf you attend: you give up €50 (could sell) + endure discomfort\nOpportunity cost = what you give up by attending"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-open-question-2",
+    "href": "slides/lecture01-intro.html#exercise-3-open-question-2",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question",
+    "text": "Exercise 3: Open Question\nScenario: A tour operator in Porto must decide between two summer season strategies:\nStrategy A: Focus on luxury tours\n\nExpected revenue: €500,000\nVariable costs: €280,000\nFixed costs already committed: €80,000\n\nStrategy B: Focus on budget tours\n\nExpected revenue: €420,000\nVariable costs: €200,000\nSame fixed costs: €80,000\n\nQuestions:\n\nCalculate profit for each strategy\n\nWhat is the opportunity cost of choosing Strategy A?\n\nWhich strategy should be chosen and why?\n\nAre fixed costs relevant to the decision? Explain."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-solution-1",
+    "href": "slides/lecture01-intro.html#exercise-3-solution-1",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution",
+    "text": "Exercise 3: Solution\na) Profit calculation:\nStrategy A (Luxury): \\[\\text{Profit}_A = €500,000 - €280,000 - €80,000 = €140,000\\]\nStrategy B (Budget): \\[\\text{Profit}_B = €420,000 - €200,000 - €80,000 = €140,000\\]\nBoth strategies have equal profit!\nb) Opportunity cost of Strategy A:\nOpportunity cost = Profit from best alternative foregone = €140,000 (Strategy B profit)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-solution-continued",
+    "href": "slides/lecture01-intro.html#exercise-3-solution-continued",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (continued)",
+    "text": "Exercise 3: Solution (continued)\nc) Which strategy to choose?\nFrom pure profit perspective: Indifferent (both €140,000)\nBut consider other factors:\n\nRisk: Luxury tours may have more variable demand\nReputation: Does company have luxury experience?\nMarket trends: Which segment is growing?\nResource requirements: Which uses existing capabilities better?\n\nRecommendation: Choose Strategy B (budget) because:\n\nLower variable costs (€200k vs €280k) = less risk\nHigher revenue-to-variable-cost ratio: 2.1 vs. 1.79\nMore resilient to demand fluctuations\n\nd) Are fixed costs relevant?\nNO! Fixed costs (€80,000) are SUNK – already committed regardless of strategy choice.\nOnly variable costs matter for this decision (they differ between strategies).\nThis is key example of ignoring sunk costs in decision-making!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#next-lecture-2",
+    "href": "slides/lecture01-intro.html#next-lecture-2",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nLecture 4 (February 13, 2026):\n\nProduction Factors (detailed)\nProduction Possibilities Frontier (PPF)\nEfficiency, Trade-offs, and Economic Growth\n\nPreparation: Review today’s opportunity cost concept – it’s the foundation for understanding PPF!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#thank-you-2",
+    "href": "slides/lecture01-intro.html#thank-you-2",
+    "title": "Economics Fundamentals",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions?\nContact: jrsantos@university.pt"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#recap-lecture-3",
+    "href": "slides/lecture01-intro.html#recap-lecture-3",
+    "title": "Economics Fundamentals",
+    "section": "Recap: Lecture 3",
+    "text": "Recap: Lecture 3\nKey Concepts from Last Class:\n\nRationality: Cost-benefit decision making\nMarginal Analysis: Decisions at the margin (MB vs MC)\nOpportunity Cost: Value of best alternative foregone\nSunk Costs: Ignore them in decisions!\n\nToday: We build on opportunity cost to understand:\n\nProduction factors (inputs)\nProduction Possibilities Frontier (PPF)\nSociety-level trade-offs and efficiency"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#production-factors-inputs",
+    "href": "slides/lecture01-intro.html#production-factors-inputs",
+    "title": "Economics Fundamentals",
+    "section": "Production Factors (Inputs)",
+    "text": "Production Factors (Inputs)\nTo produce goods and services, economies use three main factors:\n\n\nLand\nNatural Resources\n\nAgricultural land\nMinerals & energy\nWater resources\nNatural beauty\nClimate\n\nTourism: Beaches, mountains, heritage sites\n\nLabor\nHuman Effort\n\nPhysical work\nMental work\nSkills & training\nTime & effort\nEntrepreneurship\n\nTourism: Staff, guides, managers, chefs\n\nCapital\nProduced Goods\n\nBuildings\nMachinery\nInfrastructure\nTechnology\nEquipment\n\nTourism: Hotels, planes, booking systems"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#factor-payments",
+    "href": "slides/lecture01-intro.html#factor-payments",
+    "title": "Economics Fundamentals",
+    "section": "Factor Payments",
+    "text": "Factor Payments\nEach factor receives compensation:\n\n\n\n\n\n\n\n\nFactor\nPayment Name\nExample in Tourism\n\n\n\n\nLand\nRent\nPayment for beach concession, property lease\n\n\nLabor\nWages/Salaries\nHotel staff wages, tour guide fees\n\n\nCapital\nInterest\nReturn on hotel investment, equipment loans\n\n\nEntrepreneurship\nProfit\nHotel owner’s profit, airline earnings\n\n\n\nIncome Distribution: Sum of all factor payments determines who gets what (FOR WHOM question)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#tourism-production-factor-intensive-example",
+    "href": "slides/lecture01-intro.html#tourism-production-factor-intensive-example",
+    "title": "Economics Fundamentals",
+    "section": "Tourism Production: Factor Intensive Example",
+    "text": "Tourism Production: Factor Intensive Example\nDifferent tourism products use factors in different proportions:\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 6\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# Factor intensity by tourism type\ntourism_types &lt;- data.frame(\n  type = rep(c(\"Beach Resort\", \"Cultural Tour\", \"Adventure Tourism\", \"Cruise Ship\"), each = 3),\n  factor = rep(c(\"Land\", \"Labor\", \"Capital\"), 4),\n  percentage = c(\n    # Beach Resort\n    40, 30, 30,\n    # Cultural Tour\n    15, 60, 25,\n    # Adventure Tourism\n    50, 35, 15,\n    # Cruise Ship\n    5, 25, 70\n  )\n)\n\ntourism_types$type &lt;- factor(tourism_types$type,\n                              levels = c(\"Beach Resort\", \"Cultural Tour\", \n                                        \"Adventure Tourism\", \"Cruise Ship\"))\n\nggplot(tourism_types, aes(x = type, y = percentage, fill = factor)) +\n  geom_bar(stat = \"identity\", position = \"fill\") +\n  scale_y_continuous(labels = scales::percent_format()) +\n  labs(title = \"Factor Intensity in Different Tourism Products\",\n       subtitle = \"Different activities require different combinations of Land, Labor, and Capital\",\n       x = \"\",\n       y = \"Percentage of Total Input Cost\",\n       fill = \"Production Factor\") +\n  theme_minimal(base_size = 14) +\n  scale_fill_manual(values = c(\"Land\" = \"#27ae60\", \n                                \"Labor\" = \"#e74c3c\",\n                                \"Capital\" = \"#3498db\")) +\n  theme(legend.position = \"bottom\",\n        axis.text.x = element_text(angle = 20, hjust = 1)) +\n  geom_text(aes(label = paste0(percentage, \"%\")), \n            position = position_fill(vjust = 0.5), \n            color = \"white\", size = 4, fontface = \"bold\")\nInsight: Cruise tourism is capital-intensive, cultural tours are labor-intensive, beach resorts balanced"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#production-possibilities-frontier-ppf",
+    "href": "slides/lecture01-intro.html#production-possibilities-frontier-ppf",
+    "title": "Economics Fundamentals",
+    "section": "Production Possibilities Frontier (PPF)",
+    "text": "Production Possibilities Frontier (PPF)\nDefinition: The PPF shows the maximum combinations of two goods an economy can produce given:\n\nFixed quantity of production factors (land, labor, capital)\nCurrent technology level\nFull employment of resources\n\nKey Insight: With scarcity, producing more of one good requires producing less of another\n→ This is opportunity cost visualized!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#simple-ppf-example-tourism-economy",
+    "href": "slides/lecture01-intro.html#simple-ppf-example-tourism-economy",
+    "title": "Economics Fundamentals",
+    "section": "Simple PPF Example: Tourism Economy",
+    "text": "Simple PPF Example: Tourism Economy\nImagine an economy producing only:\n\nBeach Tourism (hotels, resorts)\nCultural Tourism (museums, tours, heritage sites)\n\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 6\n\n# Create PPF curve\nbeach &lt;- seq(0, 100, by = 1)\ncultural &lt;- 100 * (1 - (beach/100)^0.7)\n\nppf_basic &lt;- data.frame(beach, cultural)\n\n# Points\npoints &lt;- data.frame(\n  beach = c(0, 30, 60, 85, 100, 50),\n  cultural = c(100, 81, 57, 32, 0, 40),\n  label = c(\"A\", \"B\", \"C\", \"D\", \"E\", \"U\"),\n  type = c(rep(\"On PPF\", 5), \"Inefficient\")\n)\n\nggplot(ppf_basic, aes(x = beach, y = cultural)) +\n  geom_line(size = 2, color = \"#3498db\") +\n  geom_ribbon(aes(ymin = 0, ymax = cultural), alpha = 0.15, fill = \"#3498db\") +\n  geom_point(data = points, aes(x = beach, y = cultural, color = type, shape = type), \n             size = 6) +\n  geom_text(data = points, aes(x = beach, y = cultural, label = label), \n            vjust = -1.5, size = 6, fontface = \"bold\") +\n  labs(title = \"Production Possibilities Frontier: Tourism Economy\",\n       subtitle = \"Maximum combinations of beach and cultural tourism capacity\",\n       x = \"Beach Tourism Capacity (units)\",\n       y = \"Cultural Tourism Capacity (units)\") +\n  theme_minimal(base_size = 14) +\n  scale_color_manual(values = c(\"On PPF\" = \"#e74c3c\", \"Inefficient\" = \"#95a5a6\")) +\n  scale_shape_manual(values = c(\"On PPF\" = 16, \"Inefficient\" = 4)) +\n  theme(legend.position = \"bottom\",\n        legend.title = element_blank()) +\n  xlim(-5, 110) + ylim(-5, 110) +\n  annotate(\"text\", x = 85, y = 75, \n           label = \"Efficient\\n(On frontier)\", size = 5, color = \"#27ae60\") +\n  annotate(\"text\", x = 50, y = 30, \n           label = \"Inefficient\\n(Unemployed resources)\", size = 5, color = \"#95a5a6\")"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#interpreting-the-ppf",
+    "href": "slides/lecture01-intro.html#interpreting-the-ppf",
+    "title": "Economics Fundamentals",
+    "section": "Interpreting the PPF",
+    "text": "Interpreting the PPF\nPoint A (0, 100): All resources → cultural tourism, no beach tourism\nPoint E (100, 0): All resources → beach tourism, no cultural tourism\nPoint C (60, 57): Mixed economy, balanced allocation\nPoint U (50, 40): Inefficient – inside PPF\n\nResources unemployed or misallocated\nCould produce more of both goods!\n\nBeyond PPF: Impossible with current resources & technology"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#opportunity-cost-on-the-ppf",
+    "href": "slides/lecture01-intro.html#opportunity-cost-on-the-ppf",
+    "title": "Economics Fundamentals",
+    "section": "Opportunity Cost on the PPF",
+    "text": "Opportunity Cost on the PPF\nMoving along the PPF reveals opportunity costs:\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 6\n\n# Detailed PPF with opportunity cost calculation\nbeach_detailed &lt;- seq(0, 100, by = 5)\ncultural_detailed &lt;- 100 * (1 - (beach_detailed/100)^0.7)\n\nppf_detailed &lt;- data.frame(beach_detailed, cultural_detailed)\n\n# Movement from B to C\nmove_points &lt;- data.frame(\n  beach = c(30, 60),\n  cultural = c(81, 57),\n  label = c(\"B\", \"C\")\n)\n\nggplot(ppf_detailed, aes(x = beach_detailed, y = cultural_detailed)) +\n  geom_line(size = 2, color = \"#3498db\") +\n  geom_point(data = move_points, aes(x = beach, y = cultural), \n             size = 7, color = \"#e74c3c\") +\n  geom_text(data = move_points, aes(x = beach, y = cultural, label = label), \n            vjust = -1.5, size = 7, fontface = \"bold\") +\n  labs(title = \"Opportunity Cost: Moving from B to C\",\n       subtitle = \"To gain 30 units of beach tourism, must sacrifice 24 units of cultural tourism\",\n       x = \"Beach Tourism Capacity (units)\",\n       y = \"Cultural Tourism Capacity (units)\") +\n  theme_minimal(base_size = 14) +\n  # Horizontal arrow (gain in beach)\n  annotate(\"segment\", x = 30, xend = 60, y = 81, yend = 81,\n           arrow = arrow(length = unit(0.4, \"cm\"), type = \"closed\"), \n           size = 1.5, color = \"#27ae60\") +\n  annotate(\"text\", x = 45, y = 85, \n           label = \"GAIN: +30 beach units\", size = 5, color = \"#27ae60\", fontface = \"bold\") +\n  # Vertical arrow (loss in cultural)\n  annotate(\"segment\", x = 60, xend = 60, y = 81, yend = 57,\n           arrow = arrow(length = unit(0.4, \"cm\"), type = \"closed\"), \n           size = 1.5, color = \"#e74c3c\") +\n  annotate(\"text\", x = 70, y = 69, \n           label = \"COST: -24 cultural units\\n(Opportunity Cost)\", \n           size = 5, color = \"#e74c3c\", fontface = \"bold\") +\n  xlim(-5, 110) + ylim(-5, 110)\nOpportunity Cost of moving B → C: 24 cultural units"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#increasing-opportunity-costs",
+    "href": "slides/lecture01-intro.html#increasing-opportunity-costs",
+    "title": "Economics Fundamentals",
+    "section": "Increasing Opportunity Costs",
+    "text": "Increasing Opportunity Costs\nKey Feature: PPF is typically bowed outward (concave)\nWhy? → Law of Increasing Opportunity Costs\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 6\n\n# Calculate marginal opportunity costs\ncalc_points &lt;- data.frame(\n  beach = c(0, 20, 40, 60, 80, 100),\n  cultural = 100 * (1 - (c(0, 20, 40, 60, 80, 100)/100)^0.7)\n)\n\ncalc_points$beach_change &lt;- c(NA, diff(calc_points$beach))\ncalc_points$cultural_change &lt;- c(NA, diff(calc_points$cultural))\ncalc_points$opp_cost &lt;- -calc_points$cultural_change / calc_points$beach_change\n\n# Create visualization\nopp_cost_data &lt;- calc_points[2:6, ]\n\nggplot(opp_cost_data, aes(x = beach, y = opp_cost)) +\n  geom_line(size = 1.5, color = \"#e74c3c\") +\n  geom_point(size = 5, color = \"#e74c3c\") +\n  labs(title = \"Increasing Opportunity Costs Along PPF\",\n       subtitle = \"Each additional unit of beach tourism costs MORE cultural tourism foregone\",\n       x = \"Beach Tourism Production Level\",\n       y = \"Opportunity Cost\\n(Cultural units per Beach unit)\") +\n  theme_minimal(base_size = 14) +\n  geom_text(aes(label = round(opp_cost, 2)), \n            vjust = -1, size = 5, fontface = \"bold\") +\n  ylim(0, max(opp_cost_data$opp_cost) * 1.2)\nExplanation: Resources are not perfectly adaptable. As you shift more resources to beach tourism, you use resources less suited for it (higher cost)."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#why-ppf-is-bowed-intuition",
+    "href": "slides/lecture01-intro.html#why-ppf-is-bowed-intuition",
+    "title": "Economics Fundamentals",
+    "section": "Why PPF is Bowed: Intuition",
+    "text": "Why PPF is Bowed: Intuition\nExample: Converting resources from cultural to beach tourism\nEarly conversions (A → B):\n\nUse coastal land perfect for beaches\nRelocate tour guides who can also work in resorts\nLow opportunity cost (~0.95 cultural per beach unit)\n\nLater conversions (D → E):\n\nMust use inland locations (poor beaches)\nRelocate museum curators (not suited for resort work)\nHigh opportunity cost (~2.25 cultural per beach unit)\n\nResult: Bowed PPF reflects increasing difficulty of conversion"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#productive-efficiency",
+    "href": "slides/lecture01-intro.html#productive-efficiency",
+    "title": "Economics Fundamentals",
+    "section": "Productive Efficiency",
+    "text": "Productive Efficiency\nAn economy is productively efficient when:\n\nIt operates ON the PPF (not inside)\nCannot produce more of one good without producing less of another\nResources are fully employed and optimally allocated\n\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Efficiency comparison\nefficiency_points &lt;- data.frame(\n  beach = c(50, 50, 90),\n  cultural = c(70, 40, 25),\n  status = c(\"Efficient (on PPF)\", \"Inefficient (inside)\", \"Efficient (on PPF)\"),\n  label = c(\"Point A\", \"Point B\", \"Point C\")\n)\n\nbeach_curve &lt;- seq(0, 100, by = 1)\ncultural_curve &lt;- 100 * (1 - (beach_curve/100)^0.7)\nppf_eff &lt;- data.frame(beach_curve, cultural_curve)\n\nggplot(ppf_eff, aes(x = beach_curve, y = cultural_curve)) +\n  geom_line(size = 2, color = \"#3498db\") +\n  geom_ribbon(aes(ymin = 0, ymax = cultural_curve), alpha = 0.1, fill = \"#27ae60\") +\n  geom_point(data = efficiency_points, aes(x = beach, y = cultural, color = status), \n             size = 7) +\n  geom_text(data = efficiency_points, aes(x = beach, y = cultural, label = label), \n            vjust = -1.5, size = 6, fontface = \"bold\") +\n  labs(title = \"Productive Efficiency: On vs. Inside PPF\",\n       subtitle = \"Efficient points (A, C) on frontier; Inefficient point (B) inside\",\n       x = \"Beach Tourism\",\n       y = \"Cultural Tourism\") +\n  theme_minimal(base_size = 14) +\n  scale_color_manual(values = c(\"Efficient (on PPF)\" = \"#27ae60\", \n                                 \"Inefficient (inside)\" = \"#e74c3c\")) +\n  theme(legend.position = \"bottom\",\n        legend.title = element_blank()) +\n  annotate(\"rect\", xmin = 0, xmax = 100, ymin = 0, ymax = 100, \n           alpha = 0, color = \"black\", size = 0.5)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#causes-of-inefficiency",
+    "href": "slides/lecture01-intro.html#causes-of-inefficiency",
+    "title": "Economics Fundamentals",
+    "section": "Causes of Inefficiency",
+    "text": "Causes of Inefficiency\nWhy might an economy operate inside the PPF?\n\nUnemployment\n\nWorkers without jobs\nIdle factories and equipment\nExample: COVID-19 lockdowns (2020)\n\nResource Misallocation\n\nResources in wrong industries\nPoor management decisions\nExample: Over-investment in declining sectors\n\nLack of Technology Adoption\n\nNot using best available methods\nExample: Manual booking when online systems exist"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#real-example-portugal-tourism-efficiency",
+    "href": "slides/lecture01-intro.html#real-example-portugal-tourism-efficiency",
+    "title": "Economics Fundamentals",
+    "section": "Real Example: Portugal Tourism Efficiency",
+    "text": "Real Example: Portugal Tourism Efficiency\nPortugal Tourism 2019 vs 2020-2021\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 6\n\n# Portugal tourism data with efficiency\nportugal_efficiency &lt;- data.frame(\n  year = c(2019, 2020, 2021, 2022, 2023, 2024),\n  actual_output = c(100, 39, 59, 98, 113, 117),  # Index: 2019 = 100\n  potential_output = c(100, 95, 97, 105, 108, 112),  # Adjusted for capacity\n  status = c(\"Efficient\", \"Major Inefficiency\", \"Recovering\", \n             \"Near-Efficient\", \"Efficient\", \"Efficient\")\n)\n\nggplot(portugal_efficiency, aes(x = year)) +\n  geom_line(aes(y = potential_output, color = \"Potential (PPF)\"), \n            size = 1.5, linetype = \"dashed\") +\n  geom_line(aes(y = actual_output, color = \"Actual Output\"), \n            size = 1.5) +\n  geom_point(aes(y = potential_output), size = 4, color = \"#3498db\") +\n  geom_point(aes(y = actual_output, shape = status), size = 5, \n             aes(color = \"Actual Output\")) +\n  labs(title = \"Portugal Tourism: Efficiency Analysis 2019-2024\",\n       subtitle = \"COVID-19 pushed economy inside PPF (inefficient); recovery moved back to frontier\",\n       x = \"Year\",\n       y = \"Tourism Output (Index: 2019 = 100)\",\n       color = \"\",\n       shape = \"Status\") +\n  theme_minimal(base_size = 14) +\n  scale_color_manual(values = c(\"Potential (PPF)\" = \"#3498db\", \n                                 \"Actual Output\" = \"#e74c3c\")) +\n  scale_shape_manual(values = c(\"Efficient\" = 16, \n                                 \"Major Inefficiency\" = 4,\n                                 \"Recovering\" = 17,\n                                 \"Near-Efficient\" = 15)) +\n  theme(legend.position = \"bottom\") +\n  annotate(\"rect\", xmin = 2019.8, xmax = 2021.2, ymin = 0, ymax = 120, \n           alpha = 0.1, fill = \"red\") +\n  annotate(\"text\", x = 2020.5, y = 75, \n           label = \"Inside PPF:\\nUnemployment,\\nClosed facilities\", \n           size = 4, color = \"#e74c3c\", fontface = \"bold\")"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#economic-growth-shifting-the-ppf",
+    "href": "slides/lecture01-intro.html#economic-growth-shifting-the-ppf",
+    "title": "Economics Fundamentals",
+    "section": "Economic Growth: Shifting the PPF",
+    "text": "Economic Growth: Shifting the PPF\nPPF can shift outward due to:\n\nMore Resources\n\nPopulation growth → more labor\nDiscovery of new natural resources\nCapital accumulation (investment)\n\nBetter Technology\n\nInnovation and technological progress\nImproved productivity\n\nBetter Institutions\n\nRule of law, property rights\nEfficient markets"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#economic-growth-visualization",
+    "href": "slides/lecture01-intro.html#economic-growth-visualization",
+    "title": "Economics Fundamentals",
+    "section": "Economic Growth Visualization",
+    "text": "Economic Growth Visualization\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 6\n\n# Original and shifted PPF\nbeach_orig &lt;- seq(0, 100, by = 1)\ncultural_orig &lt;- 100 * (1 - (beach_orig/100)^0.7)\n\nbeach_new &lt;- seq(0, 130, by = 1)\ncultural_new &lt;- 130 * (1 - (beach_new/130)^0.7)\n\nppf_growth &lt;- data.frame(\n  beach = c(beach_orig, beach_new),\n  cultural = c(cultural_orig, cultural_new),\n  period = rep(c(\"2024 (Current PPF)\", \"2030 (After Growth)\"), \n               c(length(beach_orig), length(beach_new)))\n)\n\n# Sample points\ngrowth_points &lt;- data.frame(\n  beach = c(60, 80),\n  cultural = c(57, 74),\n  period = c(\"2024 (Current PPF)\", \"2030 (After Growth)\"),\n  label = c(\"Point A (2024)\", \"Point B (2030)\")\n)\n\nggplot(ppf_growth, aes(x = beach, y = cultural, color = period)) +\n  geom_line(size = 2) +\n  geom_point(data = growth_points, aes(x = beach, y = cultural), size = 7) +\n  geom_text(data = growth_points, aes(x = beach, y = cultural, label = label), \n            vjust = -1.5, size = 5, fontface = \"bold\", color = \"black\") +\n  labs(title = \"Economic Growth: PPF Shifts Outward\",\n       subtitle = \"With more resources & technology, can produce MORE of BOTH goods\",\n       x = \"Beach Tourism Capacity\",\n       y = \"Cultural Tourism Capacity\",\n       color = \"\") +\n  theme_minimal(base_size = 14) +\n  scale_color_manual(values = c(\"2024 (Current PPF)\" = \"#e74c3c\", \n                                 \"2030 (After Growth)\" = \"#27ae60\")) +\n  theme(legend.position = \"bottom\") +\n  annotate(\"segment\", x = 60, xend = 80, y = 57, yend = 74,\n           arrow = arrow(length = unit(0.4, \"cm\"), type = \"closed\"),\n           size = 1.5, color = \"#3498db\", linetype = \"dashed\") +\n  annotate(\"text\", x = 70, y = 62, \n           label = \"Growth allows\\nmore of both\", \n           size = 4.5, color = \"#3498db\", fontface = \"bold\")\nKey: Economic growth makes previously impossible combinations achievable!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#investment-vs.-consumption-trade-off",
+    "href": "slides/lecture01-intro.html#investment-vs.-consumption-trade-off",
+    "title": "Economics Fundamentals",
+    "section": "Investment vs. Consumption Trade-off",
+    "text": "Investment vs. Consumption Trade-off\nClassic PPF Application: Choose between current consumption and investment\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 6\n\n# Two countries with different investment choices\nconsumption &lt;- seq(0, 100, by = 1)\ninvestment &lt;- 100 * (1 - (consumption/100)^0.8)\n\ncountries &lt;- data.frame(consumption, investment)\n\n# Country choices\ncountry_choices &lt;- data.frame(\n  consumption = c(70, 40),\n  investment = c(47, 73),\n  country = c(\"Country A:\\nHigh Consumption\", \"Country B:\\nHigh Investment\"),\n  future_growth = c(1.15, 1.35)\n)\n\nggplot(countries, aes(x = consumption, y = investment)) +\n  geom_line(size = 2, color = \"#3498db\") +\n  geom_point(data = country_choices, aes(x = consumption, y = investment, \n                                          color = country), size = 8) +\n  geom_text(data = country_choices, aes(x = consumption, y = investment, label = country), \n            vjust = -1.8, size = 4.5, fontface = \"bold\") +\n  labs(title = \"Current Consumption vs. Future Investment Trade-off\",\n       subtitle = \"Country B sacrifices consumption now → more investment → faster future growth\",\n       x = \"Current Consumption\",\n       y = \"Investment (Capital Goods)\") +\n  theme_minimal(base_size = 14) +\n  scale_color_manual(values = c(\"Country A:\\nHigh Consumption\" = \"#e74c3c\", \n                                 \"Country B:\\nHigh Investment\" = \"#27ae60\")) +\n  theme(legend.position = \"none\") +\n  annotate(\"text\", x = 70, y = 35, \n           label = \"→ Slower future growth\\n(Small PPF shift)\", \n           size = 4, color = \"#e74c3c\") +\n  annotate(\"text\", x = 40, y = 60, \n           label = \"→ Faster future growth\\n(Large PPF shift)\", \n           size = 4, color = \"#27ae60\")"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#tourism-application-investment-choice",
+    "href": "slides/lecture01-intro.html#tourism-application-investment-choice",
+    "title": "Economics Fundamentals",
+    "section": "Tourism Application: Investment Choice",
+    "text": "Tourism Application: Investment Choice\nPortugal’s Tourism Investment Strategy (2020-2024)\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 5\n\n# Investment vs immediate revenue\ninvestment_choice &lt;- data.frame(\n  category = c(\"Infrastructure\\nInvestment\", \"Marketing\\n(Quick Returns)\", \"Sustainability\\nProjects\", \"Digital\\nTransformation\"),\n  immediate_revenue = c(0, 85, 15, 30),\n  long_term_growth = c(95, 40, 70, 80),\n  chosen_2020_2024 = c(280, 120, 150, 180)\n)\n\nlibrary(tidyr)\ninvestment_long &lt;- investment_choice %&gt;%\n  select(category, immediate_revenue, long_term_growth) %&gt;%\n  pivot_longer(cols = c(immediate_revenue, long_term_growth),\n               names_to = \"impact_type\",\n               values_to = \"score\")\n\ninvestment_long$impact_type &lt;- factor(investment_long$impact_type,\n                                       levels = c(\"immediate_revenue\", \"long_term_growth\"),\n                                       labels = c(\"Immediate Revenue Impact\", \n                                                 \"Long-term Growth Potential\"))\n\nggplot(investment_long, aes(x = category, y = score, fill = impact_type)) +\n  geom_bar(stat = \"identity\", position = \"dodge\") +\n  labs(title = \"Tourism Investment Categories: Trade-off Analysis\",\n       subtitle = \"Infrastructure & Digital have high long-term impact but low immediate returns\",\n       x = \"\",\n       y = \"Impact Score (0-100)\",\n       fill = \"\") +\n  theme_minimal(base_size = 14) +\n  scale_fill_manual(values = c(\"Immediate Revenue Impact\" = \"#e74c3c\", \n                                \"Long-term Growth Potential\" = \"#27ae60\")) +\n  theme(legend.position = \"bottom\",\n        axis.text.x = element_text(size = 11)) +\n  geom_text(aes(label = score), position = position_dodge(width = 0.9), \n            vjust = -0.5, size = 4)\nStrategic choice: Prioritize long-term growth (infrastructure, digital) despite lower immediate returns"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#technological-change-example",
+    "href": "slides/lecture01-intro.html#technological-change-example",
+    "title": "Economics Fundamentals",
+    "section": "Technological Change: Example",
+    "text": "Technological Change: Example\nDigital Transformation in Tourism (2015-2025)\n#| echo: false\n#| warning: false\n#| fig-width: 10\n#| fig-height: 6\n\n# Technology shifts PPF for booking services\nbookings_traditional &lt;- seq(0, 100, by = 1)\ncustomer_service_trad &lt;- 100 * (1 - (bookings_traditional/100)^0.75)\n\nbookings_digital &lt;- seq(0, 150, by = 1)\ncustomer_service_digital &lt;- 150 * (1 - (bookings_digital/150)^0.75)\n\ntech_ppf &lt;- data.frame(\n  bookings = c(bookings_traditional, bookings_digital),\n  customer_service = c(customer_service_trad, customer_service_digital),\n  era = rep(c(\"2015: Manual Systems\", \"2025: Digital + AI\"), \n            c(length(bookings_traditional), length(bookings_digital)))\n)\n\nggplot(tech_ppf, aes(x = bookings, y = customer_service, color = era)) +\n  geom_line(size = 2) +\n  labs(title = \"Technology Impact: Travel Agency PPF Shift\",\n       subtitle = \"Digital transformation + AI enables more bookings AND better customer service\",\n       x = \"Number of Bookings Processed (per day)\",\n       y = \"Quality of Customer Service (index)\",\n       color = \"\") +\n  theme_minimal(base_size = 14) +\n  scale_color_manual(values = c(\"2015: Manual Systems\" = \"#e74c3c\", \n                                 \"2025: Digital + AI\" = \"#27ae60\")) +\n  theme(legend.position = \"bottom\") +\n  annotate(\"segment\", x = 60, xend = 90, y = 60, yend = 90,\n           arrow = arrow(length = unit(0.5, \"cm\"), type = \"closed\"),\n           size = 2, color = \"#3498db\") +\n  annotate(\"text\", x = 75, y = 72, \n           label = \"Technology\\nShift\", \n           size = 6, color = \"#3498db\", fontface = \"bold\",\n           angle = 30)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#ppf-summary-key-insights",
+    "href": "slides/lecture01-intro.html#ppf-summary-key-insights",
+    "title": "Economics Fundamentals",
+    "section": "PPF Summary: Key Insights",
+    "text": "PPF Summary: Key Insights\n\nShows maximum production given resources & technology\nPoints on PPF = efficient (can’t produce more without trade-off)\nPoints inside PPF = inefficient (unemployment, waste)\nPoints outside PPF = impossible (currently unattainable)\nShape (bowed) = increasing opportunity costs\nMoving along PPF = reallocating resources (opportunity cost)\nShifting PPF outward = economic growth (more resources, better technology)\nInvestment trade-off = consumption today vs. growth tomorrow"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#real-world-applications",
+    "href": "slides/lecture01-intro.html#real-world-applications",
+    "title": "Economics Fundamentals",
+    "section": "Real-World Applications",
+    "text": "Real-World Applications\nPPF thinking helps answer:\n\nShould Portugal build more hotels or preserve more heritage sites?\nHow much should airlines invest in fuel efficiency vs. passenger comfort?\nTrade-off between mass tourism revenue and sustainable tourism?\nHow much GDP to allocate to tourism vs. other sectors?\n\nAll involve opportunity costs and efficiency considerations!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#summary-complete-picture",
+    "href": "slides/lecture01-intro.html#summary-complete-picture",
+    "title": "Economics Fundamentals",
+    "section": "Summary: Complete Picture",
+    "text": "Summary: Complete Picture\nToday’s Lecture Integration:\n\nProduction Factors (Land, Labor, Capital) are scarce inputs\nScarcity forces choices between alternatives\nPPF visualizes society’s production possibilities\nOpportunity Cost = moving along PPF (what’s foregone)\nEfficiency = operating on (not inside) PPF\nEconomic Growth = PPF shifts outward\nInvestment today enables faster growth tomorrow\n\nThis connects to: Lecture 3 (opportunity cost), Lecture 2 (WHAT/HOW/FOR WHOM), Lecture 1 (scarcity & efficiency)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercises-3",
+    "href": "slides/lecture01-intro.html#exercises-3",
+    "title": "Economics Fundamentals",
+    "section": "Exercises",
+    "text": "Exercises\nApplication Time!\nPPF and opportunity cost calculations."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-1-multiple-choice-3",
+    "href": "slides/lecture01-intro.html#exercise-1-multiple-choice-3",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\nQuestion: An economy is producing at a point inside its PPF. This indicates:\nA. The economy is efficiently using all resources\nB. The economy has economic growth\nC. There is unemployment or resource misallocation\nD. It’s impossible to produce more of any good\n\nAnswer: C\nExplanation: Inside PPF means inefficiency – resources are unemployed or misallocated. Could produce more of at least one good without sacrificing the other (move toward frontier)."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-2-multiple-choice-3",
+    "href": "slides/lecture01-intro.html#exercise-2-multiple-choice-3",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\nQuestion: A country’s PPF shifts outward. This could be caused by:\nA. Higher unemployment\nB. Decrease in the labor force\nC. Technological innovation\nD. Producing less capital goods\n\nAnswer: C\nExplanation: Outward PPF shift = economic growth. Caused by: more resources, better technology, improved productivity. Options A, B, D would shift PPF inward or cause movement inside PPF."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-open-question---part-1",
+    "href": "slides/lecture01-intro.html#exercise-3-open-question---part-1",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question - Part 1",
+    "text": "Exercise 3: Open Question - Part 1\nScenario: The Portuguese Algarve region has limited land and labor. It can allocate resources between golf tourism and beach tourism. Current production possibilities:\n\n\n\nCombination\nGolf Resorts\nBeach Hotels\n\n\n\n\nA\n0\n50\n\n\nB\n5\n48\n\n\nC\n10\n44\n\n\nD\n15\n38\n\n\nE\n20\n30\n\n\nF\n25\n0"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-open-question---part-2",
+    "href": "slides/lecture01-intro.html#exercise-3-open-question---part-2",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question - Part 2",
+    "text": "Exercise 3: Open Question - Part 2\nQuestions:\n\nDraw the PPF with Golf Resorts on x-axis, Beach Hotels on y-axis\nCalculate the opportunity cost of moving from:\n\nPoint B to Point C\nPoint D to Point E\n\nDoes the PPF exhibit increasing opportunity costs? Explain.\nIf region currently operates at point U (12 golf, 30 beach), what does this indicate?\nA new tourism development technology is invented. How would this affect the PPF? Draw the new curve."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-solution---part-a-b",
+    "href": "slides/lecture01-intro.html#exercise-3-solution---part-a-b",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part a & b",
+    "text": "Exercise 3: Solution - Part a & b\na) PPF Graph:\nPlots points A through F with Golf (x-axis: 0-25) and Beach (y-axis: 0-50). Curve is bowed outward (concave).\nb) Opportunity Cost Calculations:\nB → C (5 golf → 10 golf): \\[\\text{Gain in Golf} = 10 - 5 = 5 \\text{ resorts}\\] \\[\\text{Loss in Beach} = 48 - 44 = 4 \\text{ hotels}\\] \\[\\text{Opportunity Cost} = \\frac{4 \\text{ hotels}}{5 \\text{ resorts}} = 0.8 \\text{ beach hotels per golf resort}\\]\nD → E (15 golf → 20 golf): \\[\\text{Gain in Golf} = 20 - 15 = 5 \\text{ resorts}\\] \\[\\text{Loss in Beach} = 38 - 30 = 8 \\text{ hotels}\\] \\[\\text{Opportunity Cost} = \\frac{8 \\text{ hotels}}{5 \\text{ resorts}} = 1.6 \\text{ beach hotels per golf resort}\\]"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-solution---part-c-d-e",
+    "href": "slides/lecture01-intro.html#exercise-3-solution---part-c-d-e",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part c, d, e",
+    "text": "Exercise 3: Solution - Part c, d, e\nc) Increasing Opportunity Costs?\nYES! Opportunity cost increases from 0.8 (B→C) to 1.6 (D→E).\nExplanation: As more resources shift to golf, we use resources less suited for golf (originally better for beaches). Each additional golf resort requires sacrificing more beach hotels.\nd) Point U (12 golf, 30 beach):\nThis is INSIDE the PPF (compare to point D: 15 golf, 38 beach).\nIndicates:\n\nInefficiency (unemployment or resource misallocation)\nCould produce more golf without reducing beach (move to D: 15 golf, 38 beach)\nCould produce more beach without reducing golf (move toward 12 golf, ~43 beach)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercise-3-solution---part-e",
+    "href": "slides/lecture01-intro.html#exercise-3-solution---part-e",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part e",
+    "text": "Exercise 3: Solution - Part e\ne) New Technology Effect:\nTechnology shifts PPF OUTWARD (economic growth).\nNew PPF might be:\n\n\n\nCombination\nGolf Resorts\nBeach Hotels\n\n\n\n\nA’\n0\n60 (+10)\n\n\nC’\n12\n55 (+11)\n\n\nE’\n24\n38 (+8)\n\n\nF’\n30\n0 (+5)\n\n\n\nEffect: Can now produce MORE of both types of tourism with same resources!\nGraph: Draw original PPF, then new PPF further from origin (parallel or biased depending on where technology applies)."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#next-lecture-3",
+    "href": "slides/lecture01-intro.html#next-lecture-3",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nFebruary 19, 2026: Doubts and Exercises Revision\nPreparation for Test 1 (February 20):\n\nReview Lectures 1-4\nPractice opportunity cost calculations\nUnderstand PPF shifts vs. movements\nKnow production factors and economic systems\n\nTest 1 covers: All Fundamentals material (15% of final grade)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#thank-you-3",
+    "href": "slides/lecture01-intro.html#thank-you-3",
+    "title": "Economics Fundamentals",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions?\nContact: jrsantos@university.pt"
   }
 ]
