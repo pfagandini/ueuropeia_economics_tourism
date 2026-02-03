@@ -15,6 +15,17 @@ format:
     logo: ../images/logo.png
 ---
 
+```{r}
+#| echo: false
+
+library(ggplot2)
+library(dplyr)
+library(eurostat)
+library(tidyverse)
+library(lubridate)
+
+```
+
 ## Welcome to Economics! {.center}
 
 :::: {.columns}
@@ -85,41 +96,69 @@ Key aspects Economics addresses:
 ## Macroeconomics in Tourism
 
 ```{r}
-#| echo: false
+#| message: false
 #| warning: false
-#| fig-width: 10
-#| fig-height: 5
+#| echo: false
+#| fig-cap: "Tourism Growth in Portugal (since 2019)"
 
-library(ggplot2)
-library(dplyr)
+library(eurostat)
+library(tidyverse)
 
-# Real data from INE Portugal & Turismo de Portugal
-tourism_data <- data.frame(
-  year = c(2019, 2020, 2021, 2022, 2023, 2024),
-  guests_millions = c(27, 10.5, 15.8, 26.5, 30.5, 31.6),  # Real INE data
-  revenue_billions = c(18.3, 7.6, 11.6, 22.0, 25.4, 27.7)  # Real Banco de Portugal data
-)
+guests_raw <- get_eurostat("tour_occ_arnraw", type = "code", keep_flags = FALSE)
+revenue_raw <- get_eurostat("bop_its6_det", type = "code", keep_flags = FALSE)
 
-ggplot(tourism_data, aes(x = year)) +
-  geom_line(aes(y = guests_millions, color = "Guests (millions)"), size = 1.5) +
-  geom_point(aes(y = guests_millions, color = "Guests (millions)"), size = 3) +
-  geom_line(aes(y = revenue_billions, color = "Revenue (€ billions)"), size = 1.5) +
-  geom_point(aes(y = revenue_billions, color = "Revenue (€ billions)"), size = 3) +
-  labs(title = "Portugal Tourism: Recovery After COVID-19",
+# 3. Clean Guest Data
+guests_PT <- guests_raw %>%
+  filter(
+    geo=='PT',
+    nace_r2=='I551-I553',
+    unit %in% c('NR','MIO_EUR'),
+    c_resid == "WORLD",
+    year(TIME_PERIOD)>=2019
+    ) %>%
+    select(TIME_PERIOD, values)
+
+guests_PT$values <- guests_PT$values/1000000 # In millions
+guests_PT <- guests_PT %>%
+  rename(guests = values)
+
+# 4. Clean Revenue Data
+revenue_PT <- revenue_raw %>% 
+  filter(
+    geo == "PT",
+    year(TIME_PERIOD) >= 2019,
+    partner == "WRL_REST",
+    stk_flow == "CRE",
+    bop_item == "SD"
+    ) %>% 
+    select(TIME_PERIOD, values)
+
+revenue_PT$values <- revenue_PT$values/1000 # In Billions
+revenue_PT <- revenue_PT %>%
+  rename(revenue = values)
+
+# 5. Merge and Prepare for Plotting
+df_plot <- inner_join(guests_PT, revenue_PT, by = "TIME_PERIOD") %>%
+  mutate(year_val = year(TIME_PERIOD)) %>%
+  pivot_longer(cols = c(guests, revenue), names_to = "metric", values_to = "value") %>%
+  mutate(metric = recode(metric, 
+                         "guests_millions" = "Guests (Millions)", 
+                         "revenue_billions" = "Revenue (Billions €)"))
+
+# 6. Plot
+ggplot(df_plot, aes(x = year_val, y = value, color = metric, group = metric)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 3) +
+  scale_x_continuous(breaks = 2019:2024) +
+  theme_minimal() +
+  labs(title = "Portugal Tourism Sector (2019-2024)",
        subtitle = "Macroeconomic impact of tourism sector",
        x = "Year",
-       y = "Value",
-       color = "Metric",
-       caption = "Sources: INE Portugal (guests); Banco de Portugal (revenue)") +
-  theme_minimal(base_size = 14) +
-  scale_color_manual(values = c("Guests (millions)" = "#e74c3c", 
-                                 "Revenue (€ billions)" = "#3498db")) +
-  theme(legend.position = "bottom",
-        plot.caption = element_text(size = 8, hjust = 0, color = "#666"))
-
+       y = "Scale (Millions / Billions)",
+       color = "Indicator",
+       caption = "Source: Eurostat") +
+  theme(legend.position = "bottom")
 ```
-
-**Source**: INE Portugal, 2025
 
 ## Microeconomics in Tourism
 
@@ -129,34 +168,49 @@ ggplot(tourism_data, aes(x = year)) +
 #| fig-width: 10
 #| fig-height: 5
 
-# Hotel occupancy rates by segment
-hotel_data <- data.frame(
-  segment = c("Budget", "Economy", "Midscale", "Upscale"),
-  occupancy_2023 = c(72.1, 73.8, 72.7, 70.5),
-  occupancy_2024 = c(70.1, 73.1, 73.1, 74.2)
+occupancy_raw <- get_eurostat("tour_occ_mnor")
+occupancy <- occupancy_raw %>% filter(geo == "PT", year(TIME_PERIOD)== year(today())-2)
+
+guests_micro <- guests_raw %>% filter(geo == "PT", year(TIME_PERIOD)==2024, c_resid == "WORLD", nace_r2 %in% c('I551', 'I552', 'I553'), unit == 'NR')
+guests_micro <- guests_micro %>% select(nace_r2, values)
+
+guests_micro <- guests_micro %>%
+  rename(guests = values)
+
+nace_descriptions <- c(
+  'I551' = 'Hotels and similar',
+  'I552' = 'Holiday and other short-stay',
+  'I553' = 'Camping grounds'
 )
 
-library(tidyr)
-hotel_long <- hotel_data %>%
-  pivot_longer(cols = starts_with("occupancy"), 
-               names_to = "year", 
-               values_to = "occupancy") %>%
-  mutate(year = ifelse(year == "occupancy_2023", "2023", "2024"))
+guests_micro$description <- nace_descriptions[guests_micro$nace_r2]
 
-ggplot(hotel_long, aes(x = segment, y = occupancy, fill = year)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "European Hotel Occupancy Rates by Segment",
-       subtitle = "Microeconomic analysis: firm-level performance",
-       x = "Hotel Segment",
-       y = "Occupancy Rate (%)",
-       fill = "Year") +
-  theme_minimal(base_size = 14) +
-  scale_fill_manual(values = c("2023" = "#95a5a6", "2024" = "#27ae60")) +
-  theme(legend.position = "bottom") +
-  ylim(0, 100)
+ggplot(data = guests_micro, aes(x = description, y = guests, fill = description)) +
+    geom_bar(stat = "identity", color = "blue", linewitdth = 1.2) +
+    geom_text(aes(label = format(guests, bigmark = ",")),
+             vjust = -0.5, size = 4, fontface = "bold") +
+    scale_fill_manual(values = c("#2E86AB", "#A23B72", "#F18F01")) +
+  labs(
+    title = "Guests by NACE R2 Accommodation Type (2024)",
+    x = "Accommodation Type",
+    y = "Number of Guests",
+    caption = "Source: Eurostat") +
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    axis.title.x = element_text(size = 12, face = "bold"),
+    axis.title.y = element_text(size = 12, face = "bold"),
+    axis.text.x = element_text(angle = 15, hjust = 1, size = 10),
+    axis.text.y = element_text(size = 10),
+    legend.position = "none",
+    panel.grid.major.y = element_line(color = "gray80", linetype = "dashed"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+
+
 ```
-
-**Source**: STR Europe, 2024
 
 ## The Fundamental Economic Problem
 
