@@ -970,21 +970,21 @@
     "href": "slides/lecture03-opportunity.html#economic-rationality",
     "title": "Economics Fundamentals",
     "section": "Economic Rationality",
-    "text": "Economic Rationality\nAssumption: People are rational decision-makers\nWhat does “rational” mean in economics?\n\nPeople have clear preferences\nThey seek to maximize their well-being (utility)\nThey respond predictably to incentives\nThey use cost-benefit analysis\n\nImportant: Rational ≠ Perfect or emotionless!\nPeople can be rational within their information and cognitive limits (bounded rationality)"
+    "text": "Economic Rationality\n\nAssumption: People are rational decision-makers\nWhat does “rational” mean in economics?\n\nPeople have clear preferences\nThey seek to maximize their well-being (utility)\nThey respond predictably to incentives\nThey use cost-benefit analysis\n\nImportant: Rational ≠ Perfect or emotionless!\nPeople can be rational within their information and cognitive limits (bounded rationality)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#cost-benefit-principle",
     "href": "slides/lecture03-opportunity.html#cost-benefit-principle",
     "title": "Economics Fundamentals",
     "section": "Cost-Benefit Principle",
-    "text": "Cost-Benefit Principle\nThe Foundation of Rational Choice:\n\nAn action should be undertaken if and only if the benefits exceed the costs.\n\n\\[\\text{Decision Rule: } \\begin{cases}\n\\text{Do it} & \\text{if } Benefits \\geq Costs \\\\\n\\text{Don't do it} & \\text{if } Benefits &lt; Costs\n\\end{cases}\\]\nIn practice:\n\nBenefits = What you gain\nCosts = What you give up\nCompare net benefit of alternatives"
+    "text": "Cost-Benefit Principle\n\nThe Foundation of Rational Choice:\n\nAn action should be undertaken if and only if the benefits exceed the costs.\n\n\\[\\text{Decision Rule: } \\begin{cases}\n\\text{Do it} & \\text{if } Benefits \\geq Costs \\\\\n\\text{Don't do it} & \\text{if } Benefits &lt; Costs\n\\end{cases}\\]\nIn practice:\n\nBenefits = What you gain\nCosts = What you give up\nCompare net benefit of alternatives"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#tourism-example-cost-benefit",
     "href": "slides/lecture03-opportunity.html#tourism-example-cost-benefit",
     "title": "Economics Fundamentals",
     "section": "Tourism Example: Cost-Benefit",
-    "text": "Tourism Example: Cost-Benefit\nShould a tourist visit the Belém Tower in Lisbon?\n\n\nBenefits\n\nHistorical experience\nPhotos/memories\nEducational value\nSatisfaction\n\nEstimated value: €20\n\nCosts\n\nEntry ticket: €6\nTravel time: 30 min\nWaiting time: 20 min\nValue of time: €15/hr\n\nTotal time cost: €12.50 Total cost: €18.50\n\nDecision: Benefits (€20) &gt; Costs (€18.50) → Visit!\nBut if waiting time increases to 60 min, costs rise to €23.50 → Don’t visit!"
+    "text": "Tourism Example: Cost-Benefit\n\nShould a tourist visit the Belém Tower in Lisbon?\n\n\nBenefits\n\nHistorical experience\nPhotos/memories\nEducational value\nSatisfaction\n\nEstimated value: €20\n\nCosts\n\nEntry ticket: €6\nTravel time: 30 min\nWaiting time: 20 min\nValue of time: €15/hr\n\nTotal time cost: €12.50 Total cost: €18.50\n\nDecision: Benefits (€20) &gt; Costs (€18.50) → Visit!\nBut if waiting time increases to 60 min, costs rise to €28.50 → Don’t visit!"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#marginal-analysis",
@@ -1005,21 +1005,21 @@
     "href": "slides/lecture03-opportunity.html#opportunity-cost-definition",
     "title": "Economics Fundamentals",
     "section": "Opportunity Cost: Definition",
-    "text": "Opportunity Cost: Definition\nThe Most Important Concept in Economics!\n\nOpportunity Cost = The value of the best alternative foregone when making a choice\n\nKey Points:\n\nIt’s what you give up, not what you pay\nIt’s the next-best alternative (not all alternatives)\nIt includes both explicit (money) and implicit costs (time, foregone opportunities)\n\nIn decisions: You should choose option A over B if:\n\\[\\text{Benefit of A} - \\text{Opportunity Cost of A} &gt; \\text{Benefit of B} - \\text{Opportunity Cost of B}\\]"
+    "text": "Opportunity Cost: Definition\n\nThe Most Important Concept in Economics!\n\nOpportunity Cost = The value of the best alternative foregone when making a choice\n\nKey Points:\n\nIt’s what you give up, not what you pay\nIt’s the next-best alternative (not all alternatives)\nIt includes both explicit (money) and implicit costs (time, foregone opportunities)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#opportunity-cost-examples",
     "href": "slides/lecture03-opportunity.html#opportunity-cost-examples",
     "title": "Economics Fundamentals",
     "section": "Opportunity Cost Examples",
-    "text": "Opportunity Cost Examples\nSimple Example: You have €100 and 4 hours free on Saturday afternoon.\nOptions:\nA. Visit museum (€10 entry, 3 hours)\nB. Beach trip (€0 entry, 4 hours)\nC. Movie (€12 ticket, 2 hours)\nD. Stay home and study (€0, 4 hours)\nIf you choose A (museum):\n\nExplicit cost: €10\nOpportunity cost: Value of best alternative foregone\n\nCan’t go to beach (assume you value it at €20)\nTotal opportunity cost: €10 paid + €20 value foregone = €30"
+    "text": "Opportunity Cost Examples\n\nSimple Example: You have €100 and 4 hours free on Saturday afternoon.\nOptions:\nA. Visit museum (€10 entry, 3 hours)\nB. Beach trip (€0 entry, 4 hours)\nC. Movie (€12 ticket, 2 hours)\nD. Stay home and study (€0, 4 hours)\nIf you choose A (museum):\n\nExplicit cost: €10\nOpportunity cost: Value of best alternative foregone\n\nCan’t go to beach (assume you value it at €20)\nTotal opportunity cost: €10 paid + €20 value foregone = €30"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#opportunity-cost-in-tourism-decisions",
     "href": "slides/lecture03-opportunity.html#opportunity-cost-in-tourism-decisions",
     "title": "Economics Fundamentals",
     "section": "Opportunity Cost in Tourism Decisions",
-    "text": "Opportunity Cost in Tourism Decisions\nExample: Hotel Investment\n\nIf you build hotel in Lisbon: Opportunity cost = foregone €520k from Algarve (best alternative)"
+    "text": "Opportunity Cost in Tourism Decisions\n\nExample: Hotel Investment\n\n\n\n\n\n\n\n\n\nIf you build hotel in Lisbon: Opportunity cost = foregone €520k from Algarve (best alternative) (We are assuming the same investment in both places)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#sunk-costs-vs.-opportunity-costs",
@@ -1033,42 +1033,42 @@
     "href": "slides/lecture03-opportunity.html#real-example-sunk-costs-in-airlines",
     "title": "Economics Fundamentals",
     "section": "Real Example: Sunk Costs in Airlines",
-    "text": "Real Example: Sunk Costs in Airlines\nCase: TAP Air Portugal orders new aircraft (2024)\n\nCorrect Decision Process: Compare future benefits (passenger revenue, efficiency) vs. future costs (€1,350M), ignoring the sunk €150M."
+    "text": "Real Example: Sunk Costs in Airlines\n\nCase: TAP Air Portugal orders new aircraft\n\n\n\n\n\n\n\n\n\nCorrect Decision Process: Compare future benefits (passenger revenue, efficiency) vs. future costs (€1,350M), ignoring the sunk €150M."
   },
   {
     "objectID": "slides/lecture03-opportunity.html#opportunity-cost-in-time-allocation",
     "href": "slides/lecture03-opportunity.html#opportunity-cost-in-time-allocation",
     "title": "Economics Fundamentals",
     "section": "Opportunity Cost in Time Allocation",
-    "text": "Opportunity Cost in Time Allocation\nVery Important: Your time has opportunity cost!\nExample: Restaurant owner deciding whether to hire manager or self-manage\n\nAnalysis: Hiring manager is better (€130k &gt; €120k) because owner’s time has opportunity cost!"
+    "text": "Opportunity Cost in Time Allocation\n\nVery Important: Your time has opportunity cost!\nExample: Restaurant owner deciding whether to hire manager or self-manage\n\n\n\n\n\n\n\n\n\nAnalysis: Hiring manager is better (€130k &gt; €120k) because owner’s time has opportunity cost!"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#production-possibilities-frontier-preview",
     "href": "slides/lecture03-opportunity.html#production-possibilities-frontier-preview",
     "title": "Economics Fundamentals",
     "section": "Production Possibilities Frontier (Preview)",
-    "text": "Production Possibilities Frontier (Preview)\nVisual representation of opportunity cost at societal level\n\nNext lecture: We’ll explore PPF in detail!"
+    "text": "Production Possibilities Frontier (Preview)\n\nVisual representation of opportunity cost at societal level\n\n\n\n\n\n\n\n\n\nNext lecture: We’ll explore PPF in detail!"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#trade-offs-in-tourism-real-data",
     "href": "slides/lecture03-opportunity.html#trade-offs-in-tourism-real-data",
     "title": "Economics Fundamentals",
     "section": "Trade-offs in Tourism: Real Data",
-    "text": "Trade-offs in Tourism: Real Data\nPortugal 2024: Investment Trade-offs\n\nOpportunity cost of increasing cultural preservation by €15M = €20M less for mass tourism infrastructure"
+    "text": "Trade-offs in Tourism: Real Data\n\nWakanda 2024: Investment Trade-offs\n\n\n\n\n\n\n\n\n\nOpportunity cost of increasing cultural preservation by €15M = €20M less for mass tourism infrastructure"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#making-better-decisions",
     "href": "slides/lecture03-opportunity.html#making-better-decisions",
     "title": "Economics Fundamentals",
     "section": "Making Better Decisions",
-    "text": "Making Better Decisions\nChecklist for Rational Economic Decisions:\n\n✓ Identify all alternatives\n✓ Estimate benefits of each alternative\n✓ Estimate costs (including opportunity costs!)\n✓ Ignore sunk costs (they’re irrelevant)\n✓ Consider marginal changes (not just totals)\n✓ Choose alternative with highest net benefit\n\nRemember: Good decisions maximize net benefit (Benefits - Opportunity Costs)"
+    "text": "Making Better Decisions\n\nChecklist for Rational Economic Decisions:\n\n✓ Identify all alternatives\n✓ Estimate benefits of each alternative\n✓ Estimate costs (including opportunity costs!)\n✓ Ignore sunk costs (they’re irrelevant)\n✓ Consider marginal changes (not just totals)\n✓ Choose alternative with highest net benefit\n\nRemember: Good decisions maximize net benefit (Benefits - Opportunity Costs)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#common-decision-mistakes",
     "href": "slides/lecture03-opportunity.html#common-decision-mistakes",
     "title": "Economics Fundamentals",
     "section": "Common Decision Mistakes",
-    "text": "Common Decision Mistakes\nMistake 1: Ignoring opportunity costs\n\nThinking only about money paid, not value of alternatives foregone\n\nMistake 2: Counting sunk costs\n\n“I’ve already invested so much, I must continue”\n\nMistake 3: Ignoring marginal analysis\n\nLooking at totals instead of additional benefits/costs\n\nMistake 4: Not comparing net benefits\n\nChoosing option with highest benefit (but also highest cost)"
+    "text": "Common Decision Mistakes\n\nMistake 1: Ignoring opportunity costs\n\nThinking only about money paid, not value of alternatives foregone\n\nMistake 2: Counting sunk costs\n\n“I’ve already invested so much, I must continue”\n\nMistake 3: Ignoring marginal analysis\n\nLooking at totals instead of additional benefits/costs\n\nMistake 4: Not comparing net benefits\n\nChoosing option with highest benefit (but also highest cost)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#real-business-case-ryanair-strategy",
@@ -1370,5 +1370,12 @@
     "title": "Economics Fundamentals",
     "section": "Tourism Infrastructure Investment in Portugal (2024)",
     "text": "Tourism Infrastructure Investment in Portugal (2024)\nWHAT to produce: Allocation decisions (€ millions)\n\n Hotels — €450M\n\n\n Transport — €380M\n\n\n Restaurants — €280M\n\n\n Beach Facilities — €150M\n\n\n Museums — €120M"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#opportunity-cost-definition-1",
+    "href": "slides/lecture03-opportunity.html#opportunity-cost-definition-1",
+    "title": "Economics Fundamentals",
+    "section": "Opportunity Cost: Definition",
+    "text": "Opportunity Cost: Definition\n\nWhen deciding: You should choose option A over B if:\n\\[\\overbrace{B_A}^{\\text{Gross Benefit of}\\ A} \\geq \\underbrace{\\overbrace{C_A}^{\\text{Monetary Cost}} + \\underbrace{(B_B-C_b)}_{\\text{Surplus of best alternative}}}_{\\text{Opportunity Cost of}\\ A}\\]"
   }
 ]

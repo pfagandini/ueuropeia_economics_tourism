@@ -28,6 +28,8 @@ format:
 - **Opportunity cost** – one of economics' most powerful concepts!
 
 ## Economic Rationality
+<div style="font-size: 80%;">
+
 
 **Assumption**: People are **rational decision-makers**
 
@@ -42,7 +44,11 @@ format:
 
 People can be rational within their information and cognitive limits (bounded rationality)
 
+</div>
+
 ## Cost-Benefit Principle
+
+<div style="font-size: 80%;">
 
 **The Foundation of Rational Choice**:
 
@@ -59,7 +65,11 @@ $$\text{Decision Rule: } \begin{cases}
 - Costs = What you give up
 - Compare net benefit of alternatives
 
+</div>
+
 ## Tourism Example: Cost-Benefit
+
+<div style="font-size: 80%;">
 
 **Should a tourist visit the Belém Tower in Lisbon?**
 
@@ -88,7 +98,9 @@ $$\text{Decision Rule: } \begin{cases}
 
 **Decision**: Benefits (€20) > Costs (€18.50) → **Visit!**
 
-But if waiting time increases to 60 min, costs rise to €23.50 → **Don't visit!**
+But if waiting time increases to 60 min, costs rise to €28.50 → **Don't visit!**
+
+</div>
 
 ## Marginal Analysis
 
@@ -156,6 +168,7 @@ ggplot(cost_data, aes(x = rooms, y = value, color = type, linetype = type)) +
 ```
 
 ## Opportunity Cost: Definition
+<div style="font-size: 80%;">
 
 **The Most Important Concept in Economics!**
 
@@ -167,11 +180,21 @@ ggplot(cost_data, aes(x = rooms, y = value, color = type, linetype = type)) +
 - It's the **next-best** alternative (not all alternatives)
 - It includes both **explicit** (money) and **implicit** costs (time, foregone opportunities)
 
-**In decisions**: You should choose option A over B if:
+</div>
 
-$$\text{Benefit of A} - \text{Opportunity Cost of A} > \text{Benefit of B} - \text{Opportunity Cost of B}$$
+## Opportunity Cost: Definition
+
+<div style="font-size: 80%;">
+
+**When deciding**: You should choose option A over B if:
+
+$$\overbrace{B_A}^{\text{Gross Benefit of}\ A} \geq \underbrace{\overbrace{C_A}^{\text{Monetary Cost}} + \underbrace{(B_B-C_b)}_{\text{Surplus of best alternative}}}_{\text{Opportunity Cost of}\ A}$$
+
+</div>
 
 ## Opportunity Cost Examples
+
+<div style="font-size: 80%;">
 
 **Simple Example**: You have €100 and 4 hours free on Saturday afternoon.
 
@@ -189,7 +212,11 @@ D. Stay home and study (€0, 4 hours)
   - Can't go to beach (assume you value it at €20)
   - **Total opportunity cost**: €10 paid + €20 value foregone = **€30**
 
+</div>
+
 ## Opportunity Cost in Tourism Decisions
+
+<div style="font-size: 80%;">
 
 **Example: Hotel Investment**
 
@@ -226,7 +253,9 @@ ggplot(investment_options, aes(x = option, y = return_percentage, fill = option)
   ylim(0, 14)
 ```
 
-**If you build hotel in Lisbon**: Opportunity cost = foregone €520k from Algarve (best alternative)
+**If you build hotel in Lisbon**: Opportunity cost = foregone €520k from Algarve (best alternative) (We are assuming the same investment in both places)
+
+</div>
 
 ## Sunk Costs vs. Opportunity Costs
 
@@ -253,7 +282,9 @@ You bought a non-refundable €100 train ticket to Porto. On the travel day, you
 
 ## Real Example: Sunk Costs in Airlines
 
-**Case**: TAP Air Portugal orders new aircraft (2024)
+<div style="font-size: 80%;">
+
+**Case**: TAP Air Portugal orders new aircraft
 
 ```{r}
 #| echo: false
@@ -283,9 +314,9 @@ ggplot(timeline_data, aes(x = stage_num, y = cumulative_cost)) +
        y = "Amount (€ millions)") +
   scale_x_continuous(breaks = 1:4, labels = timeline_data$stage) +
   theme_minimal(base_size = 14) +
-  annotate("text", x = 2, y = 200, label = "Sunk Cost\n(€150M paid)", 
+  annotate("text", x = 2, y = 300, label = "Sunk Cost\n(€150M paid)", 
            color = "#e74c3c", size = 4, fontface = "bold") +
-  annotate("text", x = 4, y = 1400, label = "Future Payment\n(€1,350M)", 
+  annotate("text", x = 4, y = 1500, label = "Future Payment\n(€1,350M)", 
            color = "#3498db", size = 4, fontface = "bold") +
   geom_rect(aes(xmin = 3.7, xmax = 4.3, ymin = 0, ymax = 1600), 
             alpha = 0.01, fill = "yellow", color = "orange", size = 1.5)
@@ -293,7 +324,11 @@ ggplot(timeline_data, aes(x = stage_num, y = cumulative_cost)) +
 
 **Correct Decision Process**: Compare future benefits (passenger revenue, efficiency) vs. future costs (€1,350M), **ignoring** the sunk €150M.
 
+</div>
+
 ## Opportunity Cost in Time Allocation
+
+<div style="font-size: 80%;">
 
 **Very Important**: Your **time** has opportunity cost!
 
@@ -350,7 +385,11 @@ ggplot(time_long, aes(x = scenario, y = value, fill = component)) +
 
 **Analysis**: Hiring manager is better (€130k > €120k) because owner's time has opportunity cost!
 
+</div>
+
 ## Production Possibilities Frontier (Preview)
+
+<div style="font-size: 80%;">
 
 **Visual representation of opportunity cost at societal level**
 
@@ -362,44 +401,51 @@ ggplot(time_long, aes(x = scenario, y = value, fill = component)) +
 
 # Simple PPF for tourism economy
 # Two goods: Beach tourism vs. Cultural tourism (museum capacity)
+library(ggplot2)
 
+# 1. Create Linear PPF Data
+# Equation: cultural = 100 - beach
 beach <- seq(0, 100, by = 5)
-cultural <- 100 * (1 - (beach/100)^0.5)
-
+cultural <- 100 - beach
 ppf_data <- data.frame(beach, cultural)
 
-# Example points
+# 2. Define Points EXACTLY on the line (x + y = 100)
 points <- data.frame(
-  beach = c(30, 64, 80),
-  cultural = c(82.3, 60, 44.7),
+  beach = c(30, 70, 90),
+  cultural = c(70, 30, 10), # Adjusted to sum to 100
   label = c("A", "B", "C")
 )
 
 ggplot(ppf_data, aes(x = beach, y = cultural)) +
-  geom_line(size = 1.5, color = "#3498db") +
+  geom_line(linewidth = 1.5, color = "#3498db") +
   geom_ribbon(aes(ymin = 0, ymax = cultural), alpha = 0.2, fill = "#3498db") +
   geom_point(data = points, aes(x = beach, y = cultural), size = 5, color = "#e74c3c") +
   geom_text(data = points, aes(x = beach, y = cultural, label = label), 
-            vjust = -1, size = 6, fontface = "bold") +
-  labs(title = "Tourism Development: Opportunity Cost Visualization",
-       subtitle = "Moving from A to B: Opportunity cost = 22.3 units of cultural tourism foregone",
+            vjust = -1.5, size = 6, fontface = "bold") +
+  labs(title = "Tourism Development: Linear PPF",
+       subtitle = "Constant Opportunity Cost: 1 unit of beach = 1 unit of culture",
        x = "Beach Tourism Capacity (units)",
        y = "Cultural Tourism Capacity (units)") +
   theme_minimal(base_size = 14) +
-  annotate("segment", x = 30, xend = 64, y = 82.3, yend = 82.3,
+  # Arrows showing the trade-off from A to B
+  annotate("segment", x = 30, xend = 70, y = 70, yend = 70,
            arrow = arrow(length = unit(0.3, "cm")), size = 1, color = "#e67e22") +
-  annotate("text", x = 47, y = 85, label = "+34 beach units", size = 4, color = "#e67e22") +
-  annotate("segment", x = 64, xend = 64, y = 82.3, yend = 60,
+  annotate("text", x = 50, y = 74, label = "+40 beach units", size = 4, color = "#e67e22") +
+  annotate("segment", x = 70, xend = 70, y = 70, yend = 30,
            arrow = arrow(length = unit(0.3, "cm")), size = 1, color = "#e67e22") +
-  annotate("text", x = 70, y = 71, label = "-22.3 cultural units\n(Opportunity Cost)", 
+  annotate("text", x = 85, y = 50, label = "-40 cultural units\n(Opportunity Cost)", 
            size = 4, color = "#e67e22", fontface = "bold")
 ```
 
 **Next lecture**: We'll explore PPF in detail!
 
+</div>
+
 ## Trade-offs in Tourism: Real Data
 
-**Portugal 2024: Investment Trade-offs**
+<div style="font-size: 80%;">
+
+**Wakanda 2024: Investment Trade-offs**
 
 ```{r}
 #| echo: false
@@ -426,24 +472,28 @@ allocation_long <- allocation_data %>%
 
 ggplot(allocation_long, aes(x = category, y = amount, fill = year)) +
   geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "Tourism Investment Allocation: Portugal Government",
+  labs(title = "Tourism Investment Allocation: Wakanda Government",
        subtitle = "Trade-offs: More cultural preservation = Less mass tourism infrastructure",
        x = "",
-       y = "Budget (€ millions)",
+       y = "Budget (millions)",
        fill = "") +
   theme_minimal(base_size = 14) +
   scale_fill_manual(values = c("2024 (Actual)" = "#95a5a6", 
                                 "2025 (Proposed)" = "#27ae60")) +
   theme(legend.position = "bottom",
         axis.text.x = element_text(size = 11)) +
-  geom_text(aes(label = paste0("€", amount, "M")), 
+  geom_text(aes(label = paste0("", amount, "M")), 
             position = position_dodge(width = 0.9), 
             vjust = -0.5, size = 3.5)
 ```
 
 **Opportunity cost of increasing cultural preservation by €15M** = €20M less for mass tourism infrastructure
 
+</div>
+
 ## Making Better Decisions
+
+<div style="font-size: 80%;">
 
 **Checklist for Rational Economic Decisions**:
 
@@ -456,7 +506,12 @@ ggplot(allocation_long, aes(x = category, y = amount, fill = year)) +
 
 **Remember**: Good decisions maximize net benefit (Benefits - Opportunity Costs)
 
+
+</div>
+
 ## Common Decision Mistakes
+
+<div style="font-size: 80%;">
 
 **Mistake 1**: Ignoring opportunity costs
 
@@ -473,6 +528,8 @@ ggplot(allocation_long, aes(x = category, y = amount, fill = year)) +
 **Mistake 4**: Not comparing net benefits
 
 - Choosing option with highest benefit (but also highest cost)
+
+</div>
 
 ## Real Business Case: Ryanair Strategy
 
