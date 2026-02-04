@@ -13,6 +13,17 @@ format:
     scrollable: true
     footer: "Economics of Tourism | Lecture 1"
     logo: ../images/logo.png
+    include-in-header:
+        text: |
+          <style>
+          .reveal .caption {
+            font-size: 0.5em;
+          }
+          /* This targets the figure captions specifically */
+          figcaption {
+            font-size: 0.5em !important;
+          }
+          </style>
 ---
 
 ```{r}
@@ -195,7 +206,6 @@ ggplot(data = guests_micro, aes(x = description, y = guests, fill = description)
     x = "Accommodation Type",
     y = "Number of Guests",
     caption = "Source: Eurostat") +
-  ) +
   theme_minimal() +
   theme(
     plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
