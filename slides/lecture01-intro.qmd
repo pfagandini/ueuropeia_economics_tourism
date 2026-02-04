@@ -6,6 +6,7 @@ date: today
 date-format: "YYYY"
 format:
   revealjs:
+    from: markdown+emoji
     theme: default
     transition: slide
     slide-number: true
@@ -61,8 +62,8 @@ Economics is essential for management professionals to make informed decisions i
 
 ## Introduction
 
-:man_teacher: Paulo Fagandini
-:email: paulo.fagandini@ext.universidadeeuropeia.pt
+:man_teacher: Paulo Fagandini  
+:email: paulo.fagandini@ext.universidadeeuropeia.pt  
 
 :mortar_board:**In Canvas:** Syllabus, Calendar, Group Project.
 
