@@ -13,6 +13,17 @@ format:
     scrollable: true
     footer: "Economics of Tourism | Lecture 2"
     logo: ../images/logo.png
+    include-in-header:
+      text: |
+        <style>
+        .reveal .caption {
+          font-size: 0.5em;
+        }
+        /* This targets the figure captions specifically */
+        figcaption {
+          font-size: 0.5em !important;
+        }
+        </style>
 ---
 
 ```{r}
