@@ -26,7 +26,12 @@ format:
         </style>
 ---
 
+<div style="font-size: 80%;">
+</div>
+
 ## Recap: Lecture 3 {.center}
+
+<div style="font-size: 80%;">
 
 **Key Concepts from Last Class**:
 
@@ -41,7 +46,11 @@ format:
 - **Production Possibilities Frontier (PPF)**
 - Society-level trade-offs and efficiency
 
+</div>
+
 ## Production Factors (Inputs)
+
+<div style="font-size: 80%;">
 
 **To produce goods and services, economies use three main factors**:
 
@@ -86,7 +95,11 @@ format:
 :::
 ::::
 
+</div>
+
 ## Factor Payments
+
+<div style="font-size: 80%;">
 
 **Each factor receives compensation**:
 
@@ -99,7 +112,12 @@ format:
 
 **Income Distribution**: Sum of all factor payments determines who gets what (FOR WHOM question)
 
-## Tourism Production: Factor Intensive Example
+</div>
+
+
+## Tourism Production: Example
+
+<div style="font-size: 70%;">
 
 **Different tourism products use factors in different proportions**:
 
@@ -153,6 +171,8 @@ ggplot(tourism_types, aes(x = type, y = percentage, fill = factor)) +
 
 **Insight**: Cruise tourism is **capital-intensive**, cultural tours are **labor-intensive**, beach resorts balanced
 
+</div>
+
 ## Production Possibilities Frontier (PPF)
 
 **Definition**: The PPF shows the **maximum combinations** of two goods an economy can produce given:
@@ -165,7 +185,9 @@ ggplot(tourism_types, aes(x = type, y = percentage, fill = factor)) +
 
 → **This is opportunity cost visualized!**
 
-## Simple PPF Example: Tourism Economy
+## Simple PPF Example: Tourism
+
+<div style="font-size: 80%;">
 
 **Imagine an economy producing only**:
 
@@ -178,42 +200,66 @@ ggplot(tourism_types, aes(x = type, y = percentage, fill = factor)) +
 #| fig-width: 10
 #| fig-height: 6
 
-# Create PPF curve
-beach <- seq(0, 100, by = 1)
-cultural <- 100 * (1 - (beach/100)^0.7)
+library(ggplot2)
 
-ppf_basic <- data.frame(beach, cultural)
-
-# Points
-points <- data.frame(
-  beach = c(0, 30, 60, 85, 100, 50),
-  cultural = c(100, 81, 57, 32, 0, 40),
-  label = c("A", "B", "C", "D", "E", "U"),
-  type = c(rep("On PPF", 5), "Inefficient")
+# 1. Create Linear PPF data (y = 100 - x)
+ppf_data <- data.frame(
+  beach = c(0, 100),
+  cultural = c(100, 0)
 )
 
-ggplot(ppf_basic, aes(x = beach, y = cultural)) +
-  geom_line(size = 2, color = "#3498db") +
-  geom_ribbon(aes(ymin = 0, ymax = cultural), alpha = 0.15, fill = "#3498db") +
-  geom_point(data = points, aes(x = beach, y = cultural, color = type, shape = type), 
-             size = 6) +
-  geom_text(data = points, aes(x = beach, y = cultural, label = label), 
-            vjust = -1.5, size = 6, fontface = "bold") +
-  labs(title = "Production Possibilities Frontier: Tourism Economy",
-       subtitle = "Maximum combinations of beach and cultural tourism capacity",
-       x = "Beach Tourism Capacity (units)",
-       y = "Cultural Tourism Capacity (units)") +
+# 2. Define the Points
+# Efficient: Sum of x and y = 100
+# Inefficient: Sum < 100
+# Unattainable: Sum > 100
+points <- data.frame(
+  beach =    c(0, 30, 60, 85, 100, 40, 80),
+  cultural = c(100, 70, 40, 15, 0, 30, 80),
+  label =    c("A", "B", "C", "D", "E", "U", "X"),
+  status =   c(rep("Efficient", 5), "Inefficient", "Unattainable")
+)
+
+# 3. Plotting
+ggplot(ppf_data, aes(x = beach, y = cultural)) +
+  # The Linear Frontier
+  geom_line(linewidth = 1.5, color = "#2c3e50") +
+  # Shaded feasible region
+  geom_ribbon(aes(ymin = 0, ymax = cultural), alpha = 0.1, fill = "#3498db") +
+  # Points
+  geom_point(data = points, aes(color = status, shape = status), size = 6) +
+  # Labels for points
+  geom_text(data = points, aes(label = label), 
+            nudge_y = 4, nudge_x = 3, size = 5, fontface = "bold") +
+  # Styling
+  scale_color_manual(values = c(
+    "Efficient" = "#27ae60", 
+    "Inefficient" = "#e67e22", 
+    "Unattainable" = "#c0392b"
+  )) +
+  scale_shape_manual(values = c(
+    "Efficient" = 16, 
+    "Inefficient" = 17, 
+    "Unattainable" = 15
+  )) +
+  labs(
+    title = "Linear Production Possibilities Frontier",
+    subtitle = "Constant Opportunity Cost (1:1 Swap Ratio)",
+    x = "Beach Tourism Capacity",
+    y = "Cultural Tourism Capacity"
+  ) +
+  coord_cartesian(xlim = c(0, 110), ylim = c(0, 110)) +
   theme_minimal(base_size = 14) +
-  scale_color_manual(values = c("On PPF" = "#e74c3c", "Inefficient" = "#95a5a6")) +
-  scale_shape_manual(values = c("On PPF" = 16, "Inefficient" = 4)) +
-  theme(legend.position = "bottom",
-        legend.title = element_blank()) +
-  xlim(-5, 110) + ylim(-5, 110) +
-  annotate("text", x = 85, y = 75, 
-           label = "Efficient\n(On frontier)", size = 5, color = "#27ae60") +
-  annotate("text", x = 50, y = 30, 
-           label = "Inefficient\n(Unemployed resources)", size = 5, color = "#95a5a6")
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    panel.grid.minor = element_blank()
+  ) +
+  # Zone Annotations
+  annotate("text", x = 20, y = 20, label = "FEASIBLE &\nINEFFICIENT", color = "#e67e22", alpha = 0.7) +
+  annotate("text", x = 85, y = 85, label = "UNATTAINABLE", color = "#c0392b", alpha = 0.7)
 ```
+
+</div>
 
 ## Interpreting the PPF
 
@@ -223,7 +269,7 @@ ggplot(ppf_basic, aes(x = beach, y = cultural)) +
 
 **Point C** (60, 57): Mixed economy, balanced allocation
 
-**Point U** (50, 40): **Inefficient** – inside PPF
+**Point U** (40, 30): **Inefficient** – inside PPF
 
 - Resources unemployed or misallocated
 - Could produce more of both goods!
@@ -231,6 +277,8 @@ ggplot(ppf_basic, aes(x = beach, y = cultural)) +
 **Beyond PPF**: **Impossible** with current resources & technology
 
 ## Opportunity Cost on the PPF
+
+<div style="font-size: 80%;">
 
 **Moving along the PPF reveals opportunity costs**:
 
@@ -240,107 +288,57 @@ ggplot(ppf_basic, aes(x = beach, y = cultural)) +
 #| fig-width: 10
 #| fig-height: 6
 
-# Detailed PPF with opportunity cost calculation
-beach_detailed <- seq(0, 100, by = 5)
-cultural_detailed <- 100 * (1 - (beach_detailed/100)^0.7)
+library(ggplot2)
 
-ppf_detailed <- data.frame(beach_detailed, cultural_detailed)
+# 1. Create Linear PPF data (y = 100 - x)
+ppf_data <- data.frame(beach = c(0, 100), cultural = c(100, 0))
 
-# Movement from B to C
+# 2. Movement from B to C (Linear: 30 unit swap)
 move_points <- data.frame(
   beach = c(30, 60),
-  cultural = c(81, 57),
+  cultural = c(70, 40), # Math: 100 - beach
   label = c("B", "C")
 )
 
-ggplot(ppf_detailed, aes(x = beach_detailed, y = cultural_detailed)) +
-  geom_line(size = 2, color = "#3498db") +
+ggplot(ppf_data, aes(x = beach, y = cultural)) +
+  # The Frontier
+  geom_line(linewidth = 2, color = "#3498db") +
+  # Points B and C
   geom_point(data = move_points, aes(x = beach, y = cultural), 
              size = 7, color = "#e74c3c") +
   geom_text(data = move_points, aes(x = beach, y = cultural, label = label), 
-            vjust = -1.5, size = 7, fontface = "bold") +
-  labs(title = "Opportunity Cost: Moving from B to C",
-       subtitle = "To gain 30 units of beach tourism, must sacrifice 24 units of cultural tourism",
-       x = "Beach Tourism Capacity (units)",
-       y = "Cultural Tourism Capacity (units)") +
-  theme_minimal(base_size = 14) +
+            nudge_y = 6, size = 7, fontface = "bold") +
   # Horizontal arrow (gain in beach)
-  annotate("segment", x = 30, xend = 60, y = 81, yend = 81,
+  annotate("segment", x = 30, xend = 60, y = 70, yend = 70,
            arrow = arrow(length = unit(0.4, "cm"), type = "closed"), 
-           size = 1.5, color = "#27ae60") +
-  annotate("text", x = 45, y = 85, 
-           label = "GAIN: +30 beach units", size = 5, color = "#27ae60", fontface = "bold") +
+           linewidth = 1.5, color = "#27ae60") +
+  annotate("text", x = 45, y = 75, 
+           label = "GAIN: +30 units", size = 5, color = "#27ae60", fontface = "bold") +
   # Vertical arrow (loss in cultural)
-  annotate("segment", x = 60, xend = 60, y = 81, yend = 57,
+  annotate("segment", x = 60, xend = 60, y = 70, yend = 40,
            arrow = arrow(length = unit(0.4, "cm"), type = "closed"), 
-           size = 1.5, color = "#e74c3c") +
-  annotate("text", x = 70, y = 69, 
-           label = "COST: -24 cultural units\n(Opportunity Cost)", 
+           linewidth = 1.5, color = "#e74c3c") +
+  annotate("text", x = 78, y = 55, 
+           label = "COST: -30 units\n(Opp. Cost)", 
            size = 5, color = "#e74c3c", fontface = "bold") +
-  xlim(-5, 110) + ylim(-5, 110)
-```
-
-**Opportunity Cost of moving B → C**: 24 cultural units
-
-## Increasing Opportunity Costs
-
-**Key Feature**: PPF is typically **bowed outward** (concave)
-
-**Why?** → **Law of Increasing Opportunity Costs**
-
-```{r}
-#| echo: false
-#| warning: false
-#| fig-width: 10
-#| fig-height: 6
-
-# Calculate marginal opportunity costs
-calc_points <- data.frame(
-  beach = c(0, 20, 40, 60, 80, 100),
-  cultural = 100 * (1 - (c(0, 20, 40, 60, 80, 100)/100)^0.7)
-)
-
-calc_points$beach_change <- c(NA, diff(calc_points$beach))
-calc_points$cultural_change <- c(NA, diff(calc_points$cultural))
-calc_points$opp_cost <- -calc_points$cultural_change / calc_points$beach_change
-
-# Create visualization
-opp_cost_data <- calc_points[2:6, ]
-
-ggplot(opp_cost_data, aes(x = beach, y = opp_cost)) +
-  geom_line(size = 1.5, color = "#e74c3c") +
-  geom_point(size = 5, color = "#e74c3c") +
-  labs(title = "Increasing Opportunity Costs Along PPF",
-       subtitle = "Each additional unit of beach tourism costs MORE cultural tourism foregone",
-       x = "Beach Tourism Production Level",
-       y = "Opportunity Cost\n(Cultural units per Beach unit)") +
+  # Labels and Theme
+  labs(title = "Constant Opportunity Cost: Moving from B to C",
+       subtitle = "In a linear PPF, the ratio of sacrifice remains 1:1",
+       x = "Beach Tourism Capacity",
+       y = "Cultural Tourism Capacity") +
+  coord_cartesian(xlim = c(0, 110), ylim = c(0, 110)) +
   theme_minimal(base_size = 14) +
-  geom_text(aes(label = round(opp_cost, 2)), 
-            vjust = -1, size = 5, fontface = "bold") +
-  ylim(0, max(opp_cost_data$opp_cost) * 1.2)
+  theme(panel.grid.minor = element_blank())
 ```
 
-**Explanation**: Resources are not perfectly adaptable. As you shift more resources to beach tourism, you use resources less suited for it (higher cost).
+**Opportunity Cost of moving B → C**: 30 cultural units
 
-## Why PPF is Bowed: Intuition
-
-**Example**: Converting resources from cultural to beach tourism
-
-**Early conversions (A → B)**:
-
-- Use coastal land perfect for beaches
-- Relocate tour guides who can also work in resorts
-- Low opportunity cost (~0.95 cultural per beach unit)
-
-**Later conversions (D → E)**:
-
-- Must use inland locations (poor beaches)
-- Relocate museum curators (not suited for resort work)
-- High opportunity cost (~2.25 cultural per beach unit)
-
-**Result**: **Bowed PPF** reflects increasing difficulty of conversion
+</div>
 
 ## Productive Efficiency
+
+<div style="font-size: 80%;">
+
 
 **An economy is productively efficient when**:
 
@@ -353,40 +351,56 @@ ggplot(opp_cost_data, aes(x = beach, y = opp_cost)) +
 #| warning: false
 #| fig-width: 10
 #| fig-height: 5
+#| fig-cap: "Comparison of productive efficiency states."
 
-# Efficiency comparison
+library(ggplot2)
+
+# 1. Linear PPF data (y = 100 - x)
+beach_curve <- seq(0, 100, by = 1)
+cultural_curve <- 100 - beach_curve
+ppf_eff <- data.frame(beach_curve, cultural_curve)
+
+# 2. Adjusted Points to fit the linear reasoning
+# Point A & C: x + y = 100 (Efficient)
+# Point B: x + y = 90 (Inefficient)
 efficiency_points <- data.frame(
-  beach = c(50, 50, 90),
-  cultural = c(70, 40, 25),
+  beach = c(30, 50, 80),
+  cultural = c(70, 40, 20),
   status = c("Efficient (on PPF)", "Inefficient (inside)", "Efficient (on PPF)"),
   label = c("Point A", "Point B", "Point C")
 )
 
-beach_curve <- seq(0, 100, by = 1)
-cultural_curve <- 100 * (1 - (beach_curve/100)^0.7)
-ppf_eff <- data.frame(beach_curve, cultural_curve)
-
 ggplot(ppf_eff, aes(x = beach_curve, y = cultural_curve)) +
-  geom_line(size = 2, color = "#3498db") +
+  # The Frontier
+  geom_line(linewidth = 2, color = "#3498db") +
+  # Feasible Region Shading
   geom_ribbon(aes(ymin = 0, ymax = cultural_curve), alpha = 0.1, fill = "#27ae60") +
+  # Points
   geom_point(data = efficiency_points, aes(x = beach, y = cultural, color = status), 
              size = 7) +
+  # Point Labels
   geom_text(data = efficiency_points, aes(x = beach, y = cultural, label = label), 
-            vjust = -1.5, size = 6, fontface = "bold") +
-  labs(title = "Productive Efficiency: On vs. Inside PPF",
-       subtitle = "Efficient points (A, C) on frontier; Inefficient point (B) inside",
-       x = "Beach Tourism",
-       y = "Cultural Tourism") +
-  theme_minimal(base_size = 14) +
+            nudge_y = 5, size = 6, fontface = "bold") +
+  # Scales and Labels
   scale_color_manual(values = c("Efficient (on PPF)" = "#27ae60", 
                                  "Inefficient (inside)" = "#e74c3c")) +
+  labs(title = "Productive Efficiency: On vs. Inside PPF",
+       subtitle = "Efficient points (A, C) utilize all resources; Point B represents waste",
+       x = "Beach Tourism Capacity",
+       y = "Cultural Tourism Capacity") +
+  coord_cartesian(xlim = c(0, 105), ylim = c(0, 105)) +
+  theme_minimal(base_size = 14) +
   theme(legend.position = "bottom",
-        legend.title = element_blank()) +
-  annotate("rect", xmin = 0, xmax = 100, ymin = 0, ymax = 100, 
-           alpha = 0, color = "black", size = 0.5)
+        legend.title = element_blank(),
+        panel.grid.minor = element_blank())
 ```
 
+</div>
+
 ## Causes of Inefficiency
+
+
+<div style="font-size: 80%;">
 
 **Why might an economy operate inside the PPF?**
 
@@ -404,9 +418,12 @@ ggplot(ppf_eff, aes(x = beach_curve, y = cultural_curve)) +
    - Not using best available methods
    - Example: Manual booking when online systems exist
 
-## Real Example: Portugal Tourism Efficiency
+</div>
 
-**Portugal Tourism 2019 vs 2020-2021**
+
+## Real Example: COVID and Tourism Efficiency
+
+**Tourism 2019 vs 2020-2021**
 
 ```{r}
 #| echo: false
@@ -453,6 +470,8 @@ ggplot(portugal_efficiency, aes(x = year)) +
 
 ## Economic Growth: Shifting the PPF
 
+<div style="font-size: 80%;">
+
 **PPF can shift outward due to**:
 
 1. **More Resources**
@@ -468,61 +487,72 @@ ggplot(portugal_efficiency, aes(x = year)) +
    - Rule of law, property rights
    - Efficient markets
 
+</div>
+
 ## Economic Growth Visualization
+
+<div style="font-size: 80%;">
 
 ```{r}
 #| echo: false
 #| warning: false
 #| fig-width: 10
-#| fig-height: 6
+#| fig-height: 5
 
-# Original and shifted PPF
-beach_orig <- seq(0, 100, by = 1)
-cultural_orig <- 100 * (1 - (beach_orig/100)^0.7)
+library(ggplot2)
 
-beach_new <- seq(0, 130, by = 1)
-cultural_new <- 130 * (1 - (beach_new/130)^0.7)
-
+# 1. Linear PPF data: y = Total - x
 ppf_growth <- data.frame(
-  beach = c(beach_orig, beach_new),
-  cultural = c(cultural_orig, cultural_new),
-  period = rep(c("2024 (Current PPF)", "2030 (After Growth)"), 
-               c(length(beach_orig), length(beach_new)))
+  beach = c(0, 100, 0, 130),
+  cultural = c(100, 0, 130, 0),
+  period = rep(c("2024 (Current PPF)", "2030 (After Growth)"), each = 2)
 )
 
-# Sample points
+# 2. Points: Point A on the 100-line, Point B on the 130-line
 growth_points <- data.frame(
-  beach = c(60, 80),
-  cultural = c(57, 74),
+  beach = c(40, 65),
+  cultural = c(60, 65), # Math: 100-40 and 130-65
   period = c("2024 (Current PPF)", "2030 (After Growth)"),
   label = c("Point A (2024)", "Point B (2030)")
 )
 
-ggplot(ppf_growth, aes(x = beach, y = cultural, color = period)) +
-  geom_line(size = 2) +
-  geom_point(data = growth_points, aes(x = beach, y = cultural), size = 7) +
+ggplot() +
+  # The Frontier Lines (mapping period to color and linetype for clarity)
+  geom_line(data = ppf_growth, aes(x = beach, y = cultural, color = period), 
+            linewidth = 2) +
+  # Points A and B
+  geom_point(data = growth_points, aes(x = beach, y = cultural, color = period), 
+             size = 7) +
+  # Black labels for better contrast
   geom_text(data = growth_points, aes(x = beach, y = cultural, label = label), 
-            vjust = -1.5, size = 5, fontface = "bold", color = "black") +
+            nudge_y = 20, size = 5.5, fontface = "bold", color = "black") +
+  # Growth Vector (Arrow)
+  annotate("segment", x = 40, xend = 65, y = 60, yend = 65,
+           arrow = arrow(length = unit(0.4, "cm"), type = "closed"),
+           linewidth = 1.2, color = "#34495e", linetype = "dashed") +
+  annotate("text", x = 48, y = 67, 
+           label = "Outward Shift", 
+           size = 4.5, color = "#34495e", fontface = "italic", angle = 10) +
+  # Scales and Styling
+  scale_color_manual(values = c("2024 (Current PPF)" = "#e74c3c", 
+                                 "2030 (After Growth)" = "#27ae60")) +
   labs(title = "Economic Growth: PPF Shifts Outward",
-       subtitle = "With more resources & technology, can produce MORE of BOTH goods",
+       subtitle = "Improvements in technology or resources allow for more of both goods",
        x = "Beach Tourism Capacity",
        y = "Cultural Tourism Capacity",
        color = "") +
+  coord_cartesian(xlim = c(0, 140), ylim = c(0, 140)) +
   theme_minimal(base_size = 14) +
-  scale_color_manual(values = c("2024 (Current PPF)" = "#e74c3c", 
-                                 "2030 (After Growth)" = "#27ae60")) +
-  theme(legend.position = "bottom") +
-  annotate("segment", x = 60, xend = 80, y = 57, yend = 74,
-           arrow = arrow(length = unit(0.4, "cm"), type = "closed"),
-           size = 1.5, color = "#3498db", linetype = "dashed") +
-  annotate("text", x = 70, y = 62, 
-           label = "Growth allows\nmore of both", 
-           size = 4.5, color = "#3498db", fontface = "bold")
+  theme(legend.position = "bottom",
+        panel.grid.minor = element_blank())
 ```
 
 **Key**: Economic growth makes previously impossible combinations achievable!
 
+</div>
+
 ## Investment vs. Consumption Trade-off
+<div style="font-size: 80%;">
 
 **Classic PPF Application**: Choose between current consumption and investment
 
@@ -530,47 +560,61 @@ ggplot(ppf_growth, aes(x = beach, y = cultural, color = period)) +
 #| echo: false
 #| warning: false
 #| fig-width: 10
-#| fig-height: 6
+#| fig-height: 5
 
-# Two countries with different investment choices
-consumption <- seq(0, 100, by = 1)
-investment <- 100 * (1 - (consumption/100)^0.8)
+library(ggplot2)
 
-countries <- data.frame(consumption, investment)
-
-# Country choices
-country_choices <- data.frame(
-  consumption = c(70, 40),
-  investment = c(47, 73),
-  country = c("Country A:\nHigh Consumption", "Country B:\nHigh Investment"),
-  future_growth = c(1.15, 1.35)
+# 1. Linear PPF data: Consumption + Investment = 100
+ppf_data <- data.frame(
+  consumption = c(0, 100),
+  investment = c(100, 0)
 )
 
-ggplot(countries, aes(x = consumption, y = investment)) +
-  geom_line(size = 2, color = "#3498db") +
+# 2. Country choices (Sum = 100)
+country_choices <- data.frame(
+  consumption = c(75, 25),
+  investment = c(25, 75),
+  country = c("Country A:\nHigh Consumption", "Country B:\nHigh Investment")
+)
+
+ggplot(ppf_data, aes(x = consumption, y = investment)) +
+  # The Frontier
+  geom_line(linewidth = 2, color = "#3498db") +
+  # Shading the feasible area
+  geom_ribbon(aes(ymin = 0, ymax = investment), alpha = 0.1, fill = "#3498db") +
+  # Points for Countries
   geom_point(data = country_choices, aes(x = consumption, y = investment, 
                                           color = country), size = 8) +
+  # Point Labels
   geom_text(data = country_choices, aes(x = consumption, y = investment, label = country), 
-            vjust = -1.8, size = 4.5, fontface = "bold") +
-  labs(title = "Current Consumption vs. Future Investment Trade-off",
-       subtitle = "Country B sacrifices consumption now → more investment → faster future growth",
-       x = "Current Consumption",
-       y = "Investment (Capital Goods)") +
-  theme_minimal(base_size = 14) +
+            nudge_y = 8, size = 4.5, fontface = "bold", lineheight = 0.9) +
+  # Explanatory Annotations
+  annotate("text", x = 75, y = 10, 
+           label = "Slower future growth\n(Smaller PPF shift)", 
+           size = 4, color = "#e74c3c", fontface = "italic") +
+  annotate("text", x = 25, y = 60, 
+           label = "Faster future growth\n(Larger PPF shift)", 
+           size = 4, color = "#27ae60", fontface = "italic") +
+  # Scales and Labels
   scale_color_manual(values = c("Country A:\nHigh Consumption" = "#e74c3c", 
                                  "Country B:\nHigh Investment" = "#27ae60")) +
-  theme(legend.position = "none") +
-  annotate("text", x = 70, y = 35, 
-           label = "→ Slower future growth\n(Small PPF shift)", 
-           size = 4, color = "#e74c3c") +
-  annotate("text", x = 40, y = 60, 
-           label = "→ Faster future growth\n(Large PPF shift)", 
-           size = 4, color = "#27ae60")
+  labs(title = "Trade-off: Current Consumption vs. Investment",
+       subtitle = "Choosing capital goods (Investment) today shifts the PPF further out tomorrow",
+       x = "Current Consumption (Consumer Goods)",
+       y = "Investment (Capital Goods)") +
+  coord_cartesian(xlim = c(0, 110), ylim = c(0, 110)) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "none",
+        panel.grid.minor = element_blank())
 ```
+
+</div>
 
 ## Tourism Application: Investment Choice
 
-**Portugal's Tourism Investment Strategy (2020-2024)**
+<div style="font-size: 80%;">
+
+**Tourism Investment Strategy (Example)**
 
 ```{r}
 #| echo: false
@@ -616,6 +660,8 @@ ggplot(investment_long, aes(x = category, y = score, fill = impact_type)) +
 
 **Strategic choice**: Prioritize long-term growth (infrastructure, digital) despite lower immediate returns
 
+</div>
+
 ## Technological Change: Example
 
 **Digital Transformation in Tourism (2015-2025)**
@@ -624,52 +670,62 @@ ggplot(investment_long, aes(x = category, y = score, fill = impact_type)) +
 #| echo: false
 #| warning: false
 #| fig-width: 10
-#| fig-height: 6
+#| fig-height: 5
 
-# Technology shifts PPF for booking services
-bookings_traditional <- seq(0, 100, by = 1)
-customer_service_trad <- 100 * (1 - (bookings_traditional/100)^0.75)
+library(ggplot2)
 
-bookings_digital <- seq(0, 150, by = 1)
-customer_service_digital <- 150 * (1 - (bookings_digital/150)^0.75)
-
+# 1. Create Linear PPF data
+# Era 1: Capacity = 100
+# Era 2: Capacity = 150
 tech_ppf <- data.frame(
-  bookings = c(bookings_traditional, bookings_digital),
-  customer_service = c(customer_service_trad, customer_service_digital),
-  era = rep(c("2015: Manual Systems", "2025: Digital + AI"), 
-            c(length(bookings_traditional), length(bookings_digital)))
+  bookings = c(0, 100, 0, 150),
+  customer_service = c(100, 0, 150, 0),
+  era = rep(c("2015: Manual Systems", "2025: Digital + AI"), each = 2)
 )
 
-ggplot(tech_ppf, aes(x = bookings, y = customer_service, color = era)) +
-  geom_line(size = 2) +
+ggplot() +
+  # Lines for the two eras
+  geom_line(data = tech_ppf, aes(x = bookings, y = customer_service, color = era), 
+            linewidth = 2) +
+  # The Shift Arrow (moved to a clear spot on the graph to avoid overlaps)
+  annotate("segment", x = 40, xend = 75, y = 60, yend = 75,
+           arrow = arrow(length = unit(0.4, "cm"), type = "closed"),
+           linewidth = 1.5, color = "#3498db") +
+  # Label for the Shift (nudged away from the arrow path)
+  annotate("text", x = 50, y = 78, 
+           label = "AI & Digital Shift", 
+           size = 6, color = "#2c3e50", fontface = "bold") +
+  # Highlighting a point of growth
+  annotate("label", x = 110, y = 40, label = "New Feasible\nCombinations", 
+           fill = "#27ae60", color = "white", fontface = "bold", size = 4) +
+  # Scales and Labels
+  scale_color_manual(values = c("2015: Manual Systems" = "#e74c3c", 
+                                 "2025: Digital + AI" = "#27ae60")) +
   labs(title = "Technology Impact: Travel Agency PPF Shift",
-       subtitle = "Digital transformation + AI enables more bookings AND better customer service",
+       subtitle = "Digital transformation enables higher efficiency across all services",
        x = "Number of Bookings Processed (per day)",
        y = "Quality of Customer Service (index)",
        color = "") +
+  coord_cartesian(xlim = c(0, 160), ylim = c(0, 160)) +
   theme_minimal(base_size = 14) +
-  scale_color_manual(values = c("2015: Manual Systems" = "#e74c3c", 
-                                 "2025: Digital + AI" = "#27ae60")) +
-  theme(legend.position = "bottom") +
-  annotate("segment", x = 60, xend = 90, y = 60, yend = 90,
-           arrow = arrow(length = unit(0.5, "cm"), type = "closed"),
-           size = 2, color = "#3498db") +
-  annotate("text", x = 75, y = 72, 
-           label = "Technology\nShift", 
-           size = 6, color = "#3498db", fontface = "bold",
-           angle = 30)
+  theme(legend.position = "bottom",
+        panel.grid.minor = element_blank(),
+        plot.margin = margin(10, 20, 10, 10)) # Added margin to prevent label clipping
 ```
 
 ## PPF Summary: Key Insights
+
+<div style="font-size: 80%;">
 
 1. **Shows maximum production** given resources & technology
 2. **Points on PPF** = efficient (can't produce more without trade-off)
 3. **Points inside PPF** = inefficient (unemployment, waste)
 4. **Points outside PPF** = impossible (currently unattainable)
-5. **Shape (bowed)** = increasing opportunity costs
-6. **Moving along PPF** = reallocating resources (opportunity cost)
-7. **Shifting PPF outward** = economic growth (more resources, better technology)
-8. **Investment trade-off** = consumption today vs. growth tomorrow
+5. **Moving along PPF** = reallocating resources (opportunity cost)
+6. **Shifting PPF outward** = economic growth (more resources, better technology)
+7. **Investment trade-off** = consumption today vs. growth tomorrow
+
+</div>
 
 ## Real-World Applications
 
@@ -683,6 +739,7 @@ ggplot(tech_ppf, aes(x = bookings, y = customer_service, color = era)) +
 **All involve opportunity costs and efficiency considerations!**
 
 ## Summary: Complete Picture
+<div style="font-size: 80%;">
 
 **Today's Lecture Integration**:
 
@@ -695,6 +752,8 @@ ggplot(tech_ppf, aes(x = bookings, y = customer_service, color = era)) +
 7. **Investment** today enables faster growth tomorrow
 
 **This connects to**: Lecture 3 (opportunity cost), Lecture 2 (WHAT/HOW/FOR WHOM), Lecture 1 (scarcity & efficiency)
+
+</div>
 
 ## Exercises {.center}
 
@@ -734,7 +793,10 @@ Explanation: Outward PPF shift = economic growth. Caused by: more resources, bet
 
 ## Exercise 3: Open Question - Part 1
 
-**Scenario**: The Portuguese Algarve region has limited land and labor. It can allocate resources between golf tourism and beach tourism. Current production possibilities:
+<div style="font-size: 80%;">
+
+**Scenario**: The Portuguese Algarve region has limited land and labor. It 
+can allocate resources between golf tourism and beach tourism. Current production possibilities:
 
 | Combination | Golf Resorts | Beach Hotels |
 |-------------|-------------|--------------|
@@ -745,7 +807,11 @@ Explanation: Outward PPF shift = economic growth. Caused by: more resources, bet
 | E | 20 | 30 |
 | F | 25 | 0 |
 
+</div>
+
 ## Exercise 3: Open Question - Part 2
+
+<div style="font-size: 80%;">
 
 **Questions**:
 
@@ -761,7 +827,11 @@ d) If region currently operates at point U (12 golf, 30 beach), what does this i
 
 e) A new tourism development technology is invented. How would this affect the PPF? Draw the new curve.
 
+</div>
+
 ## Exercise 3: Solution - Part a & b
+
+<div style="font-size: 80%;">
 
 **a) PPF Graph**: 
 
@@ -774,12 +844,22 @@ $$\text{Gain in Golf} = 10 - 5 = 5 \text{ resorts}$$
 $$\text{Loss in Beach} = 48 - 44 = 4 \text{ hotels}$$
 $$\text{Opportunity Cost} = \frac{4 \text{ hotels}}{5 \text{ resorts}} = 0.8 \text{ beach hotels per golf resort}$$
 
+</div>
+
+## Exercise 3: Solution - Part a & b
+
+<div style="font-size: 80%;">
+
 **D → E** (15 golf → 20 golf):
 $$\text{Gain in Golf} = 20 - 15 = 5 \text{ resorts}$$
 $$\text{Loss in Beach} = 38 - 30 = 8 \text{ hotels}$$
 $$\text{Opportunity Cost} = \frac{8 \text{ hotels}}{5 \text{ resorts}} = 1.6 \text{ beach hotels per golf resort}$$
 
+</div>
+
 ## Exercise 3: Solution - Part c, d, e
+
+<div style="font-size: 80%;">
 
 **c) Increasing Opportunity Costs?**
 
@@ -797,7 +877,11 @@ This is **INSIDE the PPF** (compare to point D: 15 golf, 38 beach).
 - Could produce more golf without reducing beach (move to D: 15 golf, 38 beach)
 - Could produce more beach without reducing golf (move toward 12 golf, ~43 beach)
 
+</div>
+
 ## Exercise 3: Solution - Part e
+
+<div style="font-size: 80%;">
 
 **e) New Technology Effect**:
 
@@ -816,18 +900,11 @@ New PPF might be:
 
 **Graph**: Draw original PPF, then new PPF further from origin (parallel or biased depending on where technology applies).
 
+</div>
+
 ## Next Lecture
 
-**February 19, 2026**: Doubts and Exercises Revision
-
-**Preparation for Test 1 (February 20)**:
-
-- Review Lectures 1-4
-- Practice opportunity cost calculations
-- Understand PPF shifts vs. movements
-- Know production factors and economic systems
-
-**Test 1 covers**: All Fundamentals material (15% of final grade)
+**February 19, 2026**: Budget Set and Budget Constraint
 
 ## Thank You! {.center}
 
@@ -837,9 +914,7 @@ New PPF might be:
 
 ---
 
-*Next class: Wednesday, February 19, 2026 (Review Session)*
-
-*Test 1: Thursday, February 20, 2026*
+*Next class: Wednesday, February 19, 2026*
 
 ::: {.notes}
 This completes the Fundamentals block. Students should understand: scarcity → trade-offs → opportunity cost → PPF → efficiency. These concepts are foundational for all future topics.

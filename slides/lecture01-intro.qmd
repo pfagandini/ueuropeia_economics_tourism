@@ -59,6 +59,13 @@ library(lubridate)
 Economics is essential for management professionals to make informed decisions in an increasingly complex business environment.
 :::
 
+## Introduction
+
+:man_teacher: Paulo Fagandini
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+:mortar_board:**In Canvas:** Syllabus, Calendar, Group Project.
+
 ## What is Economics?
 
 **Economics studies how societies use scarce resources to produce valuable goods and distribute them among individuals**
