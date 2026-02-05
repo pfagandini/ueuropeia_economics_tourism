@@ -1,0 +1,207 @@
+/*-- scss:defaults --*/
+
+// Universidade Europeia Brand Colors
+$ue-red: #C8102E;
+$ue-black: #1D1D1B;
+$ue-gray: #6D6E71;
+$ue-white: #FFFFFF;
+$ue-light-gray: #F5F5F5;
+
+// Base colors
+$body-bg: $ue-white;
+$body-color: $ue-black;
+$link-color: $ue-red;
+
+// Headings
+$presentation-heading-color: $ue-red;
+$presentation-heading-font: 'Source Sans Pro', Helvetica, sans-serif;
+
+// Fonts
+$font-family-sans-serif: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+
+/*-- scss:rules --*/
+
+// Slide titles
+.reveal h1, .reveal h2, .reveal h3 {
+  color: $ue-red;
+  font-weight: 700;
+}
+
+// Strong/bold text
+.reveal strong, .reveal b {
+  color: $ue-red;
+}
+
+// Links
+.reveal a {
+  color: $ue-red;
+}
+
+.reveal a:hover {
+  color: darken($ue-red, 15%);
+}
+
+// Slide background
+.reveal .slides section {
+  background-color: $ue-white;
+}
+
+// Footer
+.reveal .slide-footer {
+  color: $ue-gray;
+  font-size: 0.6em;
+}
+
+// Callout boxes
+.callout {
+  border-left: 4px solid $ue-red !important;
+}
+
+.callout-title {
+  color: $ue-red !important;
+}
+
+// Key concept box (custom class)
+// .key-concept {
+//   border: 3px solid $ue-red;
+//   padding: 20px;
+//   border-radius: 10px;
+//   background-color: lighten($ue-red, 55%);
+//   margin: 15px 0;
+//   position: relative;
+//   box-sizing: border-box;
+// }
+
+.key-concept {
+  border: 3px solid $ue-red ;
+  padding: 20px !important;
+  border-radius: 10px;
+  background-color: #fffafa; // A very slight off-white/red tint for contrast
+  margin: 20px auto !important;
+  width: 90%;
+  display: block;
+  
+// This targets the very first paragraph to act as a title
+  p:first-child strong:first-child {
+    display: block;
+    color: $ue-red;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba($ue-red, 0.2);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+  }
+}
+
+// Highlight box (custom class)
+.highlight-box {
+  background-color: $ue-red;
+  color: $ue-white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin: 10px 0;
+
+  // This fixes your "invisible answer" problem
+  strong, b {
+    color: $ue-white !important;
+    text-decoration: underline; // Added for extra emphasis on the answer
+  }
+}
+
+// Red text utility
+.red-text {
+  color: $ue-red;
+}
+
+// Table styling
+.reveal table {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+.reveal table th {
+  background-color: $ue-red;
+  color: $ue-white;
+  padding: 12px 20px;
+  font-weight: 600;
+}
+
+.reveal table td {
+  padding: 10px 20px;
+  border-bottom: 1px solid $ue-light-gray;
+}
+
+.reveal table tr:hover {
+  background-color: $ue-light-gray;
+}
+
+// Code blocks
+.reveal pre {
+  border-left: 4px solid $ue-red;
+}
+
+// Blockquotes
+.reveal blockquote {
+  border-left: 4px solid $ue-red;
+  padding-left: 20px;
+  font-style: italic;
+  color: $ue-gray;
+}
+
+// Fragment animations
+.reveal .fragment.highlight-red {
+  opacity: 1;
+  visibility: inherit;
+}
+
+.reveal .fragment.highlight-red.visible {
+  color: $ue-red;
+}
+
+// Progress bar
+.reveal .progress {
+  background: rgba($ue-gray, 0.2);
+}
+
+.reveal .progress span {
+  background: $ue-red;
+}
+
+// Slide number
+.reveal .slide-number {
+  color: $ue-gray;
+  font-size: 0.8em;
+}
+
+// Controls (navigation arrows)
+.reveal .controls {
+  color: $ue-red;
+}
+
+// Notes indicator
+.reveal .speaker-notes-toggle {
+  color: $ue-gray;
+}
+
+// Center class improvements
+.center {
+  text-align: center;
+}
+
+// Column styling
+.columns {
+  display: flex;
+  gap: 30px;
+}
+
+// Image captions
+figcaption {
+  font-size: 0.6em !important;
+  color: $ue-gray;
+  font-style: italic;
+}
+
+// Emoji size adjustment
+.emoji {
+  font-size: 1.1em;
+}

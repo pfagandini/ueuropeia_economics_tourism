@@ -1412,5 +1412,537 @@
     "title": "Economics Fundamentals",
     "section": "Introduction",
     "text": "Introduction\n👨‍🏫 Paulo Fagandini\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n🎓In Canvas: Syllabus, Calendar, Group Project."
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#welcome-to-economics",
+    "href": "slides/lecture01_intro_claude.html#welcome-to-economics",
+    "title": "Economics Fundamentals",
+    "section": "Welcome to Economics! 👋",
+    "text": "Welcome to Economics! 👋\n\n\nWhy study Economics? 🤔\n📈 Understand government policies\n🌐 Navigate global markets\n💼 Achieve business success\n:scales: Master supply & demand\n⚖️ Understand inequality\n\n\n\n\nEconomics is essential for management professionals to make informed decisions in an increasingly complex business environment."
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#introduction",
+    "href": "slides/lecture01_intro_claude.html#introduction",
+    "title": "Economics Fundamentals",
+    "section": "Introduction 👨‍🏫",
+    "text": "Introduction 👨‍🏫\n👨‍🏫 Paulo Fagandini\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n🎓 In Canvas: Syllabus, Calendar, Group Project\n📆 Schedule: Thursdays & Fridays"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#what-is-economics",
+    "href": "slides/lecture01_intro_claude.html#what-is-economics",
+    "title": "Economics Fundamentals",
+    "section": "What is Economics? 💡",
+    "text": "What is Economics? 💡\n\nEconomics studies how societies use scarce resources to produce valuable goods and distribute them among individuals.\n\n\nEconomics as a social science uses simplified hypotheses and relates variables to understand economic phenomena."
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#what-does-economics-study",
+    "href": "slides/lecture01_intro_claude.html#what-does-economics-study",
+    "title": "Economics Fundamentals",
+    "section": "What Does Economics Study? 🔍",
+    "text": "What Does Economics Study? 🔍\n\n\n🏦 Institutions & Markets\nHow technology influences prices and resource allocation\n💸 Finance\nBehavior of financial markets and capital flows\n\n👥 Society\nIncome redistribution and social welfare\n📉 Cycles\nUnemployment, inflation, growth"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#the-two-branches-of-economics",
+    "href": "slides/lecture01_intro_claude.html#the-two-branches-of-economics",
+    "title": "Economics Fundamentals",
+    "section": "The Two Branches of Economics",
+    "text": "The Two Branches of Economics"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#macroeconomics",
+    "href": "slides/lecture01_intro_claude.html#macroeconomics",
+    "title": "Economics Fundamentals",
+    "section": "Macroeconomics 🔭",
+    "text": "Macroeconomics 🔭\nThe Big Picture — Studies the economy as a whole\n\n\n📈 GDP & Economic Growth\n💼 Unemployment rates\n💰 Inflation trends\n\n🏦 Monetary policy\n🌐 International trade\n🧾 Government budgets\n\n\nExample: “Why did Portugal’s tourism revenue fall 50% in 2020?”"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#microeconomics",
+    "href": "slides/lecture01_intro_claude.html#microeconomics",
+    "title": "Economics Fundamentals",
+    "section": "Microeconomics 🔬",
+    "text": "Microeconomics 🔬\nIndividual Decisions — Studies specific agents and markets\n\n\n🛒 Consumer behavior\n🏭 Firm decisions\n🏷️ Pricing strategies\n\n⚔️ Competition analysis\n🤝 Market interactions\n💹 Supply & Demand\n\n\nExample: “How should a hotel set its room prices?”"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#macroeconomics-in-tourism",
+    "href": "slides/lecture01_intro_claude.html#macroeconomics-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Macroeconomics in Tourism ✈️",
+    "text": "Macroeconomics in Tourism ✈️\n\nSource: Eurostat (tour_occ_arnraw, bop_its6_det)"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#microeconomics-in-tourism",
+    "href": "slides/lecture01_intro_claude.html#microeconomics-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Microeconomics in Tourism 🏨",
+    "text": "Microeconomics in Tourism 🏨\n\nSource: Eurostat (tour_occ_arnraw)"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#the-fundamental-economic-problem",
+    "href": "slides/lecture01_intro_claude.html#the-fundamental-economic-problem",
+    "title": "Economics Fundamentals",
+    "section": "The Fundamental Economic Problem ⚠️",
+    "text": "The Fundamental Economic Problem ⚠️\n\nScarcity\nHuman wants are unlimited, but resources are limited\n\n\nThis leads to:\n👉 Trade-offs — Choices involve compromises\n👉 Cost-Benefit Analysis — Act only if benefits exceed costs\n👉 Efficiency — Most effective use of resources"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#scarcity-in-tourism-lisbon-airport",
+    "href": "slides/lecture01_intro_claude.html#scarcity-in-tourism-lisbon-airport",
+    "title": "Economics Fundamentals",
+    "section": "Scarcity in Tourism: Lisbon Airport 🛫",
+    "text": "Scarcity in Tourism: Lisbon Airport 🛫\n\n\nCapacity Constraints (2024)\n⚠️ Design capacity: ~31M passengers/year\n✈️ Actual 2024: ~35M passengers\n📈 Growing demand, limited slots\nTrade-off: More flights vs. congestion & delays\n\n\n\n\n\n\n\n\n\n\nHypothetical illustration based on news reports"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#efficiency",
+    "href": "slides/lecture01_intro_claude.html#efficiency",
+    "title": "Economics Fundamentals",
+    "section": "Efficiency 🎯",
+    "text": "Efficiency 🎯\n\nEconomic Efficiency\nSituation where the economy produces and consumes goods at socially optimal levels:\n✅ Getting the most out of available resources\n✅ Using the least for current consumption level"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#pareto-efficiency",
+    "href": "slides/lecture01_intro_claude.html#pareto-efficiency",
+    "title": "Economics Fundamentals",
+    "section": "Pareto Efficiency ⚖️",
+    "text": "Pareto Efficiency ⚖️\nCannot increase one person’s welfare without harming another\n\n\n✔️ Efficient allocation\n\nResources fully utilized\nNo waste in production\nOptimal distribution\n\n\n❌ Inefficient allocation\n\nResources underutilized\nProduction waste exists\nRoom for improvement"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#efficiency-in-tourism",
+    "href": "slides/lecture01_intro_claude.html#efficiency-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Efficiency in Tourism 🏨",
+    "text": "Efficiency in Tourism 🏨\nDynamic Pricing Example"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#the-three-economic-questions",
+    "href": "slides/lecture01_intro_claude.html#the-three-economic-questions",
+    "title": "Economics Fundamentals",
+    "section": "The Three Economic Questions ❓",
+    "text": "The Three Economic Questions ❓\nEvery economy must answer:\n\n\n\nQuestion\nDescription\nTourism Example\n\n\n\n\nWHAT?\nWhat goods to produce?\nMore hotels or museums?\n\n\nHOW?\nHow to produce them?\nAutomated or human agents?\n\n\nFOR WHOM?\nWho gets the output?\nLuxury or mass tourism?\n\n\n\n\nThese require decisions based on: resources, technology, preferences, markets"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#positive-vs.-normative-economics",
+    "href": "slides/lecture01_intro_claude.html#positive-vs.-normative-economics",
+    "title": "Economics Fundamentals",
+    "section": "Positive vs. Normative Economics 🔎",
+    "text": "Positive vs. Normative Economics 🔎\n\n\nPositive Economics 📊\nDescribes facts — Can be tested\n\nWhy do managers earn more than cleaners?\nDoes tourism increase local incomes?\nWhat happens to prices in high season?\n\n👉 Answered with data and analysis\n\nNormative Economics 💭\nValue judgments — Opinions\n\nShould government limit Airbnb?\nShould tourism revenue be redistributed?\nShould airlines reduce emissions?\n\n👉 Requires ethical/political debate"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#key-concepts-summary",
+    "href": "slides/lecture01_intro_claude.html#key-concepts-summary",
+    "title": "Economics Fundamentals",
+    "section": "Key Concepts Summary 📋",
+    "text": "Key Concepts Summary 📋\n\n\n\nConcept\nDefinition\n\n\n\n\nEconomics\nStudy of scarce resource allocation\n\n\nMacroeconomics\nWhole economy (GDP, inflation)\n\n\nMicroeconomics\nIndividual decisions (firms, consumers)\n\n\nScarcity\nUnlimited wants, limited resources\n\n\nEfficiency\nOptimal resource use (no waste)\n\n\nTrade-off\nGiving up one thing for another"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#exercises",
+    "href": "slides/lecture01_intro_claude.html#exercises",
+    "title": "Economics Fundamentals",
+    "section": "Exercises 📝",
+    "text": "Exercises 📝\nTime for practice!\nLet’s test your understanding."
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#exercise-1-multiple-choice",
+    "href": "slides/lecture01_intro_claude.html#exercise-1-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\nWhich of the following is a MACROECONOMIC question?\nA. How should a hotel set its room prices?\nB. Why did Portugal’s tourism revenue fall in 2020?\nC. Should a restaurant hire more waiters?\nD. How do travelers choose between two airlines?\n\n\nAnswer: B — Portugal’s tourism revenue is an aggregate measure affecting the entire economy."
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#exercise-2-multiple-choice",
+    "href": "slides/lecture01_intro_claude.html#exercise-2-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\nA museum has limited exhibition space. Choosing between a modern art or historical exhibition illustrates:\nA. Efficiency\nB. Scarcity\nC. Positive economics\nD. Macroeconomics\n\n\nAnswer: B — Limited space (scarce resource) forces a choice between alternatives."
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#exercise-3-open-question",
+    "href": "slides/lecture01_intro_claude.html#exercise-3-open-question",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question",
+    "text": "Exercise 3: Open Question\nScenario: A low-cost airline charges €50/ticket, sells 150 tickets (capacity: 180).\nQuestions:\n\nCalculate current revenue per flight\nIf price increases to €60, demand falls to 120 tickets. Calculate new revenue.\nWhich pricing is more efficient? Why?\nIs this microeconomic or macroeconomic analysis?"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#exercise-3-solution",
+    "href": "slides/lecture01_intro_claude.html#exercise-3-solution",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution",
+    "text": "Exercise 3: Solution\na) Current revenue: \\[\\text{Revenue} = 50 \\times 150 = €7,500\\]\nb) New revenue: \\[\\text{Revenue} = 60 \\times 120 = €7,200\\]\nc) Efficiency:\n\n€50 price: Revenue €7,500, occupancy 83%\n€60 price: Revenue €7,200, occupancy 67%\n\n👉 First is more efficient: higher revenue AND better utilization\nd) This is microeconomic analysis (individual firm’s decision)"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#next-lecture",
+    "href": "slides/lecture01_intro_claude.html#next-lecture",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture 📚",
+    "text": "Next Lecture 📚\nLecture 2 (February 6, 2026):\n\nThree Fundamental Economic Problems (detailed)\nMarket, Centralized, and Mixed Economies\nEconomic Systems Comparison\n\n💡 Preparation: Think about how tourism businesses make decisions in different economic systems!"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#thank-you",
+    "href": "slides/lecture01_intro_claude.html#thank-you",
+    "title": "Economics Fundamentals",
+    "section": "Thank You! 👋",
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture01_intro_claude.html#scarcity",
+    "href": "slides/lecture01_intro_claude.html#scarcity",
+    "title": "Economics Fundamentals",
+    "section": "Scarcity",
+    "text": "Scarcity\nHuman wants are unlimited, but resources are limited"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#welcome-to-economics",
+    "href": "slides/lecture01_intro_temp.html#welcome-to-economics",
+    "title": "Economics Fundamentals",
+    "section": "Welcome to Economics! 👋",
+    "text": "Welcome to Economics! 👋\n\n\nWhy study Economics? 🤔\n📈 Understand government policies\n🌐 Navigate global markets\n💼 Achieve business success\n:scales: Master supply & demand\n⚖️ Understand inequality\n\n\n\n\nEconomics is essential for management professionals to make informed decisions in an increasingly complex business environment."
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#introduction",
+    "href": "slides/lecture01_intro_temp.html#introduction",
+    "title": "Economics Fundamentals",
+    "section": "Introduction 👨‍🏫",
+    "text": "Introduction 👨‍🏫\n👨‍🏫 Paulo Fagandini\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n🎓 In Canvas: Syllabus, Calendar, Group Project\n📆 Schedule: Thursdays & Fridays"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#what-is-economics",
+    "href": "slides/lecture01_intro_temp.html#what-is-economics",
+    "title": "Economics Fundamentals",
+    "section": "What is Economics? 💡",
+    "text": "What is Economics? 💡\n\nEconomics studies how societies use scarce resources to produce valuable goods and distribute them among individuals.\n\n\nEconomics as a social science uses simplified hypotheses and relates variables to understand economic phenomena."
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#what-does-economics-study",
+    "href": "slides/lecture01_intro_temp.html#what-does-economics-study",
+    "title": "Economics Fundamentals",
+    "section": "What Does Economics Study? 🔍",
+    "text": "What Does Economics Study? 🔍\n\n\n🏦 Institutions & Markets\nHow technology influences prices and resource allocation\n💸 Finance\nBehavior of financial markets and capital flows\n\n👥 Society\nIncome redistribution and social welfare\n📉 Cycles\nUnemployment, inflation, growth"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#the-two-branches-of-economics",
+    "href": "slides/lecture01_intro_temp.html#the-two-branches-of-economics",
+    "title": "Economics Fundamentals",
+    "section": "The Two Branches of Economics",
+    "text": "The Two Branches of Economics\n\n\n\nGDP & Growth\nUnemployment\nMonetary Policy\nFiscal Policy\nInflation\nTrade Balance\n\n\n\nFirm Decisions\nConsumer Choices\nMarket Prices\nIndividual Markets\nCompetition\nStrategic Behavior"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#macroeconomics",
+    "href": "slides/lecture01_intro_temp.html#macroeconomics",
+    "title": "Economics Fundamentals",
+    "section": "Macroeconomics 🔭",
+    "text": "Macroeconomics 🔭\nThe Big Picture — Studies the economy as a whole\n\n\n📈 GDP & Economic Growth\n💼 Unemployment rates\n💰 Inflation trends\n\n🏦 Monetary policy\n🌐 International trade\n🧾 Government budgets\n\n\nExample: “Why did Portugal’s tourism revenue fall 50% in 2020?”"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#microeconomics",
+    "href": "slides/lecture01_intro_temp.html#microeconomics",
+    "title": "Economics Fundamentals",
+    "section": "Microeconomics 🔬",
+    "text": "Microeconomics 🔬\nIndividual Decisions — Studies specific agents and markets\n\n\n🛒 Consumer behavior\n🏭 Firm decisions\n🏷️ Pricing strategies\n\n⚔️ Competition analysis\n🤝 Market interactions\n💹 Supply & Demand\n\n\nExample: “How should a hotel set its room prices?”"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#macroeconomics-in-tourism",
+    "href": "slides/lecture01_intro_temp.html#macroeconomics-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Macroeconomics in Tourism ✈️",
+    "text": "Macroeconomics in Tourism ✈️\n\nSource: Eurostat (tour_occ_arnraw, bop_its6_det)"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#microeconomics-in-tourism",
+    "href": "slides/lecture01_intro_temp.html#microeconomics-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Microeconomics in Tourism 🏨",
+    "text": "Microeconomics in Tourism 🏨\n\nSource: Eurostat (tour_occ_arnraw)"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#the-fundamental-economic-problem",
+    "href": "slides/lecture01_intro_temp.html#the-fundamental-economic-problem",
+    "title": "Economics Fundamentals",
+    "section": "The Fundamental Economic Problem ⚠️",
+    "text": "The Fundamental Economic Problem ⚠️\n\nScarcity\nHuman wants are unlimited, but resources are limited\n\n\nThis leads to:\n👉 Trade-offs — Choices involve compromises\n👉 Cost-Benefit Analysis — Act only if benefits exceed costs\n👉 Efficiency — Most effective use of resources"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#scarcity-in-tourism-lisbon-airport",
+    "href": "slides/lecture01_intro_temp.html#scarcity-in-tourism-lisbon-airport",
+    "title": "Economics Fundamentals",
+    "section": "Scarcity in Tourism: Lisbon Airport 🛫",
+    "text": "Scarcity in Tourism: Lisbon Airport 🛫\n\n\nCapacity Constraints (2024)\n⚠️ Design capacity: ~31M passengers/year\n✈️ Actual 2024: ~35M passengers\n📈 Growing demand, limited slots\nTrade-off: More flights vs. congestion & delays\n\n\n\n\n\n\n\n\n\n\nHypothetical illustration based on news reports"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#efficiency",
+    "href": "slides/lecture01_intro_temp.html#efficiency",
+    "title": "Economics Fundamentals",
+    "section": "Efficiency 🎯",
+    "text": "Efficiency 🎯\n\nEconomic Efficiency\nSituation where the economy produces and consumes goods at socially optimal levels:\n✅ Getting the most out of available resources\n✅ Using the least for current consumption level"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#pareto-efficiency",
+    "href": "slides/lecture01_intro_temp.html#pareto-efficiency",
+    "title": "Economics Fundamentals",
+    "section": "Pareto Efficiency ⚖️",
+    "text": "Pareto Efficiency ⚖️\nCannot increase one person’s welfare without harming another\n\n\n✔️ Efficient allocation\n\nResources fully utilized\nNo waste in production\nOptimal distribution\n\n\n❌ Inefficient allocation\n\nResources underutilized\nProduction waste exists\nRoom for improvement"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#efficiency-in-tourism",
+    "href": "slides/lecture01_intro_temp.html#efficiency-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Efficiency in Tourism 🏨",
+    "text": "Efficiency in Tourism 🏨\nDynamic Pricing Example"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#the-three-economic-questions",
+    "href": "slides/lecture01_intro_temp.html#the-three-economic-questions",
+    "title": "Economics Fundamentals",
+    "section": "The Three Economic Questions ❓",
+    "text": "The Three Economic Questions ❓\nEvery economy must answer:\n\n\n\nQuestion\nDescription\nTourism Example\n\n\n\n\nWHAT?\nWhat goods to produce?\nMore hotels or museums?\n\n\nHOW?\nHow to produce them?\nAutomated or human agents?\n\n\nFOR WHOM?\nWho gets the output?\nLuxury or mass tourism?\n\n\n\n\nThese require decisions based on: resources, technology, preferences, markets"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#positive-vs.-normative-economics",
+    "href": "slides/lecture01_intro_temp.html#positive-vs.-normative-economics",
+    "title": "Economics Fundamentals",
+    "section": "Positive vs. Normative Economics 🔎",
+    "text": "Positive vs. Normative Economics 🔎\n\n\nPositive Economics 📊\nDescribes facts — Can be tested\n\nWhy do managers earn more than cleaners?\nDoes tourism increase local incomes?\nWhat happens to prices in high season?\n\n👉 Answered with data and analysis\n\nNormative Economics 💭\nValue judgments — Opinions\n\nShould government limit Airbnb?\nShould tourism revenue be redistributed?\nShould airlines reduce emissions?\n\n👉 Requires ethical/political debate"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#key-concepts-summary",
+    "href": "slides/lecture01_intro_temp.html#key-concepts-summary",
+    "title": "Economics Fundamentals",
+    "section": "Key Concepts Summary 📋",
+    "text": "Key Concepts Summary 📋\n\n\n\nConcept\nDefinition\n\n\n\n\nEconomics\nStudy of scarce resource allocation\n\n\nMacroeconomics\nWhole economy (GDP, inflation)\n\n\nMicroeconomics\nIndividual decisions (firms, consumers)\n\n\nScarcity\nUnlimited wants, limited resources\n\n\nEfficiency\nOptimal resource use (no waste)\n\n\nTrade-off\nGiving up one thing for another"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#exercises",
+    "href": "slides/lecture01_intro_temp.html#exercises",
+    "title": "Economics Fundamentals",
+    "section": "Exercises 📝",
+    "text": "Exercises 📝\nTime for practice!\nLet’s test your understanding."
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#exercise-1-multiple-choice",
+    "href": "slides/lecture01_intro_temp.html#exercise-1-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\nWhich of the following is a MACROECONOMIC question?\nA. How should a hotel set its room prices?\nB. Why did Portugal’s tourism revenue fall in 2020?\nC. Should a restaurant hire more waiters?\nD. How do travelers choose between two airlines?\n\n\nAnswer: B — Portugal’s tourism revenue is an aggregate measure affecting the entire economy."
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#exercise-2-multiple-choice",
+    "href": "slides/lecture01_intro_temp.html#exercise-2-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\nA museum has limited exhibition space. Choosing between a modern art or historical exhibition illustrates:\nA. Efficiency\nB. Scarcity\nC. Positive economics\nD. Macroeconomics\n\n\nAnswer: B — Limited space (scarce resource) forces a choice between alternatives."
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#exercise-3-open-question",
+    "href": "slides/lecture01_intro_temp.html#exercise-3-open-question",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question",
+    "text": "Exercise 3: Open Question\nScenario: A low-cost airline charges €50/ticket, sells 150 tickets (capacity: 180).\nQuestions:\n\nCalculate current revenue per flight\nIf price increases to €60, demand falls to 120 tickets. Calculate new revenue.\nWhich pricing is more efficient? Why?\nIs this microeconomic or macroeconomic analysis?"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#exercise-3-solution",
+    "href": "slides/lecture01_intro_temp.html#exercise-3-solution",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution",
+    "text": "Exercise 3: Solution\na) Current revenue: \\[\\text{Revenue} = 50 \\times 150 = €7,500\\]\nb) New revenue: \\[\\text{Revenue} = 60 \\times 120 = €7,200\\]\nc) Efficiency:\n\n€50 price: Revenue €7,500, occupancy 83%\n€60 price: Revenue €7,200, occupancy 67%\n\n👉 First is more efficient: higher revenue AND better utilization\nd) This is microeconomic analysis (individual firm’s decision)"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#next-lecture",
+    "href": "slides/lecture01_intro_temp.html#next-lecture",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture 📚",
+    "text": "Next Lecture 📚\nLecture 2 (February 6, 2026):\n\nThree Fundamental Economic Problems (detailed)\nMarket, Centralized, and Mixed Economies\nEconomic Systems Comparison\n\n💡 Preparation: Think about how tourism businesses make decisions in different economic systems!"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#thank-you",
+    "href": "slides/lecture01_intro_temp.html#thank-you",
+    "title": "Economics Fundamentals",
+    "section": "Thank You! 👋",
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#scarcity",
+    "href": "slides/lecture01_intro_temp.html#scarcity",
+    "title": "Economics Fundamentals",
+    "section": "Scarcity",
+    "text": "Scarcity\nHuman wants are unlimited, but resources are limited"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#the-two-branches-of-economics-1",
+    "href": "slides/lecture01_intro_temp.html#the-two-branches-of-economics-1",
+    "title": "Economics Fundamentals",
+    "section": "The Two Branches of Economics",
+    "text": "The Two Branches of Economics"
+  },
+  {
+    "objectID": "slides/lecture01_intro_temp.html#the-two-main-branches-of-economics",
+    "href": "slides/lecture01_intro_temp.html#the-two-main-branches-of-economics",
+    "title": "Economics Fundamentals",
+    "section": "The Two (main) Branches of Economics",
+    "text": "The Two (main) Branches of Economics\n\n\n\nGDP & Growth\nUnemployment\nMonetary Policy\nFiscal Policy\nInflation\nTrade Balance\n\n\n\nFirm Decisions\nConsumer Choices\nMarket Prices\nIndividual Markets\nCompetition\nStrategic Behavior"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#welcome-to-economics",
+    "href": "slides/lecture01_intro.html#welcome-to-economics",
+    "title": "Economics Fundamentals",
+    "section": "Welcome to Economics! 👋",
+    "text": "Welcome to Economics! 👋\n\n\nWhy study Economics? 🤔\n📈 Understand government policies\n🌐 Navigate global markets\n💼 Achieve business success\n:scales: Master supply & demand\n⚖️ Understand inequality\n\n\n\n\nEconomics is essential for management professionals to make informed decisions in an increasingly complex business environment."
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#introduction",
+    "href": "slides/lecture01_intro.html#introduction",
+    "title": "Economics Fundamentals",
+    "section": "Introduction 👨‍🏫",
+    "text": "Introduction 👨‍🏫\n👨‍🏫 Paulo Fagandini\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n🎓 In Canvas: Syllabus, Calendar, Group Project\n📆 Schedule: Thursdays & Fridays"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#what-is-economics",
+    "href": "slides/lecture01_intro.html#what-is-economics",
+    "title": "Economics Fundamentals",
+    "section": "What is Economics? 💡",
+    "text": "What is Economics? 💡\n\nEconomics studies how societies use scarce resources to produce valuable goods and distribute them among individuals.\n\n\nEconomics as a social science uses simplified hypotheses and relates variables to understand economic phenomena."
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#what-does-economics-study",
+    "href": "slides/lecture01_intro.html#what-does-economics-study",
+    "title": "Economics Fundamentals",
+    "section": "What Does Economics Study? 🔍",
+    "text": "What Does Economics Study? 🔍\n\n\n🏦 Institutions & Markets\nHow technology influences prices and resource allocation\n💸 Finance\nBehavior of financial markets and capital flows\n\n👥 Society\nIncome redistribution and social welfare\n📉 Cycles\nUnemployment, inflation, growth"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#the-two-main-branches-of-economics",
+    "href": "slides/lecture01_intro.html#the-two-main-branches-of-economics",
+    "title": "Economics Fundamentals",
+    "section": "The Two (main) Branches of Economics",
+    "text": "The Two (main) Branches of Economics\n\n\n\nGDP & Growth\nUnemployment\nMonetary Policy\nFiscal Policy\nInflation\nTrade Balance\n\n\n\nFirm Decisions\nConsumer Choices\nMarket Prices\nIndividual Markets\nCompetition\nStrategic Behavior"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#macroeconomics",
+    "href": "slides/lecture01_intro.html#macroeconomics",
+    "title": "Economics Fundamentals",
+    "section": "Macroeconomics 🔭",
+    "text": "Macroeconomics 🔭\nThe Big Picture — Studies the economy as a whole\n\n\n📈 GDP & Economic Growth\n💼 Unemployment rates\n💰 Inflation trends\n\n🏦 Monetary policy\n🌐 International trade\n🧾 Government budgets\n\n\nExample: “Why did Portugal’s tourism revenue fall 50% in 2020?”"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#microeconomics",
+    "href": "slides/lecture01_intro.html#microeconomics",
+    "title": "Economics Fundamentals",
+    "section": "Microeconomics 🔬",
+    "text": "Microeconomics 🔬\nIndividual Decisions — Studies specific agents and markets\n\n\n🛒 Consumer behavior\n🏭 Firm decisions\n🏷️ Pricing strategies\n\n⚔️ Competition analysis\n🤝 Market interactions\n💹 Supply & Demand\n\n\nExample: “How should a hotel set its room prices?”"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#macroeconomics-in-tourism",
+    "href": "slides/lecture01_intro.html#macroeconomics-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Macroeconomics in Tourism ✈️",
+    "text": "Macroeconomics in Tourism ✈️\n\nSource: Eurostat (tour_occ_arnraw, bop_its6_det)"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#microeconomics-in-tourism",
+    "href": "slides/lecture01_intro.html#microeconomics-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Microeconomics in Tourism 🏨",
+    "text": "Microeconomics in Tourism 🏨\n\nSource: Eurostat (tour_occ_arnraw)"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#the-fundamental-economic-problem",
+    "href": "slides/lecture01_intro.html#the-fundamental-economic-problem",
+    "title": "Economics Fundamentals",
+    "section": "The Fundamental Economic Problem ⚠️",
+    "text": "The Fundamental Economic Problem ⚠️\n\nScarcity\nHuman wants are unlimited, but resources are limited\n\n\nThis leads to:\n👉 Trade-offs — Choices involve compromises\n👉 Cost-Benefit Analysis — Act only if benefits exceed costs\n👉 Efficiency — Most effective use of resources"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#scarcity-in-tourism-lisbon-airport",
+    "href": "slides/lecture01_intro.html#scarcity-in-tourism-lisbon-airport",
+    "title": "Economics Fundamentals",
+    "section": "Scarcity in Tourism: Lisbon Airport 🛫",
+    "text": "Scarcity in Tourism: Lisbon Airport 🛫\n\n\nCapacity Constraints (2024)\n⚠️ Design capacity: ~31M passengers/year\n✈️ Actual 2024: ~35M passengers\n📈 Growing demand, limited slots\nTrade-off: More flights vs. congestion & delays\n\n\n\n\n\n\n\n\n\n\nHypothetical illustration based on news reports"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#efficiency",
+    "href": "slides/lecture01_intro.html#efficiency",
+    "title": "Economics Fundamentals",
+    "section": "Efficiency 🎯",
+    "text": "Efficiency 🎯\n\nEconomic Efficiency\nSituation where the economy produces and consumes goods at socially optimal levels:\n✅ Getting the most out of available resources\n✅ Using the least for current consumption level"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#pareto-efficiency",
+    "href": "slides/lecture01_intro.html#pareto-efficiency",
+    "title": "Economics Fundamentals",
+    "section": "Pareto Efficiency ⚖️",
+    "text": "Pareto Efficiency ⚖️\nCannot increase one person’s welfare without harming another\n\n\n✔️ Efficient allocation\n\nResources fully utilized\nNo waste in production\nOptimal distribution\n\n\n❌ Inefficient allocation\n\nResources underutilized\nProduction waste exists\nRoom for improvement"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#efficiency-in-tourism",
+    "href": "slides/lecture01_intro.html#efficiency-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Efficiency in Tourism 🏨",
+    "text": "Efficiency in Tourism 🏨\nDynamic Pricing Example"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#the-three-economic-questions",
+    "href": "slides/lecture01_intro.html#the-three-economic-questions",
+    "title": "Economics Fundamentals",
+    "section": "The Three Economic Questions ❓",
+    "text": "The Three Economic Questions ❓\nEvery economy must answer:\n\n\n\nQuestion\nDescription\nTourism Example\n\n\n\n\nWHAT?\nWhat goods to produce?\nMore hotels or museums?\n\n\nHOW?\nHow to produce them?\nAutomated or human agents?\n\n\nFOR WHOM?\nWho gets the output?\nLuxury or mass tourism?\n\n\n\n\nThese require decisions based on: resources, technology, preferences, markets"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#positive-vs.-normative-economics",
+    "href": "slides/lecture01_intro.html#positive-vs.-normative-economics",
+    "title": "Economics Fundamentals",
+    "section": "Positive vs. Normative Economics 🔎",
+    "text": "Positive vs. Normative Economics 🔎\n\n\nPositive Economics 📊\nDescribes facts — Can be tested\n\nWhy do managers earn more than cleaners?\nDoes tourism increase local incomes?\nWhat happens to prices in high season?\n\n👉 Answered with data and analysis\n\nNormative Economics 💭\nValue judgments — Opinions\n\nShould government limit Airbnb?\nShould tourism revenue be redistributed?\nShould airlines reduce emissions?\n\n👉 Requires ethical/political debate"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#key-concepts-summary",
+    "href": "slides/lecture01_intro.html#key-concepts-summary",
+    "title": "Economics Fundamentals",
+    "section": "Key Concepts Summary 📋",
+    "text": "Key Concepts Summary 📋\n\n\n\nConcept\nDefinition\n\n\n\n\nEconomics\nStudy of scarce resource allocation\n\n\nMacroeconomics\nWhole economy (GDP, inflation)\n\n\nMicroeconomics\nIndividual decisions (firms, consumers)\n\n\nScarcity\nUnlimited wants, limited resources\n\n\nEfficiency\nOptimal resource use (no waste)\n\n\nTrade-off\nGiving up one thing for another"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#exercises",
+    "href": "slides/lecture01_intro.html#exercises",
+    "title": "Economics Fundamentals",
+    "section": "Exercises 📝",
+    "text": "Exercises 📝\nTime for practice!\nLet’s test your understanding."
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#exercise-1-multiple-choice",
+    "href": "slides/lecture01_intro.html#exercise-1-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\nWhich of the following is a MACROECONOMIC question?\nA. How should a hotel set its room prices?\nB. Why did Portugal’s tourism revenue fall in 2020?\nC. Should a restaurant hire more waiters?\nD. How do travelers choose between two airlines?\n\n\nAnswer: B — Portugal’s tourism revenue is an aggregate measure affecting the entire economy."
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#exercise-2-multiple-choice",
+    "href": "slides/lecture01_intro.html#exercise-2-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\nA museum has limited exhibition space. Choosing between a modern art or historical exhibition illustrates:\nA. Efficiency\nB. Scarcity\nC. Positive economics\nD. Macroeconomics\n\n\nAnswer: B — Limited space (scarce resource) forces a choice between alternatives."
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#exercise-3-open-question",
+    "href": "slides/lecture01_intro.html#exercise-3-open-question",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question",
+    "text": "Exercise 3: Open Question\nScenario: A low-cost airline charges €50/ticket, sells 150 tickets (capacity: 180).\nQuestions:\n\nCalculate current revenue per flight\nIf price increases to €60, demand falls to 120 tickets. Calculate new revenue.\nWhich pricing is more efficient? Why?\nIs this microeconomic or macroeconomic analysis?"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#exercise-3-solution",
+    "href": "slides/lecture01_intro.html#exercise-3-solution",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution",
+    "text": "Exercise 3: Solution\na) Current revenue: \\[\\text{Revenue} = 50 \\times 150 = €7,500\\]\nb) New revenue: \\[\\text{Revenue} = 60 \\times 120 = €7,200\\]\nc) Efficiency:\n\n€50 price: Revenue €7,500, occupancy 83%\n€60 price: Revenue €7,200, occupancy 67%\n\n👉 First is more efficient: higher revenue AND better utilization\nd) This is microeconomic analysis (individual firm’s decision)"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#next-lecture",
+    "href": "slides/lecture01_intro.html#next-lecture",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture 📚",
+    "text": "Next Lecture 📚\nLecture 2 (February 6, 2026):\n\nThree Fundamental Economic Problems (detailed)\nMarket, Centralized, and Mixed Economies\nEconomic Systems Comparison\n\n💡 Preparation: Think about how tourism businesses make decisions in different economic systems!"
+  },
+  {
+    "objectID": "slides/lecture01_intro.html#thank-you",
+    "href": "slides/lecture01_intro.html#thank-you",
+    "title": "Economics Fundamentals",
+    "section": "Thank You! 👋",
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
   }
 ]

@@ -1,0 +1,553 @@
+---
+title: "Economics Fundamentals"
+subtitle: "Lecture 1: Introduction, Macro vs Micro, Scarcity and Efficiency"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 1"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(eurostat)
+library(tidyverse)
+library(lubridate)
+
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+```
+
+## Welcome to Economics! :wave: {.center}
+
+:::: {.columns}
+::: {.column width="55%"}
+**Why study Economics?** :thinking:
+
+:chart_with_upwards_trend: Understand government policies
+
+:globe_with_meridians: Navigate global markets
+
+:briefcase: Achieve business success
+
+:scales: Master supply & demand
+
+:balance_scale: Understand inequality
+:::
+
+::: {.column width="45%"}
+![](https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=500)
+:::
+::::
+
+::: {.notes}
+Economics is essential for management professionals to make informed decisions in an increasingly complex business environment.
+:::
+
+## Introduction :man_teacher:
+
+:man_teacher: **Paulo Fagandini**
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+:mortar_board: **In Canvas:** Syllabus, Calendar, Group Project
+
+:calendar: **Schedule:** Thursdays & Fridays
+
+## What is Economics? :bulb:
+
+::: {.key-concept}
+**Economics** studies how societies use **scarce resources** to produce valuable goods and distribute them among individuals.
+:::
+
+. . .
+
+Economics as a **social science** uses simplified hypotheses and relates variables to understand economic phenomena.
+
+## What Does Economics Study? :mag:
+
+:::: {.columns}
+::: {.column width="50%"}
+:bank: **Institutions & Markets**
+
+How technology influences prices and resource allocation
+
+:money_with_wings: **Finance**
+
+Behavior of financial markets and capital flows
+:::
+
+::: {.column width="50%"}
+:busts_in_silhouette: **Society**
+
+Income redistribution and social welfare
+
+:chart_with_downwards_trend: **Cycles**
+
+Unemployment, inflation, growth
+:::
+::::
+
+## The Two (main) Branches of Economics
+
+:::: {.columns}
+:::{.column}
+- GDP & Growth
+- Unemployment
+- Monetary Policy
+- Fiscal Policy
+- Inflation
+- Trade Balance
+:::
+
+:::{.column}
+- Firm Decisions
+- Consumer Choices
+- Market Prices
+- Individual Markets
+- Competition
+- Strategic Behavior
+:::
+::::
+
+## Macroeconomics :telescope:
+
+**The Big Picture** — Studies the economy as a whole
+
+:::: {.columns}
+::: {.column width="50%"}
+:chart_with_upwards_trend: **GDP & Economic Growth**
+
+:briefcase: **Unemployment rates**
+
+:moneybag: **Inflation trends**
+:::
+
+::: {.column width="50%"}
+:bank: **Monetary policy**
+
+:globe_with_meridians: **International trade**
+
+:receipt: **Government budgets**
+:::
+::::
+
+::: {.fragment}
+*Example:* "Why did Portugal's tourism revenue fall 50% in 2020?"
+:::
+
+## Microeconomics :microscope:
+
+**Individual Decisions** — Studies specific agents and markets
+
+:::: {.columns}
+::: {.column width="50%"}
+:shopping_cart: **Consumer behavior**
+
+:factory: **Firm decisions**
+
+:label: **Pricing strategies**
+:::
+
+::: {.column width="50%"}
+:crossed_swords: **Competition analysis**
+
+:handshake: **Market interactions**
+
+:chart: **Supply & Demand**
+:::
+::::
+
+::: {.fragment}
+
+*Example:* "How should a hotel set its room prices?"
+
+:::
+
+## Macroeconomics in Tourism :airplane:
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-width: 13
+#| fig-height: 5.5
+#| fig-cap: "Source: Eurostat (tour_occ_arnraw, bop_its6_det)"
+
+guests_raw <- get_eurostat("tour_occ_arnraw", type = "code", keep_flags = FALSE, cache = TRUE, cache_dir = "data_cache")
+revenue_raw <- get_eurostat("bop_its6_det", type = "code", keep_flags = FALSE, cache = TRUE, cache_dir = "data_cache")
+
+# Clean Guest Data
+guests_PT <- guests_raw %>%
+  filter(
+    geo=='PT',
+    nace_r2=='I551-I553',
+    unit %in% c('NR','MIO_EUR'),
+    c_resid == "WORLD",
+    year(TIME_PERIOD)>=2019
+  ) %>%
+  select(TIME_PERIOD, values)
+
+guests_PT$values <- guests_PT$values/1000000
+guests_PT <- guests_PT %>% rename(guests = values)
+
+# Clean Revenue Data
+revenue_PT <- revenue_raw %>% 
+  filter(
+    geo == "PT",
+    year(TIME_PERIOD) >= 2019,
+    partner == "WRL_REST",
+    stk_flow == "CRE",
+    bop_item == "SD"
+  ) %>% 
+  select(TIME_PERIOD, values)
+
+revenue_PT$values <- revenue_PT$values/1000
+revenue_PT <- revenue_PT %>% rename(revenue = values)
+
+# Merge and Plot
+df_plot <- inner_join(guests_PT, revenue_PT, by = "TIME_PERIOD") %>%
+  mutate(year_val = year(TIME_PERIOD)) %>%
+  pivot_longer(cols = c(guests, revenue), names_to = "metric", values_to = "value") %>%
+  mutate(metric = recode(metric, 
+                         "guests" = "Guests (Millions)", 
+                         "revenue" = "Revenue (Billions €)"))
+
+ggplot(df_plot, aes(x = year_val, y = value, color = metric, group = metric)) +
+  geom_line(linewidth = 1.5) +
+  geom_point(size = 4) +
+  scale_x_continuous(breaks = 2019:2024) +
+  scale_color_manual(values = c("Guests (Millions)" = ue_red, "Revenue (Billions €)" = ue_black)) +
+  theme_minimal(base_size = 16) +
+  labs(title = "Portugal Tourism Sector (2019-2024)",
+       subtitle = "COVID-19 impact and recovery visible in macroeconomic data",
+       x = "Year", y = "Scale (Millions / Billions)", color = "Indicator") +
+  theme(legend.position = "bottom",
+        plot.title = element_text(color = ue_red, face = "bold"))
+```
+
+## Microeconomics in Tourism :hotel:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 5
+#| fig-cap: "Source: Eurostat (tour_occ_arnraw)"
+
+guests_micro <- guests_raw %>% 
+  filter(geo == "PT", year(TIME_PERIOD)==2024, c_resid == "WORLD", 
+         nace_r2 %in% c('I551', 'I552', 'I553'), unit == 'NR')
+guests_micro <- guests_micro %>% select(nace_r2, values) %>% rename(guests = values)
+
+nace_descriptions <- c(
+  'I551' = 'Hotels',
+  'I552' = 'Holiday rentals',
+  'I553' = 'Camping'
+)
+
+guests_micro$description <- nace_descriptions[guests_micro$nace_r2]
+
+ggplot(data = guests_micro, aes(x = reorder(description, -guests), y = guests/1000000, fill = description)) +
+  geom_bar(stat = "identity", color = ue_black, linewidth = 0.5) +
+  geom_text(aes(label = paste0(round(guests/1000000, 1), "M")),
+            vjust = -0.5, size = 6, fontface = "bold") +
+  scale_fill_manual(values = c("Hotels" = ue_red, "Holiday rentals" = ue_gray, "Camping" = ue_black)) +
+  labs(title = "Guests by Accommodation Type — Portugal 2024",
+       subtitle = "Microeconomic analysis: which market segments attract more tourists?",
+       x = "", y = "Guests (Millions)") +
+  theme_minimal(base_size = 16) +
+  theme(legend.position = "none",
+        plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.text.x = element_text(size = 14, face = "bold"))
+```
+
+## The Fundamental Economic Problem :warning:
+
+::: {.key-concept}
+**Scarcity**
+
+Human wants are unlimited, but resources are limited
+:::
+
+. . . 
+
+This leads to:
+
+:point_right: **Trade-offs** — Choices involve compromises
+
+:point_right: **Cost-Benefit Analysis** — Act only if benefits exceed costs
+
+:point_right: **Efficiency** — Most effective use of resources
+
+## Scarcity in Tourism: Lisbon Airport :flight_departure:
+
+:::: {.columns}
+::: {.column width="55%"}
+**Capacity Constraints (2024)**
+
+:warning: Design capacity: ~31M passengers/year
+
+:airplane: Actual 2024: ~35M passengers
+
+:chart_with_upwards_trend: Growing demand, limited slots
+
+**Trade-off:** More flights vs. congestion & delays
+:::
+
+::: {.column width="45%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 5
+#| fig-height: 4
+
+# Hypothetical illustrative data
+capacity_data <- data.frame(
+  category = c("Capacity", "Actual 2024", "Projected 2025"),
+  passengers = c(31, 35, 36.5)
+)
+capacity_data$category <- factor(capacity_data$category, 
+                                  levels = c("Capacity", "Actual 2024", "Projected 2025"))
+
+ggplot(capacity_data, aes(x = category, y = passengers, fill = category)) +
+  geom_bar(stat = "identity", width = 0.7) +
+  geom_hline(yintercept = 31, linetype = "dashed", color = ue_red, linewidth = 1.2) +
+  labs(y = "Passengers (M)", x = "") +
+  theme_minimal(base_size = 14) +
+  scale_fill_manual(values = c(ue_black, ue_red, ue_gray)) +
+  theme(legend.position = "none") +
+  annotate("text", x = 2.5, y = 32.5, label = "Capacity Limit", color = ue_red, size = 4, fontface = "bold")
+```
+
+*Hypothetical illustration based on news reports*
+:::
+::::
+
+## Efficiency :dart:
+
+::: {.key-concept}
+**Economic Efficiency**
+
+Situation where the economy produces and consumes goods at *socially optimal levels*:
+
+:white_check_mark: Getting the most out of available resources
+
+:white_check_mark: Using the least for current consumption level
+:::
+
+## Pareto Efficiency :balance_scale:
+
+**Cannot increase one person's welfare without harming another**
+
+:::: {.columns}
+::: {.column width="50%"}
+:heavy_check_mark: **Efficient allocation**
+
+- Resources fully utilized
+- No waste in production
+- Optimal distribution
+:::
+
+::: {.column width="50%"}
+:x: **Inefficient allocation**
+
+- Resources underutilized
+- Production waste exists
+- Room for improvement
+:::
+::::
+
+## Efficiency in Tourism :hotel:
+
+**Dynamic Pricing Example**
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 4.5
+
+# Hypothetical illustrative data
+pricing_data <- data.frame(
+  strategy = rep(c("Fixed Pricing", "Dynamic Pricing"), each = 12),
+  month = rep(month.abb, 2),
+  occupancy = c(45, 48, 55, 52, 50, 85, 95, 92, 70, 55, 50, 60,
+                65, 68, 75, 72, 70, 90, 98, 95, 85, 75, 70, 78),
+  month_num = rep(1:12, 2)
+)
+
+ggplot(pricing_data, aes(x = month_num, y = occupancy, color = strategy, group = strategy)) +
+  geom_line(linewidth = 1.5) +
+  geom_point(size = 3) +
+  labs(title = "Hotel Occupancy: Fixed vs. Dynamic Pricing",
+       subtitle = "Dynamic pricing improves efficiency through better resource allocation (hypothetical)",
+       x = "", y = "Occupancy Rate (%)", color = "") +
+  scale_x_continuous(breaks = 1:12, labels = month.abb) +
+  theme_minimal(base_size = 14) +
+  scale_color_manual(values = c("Fixed Pricing" = ue_gray, "Dynamic Pricing" = ue_red)) +
+  theme(legend.position = "bottom",
+        plot.title = element_text(color = ue_red, face = "bold"))
+```
+
+## The Three Economic Questions :question:
+
+Every economy must answer:
+
+| Question | Description | Tourism Example |
+|----------|-------------|-----------------|
+| **WHAT?** | What goods to produce? | More hotels or museums? |
+| **HOW?** | How to produce them? | Automated or human agents? |
+| **FOR WHOM?** | Who gets the output? | Luxury or mass tourism? |
+
+::: {.fragment}
+*These require decisions based on: resources, technology, preferences, markets*
+:::
+
+## Positive vs. Normative Economics :mag_right:
+
+:::: {.columns}
+::: {.column width="50%"}
+### Positive Economics :bar_chart:
+**Describes facts** — Can be tested
+
+- Why do managers earn more than cleaners?
+- Does tourism increase local incomes?
+- What happens to prices in high season?
+
+:point_right: *Answered with data and analysis*
+:::
+
+::: {.column width="50%"}
+### Normative Economics :thought_balloon:
+**Value judgments** — Opinions
+
+- Should government limit Airbnb?
+- Should tourism revenue be redistributed?
+- Should airlines reduce emissions?
+
+:point_right: *Requires ethical/political debate*
+:::
+::::
+
+## Key Concepts Summary :clipboard:
+
+| Concept | Definition |
+|---------|------------|
+| **Economics** | Study of scarce resource allocation |
+| **Macroeconomics** | Whole economy (GDP, inflation) |
+| **Microeconomics** | Individual decisions (firms, consumers) |
+| **Scarcity** | Unlimited wants, limited resources |
+| **Efficiency** | Optimal resource use (no waste) |
+| **Trade-off** | Giving up one thing for another |
+
+## Exercises :pencil: {.center}
+
+**Time for practice!**
+
+Let's test your understanding.
+
+## Exercise 1: Multiple Choice
+
+**Which of the following is a MACROECONOMIC question?**
+
+A. How should a hotel set its room prices?
+
+B. Why did Portugal's tourism revenue fall in 2020?
+
+C. Should a restaurant hire more waiters?
+
+D. How do travelers choose between two airlines?
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B** — Portugal's tourism revenue is an aggregate measure affecting the entire economy.
+:::
+:::
+
+## Exercise 2: Multiple Choice
+
+**A museum has limited exhibition space. Choosing between a modern art or historical exhibition illustrates:**
+
+A. Efficiency
+
+B. Scarcity
+
+C. Positive economics
+
+D. Macroeconomics
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B** — Limited space (scarce resource) forces a choice between alternatives.
+:::
+:::
+
+## Exercise 3: Open Question
+
+**Scenario:** A low-cost airline charges €50/ticket, sells 150 tickets (capacity: 180).
+
+**Questions:**
+
+a) Calculate current revenue per flight
+
+b) If price increases to €60, demand falls to 120 tickets. Calculate new revenue.
+
+c) Which pricing is more efficient? Why?
+
+d) Is this microeconomic or macroeconomic analysis?
+
+## Exercise 3: Solution
+
+**a) Current revenue:**
+$$\text{Revenue} = 50 \times 150 = €7,500$$
+
+**b) New revenue:**
+$$\text{Revenue} = 60 \times 120 = €7,200$$
+
+**c) Efficiency:**
+
+- €50 price: Revenue €7,500, occupancy 83%
+- €60 price: Revenue €7,200, occupancy 67%
+
+:point_right: **First is more efficient**: higher revenue AND better utilization
+
+**d)** This is **microeconomic** analysis (individual firm's decision)
+
+## Next Lecture :books:
+
+**Lecture 2** (February 6, 2026):
+
+- Three Fundamental Economic Problems (detailed)
+- Market, Centralized, and Mixed Economies
+- Economic Systems Comparison
+
+:bulb: **Preparation:** Think about how tourism businesses make decisions in different economic systems!
+
+## Thank You! :wave: {.center}
+
+**Questions?**
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Thursday, February 6, 2026*
