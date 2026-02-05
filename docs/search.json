@@ -116,7 +116,7 @@
     "href": "slides/lecture01-intro.html#exercise-3-solution",
     "title": "Economics Fundamentals",
     "section": "Exercise 3: Solution",
-    "text": "Exercise 3: Solution\na) Current revenue: \\[\\text{Revenue} = 50 \\times 150 = €7,500\\]\nb) New revenue: \\[\\text{Revenue} = 60 \\times 120 = €7,200\\]\nc) Efficiency:\n\n€50 price: Revenue €7,500, occupancy 83%\n€60 price: Revenue €7,200, occupancy 67%\n\n👉 First is more efficient: higher revenue AND better utilization\nd) This is microeconomic analysis (individual firm’s decision)"
+    "text": "Exercise 3: Solution\na) Current revenue: \\[\\text{Revenue} = 50 \\times 150 = €7,500\\]\nb) New revenue: \\[\\text{Revenue} = 60 \\times 120 = €7,200\\]\nc) Efficiency:\n\n€50 price: Revenue €7,500, occupancy 83%\n€60 price: Revenue €7,200, occupancy 67%\n\n:point_right: First is more efficient: higher revenue AND better utilization\nd) This is microeconomic analysis (individual firm’s decision)"
   },
   {
     "objectID": "slides/lecture01-intro.html#next-lecture",
@@ -319,14 +319,14 @@
     "href": "material.html",
     "title": "Material",
     "section": "",
-    "text": "Introduction\nEconomic Systems\nOpportunity Cost\nProduction Possibility Frontier"
+    "text": "Introduction\nEconomic Systems"
   },
   {
     "objectID": "material.html#slides",
     "href": "material.html#slides",
     "title": "Material",
     "section": "",
-    "text": "Introduction\nEconomic Systems\nOpportunity Cost\nProduction Possibility Frontier"
+    "text": "Introduction\nEconomic Systems"
   },
   {
     "objectID": "slides/lecture01-intro.html#what-is-economics-1",
@@ -962,8 +962,8 @@
     "objectID": "slides/lecture03-opportunity.html#recap-previous-lectures",
     "href": "slides/lecture03-opportunity.html#recap-previous-lectures",
     "title": "Economics Fundamentals",
-    "section": "Recap: Previous Lectures",
-    "text": "Recap: Previous Lectures\nLecture 1: Economics, Scarcity, Efficiency, Macro vs. Micro\nLecture 2: Three economic problems (WHAT, HOW, FOR WHOM) and economic systems (Market, Planned, Mixed)\nToday’s Focus:\n\nHow do people make economic decisions?\nWhat is rationality?\nOpportunity cost – one of economics’ most powerful concepts!"
+    "section": "Recap: Previous Lectures ⏪",
+    "text": "Recap: Previous Lectures ⏪\nLecture 1: Economics, Scarcity, Efficiency, Macro vs. Micro\nLecture 2: Three economic problems (WHAT, HOW, FOR WHOM) and economic systems (Market, Planned, Mixed)\n\n🎯 Today’s Focus:\n🧠 How do people make economic decisions?\n🤔 What is rationality?\n💰 Opportunity cost — one of economics’ most powerful concepts!"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#economic-rationality",
@@ -976,15 +976,15 @@
     "objectID": "slides/lecture03-opportunity.html#cost-benefit-principle",
     "href": "slides/lecture03-opportunity.html#cost-benefit-principle",
     "title": "Economics Fundamentals",
-    "section": "Cost-Benefit Principle",
-    "text": "Cost-Benefit Principle\n\nThe Foundation of Rational Choice:\n\nAn action should be undertaken if and only if the benefits exceed the costs.\n\n\\[\\text{Decision Rule: } \\begin{cases}\n\\text{Do it} & \\text{if } Benefits \\geq Costs \\\\\n\\text{Don't do it} & \\text{if } Benefits &lt; Costs\n\\end{cases}\\]\nIn practice:\n\nBenefits = What you gain\nCosts = What you give up\nCompare net benefit of alternatives"
+    "section": "Cost-Benefit Principle ⚖️",
+    "text": "Cost-Benefit Principle ⚖️\n\nThe Foundation of Rational Choice\nAn action should be undertaken if and only if the benefits exceed the costs.\n\n\nDecision Rule:\n\\[\\text{Decision Rule: } \\begin{cases}\n\\text{Do it} & \\text{if } Benefits \\geq Costs \\\\\n\\text{Don't do it} & \\text{if } Benefits &lt; Costs\n\\end{cases}\\]\n\n\nIn practice:\n\nBenefits = What you gain\nCosts = What you give up\nCompare net benefit of alternatives"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#tourism-example-cost-benefit",
     "href": "slides/lecture03-opportunity.html#tourism-example-cost-benefit",
     "title": "Economics Fundamentals",
-    "section": "Tourism Example: Cost-Benefit",
-    "text": "Tourism Example: Cost-Benefit\n\nShould a tourist visit the Belém Tower in Lisbon?\n\n\nBenefits\n\nHistorical experience\nPhotos/memories\nEducational value\nSatisfaction\n\nEstimated value: €20\n\nCosts\n\nEntry ticket: €6\nTravel time: 30 min\nWaiting time: 20 min\nValue of time: €15/hr\n\nTotal time cost: €12.50 Total cost: €18.50\n\nDecision: Benefits (€20) &gt; Costs (€18.50) → Visit!\nBut if waiting time increases to 60 min, costs rise to €28.50 → Don’t visit!"
+    "section": "Tourism Example: Cost-Benefit 🏛️",
+    "text": "Tourism Example: Cost-Benefit 🏛️\nShould a tourist visit the Belém Tower in Lisbon?\n\n\nBenefits ✅\n📷 Photos & memories\n📚 Educational value\n❤️ Historical experience\n😄 Satisfaction\nEstimated value: €20\n\nCosts 💸\n🎫 Entry ticket: €6\n🚌 Travel time: 30 min\n⌛ Waiting time: 20 min\n🕐 Value of time: €15/hr\nTime cost: €12.50\nTotal cost: €18.50\n\n\n👉 Decision: Benefits (€20) &gt; Costs (€18.50) → Visit!\nBut if waiting time increases to 60 min, costs rise to €28.50 → Don’t visit!"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#marginal-analysis",
@@ -997,8 +997,8 @@
     "objectID": "slides/lecture03-opportunity.html#marginal-analysis-hotel-rooms",
     "href": "slides/lecture03-opportunity.html#marginal-analysis-hotel-rooms",
     "title": "Economics Fundamentals",
-    "section": "Marginal Analysis: Hotel Rooms",
-    "text": "Marginal Analysis: Hotel Rooms\nShould a hotel accept one more booking?"
+    "section": "Marginal Analysis: Hotel Rooms 🏨",
+    "text": "Marginal Analysis: Hotel Rooms 🏨\nShould a hotel accept one more booking?\n\nHypothetical illustration of marginal decision-making"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#opportunity-cost-definition",
@@ -1011,8 +1011,8 @@
     "objectID": "slides/lecture03-opportunity.html#opportunity-cost-examples",
     "href": "slides/lecture03-opportunity.html#opportunity-cost-examples",
     "title": "Economics Fundamentals",
-    "section": "Opportunity Cost Examples",
-    "text": "Opportunity Cost Examples\n\nSimple Example: You have €100 and 4 hours free on Saturday afternoon.\nOptions:\nA. Visit museum (€10 entry, 3 hours)\nB. Beach trip (€0 entry, 4 hours)\nC. Movie (€12 ticket, 2 hours)\nD. Stay home and study (€0, 4 hours)\nIf you choose A (museum):\n\nExplicit cost: €10\nOpportunity cost: Value of best alternative foregone\n\nCan’t go to beach (assume you value it at €20)\nTotal opportunity cost: €10 paid + €20 value foregone = €30"
+    "section": "Opportunity Cost Examples 💰",
+    "text": "Opportunity Cost Examples 💰\nSimple Example: You have €100 and 4 hours free on Saturday afternoon.\n\n\nOptions (value, cost, time):\nA. Visit museum (€15, €10, 3h)\nB. Beach trip (€20, €0, 4h)\nC. Movie (€22, €12, 2h)\nD. Study at home (€10, €0, 4h)\n\nIf you choose A (museum):\n💸 Explicit cost: €10\n🤔 Opportunity cost: Value of best alternative foregone\n\nCan’t go to beach (value: €20)\nTotal opportunity cost: €10 + €20 = €30"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#opportunity-cost-in-tourism-decisions",
@@ -1026,7 +1026,7 @@
     "href": "slides/lecture03-opportunity.html#sunk-costs-vs.-opportunity-costs",
     "title": "Economics Fundamentals",
     "section": "Sunk Costs vs. Opportunity Costs",
-    "text": "Sunk Costs vs. Opportunity Costs\nSunk Cost: Cost already incurred that cannot be recovered\nCritical Rule: Ignore sunk costs in decisions!\nThey’re already spent – only future costs and benefits matter."
+    "text": "Sunk Costs vs. Opportunity Costs\nSunk Cost: Cost already incurred that cannot be recovered\nCritical Rule: Ignore sunk costs in decisions!\nThey’re already spent – only future costs and benefits matter.\n\nTourism Example:\nYou bought a non-refundable €100 train ticket to Porto. On the travel day, you feel sick.\nSunk cost: €100 (already spent, can’t get back)\nDecision: Should you go?\n\n❌ Wrong thinking: “I paid €100, so I must go”\n✅ Right thinking: “€100 is gone. Will I enjoy the trip enough given how I feel?”\n\nThe €100 is irrelevant to the decision!"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#real-example-sunk-costs-in-airlines",
@@ -1060,22 +1060,22 @@
     "objectID": "slides/lecture03-opportunity.html#making-better-decisions",
     "href": "slides/lecture03-opportunity.html#making-better-decisions",
     "title": "Economics Fundamentals",
-    "section": "Making Better Decisions",
-    "text": "Making Better Decisions\n\nChecklist for Rational Economic Decisions:\n\n✓ Identify all alternatives\n✓ Estimate benefits of each alternative\n✓ Estimate costs (including opportunity costs!)\n✓ Ignore sunk costs (they’re irrelevant)\n✓ Consider marginal changes (not just totals)\n✓ Choose alternative with highest net benefit\n\nRemember: Good decisions maximize net benefit (Benefits - Opportunity Costs)"
+    "section": "Making Better Decisions ✅",
+    "text": "Making Better Decisions ✅\nChecklist for Rational Economic Decisions:\n1️⃣ Identify all alternatives\n2️⃣ Estimate benefits of each alternative\n3️⃣ Estimate costs (including opportunity costs!)\n4️⃣ Ignore sunk costs (they’re irrelevant)\n5️⃣ Consider marginal changes (not just totals)\n6️⃣ Choose alternative with highest net benefit\n\n💡 Remember: Good decisions maximize net benefit (Benefits - Opportunity Costs)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#common-decision-mistakes",
     "href": "slides/lecture03-opportunity.html#common-decision-mistakes",
     "title": "Economics Fundamentals",
-    "section": "Common Decision Mistakes",
-    "text": "Common Decision Mistakes\n\nMistake 1: Ignoring opportunity costs\n\nThinking only about money paid, not value of alternatives foregone\n\nMistake 2: Counting sunk costs\n\n“I’ve already invested so much, I must continue”\n\nMistake 3: Ignoring marginal analysis\n\nLooking at totals instead of additional benefits/costs\n\nMistake 4: Not comparing net benefits\n\nChoosing option with highest benefit (but also highest cost)"
+    "section": "Common Decision Mistakes ❌",
+    "text": "Common Decision Mistakes ❌\n\n\nMistake 1: Ignoring opportunity costs\n\nThinking only about money paid\nNot considering value of alternatives foregone\n\nMistake 2: Counting sunk costs\n\n“I’ve already invested so much”\nLooking backward instead of forward\n\n\nMistake 3: Ignoring marginal analysis\n\nLooking at totals instead of additional units\nNot considering “one more” decisions\n\nMistake 4: Not comparing net benefits\n\nChoosing highest benefit option\nBut ignoring that it also has highest cost!"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#real-business-case-ryanair-strategy",
     "href": "slides/lecture03-opportunity.html#real-business-case-ryanair-strategy",
     "title": "Economics Fundamentals",
-    "section": "Real Business Case: Ryanair Strategy",
-    "text": "Real Business Case: Ryanair Strategy\nRyanair’s Opportunity Cost Thinking (2024)\n\nDecision: Cancel Brussels route, add London frequency → Better use of aircraft (opportunity cost logic)"
+    "section": "Real Business Case: Ryanair Strategy ✈️",
+    "text": "Real Business Case: Ryanair Strategy ✈️\n\n👉 Decision: Cancel Brussels route, add London frequency → Better use of aircraft (opportunity cost logic)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#summary-key-concepts",
@@ -1088,29 +1088,29 @@
     "objectID": "slides/lecture03-opportunity.html#exercises",
     "href": "slides/lecture03-opportunity.html#exercises",
     "title": "Economics Fundamentals",
-    "section": "Exercises",
-    "text": "Exercises\nPractice Time!\nReal-world applications of opportunity cost."
+    "section": "Exercises 📝",
+    "text": "Exercises 📝\nPractice Time!\nReal-world applications of opportunity cost."
   },
   {
     "objectID": "slides/lecture03-opportunity.html#exercise-1-multiple-choice",
     "href": "slides/lecture03-opportunity.html#exercise-1-multiple-choice",
     "title": "Economics Fundamentals",
     "section": "Exercise 1: Multiple Choice",
-    "text": "Exercise 1: Multiple Choice\nQuestion: A hotel owner can use her restaurant space for:\n\nOption A: Fine dining (€80k annual profit)\nOption B: Buffet restaurant (€60k annual profit)\n\nOption C: Rent to external operator (€50k annual rent)\n\nShe chooses Option A. What is the opportunity cost of this decision?\nA. €80,000\nB. €60,000\nC. €50,000\nD. €110,000\n\nAnswer: B (€60,000)\nExplanation: Opportunity cost = value of best alternative foregone. The next-best alternative to fine dining (€80k) is buffet (€60k), NOT the sum of all alternatives."
+    "text": "Exercise 1: Multiple Choice\nA hotel owner can use her restaurant space for:\n\nOption A: Fine dining (€80k annual profit)\nOption B: Buffet restaurant (€60k annual profit)\nOption C: Rent to external operator (€50k annual rent)\n\nShe chooses Option A. What is the opportunity cost of this decision?\nA. €80,000\nB. €60,000\nC. €50,000\nD. €110,000\n\n\nAnswer: B (€60,000) - Opportunity cost = value of best alternative foregone. The next-best alternative to fine dining (€80k) is buffet (€60k), NOT the sum of all alternatives."
   },
   {
     "objectID": "slides/lecture03-opportunity.html#exercise-2-multiple-choice",
     "href": "slides/lecture03-opportunity.html#exercise-2-multiple-choice",
     "title": "Economics Fundamentals",
     "section": "Exercise 2: Multiple Choice",
-    "text": "Exercise 2: Multiple Choice\nQuestion: You bought a non-refundable €200 ticket to a concert. On the day of the concert, you feel ill. A friend offers you €50 for the ticket (transferable). What is the opportunity cost of attending the concert?\nA. €200\nB. €150\nC. €50 + discomfort from illness\nD. €250\n\nAnswer: C (€50 + discomfort)\nExplanation:\n\n€200 is SUNK (can’t recover even if you don’t go)\nIf you attend: you give up €50 (could sell) + endure discomfort\nOpportunity cost = what you give up by attending"
+    "text": "Exercise 2: Multiple Choice\nYou bought a non-refundable €200 ticket to a concert. On the day of the concert, you feel ill. A friend offers you €50 for the ticket (transferable). What is the opportunity cost of ATTENDING the concert?\nA. €200\nB. €150\nC. €50 + discomfort from illness\nD. €250\n\n\nAnswer: C (€50 + discomfort) - The €200 is SUNK (can’t recover even if you don’t go). If you attend: you give up €50 (could sell) + endure discomfort. Opportunity cost = what you give up by attending."
   },
   {
     "objectID": "slides/lecture03-opportunity.html#exercise-3-open-question",
     "href": "slides/lecture03-opportunity.html#exercise-3-open-question",
     "title": "Economics Fundamentals",
     "section": "Exercise 3: Open Question",
-    "text": "Exercise 3: Open Question\nScenario: A tour operator in Porto must decide between two summer season strategies:\nStrategy A: Focus on luxury tours\n\nExpected revenue: €500,000\nVariable costs: €280,000\nFixed costs already committed: €80,000\n\nStrategy B: Focus on budget tours\n\nExpected revenue: €420,000\nVariable costs: €200,000\nSame fixed costs: €80,000\n\nQuestions:\n\nCalculate profit for each strategy\n\nWhat is the opportunity cost of choosing Strategy A?\n\nWhich strategy should be chosen and why?\n\nAre fixed costs relevant to the decision? Explain."
+    "text": "Exercise 3: Open Question\nScenario: A tour operator in Porto must decide between two summer season strategies:\nStrategy A: Focus on luxury tours\n\nExpected revenue: €500,000\nVariable costs: €280,000\nFixed costs already committed: €80,000\n\nStrategy B: Focus on budget tours\n\nExpected revenue: €420,000\nVariable costs: €200,000\nSame fixed costs: €80,000\n\nQuestions:\n\nCalculate profit for each strategy\nWhat is the opportunity cost of choosing Strategy A?\nWhich strategy should be chosen and why?\nAre fixed costs relevant to the decision? Explain."
   },
   {
     "objectID": "slides/lecture03-opportunity.html#exercise-3-solution",
@@ -1130,15 +1130,15 @@
     "objectID": "slides/lecture03-opportunity.html#next-lecture",
     "href": "slides/lecture03-opportunity.html#next-lecture",
     "title": "Economics Fundamentals",
-    "section": "Next Lecture",
-    "text": "Next Lecture\nLecture 4 (February 13, 2026):\n\nProduction Factors (detailed)\nProduction Possibilities Frontier (PPF)\nEfficiency, Trade-offs, and Economic Growth\n\nPreparation: Review today’s opportunity cost concept – it’s the foundation for understanding PPF!"
+    "section": "Next Lecture 📚",
+    "text": "Next Lecture 📚\nLecture 4 (February 13, 2026):\n\nProduction Possibilities Frontier (PPF)\nEfficiency, Trade-offs, and Economic Growth\nComparative Advantage and Specialization\n\n💡 Preparation: Review today’s opportunity cost concept — it’s the foundation for understanding PPF!"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#thank-you",
     "href": "slides/lecture03-opportunity.html#thank-you",
     "title": "Economics Fundamentals",
-    "section": "Thank You!",
-    "text": "Thank You!\nQuestions?\nContact: paulo.fagandini@ext.universidadeeuropeia.pt"
+    "section": "Thank You! 👋",
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
   },
   {
     "objectID": "slides/lecture04-ppf.html#recap-lecture-3",
@@ -1152,7 +1152,7 @@
     "href": "slides/lecture04-ppf.html#production-factors-inputs",
     "title": "Economics Fundamentals",
     "section": "Production Factors (Inputs)",
-    "text": "Production Factors (Inputs)\n\nTo produce goods and services, economies use three main factors:\n\n\nLand\nNatural Resources\n\nAgricultural land\nMinerals & energy\nWater resources\nNatural beauty\nClimate\n\nTourism: Beaches, mountains, heritage sites\n\nLabor\nHuman Effort\n\nPhysical work\nMental work\nSkills & training\nTime & effort\nEntrepreneurship\n\nTourism: Staff, guides, managers, chefs\n\nCapital\nProduced Goods\n\nBuildings\nMachinery\nInfrastructure\nTechnology\nEquipment\n\nTourism: Hotels, planes, booking systems"
+    "text": "Production Factors (Inputs)\n\nTo produce goods and services, economies use three main factors:\n\n\n\nLand\nNatural Resources\n\nAgricultural land\nMinerals & energy\nWater resources\nNatural beauty\nClimate\n\nTourism: Beaches, mountains, heritage sites\n\n\n\nLabor\nHuman Effort\n\nPhysical work\nMental work\nSkills & training\nTime & effort\nEntrepreneurship\n\nTourism: Staff, guides, managers, chefs\n\n\n\nCapital\nProduced Goods\n\nBuildings\nMachinery\nInfrastructure\nTechnology\nEquipment\n\nTourism: Hotels, planes, booking systems"
   },
   {
     "objectID": "slides/lecture04-ppf.html#factor-payments",
@@ -1355,7 +1355,7 @@
     "href": "slides/lecture04-ppf.html#thank-you",
     "title": "Economics Fundamentals",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions?\nContact: paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You!\nQuestions?\nContact: paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Wednesday, February 19, 2026\n\nThis completes the Fundamentals block. Students should understand: scarcity → trade-offs → opportunity cost → PPF → efficiency. These concepts are foundational for all future topics."
   },
   {
     "objectID": "slides/lecture01-intro.html#from-eurostat",
@@ -2357,5 +2357,404 @@
     "title": "Economics Fundamentals",
     "section": "Exercise 3: Solution (Part c & d)",
     "text": "Exercise 3: Solution (Part c & d)\nc) Payback period calculation:\n\\[\\text{Payback Period} = \\frac{\\text{Initial Investment}}{\\text{Annual Profit}} = \\frac{€5,000,000}{€800,000} = 6.25 \\text{ years}\\]\nd) Recommendation: Mixed approach (combination)\n👉 Use market mechanism (Policy A) as primary driver - private sector is more efficient at identifying demand and driving innovation\n👉 Add selective government intervention (Policy B elements) - regional development incentives, environmental regulations, infrastructure investment\n💡 This is what Portugal actually does - mostly private sector with strategic government support!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html",
+    "href": "slides/lecture01-intro.html",
+    "title": "Economics Fundamentals",
+    "section": "",
+    "text": "Why study Economics? :thinking:\n:classical_building: Understand government policies\n:globe_with_meridians: Navigate global markets\n:briefcase: Achieve business success\n:chart_with_upwards_trend: :chart_with_downwards_trend: Master supply & demand\n:balance_scale: Understand inequality\n\n\n\n\n\nEconomics is essential for management professionals to make informed decisions in an increasingly complex business environment."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#welcome-to-economics-wave",
+    "href": "slides/lecture01-intro.html#welcome-to-economics-wave",
+    "title": "Economics Fundamentals",
+    "section": "",
+    "text": "Why study Economics? :thinking:\n:classical_building: Understand government policies\n:globe_with_meridians: Navigate global markets\n:briefcase: Achieve business success\n:chart_with_upwards_trend: :chart_with_downwards_trend: Master supply & demand\n:balance_scale: Understand inequality\n\n\n\n\n\nEconomics is essential for management professionals to make informed decisions in an increasingly complex business environment."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#introduction-man_teacher",
+    "href": "slides/lecture01-intro.html#introduction-man_teacher",
+    "title": "Economics Fundamentals",
+    "section": "Introduction :man_teacher:",
+    "text": "Introduction :man_teacher:\n:man_teacher: Paulo Fagandini\n:email: paulo.fagandini@ext.universidadeeuropeia.pt\n:mortar_board: In Canvas: Syllabus, Calendar, Group Project\n:calendar: Schedule: Thursdays & Fridays"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#what-is-economics-bulb",
+    "href": "slides/lecture01-intro.html#what-is-economics-bulb",
+    "title": "Economics Fundamentals",
+    "section": "What is Economics? :bulb:",
+    "text": "What is Economics? :bulb:\n\nEconomics studies how societies use scarce resources to produce valuable goods and distribute them among individuals.\n\n. . .\nEconomics as a social science uses simplified hypotheses and relates variables to understand economic phenomena."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#what-does-economics-study-mag",
+    "href": "slides/lecture01-intro.html#what-does-economics-study-mag",
+    "title": "Economics Fundamentals",
+    "section": "What Does Economics Study? :mag:",
+    "text": "What Does Economics Study? :mag:\n\n\n:bank: Institutions & Markets\nHow technology influences prices and resource allocation\n:money_with_wings: Finance\nBehavior of financial markets and capital flows\n\n:busts_in_silhouette: Society\nIncome redistribution and social welfare\n:chart_with_downwards_trend: Cycles\nUnemployment, inflation, growth"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#macroeconomics-telescope",
+    "href": "slides/lecture01-intro.html#macroeconomics-telescope",
+    "title": "Economics Fundamentals",
+    "section": "Macroeconomics :telescope:",
+    "text": "Macroeconomics :telescope:\nThe Big Picture — Studies the economy as a whole\n\n\n:chart_with_upwards_trend: GDP & Economic Growth\n:briefcase: Unemployment rates\n:moneybag: Inflation trends\n\n:bank: Monetary policy\n:globe_with_meridians: International trade\n:receipt: Government budgets\n\n\n\nExample: “Why did Portugal’s tourism revenue fall 50% in 2020?”"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#microeconomics-microscope",
+    "href": "slides/lecture01-intro.html#microeconomics-microscope",
+    "title": "Economics Fundamentals",
+    "section": "Microeconomics :microscope:",
+    "text": "Microeconomics :microscope:\nIndividual Decisions — Studies specific agents and markets\n\n\n:shopping_cart: Consumer behavior\n:factory: Firm decisions\n:label: Pricing strategies\n\n:crossed_swords: Competition analysis\n:handshake: Market interactions\n:chart: Supply & Demand\n\n\n\nExample: “How should a hotel set its room prices?”"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#macroeconomics-in-tourism-airplane",
+    "href": "slides/lecture01-intro.html#macroeconomics-in-tourism-airplane",
+    "title": "Economics Fundamentals",
+    "section": "Macroeconomics in Tourism :airplane:",
+    "text": "Macroeconomics in Tourism :airplane:\n\n\n\n\n\nSource: Eurostat (tour_occ_arnraw, bop_its6_det)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#microeconomics-in-tourism-hotel",
+    "href": "slides/lecture01-intro.html#microeconomics-in-tourism-hotel",
+    "title": "Economics Fundamentals",
+    "section": "Microeconomics in Tourism :hotel:",
+    "text": "Microeconomics in Tourism :hotel:\n\n\n\n\n\nSource: Eurostat (tour_occ_arnraw)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#the-fundamental-economic-problem-warning",
+    "href": "slides/lecture01-intro.html#the-fundamental-economic-problem-warning",
+    "title": "Economics Fundamentals",
+    "section": "The Fundamental Economic Problem :warning:",
+    "text": "The Fundamental Economic Problem :warning:\n\nScarcity\nHuman wants are unlimited, but resources are limited\n\n. . .\nThis leads to:\n:point_right: Trade-offs — Choices involve compromises\n:point_right: Cost-Benefit Analysis — Act only if benefits exceed costs\n:point_right: Efficiency — Most effective use of resources"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#scarcity-in-tourism-lisbon-airport-flight_departure",
+    "href": "slides/lecture01-intro.html#scarcity-in-tourism-lisbon-airport-flight_departure",
+    "title": "Economics Fundamentals",
+    "section": "Scarcity in Tourism: Lisbon Airport :flight_departure:",
+    "text": "Scarcity in Tourism: Lisbon Airport :flight_departure:\n\n\nCapacity Constraints (2024)\n:warning: Design capacity: ~31M passengers/year\n:airplane: Actual 2024: ~35M passengers\n:chart_with_upwards_trend: Growing demand, limited slots\nTrade-off: More flights vs. congestion & delays\n\n\n\n\n\n\n\n\n\n\nHypothetical illustration based on news reports"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#efficiency-dart",
+    "href": "slides/lecture01-intro.html#efficiency-dart",
+    "title": "Economics Fundamentals",
+    "section": "Efficiency :dart:",
+    "text": "Efficiency :dart:\n\nEconomic Efficiency\nSituation where the economy produces and consumes goods at socially optimal levels:\n:white_check_mark: Getting the most out of available resources\n:white_check_mark: Using the least for current consumption level"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#pareto-efficiency-balance_scale",
+    "href": "slides/lecture01-intro.html#pareto-efficiency-balance_scale",
+    "title": "Economics Fundamentals",
+    "section": "Pareto Efficiency :balance_scale:",
+    "text": "Pareto Efficiency :balance_scale:\nCannot increase one person’s welfare without harming another\n\n\n:heavy_check_mark: Efficient allocation\n\nResources fully utilized\nNo waste in production\nOptimal distribution\n\n\n:x: Inefficient allocation\n\nResources underutilized\nProduction waste exists\nRoom for improvement"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#efficiency-in-tourism-hotel",
+    "href": "slides/lecture01-intro.html#efficiency-in-tourism-hotel",
+    "title": "Economics Fundamentals",
+    "section": "Efficiency in Tourism :hotel:",
+    "text": "Efficiency in Tourism :hotel:\nDynamic Pricing Example"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#the-three-economic-questions-question",
+    "href": "slides/lecture01-intro.html#the-three-economic-questions-question",
+    "title": "Economics Fundamentals",
+    "section": "The Three Economic Questions :question:",
+    "text": "The Three Economic Questions :question:\nEvery economy must answer:\n\n\n\nQuestion\nDescription\nTourism Example\n\n\n\n\nWHAT?\nWhat goods to produce?\nMore hotels or museums?\n\n\nHOW?\nHow to produce them?\nAutomated or human agents?\n\n\nFOR WHOM?\nWho gets the output?\nLuxury or mass tourism?\n\n\n\n\nThese require decisions based on: resources, technology, preferences, markets"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#positive-vs.-normative-economics-mag_right",
+    "href": "slides/lecture01-intro.html#positive-vs.-normative-economics-mag_right",
+    "title": "Economics Fundamentals",
+    "section": "Positive vs. Normative Economics :mag_right:",
+    "text": "Positive vs. Normative Economics :mag_right:\n\n\n\nPositive Economics :bar_chart:\nDescribes facts — Can be tested\n\nWhy do managers earn more than cleaners?\nDoes tourism increase local incomes?\nWhat happens to prices in high season?\n\n:point_right: Answered with data and analysis\n\n\n\nNormative Economics :thought_balloon:\nValue judgments — Opinions\n\nShould government limit Airbnb?\nShould tourism revenue be redistributed?\nShould airlines reduce emissions?\n\n:point_right: Requires ethical/political debate"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#key-concepts-summary-clipboard",
+    "href": "slides/lecture01-intro.html#key-concepts-summary-clipboard",
+    "title": "Economics Fundamentals",
+    "section": "Key Concepts Summary :clipboard:",
+    "text": "Key Concepts Summary :clipboard:\n\n\n\nConcept\nDefinition\n\n\n\n\nEconomics\nStudy of scarce resource allocation\n\n\nMacroeconomics\nWhole economy (GDP, inflation)\n\n\nMicroeconomics\nIndividual decisions (firms, consumers)\n\n\nScarcity\nUnlimited wants, limited resources\n\n\nEfficiency\nOptimal resource use (no waste)\n\n\nTrade-off\nGiving up one thing for another"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#exercises-pencil",
+    "href": "slides/lecture01-intro.html#exercises-pencil",
+    "title": "Economics Fundamentals",
+    "section": "Exercises :pencil:",
+    "text": "Exercises :pencil:\nTime for practice!\nLet’s test your understanding."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#next-lecture-books",
+    "href": "slides/lecture01-intro.html#next-lecture-books",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture :books:",
+    "text": "Next Lecture :books:\nLecture 2 (February 6, 2026):\n\nThree Fundamental Economic Problems (detailed)\nMarket, Centralized, and Mixed Economies\nEconomic Systems Comparison\n\n:bulb: Preparation: Think about how tourism businesses make decisions in different economic systems!"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#thank-you-wave",
+    "href": "slides/lecture01-intro.html#thank-you-wave",
+    "title": "Economics Fundamentals",
+    "section": "Thank You! :wave:",
+    "text": "Thank You! :wave:\nQuestions?\n:email: paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Friday, February 6, 2026"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html",
+    "href": "slides/lecture03-opportunity.html",
+    "title": "Economics Fundamentals",
+    "section": "",
+    "text": "Lecture 1: Economics, Scarcity, Efficiency, Macro vs. Micro\nLecture 2: Three economic problems (WHAT, HOW, FOR WHOM) and economic systems (Market, Planned, Mixed)\nToday’s Focus:\n\nHow do people make economic decisions?\nWhat is rationality?\nOpportunity cost – one of economics’ most powerful concepts!"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#recap-previous-lectures",
+    "href": "slides/lecture03-opportunity_claude.html#recap-previous-lectures",
+    "title": "Economics Fundamentals",
+    "section": "Recap: Previous Lectures ⏪",
+    "text": "Recap: Previous Lectures ⏪\nLecture 1: Economics, Scarcity, Efficiency, Macro vs. Micro\nLecture 2: Three economic problems (WHAT, HOW, FOR WHOM) and economic systems (Market, Planned, Mixed)\n\n🎯 Today’s Focus:\n🧠 How do people make economic decisions?\n🤔 What is rationality?\n💰 Opportunity cost — one of economics’ most powerful concepts!"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#what-does-rational-mean",
+    "href": "slides/lecture03-opportunity_claude.html#what-does-rational-mean",
+    "title": "Economics Fundamentals",
+    "section": "What Does “Rational” Mean? 🧠",
+    "text": "What Does “Rational” Mean? 🧠\n\nEconomic Rationality\nPeople are rational decision-makers who seek to maximize their well-being (utility) by using cost-benefit analysis and responding predictably to incentives.\n\n\nKey characteristics:\n✅ People have clear preferences\n✅ They seek to maximize their well-being (utility)\n✅ They respond predictably to incentives\n✅ They use cost-benefit analysis\n\n💡 Important: Rational ≠ Perfect or emotionless! People can be rational within their information and cognitive limits (bounded rationality)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#cost-benefit-principle",
+    "href": "slides/lecture03-opportunity_claude.html#cost-benefit-principle",
+    "title": "Economics Fundamentals",
+    "section": "Cost-Benefit Principle ⚖️",
+    "text": "Cost-Benefit Principle ⚖️\n\nThe Foundation of Rational Choice\nAn action should be undertaken if and only if the benefits exceed the costs.\n\n\nDecision Rule:\n\\[\\text{Decision Rule: } \\begin{cases}\n\\text{Do it} & \\text{if } Benefits \\geq Costs \\\\\n\\text{Don't do it} & \\text{if } Benefits &lt; Costs\n\\end{cases}\\]\n\n\nIn practice:\n\nBenefits = What you gain\nCosts = What you give up\nCompare net benefit of alternatives"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#tourism-example-cost-benefit",
+    "href": "slides/lecture03-opportunity_claude.html#tourism-example-cost-benefit",
+    "title": "Economics Fundamentals",
+    "section": "Tourism Example: Cost-Benefit 🏛️",
+    "text": "Tourism Example: Cost-Benefit 🏛️\nShould a tourist visit the Belém Tower in Lisbon?\n\n\nBenefits ✅\n📷 Photos & memories\n📚 Educational value\n❤️ Historical experience\n😄 Satisfaction\nEstimated value: €20\n\nCosts 💸\n🎫 Entry ticket: €6\n🚌 Travel time: 30 min\n⌛ Waiting time: 20 min\n🕐 Value of time: €15/hr\nTime cost: €12.50\nTotal cost: €18.50\n\n\n👉 Decision: Benefits (€20) &gt; Costs (€18.50) → Visit!\nBut if waiting time increases to 60 min, costs rise to €28.50 → Don’t visit!"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#decisions-at-the-margin",
+    "href": "slides/lecture03-opportunity_claude.html#decisions-at-the-margin",
+    "title": "Economics Fundamentals",
+    "section": "Decisions at the Margin 📈",
+    "text": "Decisions at the Margin 📈\n\nMarginal Analysis\nDecisions are made at the margin — evaluating the additional benefit versus the additional cost of one more unit.\n\n\nKey terms:\n⬆️ Marginal Benefit (MB): Benefit from one additional unit\n⬆️ Marginal Cost (MC): Cost of one additional unit\n\n\nOptimal Decision Rule:\n\\[\\text{Continue activity while } MB \\geq MC\\]\nStop when \\(MB &lt; MC\\)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#marginal-analysis-hotel-rooms",
+    "href": "slides/lecture03-opportunity_claude.html#marginal-analysis-hotel-rooms",
+    "title": "Economics Fundamentals",
+    "section": "Marginal Analysis: Hotel Rooms 🏨",
+    "text": "Marginal Analysis: Hotel Rooms 🏨\nShould a hotel accept one more booking?\n\nHypothetical illustration of marginal decision-making"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#the-most-important-concept",
+    "href": "slides/lecture03-opportunity_claude.html#the-most-important-concept",
+    "title": "Economics Fundamentals",
+    "section": "The Most Important Concept! 🌟",
+    "text": "The Most Important Concept! 🌟\n\nOpportunity Cost\nThe value of the best alternative foregone when making a choice. It’s what you give up, not what you pay.\n\n\nKey Points 🔑\n👉 It’s what you give up, not what you pay\n👉 It’s the next-best alternative (not all alternatives)\n👉 It includes both explicit (money) and implicit costs (time, foregone opportunities)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#decision-rule-with-opportunity-cost",
+    "href": "slides/lecture03-opportunity_claude.html#decision-rule-with-opportunity-cost",
+    "title": "Economics Fundamentals",
+    "section": "Decision Rule with Opportunity Cost",
+    "text": "Decision Rule with Opportunity Cost\nWhen deciding: You should choose option A over B if:\n\\[\\overbrace{B_A}^{\\text{Gross Benefit of}\\ A} \\geq \\underbrace{\\overbrace{C_A}^{\\text{Monetary Cost}} + \\underbrace{(B_B-C_B)}_{\\text{Surplus of best alternative}}}_{\\text{Opportunity Cost of}\\ A}\\]\n\n💡 In simpler terms: Choose A if its benefits exceed both its direct costs AND what you’re giving up from the best alternative!"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#opportunity-cost-examples",
+    "href": "slides/lecture03-opportunity_claude.html#opportunity-cost-examples",
+    "title": "Economics Fundamentals",
+    "section": "Opportunity Cost Examples 💰",
+    "text": "Opportunity Cost Examples 💰\nSimple Example: You have €100 and 4 hours free on Saturday afternoon.\n\n\nOptions (value, cost, time):\nA. Visit museum (€15, €10, 3h)\nB. Beach trip (€20, €0, 4h)\nC. Movie (€22, €12, 2h)\nD. Study at home (€10, €0, 4h)\n\nIf you choose A (museum):\n💸 Explicit cost: €10\n🤔 Opportunity cost: Value of best alternative foregone\n\nCan’t go to beach (value: €20)\nTotal opportunity cost: €10 + €20 = €30"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#opportunity-cost-in-tourism-investment",
+    "href": "slides/lecture03-opportunity_claude.html#opportunity-cost-in-tourism-investment",
+    "title": "Economics Fundamentals",
+    "section": "Opportunity Cost in Tourism Investment 🏢",
+    "text": "Opportunity Cost in Tourism Investment 🏢\n\nHypothetical illustration of investment alternatives"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#sunk-costs-ignore-them",
+    "href": "slides/lecture03-opportunity_claude.html#sunk-costs-ignore-them",
+    "title": "Economics Fundamentals",
+    "section": "Sunk Costs: Ignore Them! 🚫",
+    "text": "Sunk Costs: Ignore Them! 🚫\n\nSunk Cost\nA cost that has already been incurred and cannot be recovered, regardless of what decision you make now. Sunk costs should be ignored in decision-making!\n\n\nExamples of sunk costs:\n❌ Non-refundable deposits\n❌ Past advertising expenses\n❌ Money already spent on failed projects\n❌ Time already invested (can’t get it back)\n\n⚠️ Common mistake: “I’ve already invested so much, I must continue!”\n✅ Correct thinking: “What are my future costs and benefits from here?”"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#sunk-cost-example-tourism-investment",
+    "href": "slides/lecture03-opportunity_claude.html#sunk-cost-example-tourism-investment",
+    "title": "Economics Fundamentals",
+    "section": "Sunk Cost Example: Tourism Investment 🚧",
+    "text": "Sunk Cost Example: Tourism Investment 🚧\nScenario: Hotel construction halfway done\n\n\nSpent so far (SUNK):\n\n€2M on land\n€3M on construction\nTotal: €5M\n\n❌ Cannot be recovered!\n\nTo complete (FUTURE):\n\n€4M more needed\nExpected profit: €500k/year\n\n❓ Should you finish?\n\n\n👉 Correct analysis: Ignore the €5M sunk cost!\nCompare: €4M future cost vs. future benefits\nIf NPV of future benefits &gt; €4M → Finish it!\nIf NPV of future benefits &lt; €4M → Abandon! (Don’t throw good money after bad)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#trade-offs-in-tourism-policy",
+    "href": "slides/lecture03-opportunity_claude.html#trade-offs-in-tourism-policy",
+    "title": "Economics Fundamentals",
+    "section": "Trade-offs in Tourism Policy ⚖️",
+    "text": "Trade-offs in Tourism Policy ⚖️\n\n👉 Opportunity cost of increasing cultural preservation by €15M = €20M less for mass tourism infrastructure"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#making-better-decisions",
+    "href": "slides/lecture03-opportunity_claude.html#making-better-decisions",
+    "title": "Economics Fundamentals",
+    "section": "Making Better Decisions ✅",
+    "text": "Making Better Decisions ✅\nChecklist for Rational Economic Decisions:\n1️⃣ Identify all alternatives\n2️⃣ Estimate benefits of each alternative\n3️⃣ Estimate costs (including opportunity costs!)\n4️⃣ Ignore sunk costs (they’re irrelevant)\n5️⃣ Consider marginal changes (not just totals)\n6️⃣ Choose alternative with highest net benefit\n\n💡 Remember: Good decisions maximize net benefit (Benefits - Opportunity Costs)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#common-decision-mistakes",
+    "href": "slides/lecture03-opportunity_claude.html#common-decision-mistakes",
+    "title": "Economics Fundamentals",
+    "section": "Common Decision Mistakes ❌",
+    "text": "Common Decision Mistakes ❌\n\n\nMistake 1: Ignoring opportunity costs\n\nThinking only about money paid\nNot considering value of alternatives foregone\n\nMistake 2: Counting sunk costs\n\n“I’ve already invested so much”\nLooking backward instead of forward\n\n\nMistake 3: Ignoring marginal analysis\n\nLooking at totals instead of additional units\nNot considering “one more” decisions\n\nMistake 4: Not comparing net benefits\n\nChoosing highest benefit option\nBut ignoring that it also has highest cost!"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#real-business-case-ryanair-strategy",
+    "href": "slides/lecture03-opportunity_claude.html#real-business-case-ryanair-strategy",
+    "title": "Economics Fundamentals",
+    "section": "Real Business Case: Ryanair Strategy ✈️",
+    "text": "Real Business Case: Ryanair Strategy ✈️\n\n👉 Decision: Cancel Brussels route, add London frequency → Better use of aircraft (opportunity cost logic)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#key-concepts-summary",
+    "href": "slides/lecture03-opportunity_claude.html#key-concepts-summary",
+    "title": "Economics Fundamentals",
+    "section": "Key Concepts Summary 📋",
+    "text": "Key Concepts Summary 📋\n\n\n\n\n\n\n\nConcept\nDefinition\n\n\n\n\nRationality\nPeople maximize well-being via cost-benefit analysis\n\n\nCost-Benefit Principle\nDo it if benefits ≥ costs\n\n\nMarginal Analysis\nDecisions at the margin (additional units)\n\n\nOpportunity Cost\nValue of best alternative foregone\n\n\nSunk Costs\nIgnore them! (already spent, irrelevant)\n\n\nTrade-offs\nChoosing one thing means giving up another"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#exercises",
+    "href": "slides/lecture03-opportunity_claude.html#exercises",
+    "title": "Economics Fundamentals",
+    "section": "Exercises 📝",
+    "text": "Exercises 📝\nPractice Time!\nReal-world applications of opportunity cost."
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#exercise-1-multiple-choice",
+    "href": "slides/lecture03-opportunity_claude.html#exercise-1-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\nA hotel owner can use her restaurant space for:\n\nOption A: Fine dining (€80k annual profit)\nOption B: Buffet restaurant (€60k annual profit)\nOption C: Rent to external operator (€50k annual rent)\n\nShe chooses Option A. What is the opportunity cost of this decision?\nA. €80,000\nB. €60,000\nC. €50,000\nD. €110,000\n\n\nAnswer: B (€60,000) - Opportunity cost = value of best alternative foregone. The next-best alternative to fine dining (€80k) is buffet (€60k), NOT the sum of all alternatives."
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#exercise-2-multiple-choice",
+    "href": "slides/lecture03-opportunity_claude.html#exercise-2-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\nYou bought a non-refundable €200 ticket to a concert. On the day of the concert, you feel ill. A friend offers you €50 for the ticket (transferable). What is the opportunity cost of ATTENDING the concert?\nA. €200\nB. €150\nC. €50 + discomfort from illness\nD. €250\n\n\nAnswer: C (€50 + discomfort) - The €200 is SUNK (can’t recover even if you don’t go). If you attend: you give up €50 (could sell) + endure discomfort. Opportunity cost = what you give up by attending."
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#exercise-3-open-question",
+    "href": "slides/lecture03-opportunity_claude.html#exercise-3-open-question",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question",
+    "text": "Exercise 3: Open Question\nScenario: A tour operator in Porto must decide between two summer season strategies:\nStrategy A: Focus on luxury tours\n\nExpected revenue: €500,000\nVariable costs: €280,000\nFixed costs already committed: €80,000\n\nStrategy B: Focus on budget tours\n\nExpected revenue: €420,000\nVariable costs: €200,000\nSame fixed costs: €80,000\n\nQuestions:\n\nCalculate profit for each strategy\nWhat is the opportunity cost of choosing Strategy A?\nWhich strategy should be chosen and why?\nAre fixed costs relevant to the decision? Explain."
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#exercise-3-solution-part-a-b",
+    "href": "slides/lecture03-opportunity_claude.html#exercise-3-solution-part-a-b",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (Part a & b)",
+    "text": "Exercise 3: Solution (Part a & b)\na) Profit calculation:\nStrategy A (Luxury): \\[\\text{Profit}_A = €500,000 - €280,000 - €80,000 = €140,000\\]\nStrategy B (Budget): \\[\\text{Profit}_B = €420,000 - €200,000 - €80,000 = €140,000\\]\nBoth strategies have equal profit!\nb) Opportunity cost of Strategy A:\nOpportunity cost = Direct Cost + Profit from best alternative foregone = €140,000 + €360,000 = €500,000  (Strategy B profit)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#exercise-3-solution-part-c-d",
+    "href": "slides/lecture03-opportunity_claude.html#exercise-3-solution-part-c-d",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (Part c & d)",
+    "text": "Exercise 3: Solution (Part c & d)\nc) Which strategy to choose?\nFrom pure profit perspective: Indifferent (both €140,000)\nBut consider other factors: Risk, reputation, market trends, resource requirements\n👉 Recommendation: Strategy B (budget) because:\n\nLower variable costs (€200k vs €280k) = less risk\nHigher revenue-to-variable-cost ratio: 2.1 vs. 1.79\nMore resilient to demand fluctuations\n\nd) Are fixed costs relevant?\n❌ NO! Fixed costs (€80,000) are SUNK — already committed regardless of strategy choice.\n✅ Only variable costs matter for this decision (they differ between strategies).\nThis is a key example of ignoring sunk costs in decision-making!"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#next-lecture",
+    "href": "slides/lecture03-opportunity_claude.html#next-lecture",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture 📚",
+    "text": "Next Lecture 📚\nLecture 4 (February 13, 2026):\n\nProduction Possibilities Frontier (PPF)\nEfficiency, Trade-offs, and Economic Growth\nComparative Advantage and Specialization\n\n💡 Preparation: Review today’s opportunity cost concept — it’s the foundation for understanding PPF!"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity_claude.html#thank-you",
+    "href": "slides/lecture03-opportunity_claude.html#thank-you",
+    "title": "Economics Fundamentals",
+    "section": "Thank You! 👋",
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#what-does-rational-mean",
+    "href": "slides/lecture03-opportunity.html#what-does-rational-mean",
+    "title": "Economics Fundamentals",
+    "section": "What Does “Rational” Mean? 🧠",
+    "text": "What Does “Rational” Mean? 🧠\n\nEconomic Rationality\nPeople are rational decision-makers who seek to maximize their well-being (utility) by using cost-benefit analysis and responding predictably to incentives.\n\n\nKey characteristics:\n✅ People have clear preferences\n✅ They seek to maximize their well-being (utility)\n✅ They respond predictably to incentives\n✅ They use cost-benefit analysis\n\n💡 Important: Rational ≠ Perfect or emotionless! People can be rational within their information and cognitive limits (bounded rationality)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#decisions-at-the-margin",
+    "href": "slides/lecture03-opportunity.html#decisions-at-the-margin",
+    "title": "Economics Fundamentals",
+    "section": "Decisions at the Margin 📈",
+    "text": "Decisions at the Margin 📈\n\nMarginal Analysis\nDecisions are made at the margin — evaluating the additional benefit versus the additional cost of one more unit.\n\n\nKey terms:\n⬆️ Marginal Benefit (MB): Benefit from one additional unit\n⬆️ Marginal Cost (MC): Cost of one additional unit\n\n\nOptimal Decision Rule:\n\\[\\text{Continue activity while } MB \\geq MC\\]\nStop when \\(MB &lt; MC\\)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#the-most-important-concept",
+    "href": "slides/lecture03-opportunity.html#the-most-important-concept",
+    "title": "Economics Fundamentals",
+    "section": "The Most Important Concept! 🌟",
+    "text": "The Most Important Concept! 🌟\n\nOpportunity Cost\nThe value of the best alternative foregone when making a choice. It’s what you give up, not what you pay.\n\n\nKey Points 🔑\n👉 It’s what you give up, not what you pay\n👉 It’s the next-best alternative (not all alternatives)\n👉 It includes both explicit (money) and implicit costs (time, foregone opportunities)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#decision-rule-with-opportunity-cost",
+    "href": "slides/lecture03-opportunity.html#decision-rule-with-opportunity-cost",
+    "title": "Economics Fundamentals",
+    "section": "Decision Rule with Opportunity Cost",
+    "text": "Decision Rule with Opportunity Cost\nWhen deciding: You should choose option A over B if:\n\\[\\overbrace{B_A}^{\\text{Gross Benefit of}\\ A} \\geq \\underbrace{\\overbrace{C_A}^{\\text{Monetary Cost}} + \\underbrace{(B_B-C_B)}_{\\text{Surplus of best alternative}}}_{\\text{Opportunity Cost of}\\ A}\\]\n\n💡 In simpler terms: Choose A if its benefits exceed both its direct costs AND what you’re giving up from the best alternative!"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#opportunity-cost-in-tourism-investment",
+    "href": "slides/lecture03-opportunity.html#opportunity-cost-in-tourism-investment",
+    "title": "Economics Fundamentals",
+    "section": "Opportunity Cost in Tourism Investment 🏢",
+    "text": "Opportunity Cost in Tourism Investment 🏢\n\nHypothetical illustration of investment alternatives"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#sunk-costs-ignore-them",
+    "href": "slides/lecture03-opportunity.html#sunk-costs-ignore-them",
+    "title": "Economics Fundamentals",
+    "section": "Sunk Costs: Ignore Them! 🚫",
+    "text": "Sunk Costs: Ignore Them! 🚫\n\nSunk Cost\nA cost that has already been incurred and cannot be recovered, regardless of what decision you make now. Sunk costs should be ignored in decision-making!\n\n\nExamples of sunk costs:\n❌ Non-refundable deposits\n❌ Past advertising expenses\n❌ Money already spent on failed projects\n❌ Time already invested (can’t get it back)\n\n⚠️ Common mistake: “I’ve already invested so much, I must continue!”\n✅ Correct thinking: “What are my future costs and benefits from here?”"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#sunk-cost-example-tourism-investment",
+    "href": "slides/lecture03-opportunity.html#sunk-cost-example-tourism-investment",
+    "title": "Economics Fundamentals",
+    "section": "Sunk Cost Example: Tourism Investment 🚧",
+    "text": "Sunk Cost Example: Tourism Investment 🚧\nScenario: Hotel construction halfway done\n\n\nSpent so far (SUNK):\n\n€2M on land\n€3M on construction\nTotal: €5M\n\n❌ Cannot be recovered!\n\nTo complete (FUTURE):\n\n€4M more needed\nExpected profit: €500k/year\n\n❓ Should you finish?\n\n\n👉 Correct analysis: Ignore the €5M sunk cost!\nCompare: €4M future cost vs. future benefits\nIf NPV of future benefits &gt; €4M → Finish it!\nIf NPV of future benefits &lt; €4M → Abandon! (Don’t throw good money after bad)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#trade-offs-in-tourism-policy",
+    "href": "slides/lecture03-opportunity.html#trade-offs-in-tourism-policy",
+    "title": "Economics Fundamentals",
+    "section": "Trade-offs in Tourism Policy ⚖️",
+    "text": "Trade-offs in Tourism Policy ⚖️\n\n👉 Opportunity cost of increasing cultural preservation by €15M = €20M less for mass tourism infrastructure"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#key-concepts-summary",
+    "href": "slides/lecture03-opportunity.html#key-concepts-summary",
+    "title": "Economics Fundamentals",
+    "section": "Key Concepts Summary 📋",
+    "text": "Key Concepts Summary 📋\n\n\n\n\n\n\n\nConcept\nDefinition\n\n\n\n\nRationality\nPeople maximize well-being via cost-benefit analysis\n\n\nCost-Benefit Principle\nDo it if benefits ≥ costs\n\n\nMarginal Analysis\nDecisions at the margin (additional units)\n\n\nOpportunity Cost\nValue of best alternative foregone\n\n\nSunk Costs\nIgnore them! (already spent, irrelevant)\n\n\nTrade-offs\nChoosing one thing means giving up another"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#exercise-3-solution-part-a-b",
+    "href": "slides/lecture03-opportunity.html#exercise-3-solution-part-a-b",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (Part a & b)",
+    "text": "Exercise 3: Solution (Part a & b)\na) Profit calculation:\nStrategy A (Luxury): \\[\\text{Profit}_A = €500,000 - €280,000 - €80,000 = €140,000\\]\nStrategy B (Budget): \\[\\text{Profit}_B = €420,000 - €200,000 - €80,000 = €140,000\\]\nBoth strategies have equal profit!\nb) Opportunity cost of Strategy A:\nOpportunity cost = Direct Cost + Profit from best alternative foregone = €140,000 + €360,000 = €500,000  (Strategy B profit)"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html#exercise-3-solution-part-c-d",
+    "href": "slides/lecture03-opportunity.html#exercise-3-solution-part-c-d",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (Part c & d)",
+    "text": "Exercise 3: Solution (Part c & d)\nc) Which strategy to choose?\nFrom pure profit perspective: Indifferent (both €140,000)\nBut consider other factors: Risk, reputation, market trends, resource requirements\n👉 Recommendation: Strategy B (budget) because:\n\nLower variable costs (€200k vs €280k) = less risk\nHigher revenue-to-variable-cost ratio: 2.1 vs. 1.79\nMore resilient to demand fluctuations\n\nd) Are fixed costs relevant?\n❌ NO! Fixed costs (€80,000) are SUNK — already committed regardless of strategy choice.\n✅ Only variable costs matter for this decision (they differ between strategies).\nThis is a key example of ignoring sunk costs in decision-making!"
   }
 ]

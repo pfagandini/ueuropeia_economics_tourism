@@ -6,5 +6,5 @@ title: "Material"
 
 1. [Introduction](slides/lecture01-intro.qmd)
 2. [Economic Systems](slides/lecture02-systems.qmd)
-3. [Opportunity Cost](slides/lecture03-opportunity.qmd)
-4. [Production Possibility Frontier](slides/lecture04-ppf.qmd)
+<!-- 3. [Opportunity Cost](slides/lecture03-opportunity.qmd)
+4. [Production Possibility Frontier](slides/lecture04-ppf.qmd) -->
