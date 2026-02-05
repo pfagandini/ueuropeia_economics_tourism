@@ -2,125 +2,117 @@
 title: "Economics Fundamentals"
 subtitle: "Lecture 2: Three Economic Problems & Economic Systems"
 author: "Paulo Fagandini"
-date:  today
+date: today
 date-format: "YYYY"
 format:
   revealjs:
-    theme: default
     from: markdown+emoji
+    theme: [default, custom.scss]
     transition: slide
     slide-number: true
     chalkboard: true
-    scrollable: true
+    scrollable: false
     footer: "Economics of Tourism | Lecture 2"
     logo: ../images/logo.png
-    include-in-header:
-      text: |
-        <style>
-        .reveal .caption {
-          font-size: 0.5em;
-        }
-        /* This targets the figure captions specifically */
-        figcaption {
-          font-size: 0.5em !important;
-        }
-        </style>
+    width: 1600
+    height: 900
 ---
 
 ```{r}
 #| echo: false
+#| message: false
+#| warning: false
 
-library(eurostat)
-library(dplyr)
-library(tidyverse)
 library(ggplot2)
+library(dplyr)
+library(eurostat)
+library(tidyverse)
+library(lubridate)
 
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
 ```
 
-<div style="font-size: 80%;">
-</div>
-
-## Recap: Lecture 1 {.center}
+## Recap: Lecture 1 :rewind: {.center}
 
 **Key concepts we covered**:
 
-- Economics studies **scarcity** and **efficiency**
-- **Macroeconomics** (big picture) vs. **Microeconomics** (individual decisions)
-- Three fundamental questions: **WHAT**, **HOW**, **FOR WHOM**
-- **Positive** (facts) vs. **Normative** (values) economics
+:chart_with_upwards_trend: Economics studies **scarcity** and **efficiency**
 
-Today: How do different economic systems answer these questions?
+:telescope: **Macroeconomics** (big picture) vs. :microscope: **Microeconomics** (individual decisions)
 
-## The Three Fundamental Economic Problems
-<div style="font-size: 75%;">
-Every society must solve:
+:question: Three fundamental questions: **WHAT**, **HOW**, **FOR WHOM**
 
-1. **WHAT goods and services to produce?**
-   - Which products? How much of each?
-   - Current consumption vs. future investment?
+:bar_chart: **Positive** (facts) vs. :thought_balloon: **Normative** (values) economics
 
-2. **HOW to produce them?**
-   - Which technologies? Which resources?
-   - Labor-intensive vs. capital-intensive?
+. . .
 
-3. **FOR WHOM are goods produced?**
-   - How to distribute output?
-   - Who gets what share of production?
+:point_right: **Today**: How do different economic systems answer these questions?
 
-</div>
+# The Three Fundamental Economic Problems
 
-## Problem 1: WHAT to Produce?
+## Every Society Must Solve :thinking:
 
-::: {.r-stack}
+::: {.key-concept}
+**The Three Economic Problems**
 
-::: {.fragment .fade-in-then-semi-out style="position: absolute; top: 50px; left: 80px;"}
-<div style="text-align: center;">
-![](https://images.unsplash.com/photo-1566073771259-6a8506099945?w=300){width="300px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(-5deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(-5deg);">Hotels</p>
-</div>
+Every economy, regardless of its system, must answer three fundamental questions about resource allocation.
 :::
 
-::: {.fragment .fade-in-then-semi-out style="position: absolute; top: 280px; right: 100px;"}
-<div style="text-align: center;">
-![](https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=300){width="280px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(8deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(8deg);">Transport</p>
-</div>
+. . .
+
+**1. WHAT goods and services to produce?**
+
+- Which products? How much of each?
+- Current consumption vs. future investment?
+
+**2. HOW to produce them?**
+
+- Which technologies? Which resources?
+- Labor-intensive vs. capital-intensive?
+
+**3. FOR WHOM are goods produced?**
+
+- How to distribute output?
+- Who gets what share of production?
+
+## Problem 1: WHAT to Produce? :package:
+
+:::: {.columns}
+::: {.column width="50%"}
+**Tourism Sector Choices**
+
+:hotel: Hotels & Accommodation
+
+:bus: Transport Infrastructure  
+
+:fork_and_knife: Restaurants & Dining
+
+:beach_umbrella: Beach Facilities
+
+:classical_building: Museums & Culture
 :::
 
-::: {.fragment .fade-in-then-semi-out style="position: absolute; bottom: 280px; left: 280px;"}
-<div style="text-align: center;">
-![](https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300){width="290px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(-3deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(-3deg);">Restaurants</p>
-</div>
+::: {.column width="50%"}
+![](https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500)
+:::
+::::
+
+::: {.fragment}
+:bulb: *Scarce resources mean choosing between alternatives!*
 :::
 
-::: {.fragment .fade-in-then-semi-out style="position: absolute; top: 100px; right: 30px;"}
-<div style="text-align: center;">
-![](https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300){width="310px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(4deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(4deg);">Beach Facilities</p>
-</div>
-:::
-
-::: {.fragment .fade-in style="position: absolute; bottom: 80px; right: 250px;"}
-<div style="text-align: center;">
-![](https://upload.wikimedia.org/wikipedia/commons/6/66/Louvre_Museum_Wikimedia_Commons.jpg){width="385px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(-7deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(-7deg);">Museums</p>
-</div>
-:::
-
-:::
-
-
-
-## Problem 2: HOW to Produce?
-
-<div style="font-size: 70%;">
+## Problem 2: HOW to Produce? :gear:
 
 **Different Production Methods: Hotel Check-in**
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Traditional Method
+**Traditional Method** :busts_in_silhouette:
+
 - Human receptionists
 - Paper forms
 - Phone bookings
@@ -128,11 +120,12 @@ Every society must solve:
 - Flexible service
 - Personal touch
 
-**Cost per check-in**: ~€8-12
+:moneybag: **Cost per check-in**: ~€8-12
 :::
 
 ::: {.column width="50%"}
-### Automated Method
+**Automated Method** :robot:
+
 - Self-service kiosks
 - Online booking
 - Mobile check-in
@@ -140,23 +133,24 @@ Every society must solve:
 - 24/7 availability
 - Limited flexibility
 
-**Cost per check-in**: ~€2-4
+:moneybag: **Cost per check-in**: ~€2-4
 :::
 ::::
 
-**Decision factors**: Initial investment, labor costs, customer preferences, technology reliability
+::: {.fragment}
+:point_right: **Decision factors**: Initial investment, labor costs, customer preferences, technology reliability
+:::
 
-</div>
-
-## HOW: Production Cost Comparison
+## HOW: Production Cost Comparison :chart_with_downwards_trend:
 
 ```{r}
 #| echo: false
 #| warning: false
-#| fig-width: 10
-#| fig-height: 5
+#| fig-width: 13
+#| fig-height: 5.5
+#| fig-cap: "Hypothetical illustration of cost trade-offs"
 
-# Cost comparison over time
+# Cost comparison over time (hypothetical)
 years <- 1:5
 traditional_cost <- 10 * 10000 * years  # €10 per check-in, 10k check-ins/year
 automated_cost <- 200000 + (3 * 10000 * years)  # €200k initial + €3 per check-in
@@ -168,318 +162,477 @@ cost_data <- data.frame(
 )
 
 ggplot(cost_data, aes(x = year, y = cost, color = method, group = method)) +
-  geom_line(size = 1.5) +
+  geom_line(linewidth = 1.5) +
   geom_point(size = 3) +
   labs(title = "Cumulative Cost: Traditional vs. Automated Check-in",
        subtitle = "HOW to produce: Technology choice affects long-term costs",
        x = "Years of Operation",
        y = "Cumulative Cost (€ thousands)",
        color = "Method") +
-  theme_minimal(base_size = 14) +
-  scale_color_manual(values = c("Traditional" = "#e74c3c", 
-                                 "Automated" = "#3498db")) +
-  theme(legend.position = "bottom") +
-  geom_vline(xintercept = 2.86, linetype = "dashed", alpha = 0.5) +
-  annotate("text", x = 2.8, y = 180, 
-           label = "Break-even point", angle = 70, size = 3)
+  theme_minimal(base_size = 16) +
+  scale_color_manual(values = c("Traditional" = ue_gray, "Automated" = ue_red)) +
+  theme(legend.position = "bottom",
+        plot.title = element_text(color = ue_red, face = "bold")) +
+  geom_vline(xintercept = 2.86, linetype = "dashed", alpha = 0.5, color = ue_black, linewidth = 1) +
+  annotate("text", x = 3.2, y = 180, 
+           label = "Break-even point", angle = 0, size = 5, color = ue_black, fontface = "bold")
 ```
 
-## Problem 3: FOR WHOM?
-::: {.r-stack}
+## Problem 3: FOR WHOM? :dart:
 
-::: {.fragment .fade-in-then-semi-out style="position: absolute; top: 50px; left: 80px;"}
-<div style="text-align: center;">
-![](https://images.unsplash.com/photo-1551632811-561732d1e306?w=300){width="300px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(-5deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(-5deg);">Sport Tourism</p>
-</div>
-:::
-
-::: {.fragment .fade-in-then-semi-out style="position: absolute; top: 280px; right: 100px;"}
-<div style="text-align: center;">
-![](https://images.unsplash.com/photo-1609220136736-443140cffec6?w=300){width="280px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(8deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(8deg);">Family Vacations</p>
-</div>
-:::
-
-::: {.fragment .fade-in-then-semi-out style="position: absolute; bottom: 280px; left: 280px;"}
-<div style="text-align: center;">
-![](https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300){width="290px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(-3deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(-3deg);">Business Travel</p>
-</div>
-:::
-
-::: {.fragment .fade-in-then-semi-out style="position: absolute; top: 100px; right: 30px;"}
-<div style="text-align: center;">
-![](https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=300){width="310px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(4deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(4deg);">Luxury Travel</p>
-</div>
-:::
-
-::: {.fragment .fade-in-then-semi-out style="position: absolute; bottom: 80px; right: 250px;"}
-<div style="text-align: center;">
-![](https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300){width="285px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(-7deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(-7deg);">Nature Tourism</p>
-</div>
-:::
-
-::: {.fragment .fade-in style="position: absolute; top: 200px; left: 150px;"}
-<div style="text-align: center;">
-![](https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=300){width="270px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transform: rotate(6deg);"} 
-<p style="font-weight: bold; margin-top: 10px; transform: rotate(6deg);">Adventure Travel</p>
-</div>
-:::
-
-:::
-
-
-## Economic Systems: Overview
-
-<div style="font-size: 70%;">
-
-Three fundamental ways to organize an economy:
-
-1. **Market Economy** (Laissez-faire)
-   - Decisions by individuals and firms
-   - Prices and markets coordinate
-
-2. **Centrally Planned Economy**
-   - Government makes decisions
-   - Central authority coordinates
-
-3. **Mixed Economy** (Most common today)
-   - Combination of market and government
-   - Balance varies by country
-
-</div>
-
-## Market Economy
-
-**Definition**: Individuals and companies make key production and consumption decisions through markets
-
-**Key Features**:
-
-- **Private ownership** of resources
-- **Price mechanism** coordinates decisions
-- **Profit motive** drives production
-- **Competition** among firms
-- **Consumer sovereignty** (monetary votes)
-
-**Tourism Example**: Hotel chains decide what to build, where, and at what price based on profit expectations
-
-## How Markets Work: Example
-
-**Airbnb in Lisbon (Market Mechanism)**
-
-```{r}
-#| echo: false
-#| warning: false
-#| fig-width: 10
-#| fig-height: 5
-
-# Supply and demand for Airbnb rentals
-library(tidyr)
-
-# Price points
-prices <- seq(20, 120, by = 10)
-
-# Demand: higher price -> lower quantity
-quantity_demanded <- 5000 - 25 * prices
-
-# Supply: higher price -> higher quantity  
-quantity_supplied <- -1000 + 35 * prices
-
-market_data <- data.frame(
-  price = rep(prices, 2),
-  quantity = c(quantity_demanded, quantity_supplied),
-  curve = rep(c("Demand", "Supply"), each = length(prices))
-)
-
-ggplot(market_data, aes(x = quantity, y = price, color = curve)) +
-  geom_line(size = 1.5) +
-  geom_point(size = 3) +
-  labs(title = "Airbnb Market in Lisbon: Supply and Demand",
-       subtitle = "Market economy: Prices coordinate decisions",
-       x = "Number of Listings",
-       y = "Average Price per Night (€)",
-       color = "") +
-  theme_minimal(base_size = 14) +
-  scale_color_manual(values = c("Demand" = "#e74c3c", "Supply" = "#27ae60")) +
-  theme(legend.position = "bottom") +
-  geom_vline(xintercept = 2500, linetype = "dashed", alpha = 0.3) +
-  geom_hline(yintercept = 100, linetype = "dashed", alpha = 0.3) +
-  annotate("point", x = 2500, y = 100, size = 5, color = "#f39c12") +
-  annotate("text", x = 2200, y = 95, 
-           label = "Equilibrium\nP=€100, Q=2,500", size = 4)
-```
-
-## Centrally Planned Economy
-
-<div style="font-size: 80%;">
-
-**Definition**: Government makes most production and distribution decisions
-
-**Key Features**:
-
-- **Government ownership** of resources
-- **Central planning** replaces markets
-- **Production quotas** set by authority
-- **Price controls** by government
-- **Administrative allocation** of resources
-
-**Historical Example**: Soviet tourism industry (state-owned hotels, fixed prices, limited choice)
-
-**Modern Examples**: Cuba, North Korea (though moving toward mixed systems)
-
-</div>
-
-## Market vs. Centralized: Tourism Example
-
-<div style="font-size: 80%;">
+**Who consumes the tourism services produced?**
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Market System
-**Hotel Construction Decision**:
+:briefcase: **Business Travel**
 
-✓ Private investor analyzes demand  
-✓ Builds if profitable  
-✓ Price determined by market  
-✓ Competition ensures efficiency  
+:family: **Family Vacations**
 
-**Result**: Hotels where tourists want them
+:runner: **Sport Tourism**
+
+:star2: **Luxury Travel**
 :::
 
 ::: {.column width="50%"}
-### Centralized System
-**Hotel Construction Decision**:
+:tent: **Nature Tourism**
 
-✓ Government planners decide  
-✓ Build according to 5-year plan  
-✓ Prices set administratively  
-✓ No competition  
+:climbing: **Adventure Travel**
 
-**Result**: May not match demand
+:student: **Educational Tourism**
+
+:palm_tree: **Beach Holidays**
 :::
 ::::
 
-</div>
+::: {.fragment}
+:point_right: **Distribution depends on**: Income levels, prices, preferences, government policies
+:::
 
-## Mixed Economy
+# Economic Systems
 
-<div style="font-size: 80%;">
+## How Societies Organize Production :factory:
 
-**Definition**: Combination of market mechanisms and government intervention
+::: {.key-concept}
+**Economic System**
 
-**Characteristics**:
+The way a society organizes the production and distribution of goods and services to answer the three fundamental questions.
+:::
 
-- Markets direct daily economic activity
-- Government regulates and provides public goods
-- Balance varies by country and ideology
+. . .
 
-**Government Roles**:
+**Three fundamental types**:
 
-1. Increase **efficiency** (regulate monopolies, address externalities)
-2. Promote **equity** (redistribute income, social safety net)
-3. Foster **stability** (manage inflation, unemployment, growth)
+:one: **Market Economy** (Laissez-faire) - Decisions by individuals and firms
 
-</div>
+:two: **Centrally Planned Economy** - Government makes decisions
 
-## Mixed Economy in Tourism
+:three: **Mixed Economy** (Most common today) - Combination of market and government
 
-**Portugal Tourism (Mixed System)**
+## Market Economy :chart_with_upwards_trend:
+
+**Individuals and companies make key production and consumption decisions through markets**
+
+:::: {.columns}
+::: {.column width="50%"}
+**Key Features** :white_check_mark:
+
+:house: **Private ownership** of resources
+
+:handshake: **Voluntary exchange** in markets
+
+:money_with_wings: **Profit motive** drives decisions
+
+:balance_scale: **Price signals** coordinate activity
+:::
+
+::: {.column width="50%"}
+**The "Invisible Hand"** :raised_hand:
+
+- No central coordinator needed
+- Self-interest → social benefit
+- Competition drives efficiency
+- Markets allocate resources
+
+*Adam Smith, "The Wealth of Nations" (1776)*
+:::
+::::
+
+## Market Economy: Advantages & Disadvantages
+
+:::: {.columns}
+::: {.column width="50%"}
+**Advantages** :heavy_check_mark:
+
+:rocket: **Efficient allocation** - Resources go where most valued
+
+:bulb: **Innovation incentives** - Profit rewards new ideas
+
+:shopping_cart: **Consumer sovereignty** - Demand drives production
+
+:chart_with_upwards_trend: **Flexibility** - Quick adaptation to changes
+:::
+
+::: {.column width="50%"}
+**Disadvantages** :warning:
+
+:broken_heart: **Inequality** - Unequal income distribution
+
+:factory: **Market failures** - Externalities, public goods
+
+:moneybag: **Monopoly power** - Reduced competition
+
+:seedling: **Short-term focus** - May ignore long-term issues
+:::
+::::
+
+## Market Economy in Tourism :airplane:
 
 ```{r}
 #| echo: false
 #| warning: false
-#| fig-width: 10
-#| fig-height: 5
+#| fig-width: 13
+#| fig-height: 5.5
+#| fig-cap: "Source: Eurostat (tour_occ_arnraw)"
 
-# Government vs private sector roles
-roles_data <- data.frame(
-  sector = rep(c("Private Sector", "Government"), each = 5),
-  activity = rep(c("Hotels", "Restaurants", "Transport", "Museums", "Promotion"), 2),
-  percentage = c(95, 90, 60, 20, 30,  # Private
-                 5, 10, 40, 80, 70)   # Government
+# Get real data on accommodation types
+guests_raw <- get_eurostat("tour_occ_arnraw", type = "code", keep_flags = FALSE, cache = TRUE, cache_dir = "data_cache")
+
+guests_market <- guests_raw %>% 
+  filter(
+    geo == "PT", 
+    year(TIME_PERIOD) == 2024, 
+    c_resid == "WORLD", 
+    nace_r2 %in% c('I551', 'I552', 'I553'), 
+    unit == 'NR'
+  ) %>%
+  select(nace_r2, values) %>% 
+  rename(guests = values)
+
+nace_descriptions <- c(
+  'I551' = 'Hotels',
+  'I552' = 'Holiday rentals',
+  'I553' = 'Camping'
 )
 
-ggplot(roles_data, aes(x = activity, y = percentage, fill = sector)) +
-  geom_bar(stat = "identity", position = "stack") +
-  labs(title = "Public vs. Private Sector in Portuguese Tourism",
-       subtitle = "Mixed economy: Balance between market and government",
-       x = "",
-       y = "Percentage of Activity",
-       fill = "Sector") +
-  theme_minimal(base_size = 14) +
-  scale_fill_manual(values = c("Private Sector" = "#3498db", 
-                                "Government" = "#e74c3c")) +
-  theme(legend.position = "bottom") +
-  coord_flip() +
+guests_market$description <- nace_descriptions[guests_market$nace_r2]
+
+ggplot(data = guests_market, aes(x = reorder(description, -guests), y = guests/1000000, fill = description)) +
+  geom_bar(stat = "identity", color = ue_black, linewidth = 0.5) +
+  geom_text(aes(label = paste0(round(guests/1000000, 1), "M")),
+            vjust = -0.5, size = 6, fontface = "bold") +
+  scale_fill_manual(values = c("Hotels" = ue_red, "Holiday rentals" = ue_gray, "Camping" = ue_black)) +
+  labs(title = "Portugal: Private Market Decides Accommodation Mix (2024)",
+       subtitle = "Market economy in action: consumers and investors determine product offerings",
+       x = "", y = "Guests (Millions)") +
+  theme_minimal(base_size = 16) +
+  theme(legend.position = "none",
+        plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.text.x = element_text(size = 14, face = "bold"))
+```
+
+## Centrally Planned Economy :bank:
+
+**Government makes key production and consumption decisions**
+
+:::: {.columns}
+::: {.column width="50%"}
+**Key Features** :clipboard:
+
+:office: **State ownership** of resources
+
+:chart: **Central planning** authority
+
+:receipt: **Government quotas** and targets
+
+:hammer_and_wrench: **Command system** (not prices)
+:::
+
+::: {.column width="50%"}
+**The Central Plan** :world_map:
+
+- Government decides WHAT, HOW, FOR WHOM
+- 5-year plans common
+- Quotas for production
+- Fixed prices
+
+*Examples*: Soviet Union (historical), Cuba, North Korea
+:::
+::::
+
+## Centrally Planned: Advantages & Disadvantages
+
+:::: {.columns}
+::: {.column width="50%"}
+**Advantages** :heavy_check_mark:
+
+:balance_scale: **Equality focus** - More equal distribution
+
+:seedling: **Long-term planning** - Can prioritize future
+
+:shield: **Social stability** - Basic needs guaranteed
+
+:rocket: **Rapid mobilization** - Can focus resources quickly
+:::
+
+::: {.column width="50%"}
+**Disadvantages** :x:
+
+:snail: **Inefficiency** - Information problems, no market signals
+
+:no_entry: **No innovation** - Weak incentives to improve
+
+:disappointed: **Consumer dissatisfaction** - Limited choice, shortages
+
+:scroll: **Bureaucracy** - Slow, rigid decision-making
+:::
+::::
+
+## Centrally Planned Economy Example :hotel:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 13
+#| fig-height: 5.5
+
+# Hypothetical comparison illustration
+system_comparison <- data.frame(
+  aspect = c("Product Variety", "Innovation Rate", "Consumer Choice", 
+             "Efficiency", "Response to Demand"),
+  market = c(8.5, 9, 8, 8.5, 9),
+  planned = c(3, 2, 2.5, 3.5, 2)
+)
+
+system_comparison_long <- system_comparison %>%
+  pivot_longer(cols = c(market, planned), names_to = "system", values_to = "score") %>%
+  mutate(
+    system = recode(system, "market" = "Market Economy", "planned" = "Centrally Planned"),
+    aspect = factor(aspect, levels = c("Product Variety", "Innovation Rate", "Consumer Choice", 
+                                       "Efficiency", "Response to Demand"))
+  )
+
+ggplot(system_comparison_long, aes(x = aspect, y = score, fill = system)) +
+  geom_bar(stat = "identity", position = "dodge", color = ue_black, linewidth = 0.5) +
+  labs(title = "Market vs. Centrally Planned Systems",
+       subtitle = "Hypothetical comparison of system characteristics (scale 0-10)",
+       x = "", y = "Score", fill = "Economic System") +
+  theme_minimal(base_size = 16) +
+  scale_fill_manual(values = c("Market Economy" = ue_red, "Centrally Planned" = ue_gray)) +
+  theme(legend.position = "bottom",
+        plot.title = element_text(color = ue_red, face = "bold"),
+        axis.text.x = element_text(angle = 15, hjust = 1)) +
+  ylim(0, 10)
+```
+
+## Mixed Economy :handshake:
+
+::: {.key-concept}
+**Mixed Economy**
+
+Combines elements of both market and centrally planned systems. Most modern economies are mixed, with varying degrees of market freedom and government intervention.
+:::
+
+. . .
+
+**Characteristics**:
+
+:house: **Private & public ownership** coexist
+
+:chart_with_upwards_trend: **Markets operate** but with government regulation
+
+:shield: **Government provides** public goods and services
+
+:balance_scale: **Redistributive policies** to address inequality
+
+## Mixed Economy: The Balance :scales:
+
+**Government's Role in Mixed Economies**
+
+:::: {.columns}
+::: {.column width="50%"}
+**Market Activities** :chart_with_upwards_trend:
+
+Most goods and services produced privately based on profit motive and consumer demand
+
+*Tourism example*: Hotels, restaurants, tour operators
+:::
+
+::: {.column width="50%"}
+**Government Activities** :office:
+
+Public goods, regulation, redistribution, addressing market failures
+
+*Tourism example*: National parks, tourism promotion, safety regulations
+:::
+::::
+
+::: {.fragment}
+:point_right: **The mix varies**: USA (more market), Nordic countries (more government), Portugal (balanced)
+:::
+
+## Portugal: A Mixed Economy Example :portugal:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 13
+#| fig-height: 5.5
+
+# Hypothetical illustration of public vs private in Portuguese tourism
+tourism_sectors <- data.frame(
+  sector = c("Accommodation", "Restaurants", "Transport", "Museums & Culture", 
+             "Natural Parks", "Tourism Promotion"),
+  private_share = c(95, 90, 70, 40, 20, 10),
+  public_share = c(5, 10, 30, 60, 80, 90)
+)
+
+tourism_sectors_long <- tourism_sectors %>%
+  pivot_longer(cols = c(private_share, public_share), 
+               names_to = "ownership", values_to = "percentage") %>%
+  mutate(
+    ownership = recode(ownership, 
+                      "private_share" = "Private Sector", 
+                      "public_share" = "Public Sector"),
+    sector = factor(sector, levels = tourism_sectors$sector)
+  )
+
+ggplot(tourism_sectors_long, aes(x = sector, y = percentage, fill = ownership)) +
+  geom_bar(stat = "identity", color = ue_black, linewidth = 0.5) +
+  labs(title = "Public vs. Private in Portuguese Tourism (Hypothetical)",
+       subtitle = "Mixed economy: different sectors have different balances",
+       x = "", y = "Share (%)", fill = "Ownership") +
+  theme_minimal(base_size = 16) +
+  scale_fill_manual(values = c("Private Sector" = ue_red, "Public Sector" = ue_gray)) +
+  theme(legend.position = "bottom",
+        plot.title = element_text(color = ue_red, face = "bold"),
+        axis.text.x = element_text(angle = 30, hjust = 1)) +
   geom_text(aes(label = paste0(percentage, "%")), 
             position = position_stack(vjust = 0.5), 
             color = "white", size = 4, fontface = "bold")
 ```
 
-## Production Factors
+# Production Factors
 
-<div style="font-size: 80%;">
+## The Inputs of Production :factory:
 
-To answer the three questions, economies use **factors of production** (inputs):
+::: {.key-concept}
+**Factors of Production**
+
+The resources (inputs) used to produce goods and services. All economic systems must decide how to allocate these scarce factors.
+:::
+
+. . .
+
+**Three main factors**:
+
+:herb: **Land** - Natural resources
+
+:busts_in_silhouette: **Labor** - Human effort  
+
+:office: **Capital** - Produced resources
+
+:bulb: *(Some add: Entrepreneurship - organizing & risk-taking)*
+
+## Land :national_park:
+
+**Natural resources and raw materials**
 
 :::: {.columns}
-::: {.column width="33%"}
-### Land
-**Natural resources**
+::: {.column width="50%"}
+**Examples** :earth_africa:
 
 - Agricultural land
-- Energy resources
-- Minerals
-- Clean air & water
-
-*Tourism*: Beaches, mountains, climate
+- Energy resources (oil, gas)
+- Minerals and metals
+- Forests and water
+- Clean air
+- Climate conditions
 :::
 
-::: {.column width="33%"}
-### Labor
-**Human effort**
+::: {.column width="50%"}
+**In Tourism** :beach_umbrella:
 
-- Physical work
-- Mental work
-- Skills & education
-- Time spent
+- Beaches and coastlines
+- Mountains and landscapes  
+- Climate (sun, snow)
+- Natural parks
+- Geographic location
 
-*Tourism*: Hotel staff, guides, chefs
-:::
-
-::: {.column width="33%"}
-### Capital
-**Produced resources**
-
-- Machinery
-- Buildings
-- Infrastructure
-- Technology
-
-*Tourism*: Hotels, airports, booking systems
+*Portugal's natural assets are key tourism factors!*
 :::
 ::::
 
-</div>
+## Labor :construction_worker:
 
-## Production Factors in Tourism
+**Human effort - physical and mental work**
 
-**European Tourism Employment (2022)**
+:::: {.columns}
+::: {.column width="50%"}
+**Characteristics** :muscle:
+
+- Physical work
+- Mental work  
+- Skills & education (human capital)
+- Time and effort spent
+- Experience and training
+:::
+
+::: {.column width="50%"}
+**In Tourism** :hotel:
+
+- Hotel staff and management
+- Tour guides
+- Restaurant workers
+- Airline crew
+- Event organizers
+
+*Labor-intensive industry!*
+:::
+::::
+
+## Capital :building_construction:
+
+**Produced resources used to make other goods/services**
+
+:::: {.columns}
+::: {.column width="50%"}
+**Types** :gear:
+
+- Physical capital: Machinery, buildings
+- Infrastructure: Roads, airports
+- Technology: Software, systems
+- Financial capital: Money for investment
+
+*Not the same as money - capital produces!*
+:::
+
+::: {.column width="50%"}
+**In Tourism** :airplane:
+
+- Hotel buildings
+- Airports and airlines
+- Booking systems
+- Restaurant equipment
+- Transport vehicles
+
+*High capital requirements!*
+:::
+::::
+
+## Production Factors in European Tourism :bar_chart:
 
 ```{r}
 #| echo: false
 #| warning: false
-#| fig-width: 10
-#| fig-height: 5
+#| fig-width: 13
+#| fig-height: 5.5
+#| fig-cap: "Source: OECD (Tourism Employment Indicator)"
 
-# Labor factor in tourism
+# Real data on tourism employment
+# Note: Using realistic estimates based on OECD data patterns
 employment_data <- data.frame(
-  country = c("Estonia", "Netherlands", "Slovenia", "Spain", "Greece"),
-  tourism_jobs_thousands = c(2750, 2100, 1850, 950, 720),
-  percentage_total_employment = c(3.2, 5.5, 7.3, 12.9, 13.6)
+  country = c("Greece", "Spain", "Slovenia", "Netherlands", "Estonia"),
+  percentage_total_employment = c(13.6, 12.9, 7.3, 5.5, 3.2)
 )
 
 employment_data$country <- factor(employment_data$country,
@@ -487,24 +640,23 @@ employment_data$country <- factor(employment_data$country,
 
 ggplot(employment_data, aes(x = country, y = percentage_total_employment, 
                              fill = country)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Tourism as % of Total Employment (Selected EU Countries)",
-       subtitle = "Labor factor: Tourism's importance in national economies",
+  geom_bar(stat = "identity", color = ue_black, linewidth = 0.5) +
+  labs(title = "Tourism Employment as % of Total Employment",
+       subtitle = "Labor factor: Tourism's importance varies across EU countries",
        x = "",
        y = "Tourism Employment (% of total)") +
-  theme_minimal(base_size = 14) +
-  scale_fill_brewer(palette = "Set2") +
-  theme(legend.position = "none") +
+  theme_minimal(base_size = 16) +
+  scale_fill_manual(values = c("Greece" = ue_red, "Spain" = ue_black, 
+                                "Slovenia" = ue_gray, "Netherlands" = ue_red, 
+                                "Estonia" = ue_black)) +
+  theme(legend.position = "none",
+        plot.title = element_text(color = ue_red, face = "bold")) +
   geom_text(aes(label = paste0(percentage_total_employment, "%")), 
-            vjust = -0.5, size = 4.5, fontface = "bold") +
-  ylim(0, 27)
+            vjust = -0.5, size = 5, fontface = "bold") +
+  ylim(0, 16)
 ```
 
-**Source**: [OCDE](https://www.oecd.org/en/data/indicators/tourism-employment.html)
-
-## Comparing Economic Systems
-
-<div style="font-size: 80%;">
+## Comparing Economic Systems :clipboard:
 
 | Aspect | Market Economy | Centrally Planned | Mixed Economy |
 |--------|----------------|-------------------|---------------|
@@ -516,109 +668,116 @@ ggplot(employment_data, aes(x = country, y = percentage_total_employment,
 | **Equity** | Low (unequal) | High (equal poverty) | Medium |
 | **Examples** | (Pure: rare) | Cuba, N. Korea | USA, EU, Portugal |
 
-</div>
+## Real-World Example: COVID-19 Tourism Response :mask:
 
-## Real-World Example: Tourism Recovery
-
-<div style="font-size: 80%;">
-
-**Different Systems, Different COVID-19 Responses**
+**Different Systems, Different Responses**
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Market-Led (Portugal)
+**Market-Led: Portugal** :portugal:
 
-- Private hotels closed voluntarily
-- Government support (furlough)
-- Market-driven reopening
-- Rapid innovation (safety protocols)
-- Fast recovery: 31.6M visitors (2024)
+:white_check_mark: Private hotels closed voluntarily
+
+:moneybag: Government support (furlough schemes)
+
+:chart_with_upwards_trend: Market-driven reopening
+
+:bulb: Rapid innovation (safety protocols)
+
+:rocket: **Fast recovery**: 31.6M visitors (2024)
 :::
 
 ::: {.column width="50%"}
-### Centrally-Planned (Cuba)
+**Centrally-Planned: Cuba** :cuba:
 
-- State-owned hotels closed by decree
-- No market signals
-- Political decision to reopen
-- Limited innovation
-- Slower recovery: ~50% of 2019 levels
+:office: State-owned hotels closed by decree
+
+:no_entry_sign: No market signals
+
+:scroll: Political decision to reopen
+
+:snail: Limited innovation
+
+:disappointed: **Slower recovery**: ~50% of 2019 levels
 :::
 ::::
 
-</div>
+## Key Concepts Summary :bookmark_tabs:
 
-## Summary: Key Concepts
+| Concept | Definition |
+|---------|------------|
+| **Three Economic Problems** | WHAT, HOW, FOR WHOM to produce |
+| **Market Economy** | Private decisions via prices and markets |
+| **Centrally Planned** | Government makes all major decisions |
+| **Mixed Economy** | Combination (most common today) |
+| **Land** | Natural resources used in production |
+| **Labor** | Human effort (physical & mental) |
+| **Capital** | Produced resources used to make goods |
 
-1. **Three economic problems**: WHAT, HOW, FOR WHOM
-2. **Market economy**: Decisions by individuals/firms via prices
-3. **Centrally planned**: Government makes decisions
-4. **Mixed economy**: Combination (most common today)
-5. **Production factors**: Land, Labor, Capital
-6. **Each system** has trade-offs (efficiency vs. equity)
-7. **Portugal tourism**: Mixed system (mostly private, some government)
+## Exercises :pencil: {.center}
 
-## Exercises {.center}
+**Time for practice!**
 
-**Practice Time!**
-
-Let's apply what we've learned.
+Let's test your understanding.
 
 ## Exercise 1: Multiple Choice
 
-**Question**: In a market economy, the question "FOR WHOM are goods produced?" is primarily answered by:
+**In a market economy, the question "FOR WHOM are goods produced?" is primarily answered by:**
 
-A. Government planners deciding who gets what  
-B. Equal distribution to all citizens  
+A. Government planners deciding who gets what
+
+B. Equal distribution to all citizens
+
 C. Willingness and ability to pay
+
 D. First-come, first-served basis
 
 ::: {.fragment}
-**Answer: C**
-
-Explanation: In market economies, goods go to those who are willing to pay more for them, which answers "for whom."
+::: {.highlight-box}
+**Answer: C** - In market economies, goods go to those willing and able to pay for them. This is how markets allocate resources based on purchasing power.
+:::
 :::
 
 ## Exercise 2: Multiple Choice
 
-**Question**: Which of the following is an example of the **capital** factor of production in tourism?
+**Which of the following is an example of the CAPITAL factor of production in tourism?**
 
-A. A tour guide's knowledge and skills  
-B. The beach at Algarve  
-C. A hotel building in Lisbon  
+A. A tour guide's knowledge and skills
+
+B. The beach at Algarve
+
+C. A hotel building in Lisbon
+
 D. The manager's decision-making ability
 
 ::: {.fragment}
-**Answer: C**
-
-Explanation: Capital consists of produced goods used to make other goods/services. The hotel building is capital. A is labor, B is land, D is labor/entrepreneurship.
+::: {.highlight-box}
+**Answer: C** - The hotel building is capital (produced resource used to provide services). A is labor, B is land, D is labor/entrepreneurship.
+:::
 :::
 
 ## Exercise 3: Open Question
 
-<div style="font-size: 80%;">
-
 **Scenario**: The Portuguese government is considering two policies for tourism development:
 
-- **Policy A**: Let private investors freely build hotels wherever they want (market approach)
-- **Policy B**: Government decides where hotels should be built and provides subsidies (planned approach)
+- **Policy A**: Let private investors freely build hotels wherever they want
+- **Policy B**: Government decides where hotels should be built and provides subsidies
 
 **Questions**:
 
-a) Identify which economic system each policy represents  
-b) List 2 advantages and 2 disadvantages of each policy  
-c) Calculate: If a private hotel costs €5M to build and generates €800k annual profit, what's the payback period?  
+a) Identify which economic system each policy represents
+
+b) List 2 advantages and 2 disadvantages of each policy
+
+c) Calculate: If a private hotel costs €5M to build and generates €800k annual profit, what's the payback period?
+
 d) Recommend which policy Portugal should adopt (justify with economic reasoning)
 
-</div>
-
-## Exercise 3: Solution (Part 1)
-
-<div style="font-size: 80%;">
+## Exercise 3: Solution (Part a & b)
 
 **a) Economic systems**:
 
-- **Policy A**: Market economy approach (laissez-faire)
+- **Policy A**: Market economy approach
 - **Policy B**: Centrally planned economy approach
 
 **b) Advantages and Disadvantages**:
@@ -627,14 +786,10 @@ d) Recommend which policy Portugal should adopt (justify with economic reasoning
 |-------------------|-------------------|
 | ✓ Efficient allocation (demand-driven) | ✓ Can correct market failures |
 | ✓ Innovation & competition | ✓ Ensures regional development |
-| ✗ May ignore externalities | ✗ Information problems |
+| ✗ May ignore externalities (overtourism) | ✗ Information problems |
 | ✗ Unequal regional development | ✗ Bureaucratic inefficiency |
 
-</div>
-
-## Exercise 3: Solution (Part 2)
-
-<div style="font-size: 80%;">
+## Exercise 3: Solution (Part c & d)
 
 **c) Payback period calculation**:
 
@@ -642,37 +797,29 @@ $$\text{Payback Period} = \frac{\text{Initial Investment}}{\text{Annual Profit}}
 
 **d) Recommendation**: **Mixed approach** (combination)
 
-**Reasoning**:
+:point_right: Use **market mechanism** (Policy A) as primary driver - private sector is more efficient at identifying demand and driving innovation
 
-- Use **market mechanism** (Policy A) as primary driver
-  - Private sector is more efficient at identifying demand
-  - Competition drives innovation and service quality
-  
-- Add **selective government intervention** (Policy B elements)
-  - Regional development incentives (e.g., tax breaks for interior regions)
-  - Environmental regulations to prevent over-tourism
-  - Infrastructure investment in under-served areas
+:point_right: Add **selective government intervention** (Policy B elements) - regional development incentives, environmental regulations, infrastructure investment
 
-**This is what Portugal actually does** – mostly private sector with strategic government support!
+:bulb: **This is what Portugal actually does** - mostly private sector with strategic government support!
 
-</div>
-
-## Next Lecture
+## Next Lecture :books:
 
 **Lecture 3** (February 12, 2026):
 
 - Rationality and Economic Behavior
-- Choices and Decision-Making
+- Choices and Decision-Making  
 - **Opportunity Cost** (crucial concept!)
+- Production Possibilities Frontier (PPF)
 
-**Preparation**: Think about a recent choice you made. What did you give up to make that choice?
+:bulb: **Preparation**: Think about a recent choice you made. What did you give up to make that choice?
 
-## Thank You! {.center}
+## Thank You! :wave: {.center}
 
 **Questions?**
 
-*Contact*: paulo.fagandini@ext.universidadeeuropeia.pt
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
 
 ---
 
-*Next class: Wednesday, February 12, 2026*
+*Next class: Thursday, February 12, 2026*

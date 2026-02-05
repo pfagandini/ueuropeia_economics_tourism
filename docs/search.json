@@ -4,7 +4,7 @@
     "href": "slides/lecture01-intro.html#welcome-to-economics",
     "title": "Economics Fundamentals",
     "section": "Welcome to Economics! 👋",
-    "text": "Welcome to Economics! 👋\n\n\nWhy study Economics? 🤔\n📈 Understand government policies\n🌐 Navigate global markets\n💼 Achieve business success\n:scales: Master supply & demand\n⚖️ Understand inequality\n\n\n\n\nEconomics is essential for management professionals to make informed decisions in an increasingly complex business environment."
+    "text": "Welcome to Economics! 👋\n\n\nWhy study Economics? 🤔\n🏛️ Understand government policies\n🌐 Navigate global markets\n💼 Achieve business success\n📈 📉 Master supply & demand\n⚖️ Understand inequality\n\n\n\n\nEconomics is essential for management professionals to make informed decisions in an increasingly complex business environment."
   },
   {
     "objectID": "slides/lecture01-intro.html#what-is-economics",
@@ -136,8 +136,8 @@
     "objectID": "slides/lecture02-systems.html#recap-lecture-1",
     "href": "slides/lecture02-systems.html#recap-lecture-1",
     "title": "Economics Fundamentals",
-    "section": "Recap: Lecture 1",
-    "text": "Recap: Lecture 1\nKey concepts we covered:\n\nEconomics studies scarcity and efficiency\nMacroeconomics (big picture) vs. Microeconomics (individual decisions)\nThree fundamental questions: WHAT, HOW, FOR WHOM\nPositive (facts) vs. Normative (values) economics\n\nToday: How do different economic systems answer these questions?"
+    "section": "Recap: Lecture 1 ⏪",
+    "text": "Recap: Lecture 1 ⏪\nKey concepts we covered:\n📈 Economics studies scarcity and efficiency\n🔭 Macroeconomics (big picture) vs. 🔬 Microeconomics (individual decisions)\n❓ Three fundamental questions: WHAT, HOW, FOR WHOM\n📊 Positive (facts) vs. 💭 Normative (values) economics\n\n👉 Today: How do different economic systems answer these questions?"
   },
   {
     "objectID": "slides/lecture02-systems.html#the-three-fundamental-economic-problems",
@@ -150,29 +150,29 @@
     "objectID": "slides/lecture02-systems.html#problem-1-what-to-produce",
     "href": "slides/lecture02-systems.html#problem-1-what-to-produce",
     "title": "Economics Fundamentals",
-    "section": "Problem 1: WHAT to Produce?",
-    "text": "Problem 1: WHAT to Produce?\n\n\n\n\n\nHotels\n\n\n\n\n\n\n\nTransport\n\n\n\n\n\n\n\nRestaurants\n\n\n\n\n\n\n\nBeach Facilities\n\n\n\n\n\n\n\nMuseums"
+    "section": "Problem 1: WHAT to Produce? 📦",
+    "text": "Problem 1: WHAT to Produce? 📦\n\n\nTourism Sector Choices\n🏨 Hotels & Accommodation\n🚌 Transport Infrastructure\n🍴 Restaurants & Dining\n🏖️ Beach Facilities\n🏛️ Museums & Culture\n\n\n\n\n💡 Scarce resources mean choosing between alternatives!"
   },
   {
     "objectID": "slides/lecture02-systems.html#problem-2-how-to-produce",
     "href": "slides/lecture02-systems.html#problem-2-how-to-produce",
     "title": "Economics Fundamentals",
-    "section": "Problem 2: HOW to Produce?",
-    "text": "Problem 2: HOW to Produce?\n\nDifferent Production Methods: Hotel Check-in\n\n\nTraditional Method\n\nHuman receptionists\nPaper forms\nPhone bookings\nHigh labor cost\nFlexible service\nPersonal touch\n\nCost per check-in: ~€8-12\n\nAutomated Method\n\nSelf-service kiosks\nOnline booking\nMobile check-in\nHigh capital cost\n24/7 availability\nLimited flexibility\n\nCost per check-in: ~€2-4\n\nDecision factors: Initial investment, labor costs, customer preferences, technology reliability"
+    "section": "Problem 2: HOW to Produce? ⚙️",
+    "text": "Problem 2: HOW to Produce? ⚙️\nDifferent Production Methods: Hotel Check-in\n\n\nTraditional Method 👥\n\nHuman receptionists\nPaper forms\nPhone bookings\nHigh labor cost\nFlexible service\nPersonal touch\n\n💰 Cost per check-in: ~€8-12\n\nAutomated Method 🤖\n\nSelf-service kiosks\nOnline booking\nMobile check-in\nHigh capital cost\n24/7 availability\nLimited flexibility\n\n💰 Cost per check-in: ~€2-4\n\n\n👉 Decision factors: Initial investment, labor costs, customer preferences, technology reliability"
   },
   {
     "objectID": "slides/lecture02-systems.html#how-production-cost-comparison",
     "href": "slides/lecture02-systems.html#how-production-cost-comparison",
     "title": "Economics Fundamentals",
-    "section": "HOW: Production Cost Comparison",
-    "text": "HOW: Production Cost Comparison"
+    "section": "HOW: Production Cost Comparison 📉",
+    "text": "HOW: Production Cost Comparison 📉\n\nHypothetical illustration of cost trade-offs"
   },
   {
     "objectID": "slides/lecture02-systems.html#problem-3-for-whom",
     "href": "slides/lecture02-systems.html#problem-3-for-whom",
     "title": "Economics Fundamentals",
-    "section": "Problem 3: FOR WHOM?",
-    "text": "Problem 3: FOR WHOM?\n\n\n\n\n\nSport Tourism\n\n\n\n\n\n\n\nFamily Vacations\n\n\n\n\n\n\n\nBusiness Travel\n\n\n\n\n\n\n\nLuxury Travel\n\n\n\n\n\n\n\nNature Tourism\n\n\n\n\n\n\n\nAdventure Travel"
+    "section": "Problem 3: FOR WHOM? 🎯",
+    "text": "Problem 3: FOR WHOM? 🎯\nWho consumes the tourism services produced?\n\n\n💼 Business Travel\n👪 Family Vacations\n🏃 Sport Tourism\n🌟 Luxury Travel\n\n⛺ Nature Tourism\n🧗 Adventure Travel\n🧑‍🎓 Educational Tourism\n🌴 Beach Holidays\n\n\n👉 Distribution depends on: Income levels, prices, preferences, government policies"
   },
   {
     "objectID": "slides/lecture02-systems.html#economic-systems-overview",
@@ -185,8 +185,8 @@
     "objectID": "slides/lecture02-systems.html#market-economy",
     "href": "slides/lecture02-systems.html#market-economy",
     "title": "Economics Fundamentals",
-    "section": "Market Economy",
-    "text": "Market Economy\nDefinition: Individuals and companies make key production and consumption decisions through markets\nKey Features:\n\nPrivate ownership of resources\nPrice mechanism coordinates decisions\nProfit motive drives production\nCompetition among firms\nConsumer sovereignty (monetary votes)\n\nTourism Example: Hotel chains decide what to build, where, and at what price based on profit expectations"
+    "section": "Market Economy 📈",
+    "text": "Market Economy 📈\nIndividuals and companies make key production and consumption decisions through markets\n\n\nKey Features ✅\n🏠 Private ownership of resources\n🤝 Voluntary exchange in markets\n💸 Profit motive drives decisions\n⚖️ Price signals coordinate activity\n\nThe “Invisible Hand” ✋\n\nNo central coordinator needed\nSelf-interest → social benefit\nCompetition drives efficiency\nMarkets allocate resources\n\nAdam Smith, “The Wealth of Nations” (1776)"
   },
   {
     "objectID": "slides/lecture02-systems.html#how-markets-work-example",
@@ -199,8 +199,8 @@
     "objectID": "slides/lecture02-systems.html#centrally-planned-economy",
     "href": "slides/lecture02-systems.html#centrally-planned-economy",
     "title": "Economics Fundamentals",
-    "section": "Centrally Planned Economy",
-    "text": "Centrally Planned Economy\n\nDefinition: Government makes most production and distribution decisions\nKey Features:\n\nGovernment ownership of resources\nCentral planning replaces markets\nProduction quotas set by authority\nPrice controls by government\nAdministrative allocation of resources\n\nHistorical Example: Soviet tourism industry (state-owned hotels, fixed prices, limited choice)\nModern Examples: Cuba, North Korea (though moving toward mixed systems)"
+    "section": "Centrally Planned Economy 🏦",
+    "text": "Centrally Planned Economy 🏦\nGovernment makes key production and consumption decisions\n\n\nKey Features 📋\n🏢 State ownership of resources\n💹 Central planning authority\n🧾 Government quotas and targets\n🛠️ Command system (not prices)\n\nThe Central Plan 🗺️\n\nGovernment decides WHAT, HOW, FOR WHOM\n5-year plans common\nQuotas for production\nFixed prices\n\nExamples: Soviet Union (historical), Cuba, North Korea"
   },
   {
     "objectID": "slides/lecture02-systems.html#market-vs.-centralized-tourism-example",
@@ -213,8 +213,8 @@
     "objectID": "slides/lecture02-systems.html#mixed-economy",
     "href": "slides/lecture02-systems.html#mixed-economy",
     "title": "Economics Fundamentals",
-    "section": "Mixed Economy",
-    "text": "Mixed Economy\n\nDefinition: Combination of market mechanisms and government intervention\nCharacteristics:\n\nMarkets direct daily economic activity\nGovernment regulates and provides public goods\nBalance varies by country and ideology\n\nGovernment Roles:\n\nIncrease efficiency (regulate monopolies, address externalities)\nPromote equity (redistribute income, social safety net)\nFoster stability (manage inflation, unemployment, growth)"
+    "section": "Mixed Economy 🤝",
+    "text": "Mixed Economy 🤝\n\nMixed Economy\nCombines elements of both market and centrally planned systems. Most modern economies are mixed, with varying degrees of market freedom and government intervention.\n\n\nCharacteristics:\n🏠 Private & public ownership coexist\n📈 Markets operate but with government regulation\n🛡️ Government provides public goods and services\n⚖️ Redistributive policies to address inequality"
   },
   {
     "objectID": "slides/lecture02-systems.html#mixed-economy-in-tourism",
@@ -241,8 +241,8 @@
     "objectID": "slides/lecture02-systems.html#comparing-economic-systems",
     "href": "slides/lecture02-systems.html#comparing-economic-systems",
     "title": "Economics Fundamentals",
-    "section": "Comparing Economic Systems",
-    "text": "Comparing Economic Systems\n\n\n\n\n\n\n\n\n\n\nAspect\nMarket Economy\nCentrally Planned\nMixed Economy\n\n\n\n\nOwnership\nPrivate\nState\nBoth\n\n\nCoordination\nPrices/markets\nCentral plan\nMarkets + regulation\n\n\nIncentives\nProfit\nQuotas/orders\nProfit + public interest\n\n\nInnovation\nHigh\nLow\nMedium-High\n\n\nEfficiency\nGenerally high\nOften low\nVariable\n\n\nEquity\nLow (unequal)\nHigh (equal poverty)\nMedium\n\n\nExamples\n(Pure: rare)\nCuba, N. Korea\nUSA, EU, Portugal"
+    "section": "Comparing Economic Systems 📋",
+    "text": "Comparing Economic Systems 📋\n\n\n\n\n\n\n\n\n\nAspect\nMarket Economy\nCentrally Planned\nMixed Economy\n\n\n\n\nOwnership\nPrivate\nState\nBoth\n\n\nCoordination\nPrices/markets\nCentral plan\nMarkets + regulation\n\n\nIncentives\nProfit\nQuotas/orders\nProfit + public interest\n\n\nInnovation\nHigh\nLow\nMedium-High\n\n\nEfficiency\nGenerally high\nOften low\nVariable\n\n\nEquity\nLow (unequal)\nHigh (equal poverty)\nMedium\n\n\nExamples\n(Pure: rare)\nCuba, N. Korea\nUSA, EU, Portugal"
   },
   {
     "objectID": "slides/lecture02-systems.html#real-world-example-tourism-recovery",
@@ -262,29 +262,29 @@
     "objectID": "slides/lecture02-systems.html#exercises",
     "href": "slides/lecture02-systems.html#exercises",
     "title": "Economics Fundamentals",
-    "section": "Exercises",
-    "text": "Exercises\nPractice Time!\nLet’s apply what we’ve learned."
+    "section": "Exercises 📝",
+    "text": "Exercises 📝\nTime for practice!\nLet’s test your understanding."
   },
   {
     "objectID": "slides/lecture02-systems.html#exercise-1-multiple-choice",
     "href": "slides/lecture02-systems.html#exercise-1-multiple-choice",
     "title": "Economics Fundamentals",
     "section": "Exercise 1: Multiple Choice",
-    "text": "Exercise 1: Multiple Choice\nQuestion: In a market economy, the question “FOR WHOM are goods produced?” is primarily answered by:\nA. Government planners deciding who gets what\nB. Equal distribution to all citizens\nC. Willingness and ability to pay D. First-come, first-served basis\n\nAnswer: C\nExplanation: In market economies, goods go to those who are willing to pay more for them, which answers “for whom.”"
+    "text": "Exercise 1: Multiple Choice\nIn a market economy, the question “FOR WHOM are goods produced?” is primarily answered by:\nA. Government planners deciding who gets what\nB. Equal distribution to all citizens\nC. Willingness and ability to pay\nD. First-come, first-served basis\n\n\nAnswer: C - In market economies, goods go to those willing and able to pay for them. This is how markets allocate resources based on purchasing power."
   },
   {
     "objectID": "slides/lecture02-systems.html#exercise-2-multiple-choice",
     "href": "slides/lecture02-systems.html#exercise-2-multiple-choice",
     "title": "Economics Fundamentals",
     "section": "Exercise 2: Multiple Choice",
-    "text": "Exercise 2: Multiple Choice\nQuestion: Which of the following is an example of the capital factor of production in tourism?\nA. A tour guide’s knowledge and skills\nB. The beach at Algarve\nC. A hotel building in Lisbon\nD. The manager’s decision-making ability\n\nAnswer: C\nExplanation: Capital consists of produced goods used to make other goods/services. The hotel building is capital. A is labor, B is land, D is labor/entrepreneurship."
+    "text": "Exercise 2: Multiple Choice\nWhich of the following is an example of the CAPITAL factor of production in tourism?\nA. A tour guide’s knowledge and skills\nB. The beach at Algarve\nC. A hotel building in Lisbon\nD. The manager’s decision-making ability\n\n\nAnswer: C - The hotel building is capital (produced resource used to provide services). A is labor, B is land, D is labor/entrepreneurship."
   },
   {
     "objectID": "slides/lecture02-systems.html#exercise-3-open-question",
     "href": "slides/lecture02-systems.html#exercise-3-open-question",
     "title": "Economics Fundamentals",
     "section": "Exercise 3: Open Question",
-    "text": "Exercise 3: Open Question\n\nScenario: The Portuguese government is considering two policies for tourism development:\n\nPolicy A: Let private investors freely build hotels wherever they want (market approach)\nPolicy B: Government decides where hotels should be built and provides subsidies (planned approach)\n\nQuestions:\n\nIdentify which economic system each policy represents\n\nList 2 advantages and 2 disadvantages of each policy\n\nCalculate: If a private hotel costs €5M to build and generates €800k annual profit, what’s the payback period?\n\nRecommend which policy Portugal should adopt (justify with economic reasoning)"
+    "text": "Exercise 3: Open Question\nScenario: The Portuguese government is considering two policies for tourism development:\n\nPolicy A: Let private investors freely build hotels wherever they want\nPolicy B: Government decides where hotels should be built and provides subsidies\n\nQuestions:\n\nIdentify which economic system each policy represents\nList 2 advantages and 2 disadvantages of each policy\nCalculate: If a private hotel costs €5M to build and generates €800k annual profit, what’s the payback period?\nRecommend which policy Portugal should adopt (justify with economic reasoning)"
   },
   {
     "objectID": "slides/lecture02-systems.html#exercise-3-solution-part-1",
@@ -304,15 +304,15 @@
     "objectID": "slides/lecture02-systems.html#next-lecture",
     "href": "slides/lecture02-systems.html#next-lecture",
     "title": "Economics Fundamentals",
-    "section": "Next Lecture",
-    "text": "Next Lecture\nLecture 3 (February 12, 2026):\n\nRationality and Economic Behavior\nChoices and Decision-Making\nOpportunity Cost (crucial concept!)\n\nPreparation: Think about a recent choice you made. What did you give up to make that choice?"
+    "section": "Next Lecture 📚",
+    "text": "Next Lecture 📚\nLecture 3 (February 12, 2026):\n\nRationality and Economic Behavior\nChoices and Decision-Making\n\nOpportunity Cost (crucial concept!)\nProduction Possibilities Frontier (PPF)\n\n💡 Preparation: Think about a recent choice you made. What did you give up to make that choice?"
   },
   {
     "objectID": "slides/lecture02-systems.html#thank-you",
     "href": "slides/lecture02-systems.html#thank-you",
     "title": "Economics Fundamentals",
-    "section": "Thank You!",
-    "text": "Thank You!\nQuestions?\nContact: paulo.fagandini@ext.universidadeeuropeia.pt"
+    "section": "Thank You! 👋",
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
   },
   {
     "objectID": "material.html",
@@ -2000,5 +2000,362 @@
     "title": "Economics Fundamentals",
     "section": "Key Concepts Summary 📋",
     "text": "Key Concepts Summary 📋\n\n\n\nConcept\nDefinition\n\n\n\n\nEconomics\nStudy of scarce resource allocation\n\n\nMacroeconomics\nWhole economy (GDP, inflation)\n\n\nMicroeconomics\nIndividual decisions (firms, consumers)\n\n\nScarcity\nUnlimited wants, limited resources\n\n\nEfficiency\nOptimal resource use (no waste)\n\n\nTrade-off\nGiving up one thing for another"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#recap-lecture-1",
+    "href": "slides/lecture02-systems_claude.html#recap-lecture-1",
+    "title": "Economics Fundamentals",
+    "section": "Recap: Lecture 1 ⏪",
+    "text": "Recap: Lecture 1 ⏪\nKey concepts we covered:\n📈 Economics studies scarcity and efficiency\n🔭 Macroeconomics (big picture) vs. 🔬 Microeconomics (individual decisions)\n❓ Three fundamental questions: WHAT, HOW, FOR WHOM\n📊 Positive (facts) vs. 💭 Normative (values) economics\n\n👉 Today: How do different economic systems answer these questions?"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#every-society-must-solve",
+    "href": "slides/lecture02-systems_claude.html#every-society-must-solve",
+    "title": "Economics Fundamentals",
+    "section": "Every Society Must Solve 🤔",
+    "text": "Every Society Must Solve 🤔\n\nThe Three Economic Problems\nEvery economy, regardless of its system, must answer three fundamental questions about resource allocation.\n\n\n1. WHAT goods and services to produce?\n\nWhich products? How much of each?\nCurrent consumption vs. future investment?\n\n2. HOW to produce them?\n\nWhich technologies? Which resources?\nLabor-intensive vs. capital-intensive?\n\n3. FOR WHOM are goods produced?\n\nHow to distribute output?\nWho gets what share of production?"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#problem-1-what-to-produce",
+    "href": "slides/lecture02-systems_claude.html#problem-1-what-to-produce",
+    "title": "Economics Fundamentals",
+    "section": "Problem 1: WHAT to Produce? 📦",
+    "text": "Problem 1: WHAT to Produce? 📦\n\n\nTourism Sector Choices\n🏨 Hotels & Accommodation\n🚌 Transport Infrastructure\n🍴 Restaurants & Dining\n🏖️ Beach Facilities\n🏛️ Museums & Culture\n\n\n\n\n💡 Scarce resources mean choosing between alternatives!"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#problem-2-how-to-produce",
+    "href": "slides/lecture02-systems_claude.html#problem-2-how-to-produce",
+    "title": "Economics Fundamentals",
+    "section": "Problem 2: HOW to Produce? ⚙️",
+    "text": "Problem 2: HOW to Produce? ⚙️\nDifferent Production Methods: Hotel Check-in\n\n\nTraditional Method 👥\n\nHuman receptionists\nPaper forms\nPhone bookings\nHigh labor cost\nFlexible service\nPersonal touch\n\n💰 Cost per check-in: ~€8-12\n\nAutomated Method 🤖\n\nSelf-service kiosks\nOnline booking\nMobile check-in\nHigh capital cost\n24/7 availability\nLimited flexibility\n\n💰 Cost per check-in: ~€2-4\n\n\n👉 Decision factors: Initial investment, labor costs, customer preferences, technology reliability"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#how-production-cost-comparison",
+    "href": "slides/lecture02-systems_claude.html#how-production-cost-comparison",
+    "title": "Economics Fundamentals",
+    "section": "HOW: Production Cost Comparison 📉",
+    "text": "HOW: Production Cost Comparison 📉\n\nHypothetical illustration of cost trade-offs"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#problem-3-for-whom",
+    "href": "slides/lecture02-systems_claude.html#problem-3-for-whom",
+    "title": "Economics Fundamentals",
+    "section": "Problem 3: FOR WHOM? 🎯",
+    "text": "Problem 3: FOR WHOM? 🎯\nWho consumes the tourism services produced?\n\n\n💼 Business Travel\n👪 Family Vacations\n🏃 Sport Tourism\n🌟 Luxury Travel\n\n⛺ Nature Tourism\n🧗 Adventure Travel\n🧑‍🎓 Educational Tourism\n🌴 Beach Holidays\n\n\n👉 Distribution depends on: Income levels, prices, preferences, government policies"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#how-societies-organize-production",
+    "href": "slides/lecture02-systems_claude.html#how-societies-organize-production",
+    "title": "Economics Fundamentals",
+    "section": "How Societies Organize Production 🏭",
+    "text": "How Societies Organize Production 🏭\n\nEconomic System\nThe way a society organizes the production and distribution of goods and services to answer the three fundamental questions.\n\n\nThree fundamental types:\n1️⃣ Market Economy (Laissez-faire) - Decisions by individuals and firms\n2️⃣ Centrally Planned Economy - Government makes decisions\n3️⃣ Mixed Economy (Most common today) - Combination of market and government"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#market-economy",
+    "href": "slides/lecture02-systems_claude.html#market-economy",
+    "title": "Economics Fundamentals",
+    "section": "Market Economy 📈",
+    "text": "Market Economy 📈\nIndividuals and companies make key production and consumption decisions through markets\n\n\nKey Features ✅\n🏠 Private ownership of resources\n🤝 Voluntary exchange in markets\n💸 Profit motive drives decisions\n⚖️ Price signals coordinate activity\n\nThe “Invisible Hand” ✋\n\nNo central coordinator needed\nSelf-interest → social benefit\nCompetition drives efficiency\nMarkets allocate resources\n\nAdam Smith, “The Wealth of Nations” (1776)"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#market-economy-advantages-disadvantages",
+    "href": "slides/lecture02-systems_claude.html#market-economy-advantages-disadvantages",
+    "title": "Economics Fundamentals",
+    "section": "Market Economy: Advantages & Disadvantages",
+    "text": "Market Economy: Advantages & Disadvantages\n\n\nAdvantages ✔️\n🚀 Efficient allocation - Resources go where most valued\n💡 Innovation incentives - Profit rewards new ideas\n🛒 Consumer sovereignty - Demand drives production\n📈 Flexibility - Quick adaptation to changes\n\nDisadvantages ⚠️\n💔 Inequality - Unequal income distribution\n🏭 Market failures - Externalities, public goods\n💰 Monopoly power - Reduced competition\n🌱 Short-term focus - May ignore long-term issues"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#market-economy-in-tourism",
+    "href": "slides/lecture02-systems_claude.html#market-economy-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Market Economy in Tourism ✈️",
+    "text": "Market Economy in Tourism ✈️\n\nSource: Eurostat (tour_occ_arnraw)"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#centrally-planned-economy",
+    "href": "slides/lecture02-systems_claude.html#centrally-planned-economy",
+    "title": "Economics Fundamentals",
+    "section": "Centrally Planned Economy 🏦",
+    "text": "Centrally Planned Economy 🏦\nGovernment makes key production and consumption decisions\n\n\nKey Features 📋\n🏢 State ownership of resources\n💹 Central planning authority\n🧾 Government quotas and targets\n🛠️ Command system (not prices)\n\nThe Central Plan 🗺️\n\nGovernment decides WHAT, HOW, FOR WHOM\n5-year plans common\nQuotas for production\nFixed prices\n\nExamples: Soviet Union (historical), Cuba, North Korea"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#centrally-planned-advantages-disadvantages",
+    "href": "slides/lecture02-systems_claude.html#centrally-planned-advantages-disadvantages",
+    "title": "Economics Fundamentals",
+    "section": "Centrally Planned: Advantages & Disadvantages",
+    "text": "Centrally Planned: Advantages & Disadvantages\n\n\nAdvantages ✔️\n⚖️ Equality focus - More equal distribution\n🌱 Long-term planning - Can prioritize future\n🛡️ Social stability - Basic needs guaranteed\n🚀 Rapid mobilization - Can focus resources quickly\n\nDisadvantages ❌\n🐌 Inefficiency - Information problems, no market signals\n⛔ No innovation - Weak incentives to improve\n😞 Consumer dissatisfaction - Limited choice, shortages\n📜 Bureaucracy - Slow, rigid decision-making"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#centrally-planned-economy-example",
+    "href": "slides/lecture02-systems_claude.html#centrally-planned-economy-example",
+    "title": "Economics Fundamentals",
+    "section": "Centrally Planned Economy Example 🏨",
+    "text": "Centrally Planned Economy Example 🏨"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#mixed-economy",
+    "href": "slides/lecture02-systems_claude.html#mixed-economy",
+    "title": "Economics Fundamentals",
+    "section": "Mixed Economy 🤝",
+    "text": "Mixed Economy 🤝\n\nMixed Economy\nCombines elements of both market and centrally planned systems. Most modern economies are mixed, with varying degrees of market freedom and government intervention.\n\n\nCharacteristics:\n🏠 Private & public ownership coexist\n📈 Markets operate but with government regulation\n🛡️ Government provides public goods and services\n⚖️ Redistributive policies to address inequality"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#mixed-economy-the-balance-scales",
+    "href": "slides/lecture02-systems_claude.html#mixed-economy-the-balance-scales",
+    "title": "Economics Fundamentals",
+    "section": "Mixed Economy: The Balance :scales:",
+    "text": "Mixed Economy: The Balance :scales:\nGovernment’s Role in Mixed Economies\n\n\nMarket Activities 📈\nMost goods and services produced privately based on profit motive and consumer demand\nTourism example: Hotels, restaurants, tour operators\n\nGovernment Activities 🏢\nPublic goods, regulation, redistribution, addressing market failures\nTourism example: National parks, tourism promotion, safety regulations\n\n\n👉 The mix varies: USA (more market), Nordic countries (more government), Portugal (balanced)"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#portugal-a-mixed-economy-example-flag_pt",
+    "href": "slides/lecture02-systems_claude.html#portugal-a-mixed-economy-example-flag_pt",
+    "title": "Economics Fundamentals",
+    "section": "Portugal: A Mixed Economy Example :flag_pt:",
+    "text": "Portugal: A Mixed Economy Example :flag_pt:"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#the-inputs-of-production",
+    "href": "slides/lecture02-systems_claude.html#the-inputs-of-production",
+    "title": "Economics Fundamentals",
+    "section": "The Inputs of Production 🏭",
+    "text": "The Inputs of Production 🏭\n\nFactors of Production\nThe resources (inputs) used to produce goods and services. All economic systems must decide how to allocate these scarce factors.\n\n\nThree main factors:\n🌿 Land - Natural resources\n👥 Labor - Human effort\n🏢 Capital - Produced resources\n💡 (Some add: Entrepreneurship - organizing & risk-taking)"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#land",
+    "href": "slides/lecture02-systems_claude.html#land",
+    "title": "Economics Fundamentals",
+    "section": "Land 🏞️",
+    "text": "Land 🏞️\nNatural resources and raw materials\n\n\nExamples 🌍\n\nAgricultural land\nEnergy resources (oil, gas)\nMinerals and metals\nForests and water\nClean air\nClimate conditions\n\n\nIn Tourism 🏖️\n\nBeaches and coastlines\nMountains and landscapes\n\nClimate (sun, snow)\nNatural parks\nGeographic location\n\nPortugal’s natural assets are key tourism factors!"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#labor",
+    "href": "slides/lecture02-systems_claude.html#labor",
+    "title": "Economics Fundamentals",
+    "section": "Labor 👷",
+    "text": "Labor 👷\nHuman effort - physical and mental work\n\n\nCharacteristics 💪\n\nPhysical work\nMental work\n\nSkills & education (human capital)\nTime and effort spent\nExperience and training\n\n\nIn Tourism 🏨\n\nHotel staff and management\nTour guides\nRestaurant workers\nAirline crew\nEvent organizers\n\nLabor-intensive industry!"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#capital",
+    "href": "slides/lecture02-systems_claude.html#capital",
+    "title": "Economics Fundamentals",
+    "section": "Capital 🏗️",
+    "text": "Capital 🏗️\nProduced resources used to make other goods/services\n\n\nTypes ⚙️\n\nPhysical capital: Machinery, buildings\nInfrastructure: Roads, airports\nTechnology: Software, systems\nFinancial capital: Money for investment\n\nNot the same as money - capital produces!\n\nIn Tourism ✈️\n\nHotel buildings\nAirports and airlines\nBooking systems\nRestaurant equipment\nTransport vehicles\n\nHigh capital requirements!"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#production-factors-in-european-tourism",
+    "href": "slides/lecture02-systems_claude.html#production-factors-in-european-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Production Factors in European Tourism 📊",
+    "text": "Production Factors in European Tourism 📊\n\nSource: OECD (Tourism Employment Indicator)"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#comparing-economic-systems",
+    "href": "slides/lecture02-systems_claude.html#comparing-economic-systems",
+    "title": "Economics Fundamentals",
+    "section": "Comparing Economic Systems 📋",
+    "text": "Comparing Economic Systems 📋\n\n\n\n\n\n\n\n\n\nAspect\nMarket Economy\nCentrally Planned\nMixed Economy\n\n\n\n\nOwnership\nPrivate\nState\nBoth\n\n\nCoordination\nPrices/markets\nCentral plan\nMarkets + regulation\n\n\nIncentives\nProfit\nQuotas/orders\nProfit + public interest\n\n\nInnovation\nHigh\nLow\nMedium-High\n\n\nEfficiency\nGenerally high\nOften low\nVariable\n\n\nEquity\nLow (unequal)\nHigh (equal poverty)\nMedium\n\n\nExamples\n(Pure: rare)\nCuba, N. Korea\nUSA, EU, Portugal"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#real-world-example-covid-19-tourism-response",
+    "href": "slides/lecture02-systems_claude.html#real-world-example-covid-19-tourism-response",
+    "title": "Economics Fundamentals",
+    "section": "Real-World Example: COVID-19 Tourism Response 😷",
+    "text": "Real-World Example: COVID-19 Tourism Response 😷\nDifferent Systems, Different Responses\n\n\nMarket-Led: Portugal 🇵🇹\n✅ Private hotels closed voluntarily\n💰 Government support (furlough schemes)\n📈 Market-driven reopening\n💡 Rapid innovation (safety protocols)\n🚀 Fast recovery: 31.6M visitors (2024)\n\nCentrally-Planned: Cuba 🇨🇺\n🏢 State-owned hotels closed by decree\n🚫 No market signals\n📜 Political decision to reopen\n🐌 Limited innovation\n😞 Slower recovery: ~50% of 2019 levels"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#key-concepts-summary",
+    "href": "slides/lecture02-systems_claude.html#key-concepts-summary",
+    "title": "Economics Fundamentals",
+    "section": "Key Concepts Summary 📑",
+    "text": "Key Concepts Summary 📑\n\n\n\nConcept\nDefinition\n\n\n\n\nThree Economic Problems\nWHAT, HOW, FOR WHOM to produce\n\n\nMarket Economy\nPrivate decisions via prices and markets\n\n\nCentrally Planned\nGovernment makes all major decisions\n\n\nMixed Economy\nCombination (most common today)\n\n\nLand\nNatural resources used in production\n\n\nLabor\nHuman effort (physical & mental)\n\n\nCapital\nProduced resources used to make goods"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#exercises",
+    "href": "slides/lecture02-systems_claude.html#exercises",
+    "title": "Economics Fundamentals",
+    "section": "Exercises 📝",
+    "text": "Exercises 📝\nTime for practice!\nLet’s test your understanding."
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#exercise-1-multiple-choice",
+    "href": "slides/lecture02-systems_claude.html#exercise-1-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\nIn a market economy, the question “FOR WHOM are goods produced?” is primarily answered by:\nA. Government planners deciding who gets what\nB. Equal distribution to all citizens\nC. Willingness and ability to pay\nD. First-come, first-served basis\n\n\nAnswer: C - In market economies, goods go to those willing and able to pay for them. This is how markets allocate resources based on purchasing power."
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#exercise-2-multiple-choice",
+    "href": "slides/lecture02-systems_claude.html#exercise-2-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\nWhich of the following is an example of the CAPITAL factor of production in tourism?\nA. A tour guide’s knowledge and skills\nB. The beach at Algarve\nC. A hotel building in Lisbon\nD. The manager’s decision-making ability\n\n\nAnswer: C - The hotel building is capital (produced resource used to provide services). A is labor, B is land, D is labor/entrepreneurship."
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#exercise-3-open-question",
+    "href": "slides/lecture02-systems_claude.html#exercise-3-open-question",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question",
+    "text": "Exercise 3: Open Question\nScenario: The Portuguese government is considering two policies for tourism development:\n\nPolicy A: Let private investors freely build hotels wherever they want\nPolicy B: Government decides where hotels should be built and provides subsidies\n\nQuestions:\n\nIdentify which economic system each policy represents\nList 2 advantages and 2 disadvantages of each policy\nCalculate: If a private hotel costs €5M to build and generates €800k annual profit, what’s the payback period?\nRecommend which policy Portugal should adopt (justify with economic reasoning)"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#exercise-3-solution-part-a-b",
+    "href": "slides/lecture02-systems_claude.html#exercise-3-solution-part-a-b",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (Part a & b)",
+    "text": "Exercise 3: Solution (Part a & b)\na) Economic systems:\n\nPolicy A: Market economy approach\nPolicy B: Centrally planned economy approach\n\nb) Advantages and Disadvantages:\n\n\n\n\n\n\n\nPolicy A (Market)\nPolicy B (Planned)\n\n\n\n\n✓ Efficient allocation (demand-driven)\n✓ Can correct market failures\n\n\n✓ Innovation & competition\n✓ Ensures regional development\n\n\n✗ May ignore externalities (overtourism)\n✗ Information problems\n\n\n✗ Unequal regional development\n✗ Bureaucratic inefficiency"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#exercise-3-solution-part-c-d",
+    "href": "slides/lecture02-systems_claude.html#exercise-3-solution-part-c-d",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (Part c & d)",
+    "text": "Exercise 3: Solution (Part c & d)\nc) Payback period calculation:\n\\[\\text{Payback Period} = \\frac{\\text{Initial Investment}}{\\text{Annual Profit}} = \\frac{€5,000,000}{€800,000} = 6.25 \\text{ years}\\]\nd) Recommendation: Mixed approach (combination)\n👉 Use market mechanism (Policy A) as primary driver - private sector is more efficient at identifying demand and driving innovation\n👉 Add selective government intervention (Policy B elements) - regional development incentives, environmental regulations, infrastructure investment\n💡 This is what Portugal actually does - mostly private sector with strategic government support!"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#next-lecture",
+    "href": "slides/lecture02-systems_claude.html#next-lecture",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture 📚",
+    "text": "Next Lecture 📚\nLecture 3 (February 12, 2026):\n\nRationality and Economic Behavior\nChoices and Decision-Making\n\nOpportunity Cost (crucial concept!)\nProduction Possibilities Frontier (PPF)\n\n💡 Preparation: Think about a recent choice you made. What did you give up to make that choice?"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#thank-you",
+    "href": "slides/lecture02-systems_claude.html#thank-you",
+    "title": "Economics Fundamentals",
+    "section": "Thank You! 👋",
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#portugal-a-mixed-economy-example-pt",
+    "href": "slides/lecture02-systems_claude.html#portugal-a-mixed-economy-example-pt",
+    "title": "Economics Fundamentals",
+    "section": "Portugal: A Mixed Economy Example :pt:",
+    "text": "Portugal: A Mixed Economy Example :pt:"
+  },
+  {
+    "objectID": "slides/lecture02-systems_claude.html#portugal-a-mixed-economy-example",
+    "href": "slides/lecture02-systems_claude.html#portugal-a-mixed-economy-example",
+    "title": "Economics Fundamentals",
+    "section": "Portugal: A Mixed Economy Example 🇵🇹",
+    "text": "Portugal: A Mixed Economy Example 🇵🇹"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#every-society-must-solve",
+    "href": "slides/lecture02-systems.html#every-society-must-solve",
+    "title": "Economics Fundamentals",
+    "section": "Every Society Must Solve 🤔",
+    "text": "Every Society Must Solve 🤔\n\nThe Three Economic Problems\nEvery economy, regardless of its system, must answer three fundamental questions about resource allocation.\n\n\n1. WHAT goods and services to produce?\n\nWhich products? How much of each?\nCurrent consumption vs. future investment?\n\n2. HOW to produce them?\n\nWhich technologies? Which resources?\nLabor-intensive vs. capital-intensive?\n\n3. FOR WHOM are goods produced?\n\nHow to distribute output?\nWho gets what share of production?"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#how-societies-organize-production",
+    "href": "slides/lecture02-systems.html#how-societies-organize-production",
+    "title": "Economics Fundamentals",
+    "section": "How Societies Organize Production 🏭",
+    "text": "How Societies Organize Production 🏭\n\nEconomic System\nThe way a society organizes the production and distribution of goods and services to answer the three fundamental questions.\n\n\nThree fundamental types:\n1️⃣ Market Economy (Laissez-faire) - Decisions by individuals and firms\n2️⃣ Centrally Planned Economy - Government makes decisions\n3️⃣ Mixed Economy (Most common today) - Combination of market and government"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#market-economy-advantages-disadvantages",
+    "href": "slides/lecture02-systems.html#market-economy-advantages-disadvantages",
+    "title": "Economics Fundamentals",
+    "section": "Market Economy: Advantages & Disadvantages",
+    "text": "Market Economy: Advantages & Disadvantages\n\n\nAdvantages ✔️\n🚀 Efficient allocation - Resources go where most valued\n💡 Innovation incentives - Profit rewards new ideas\n🛒 Consumer sovereignty - Demand drives production\n📈 Flexibility - Quick adaptation to changes\n\nDisadvantages ⚠️\n💔 Inequality - Unequal income distribution\n🏭 Market failures - Externalities, public goods\n💰 Monopoly power - Reduced competition\n🌱 Short-term focus - May ignore long-term issues"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#market-economy-in-tourism",
+    "href": "slides/lecture02-systems.html#market-economy-in-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Market Economy in Tourism ✈️",
+    "text": "Market Economy in Tourism ✈️\n\nSource: Eurostat (tour_occ_arnraw)"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#centrally-planned-advantages-disadvantages",
+    "href": "slides/lecture02-systems.html#centrally-planned-advantages-disadvantages",
+    "title": "Economics Fundamentals",
+    "section": "Centrally Planned: Advantages & Disadvantages",
+    "text": "Centrally Planned: Advantages & Disadvantages\n\n\nAdvantages ✔️\n⚖️ Equality focus - More equal distribution\n🌱 Long-term planning - Can prioritize future\n🛡️ Social stability - Basic needs guaranteed\n🚀 Rapid mobilization - Can focus resources quickly\n\nDisadvantages ❌\n🐌 Inefficiency - Information problems, no market signals\n⛔ No innovation - Weak incentives to improve\n😞 Consumer dissatisfaction - Limited choice, shortages\n📜 Bureaucracy - Slow, rigid decision-making"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#centrally-planned-economy-example",
+    "href": "slides/lecture02-systems.html#centrally-planned-economy-example",
+    "title": "Economics Fundamentals",
+    "section": "Centrally Planned Economy Example 🏨",
+    "text": "Centrally Planned Economy Example 🏨"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#mixed-economy-the-balance-scales",
+    "href": "slides/lecture02-systems.html#mixed-economy-the-balance-scales",
+    "title": "Economics Fundamentals",
+    "section": "Mixed Economy: The Balance :scales:",
+    "text": "Mixed Economy: The Balance :scales:\nGovernment’s Role in Mixed Economies\n\n\nMarket Activities 📈\nMost goods and services produced privately based on profit motive and consumer demand\nTourism example: Hotels, restaurants, tour operators\n\nGovernment Activities 🏢\nPublic goods, regulation, redistribution, addressing market failures\nTourism example: National parks, tourism promotion, safety regulations\n\n\n👉 The mix varies: USA (more market), Nordic countries (more government), Portugal (balanced)"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#portugal-a-mixed-economy-example",
+    "href": "slides/lecture02-systems.html#portugal-a-mixed-economy-example",
+    "title": "Economics Fundamentals",
+    "section": "Portugal: A Mixed Economy Example 🇵🇹",
+    "text": "Portugal: A Mixed Economy Example 🇵🇹"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#the-inputs-of-production",
+    "href": "slides/lecture02-systems.html#the-inputs-of-production",
+    "title": "Economics Fundamentals",
+    "section": "The Inputs of Production 🏭",
+    "text": "The Inputs of Production 🏭\n\nFactors of Production\nThe resources (inputs) used to produce goods and services. All economic systems must decide how to allocate these scarce factors.\n\n\nThree main factors:\n🌿 Land - Natural resources\n👥 Labor - Human effort\n🏢 Capital - Produced resources\n💡 (Some add: Entrepreneurship - organizing & risk-taking)"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#land",
+    "href": "slides/lecture02-systems.html#land",
+    "title": "Economics Fundamentals",
+    "section": "Land 🏞️",
+    "text": "Land 🏞️\nNatural resources and raw materials\n\n\nExamples 🌍\n\nAgricultural land\nEnergy resources (oil, gas)\nMinerals and metals\nForests and water\nClean air\nClimate conditions\n\n\nIn Tourism 🏖️\n\nBeaches and coastlines\nMountains and landscapes\n\nClimate (sun, snow)\nNatural parks\nGeographic location\n\nPortugal’s natural assets are key tourism factors!"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#labor",
+    "href": "slides/lecture02-systems.html#labor",
+    "title": "Economics Fundamentals",
+    "section": "Labor 👷",
+    "text": "Labor 👷\nHuman effort - physical and mental work\n\n\nCharacteristics 💪\n\nPhysical work\nMental work\n\nSkills & education (human capital)\nTime and effort spent\nExperience and training\n\n\nIn Tourism 🏨\n\nHotel staff and management\nTour guides\nRestaurant workers\nAirline crew\nEvent organizers\n\nLabor-intensive industry!"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#capital",
+    "href": "slides/lecture02-systems.html#capital",
+    "title": "Economics Fundamentals",
+    "section": "Capital 🏗️",
+    "text": "Capital 🏗️\nProduced resources used to make other goods/services\n\n\nTypes ⚙️\n\nPhysical capital: Machinery, buildings\nInfrastructure: Roads, airports\nTechnology: Software, systems\nFinancial capital: Money for investment\n\nNot the same as money - capital produces!\n\nIn Tourism ✈️\n\nHotel buildings\nAirports and airlines\nBooking systems\nRestaurant equipment\nTransport vehicles\n\nHigh capital requirements!"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#production-factors-in-european-tourism",
+    "href": "slides/lecture02-systems.html#production-factors-in-european-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Production Factors in European Tourism 📊",
+    "text": "Production Factors in European Tourism 📊\n\nSource: OECD (Tourism Employment Indicator)"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#real-world-example-covid-19-tourism-response",
+    "href": "slides/lecture02-systems.html#real-world-example-covid-19-tourism-response",
+    "title": "Economics Fundamentals",
+    "section": "Real-World Example: COVID-19 Tourism Response 😷",
+    "text": "Real-World Example: COVID-19 Tourism Response 😷\nDifferent Systems, Different Responses\n\n\nMarket-Led: Portugal 🇵🇹\n✅ Private hotels closed voluntarily\n💰 Government support (furlough schemes)\n📈 Market-driven reopening\n💡 Rapid innovation (safety protocols)\n🚀 Fast recovery: 31.6M visitors (2024)\n\nCentrally-Planned: Cuba 🇨🇺\n🏢 State-owned hotels closed by decree\n🚫 No market signals\n📜 Political decision to reopen\n🐌 Limited innovation\n😞 Slower recovery: ~50% of 2019 levels"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#key-concepts-summary",
+    "href": "slides/lecture02-systems.html#key-concepts-summary",
+    "title": "Economics Fundamentals",
+    "section": "Key Concepts Summary 📑",
+    "text": "Key Concepts Summary 📑\n\n\n\nConcept\nDefinition\n\n\n\n\nThree Economic Problems\nWHAT, HOW, FOR WHOM to produce\n\n\nMarket Economy\nPrivate decisions via prices and markets\n\n\nCentrally Planned\nGovernment makes all major decisions\n\n\nMixed Economy\nCombination (most common today)\n\n\nLand\nNatural resources used in production\n\n\nLabor\nHuman effort (physical & mental)\n\n\nCapital\nProduced resources used to make goods"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#exercise-3-solution-part-a-b",
+    "href": "slides/lecture02-systems.html#exercise-3-solution-part-a-b",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (Part a & b)",
+    "text": "Exercise 3: Solution (Part a & b)\na) Economic systems:\n\nPolicy A: Market economy approach\nPolicy B: Centrally planned economy approach\n\nb) Advantages and Disadvantages:\n\n\n\n\n\n\n\nPolicy A (Market)\nPolicy B (Planned)\n\n\n\n\n✓ Efficient allocation (demand-driven)\n✓ Can correct market failures\n\n\n✓ Innovation & competition\n✓ Ensures regional development\n\n\n✗ May ignore externalities (overtourism)\n✗ Information problems\n\n\n✗ Unequal regional development\n✗ Bureaucratic inefficiency"
+  },
+  {
+    "objectID": "slides/lecture02-systems.html#exercise-3-solution-part-c-d",
+    "href": "slides/lecture02-systems.html#exercise-3-solution-part-c-d",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution (Part c & d)",
+    "text": "Exercise 3: Solution (Part c & d)\nc) Payback period calculation:\n\\[\\text{Payback Period} = \\frac{\\text{Initial Investment}}{\\text{Annual Profit}} = \\frac{€5,000,000}{€800,000} = 6.25 \\text{ years}\\]\nd) Recommendation: Mixed approach (combination)\n👉 Use market mechanism (Policy A) as primary driver - private sector is more efficient at identifying demand and driving innovation\n👉 Add selective government intervention (Policy B elements) - regional development incentives, environmental regulations, infrastructure investment\n💡 This is what Portugal actually does - mostly private sector with strategic government support!"
   }
 ]

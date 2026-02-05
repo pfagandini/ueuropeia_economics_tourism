@@ -42,13 +42,13 @@ ue_white <- "#FFFFFF"
 ::: {.column width="55%"}
 **Why study Economics?** :thinking:
 
-:chart_with_upwards_trend: Understand government policies
+:classical_building: Understand government policies
 
 :globe_with_meridians: Navigate global markets
 
 :briefcase: Achieve business success
 
-:scales: Master supply & demand
+:chart_with_upwards_trend: :chart_with_downwards_trend: Master supply & demand
 
 :balance_scale: Understand inequality
 :::
@@ -106,27 +106,7 @@ Unemployment, inflation, growth
 :::
 ::::
 
-## The Two (main) Branches of Economics
-
-:::: {.columns}
-:::{.column}
-- GDP & Growth
-- Unemployment
-- Monetary Policy
-- Fiscal Policy
-- Inflation
-- Trade Balance
-:::
-
-:::{.column}
-- Firm Decisions
-- Consumer Choices
-- Market Prices
-- Individual Markets
-- Competition
-- Strategic Behavior
-:::
-::::
+# The Two (main) Branches of Economics
 
 ## Macroeconomics :telescope:
 
@@ -550,4 +530,4 @@ $$\text{Revenue} = 60 \times 120 = €7,200$$
 
 ---
 
-*Next class: Thursday, February 6, 2026*
+*Next class: Friday, February 6, 2026*
