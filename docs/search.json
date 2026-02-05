@@ -1144,8 +1144,8 @@
     "objectID": "slides/lecture04-ppf.html#recap-lecture-3",
     "href": "slides/lecture04-ppf.html#recap-lecture-3",
     "title": "Economics Fundamentals",
-    "section": "Recap: Lecture 3",
-    "text": "Recap: Lecture 3\n\nKey Concepts from Last Class:\n\nRationality: Cost-benefit decision making\nMarginal Analysis: Decisions at the margin (MB vs MC)\nOpportunity Cost: Value of best alternative foregone\nSunk Costs: Ignore them in decisions!\n\nToday: We build on opportunity cost to understand:\n\nProduction factors (inputs)\nProduction Possibilities Frontier (PPF)\nSociety-level trade-offs and efficiency"
+    "section": "Recap: Lecture 3 ⏪",
+    "text": "Recap: Lecture 3 ⏪\nKey Concepts from Last Class:\n🧠 Rationality: Cost-benefit decision making\n📈 Marginal Analysis: Decisions at the margin (MB vs MC)\n💰 Opportunity Cost: Value of best alternative foregone\n🚫 Sunk Costs: Ignore them in decisions!\n\n🎯 Today: We build on opportunity cost to understand:\n\nProduction factors (inputs)\nProduction Possibilities Frontier (PPF)\nSociety-level trade-offs and efficiency"
   },
   {
     "objectID": "slides/lecture04-ppf.html#production-factors-inputs",
@@ -1158,8 +1158,8 @@
     "objectID": "slides/lecture04-ppf.html#factor-payments",
     "href": "slides/lecture04-ppf.html#factor-payments",
     "title": "Economics Fundamentals",
-    "section": "Factor Payments",
-    "text": "Factor Payments\n\nEach factor receives compensation:\n\n\n\n\n\n\n\n\nFactor\nPayment Name\nExample in Tourism\n\n\n\n\nLand\nRent\nPayment for beach concession, property lease\n\n\nLabor\nWages/Salaries\nHotel staff wages, tour guide fees\n\n\nCapital\nInterest\nReturn on hotel investment, equipment loans\n\n\nEntrepreneurship\nProfit\nHotel owner’s profit, airline earnings\n\n\n\nIncome Distribution: Sum of all factor payments determines who gets what (FOR WHOM question)"
+    "section": "Factor Payments 💸",
+    "text": "Factor Payments 💸\nEach factor receives compensation:\n\n\n\n\n\n\n\n\nFactor\nPayment Name\nExample in Tourism\n\n\n\n\nLand\nRent\nPayment for beach concession, property lease\n\n\nLabor\nWages/Salaries\nHotel staff wages, tour guide fees\n\n\nCapital\nInterest\nReturn on hotel investment, equipment loans\n\n\nEntrepreneurship\nProfit\nHotel owner’s profit, airline earnings"
   },
   {
     "objectID": "slides/lecture04-ppf.html#tourism-production-factor-intensive-example",
@@ -1186,8 +1186,8 @@
     "objectID": "slides/lecture04-ppf.html#interpreting-the-ppf",
     "href": "slides/lecture04-ppf.html#interpreting-the-ppf",
     "title": "Economics Fundamentals",
-    "section": "Interpreting the PPF",
-    "text": "Interpreting the PPF\nPoint A (0, 100): All resources → cultural tourism, no beach tourism\nPoint E (100, 0): All resources → beach tourism, no cultural tourism\nPoint C (60, 57): Mixed economy, balanced allocation\nPoint U (40, 30): Inefficient – inside PPF\n\nResources unemployed or misallocated\nCould produce more of both goods!\n\nBeyond PPF: Impossible with current resources & technology"
+    "section": "Interpreting the PPF 🔍",
+    "text": "Interpreting the PPF 🔍\nPoint A (0, 100): All resources → cultural tourism, no beach tourism\nPoint E (100, 0): All resources → beach tourism, no cultural tourism\nPoint C (60, 40): Mixed economy, balanced allocation\nPoint U (40, 30): Inefficient — inside PPF\n\nResources unemployed or misallocated\nCould produce more of both goods!\n\nPoint X (80, 80): Unattainable — outside PPF\n\nNot enough resources with current technology\nWould need economic growth"
   },
   {
     "objectID": "slides/lecture04-ppf.html#opportunity-cost-on-the-ppf",
@@ -1263,22 +1263,22 @@
     "objectID": "slides/lecture04-ppf.html#technological-change-example",
     "href": "slides/lecture04-ppf.html#technological-change-example",
     "title": "Economics Fundamentals",
-    "section": "Technological Change: Example",
-    "text": "Technological Change: Example\nDigital Transformation in Tourism (2015-2025)"
+    "section": "Technological Change Example 💻",
+    "text": "Technological Change Example 💻"
   },
   {
     "objectID": "slides/lecture04-ppf.html#ppf-summary-key-insights",
     "href": "slides/lecture04-ppf.html#ppf-summary-key-insights",
     "title": "Economics Fundamentals",
-    "section": "PPF Summary: Key Insights",
-    "text": "PPF Summary: Key Insights\n\n\nShows maximum production given resources & technology\nPoints on PPF = efficient (can’t produce more without trade-off)\nPoints inside PPF = inefficient (unemployment, waste)\nPoints outside PPF = impossible (currently unattainable)\nMoving along PPF = reallocating resources (opportunity cost)\nShifting PPF outward = economic growth (more resources, better technology)\nInvestment trade-off = consumption today vs. growth tomorrow"
+    "section": "PPF Summary: Key Insights 📑",
+    "text": "PPF Summary: Key Insights 📑\n1️⃣ Shows maximum production given resources & technology\n2️⃣ Points on PPF = efficient (can’t produce more without trade-off)\n3️⃣ Points inside PPF = inefficient (unemployment, waste)\n4️⃣ Points outside PPF = impossible (currently unattainable)\n5️⃣ Moving along PPF = reallocating resources (opportunity cost)\n6️⃣ Shifting PPF outward = economic growth (more resources, better technology)\n7️⃣ Investment trade-off = consumption today vs. growth tomorrow"
   },
   {
     "objectID": "slides/lecture04-ppf.html#real-world-applications",
     "href": "slides/lecture04-ppf.html#real-world-applications",
     "title": "Economics Fundamentals",
-    "section": "Real-World Applications",
-    "text": "Real-World Applications\nPPF thinking helps answer:\n\nShould Portugal build more hotels or preserve more heritage sites?\nHow much should airlines invest in fuel efficiency vs. passenger comfort?\nTrade-off between mass tourism revenue and sustainable tourism?\nHow much GDP to allocate to tourism vs. other sectors?\n\nAll involve opportunity costs and efficiency considerations!"
+    "section": "Real-World Applications 🌍",
+    "text": "Real-World Applications 🌍\nPPF thinking helps answer:\n❓ Should Portugal build more hotels or preserve more heritage sites?\n❓ How much should airlines invest in fuel efficiency vs. passenger comfort?\n❓ Trade-off between mass tourism revenue and sustainable tourism?\n❓ How much GDP to allocate to tourism vs. other sectors?\n\n💡 All involve opportunity costs and efficiency considerations!"
   },
   {
     "objectID": "slides/lecture04-ppf.html#summary-complete-picture",
@@ -1291,22 +1291,22 @@
     "objectID": "slides/lecture04-ppf.html#exercises",
     "href": "slides/lecture04-ppf.html#exercises",
     "title": "Economics Fundamentals",
-    "section": "Exercises",
-    "text": "Exercises\nApplication Time!\nPPF and opportunity cost calculations."
+    "section": "Exercises 📝",
+    "text": "Exercises 📝\nApplication Time!\nPPF and opportunity cost calculations."
   },
   {
     "objectID": "slides/lecture04-ppf.html#exercise-1-multiple-choice",
     "href": "slides/lecture04-ppf.html#exercise-1-multiple-choice",
     "title": "Economics Fundamentals",
     "section": "Exercise 1: Multiple Choice",
-    "text": "Exercise 1: Multiple Choice\nQuestion: An economy is producing at a point inside its PPF. This indicates:\nA. The economy is efficiently using all resources\nB. The economy has economic growth\nC. There is unemployment or resource misallocation\nD. It’s impossible to produce more of any good\n\nAnswer: C\nExplanation: Inside PPF means inefficiency – resources are unemployed or misallocated. Could produce more of at least one good without sacrificing the other (move toward frontier)."
+    "text": "Exercise 1: Multiple Choice\nAn economy is producing at a point INSIDE its PPF. This indicates:\nA. The economy is efficiently using all resources\nB. The economy has economic growth\nC. There is unemployment or resource misallocation\nD. It’s impossible to produce more of any good\n\n\nAnswer: C - Inside PPF means inefficiency — resources are unemployed or misallocated. Could produce more of at least one good without sacrificing the other (move toward frontier)."
   },
   {
     "objectID": "slides/lecture04-ppf.html#exercise-2-multiple-choice",
     "href": "slides/lecture04-ppf.html#exercise-2-multiple-choice",
     "title": "Economics Fundamentals",
     "section": "Exercise 2: Multiple Choice",
-    "text": "Exercise 2: Multiple Choice\nQuestion: A country’s PPF shifts outward. This could be caused by:\nA. Higher unemployment\nB. Decrease in the labor force\nC. Technological innovation\nD. Producing less capital goods\n\nAnswer: C\nExplanation: Outward PPF shift = economic growth. Caused by: more resources, better technology, improved productivity. Options A, B, D would shift PPF inward or cause movement inside PPF."
+    "text": "Exercise 2: Multiple Choice\nA country’s PPF shifts outward. This could be caused by:\nA. Higher unemployment\nB. Decrease in the labor force\nC. Technological innovation\nD. Producing less capital goods\n\n\nAnswer: C - Outward PPF shift = economic growth. Caused by: more resources, better technology, improved productivity. Options A, B, D would shift PPF inward or cause movement inside PPF."
   },
   {
     "objectID": "slides/lecture04-ppf.html#exercise-3-open-question---part-1",
@@ -1327,7 +1327,7 @@
     "href": "slides/lecture04-ppf.html#exercise-3-solution---part-a-b",
     "title": "Economics Fundamentals",
     "section": "Exercise 3: Solution - Part a & b",
-    "text": "Exercise 3: Solution - Part a & b\n\na) PPF Graph:\nPlots points A through F with Golf (x-axis: 0-25) and Beach (y-axis: 0-50). Curve is bowed outward (concave).\nb) Opportunity Cost Calculations:\nB → C (5 golf → 10 golf): \\[\\text{Gain in Golf} = 10 - 5 = 5 \\text{ resorts}\\] \\[\\text{Loss in Beach} = 48 - 44 = 4 \\text{ hotels}\\] \\[\\text{Opportunity Cost} = \\frac{4 \\text{ hotels}}{5 \\text{ resorts}} = 0.8 \\text{ beach hotels per golf resort}\\]"
+    "text": "Exercise 3: Solution - Part a & b\na) PPF Graph:\nPlots points A through F with Golf (x-axis: 0-25) and Beach (y-axis: 0-50). Curve is bowed outward (concave).\nb) Opportunity Cost Calculations:\nB → C (5 golf → 10 golf): \\[\\text{Gain in Golf} = 10 - 5 = 5 \\text{ resorts}\\] \\[\\text{Loss in Beach} = 48 - 44 = 4 \\text{ hotels}\\] \\[\\text{Opportunity Cost} = \\frac{4 \\text{ hotels}}{5 \\text{ resorts}} = 0.8 \\text{ beach hotels per golf resort}\\]"
   },
   {
     "objectID": "slides/lecture04-ppf.html#exercise-3-solution---part-c-d-e",
@@ -1341,21 +1341,21 @@
     "href": "slides/lecture04-ppf.html#exercise-3-solution---part-e",
     "title": "Economics Fundamentals",
     "section": "Exercise 3: Solution - Part e",
-    "text": "Exercise 3: Solution - Part e\n\ne) New Technology Effect:\nTechnology shifts PPF OUTWARD (economic growth).\nNew PPF might be:\n\n\n\nCombination\nGolf Resorts\nBeach Hotels\n\n\n\n\nA’\n0\n60 (+10)\n\n\nC’\n12\n55 (+11)\n\n\nE’\n24\n38 (+8)\n\n\nF’\n30\n0 (+5)\n\n\n\nEffect: Can now produce MORE of both types of tourism with same resources!\nGraph: Draw original PPF, then new PPF further from origin (parallel or biased depending on where technology applies)."
+    "text": "Exercise 3: Solution - Part e\ne) New Technology Effect:\nTechnology shifts PPF OUTWARD (economic growth).\nNew PPF might be:\n\n\n\nCombination\nGolf Resorts\nBeach Hotels\n\n\n\n\nA’\n0\n60 (+10)\n\n\nC’\n12\n55 (+11)\n\n\nE’\n24\n38 (+8)\n\n\nF’\n30\n0 (+5)\n\n\n\nEffect: Can now produce MORE of both types of tourism with same resources!\nGraph: Draw original PPF, then new PPF further from origin (parallel or biased depending on where technology applies)."
   },
   {
     "objectID": "slides/lecture04-ppf.html#next-lecture",
     "href": "slides/lecture04-ppf.html#next-lecture",
     "title": "Economics Fundamentals",
-    "section": "Next Lecture",
-    "text": "Next Lecture\nFebruary 19, 2026: Budget Set and Budget Constraint"
+    "section": "Next Lecture 📚",
+    "text": "Next Lecture 📚\nFebruary 19, 2026: Budget Set and Budget Constraint\n💡 Preparation: Think about how you allocate your own limited budget across different goods!"
   },
   {
     "objectID": "slides/lecture04-ppf.html#thank-you",
     "href": "slides/lecture04-ppf.html#thank-you",
     "title": "Economics Fundamentals",
-    "section": "Thank You!",
-    "text": "Thank You!\nQuestions?\nContact: paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Wednesday, February 19, 2026\n\nThis completes the Fundamentals block. Students should understand: scarcity → trade-offs → opportunity cost → PPF → efficiency. These concepts are foundational for all future topics."
+    "section": "Thank You! 👋",
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
   },
   {
     "objectID": "slides/lecture01-intro.html#from-eurostat",
@@ -1382,15 +1382,15 @@
     "objectID": "slides/lecture04-ppf.html#tourism-production-example",
     "href": "slides/lecture04-ppf.html#tourism-production-example",
     "title": "Economics Fundamentals",
-    "section": "Tourism Production: Example",
-    "text": "Tourism Production: Example\n\nDifferent tourism products use factors in different proportions:\n\n\n\n\n\n\n\n\n\nInsight: Cruise tourism is capital-intensive, cultural tours are labor-intensive, beach resorts balanced"
+    "section": "Tourism Production: Example 📊",
+    "text": "Tourism Production: Example 📊\n\nHypothetical illustration of factor intensity💡 Insight: Cruise tourism is capital-intensive, cultural tours are labor-intensive, beach resorts balanced"
   },
   {
     "objectID": "slides/lecture04-ppf.html#simple-ppf-example-tourism",
     "href": "slides/lecture04-ppf.html#simple-ppf-example-tourism",
     "title": "Economics Fundamentals",
-    "section": "Simple PPF Example: Tourism",
-    "text": "Simple PPF Example: Tourism\n\nImagine an economy producing only:\n\nBeach Tourism (hotels, resorts)\nCultural Tourism (museums, tours, heritage sites)"
+    "section": "Simple PPF Example: Tourism 🏖️",
+    "text": "Simple PPF Example: Tourism 🏖️\nImagine an economy producing only:\n\nBeach Tourism (hotels, resorts)\nCultural Tourism (museums, tours, heritage sites)"
   },
   {
     "objectID": "slides/lecture04-ppf.html#real-example-covid-and-tourism-efficiency",
@@ -2756,5 +2756,320 @@
     "title": "Economics Fundamentals",
     "section": "Exercise 3: Solution (Part c & d)",
     "text": "Exercise 3: Solution (Part c & d)\nc) Which strategy to choose?\nFrom pure profit perspective: Indifferent (both €140,000)\nBut consider other factors: Risk, reputation, market trends, resource requirements\n👉 Recommendation: Strategy B (budget) because:\n\nLower variable costs (€200k vs €280k) = less risk\nHigher revenue-to-variable-cost ratio: 2.1 vs. 1.79\nMore resilient to demand fluctuations\n\nd) Are fixed costs relevant?\n❌ NO! Fixed costs (€80,000) are SUNK — already committed regardless of strategy choice.\n✅ Only variable costs matter for this decision (they differ between strategies).\nThis is a key example of ignoring sunk costs in decision-making!"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#recap-lecture-3",
+    "href": "slides/lecture04-ppf_claude.html#recap-lecture-3",
+    "title": "Economics Fundamentals",
+    "section": "Recap: Lecture 3 ⏪",
+    "text": "Recap: Lecture 3 ⏪\nKey Concepts from Last Class:\n🧠 Rationality: Cost-benefit decision making\n📈 Marginal Analysis: Decisions at the margin (MB vs MC)\n💰 Opportunity Cost: Value of best alternative foregone\n🚫 Sunk Costs: Ignore them in decisions!\n\n🎯 Today: We build on opportunity cost to understand:\n\nProduction factors (inputs)\nProduction Possibilities Frontier (PPF)\nSociety-level trade-offs and efficiency"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#the-three-main-inputs",
+    "href": "slides/lecture04-ppf_claude.html#the-three-main-inputs",
+    "title": "Economics Fundamentals",
+    "section": "The Three Main Inputs 🏭",
+    "text": "The Three Main Inputs 🏭\n\nProduction Factors\nTo produce goods and services, economies use three main factors: Land (natural resources), Labor (human effort), and Capital (produced goods used in production).\n\n\n\nLand 🌿\n\nAgricultural land\nMinerals & energy\nWater resources\nNatural beauty\nClimate\n\nTourism: Beaches, mountains, heritage sites\n\nLabor 👥\n\nPhysical work\nMental work\nSkills & training\nTime & effort\nEntrepreneurship\n\nTourism: Staff, guides, managers, chefs\n\nCapital 🏢\n\nBuildings\nMachinery\nInfrastructure\nTechnology\nEquipment\n\nTourism: Hotels, planes, booking systems"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#factor-payments",
+    "href": "slides/lecture04-ppf_claude.html#factor-payments",
+    "title": "Economics Fundamentals",
+    "section": "Factor Payments 💸",
+    "text": "Factor Payments 💸\nEach factor receives compensation:\n\n\n\n\n\n\n\n\nFactor\nPayment Name\nExample in Tourism\n\n\n\n\nLand\nRent\nPayment for beach concession, property lease\n\n\nLabor\nWages/Salaries\nHotel staff wages, tour guide fees\n\n\nCapital\nInterest\nReturn on hotel investment, equipment loans\n\n\nEntrepreneurship\nProfit\nHotel owner’s profit, airline earnings"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#tourism-production-example",
+    "href": "slides/lecture04-ppf_claude.html#tourism-production-example",
+    "title": "Economics Fundamentals",
+    "section": "Tourism Production: Example 📊",
+    "text": "Tourism Production: Example 📊\n\nHypothetical illustration of factor intensity💡 Insight: Cruise tourism is capital-intensive, cultural tours are labor-intensive, beach resorts balanced"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#what-is-the-ppf",
+    "href": "slides/lecture04-ppf_claude.html#what-is-the-ppf",
+    "title": "Economics Fundamentals",
+    "section": "What is the PPF? 🗺️",
+    "text": "What is the PPF? 🗺️\n\nProduction Possibilities Frontier (PPF)\nThe PPF shows the maximum combinations of two goods an economy can produce given fixed resources, current technology, and full employment.\n\n\nKey Insight 💡\nWith scarcity, producing more of one good requires producing less of another\n→ This is opportunity cost visualized!"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#simple-ppf-example-tourism",
+    "href": "slides/lecture04-ppf_claude.html#simple-ppf-example-tourism",
+    "title": "Economics Fundamentals",
+    "section": "Simple PPF Example: Tourism 🏖️",
+    "text": "Simple PPF Example: Tourism 🏖️\nImagine an economy producing only:\n\nBeach Tourism (hotels, resorts)\nCultural Tourism (museums, tours, heritage sites)"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#interpreting-the-ppf",
+    "href": "slides/lecture04-ppf_claude.html#interpreting-the-ppf",
+    "title": "Economics Fundamentals",
+    "section": "Interpreting the PPF 🔍",
+    "text": "Interpreting the PPF 🔍\nPoint A (0, 100): All resources → cultural tourism, no beach tourism\nPoint E (100, 0): All resources → beach tourism, no cultural tourism\nPoint C (60, 40): Mixed economy, balanced allocation\nPoint U (40, 30): Inefficient — inside PPF\n\nResources unemployed or misallocated\nCould produce more of both goods!\n\nPoint X (80, 80): Unattainable — outside PPF\n\nNot enough resources with current technology\nWould need economic growth"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#moving-along-the-ppf",
+    "href": "slides/lecture04-ppf_claude.html#moving-along-the-ppf",
+    "title": "Economics Fundamentals",
+    "section": "Moving Along the PPF ➡️",
+    "text": "Moving Along the PPF ➡️\nFrom B (30, 70) to C (60, 40):\n✅ Gain: 30 units of beach tourism\n❌ Loss: 30 units of cultural tourism\n💰 Opportunity Cost: 30 cultural units\n\nKey Point 🔑\n\nMoving along PPF = reallocation of resources\nAll points on PPF are efficient (no waste)\nBut different distributions (different answers to WHAT question)\nTrade-offs are unavoidable!"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#bowed-out-ppf-increasing-opportunity-cost",
+    "href": "slides/lecture04-ppf_claude.html#bowed-out-ppf-increasing-opportunity-cost",
+    "title": "Economics Fundamentals",
+    "section": "Bowed-Out PPF: Increasing Opportunity Cost 🔄",
+    "text": "Bowed-Out PPF: Increasing Opportunity Cost 🔄\n\n💡 Why bowed out? Resources aren’t perfectly adaptable — some resources are better suited for beach tourism, others for cultural tourism"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#calculating-opportunity-cost-on-ppf-calculator",
+    "href": "slides/lecture04-ppf_claude.html#calculating-opportunity-cost-on-ppf-calculator",
+    "title": "Economics Fundamentals",
+    "section": "Calculating Opportunity Cost on PPF :calculator:",
+    "text": "Calculating Opportunity Cost on PPF :calculator:\nExample: Moving from C to D\n\n\nPoint C: (40 beach, 92 cultural)\nPoint D: (60 beach, 80 cultural)\nChange:\n\nGain: 20 beach units\nLoss: 12 cultural units\n\n\nOpportunity Cost:\n\\[OC = \\frac{\\text{Units Lost}}{\\text{Units Gained}} = \\frac{12}{20} = 0.6\\]\n👉 Each additional beach unit costs 0.6 cultural units\n\n\nCompare: D to E\n\nGain: 20 beach (60→80)\nLoss: 20 cultural (80→60)\nOC = 20/20 = 1.0 (higher!)\n\n💡 Opportunity cost increases as we specialize more"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#shifting-the-ppf-outward",
+    "href": "slides/lecture04-ppf_claude.html#shifting-the-ppf-outward",
+    "title": "Economics Fundamentals",
+    "section": "Shifting the PPF Outward 🚀",
+    "text": "Shifting the PPF Outward 🚀\n\nEconomic Growth\nAn outward shift of the PPF represents economic growth — the ability to produce more of both goods. Caused by: more resources, better technology, or improved productivity.\n\n\nThree ways to shift PPF outward:\n⬆️ More resources (population growth, discover new land)\n💡 Better technology (innovation, improved processes)\n📚 Human capital (education, training, skills)"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#ppf-shift-example",
+    "href": "slides/lecture04-ppf_claude.html#ppf-shift-example",
+    "title": "Economics Fundamentals",
+    "section": "PPF Shift Example 📈",
+    "text": "PPF Shift Example 📈"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#investment-trade-off-present-vs-future",
+    "href": "slides/lecture04-ppf_claude.html#investment-trade-off-present-vs-future",
+    "title": "Economics Fundamentals",
+    "section": "Investment Trade-off: Present vs Future ⚖️",
+    "text": "Investment Trade-off: Present vs Future ⚖️\nKey Economic Decision: Consumption today vs. Growth tomorrow\n\n\nMore Consumption Goods Today\n✅ Higher current standard of living\n✅ Immediate satisfaction\n❌ Less investment in capital\n❌ Slower future growth\n\nMore Capital Goods Today\n✅ Faster PPF outward shift\n✅ Higher future production\n❌ Lower current consumption\n❌ Sacrifice today for tomorrow\n\n\n💡 Tourism Example: Build hotels now (consume less) → More capacity future → Higher tourism revenue later"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#investment-trade-off-visualization",
+    "href": "slides/lecture04-ppf_claude.html#investment-trade-off-visualization",
+    "title": "Economics Fundamentals",
+    "section": "Investment Trade-off Visualization 💰",
+    "text": "Investment Trade-off Visualization 💰"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#tourism-investment-example",
+    "href": "slides/lecture04-ppf_claude.html#tourism-investment-example",
+    "title": "Economics Fundamentals",
+    "section": "Tourism Investment Example 🏨",
+    "text": "Tourism Investment Example 🏨\n\n👉 Strategic choice: Prioritize long-term growth (infrastructure, digital) despite lower immediate returns"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#technological-change-example",
+    "href": "slides/lecture04-ppf_claude.html#technological-change-example",
+    "title": "Economics Fundamentals",
+    "section": "Technological Change Example 💻",
+    "text": "Technological Change Example 💻"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#ppf-summary-key-insights",
+    "href": "slides/lecture04-ppf_claude.html#ppf-summary-key-insights",
+    "title": "Economics Fundamentals",
+    "section": "PPF Summary: Key Insights 📑",
+    "text": "PPF Summary: Key Insights 📑\n1️⃣ Shows maximum production given resources & technology\n2️⃣ Points on PPF = efficient (can’t produce more without trade-off)\n3️⃣ Points inside PPF = inefficient (unemployment, waste)\n4️⃣ Points outside PPF = impossible (currently unattainable)\n5️⃣ Moving along PPF = reallocating resources (opportunity cost)\n6️⃣ Shifting PPF outward = economic growth (more resources, better technology)\n7️⃣ Investment trade-off = consumption today vs. growth tomorrow"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#real-world-applications",
+    "href": "slides/lecture04-ppf_claude.html#real-world-applications",
+    "title": "Economics Fundamentals",
+    "section": "Real-World Applications 🌍",
+    "text": "Real-World Applications 🌍\nPPF thinking helps answer:\n❓ Should Portugal build more hotels or preserve more heritage sites?\n❓ How much should airlines invest in fuel efficiency vs. passenger comfort?\n❓ Trade-off between mass tourism revenue and sustainable tourism?\n❓ How much GDP to allocate to tourism vs. other sectors?\n\n💡 All involve opportunity costs and efficiency considerations!"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#complete-picture-integration",
+    "href": "slides/lecture04-ppf_claude.html#complete-picture-integration",
+    "title": "Economics Fundamentals",
+    "section": "Complete Picture: Integration 🧩",
+    "text": "Complete Picture: Integration 🧩\nToday’s Lecture Integration:\n1️⃣ Production Factors (Land, Labor, Capital) are scarce inputs\n2️⃣ Scarcity forces choices between alternatives\n3️⃣ PPF visualizes society’s production possibilities\n4️⃣ Opportunity Cost = moving along PPF (what’s foregone)\n5️⃣ Efficiency = operating on (not inside) PPF\n6️⃣ Economic Growth = PPF shifts outward\n7️⃣ Investment today enables faster growth tomorrow\n\n🔗 This connects to: Lecture 3 (opportunity cost), Lecture 2 (WHAT/HOW/FOR WHOM), Lecture 1 (scarcity & efficiency)"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#exercises",
+    "href": "slides/lecture04-ppf_claude.html#exercises",
+    "title": "Economics Fundamentals",
+    "section": "Exercises 📝",
+    "text": "Exercises 📝\nApplication Time!\nPPF and opportunity cost calculations."
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#exercise-1-multiple-choice",
+    "href": "slides/lecture04-ppf_claude.html#exercise-1-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\nAn economy is producing at a point INSIDE its PPF. This indicates:\nA. The economy is efficiently using all resources\nB. The economy has economic growth\nC. There is unemployment or resource misallocation\nD. It’s impossible to produce more of any good\n\n\nAnswer: C - Inside PPF means inefficiency — resources are unemployed or misallocated. Could produce more of at least one good without sacrificing the other (move toward frontier)."
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#exercise-2-multiple-choice",
+    "href": "slides/lecture04-ppf_claude.html#exercise-2-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\nA country’s PPF shifts outward. This could be caused by:\nA. Higher unemployment\nB. Decrease in the labor force\nC. Technological innovation\nD. Producing less capital goods\n\n\nAnswer: C - Outward PPF shift = economic growth. Caused by: more resources, better technology, improved productivity. Options A, B, D would shift PPF inward or cause movement inside PPF."
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#exercise-3-open-question---setup",
+    "href": "slides/lecture04-ppf_claude.html#exercise-3-open-question---setup",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question - Setup",
+    "text": "Exercise 3: Open Question - Setup\nScenario: The Portuguese Algarve region has limited land and labor. It can allocate resources between golf tourism and beach tourism. Current production possibilities:\n\n\n\nCombination\nGolf Resorts\nBeach Hotels\n\n\n\n\nA\n0\n50\n\n\nB\n5\n48\n\n\nC\n10\n44\n\n\nD\n15\n38\n\n\nE\n20\n30\n\n\nF\n25\n0"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#exercise-3-questions",
+    "href": "slides/lecture04-ppf_claude.html#exercise-3-questions",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Questions",
+    "text": "Exercise 3: Questions\nQuestions:\n\nDraw the PPF with Golf Resorts on x-axis, Beach Hotels on y-axis\nCalculate the opportunity cost of moving from:\n\nPoint B to Point C\nPoint D to Point E\n\nDoes the PPF exhibit increasing opportunity costs? Explain.\nIf region currently operates at point U (12 golf, 30 beach), what does this indicate?\nA new tourism development technology is invented. How would this affect the PPF? Draw the new curve."
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#exercise-3-solution---part-a-b",
+    "href": "slides/lecture04-ppf_claude.html#exercise-3-solution---part-a-b",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part a & b",
+    "text": "Exercise 3: Solution - Part a & b\na) PPF Graph:\nPlots points A through F with Golf (x-axis: 0-25) and Beach (y-axis: 0-50). Curve is bowed outward (concave).\nb) Opportunity Cost Calculations:\nB → C (5 golf → 10 golf): \\[\\text{Gain in Golf} = 10 - 5 = 5 \\text{ resorts}\\] \\[\\text{Loss in Beach} = 48 - 44 = 4 \\text{ hotels}\\] \\[\\text{Opportunity Cost} = \\frac{4 \\text{ hotels}}{5 \\text{ resorts}} = 0.8 \\text{ beach hotels per golf resort}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#exercise-3-solution---part-b-continued",
+    "href": "slides/lecture04-ppf_claude.html#exercise-3-solution---part-b-continued",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part b continued",
+    "text": "Exercise 3: Solution - Part b continued\nD → E (15 golf → 20 golf): \\[\\text{Gain in Golf} = 20 - 15 = 5 \\text{ resorts}\\] \\[\\text{Loss in Beach} = 38 - 30 = 8 \\text{ hotels}\\] \\[\\text{Opportunity Cost} = \\frac{8 \\text{ hotels}}{5 \\text{ resorts}} = 1.6 \\text{ beach hotels per golf resort}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#exercise-3-solution---part-c-d",
+    "href": "slides/lecture04-ppf_claude.html#exercise-3-solution---part-c-d",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part c & d",
+    "text": "Exercise 3: Solution - Part c & d\nc) Increasing Opportunity Costs?\nYES! Opportunity cost increases from 0.8 (B→C) to 1.6 (D→E).\nExplanation: As more resources shift to golf, we use resources less suited for golf (originally better for beaches). Each additional golf resort requires sacrificing more beach hotels.\nd) Point U (12 golf, 30 beach):\nThis is INSIDE the PPF (compare to point D: 15 golf, 38 beach).\nIndicates:\n\nInefficiency (unemployment or resource misallocation)\nCould produce more golf without reducing beach (move to D: 15 golf, 38 beach)\nCould produce more beach without reducing golf"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#exercise-3-solution---part-e",
+    "href": "slides/lecture04-ppf_claude.html#exercise-3-solution---part-e",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part e",
+    "text": "Exercise 3: Solution - Part e\ne) New Technology Effect:\nTechnology shifts PPF OUTWARD (economic growth).\nNew PPF might be:\n\n\n\nCombination\nGolf Resorts\nBeach Hotels\n\n\n\n\nA’\n0\n60 (+10)\n\n\nC’\n12\n55 (+11)\n\n\nE’\n24\n38 (+8)\n\n\nF’\n30\n0 (+5)\n\n\n\nEffect: Can now produce MORE of both types of tourism with same resources!\nGraph: Draw original PPF, then new PPF further from origin (parallel or biased depending on where technology applies)."
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#next-lecture",
+    "href": "slides/lecture04-ppf_claude.html#next-lecture",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture 📚",
+    "text": "Next Lecture 📚\nFebruary 19, 2026: Budget Set and Budget Constraint\n💡 Preparation: Think about how you allocate your own limited budget across different goods!"
+  },
+  {
+    "objectID": "slides/lecture04-ppf_claude.html#thank-you",
+    "href": "slides/lecture04-ppf_claude.html#thank-you",
+    "title": "Economics Fundamentals",
+    "section": "Thank You! 👋",
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#the-three-main-inputs",
+    "href": "slides/lecture04-ppf.html#the-three-main-inputs",
+    "title": "Economics Fundamentals",
+    "section": "The Three Main Inputs 🏭",
+    "text": "The Three Main Inputs 🏭\n\nProduction Factors\nTo produce goods and services, economies use three main factors: Land (natural resources), Labor (human effort), and Capital (produced goods used in production).\n\n\n\nLand 🌿\n\nAgricultural land\nMinerals & energy\nWater resources\nNatural beauty\nClimate\n\nTourism: Beaches, mountains, heritage sites\n\nLabor 👥\n\nPhysical work\nMental work\nSkills & training\nTime & effort\nEntrepreneurship\n\nTourism: Staff, guides, managers, chefs\n\nCapital 🏢\n\nBuildings\nMachinery\nInfrastructure\nTechnology\nEquipment\n\nTourism: Hotels, planes, booking systems"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#what-is-the-ppf",
+    "href": "slides/lecture04-ppf.html#what-is-the-ppf",
+    "title": "Economics Fundamentals",
+    "section": "What is the PPF? 🗺️",
+    "text": "What is the PPF? 🗺️\n\nProduction Possibilities Frontier (PPF)\nThe PPF shows the maximum combinations of two goods an economy can produce given fixed resources, current technology, and full employment.\n\n\nKey Insight 💡\nWith scarcity, producing more of one good requires producing less of another\n→ This is opportunity cost visualized!"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#moving-along-the-ppf",
+    "href": "slides/lecture04-ppf.html#moving-along-the-ppf",
+    "title": "Economics Fundamentals",
+    "section": "Moving Along the PPF ➡️",
+    "text": "Moving Along the PPF ➡️\nFrom B (30, 70) to C (60, 40):\n✅ Gain: 30 units of beach tourism\n❌ Loss: 30 units of cultural tourism\n💰 Opportunity Cost: 30 cultural units\n\nKey Point 🔑\n\nMoving along PPF = reallocation of resources\nAll points on PPF are efficient (no waste)\nBut different distributions (different answers to WHAT question)\nTrade-offs are unavoidable!"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#bowed-out-ppf-increasing-opportunity-cost",
+    "href": "slides/lecture04-ppf.html#bowed-out-ppf-increasing-opportunity-cost",
+    "title": "Economics Fundamentals",
+    "section": "Bowed-Out PPF: Increasing Opportunity Cost 🔄",
+    "text": "Bowed-Out PPF: Increasing Opportunity Cost 🔄\n\n💡 Why bowed out? Resources aren’t perfectly adaptable — some resources are better suited for beach tourism, others for cultural tourism"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#calculating-opportunity-cost-on-ppf-calculator",
+    "href": "slides/lecture04-ppf.html#calculating-opportunity-cost-on-ppf-calculator",
+    "title": "Economics Fundamentals",
+    "section": "Calculating Opportunity Cost on PPF :calculator:",
+    "text": "Calculating Opportunity Cost on PPF :calculator:\nExample: Moving from C to D\n\n\nPoint C: (40 beach, 92 cultural)\nPoint D: (60 beach, 80 cultural)\nChange:\n\nGain: 20 beach units\nLoss: 12 cultural units\n\n\nOpportunity Cost:\n\\[OC = \\frac{\\text{Units Lost}}{\\text{Units Gained}} = \\frac{12}{20} = 0.6\\]\n👉 Each additional beach unit costs 0.6 cultural units\n\n\nCompare: D to E\n\nGain: 20 beach (60→80)\nLoss: 20 cultural (80→60)\nOC = 20/20 = 1.0 (higher!)\n\n💡 Opportunity cost increases as we specialize more"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#shifting-the-ppf-outward",
+    "href": "slides/lecture04-ppf.html#shifting-the-ppf-outward",
+    "title": "Economics Fundamentals",
+    "section": "Shifting the PPF Outward 🚀",
+    "text": "Shifting the PPF Outward 🚀\n\nEconomic Growth\nAn outward shift of the PPF represents economic growth — the ability to produce more of both goods. Caused by: more resources, better technology, or improved productivity.\n\n\nThree ways to shift PPF outward:\n⬆️ More resources (population growth, discover new land)\n💡 Better technology (innovation, improved processes)\n📚 Human capital (education, training, skills)"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#ppf-shift-example",
+    "href": "slides/lecture04-ppf.html#ppf-shift-example",
+    "title": "Economics Fundamentals",
+    "section": "PPF Shift Example 📈",
+    "text": "PPF Shift Example 📈"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#investment-trade-off-present-vs-future",
+    "href": "slides/lecture04-ppf.html#investment-trade-off-present-vs-future",
+    "title": "Economics Fundamentals",
+    "section": "Investment Trade-off: Present vs Future ⚖️",
+    "text": "Investment Trade-off: Present vs Future ⚖️\nKey Economic Decision: Consumption today vs. Growth tomorrow\n\n\nMore Consumption Goods Today\n✅ Higher current standard of living\n✅ Immediate satisfaction\n❌ Less investment in capital\n❌ Slower future growth\n\nMore Capital Goods Today\n✅ Faster PPF outward shift\n✅ Higher future production\n❌ Lower current consumption\n❌ Sacrifice today for tomorrow\n\n\n💡 Tourism Example: Build hotels now (consume less) → More capacity future → Higher tourism revenue later"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#investment-trade-off-visualization",
+    "href": "slides/lecture04-ppf.html#investment-trade-off-visualization",
+    "title": "Economics Fundamentals",
+    "section": "Investment Trade-off Visualization 💰",
+    "text": "Investment Trade-off Visualization 💰"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#tourism-investment-example",
+    "href": "slides/lecture04-ppf.html#tourism-investment-example",
+    "title": "Economics Fundamentals",
+    "section": "Tourism Investment Example 🏨",
+    "text": "Tourism Investment Example 🏨\n\n👉 Strategic choice: Prioritize long-term growth (infrastructure, digital) despite lower immediate returns"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#complete-picture-integration",
+    "href": "slides/lecture04-ppf.html#complete-picture-integration",
+    "title": "Economics Fundamentals",
+    "section": "Complete Picture: Integration 🧩",
+    "text": "Complete Picture: Integration 🧩\nToday’s Lecture Integration:\n1️⃣ Production Factors (Land, Labor, Capital) are scarce inputs\n2️⃣ Scarcity forces choices between alternatives\n3️⃣ PPF visualizes society’s production possibilities\n4️⃣ Opportunity Cost = moving along PPF (what’s foregone)\n5️⃣ Efficiency = operating on (not inside) PPF\n6️⃣ Economic Growth = PPF shifts outward\n7️⃣ Investment today enables faster growth tomorrow\n\n🔗 This connects to: Lecture 3 (opportunity cost), Lecture 2 (WHAT/HOW/FOR WHOM), Lecture 1 (scarcity & efficiency)"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#exercise-3-open-question---setup",
+    "href": "slides/lecture04-ppf.html#exercise-3-open-question---setup",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question - Setup",
+    "text": "Exercise 3: Open Question - Setup\nScenario: The Portuguese Algarve region has limited land and labor. It can allocate resources between golf tourism and beach tourism. Current production possibilities:\n\n\n\nCombination\nGolf Resorts\nBeach Hotels\n\n\n\n\nA\n0\n50\n\n\nB\n5\n48\n\n\nC\n10\n44\n\n\nD\n15\n38\n\n\nE\n20\n30\n\n\nF\n25\n0"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#exercise-3-questions",
+    "href": "slides/lecture04-ppf.html#exercise-3-questions",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Questions",
+    "text": "Exercise 3: Questions\nQuestions:\n\nDraw the PPF with Golf Resorts on x-axis, Beach Hotels on y-axis\nCalculate the opportunity cost of moving from:\n\nPoint B to Point C\nPoint D to Point E\n\nDoes the PPF exhibit increasing opportunity costs? Explain.\nIf region currently operates at point U (12 golf, 30 beach), what does this indicate?\nA new tourism development technology is invented. How would this affect the PPF? Draw the new curve."
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#exercise-3-solution---part-b-continued",
+    "href": "slides/lecture04-ppf.html#exercise-3-solution---part-b-continued",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part b continued",
+    "text": "Exercise 3: Solution - Part b continued\nD → E (15 golf → 20 golf): \\[\\text{Gain in Golf} = 20 - 15 = 5 \\text{ resorts}\\] \\[\\text{Loss in Beach} = 38 - 30 = 8 \\text{ hotels}\\] \\[\\text{Opportunity Cost} = \\frac{8 \\text{ hotels}}{5 \\text{ resorts}} = 1.6 \\text{ beach hotels per golf resort}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#exercise-3-solution---part-c-d",
+    "href": "slides/lecture04-ppf.html#exercise-3-solution---part-c-d",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part c & d",
+    "text": "Exercise 3: Solution - Part c & d\nc) Increasing Opportunity Costs?\nYES! Opportunity cost increases from 0.8 (B→C) to 1.6 (D→E).\nExplanation: As more resources shift to golf, we use resources less suited for golf (originally better for beaches). Each additional golf resort requires sacrificing more beach hotels.\nd) Point U (12 golf, 30 beach):\nThis is INSIDE the PPF (compare to point D: 15 golf, 38 beach).\nIndicates:\n\nInefficiency (unemployment or resource misallocation)\nCould produce more golf without reducing beach (move to D: 15 golf, 38 beach)\nCould produce more beach without reducing golf"
   }
 ]
