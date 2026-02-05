@@ -721,11 +721,41 @@ d) If region currently operates at point U (12 golf, 30 beach), what does this i
 
 e) A new tourism development technology is invented. How would this affect the PPF? Draw the new curve.
 
-## Exercise 3: Solution - Part a & b
+## Exercise 3: Solution - Part a (PPF Graph)
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 13
+#| fig-height: 6
 
-**a) PPF Graph**:
+# Data from the exercise
+ppf_algarve <- data.frame(
+  golf = c(0, 5, 10, 15, 20, 25),
+  beach = c(50, 48, 44, 38, 30, 0),
+  label = c("A", "B", "C", "D", "E", "F")
+)
 
-Plots points A through F with Golf (x-axis: 0-25) and Beach (y-axis: 0-50). Curve is bowed outward (concave).
+ggplot(ppf_algarve, aes(x = golf, y = beach)) +
+  geom_line(linewidth = 2, color = ue_red) +
+  geom_ribbon(aes(ymin = 0, ymax = beach), alpha = 0.1, fill = ue_gray) +
+  geom_point(size = 7, color = ue_black) +
+  geom_text(aes(label = label), nudge_y = 2.5, size = 6, fontface = "bold") +
+  labs(title = "Algarve Tourism PPF: Golf Resorts vs. Beach Hotels",
+       subtitle = "Bowed-out curve indicates increasing opportunity costs",
+       x = "Golf Resorts",
+       y = "Beach Hotels") +
+  coord_cartesian(xlim = c(0, 27), ylim = c(0, 55)) +
+  theme_minimal(base_size = 16) +
+  theme(panel.grid.minor = element_blank(),
+        plot.title = element_text(color = ue_red, face = "bold")) +
+  annotate("text", x = 5, y = 10, 
+           label = "FEASIBLE &\nINEFFICIENT", 
+           color = ue_gray, alpha = 0.7, size = 5, fontface = "bold")
+```
+
+**a) The PPF shows all efficient combinations (points A-F) and the bowed-out shape indicating increasing opportunity costs.**
+
+## Exercise 3: Solution - Part b
 
 **b) Opportunity Cost Calculations**:
 

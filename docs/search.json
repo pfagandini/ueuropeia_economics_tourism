@@ -3071,5 +3071,26 @@
     "title": "Economics Fundamentals",
     "section": "Exercise 3: Solution - Part c & d",
     "text": "Exercise 3: Solution - Part c & d\nc) Increasing Opportunity Costs?\nYES! Opportunity cost increases from 0.8 (B→C) to 1.6 (D→E).\nExplanation: As more resources shift to golf, we use resources less suited for golf (originally better for beaches). Each additional golf resort requires sacrificing more beach hotels.\nd) Point U (12 golf, 30 beach):\nThis is INSIDE the PPF (compare to point D: 15 golf, 38 beach).\nIndicates:\n\nInefficiency (unemployment or resource misallocation)\nCould produce more golf without reducing beach (move to D: 15 golf, 38 beach)\nCould produce more beach without reducing golf"
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#exercise-3-solution---part-a",
+    "href": "slides/lecture04-ppf.html#exercise-3-solution---part-a",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part a",
+    "text": "Exercise 3: Solution - Part a\na) PPF Graph:\nPlots points A through F with Golf (x-axis: 0-25) and Beach (y-axis: 0-50). Curve is bowed outward (concave)."
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#exercise-3-solution---part-a-ppf-graph",
+    "href": "slides/lecture04-ppf.html#exercise-3-solution---part-a-ppf-graph",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part a (PPF Graph)",
+    "text": "Exercise 3: Solution - Part a (PPF Graph)\n\na) The PPF shows all efficient combinations (points A-F) and the bowed-out shape indicating increasing opportunity costs."
+  },
+  {
+    "objectID": "slides/lecture04-ppf.html#exercise-3-solution---part-b",
+    "href": "slides/lecture04-ppf.html#exercise-3-solution---part-b",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution - Part b",
+    "text": "Exercise 3: Solution - Part b\nb) Opportunity Cost Calculations:\nB → C (5 golf → 10 golf): \\[\\text{Gain in Golf} = 10 - 5 = 5 \\text{ resorts}\\] \\[\\text{Loss in Beach} = 48 - 44 = 4 \\text{ hotels}\\] \\[\\text{Opportunity Cost} = \\frac{4 \\text{ hotels}}{5 \\text{ resorts}} = 0.8 \\text{ beach hotels per golf resort}\\]"
   }
 ]
