@@ -6,10 +6,10 @@ title: "Material"
 
 #### Economics Fundamentals
 
-1. [Introduction](slides/lecture01-intro.qmd) :page_facing_up: [PDF]()
-2. [Economic Systems](slides/lecture02-systems.qmd) :page_facing_up: [PDF]()
-3. [Opportunity Cost](slides/lecture03-opportunity.qmd) :page_facing_up: [PDF]()
-4. [Production Possibility Frontier](slides/lecture04-ppf.qmd) :page_facing_up: [PDF]()
+1. [Introduction](slides/lecture01-intro.qmd) :page_facing_up: [PDF](PDF/lecture01-intro.pdf)
+2. [Economic Systems](slides/lecture02-systems.qmd) :page_facing_up: [PDF](PDF/lecture02-systems.pdf)
+3. [Opportunity Cost](slides/lecture03-opportunity.qmd) :page_facing_up: [PDF](PDF/lectrue03-opportunity.pdf)
+4. [Production Possibility Frontier](slides/lecture04-ppf.qmd) :page_facing_up: [PDF](PDF/lecture04-ppf.pdf)
 
 #### Consumer Theory: Behind the Demand
 
