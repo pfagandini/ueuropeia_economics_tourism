@@ -2,6 +2,11 @@
 title: "Material"
 ---
 
+## Recommended Book
+
+:book: [Shapiro, D.; MacDonald, D.; Greenlaw, S. A. (2022). Principles of Economics 3e. OpenStax.](https://openstax.org/details/books/principles-economics-3e)
+
+
 ## Slides
 
 ### Economics Fundamentals

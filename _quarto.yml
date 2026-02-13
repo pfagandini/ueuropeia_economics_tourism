@@ -3,8 +3,9 @@ project:
   output-dir: docs
 
 website:
-  title: "ueuropeia_economics_tourism"
+  title: "Economics of Tourism"
   navbar:
+    logo: images/logo.png
     left:
       - href: index.qmd
         text: Home
