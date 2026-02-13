@@ -75,7 +75,7 @@ Tourists are consumers! Understanding budget constraints explains:
 
 - Why some choose hostels, others choose resorts
 - How exchange rates affect travel decisions
-- Why "all-inclusive" packages exist
+
 :::
 ::::
 
@@ -464,37 +464,6 @@ Budget in €: £500 × 1.30 = **€650**
 ::::
 
 :point_right: A stronger pound = **parallel outward shift** of the budget constraint in euro terms. The tourist can afford more of *everything*!
-
-
-
-## Application: All-Inclusive vs. À La Carte :hotel:
-
-<div style="font-size: 80%;">
-
-**Why do all-inclusive packages exist?**
-
-:::: {.columns}
-::: {.column width="50%"}
-**À la carte** (standard budget constraint):
-
-- Tourist allocates budget freely between accommodation and experiences
-- Faces standard linear budget line
-- Trade-offs are clear: more luxury room = fewer excursions
-:::
-
-::: {.column width="50%"}
-**All-inclusive package**:
-
-- Fixed price for a **bundle** (room + meals + activities)
-- Effectively removes the trade-off within the bundle
-- Budget constraint becomes a **single point** for included goods
-- Remaining budget: free for souvenirs, extra trips, etc.
-:::
-::::
-
-:bulb: All-inclusive packages simplify the consumer's problem by **pre-selecting** a bundle. We'll revisit this when we study **preferences** in Lecture 6!
-
-</div>
 
 ## Numerical Example: Step by Step :abacus:
 

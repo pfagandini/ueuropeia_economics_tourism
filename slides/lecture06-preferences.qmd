@@ -75,8 +75,6 @@ How you *rank* bundles — which ones you like more.
 :::
 ::::
 
-. . .
-
 :bulb: The optimal choice (Lecture 7) will be where these two meet: the *best* bundle you can *afford*.
 
 </div>
@@ -98,8 +96,6 @@ $$\text{Bundle } A = (x_1^A, \; x_2^A)$$
 | A | 3 | 4 |
 | B | 5 | 2 |
 | C | 3 | 4 |
-
-. . .
 
 **Preferences** describe how a consumer **ranks** these bundles — without needing prices or income!
 
@@ -159,8 +155,6 @@ Economists assume preferences satisfy certain **axioms** (basic rules) so that w
 - **Predict** how choices change when prices or income change
 - Build the concept of **utility functions** (Lecture 7)
 
-. . .
-
 :point_right: These axioms don't say *what* people prefer — just that preferences are **logically consistent**.
 
 Think of them as the "rules of the game" for rational choice.
@@ -178,8 +172,6 @@ For **any** two bundles $A$ and $B$, the consumer can always rank them:
 
 $$A \succsim B \quad \text{or} \quad B \succsim A \quad \text{(or both, meaning } A \sim B\text{)}$$
 :::
-
-. . .
 
 **In plain language**: You are never "stuck" — you can always decide which bundle is at least as good.
 
@@ -208,8 +200,6 @@ $$A \succsim B \quad \text{or} \quad B \succsim A \quad \text{(or both, meaning 
 
 If $A \succsim B$ and $B \succsim C$, then $A \succsim C$
 :::
-
-. . .
 
 **In plain language**: Rankings must be **logically consistent** — no cycles.
 
@@ -304,8 +294,6 @@ ggplot(df_cycle, aes(x = x, y = y)) +
 If bundle $A$ has **at least as much** of every good as $B$, and **strictly more** of at least one good, then $A \succ B$.
 :::
 
-. . .
-
 **In plain language**: More of a good thing is always preferred, all else equal.
 
 :::: {.columns}
@@ -341,8 +329,6 @@ The set of all bundles that give the consumer the **same level of satisfaction**
 
 Along an indifference curve: $A \sim B$ for all points $A, B$ on the curve.
 :::
-
-. . .
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -401,9 +387,9 @@ ggplot() +
             vjust = -1, size = 5.5, fontface = "bold", color = ue_black) +
   scale_color_manual(values = c(ue_gray, ue_red, ue_black)) +
   scale_linetype_manual(values = c("dashed", "solid", "dashed")) +
-  annotate("segment", x = 5, y = 5, xend = 6.5, yend = 4,
+  annotate("segment", x = 5, y = 5, xend = 6.5, yend = 6,
            arrow = arrow(length = unit(0.3, "cm")), color = ue_red, linewidth = 1) +
-  annotate("text", x = 6.8, y = 4.3, label = "Higher\nutility", size = 4.5,
+  annotate("text", x = 6.3, y = 4.5, label = "Higher\nsatisfaction", size = 4.5,
            color = ue_red, fontface = "bold") +
   scale_x_continuous(limits = c(0, 9), expand = c(0, 0),
                      breaks = seq(0, 8, 2)) +
@@ -430,7 +416,7 @@ Points $A$, $B$, $C$ are on the **same** curve ($U_2$): the tourist is **indiffe
 
 </div>
 
-## Properties of Indifference Curves :scroll:
+## Properties of Indifference Curves
 
 <div style="font-size: 80%;">
 
@@ -506,8 +492,14 @@ ggplot() +
             linewidth = 1.8) +
   geom_point(data = cross_pts, aes(x = x1, y = x2),
              size = 5, color = ue_black) +
-  geom_text(data = cross_pts, aes(x = x1, y = x2, label = label),
-            vjust = -1.2, size = 6, fontface = "bold", color = ue_black) +
+    geom_text(
+    data = cross_pts,
+    aes(
+      x = x1, y = x2, label = label,
+      vjust = ifelse(label == "Z", 2, -1.2)  # Z below, others above
+    ),
+    size = 6, fontface = "bold", color = ue_black
+  ) +
   scale_color_manual(values = c(ue_red, ue_gray)) +
   scale_x_continuous(limits = c(0, 8), expand = c(0, 0)) +
   scale_y_continuous(limits = c(0, 7), expand = c(0, 0)) +
@@ -533,7 +525,7 @@ ggplot() +
 
 </div>
 
-## Axiom 4: Convexity :curved_leftwards_arrow:
+## Axiom 4: Convexity
 
 <div style="font-size: 82%;">
 
@@ -544,8 +536,6 @@ Averages (mixtures) of bundles are **at least as good** as extremes.
 
 If $A \sim B$, then any weighted average $\lambda A + (1-\lambda) B$ is weakly preferred ($\succsim A$), where $0 < \lambda < 1$.
 :::
-
-. . .
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -600,7 +590,7 @@ ggplot() +
   geom_point(data = pt_avg, aes(x = x1, y = x2), size = 6, color = ue_red,
              shape = 18) +
   # Labels
-  annotate("text", x = 0.6, y = 6.4, label = "A (extreme)", size = 5,
+  annotate("text", x = 0.5, y = 6.4, label = "A (extreme)", size = 5,
            fontface = "bold", color = ue_black) +
   annotate("text", x = 6.5, y = 0.6, label = "B (extreme)", size = 5,
            fontface = "bold", color = ue_black) +
@@ -630,7 +620,7 @@ The average of $A$ and $B$ lies **above** the indifference curve :arrow_right: i
 
 </div>
 
-## Summary of the Four Axioms :four_leaf_clover:
+## Summary of the Four Axioms
 
 <div style="font-size: 80%;">
 
@@ -641,13 +631,11 @@ The average of $A$ and $B$ lies **above** the indifference curve :arrow_right: i
 | **Monotonicity** | More of a good is better | Goods are desirable |
 | **Convexity** | Mixtures preferred to extremes | Variety is valued |
 
-. . .
+</div>
 
 :point_right: If these hold, preferences can be represented by a **utility function** $U(x_1, x_2)$ — that's Lecture 7!
 
 :point_right: The utility function assigns a **number** to each bundle so that higher numbers = preferred bundles.
-
-</div>
 
 # Special Cases
 
@@ -779,13 +767,11 @@ Most goods lie **between** the two extremes:
 | **Normal goods** | **Smooth convex curve** | **Partial** | **Beach days vs cultural tours** |
 | Perfect Complements | L-shape | None | Ski pass + ski rental |
 
-. . .
+</div>
 
 :point_right: For the rest of this course, unless stated otherwise, we assume the **normal** case: smooth, convex, downward-sloping indifference curves.
 
 This is where **convexity** applies — consumers value variety and are willing to trade goods, but at a **changing** rate. That changing rate will be the **MRS** in Lecture 7!
-
-</div>
 
 # Tourism Application
 
@@ -816,8 +802,6 @@ Their choice **reveals** their preference!
 - :airplane: Airline loyalty programs track revealed choices over time
 :::
 ::::
-
-. . .
 
 :bulb: This is why tourism companies collect **so much data** — they're mapping your indifference curves!
 
@@ -855,12 +839,12 @@ Preferences, axioms, and indifference curves.
 
 <div style="font-size: 85%;">
 
-**Question**: A tourist says: "I prefer an Algarve beach holiday to a Douro wine tour, I prefer a Douro wine tour to a Lisbon city break, and I prefer a Lisbon city break to an Algarve beach holiday." This violates:
-
-A. Completeness
-B. Transitivity
-C. Monotonicity
-D. Convexity
+**Question**: A tourist says: "I prefer an Algarve beach holiday to a Douro wine tour, I prefer a Douro wine tour to a Lisbon city break, and I prefer a Lisbon city break to an Algarve beach holiday." This violates:  
+  
+A. Completeness  
+B. Transitivity  
+C. Monotonicity  
+D. Convexity  
 
 ::: {.fragment}
 ::: {.highlight-box}
@@ -876,16 +860,16 @@ This is a **preference cycle**: Algarve $\succ$ Douro $\succ$ Lisbon $\succ$ Alg
 
 <div style="font-size: 85%;">
 
-**Question**: Indifference curves that are **L-shaped** represent goods that are:
-
-A. Perfect substitutes
-B. Perfect complements
-C. "Bads" (undesirable)
-D. Normal goods with convex preferences
+**Question**: Indifference curves that are **L-shaped** represent goods that are:  
+  
+A. Perfect substitutes  
+B. Normal goods with convex preferences  
+C. "Bads" (undesirable)  
+D. Perfect complements  
 
 ::: {.fragment}
 ::: {.highlight-box}
-**Answer: B**
+**Answer: D**
 :::
 
 L-shaped indifference curves indicate **perfect complements** — goods consumed in fixed proportions. Extra units of one good without the other provide no additional satisfaction (e.g., a left shoe without a right shoe, or a flight ticket without a hotel booking in a package deal).

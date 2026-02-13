@@ -1,247 +1,171 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="author" content="Paulo Fagandini">
-<meta name="dcterms.date" content="2026-01-01">
-
-<title>Economics Fundamentals – ueuropeia_economics_tourism</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-</style>
-
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<html lang="en"><head>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
+  <meta name="author" content="Paulo Fagandini">
+  <meta name="dcterms.date" content="2026-01-01">
+  <title>ueuropeia_economics_tourism – Economics Fundamentals</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
     }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e109428474854d908f205605d54b47e4.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
 </head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
-<body class="nav-fixed quarto-light">
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Economics Fundamentals</h1>
+  <p class="subtitle">Lecture 4: Production Factors &amp; Production Possibilities Frontier</p>
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">ueuropeia_economics_tourism</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../material.html"> 
-<span class="menu-text">Material</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Paulo Fagandini 
 </div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#recap-lecture-3" id="toc-recap-lecture-3" class="nav-link active" data-scroll-target="#recap-lecture-3">Recap: Lecture 3 <span class="emoji" data-emoji="rewind">⏪</span></a></li>
-  <li><a href="#production-factors" id="toc-production-factors" class="nav-link" data-scroll-target="#production-factors">Production Factors</a>
-  <ul class="collapse">
-  <li><a href="#the-three-main-inputs" id="toc-the-three-main-inputs" class="nav-link" data-scroll-target="#the-three-main-inputs">The Three Main Inputs <span class="emoji" data-emoji="factory">🏭</span></a></li>
-  <li><a href="#factor-payments" id="toc-factor-payments" class="nav-link" data-scroll-target="#factor-payments">Factor Payments <span class="emoji" data-emoji="money_with_wings">💸</span></a></li>
-  <li><a href="#tourism-production-example" id="toc-tourism-production-example" class="nav-link" data-scroll-target="#tourism-production-example">Tourism Production: Example <span class="emoji" data-emoji="bar_chart">📊</span></a></li>
-  </ul></li>
-  <li><a href="#production-possibilities-frontier-ppf" id="toc-production-possibilities-frontier-ppf" class="nav-link" data-scroll-target="#production-possibilities-frontier-ppf">Production Possibilities Frontier (PPF)</a>
-  <ul class="collapse">
-  <li><a href="#what-is-the-ppf" id="toc-what-is-the-ppf" class="nav-link" data-scroll-target="#what-is-the-ppf">What is the PPF? <span class="emoji" data-emoji="world_map">🗺️</span></a></li>
-  <li><a href="#simple-ppf-example-tourism" id="toc-simple-ppf-example-tourism" class="nav-link" data-scroll-target="#simple-ppf-example-tourism">Simple PPF Example: Tourism <span class="emoji" data-emoji="beach_umbrella">🏖️</span></a></li>
-  <li><a href="#interpreting-the-ppf" id="toc-interpreting-the-ppf" class="nav-link" data-scroll-target="#interpreting-the-ppf">Interpreting the PPF <span class="emoji" data-emoji="mag">🔍</span></a></li>
-  <li><a href="#moving-along-the-ppf" id="toc-moving-along-the-ppf" class="nav-link" data-scroll-target="#moving-along-the-ppf">Moving Along the PPF <span class="emoji" data-emoji="arrow_right">➡️</span></a></li>
-  <li><a href="#bowed-out-ppf-increasing-opportunity-cost" id="toc-bowed-out-ppf-increasing-opportunity-cost" class="nav-link" data-scroll-target="#bowed-out-ppf-increasing-opportunity-cost">Bowed-Out PPF: Increasing Opportunity Cost <span class="emoji" data-emoji="arrows_counterclockwise">🔄</span></a></li>
-  <li><a href="#calculating-opportunity-cost-on-ppf-calculator" id="toc-calculating-opportunity-cost-on-ppf-calculator" class="nav-link" data-scroll-target="#calculating-opportunity-cost-on-ppf-calculator">Calculating Opportunity Cost on PPF :calculator:</a></li>
-  </ul></li>
-  <li><a href="#economic-growth-ppf-shifts" id="toc-economic-growth-ppf-shifts" class="nav-link" data-scroll-target="#economic-growth-ppf-shifts">Economic Growth &amp; PPF Shifts</a>
-  <ul class="collapse">
-  <li><a href="#shifting-the-ppf-outward" id="toc-shifting-the-ppf-outward" class="nav-link" data-scroll-target="#shifting-the-ppf-outward">Shifting the PPF Outward <span class="emoji" data-emoji="rocket">🚀</span></a></li>
-  <li><a href="#ppf-shift-example" id="toc-ppf-shift-example" class="nav-link" data-scroll-target="#ppf-shift-example">PPF Shift Example <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></a></li>
-  <li><a href="#investment-trade-off-present-vs-future" id="toc-investment-trade-off-present-vs-future" class="nav-link" data-scroll-target="#investment-trade-off-present-vs-future">Investment Trade-off: Present vs Future <span class="emoji" data-emoji="balance_scale">⚖️</span></a></li>
-  <li><a href="#investment-trade-off-visualization" id="toc-investment-trade-off-visualization" class="nav-link" data-scroll-target="#investment-trade-off-visualization">Investment Trade-off Visualization <span class="emoji" data-emoji="moneybag">💰</span></a></li>
-  <li><a href="#tourism-investment-example" id="toc-tourism-investment-example" class="nav-link" data-scroll-target="#tourism-investment-example">Tourism Investment Example <span class="emoji" data-emoji="hotel">🏨</span></a></li>
-  <li><a href="#technological-change-example" id="toc-technological-change-example" class="nav-link" data-scroll-target="#technological-change-example">Technological Change Example <span class="emoji" data-emoji="computer">💻</span></a></li>
-  <li><a href="#ppf-summary-key-insights" id="toc-ppf-summary-key-insights" class="nav-link" data-scroll-target="#ppf-summary-key-insights">PPF Summary: Key Insights <span class="emoji" data-emoji="bookmark_tabs">📑</span></a></li>
-  <li><a href="#real-world-applications" id="toc-real-world-applications" class="nav-link" data-scroll-target="#real-world-applications">Real-World Applications <span class="emoji" data-emoji="earth_africa">🌍</span></a></li>
-  <li><a href="#complete-picture-integration" id="toc-complete-picture-integration" class="nav-link" data-scroll-target="#complete-picture-integration">Complete Picture: Integration <span class="emoji" data-emoji="jigsaw">🧩</span></a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises <span class="emoji" data-emoji="pencil">📝</span></a></li>
-  <li><a href="#exercise-1-multiple-choice" id="toc-exercise-1-multiple-choice" class="nav-link" data-scroll-target="#exercise-1-multiple-choice">Exercise 1: Multiple Choice</a></li>
-  <li><a href="#exercise-2-multiple-choice" id="toc-exercise-2-multiple-choice" class="nav-link" data-scroll-target="#exercise-2-multiple-choice">Exercise 2: Multiple Choice</a></li>
-  <li><a href="#exercise-3-open-question---setup" id="toc-exercise-3-open-question---setup" class="nav-link" data-scroll-target="#exercise-3-open-question---setup">Exercise 3: Open Question - Setup</a></li>
-  <li><a href="#exercise-3-questions" id="toc-exercise-3-questions" class="nav-link" data-scroll-target="#exercise-3-questions">Exercise 3: Questions</a></li>
-  <li><a href="#exercise-3-solution---part-a-ppf-graph" id="toc-exercise-3-solution---part-a-ppf-graph" class="nav-link" data-scroll-target="#exercise-3-solution---part-a-ppf-graph">Exercise 3: Solution - Part a (PPF Graph)</a></li>
-  <li><a href="#exercise-3-solution---part-b" id="toc-exercise-3-solution---part-b" class="nav-link" data-scroll-target="#exercise-3-solution---part-b">Exercise 3: Solution - Part b</a></li>
-  <li><a href="#exercise-3-solution---part-b-continued" id="toc-exercise-3-solution---part-b-continued" class="nav-link" data-scroll-target="#exercise-3-solution---part-b-continued">Exercise 3: Solution - Part b continued</a></li>
-  <li><a href="#exercise-3-solution---part-c-d" id="toc-exercise-3-solution---part-c-d" class="nav-link" data-scroll-target="#exercise-3-solution---part-c-d">Exercise 3: Solution - Part c &amp; d</a></li>
-  <li><a href="#exercise-3-solution---part-e" id="toc-exercise-3-solution---part-e" class="nav-link" data-scroll-target="#exercise-3-solution---part-e">Exercise 3: Solution - Part e</a></li>
-  <li><a href="#next-lecture" id="toc-next-lecture" class="nav-link" data-scroll-target="#next-lecture">Next Lecture <span class="emoji" data-emoji="books">📚</span></a></li>
-  <li><a href="#thank-you" id="toc-thank-you" class="nav-link" data-scroll-target="#thank-you">Thank You! <span class="emoji" data-emoji="wave">👋</span></a></li>
-  </ul></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture04-ppf.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Economics Fundamentals</h1>
-<p class="subtitle lead">Lecture 4: Production Factors &amp; Production Possibilities Frontier</p>
+</div>
 </div>
 
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Paulo Fagandini </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2026</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="recap-lecture-3" class="level2 center">
-<h2 class="center anchored" data-anchor-id="recap-lecture-3">Recap: Lecture 3 <span class="emoji" data-emoji="rewind">⏪</span></h2>
+  <p class="date">2026</p>
+</section>
+<section id="recap-lecture-3" class="slide level2 center">
+<h2>Recap: Lecture 3 <span class="emoji" data-emoji="rewind">⏪</span></h2>
 <p><strong>Key Concepts from Last Class</strong>:</p>
 <p><span class="emoji" data-emoji="brain">🧠</span> <strong>Rationality</strong>: Cost-benefit decision making</p>
 <p><span class="emoji" data-emoji="chart_with_upwards_trend">📈</span> <strong>Marginal Analysis</strong>: Decisions at the margin (MB vs MC)</p>
 <p><span class="emoji" data-emoji="moneybag">💰</span> <strong>Opportunity Cost</strong>: Value of best alternative foregone</p>
 <p><span class="emoji" data-emoji="no_entry_sign">🚫</span> <strong>Sunk Costs</strong>: Ignore them in decisions!</p>
-<p>. . .</p>
+<div class="fragment">
 <p><span class="emoji" data-emoji="dart">🎯</span> <strong>Today</strong>: We build on opportunity cost to understand:</p>
 <ul>
 <li>Production factors (inputs)</li>
 <li><strong>Production Possibilities Frontier (PPF)</strong></li>
 <li>Society-level trade-offs and efficiency</li>
 </ul>
+</div>
 </section>
-<section id="production-factors" class="level1">
+<section>
+<section id="production-factors" class="title-slide slide level1 center">
 <h1>Production Factors</h1>
-<section id="the-three-main-inputs" class="level2">
-<h2 class="anchored" data-anchor-id="the-three-main-inputs">The Three Main Inputs <span class="emoji" data-emoji="factory">🏭</span></h2>
+
+</section>
+<section id="the-three-main-inputs" class="slide level2">
+<h2>The Three Main Inputs <span class="emoji" data-emoji="factory">🏭</span></h2>
 <div class="key-concept">
 <p><strong>Production Factors</strong></p>
 <p>To produce goods and services, economies use three main factors: <strong>Land</strong> (natural resources), <strong>Labor</strong> (human effort), and <strong>Capital</strong> (produced goods used in production).</p>
@@ -277,13 +201,12 @@ window.Quarto = {
 <li>Equipment</li>
 </ul>
 <p><em>Tourism</em>: Hotels, planes, booking systems</p>
-</div>
-</div>
+</div></div>
 </section>
-<section id="factor-payments" class="level2">
-<h2 class="anchored" data-anchor-id="factor-payments">Factor Payments <span class="emoji" data-emoji="money_with_wings">💸</span></h2>
+<section id="factor-payments" class="slide level2">
+<h2>Factor Payments <span class="emoji" data-emoji="money_with_wings">💸</span></h2>
 <p><strong>Each factor receives compensation</strong>:</p>
-<table class="caption-top table">
+<table class="caption-top">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 32%">
@@ -320,53 +243,39 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="tourism-production-example" class="level2">
-<h2 class="anchored" data-anchor-id="tourism-production-example">Tourism Production: Example <span class="emoji" data-emoji="bar_chart">📊</span></h2>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="lecture04-ppf_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="1248"></p>
-<figcaption>Hypothetical illustration of factor intensity</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Insight</strong>: Cruise tourism is <strong>capital-intensive</strong>, cultural tours are <strong>labor-intensive</strong>, beach resorts balanced</p>
-</section>
-</section>
-<section id="production-possibilities-frontier-ppf" class="level1">
+<section id="tourism-production-example" class="slide level2">
+<h2>Tourism Production: Example <span class="emoji" data-emoji="bar_chart">📊</span></h2>
+
+<img data-src="lecture04-ppf_files/figure-revealjs/unnamed-chunk-2-1.png" width="1248" class="r-stretch quarto-figure-center"><p class="caption">Hypothetical illustration of factor intensity</p><p><span class="emoji" data-emoji="bulb">💡</span> <strong>Insight</strong>: Cruise tourism is <strong>capital-intensive</strong>, cultural tours are <strong>labor-intensive</strong>, beach resorts balanced</p>
+</section></section>
+<section>
+<section id="production-possibilities-frontier-ppf" class="title-slide slide level1 center">
 <h1>Production Possibilities Frontier (PPF)</h1>
-<section id="what-is-the-ppf" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-the-ppf">What is the PPF? <span class="emoji" data-emoji="world_map">🗺️</span></h2>
+
+</section>
+<section id="what-is-the-ppf" class="slide level2">
+<h2>What is the PPF? <span class="emoji" data-emoji="world_map">🗺️</span></h2>
 <div class="key-concept">
 <p><strong>Production Possibilities Frontier (PPF)</strong></p>
 <p>The PPF shows the <strong>maximum combinations</strong> of two goods an economy can produce given fixed resources, current technology, and full employment.</p>
 </div>
-<p>. . .</p>
+<div class="fragment">
 <p><strong>Key Insight</strong> <span class="emoji" data-emoji="bulb">💡</span></p>
 <p>With scarcity, producing more of one good requires producing less of another</p>
 <p>→ <strong>This is opportunity cost visualized!</strong></p>
+</div>
 </section>
-<section id="simple-ppf-example-tourism" class="level2">
-<h2 class="anchored" data-anchor-id="simple-ppf-example-tourism">Simple PPF Example: Tourism <span class="emoji" data-emoji="beach_umbrella">🏖️</span></h2>
+<section id="simple-ppf-example-tourism" class="slide level2">
+<h2>Simple PPF Example: Tourism <span class="emoji" data-emoji="beach_umbrella">🏖️</span></h2>
 <p><strong>Imagine an economy producing only</strong>:</p>
 <ul>
 <li><strong>Beach Tourism</strong> (hotels, resorts)</li>
 <li><strong>Cultural Tourism</strong> (museums, tours, heritage sites)</li>
 </ul>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lecture04-ppf_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="1248"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="interpreting-the-ppf" class="level2">
-<h2 class="anchored" data-anchor-id="interpreting-the-ppf">Interpreting the PPF <span class="emoji" data-emoji="mag">🔍</span></h2>
+
+<img data-src="lecture04-ppf_files/figure-revealjs/unnamed-chunk-3-1.png" width="1248" class="r-stretch"></section>
+<section id="interpreting-the-ppf" class="slide level2">
+<h2>Interpreting the PPF <span class="emoji" data-emoji="mag">🔍</span></h2>
 <p><strong>Point A</strong> (0, 100): All resources → cultural tourism, no beach tourism</p>
 <p><strong>Point E</strong> (100, 0): All resources → beach tourism, no cultural tourism</p>
 <p><strong>Point C</strong> (60, 40): Mixed economy, balanced allocation</p>
@@ -381,13 +290,13 @@ window.Quarto = {
 <li>Would need economic growth</li>
 </ul>
 </section>
-<section id="moving-along-the-ppf" class="level2">
-<h2 class="anchored" data-anchor-id="moving-along-the-ppf">Moving Along the PPF <span class="emoji" data-emoji="arrow_right">➡️</span></h2>
+<section id="moving-along-the-ppf" class="slide level2">
+<h2>Moving Along the PPF <span class="emoji" data-emoji="arrow_right">➡️</span></h2>
 <p><strong>From B (30, 70) to C (60, 40)</strong>:</p>
 <p><span class="emoji" data-emoji="white_check_mark">✅</span> Gain: 30 units of beach tourism</p>
 <p><span class="emoji" data-emoji="x">❌</span> Loss: 30 units of cultural tourism</p>
 <p><span class="emoji" data-emoji="moneybag">💰</span> <strong>Opportunity Cost</strong>: 30 cultural units</p>
-<p>. . .</p>
+<div class="fragment">
 <p><strong>Key Point</strong> <span class="emoji" data-emoji="key">🔑</span></p>
 <ul>
 <li>Moving along PPF = <strong>reallocation</strong> of resources</li>
@@ -395,22 +304,15 @@ window.Quarto = {
 <li>But different distributions (different answers to WHAT question)</li>
 <li>Trade-offs are unavoidable!</li>
 </ul>
+</div>
 </section>
-<section id="bowed-out-ppf-increasing-opportunity-cost" class="level2">
-<h2 class="anchored" data-anchor-id="bowed-out-ppf-increasing-opportunity-cost">Bowed-Out PPF: Increasing Opportunity Cost <span class="emoji" data-emoji="arrows_counterclockwise">🔄</span></h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lecture04-ppf_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="1248"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Why bowed out?</strong> Resources aren’t perfectly adaptable — some resources are better suited for beach tourism, others for cultural tourism</p>
+<section id="bowed-out-ppf-increasing-opportunity-cost" class="slide level2">
+<h2>Bowed-Out PPF: Increasing Opportunity Cost <span class="emoji" data-emoji="arrows_counterclockwise">🔄</span></h2>
+
+<img data-src="lecture04-ppf_files/figure-revealjs/unnamed-chunk-4-1.png" width="1248" class="r-stretch"><p><span class="emoji" data-emoji="bulb">💡</span> <strong>Why bowed out?</strong> Resources aren’t perfectly adaptable — some resources are better suited for beach tourism, others for cultural tourism</p>
 </section>
-<section id="calculating-opportunity-cost-on-ppf-calculator" class="level2">
-<h2 class="anchored" data-anchor-id="calculating-opportunity-cost-on-ppf-calculator">Calculating Opportunity Cost on PPF :calculator:</h2>
+<section id="calculating-opportunity-cost-on-ppf-calculator" class="slide level2">
+<h2>Calculating Opportunity Cost on PPF :calculator:</h2>
 <p><strong>Example: Moving from C to D</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -425,8 +327,7 @@ window.Quarto = {
 <p><strong>Opportunity Cost</strong>:</p>
 <p><span class="math display">\[OC = \frac{\text{Units Lost}}{\text{Units Gained}} = \frac{12}{20} = 0.6\]</span></p>
 <p><span class="emoji" data-emoji="point_right">👉</span> Each additional beach unit costs <strong>0.6 cultural units</strong></p>
-</div>
-</div>
+</div></div>
 <div class="fragment">
 <p><strong>Compare: D to E</strong></p>
 <ul>
@@ -436,36 +337,31 @@ window.Quarto = {
 </ul>
 <p><span class="emoji" data-emoji="bulb">💡</span> Opportunity cost <strong>increases</strong> as we specialize more</p>
 </div>
-</section>
-</section>
-<section id="economic-growth-ppf-shifts" class="level1">
+</section></section>
+<section>
+<section id="economic-growth-ppf-shifts" class="title-slide slide level1 center">
 <h1>Economic Growth &amp; PPF Shifts</h1>
-<section id="shifting-the-ppf-outward" class="level2">
-<h2 class="anchored" data-anchor-id="shifting-the-ppf-outward">Shifting the PPF Outward <span class="emoji" data-emoji="rocket">🚀</span></h2>
+
+</section>
+<section id="shifting-the-ppf-outward" class="slide level2">
+<h2>Shifting the PPF Outward <span class="emoji" data-emoji="rocket">🚀</span></h2>
 <div class="key-concept">
 <p><strong>Economic Growth</strong></p>
 <p>An outward shift of the PPF represents economic growth — the ability to produce more of both goods. Caused by: more resources, better technology, or improved productivity.</p>
 </div>
-<p>. . .</p>
+<div class="fragment">
 <p><strong>Three ways to shift PPF outward</strong>:</p>
 <p><span class="emoji" data-emoji="arrow_up">⬆️</span> <strong>More resources</strong> (population growth, discover new land)</p>
 <p><span class="emoji" data-emoji="bulb">💡</span> <strong>Better technology</strong> (innovation, improved processes)</p>
 <p><span class="emoji" data-emoji="books">📚</span> <strong>Human capital</strong> (education, training, skills)</p>
-</section>
-<section id="ppf-shift-example" class="level2">
-<h2 class="anchored" data-anchor-id="ppf-shift-example">PPF Shift Example <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lecture04-ppf_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="1248"></p>
-</figure>
-</div>
-</div>
 </div>
 </section>
-<section id="investment-trade-off-present-vs-future" class="level2">
-<h2 class="anchored" data-anchor-id="investment-trade-off-present-vs-future">Investment Trade-off: Present vs Future <span class="emoji" data-emoji="balance_scale">⚖️</span></h2>
+<section id="ppf-shift-example" class="slide level2">
+<h2>PPF Shift Example <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
+
+<img data-src="lecture04-ppf_files/figure-revealjs/unnamed-chunk-5-1.png" width="1248" class="r-stretch"></section>
+<section id="investment-trade-off-present-vs-future" class="slide level2">
+<h2>Investment Trade-off: Present vs Future <span class="emoji" data-emoji="balance_scale">⚖️</span></h2>
 <p><strong>Key Economic Decision</strong>: Consumption today vs.&nbsp;Growth tomorrow</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -480,51 +376,26 @@ window.Quarto = {
 <p><span class="emoji" data-emoji="white_check_mark">✅</span> Higher future production</p>
 <p><span class="emoji" data-emoji="x">❌</span> Lower current consumption</p>
 <p><span class="emoji" data-emoji="x">❌</span> Sacrifice today for tomorrow</p>
-</div>
-</div>
+</div></div>
 <div class="fragment">
 <p><span class="emoji" data-emoji="bulb">💡</span> <strong>Tourism Example</strong>: Build hotels now (consume less) → More capacity future → Higher tourism revenue later</p>
 </div>
 </section>
-<section id="investment-trade-off-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="investment-trade-off-visualization">Investment Trade-off Visualization <span class="emoji" data-emoji="moneybag">💰</span></h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lecture04-ppf_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="1248"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="investment-trade-off-visualization" class="slide level2">
+<h2>Investment Trade-off Visualization <span class="emoji" data-emoji="moneybag">💰</span></h2>
+
+<img data-src="lecture04-ppf_files/figure-revealjs/unnamed-chunk-6-1.png" width="1248" class="r-stretch"></section>
+<section id="tourism-investment-example" class="slide level2">
+<h2>Tourism Investment Example <span class="emoji" data-emoji="hotel">🏨</span></h2>
+
+<img data-src="lecture04-ppf_files/figure-revealjs/unnamed-chunk-7-1.png" width="1248" class="r-stretch"><p><span class="emoji" data-emoji="point_right">👉</span> <strong>Strategic choice</strong>: Prioritize long-term growth (infrastructure, digital) despite lower immediate returns</p>
 </section>
-<section id="tourism-investment-example" class="level2">
-<h2 class="anchored" data-anchor-id="tourism-investment-example">Tourism Investment Example <span class="emoji" data-emoji="hotel">🏨</span></h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lecture04-ppf_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="1248"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><span class="emoji" data-emoji="point_right">👉</span> <strong>Strategic choice</strong>: Prioritize long-term growth (infrastructure, digital) despite lower immediate returns</p>
-</section>
-<section id="technological-change-example" class="level2">
-<h2 class="anchored" data-anchor-id="technological-change-example">Technological Change Example <span class="emoji" data-emoji="computer">💻</span></h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lecture04-ppf_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="1248"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="ppf-summary-key-insights" class="level2">
-<h2 class="anchored" data-anchor-id="ppf-summary-key-insights">PPF Summary: Key Insights <span class="emoji" data-emoji="bookmark_tabs">📑</span></h2>
+<section id="technological-change-example" class="slide level2">
+<h2>Technological Change Example <span class="emoji" data-emoji="computer">💻</span></h2>
+
+<img data-src="lecture04-ppf_files/figure-revealjs/unnamed-chunk-8-1.png" width="1248" class="r-stretch"></section>
+<section id="ppf-summary-key-insights" class="slide level2">
+<h2>PPF Summary: Key Insights <span class="emoji" data-emoji="bookmark_tabs">📑</span></h2>
 <p><span class="emoji" data-emoji="one">1️⃣</span> <strong>Shows maximum production</strong> given resources &amp; technology</p>
 <p><span class="emoji" data-emoji="two">2️⃣</span> <strong>Points on PPF</strong> = efficient (can’t produce more without trade-off)</p>
 <p><span class="emoji" data-emoji="three">3️⃣</span> <strong>Points inside PPF</strong> = inefficient (unemployment, waste)</p>
@@ -533,8 +404,8 @@ window.Quarto = {
 <p><span class="emoji" data-emoji="six">6️⃣</span> <strong>Shifting PPF outward</strong> = economic growth (more resources, better technology)</p>
 <p><span class="emoji" data-emoji="seven">7️⃣</span> <strong>Investment trade-off</strong> = consumption today vs.&nbsp;growth tomorrow</p>
 </section>
-<section id="real-world-applications" class="level2">
-<h2 class="anchored" data-anchor-id="real-world-applications">Real-World Applications <span class="emoji" data-emoji="earth_africa">🌍</span></h2>
+<section id="real-world-applications" class="slide level2">
+<h2>Real-World Applications <span class="emoji" data-emoji="earth_africa">🌍</span></h2>
 <p><strong>PPF thinking helps answer</strong>:</p>
 <p><span class="emoji" data-emoji="question">❓</span> Should Portugal build more hotels or preserve more heritage sites?</p>
 <p><span class="emoji" data-emoji="question">❓</span> How much should airlines invest in fuel efficiency vs.&nbsp;passenger comfort?</p>
@@ -544,8 +415,8 @@ window.Quarto = {
 <p><span class="emoji" data-emoji="bulb">💡</span> <strong>All involve opportunity costs and efficiency considerations!</strong></p>
 </div>
 </section>
-<section id="complete-picture-integration" class="level2">
-<h2 class="anchored" data-anchor-id="complete-picture-integration">Complete Picture: Integration <span class="emoji" data-emoji="jigsaw">🧩</span></h2>
+<section id="complete-picture-integration" class="slide level2">
+<h2>Complete Picture: Integration <span class="emoji" data-emoji="jigsaw">🧩</span></h2>
 <p><strong>Today’s Lecture Integration</strong>:</p>
 <p><span class="emoji" data-emoji="one">1️⃣</span> <strong>Production Factors</strong> (Land, Labor, Capital) are scarce inputs</p>
 <p><span class="emoji" data-emoji="two">2️⃣</span> <strong>Scarcity</strong> forces choices between alternatives</p>
@@ -558,13 +429,13 @@ window.Quarto = {
 <p><span class="emoji" data-emoji="link">🔗</span> <strong>This connects to</strong>: Lecture 3 (opportunity cost), Lecture 2 (WHAT/HOW/FOR WHOM), Lecture 1 (scarcity &amp; efficiency)</p>
 </div>
 </section>
-<section id="exercises" class="level2 center">
-<h2 class="center anchored" data-anchor-id="exercises">Exercises <span class="emoji" data-emoji="pencil">📝</span></h2>
+<section id="exercises" class="slide level2 center">
+<h2>Exercises <span class="emoji" data-emoji="pencil">📝</span></h2>
 <p><strong>Application Time!</strong></p>
 <p>PPF and opportunity cost calculations.</p>
 </section>
-<section id="exercise-1-multiple-choice" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1-multiple-choice">Exercise 1: Multiple Choice</h2>
+<section id="exercise-1-multiple-choice" class="slide level2">
+<h2>Exercise 1: Multiple Choice</h2>
 <p><strong>An economy is producing at a point INSIDE its PPF. This indicates:</strong></p>
 <p>A. The economy is efficiently using all resources</p>
 <p>B. The economy has economic growth</p>
@@ -576,8 +447,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="exercise-2-multiple-choice" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2-multiple-choice">Exercise 2: Multiple Choice</h2>
+<section id="exercise-2-multiple-choice" class="slide level2">
+<h2>Exercise 2: Multiple Choice</h2>
 <p><strong>A country’s PPF shifts outward. This could be caused by:</strong></p>
 <p>A. Higher unemployment</p>
 <p>B. Decrease in the labor force</p>
@@ -589,10 +460,10 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="exercise-3-open-question---setup" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-open-question---setup">Exercise 3: Open Question - Setup</h2>
+<section id="exercise-3-open-question---setup" class="slide level2">
+<h2>Exercise 3: Open Question - Setup</h2>
 <p><strong>Scenario</strong>: The Portuguese Algarve region has limited land and labor. It can allocate resources between golf tourism and beach tourism. Current production possibilities:</p>
-<table class="caption-top table">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Combination</th>
@@ -634,8 +505,8 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="exercise-3-questions" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-questions">Exercise 3: Questions</h2>
+<section id="exercise-3-questions" class="slide level2">
+<h2>Exercise 3: Questions</h2>
 <p><strong>Questions</strong>:</p>
 <ol type="a">
 <li><p>Draw the PPF with Golf Resorts on x-axis, Beach Hotels on y-axis</p></li>
@@ -649,30 +520,22 @@ window.Quarto = {
 <li><p>A new tourism development technology is invented. How would this affect the PPF? Draw the new curve.</p></li>
 </ol>
 </section>
-<section id="exercise-3-solution---part-a-ppf-graph" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-solution---part-a-ppf-graph">Exercise 3: Solution - Part a (PPF Graph)</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lecture04-ppf_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="1248"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>a) The PPF shows all efficient combinations (points A-F) and the bowed-out shape indicating increasing opportunity costs.</strong></p>
+<section id="exercise-3-solution---part-a-ppf-graph" class="slide level2">
+<h2>Exercise 3: Solution - Part a (PPF Graph)</h2>
+
+<img data-src="lecture04-ppf_files/figure-revealjs/unnamed-chunk-9-1.png" width="1248" class="r-stretch"><p><strong>a) The PPF shows all efficient combinations (points A-F) and the bowed-out shape indicating increasing opportunity costs.</strong></p>
 </section>
-<section id="exercise-3-solution---part-b" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-solution---part-b">Exercise 3: Solution - Part b</h2>
+<section id="exercise-3-solution---part-b" class="slide level2">
+<h2>Exercise 3: Solution - Part b</h2>
 <p><strong>b) Opportunity Cost Calculations</strong>:</p>
 <p><strong>B → C</strong> (5 golf → 10 golf): <span class="math display">\[\text{Gain in Golf} = 10 - 5 = 5 \text{ resorts}\]</span> <span class="math display">\[\text{Loss in Beach} = 48 - 44 = 4 \text{ hotels}\]</span> <span class="math display">\[\text{Opportunity Cost} = \frac{4 \text{ hotels}}{5 \text{ resorts}} = 0.8 \text{ beach hotels per golf resort}\]</span></p>
 </section>
-<section id="exercise-3-solution---part-b-continued" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-solution---part-b-continued">Exercise 3: Solution - Part b continued</h2>
+<section id="exercise-3-solution---part-b-continued" class="slide level2">
+<h2>Exercise 3: Solution - Part b continued</h2>
 <p><strong>D → E</strong> (15 golf → 20 golf): <span class="math display">\[\text{Gain in Golf} = 20 - 15 = 5 \text{ resorts}\]</span> <span class="math display">\[\text{Loss in Beach} = 38 - 30 = 8 \text{ hotels}\]</span> <span class="math display">\[\text{Opportunity Cost} = \frac{8 \text{ hotels}}{5 \text{ resorts}} = 1.6 \text{ beach hotels per golf resort}\]</span></p>
 </section>
-<section id="exercise-3-solution---part-c-d" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-solution---part-c-d">Exercise 3: Solution - Part c &amp; d</h2>
+<section id="exercise-3-solution---part-c-d" class="slide level2">
+<h2>Exercise 3: Solution - Part c &amp; d</h2>
 <p><strong>c) Increasing Opportunity Costs?</strong></p>
 <p><strong>YES!</strong> Opportunity cost increases from 0.8 (B→C) to 1.6 (D→E).</p>
 <p><strong>Explanation</strong>: As more resources shift to golf, we use resources less suited for golf (originally better for beaches). Each additional golf resort requires sacrificing more beach hotels.</p>
@@ -685,12 +548,12 @@ window.Quarto = {
 <li>Could produce more beach without reducing golf</li>
 </ul>
 </section>
-<section id="exercise-3-solution---part-e" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-solution---part-e">Exercise 3: Solution - Part e</h2>
+<section id="exercise-3-solution---part-e" class="slide level2">
+<h2>Exercise 3: Solution - Part e</h2>
 <p><strong>e) New Technology Effect</strong>:</p>
 <p><strong>Technology shifts PPF OUTWARD</strong> (economic growth).</p>
 <p>New PPF might be:</p>
-<table class="caption-top table">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Combination</th>
@@ -724,429 +587,459 @@ window.Quarto = {
 <p><strong>Effect</strong>: Can now produce MORE of both types of tourism with same resources!</p>
 <p><strong>Graph</strong>: Draw original PPF, then new PPF further from origin (parallel or biased depending on where technology applies).</p>
 </section>
-<section id="next-lecture" class="level2">
-<h2 class="anchored" data-anchor-id="next-lecture">Next Lecture <span class="emoji" data-emoji="books">📚</span></h2>
+<section id="next-lecture" class="slide level2">
+<h2>Next Lecture <span class="emoji" data-emoji="books">📚</span></h2>
 <p><strong>February 19, 2026</strong>: Budget Set and Budget Constraint</p>
 <p><span class="emoji" data-emoji="bulb">💡</span> <strong>Preparation</strong>: Think about how you allocate your own limited budget across different goods!</p>
 </section>
-<section id="thank-you" class="level2 center">
-<h2 class="center anchored" data-anchor-id="thank-you">Thank You! <span class="emoji" data-emoji="wave">👋</span></h2>
+<section id="thank-you" class="slide level2 center">
+<h2>Thank You! <span class="emoji" data-emoji="wave">👋</span></h2>
 <p><strong>Questions?</strong></p>
 <p><span class="emoji" data-emoji="email">📧</span> paulo.fagandini@ext.universidadeeuropeia.pt</p>
-<hr>
+</section>
+<section class="slide level2">
+
 <p><em>Next class: Thursday, February 19, 2026</em></p>
-<div class="notes">
+<aside class="notes">
 <p>This completes the Fundamentals block. Students should understand: scarcity → trade-offs → opportunity cost → PPF → efficiency. These concepts are foundational for all future topics.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Economics of Tourism | Lecture 4</p>
 </div>
+</div></div>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
 
-</section>
-</section>
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
         },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
       });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
         }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
             }
           }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
           }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          return note.innerHTML;
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
         }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
         }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
             }
           } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
             });
           }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
         }
-      }, function(instance) {
       });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script>
-</div> <!-- /content -->
-
-
-
+      </script>
+    
 
 </body></html>

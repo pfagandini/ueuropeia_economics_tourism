@@ -14,6 +14,7 @@ title: "Material"
 #### Consumer Theory: Behind the Demand
 
 5. [Budget Set and Constraint](slides/lecture05-budget.qmd) :page_facing_up: [PDF](PDF/lecture05-budget.pdf)
+6. [Preferences](slides/lecture06-preferences.qmd) :page_facing_up: [PDF](PDF/lecture06-preferences.pdf)
 
 #### Producer Theory: Behind the Supply
 
