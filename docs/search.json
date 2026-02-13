@@ -4,14 +4,14 @@
     "href": "material.html",
     "title": "Material",
     "section": "",
-    "text": "Introduction 📄 PDF\nEconomic Systems 📄 PDF\nOpportunity Cost 📄 PDF\nProduction Possibility Frontier 📄 PDF\n\n\n\n\n\nBudget Set and Constraint 📄 PDF\nPreferences 📄 PDF"
+    "text": "Introduction 📄 PDF\nEconomic Systems 📄 PDF\nOpportunity Cost 📄 PDF\nProduction Possibility Frontier 📄 PDF\n\n\n\n\n\nBudget Set and Constraint 📄 PDF\nPreferences 📄 PDF\nMRS and Utility 📄 PDF\nDemand 📄 PDF"
   },
   {
     "objectID": "material.html#slides",
     "href": "material.html#slides",
     "title": "Material",
     "section": "",
-    "text": "Introduction 📄 PDF\nEconomic Systems 📄 PDF\nOpportunity Cost 📄 PDF\nProduction Possibility Frontier 📄 PDF\n\n\n\n\n\nBudget Set and Constraint 📄 PDF\nPreferences 📄 PDF"
+    "text": "Introduction 📄 PDF\nEconomic Systems 📄 PDF\nOpportunity Cost 📄 PDF\nProduction Possibility Frontier 📄 PDF\n\n\n\n\n\nBudget Set and Constraint 📄 PDF\nPreferences 📄 PDF\nMRS and Utility 📄 PDF\nDemand 📄 PDF"
   },
   {
     "objectID": "slides/lecture05-budget.html#recap-fundamentals-block",
@@ -1181,5 +1181,418 @@
     "title": "Consumer Theory",
     "section": "Axiom 4: Convexity",
     "text": "Axiom 4: Convexity\n\n\nConvexity\nAverages (mixtures) of bundles are at least as good as extremes.\nIf \\(A \\sim B\\), then any weighted average \\(\\lambda A + (1-\\lambda) B\\) is weakly preferred (\\(\\succsim A\\)), where \\(0 &lt; \\lambda &lt; 1\\).\n\n\n\nIntuition: People prefer balanced consumption to extremes.\nA tourist equally happy with:\n\n7 beach days + 0 museums\n0 beach days + 7 museums\n\nWould prefer 3.5 beach + 3.5 museums!\n\nGraphically: Indifference curves are bowed toward the origin (convex shape).\n👉 This will give us a diminishing Marginal Rate of Substitution (Lecture 7)"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#recap-building-the-consumer-model",
+    "href": "slides/lecture07-mrs-utility.html#recap-building-the-consumer-model",
+    "title": "Economics Fundamentals",
+    "section": "Recap: Building the Consumer Model",
+    "text": "Recap: Building the Consumer Model\n\n\n\n\n\n\n\n\n\nLecture\nQuestion\nTool\n\n\n\n\n5\nWhat can the consumer afford?\nBudget constraint: \\(p_1 x_1 + p_2 x_2 \\leq M\\)\n\n\n6\nHow does the consumer rank bundles?\nPreferences, axioms, indifference curves\n\n\n7\nHow does the consumer choose?\nMRS, utility, optimization\n\n\n\n\nToday we put it all together! 🧩"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#todays-roadmap",
+    "href": "slides/lecture07-mrs-utility.html#todays-roadmap",
+    "title": "Economics Fundamentals",
+    "section": "Today’s Roadmap 🧭",
+    "text": "Today’s Roadmap 🧭\n\n\n\nPart 1 — Marginal Rate of Substitution\n\nDefinition and intuition\nMRS along an indifference curve\nDiminishing MRS\n\nPart 2 — Utility Functions\n\nFrom preferences to utility\nMarginal utility\nMRS = ratio of marginal utilities\n\n\nPart 3 — Consumer’s Optimal Choice\n\nThe tangency condition: \\(MRS = \\frac{p_1}{p_2}\\)\nGraphical solution\nAlgebraic solution (step by step)\n\nPart 4 — Worked Examples\n\nTourism applications\nCorner solutions"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#mrs-the-intuition",
+    "href": "slides/lecture07-mrs-utility.html#mrs-the-intuition",
+    "title": "Economics Fundamentals",
+    "section": "MRS: The Intuition 🤔",
+    "text": "MRS: The Intuition 🤔\n\nWe know from Lecture 6 that indifference curves are downward sloping — to stay equally happy, getting more of one good requires giving up some of the other.\nThe key question: How much of good 2 is the consumer willing to give up to get one more unit of good 1?\n\nMarginal Rate of Substitution (MRS)\nThe MRS measures the rate at which a consumer is willing to trade good 2 for good 1 while remaining on the same indifference curve.\n\\[MRS = -\\frac{\\Delta x_2}{\\Delta x_1} \\bigg|_{\\text{along IC}} = \\text{slope of the IC (in absolute value)}\\]"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#mrs-tourism-example",
+    "href": "slides/lecture07-mrs-utility.html#mrs-tourism-example",
+    "title": "Economics Fundamentals",
+    "section": "MRS: Tourism Example 🌴",
+    "text": "MRS: Tourism Example 🌴"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#diminishing-mrs",
+    "href": "slides/lecture07-mrs-utility.html#diminishing-mrs",
+    "title": "Economics Fundamentals",
+    "section": "Diminishing MRS 📉",
+    "text": "Diminishing MRS 📉\n\n\nLaw of Diminishing MRS\nAs a consumer has more of good 1 and less of good 2, they are willing to give up less of good 2 for an additional unit of good 1.\n\nTourism intuition: Imagine you have 1 beach day and 8 city tours. You’d happily trade several city tours for another beach day.\nBut if you have 7 beach days and 1 city tour, you’d need a lot of beach days to compensate for losing that last city tour!\n👉 This is what makes indifference curves convex (bowed toward the origin).\n👉 Diminishing MRS reflects the idea that consumers prefer variety."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#from-preferences-to-utility",
+    "href": "slides/lecture07-mrs-utility.html#from-preferences-to-utility",
+    "title": "Economics Fundamentals",
+    "section": "From Preferences to Utility 📊",
+    "text": "From Preferences to Utility 📊\n\nIn Lecture 6, we described preferences using the symbols \\(\\succ\\), \\(\\sim\\), \\(\\succsim\\).\nA utility function translates those preferences into numbers.\n\nUtility Function\nA function \\(U(x_1, x_2)\\) that assigns a number to each bundle such that:\n\\[A \\succsim B \\iff U(A) \\geq U(B)\\]\nThe consumer prefers the bundle with the higher utility number.\n\nImportant: Utility is ordinal, not cardinal. Only the ranking matters, not the size of the numbers. If \\(U(A) = 10\\) and \\(U(B) = 5\\), we know \\(A \\succ B\\), but we cannot say “A is twice as good.”"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#common-utility-functions",
+    "href": "slides/lecture07-mrs-utility.html#common-utility-functions",
+    "title": "Economics Fundamentals",
+    "section": "Common Utility Functions ⚙️",
+    "text": "Common Utility Functions ⚙️\n\n\n\n\n\n\n\n\n\n\nUtility Function\nFormula\nIC Shape\nExample\n\n\n\n\nCobb-Douglas\n\\(U = x_1^a \\cdot x_2^b\\)\nStandard (convex)\nBeach days & city tours\n\n\nPerfect Substitutes\n\\(U = ax_1 + bx_2\\)\nStraight lines\nTwo equivalent airlines\n\n\nPerfect Complements\n\\(U = \\min(ax_1, bx_2)\\)\nL-shaped\nSurfboard + accommodation\n\n\n\nFor this course, we will mostly work with Cobb-Douglas preferences.\nExample: \\(U(x_1, x_2) = x_1 \\cdot x_2\\)\n\n\n\nBundle\n\\(x_1\\)\n\\(x_2\\)\n\\(U = x_1 \\cdot x_2\\)\nRanking\n\n\n\n\nA\n2\n6\n12\n\\(A \\sim B\\)\n\n\nB\n3\n4\n12\n\\(A \\sim B\\)\n\n\nC\n4\n5\n20\n\\(C \\succ A\\)"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#marginal-utility",
+    "href": "slides/lecture07-mrs-utility.html#marginal-utility",
+    "title": "Economics Fundamentals",
+    "section": "Marginal Utility 🔬",
+    "text": "Marginal Utility 🔬\n\n\nMarginal Utility (MU)\nThe additional utility from consuming one more unit of a good, holding the other good constant.\n\\[MU_1 = \\frac{\\partial U}{\\partial x_1} \\qquad MU_2 = \\frac{\\partial U}{\\partial x_2}\\]\n\nExample: For \\(U(x_1, x_2) = \\sqrt{x_1 \\cdot x_2}\\):\n\\[MU_1 = \\frac{\\partial (\\sqrt{x_1 \\cdot x_2})}{\\partial x_1} = \\frac{1}{2}\\sqrt{\\frac{x_2}{x_1}} \\qquad MU_2 = \\frac{\\partial (\\sqrt{x_1 \\cdot x_2})}{\\partial x_2} = \\frac{1}{2}\\sqrt{\\frac{x_1}{x_2}}\\]\n👉 Diminishing marginal utility: As you consume more of a good, each additional unit adds less satisfaction (same idea from the ice cream cone example in the Lecture Notes availabe in Canvas.)."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#the-key-link-mrs-ratio-of-marginal-utilities",
+    "href": "slides/lecture07-mrs-utility.html#the-key-link-mrs-ratio-of-marginal-utilities",
+    "title": "Economics Fundamentals",
+    "section": "The Key Link: MRS = Ratio of Marginal Utilities 🔑",
+    "text": "The Key Link: MRS = Ratio of Marginal Utilities 🔑\n\nThere is a powerful connection between the MRS (from indifference curves) and marginal utilities (from the utility function):\n\nMRS and Marginal Utility\n\\[MRS = \\frac{MU_1}{MU_2}\\]\nThe MRS equals the ratio of marginal utilities of the two goods.\n\nIntuition: If good 1 gives you a lot of extra utility (\\(MU_1\\) is high) and good 2 gives you little (\\(MU_2\\) is low), you are willing to give up a lot of good 2 for one more unit of good 1 — so MRS is high.\nExample: For \\(U = x_1 \\cdot x_2\\) at bundle \\((2, 6)\\):\n\\[MRS = \\frac{MU_1}{MU_2} = \\frac{x_2}{x_1} = \\frac{6}{2} = 3\\]\n👉 The consumer would give up 3 units of good 2 for 1 more unit of good 1."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#why-does-mrs-mu_1-mu_2",
+    "href": "slides/lecture07-mrs-utility.html#why-does-mrs-mu_1-mu_2",
+    "title": "Economics Fundamentals",
+    "section": "Why Does MRS = \\(MU_1 / MU_2\\)? 💡",
+    "text": "Why Does MRS = \\(MU_1 / MU_2\\)? 💡\n\nDerivation (along an indifference curve, utility stays constant):\n\\[dU = 0\\]\n\\[\\frac{\\partial U}{\\partial x_1} dx_1 + \\frac{\\partial U}{\\partial x_2} dx_2 = 0\\]\n\\[MU_1 \\cdot dx_1 + MU_2 \\cdot dx_2 = 0\\]\nRearranging:\n\\[-\\frac{dx_2}{dx_1} = \\frac{MU_1}{MU_2}\\]\n\\[\\boxed{MRS = \\frac{MU_1}{MU_2}}\\]\n👉 This formula lets us compute the MRS directly from the utility function — no graph needed!"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#the-consumers-problem",
+    "href": "slides/lecture07-mrs-utility.html#the-consumers-problem",
+    "title": "Economics Fundamentals",
+    "section": "The Consumer’s Problem 🎯",
+    "text": "The Consumer’s Problem 🎯\n\nNow we can put everything together:\n\nThe Consumer’s Problem\nMaximize utility subject to the budget constraint:\n\\[\\max_{x_1, x_2} \\; U(x_1, x_2) \\quad \\text{subject to} \\quad p_1 x_1 + p_2 x_2 = M\\]\n\nIn words: Choose the bundle on the highest possible indifference curve that is still affordable (on or below the budget line).\nSince more is better (non-satiation), the consumer will always spend all income ➡️ the optimal bundle is on the budget line."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#graphical-solution-tangency",
+    "href": "slides/lecture07-mrs-utility.html#graphical-solution-tangency",
+    "title": "Economics Fundamentals",
+    "section": "Graphical Solution: Tangency 🎨",
+    "text": "Graphical Solution: Tangency 🎨"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#the-tangency-condition",
+    "href": "slides/lecture07-mrs-utility.html#the-tangency-condition",
+    "title": "Economics Fundamentals",
+    "section": "The Tangency Condition 📏",
+    "text": "The Tangency Condition 📏\n\nAt the optimum, the slope of the IC equals the slope of the budget line:\n\nOptimality Condition (Interior Solution)\n\\[MRS = \\frac{p_1}{p_2}\\]\n\\[\\frac{MU_1}{MU_2} = \\frac{p_1}{p_2}\\]\nOr equivalently:\n\\[\\frac{MU_1}{p_1} = \\frac{MU_2}{p_2}\\]\n\nInterpretation of \\(\\frac{MU_1}{p_1} = \\frac{MU_2}{p_2}\\): The marginal utility per euro spent must be equal for both goods. If it is not, the consumer can improve by reallocating spending."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#why-must-mrs-price-ratio",
+    "href": "slides/lecture07-mrs-utility.html#why-must-mrs-price-ratio",
+    "title": "Economics Fundamentals",
+    "section": "Why Must MRS = Price Ratio? 💡",
+    "text": "Why Must MRS = Price Ratio? 💡\n\n\n\nIf MRS &gt; \\(p_1/p_2\\) ➡️\nThe consumer values good 1 more than the market does.\nThe consumer should buy more of good 1 and less of good 2.\nThis moves them down along the budget line, increasing utility.\n\nIf MRS &lt; \\(p_1/p_2\\) ⬅️\nThe consumer values good 1 less than the market does.\nThe consumer should buy less of good 1 and more of good 2.\nThis moves them up along the budget line, increasing utility.\n\nOnly when MRS = \\(p_1/p_2\\) is there no room for improvement — the consumer is at the optimum!\nAnalogy from Lecture 3: This is exactly the cost-benefit principle applied to marginal reallocation of spending."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#solving-algebraically-step-by-step",
+    "href": "slides/lecture07-mrs-utility.html#solving-algebraically-step-by-step",
+    "title": "Economics Fundamentals",
+    "section": "Solving Algebraically: Step by Step 🧮",
+    "text": "Solving Algebraically: Step by Step 🧮\n\nThe method (2 equations, 2 unknowns):\nEquation 1 — Tangency condition:\n\\[MRS = \\frac{p_1}{p_2} \\implies \\frac{MU_1}{MU_2} = \\frac{p_1}{p_2}\\]\nEquation 2 — Budget constraint:\n\\[p_1 x_1 + p_2 x_2 = M\\]\nSteps:\n1️⃣ Compute \\(MU_1\\) and \\(MU_2\\) from the utility function\n2️⃣ Set \\(MRS = p_1 / p_2\\) and solve for \\(x_2\\) in terms of \\(x_1\\) (or vice versa)\n3️⃣ Substitute into the budget constraint\n4️⃣ Solve for \\(x_1^*\\) and \\(x_2^*\\)"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#worked-example-tourist-in-lisbon",
+    "href": "slides/lecture07-mrs-utility.html#worked-example-tourist-in-lisbon",
+    "title": "Economics Fundamentals",
+    "section": "Worked Example: Tourist in Lisbon 🇵🇹",
+    "text": "Worked Example: Tourist in Lisbon 🇵🇹\n\nProblem: \\(U(x_1, x_2) = x_1 \\cdot x_2\\), with \\(p_1 = 20\\), \\(p_2 = 10\\), \\(M = 100\\).\nStep 1: Marginal utilities\n\\[MU_1 = \\frac{\\partial(x_1 x_2)}{\\partial x_1} = x_2 \\qquad MU_2 = \\frac{\\partial(x_1 x_2)}{\\partial x_2} = x_1\\]\nStep 2: Tangency condition\n\\[\\frac{MU_1}{MU_2} = \\frac{p_1}{p_2} \\implies \\frac{x_2}{x_1} = \\frac{20}{10} = 2 \\implies x_2 = 2x_1\\]\nStep 3: Substitute into budget constraint\n\\[20 x_1 + 10(2x_1) = 100 \\implies 20x_1 + 20x_1 = 100 \\implies 40x_1 = 100\\]\nStep 4: Solve\n\\[\\boxed{x_1^* = 2.5 \\text{ meals}} \\qquad x_2^* = 2(2.5) = \\boxed{5 \\text{ museums}}\\]\n\\[U^* = 2.5 \\times 5 = 12.5\\]"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#verifying-mu_1p_1-mu_2p_2",
+    "href": "slides/lecture07-mrs-utility.html#verifying-mu_1p_1-mu_2p_2",
+    "title": "Economics Fundamentals",
+    "section": "Verifying: \\(MU_1/p_1 = MU_2/p_2\\) ✅",
+    "text": "Verifying: \\(MU_1/p_1 = MU_2/p_2\\) ✅\n\nAt the optimum \\((x_1^*, x_2^*) = (2.5, 5)\\):\n\\[\\frac{MU_1}{p_1} = \\frac{x_2}{p_1} = \\frac{5}{20} = 0.25 \\text{ utils per euro}\\]\n\\[\\frac{MU_2}{p_2} = \\frac{x_1}{p_2} = \\frac{2.5}{10} = 0.25 \\text{ utils per euro}\\]\n✅ Equal! The last euro spent on meals gives the same additional satisfaction as the last euro spent on museums.\n👉 If \\(MU_1/p_1 &gt; MU_2/p_2\\), the consumer should shift spending toward good 1 (meals give more “bang for the buck”).\n👉 If \\(MU_1/p_1 &lt; MU_2/p_2\\), shift toward good 2."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#another-example-cobb-douglas-u-x_10.4-x_20.6",
+    "href": "slides/lecture07-mrs-utility.html#another-example-cobb-douglas-u-x_10.4-x_20.6",
+    "title": "Economics Fundamentals",
+    "section": "Another Example: Cobb-Douglas \\(U = x_1^{0.4} x_2^{0.6}\\) ✏️",
+    "text": "Another Example: Cobb-Douglas \\(U = x_1^{0.4} x_2^{0.6}\\) ✏️\n\nProblem: \\(p_1 = 5\\), \\(p_2 = 10\\), \\(M = 200\\).\nStep 1: \\(MU_1 = 0.4 \\cdot x_1^{-0.6} \\cdot x_2^{0.6} \\qquad MU_2 = 0.6 \\cdot x_1^{0.4} \\cdot x_2^{-0.4}\\)\nStep 2: Tangency\n\\[\\frac{MU_1}{MU_2} = \\frac{0.4 \\, x_2^{0.6} \\, x_1^{-0.6}}{0.6 \\, x_1^{0.4} \\, x_2^{-0.4}} = \\frac{0.4}{0.6} \\cdot \\frac{x_2}{x_1} = \\frac{2}{3} \\cdot \\frac{x_2}{x_1}\\]\nSetting equal to \\(p_1/p_2 = 5/10 = 1/2\\):\n\\[\\frac{2}{3} \\cdot \\frac{x_2}{x_1} = \\frac{1}{2} \\implies x_2 = \\frac{3}{4} x_1\\]\nStep 3: Budget constraint: \\(5x_1 + 10 \\left(\\frac{3}{4}x_1\\right) = 200 \\implies 5x_1 + 7.5x_1 = 200 \\implies 12.5x_1 = 200\\)\nStep 4: \\(\\boxed{x_1^* = 16} \\qquad x_2^* = \\frac{3}{4}(16) = \\boxed{12}\\)\n💡 Shortcut for Cobb-Douglas \\(U = x_1^a x_2^b\\): spend fraction \\(\\frac{a}{a+b}\\) of income on good 1, and \\(\\frac{b}{a+b}\\) on good 2!"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#the-cobb-douglas-shortcut",
+    "href": "slides/lecture07-mrs-utility.html#the-cobb-douglas-shortcut",
+    "title": "Economics Fundamentals",
+    "section": "The Cobb-Douglas Shortcut 🚀",
+    "text": "The Cobb-Douglas Shortcut 🚀\n\n\nCobb-Douglas Demand Shortcut\nFor \\(U = x_1^a \\cdot x_2^b\\), the optimal demands are:\n\\[x_1^* = \\frac{a}{a + b} \\cdot \\frac{M}{p_1} \\qquad x_2^* = \\frac{b}{a + b} \\cdot \\frac{M}{p_2}\\]\n\nVerify with our previous example: \\(a = 0.4\\), \\(b = 0.6\\), \\(M = 200\\), \\(p_1 = 5\\), \\(p_2 = 10\\)\n\\[x_1^* = \\frac{0.4}{1} \\cdot \\frac{200}{5} = 0.4 \\times 40 = 16 \\quad \\checkmark\\]\n\\[x_2^* = \\frac{0.6}{1} \\cdot \\frac{200}{10} = 0.6 \\times 20 = 12 \\quad \\checkmark\\]\n👉 This shortcut works for any Cobb-Douglas utility. The exponents determine budget shares."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#corner-solutions",
+    "href": "slides/lecture07-mrs-utility.html#corner-solutions",
+    "title": "Economics Fundamentals",
+    "section": "Corner Solutions 🚩",
+    "text": "Corner Solutions 🚩\n\n\n\nThe tangency condition gives interior solutions (positive amounts of both goods).\nSometimes the optimum is at a corner — the consumer buys only one good.\nThis happens with perfect substitutes when \\(MRS \\neq p_1/p_2\\) everywhere.\nRule for perfect substitutes \\(U = ax_1 + bx_2\\):\n\nIf \\(\\frac{a}{b} &gt; \\frac{p_1}{p_2}\\): buy only good 1\nIf \\(\\frac{a}{b} &lt; \\frac{p_1}{p_2}\\): buy only good 2\nIf \\(\\frac{a}{b} = \\frac{p_1}{p_2}\\): any bundle on BL is optimal"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#perfect-complements-optimum-at-the-kink",
+    "href": "slides/lecture07-mrs-utility.html#perfect-complements-optimum-at-the-kink",
+    "title": "Economics Fundamentals",
+    "section": "Perfect Complements: Optimum at the Kink 🧩",
+    "text": "Perfect Complements: Optimum at the Kink 🧩\n\n\n\nFor perfect complements \\(U = \\min(ax_1, bx_2)\\):\nNo tangency exists (the IC has a kink!). The optimum is always at the corner of the L.\nCondition: \\(ax_1 = bx_2\\)\nSubstitute into the budget constraint:\n\\[p_1 x_1 + p_2 \\left(\\frac{a}{b} x_1\\right) = M\\]\nExample: “Surf & Stay” package, \\(U = \\min(x_1, x_2)\\), \\(p_1 = 40\\), \\(p_2 = 60\\), \\(M = 200\\):\n\\[40 x_1 + 60 x_1 = 200\\] \\[x_1^* = x_2^* = 2\\]"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#summary-of-the-consumers-solution",
+    "href": "slides/lecture07-mrs-utility.html#summary-of-the-consumers-solution",
+    "title": "Economics Fundamentals",
+    "section": "Summary of the Consumer’s Solution 📋",
+    "text": "Summary of the Consumer’s Solution 📋\n\n\n\n\n\n\n\n\n\n\nPreference Type\nUtility Function\nSolution Method\nOptimal Condition\n\n\n\n\nStandard (Cobb-Douglas)\n\\(x_1^a x_2^b\\)\nTangency + Budget\n\\(MRS = p_1/p_2\\)\n\n\nPerfect Substitutes\n\\(ax_1 + bx_2\\)\nCompare \\(\\frac{a}{b}\\) vs \\(\\frac{p_1}{p_2}\\)\nCorner or entire BL\n\n\nPerfect Complements\n\\(\\min(ax_1, bx_2)\\)\nKink + Budget\n\\(ax_1 = bx_2\\)\n\n\n\n\nThe Consumer’s Optimal Choice — Master Summary\n1️⃣ Write the utility function and compute \\(MU_1\\), \\(MU_2\\)\n2️⃣ Set \\(\\frac{MU_1}{MU_2} = \\frac{p_1}{p_2}\\) (tangency)\n3️⃣ Combine with \\(p_1 x_1 + p_2 x_2 = M\\) (budget)\n4️⃣ Solve the system for \\(x_1^*\\) and \\(x_2^*\\)"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#summary-todays-key-takeaways",
+    "href": "slides/lecture07-mrs-utility.html#summary-todays-key-takeaways",
+    "title": "Economics Fundamentals",
+    "section": "Summary: Today’s Key Takeaways",
+    "text": "Summary: Today’s Key Takeaways\n\n1️⃣ MRS = rate at which the consumer trades good 2 for good 1 along an IC\n2️⃣ Diminishing MRS ➡️ indifference curves are convex ➡️ consumers prefer variety\n3️⃣ Utility functions assign numbers to bundles; \\(MRS = MU_1/MU_2\\)\n4️⃣ Optimal choice: highest IC touching the budget line ➡️ tangency condition \\(MRS = p_1/p_2\\)\n5️⃣ Equivalent condition: \\(MU_1/p_1 = MU_2/p_2\\) (equal marginal utility per euro)\n6️⃣ Cobb-Douglas shortcut: spend fraction \\(a/(a+b)\\) on good 1\nNext lecture: Lecture 8 — From individual demand to market demand and linear demand curves."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#exercises",
+    "href": "slides/lecture07-mrs-utility.html#exercises",
+    "title": "Economics Fundamentals",
+    "section": "Exercises",
+    "text": "Exercises\nApplication Time! ✏️\nMRS, utility maximization, and graphical analysis."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#exercise-1-multiple-choice",
+    "href": "slides/lecture07-mrs-utility.html#exercise-1-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\n\nQuestion: A consumer has utility \\(U = x_1 \\cdot x_2\\) and currently consumes the bundle \\((4, 8)\\). The MRS at this point is:\nA. 32\nB. 4\nC. 2\nD. 0.5\n\n\nAnswer: C — MRS = 2\n\n\\(MRS = \\frac{MU_1}{MU_2} = \\frac{x_2}{x_1} = \\frac{8}{4} = 2\\). The consumer is willing to give up 2 units of good 2 for 1 additional unit of good 1."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#exercise-2-multiple-choice",
+    "href": "slides/lecture07-mrs-utility.html#exercise-2-multiple-choice",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\n\nQuestion: At the optimal bundle, if \\(MU_1/p_1 &gt; MU_2/p_2\\), the consumer should:\nA. Buy more of good 1 and less of good 2\nB. Stay at the current bundle — it is already optimal\nC. Buy more of good 2 and less of good 1\nD. Increase total spending\n\n\nAnswer: A — Buy more of good 1 and less of good 2\n\nIf \\(MU_1/p_1 &gt; MU_2/p_2\\), the last euro spent on good 1 gives more satisfaction than the last euro on good 2. Shifting spending toward good 1 increases total utility. The consumer continues until \\(MU_1/p_1 = MU_2/p_2\\)."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#exercise-3-open-question",
+    "href": "slides/lecture07-mrs-utility.html#exercise-3-open-question",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Open Question",
+    "text": "Exercise 3: Open Question\n\nA tourist in the Algarve has a daily budget of €120 to split between boat tours (\\(x_1\\), price €30 each) and restaurant meals (\\(x_2\\), price €20 each). Their utility function is \\(U(x_1, x_2) = x_1^{0.5} \\cdot x_2^{0.5}\\).\n\nWrite the budget constraint equation and find the intercepts.\nCompute \\(MU_1\\) and \\(MU_2\\). Derive the MRS.\nUsing the tangency condition (\\(MRS = p_1/p_2\\)) and the budget constraint, find the optimal bundle \\((x_1^*, x_2^*)\\).\nVerify your answer using the Cobb-Douglas shortcut (\\(a = b = 0.5\\)).\nCompute the utility at the optimum. Now suppose the tourist’s budget increases to €180 (everything else unchanged). Find the new optimal bundle and new utility. By what percentage did utility increase?\n\n\nHint: For part (b), recall that the partial derivative of \\(x^{0.5}\\) is \\(0.5 x^{-0.5}\\). For part (d), the Cobb-Douglas shortcut says spend fraction \\(\\frac{a}{a+b}\\) on each good."
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#next-lecture",
+    "href": "slides/lecture07-mrs-utility.html#next-lecture",
+    "title": "Economics Fundamentals",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nFebruary 27, 2026: Demand — Individual and Market Demand, Linear Demands"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#thank-you",
+    "href": "slides/lecture07-mrs-utility.html#thank-you",
+    "title": "Economics Fundamentals",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions?\nContact: paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture07-mrs-utility.html#exercise-3-solution",
+    "href": "slides/lecture07-mrs-utility.html#exercise-3-solution",
+    "title": "Economics Fundamentals",
+    "section": "Exercise 3: Solution",
+    "text": "Exercise 3: Solution\n\n\\(30 x_1+20 x_2 = 120\\), \\(x_2= 6 - 1.5 x_1\\). When \\(x_1=0\\), \\(x_2=6\\), when \\(x_2=0\\), \\(x_1=4\\).\n\\(MU_1=\\frac{1}{2}\\sqrt{x_2/x_1}\\), \\(MU_2=\\frac{1}{2}\\sqrt{x_1/x_2}\\), \\(MRS=x_2/x_1\\)\n\\((x_1^*,x_2^*)=(2,3)\\)\n✅\n\\(u(2,3)=\\sqrt{2\\cdot 3}=\\sqrt{6}\\approx 2.45\\). If \\(M=180\\), \\((x_1^*,x_2^*)=(3,4.5)\\), \\(u(3,4.5)=\\sqrt{3\\cdot 4.5}=\\sqrt{13.5}\\approx 3.67\\). The utility increased \\(\\frac{3.67}{2.45}\\approx 1.5\\), that is about 50%."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#recap-lecture-7",
+    "href": "slides/lecture08-demand.html#recap-lecture-7",
+    "title": "Consumer Theory",
+    "section": "Recap: Lecture 7 ⏪",
+    "text": "Recap: Lecture 7 ⏪\n\nWhat we covered last time:\n\nMarginal Rate of Substitution (MRS): the rate at which a consumer trades \\(x_2\\) for \\(x_1\\) along an indifference curve\nUtility functions: assign numbers to bundles so that \\(U(A) &gt; U(B) \\iff A \\succ B\\)\nUtility maximization: the optimal bundle is where the budget line is tangent to the highest indifference curve\n\n\\[MRS = \\frac{MU_1}{MU_2} = \\frac{p_1}{p_2}\\]\nToday: What happens to the optimal choice when \\(p_1\\) changes? 👉 This gives us the demand curve!"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#the-key-idea",
+    "href": "slides/lecture08-demand.html#the-key-idea",
+    "title": "Consumer Theory",
+    "section": "The Key Idea 💡",
+    "text": "The Key Idea 💡\n\n\nFrom Optimization to Demand\nWhen we change the price of good 1 (\\(p_1\\)) while holding income (\\(M\\)) and \\(p_2\\) fixed, the optimal quantity of \\(x_1\\) changes. Tracing these optimal quantities gives us the individual demand curve.\n\nThe experiment:\n\nFix \\(M\\) and \\(p_2\\)\nStart with some price \\(p_1\\), find the optimal \\(x_1^*\\)\nIncrease \\(p_1\\) ➡️ budget line pivots inward ➡️ new, lower \\(x_1^*\\)\nDecrease \\(p_1\\) ➡️ budget line pivots outward ➡️ new, higher \\(x_1^*\\)\nPlot all \\((x_1^*, p_1)\\) pairs ➡️ individual demand curve"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#deriving-individual-demand-graphically",
+    "href": "slides/lecture08-demand.html#deriving-individual-demand-graphically",
+    "title": "Consumer Theory",
+    "section": "Deriving Individual Demand: Graphically 📉",
+    "text": "Deriving Individual Demand: Graphically 📉\n\n\n\n\n\n\n\n\n\n\n\n\n\nUpper panel (indifference curve diagram):\nAs \\(p_1\\) rises from 10 to 30, the budget line pivots inward (steeper).\nThe tangency points A, B, C trace the price-consumption curve.\nThe optimal quantity \\(x_1^*\\) falls: \\(6 \\to 4 \\to 2\\).\nBelow we plot just \\((x_1^*, p_1)\\) ⬇️\nThis is the individual demand curve!"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#the-individual-demand-curve",
+    "href": "slides/lecture08-demand.html#the-individual-demand-curve",
+    "title": "Consumer Theory",
+    "section": "The Individual Demand Curve 📉",
+    "text": "The Individual Demand Curve 📉\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading the demand curve:\nEach point shows the optimal quantity at a given price.\n\nAt \\(p_1 = 10\\): consumer buys \\(x_1^* = 6\\)\nAt \\(p_1 = 15\\): consumer buys \\(x_1^* = 4\\)\nAt \\(p_1 = 30\\): consumer buys \\(x_1^* = 2\\)\n\n\nThe Demand Curve\nShows the quantity a consumer is willing and able to buy at each price, ceteris paribus (holding everything else constant)."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#the-law-of-demand",
+    "href": "slides/lecture08-demand.html#the-law-of-demand",
+    "title": "Consumer Theory",
+    "section": "The Law of Demand 📜",
+    "text": "The Law of Demand 📜\n\n\nLaw of Demand\nAs the price of a good rises, the quantity demanded falls (and vice versa), ceteris paribus.\n\nWhy does it hold? Two effects when \\(p_1\\) rises:\n\n\n💰 Income effect\nHigher price makes the consumer effectively poorer ➡️ buys less of most goods\n\n↔︎️ Substitution effect\nHigher price makes good 1 relatively more expensive ➡️ consumer switches to good 2\n\n💡 For normal goods, both effects work in the same direction ➡️ demand curves slope downward."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#reserve-price",
+    "href": "slides/lecture08-demand.html#reserve-price",
+    "title": "Consumer Theory",
+    "section": "Reserve Price 🏷️",
+    "text": "Reserve Price 🏷️\n\n\nReserve (Reservation) Price\nThe highest price a consumer is willing to pay for a good or service. Equivalently, it measures the benefit of obtaining the good.\n\nDecision rule: Buy if \\(\\text{Price} \\leq \\text{Reserve Price}\\)\nTourism example ✈️:\nA tourist’s reserve price for a sunset boat tour in Lagos might be €45. If the tour costs €35, they buy it and enjoy a “surplus” of €10. If it costs €55, they skip it.\n\n👉 The demand curve can be read as a curve of reserve prices — at each quantity, it tells us the maximum someone would pay for that unit."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#horizontal-summation",
+    "href": "slides/lecture08-demand.html#horizontal-summation",
+    "title": "Consumer Theory",
+    "section": "Horizontal Summation ➕",
+    "text": "Horizontal Summation ➕\n\n\nMarket Demand\nThe market demand is obtained by horizontally summing all individual demand curves. At each price, we add up the quantities demanded by every consumer.\n\nExample: Suppose there are only 2 consumers in the market.\n\n\n\n\n\n\n\n\n\nPrice (€)\nConsumer A (\\(Q_A\\))\nConsumer B (\\(Q_B\\))\nMarket (\\(Q_A + Q_B\\))\n\n\n\n\n0\n6\n4\n10\n\n\n1\n5\n3\n8\n\n\n2\n4\n2\n6\n\n\n3\n3\n1\n4\n\n\n4\n2\n0\n2\n\n\n5\n1\n0\n1\n\n\n6\n0\n0\n0\n\n\n\n\n👉 At each price, the market quantity is the sum of individual quantities."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#horizontal-summation-graphically",
+    "href": "slides/lecture08-demand.html#horizontal-summation-graphically",
+    "title": "Consumer Theory",
+    "section": "Horizontal Summation: Graphically 📊",
+    "text": "Horizontal Summation: Graphically 📊\n\n\n👉 Notice the kink at P = 4: above this price only Consumer A is in the market!"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#why-a-kink",
+    "href": "slides/lecture08-demand.html#why-a-kink",
+    "title": "Consumer Theory",
+    "section": "Why a Kink? 🤔",
+    "text": "Why a Kink? 🤔\n\nThe market demand curve can have a kink when different consumers have different maximum willingness to pay (choke prices).\n\n\nBelow €4: Both A and B buy\n\\(Q_{Market} = Q_A + Q_B = 10 - 2P\\)\nAbove €4: Only A buys (B’s demand is zero)\n\\(Q_{Market} = Q_A = 6 - P\\)\n\nIn practice (large markets):\nWith thousands of consumers, individual kinks smooth out ➡️ market demand curves are typically smooth.\n💡 For this course, we’ll usually work with linear market demand curves (no kinks) for simplicity."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#the-linear-demand-equation",
+    "href": "slides/lecture08-demand.html#the-linear-demand-equation",
+    "title": "Consumer Theory",
+    "section": "The Linear Demand Equation 📏",
+    "text": "The Linear Demand Equation 📏\n\n\nLinear Demand — Inverse Form\n\\[P = b + mQ\\]\nwhere \\(P\\) is price, \\(Q\\) is quantity demanded, \\(b\\) is the vertical intercept (choke price), and \\(m\\) is the slope (\\(m &lt; 0\\)).\n\nInterpreting the parameters:\n\n\\(b\\) = the maximum price anyone would pay (quantity = 0). Also called the choke price.\n\\(m\\) = \\(\\frac{\\Delta P}{\\Delta Q}\\) (negative!) — how much price falls per additional unit demanded\nThe horizontal intercept = \\(-b/m\\) = the quantity demanded when price is zero"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#example-canned-tuna-market",
+    "href": "slides/lecture08-demand.html#example-canned-tuna-market",
+    "title": "Consumer Theory",
+    "section": "Example: Canned Tuna Market 🥫",
+    "text": "Example: Canned Tuna Market 🥫\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe data (adapted from Lecture Notes available in Canvas):\n\\(b = 6\\) (choke price = €6)\nSlope: \\(m = \\frac{\\Delta P}{\\Delta Q} = \\frac{-1}{2000}\\)\nEquation:\n\\[P = -\\frac{1}{2000}Q + 6\\]\nVerify: At \\(Q = 2000\\):\n\\(P = -\\frac{1}{2000}(2000) + 6 = 5\\) ✅\nAt \\(Q = 4000\\):\n\\(P = -\\frac{1}{2000}(4000) + 6 = 4\\) ✅"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#finding-quantity-from-price",
+    "href": "slides/lecture08-demand.html#finding-quantity-from-price",
+    "title": "Consumer Theory",
+    "section": "Finding Quantity from Price",
+    "text": "Finding Quantity from Price\n\nOften we want the direct demand form — quantity as a function of price.\nStarting from the inverse demand: \\(P = b + mQ\\)\n\\[Q = \\frac{P - b}{m}\\]\nCanned tuna example:\n\\[P = -\\frac{1}{2000}Q + 6 \\quad \\Longrightarrow \\quad Q = -2000P + 12000 = 12000 - 2000P\\]\nVerify: At \\(P = 3\\): \\(Q = 12000 - 2000(3) = 6000\\) cans/month ✅\n👉 Both forms are equivalent — use whichever is more convenient for the problem!"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#total-expenditure-and-total-revenue",
+    "href": "slides/lecture08-demand.html#total-expenditure-and-total-revenue",
+    "title": "Consumer Theory",
+    "section": "Total Expenditure and Total Revenue 💸",
+    "text": "Total Expenditure and Total Revenue 💸\n\n\nTotal Expenditure = Total Revenue\n\\[TE = TR = P \\times Q\\]\nWhat consumers spend equals what sellers receive.\n\nExample: If \\(P = 3\\) and \\(Q = 6000\\):\n\\[TE = TR = 3 \\times 6000 = €18{,}000 \\text{ per month}\\]\nGraphically, \\(P \\times Q\\) is the area of the rectangle under the price line, from 0 to \\(Q\\).\n👉 The relationship between price changes and total revenue depends on elasticity (Lecture 9!)."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#change-in-quantity-demanded-vs.-change-in-demand",
+    "href": "slides/lecture08-demand.html#change-in-quantity-demanded-vs.-change-in-demand",
+    "title": "Consumer Theory",
+    "section": "Change in Quantity Demanded vs. Change in Demand ⚠️",
+    "text": "Change in Quantity Demanded vs. Change in Demand ⚠️\n\nThis is one of the most important distinctions in economics!\n\n\n↕️ Movement Along the Curve\nA change in quantity demanded caused by a change in the good’s own price.\nThe curve itself does not move.\nExample: Hotel room price drops from €100 to €80 ➡️ more rooms demanded.\n\n↔︎️ Shift of the Curve\nA change in demand caused by a change in anything other than own price.\nThe entire curve moves left or right.\nExample: A viral TikTok video about Lisbon ➡️ demand for Lisbon hotels shifts right at every price."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#determinants-of-demand-shift-factors",
+    "href": "slides/lecture08-demand.html#determinants-of-demand-shift-factors",
+    "title": "Consumer Theory",
+    "section": "Determinants of Demand (Shift Factors) ⚙️",
+    "text": "Determinants of Demand (Shift Factors) ⚙️\n\nFactors that shift the demand curve (right = increase, left = decrease):\n\n\n➡️ Increase in demand:\n\n📉 Price of complements falls (e.g. flights cheaper ➡️ more hotel demand)\n📈 Price of substitutes rises (e.g. Airbnb raises fees ➡️ more hotel demand)\n💰 Income rises (normal goods)\n❤️ Preferences shift toward the good\n👥 Population of buyers grows\n\n\n⬅️ Decrease in demand:\n\n📈 Price of complements rises\n📉 Price of substitutes falls\n📉 Income falls (normal goods)\n💔 Preferences shift away\n📉 Population of buyers shrinks\n\n\n⚠️ A change in own price is a movement along the curve, never a shift!"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#shifts-vs.-movements-graphically",
+    "href": "slides/lecture08-demand.html#shifts-vs.-movements-graphically",
+    "title": "Consumer Theory",
+    "section": "Shifts vs. Movements: Graphically 📊",
+    "text": "Shifts vs. Movements: Graphically 📊"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#consumer-surplus-1",
+    "href": "slides/lecture08-demand.html#consumer-surplus-1",
+    "title": "Consumer Theory",
+    "section": "Consumer Surplus ⭐",
+    "text": "Consumer Surplus ⭐\n\n\nConsumer Surplus (CS)\nThe difference between what consumers are willing to pay (reserve price) and what they actually pay (market price). Graphically, it is the area below the demand curve and above the price line.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor a linear demand:\n\\[CS = \\frac{1}{2} \\times Q^* \\times (b - P^*)\\]\nwhere \\(b\\) is the choke price.\nExample: \\(b = 10\\), \\(P^* = 4\\), \\(Q^* = 6\\):\n\\[CS = \\frac{1}{2}(6)(10 - 4) = €18\\]"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#why-consumer-surplus-matters",
+    "href": "slides/lecture08-demand.html#why-consumer-surplus-matters",
+    "title": "Consumer Theory",
+    "section": "Why Consumer Surplus Matters 💡",
+    "text": "Why Consumer Surplus Matters 💡\n\nConsumer surplus measures the net benefit consumers get from participating in the market.\n\n\nApplications in tourism:\n\n🎫 Dynamic pricing (airlines, hotels) aims to capture consumer surplus\n🏛️ Government tourist taxes reduce consumer surplus\n🎁 Promotional offers increase consumer surplus to attract visitors\n\n\nPolicy implications:\n\nCS helps measure the welfare effects of price changes, taxes, or subsidies\nA higher CS means consumers are better off\nWe’ll use CS again when studying market equilibrium and market efficiency"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#tourism-demand-in-practice",
+    "href": "slides/lecture08-demand.html#tourism-demand-in-practice",
+    "title": "Consumer Theory",
+    "section": "Tourism Demand in Practice ✈️",
+    "text": "Tourism Demand in Practice ✈️\n\nHow does this theory apply to tourism?\n\n\nIndividual demand for travel:\nEach tourist has a reservation price for a trip — shaped by income, preferences, time constraints.\n📉 As flight prices rise, fewer tourists travel (law of demand).\n💰 As income grows, tourists demand more and higher-quality travel (normal good).\n\nMarket demand for a destination:\nThe sum of all potential tourists’ for a given price.\nShifts when:\n\n🌐 Exchange rates change (€ strengthens ➡️ more outbound tourism)\n📱 Viral social media exposure\n⚠️ Safety concerns or natural disasters\n✈️ New direct flights to the destination\n\n\n💡 The concepts of demand shifts and consumer surplus help tourism managers set optimal prices!"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#summary",
+    "href": "slides/lecture08-demand.html#summary",
+    "title": "Consumer Theory",
+    "section": "Summary 📋",
+    "text": "Summary 📋\n\nToday’s Key Takeaways:\n\nIndividual demand is derived from utility maximization as price changes\nThe Law of Demand: higher price ➡️ lower quantity demanded (ceteris paribus)\nMarket demand = horizontal sum of all individual demands\nLinear demand: \\(P = b + mQ\\) (inverse) or \\(Q = \\frac{P - b}{m}\\) (direct)\nMovement along (own price change) vs. Shift (other factors change)\nConsumer surplus = area below demand, above price = net benefit to consumers\n\nConnection to previous lectures: Budget constraints and preferences (L5–L7) generate demand curves (today).\nNext (Lecture 9, March 12): Price Elasticity of Demand — how sensitive is quantity demanded to price changes?\n⚠️ Reminder: Test 1 is on March 13 covering Fundamentals and Consumer!"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#exercises",
+    "href": "slides/lecture08-demand.html#exercises",
+    "title": "Consumer Theory",
+    "section": "Exercises",
+    "text": "Exercises\nApplication Time! ✏️\nIndividual demand, market demand, and linear demand curves."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#exercise-1-multiple-choice",
+    "href": "slides/lecture08-demand.html#exercise-1-multiple-choice",
+    "title": "Consumer Theory",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\n\nQuestion: If the price of Airbnb accommodation falls significantly, what happens to the demand curve for hotel rooms?\nA. The demand curve for hotels shifts to the right\nB. The demand curve for hotels shifts to the left\nC. There is a movement along the hotel demand curve\nD. The demand curve for hotels becomes steeper\n\n\nAnswer: B\n\nAirbnb is a substitute for hotels. When the price of a substitute falls, demand for the good decreases (shifts left). Consumers switch from hotels to the now-cheaper Airbnb. This is a shift (not a movement along), because it’s a change in the price of another good."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#exercise-2-multiple-choice",
+    "href": "slides/lecture08-demand.html#exercise-2-multiple-choice",
+    "title": "Consumer Theory",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\n\nQuestion: The market demand for guided tours in Sintra is \\(P = 50 - 2Q\\) (€ per tour). At a price of €20, what is the consumer surplus?\nA. €112.50\nB. €500\nC. €300\nD. €225\n\n\nAnswer: D\n\nAt \\(P = 20\\): \\(20 = 50 - 2Q \\Rightarrow 2Q = 30 \\Rightarrow Q = 15\\) tours.\n\\[CS = \\frac{1}{2} \\times Q^* \\times (b - P^*) = \\frac{1}{2} \\times 15 \\times (50 - 20) = \\frac{1}{2} \\times 15 \\times 30 = €225\\]\n👉 The triangle has base \\(Q^* = 15\\) and height \\((b - P^*) = 30\\)."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#exercise-3-open-question",
+    "href": "slides/lecture08-demand.html#exercise-3-open-question",
+    "title": "Consumer Theory",
+    "section": "Exercise 3: Open Question ✍️",
+    "text": "Exercise 3: Open Question ✍️\n\nSuppose the Algarve hotel market has two types of tourists:\n\nDomestic tourists (Portugal): Individual demand \\(P = 200 - 4Q_D\\)\nInternational tourists: Individual demand \\(P = 300 - 2Q_I\\)\n\nThere are 100 domestic tourists and 50 international tourists. Assume all tourists of the same type are identical.\na) Write the market demand for each group of tourists.\nb) Derive the total market demand curve for the Algarve hotel market.\nc) At a price of €100 per night, how many rooms are demanded by each group? What is total market demand?\nd) Calculate the consumer surplus for each group at \\(P = €100\\).\ne) A new low-cost airline begins flights to Faro, reducing travel costs for international tourists. How would this affect the total market demand curve? Explain whether this is a movement along or a shift of demand."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#exercise-3-solution-parts-a-b",
+    "href": "slides/lecture08-demand.html#exercise-3-solution-parts-a-b",
+    "title": "Consumer Theory",
+    "section": "Exercise 3: Solution — Parts a & b",
+    "text": "Exercise 3: Solution — Parts a & b\n\na) Market demand for each group:\nDomestic (100 identical tourists): \\(Q_D^{total} = 100 \\times Q_D = 100 \\times \\frac{200 - P}{4} = \\frac{100(200 - P)}{4} = 5000 - 25P\\) for \\(P \\leq 200\\)\nInternational (50 identical tourists): \\(Q_I^{total} = 50 \\times Q_I = 50 \\times \\frac{300 - P}{2} = \\frac{50(300 - P)}{2} = 7500 - 25P\\) for \\(P \\leq 300\\)\nb) Total market demand (horizontal sum):\nFor \\(P \\leq 200\\) (both groups buy): \\(Q_{Total} = (5000 - 25P) + (7500 - 25P) = 12500 - 50P\\)\nFor \\(200 &lt; P \\leq 300\\) (only international): \\(Q_{Total} = 7500 - 25P\\)\nFor \\(P &gt; 300\\): \\(Q_{Total} = 0\\)"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#exercise-3-solution-parts-c-d",
+    "href": "slides/lecture08-demand.html#exercise-3-solution-parts-c-d",
+    "title": "Consumer Theory",
+    "section": "Exercise 3: Solution — Parts c & d",
+    "text": "Exercise 3: Solution — Parts c & d\n\nc) At P = €100 (both groups are active since \\(100 &lt; 200\\)):\n\\(Q_D^{total} = 5000 - 25(100) = 2500\\) rooms\n\\(Q_I^{total} = 7500 - 25(100) = 5000\\) rooms\n\\(Q_{Total} = 2500 + 5000 = 7500\\) rooms ✅ (matches \\(12500 - 50(100) = 7500\\))\nd) Consumer surplus at P = €100:\nDomestic: Inverse demand: \\(P = 200 - \\frac{Q_D^{total}}{25}\\). Choke price = 200. \\(Q^* = 2500\\).\n\\[CS_D = \\frac{1}{2} \\times 2500 \\times (200 - 100) = \\frac{1}{2} \\times 2500 \\times 100 = €125{,}000\\]\nInternational: Inverse demand: \\(P = 300 - \\frac{Q_I^{total}}{25}\\). Choke price = 300. \\(Q^* = 5000\\).\n\\[CS_I = \\frac{1}{2} \\times 5000 \\times (300 - 100) = \\frac{1}{2} \\times 5000 \\times 200 = €500{,}000\\]\nTotal CS = €125,000 + €500,000 = €625,000"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#exercise-3-solution-part-e",
+    "href": "slides/lecture08-demand.html#exercise-3-solution-part-e",
+    "title": "Consumer Theory",
+    "section": "Exercise 3: Solution — Part e",
+    "text": "Exercise 3: Solution — Part e\n\ne) New low-cost airline to Faro:\nThis reduces the total cost of visiting the Algarve for international tourists (complementary good: transport + accommodation).\nEffect: The demand curve for international tourists shifts to the right. At every price, international tourists now demand more hotel rooms.\nThis is a shift of the demand curve, not a movement along it, because the change is caused by a factor other than the hotel’s own price (namely, a fall in the price of a complementary good — flights).\nOn the graph: The total market demand curve shifts right. The segment for \\(200 &lt; P \\leq 300\\) shifts right (international demand increases), and the segment for \\(P \\leq 200\\) also shifts right (the international component is now larger at every price).\nThe domestic demand curve is unaffected (they don’t fly to Faro from within Portugal)."
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#next-lecture",
+    "href": "slides/lecture08-demand.html#next-lecture",
+    "title": "Consumer Theory",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nMarch 12, 2026: Calculation and Determinants of Demand Elasticity\nHow sensitive is quantity demanded to price changes?\n\n⚠️ Test 1: March 13, 2026 — Fundamentals (Lectures 1–4) and Consumer (Lectures 5–8)"
+  },
+  {
+    "objectID": "slides/lecture08-demand.html#thank-you",
+    "href": "slides/lecture08-demand.html#thank-you",
+    "title": "Consumer Theory",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
   }
 ]

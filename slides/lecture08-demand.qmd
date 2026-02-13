@@ -1,0 +1,1074 @@
+---
+title: "Consumer Theory"
+subtitle: "Lecture 8: Individual and Market Demand. Linear Demands."
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 8"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(patchwork)
+
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+```
+
+## Recap: Lecture 7 :rewind:
+
+<div style="font-size: 82%;">
+
+**What we covered last time**:
+
+- **Marginal Rate of Substitution (MRS)**: the rate at which a consumer trades $x_2$ for $x_1$ along an indifference curve
+- **Utility functions**: assign numbers to bundles so that $U(A) > U(B) \iff A \succ B$
+- **Utility maximization**: the optimal bundle is where the budget line is **tangent** to the highest indifference curve
+
+$$MRS = \frac{MU_1}{MU_2} = \frac{p_1}{p_2}$$
+
+**Today**: What happens to the optimal choice when $p_1$ changes? :point_right: This gives us the **demand curve**!
+
+</div>
+
+# From Utility Maximization to Demand
+
+## The Key Idea :bulb:
+
+<div style="font-size: 82%;">
+
+::: {.key-concept}
+**From Optimization to Demand**
+
+When we change the price of good 1 ($p_1$) while holding income ($M$) and $p_2$ fixed, the optimal quantity of $x_1$ changes. Tracing these optimal quantities gives us the **individual demand curve**.
+:::
+
+
+
+**The experiment**:
+
+1. Fix $M$ and $p_2$
+2. Start with some price $p_1$, find the optimal $x_1^*$
+3. Increase $p_1$ :arrow_right: budget line pivots inward :arrow_right: new, lower $x_1^*$
+4. Decrease $p_1$ :arrow_right: budget line pivots outward :arrow_right: new, higher $x_1^*$
+5. Plot all $(x_1^*, p_1)$ pairs :arrow_right: **individual demand curve**
+
+</div>
+
+## Deriving Individual Demand: Graphically :chart_with_downwards_trend:
+
+<div style="font-size: 75%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 5.5
+#| fig-height: 4.5
+#| fig-align: center
+
+# Upper panel: Budget lines pivoting with different p1
+# M = 120, p2 = 10 fixed. p1 varies: 10, 15, 30
+M <- 120; p2 <- 10
+
+# Utility: U = x1 * x2 => optimal: x1* = M/(2*p1), x2* = M/(2*p2)
+prices_1 <- c(10, 15, 30)
+colors_bl <- c(ue_red, ue_gray, ue_black)
+
+df_bl <- bind_rows(lapply(seq_along(prices_1), function(i) {
+  p1 <- prices_1[i]
+  data.frame(x1 = c(0, M/p1), x2 = c(M/p2, 0),
+             label = paste0("p₁ = ", p1),
+             idx = i)
+}))
+
+# Optimal points
+df_opt <- data.frame(
+  p1 = prices_1,
+  x1_star = M / (2 * prices_1),
+  x2_star = M / (2 * p2)
+)
+
+# Indifference curves through optimal points
+df_ic <- bind_rows(lapply(1:nrow(df_opt), function(i) {
+  u <- df_opt$x1_star[i] * df_opt$x2_star[i]
+  x1_seq <- seq(0.3, M/prices_1[i] + 1, length.out = 200)
+  x2_seq <- u / x1_seq
+  data.frame(x1 = x1_seq, x2 = x2_seq, idx = i)
+}))
+df_ic <- df_ic %>% filter(x2 <= 14 & x2 >= 0)
+
+ggplot() +
+  # Budget lines
+  geom_line(data = df_bl %>% filter(idx == 1),
+            aes(x = x1, y = x2), color = ue_red, linewidth = 1.2) +
+  geom_line(data = df_bl %>% filter(idx == 2),
+            aes(x = x1, y = x2), color = ue_gray, linewidth = 1.2) +
+  geom_line(data = df_bl %>% filter(idx == 3),
+            aes(x = x1, y = x2), color = ue_black, linewidth = 1.2) +
+  # Indifference curves
+  geom_line(data = df_ic %>% filter(idx == 1),
+            aes(x = x1, y = x2), color = ue_red, linewidth = 0.8, linetype = "dashed") +
+  geom_line(data = df_ic %>% filter(idx == 2),
+            aes(x = x1, y = x2), color = ue_gray, linewidth = 0.8, linetype = "dashed") +
+  geom_line(data = df_ic %>% filter(idx == 3),
+            aes(x = x1, y = x2), color = ue_black, linewidth = 0.8, linetype = "dashed") +
+  # Optimal points
+  geom_point(data = df_opt, aes(x = x1_star, y = x2_star),
+             size = 4, color = ue_red, shape = 16) +
+  # Labels
+  annotate("text", x = df_opt$x1_star[1] + 0.4, y = df_opt$x2_star[1] + 0.6,
+           label = "A", fontface = "bold", size = 4.5, color = ue_red) +
+  annotate("text", x = df_opt$x1_star[2] + 0.4, y = df_opt$x2_star[2] + 0.6,
+           label = "B", fontface = "bold", size = 4.5, color = ue_gray) +
+  annotate("text", x = df_opt$x1_star[3] + 0.4, y = df_opt$x2_star[3] + 0.6,
+           label = "C", fontface = "bold", size = 4.5, color = ue_black) +
+  # Budget line labels
+  annotate("text", x = 12.5, y = 0.8, label = "p₁=10", color = ue_red, size = 3.2) +
+  annotate("text", x = 8.5, y = 0.8, label = "p₁=15", color = ue_gray, size = 3.2) +
+  annotate("text", x = 4.5, y = 0.8, label = "p₁=30", color = ue_black, size = 3.2) +
+  scale_x_continuous(limits = c(0, 14), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 14), expand = c(0, 0)) +
+  labs(x = expression(x[1]), y = expression(x[2]),
+       title = "Optimal Bundles as p₁ Changes") +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 13),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+
+::: {.column width="50%"}
+
+**Upper panel** (indifference curve diagram):
+
+As $p_1$ rises from 10 to 30, the budget line **pivots inward** (steeper).
+
+The tangency points A, B, C trace the **price-consumption curve**.
+
+The optimal quantity $x_1^*$ falls: $6 \to 4 \to 2$.
+
+
+
+**Below we plot just** $(x_1^*, p_1)$ :arrow_down:
+
+This is the **individual demand curve**!
+
+:::
+::::
+
+</div>
+
+## The Individual Demand Curve :chart_with_downwards_trend:
+
+<div style="font-size: 78%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 5.5
+#| fig-height: 4.5
+#| fig-align: center
+
+# Individual demand curve from the optimization above
+# U = x1*x2, M=120, p2=10 => x1* = M/(2*p1) = 60/p1
+# So demand: p1 = 60/x1 (inverse demand)
+
+df_demand <- data.frame(
+  x1 = seq(1, 12, length.out = 200)
+) %>%
+  mutate(p1 = 60 / x1)
+
+df_points <- data.frame(
+  x1 = c(6, 4, 2),
+  p1 = c(10, 15, 30),
+  label = c("A", "B", "C")
+)
+
+ggplot() +
+  geom_line(data = df_demand, aes(x = x1, y = p1),
+            color = ue_red, linewidth = 1.5) +
+  geom_point(data = df_points, aes(x = x1, y = p1),
+             size = 4, color = ue_black) +
+  geom_text(data = df_points, aes(x = x1 + 0.4, y = p1 + 1.2, label = label),
+            fontface = "bold", size = 4.5, color = ue_black) +
+  # Dashed lines to axes
+  geom_segment(data = df_points, aes(x = x1, y = 0, xend = x1, yend = p1),
+               linetype = "dashed", color = ue_gray, linewidth = 0.5) +
+  geom_segment(data = df_points, aes(x = 0, y = p1, xend = x1, yend = p1),
+               linetype = "dashed", color = ue_gray, linewidth = 0.5) +
+  scale_x_continuous(limits = c(0, 13), expand = c(0, 0),
+                     breaks = c(0, 2, 4, 6, 8, 10, 12)) +
+  scale_y_continuous(limits = c(0, 35), expand = c(0, 0),
+                     breaks = seq(0, 35, 5)) +
+  labs(x = expression(x[1] ~ "(quantity)"),
+       y = expression(p[1] ~ "(price)"),
+       title = "Individual Demand Curve") +
+  annotate("text", x = 10, y = 8, label = "D", color = ue_red,
+           fontface = "bold.italic", size = 6) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 13),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+
+::: {.column width="50%"}
+**Reading the demand curve**:
+
+Each point shows the **optimal quantity** at a given price.
+
+- At $p_1 = 10$: consumer buys $x_1^* = 6$
+- At $p_1 = 15$: consumer buys $x_1^* = 4$
+- At $p_1 = 30$: consumer buys $x_1^* = 2$
+
+
+
+::: {.key-concept}
+**The Demand Curve**
+
+Shows the quantity a consumer is willing and able to buy at each price, *ceteris paribus* (holding everything else constant).
+:::
+:::
+::::
+
+</div>
+
+## The Law of Demand :scroll:
+
+<div style="font-size: 82%;">
+
+::: {.key-concept}
+**Law of Demand**
+
+As the price of a good rises, the quantity demanded falls (and vice versa), *ceteris paribus*.
+:::
+
+**Why does it hold?** Two effects when $p_1$ rises:
+
+:::: {.columns}
+::: {.column width="50%"}
+:moneybag: **Income effect**
+
+Higher price makes the consumer effectively **poorer** :arrow_right: buys less of most goods
+:::
+
+::: {.column width="50%"}
+:left_right_arrow: **Substitution effect**
+
+Higher price makes good 1 **relatively more expensive** :arrow_right: consumer switches to good 2
+:::
+::::
+
+
+
+:bulb: For **normal goods**, both effects work in the same direction :arrow_right: demand curves slope **downward**.
+
+</div>
+
+## Reserve Price :label:
+
+<div style="font-size: 82%;">
+
+::: {.key-concept}
+**Reserve (Reservation) Price**
+
+The **highest price** a consumer is willing to pay for a good or service. Equivalently, it measures the **benefit** of obtaining the good.
+:::
+
+**Decision rule**: Buy if $\text{Price} \leq \text{Reserve Price}$
+
+**Tourism example** :airplane::
+
+A tourist's reserve price for a sunset boat tour in Lagos might be €45. If the tour costs €35, they buy it and enjoy a "surplus" of €10. If it costs €55, they skip it.
+
+</div>
+
+:point_right: The demand curve can be read as a **curve of reserve prices** — at each quantity, it tells us the maximum someone would pay for that unit.
+
+# From Individual to Market Demand
+
+## Horizontal Summation :heavy_plus_sign:
+
+<div style="font-size: 75%;">
+
+::: {.key-concept}
+**Market Demand**
+
+The market demand is obtained by **horizontally summing** all individual demand curves. At each price, we add up the **quantities** demanded by every consumer.
+:::
+
+**Example**: Suppose there are only 2 consumers in the market.
+
+| Price (€) | Consumer A ($Q_A$) | Consumer B ($Q_B$) | Market ($Q_A + Q_B$) |
+|:---------:|:------------------:|:------------------:|:--------------------:|
+| 0 | 6 | 4 | 10 |
+| 1 | 5 | 3 | 8 |
+| 2 | 4 | 2 | 6 |
+| 3 | 3 | 1 | 4 |
+| 4 | 2 | 0 | 2 |
+| 5 | 1 | 0 | 1 |
+| 6 | 0 | 0 | 0 |
+
+</div>
+
+:point_right: At each price, the market quantity is the **sum** of individual quantities.
+
+## Horizontal Summation: Graphically :bar_chart:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 4.2
+#| fig-align: center
+
+# Consumer A: P = 6 - Q_A => Q_A = 6 - P (for P <= 6)
+# Consumer B: P = 4 - Q_B => Q_B = 4 - P (for P <= 4)
+# Market: for P <= 4: Q = (6-P) + (4-P) = 10 - 2P => P = 5 - Q/2
+#         for 4 < P <= 6: Q = 6 - P (only A buys)
+
+p_seq <- seq(0, 6, length.out = 200)
+df_a <- data.frame(Q = pmax(6 - p_seq, 0), P = p_seq)
+df_b <- data.frame(Q = pmax(4 - p_seq, 0), P = p_seq)
+
+# Market demand (kinked)
+df_mkt <- data.frame(P = p_seq) %>%
+  mutate(Q = ifelse(P <= 4, (6-P) + (4-P), pmax(6-P, 0)))
+
+p1 <- ggplot(df_a, aes(x = Q, y = P)) +
+  geom_line(color = ue_red, linewidth = 1.5) +
+  scale_x_continuous(limits = c(0, 11), breaks = seq(0, 10, 2), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 7), breaks = 0:6, expand = c(0, 0)) +
+  labs(x = expression(Q[A]), y = "Price (€)", title = "Consumer A") +
+  annotate("text", x = 5, y = 1.5, label = expression(D[A]), color = ue_red,
+           fontface = "bold.italic", size = 5) +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+
+p2 <- ggplot(df_b, aes(x = Q, y = P)) +
+  geom_line(color = ue_black, linewidth = 1.5) +
+  scale_x_continuous(limits = c(0, 11), breaks = seq(0, 10, 2), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 7), breaks = 0:6, expand = c(0, 0)) +
+  labs(x = expression(Q[B]), y = "Price (€)", title = "Consumer B") +
+  annotate("text", x = 3, y = 1.5, label = expression(D[B]), color = ue_black,
+           fontface = "bold.italic", size = 5) +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+
+p3 <- ggplot(df_mkt, aes(x = Q, y = P)) +
+  geom_line(color = ue_red, linewidth = 1.5) +
+  scale_x_continuous(limits = c(0, 11), breaks = seq(0, 10, 2), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 7), breaks = 0:6, expand = c(0, 0)) +
+  labs(x = expression(Q[Market]), y = "Price (€)", title = "Market Demand") +
+  annotate("text", x = 7, y = 1.5, label = expression(D[Market]),
+           color = ue_red, fontface = "bold.italic", size = 5) +
+  # Show kink
+  geom_point(data = data.frame(Q = 2, P = 4), aes(x = Q, y = P),
+             size = 3, color = ue_black) +
+  annotate("text", x = 2.9, y = 4.4, label = "Kink (B exits)", size = 3, color = ue_gray) +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+
+library(patchwork)
+p1 + p2 + p3 +
+  plot_annotation(title = "Horizontal Summation: Individual → Market Demand",
+                  theme = theme(plot.title = element_text(color = ue_red,
+                                face = "bold", hjust = 0.5, size = 14)))
+```
+
+<div style="font-size: 72%;">
+
+:point_right: Notice the **kink** at P = 4: above this price only Consumer A is in the market!
+
+</div>
+
+## Why a Kink? :thinking:
+
+<div style="font-size: 82%;">
+
+The market demand curve can have a **kink** when different consumers have different **maximum willingness to pay** (choke prices).
+
+:::: {.columns}
+::: {.column width="50%"}
+**Below €4**: Both A and B buy
+
+$Q_{Market} = Q_A + Q_B = 10 - 2P$
+
+**Above €4**: Only A buys (B's demand is zero)
+
+$Q_{Market} = Q_A = 6 - P$
+:::
+
+::: {.column width="50%"}
+**In practice** (large markets):
+
+With thousands of consumers, individual kinks smooth out :arrow_right: market demand curves are typically **smooth**.
+
+
+
+:bulb: For this course, we'll usually work with **linear market demand curves** (no kinks) for simplicity.
+:::
+::::
+
+</div>
+
+# Linear Demand Curves
+
+## The Linear Demand Equation :straight_ruler:
+
+<div style="font-size: 82%;">
+
+::: {.key-concept}
+**Linear Demand — Inverse Form**
+
+$$P = b + mQ$$
+
+where $P$ is price, $Q$ is quantity demanded, $b$ is the **vertical intercept** (choke price), and $m$ is the **slope** ($m < 0$).
+:::
+
+
+
+**Interpreting the parameters**:
+
+- $b$ = the **maximum price** anyone would pay (quantity = 0). Also called the **choke price**.
+- $m$ = $\frac{\Delta P}{\Delta Q}$ (negative!) — how much price falls per additional unit demanded
+- The **horizontal intercept** = $-b/m$ = the quantity demanded when price is zero
+
+</div>
+
+## Example: Canned Tuna Market :canned_food:
+
+<div style="font-size: 78%;">
+
+:::: {.columns}
+::: {.column width="55%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 5.5
+#| fig-height: 6.5
+#| fig-align: center
+
+# Demand: P = 6 - (1/2000)*Q => Q = 2000*(6-P) = 12000 - 2000P
+# Points: (0,6), (2000,5), (4000,4), (12000,0)
+df_tuna <- data.frame(Q = seq(0, 12000, length.out = 200)) %>%
+  mutate(P = 6 - Q/2000)
+
+pts_tuna <- data.frame(
+  Q = c(0, 2000, 4000, 6000, 8000, 10000, 12000),
+  P = c(6, 5, 4, 3, 2, 1, 0)
+)
+
+ggplot() +
+  geom_line(data = df_tuna, aes(x = Q, y = P),
+            color = ue_red, linewidth = 1.5) +
+  geom_point(data = pts_tuna, aes(x = Q, y = P),
+             size = 3, color = ue_black) +
+  # Label two points
+  annotate("text", x = 2000, y = 5.3, label = "A", fontface = "bold",
+           size = 4, color = ue_black) +
+  annotate("text", x = 4200, y = 4.2, label = "B", fontface = "bold",
+           size = 4, color = ue_black) +
+  # Dashed lines
+  geom_segment(aes(x = 2000, y = 0, xend = 2000, yend = 5),
+               linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 0, y = 5, xend = 2000, yend = 5),
+               linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 4000, y = 0, xend = 4000, yend = 4),
+               linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 0, y = 4, xend = 4000, yend = 4),
+               linetype = "dashed", color = ue_gray) +
+  # Annotate slope
+  annotate("segment", x = 2000, y = 5, xend = 4000, yend = 5,
+           arrow = arrow(length = unit(0.15, "cm")), color = ue_red) +
+  annotate("segment", x = 4000, y = 5, xend = 4000, yend = 4,
+           arrow = arrow(length = unit(0.15, "cm")), color = ue_red) +
+  annotate("text", x = 3000, y = 5.25, label = "ΔQ = 2000", color = ue_red, size = 3.2) +
+  annotate("text", x = 4700, y = 4.5, label = "ΔP = -1", color = ue_red, size = 3.2) +
+  scale_x_continuous(limits = c(0, 13000), expand = c(0, 0),
+                     breaks = seq(0, 12000, 2000),
+                     labels = scales::comma) +
+  scale_y_continuous(limits = c(0, 7), expand = c(0, 0), breaks = 0:6) +
+  labs(x = "Quantity (cans/month)",
+       y = "Price (€/can)",
+       title = "Market Demand: Canned Tuna") +
+  annotate("text", x = 10500, y = 1.5, label = "D", color = ue_red,
+           fontface = "bold.italic", size = 6) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 13),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+
+::: {.column width="45%"}
+
+**The data** (adapted from Lecture Notes available in Canvas):
+
+$b = 6$ (choke price = €6)
+
+**Slope**: $m = \frac{\Delta P}{\Delta Q} = \frac{-1}{2000}$
+
+**Equation**:
+
+$$P = -\frac{1}{2000}Q + 6$$
+
+
+
+**Verify**: At $Q = 2000$:
+
+$P = -\frac{1}{2000}(2000) + 6 = 5$ :white_check_mark:
+
+At $Q = 4000$:
+
+$P = -\frac{1}{2000}(4000) + 6 = 4$ :white_check_mark:
+
+:::
+::::
+
+</div>
+
+## Finding Quantity from Price
+
+<div style="font-size: 82%;">
+
+Often we want the **direct demand** form — quantity as a function of price.
+
+Starting from the inverse demand: $P = b + mQ$
+
+$$Q = \frac{P - b}{m}$$
+
+**Canned tuna example**:
+
+$$P = -\frac{1}{2000}Q + 6 \quad \Longrightarrow \quad Q = -2000P + 12000 = 12000 - 2000P$$
+
+
+**Verify**: At $P = 3$: $Q = 12000 - 2000(3) = 6000$ cans/month :white_check_mark:
+
+:point_right: Both forms are equivalent — use whichever is more convenient for the problem!
+
+</div>
+
+## Total Expenditure and Total Revenue :money_with_wings:
+
+<div style="font-size: 82%;">
+
+::: {.key-concept}
+**Total Expenditure = Total Revenue**
+
+$$TE = TR = P \times Q$$
+
+What consumers spend equals what sellers receive.
+:::
+
+
+
+**Example**: If $P = 3$ and $Q = 6000$:
+
+$$TE = TR = 3 \times 6000 = €18{,}000 \text{ per month}$$
+
+
+
+Graphically, $P \times Q$ is the **area of the rectangle** under the price line, from 0 to $Q$.
+
+:point_right: The relationship between price changes and total revenue depends on **elasticity** (Lecture 9!).
+
+</div>
+
+# Movements Along vs. Shifts of Demand
+
+## Change in Quantity Demanded vs. Change in Demand :warning:
+
+<div style="font-size: 78%;">
+
+This is one of the **most important distinctions** in economics!
+
+:::: {.columns}
+::: {.column width="50%"}
+:arrow_up_down: **Movement Along the Curve**
+
+A change in **quantity demanded** caused by a change in the good's **own price**.
+
+The curve itself does **not** move.
+
+*Example*: Hotel room price drops from €100 to €80 :arrow_right: more rooms demanded.
+:::
+
+::: {.column width="50%"}
+:left_right_arrow: **Shift of the Curve**
+
+A change in **demand** caused by a change in **anything other than own price**.
+
+The **entire curve** moves left or right.
+
+*Example*: A viral TikTok video about Lisbon :arrow_right: demand for Lisbon hotels shifts right **at every price**.
+:::
+::::
+
+</div>
+
+## Determinants of Demand (Shift Factors) :gear:
+
+<div style="font-size: 75%;">
+
+**Factors that shift the demand curve** (right = increase, left = decrease):
+
+:::: {.columns}
+::: {.column width="50%"}
+:arrow_right: **Increase in demand**:
+
+1. :chart_with_downwards_trend: Price of **complements** falls (e.g. flights cheaper :arrow_right: more hotel demand)
+2. :chart_with_upwards_trend: Price of **substitutes** rises (e.g. Airbnb raises fees :arrow_right: more hotel demand)
+3. :moneybag: **Income** rises (normal goods)
+4. :heart: **Preferences** shift toward the good
+5. :busts_in_silhouette: **Population** of buyers grows
+:::
+
+::: {.column width="50%"}
+:arrow_left: **Decrease in demand**:
+
+1. :chart_with_upwards_trend: Price of **complements** rises
+2. :chart_with_downwards_trend: Price of **substitutes** falls
+3. :chart_with_downwards_trend: **Income** falls (normal goods)
+4. :broken_heart: **Preferences** shift away
+5. :chart_with_downwards_trend: **Population** of buyers shrinks
+:::
+::::
+
+
+
+:warning: A change in **own price** is a **movement along** the curve, never a shift!
+
+</div>
+
+## Shifts vs. Movements: Graphically :bar_chart:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 4.2
+#| fig-align: center
+
+# Left: movement along
+df_move <- data.frame(Q = seq(0, 10, length.out = 200)) %>%
+  mutate(P = 10 - Q)
+
+pts_move <- data.frame(Q = c(4, 7), P = c(6, 3), label = c("A", "B"))
+
+p_move <- ggplot() +
+  geom_line(data = df_move, aes(x = Q, y = P), color = ue_red, linewidth = 1.5) +
+  geom_point(data = pts_move, aes(x = Q, y = P), size = 4, color = ue_black) +
+  geom_text(data = pts_move, aes(x = Q + 0.4, y = P + 0.5, label = label),
+            fontface = "bold", size = 5) +
+  geom_segment(aes(x = 4, y = 0, xend = 4, yend = 6),
+               linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 0, y = 6, xend = 4, yend = 6),
+               linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 7, y = 0, xend = 7, yend = 3),
+               linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 0, y = 3, xend = 7, yend = 3),
+               linetype = "dashed", color = ue_gray) +
+  annotate("segment", x = 4.5, y = 5.5, xend = 6.5, yend = 3.5,
+           arrow = arrow(length = unit(0.2, "cm")), color = ue_red, linewidth = 1) +
+  scale_x_continuous(limits = c(0, 11), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 11), expand = c(0, 0)) +
+  labs(x = "Q", y = "P", title = "Movement Along (own price change)") +
+  annotate("text", x = 8.5, y = 2.5, label = "D", color = ue_red,
+           fontface = "bold.italic", size = 6) +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+
+# Right: shift
+df_d1 <- data.frame(Q = seq(0, 10, length.out = 200)) %>% mutate(P = 10 - Q)
+df_d2 <- data.frame(Q = seq(0, 13, length.out = 200)) %>% mutate(P = 13 - Q)
+
+p_shift <- ggplot() +
+  geom_line(data = df_d1, aes(x = Q, y = P), color = ue_gray, linewidth = 1.5) +
+  geom_line(data = df_d2, aes(x = Q, y = P), color = ue_red, linewidth = 1.5) +
+  annotate("text", x = 8.5, y = 2.5, label = expression(D[1]),
+           color = ue_gray, fontface = "bold.italic", size = 5) +
+  annotate("text", x = 11.5, y = 2.5, label = expression(D[2]),
+           color = ue_red, fontface = "bold.italic", size = 5) +
+  annotate("segment", x = 6, y = 5, xend = 8.5, yend = 5,
+           arrow = arrow(length = unit(0.2, "cm")), color = ue_black, linewidth = 1) +
+  annotate("text", x = 7.25, y = 5.6, label = "Shift right", fontface = "bold",
+           size = 3.5, color = ue_black) +
+  scale_x_continuous(limits = c(0, 14), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 14), expand = c(0, 0)) +
+  labs(x = "Q", y = "P", title = "Shift of Demand (other factor changes)") +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+
+p_move + p_shift +
+  plot_annotation(title = "Movement Along vs. Shift of the Demand Curve",
+                  theme = theme(plot.title = element_text(color = ue_red,
+                                face = "bold", hjust = 0.5, size = 14)))
+```
+
+# Consumer Surplus
+
+## Consumer Surplus :star:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Consumer Surplus (CS)**
+
+The difference between what consumers are **willing to pay** (reserve price) and what they **actually pay** (market price). Graphically, it is the area **below the demand curve** and **above the price line**.
+:::
+
+:::: {.columns}
+::: {.column width="55%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 5.5
+#| fig-height: 4
+#| fig-align: center
+
+# CS = triangle above price, below demand
+df_cs <- data.frame(Q = seq(0, 10, length.out = 200)) %>%
+  mutate(P = 10 - Q)
+
+# Price = 4, Q* = 6
+p_star <- 4
+q_star <- 6
+
+ggplot() +
+  # CS shaded area
+  geom_ribbon(data = df_cs %>% filter(Q <= q_star),
+              aes(x = Q, ymin = p_star, ymax = P),
+              fill = ue_red, alpha = 0.25) +
+  # Demand curve
+  geom_line(data = df_cs, aes(x = Q, y = P),
+            color = ue_red, linewidth = 1.5) +
+  # Price line
+  geom_hline(yintercept = p_star, linetype = "dashed",
+             color = ue_black, linewidth = 0.8) +
+  annotate("text", x = 9, y = 4.5, label = "P = 4", color = ue_black,
+           fontface = "bold", size = 3.5) +
+  # CS label
+  annotate("text", x = 1.5, y = 6.5, label = "Consumer\nSurplus",
+           color = ue_red, fontface = "bold", size = 4) +
+  # TE rectangle label
+  annotate("text", x = 3, y = 2, label = "Total\nExpenditure",
+           color = ue_gray, fontface = "italic", size = 3.5) +
+  geom_rect(aes(xmin = 0, xmax = q_star, ymin = 0, ymax = p_star),
+            fill = ue_gray, alpha = 0.1) +
+  scale_x_continuous(limits = c(0, 11), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 11), expand = c(0, 0)) +
+  labs(x = "Q", y = "P", title = "Consumer Surplus") +
+  annotate("text", x = 8, y = 2.5, label = "D", color = ue_red,
+           fontface = "bold.italic", size = 6) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 13),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+
+::: {.column width="45%"}
+**For a linear demand**:
+
+$$CS = \frac{1}{2} \times Q^* \times (b - P^*)$$
+
+where $b$ is the choke price.
+
+**Example**: $b = 10$, $P^* = 4$, $Q^* = 6$:
+
+$$CS = \frac{1}{2}(6)(10 - 4) = €18$$
+:::
+::::
+
+</div>
+
+## Why Consumer Surplus Matters :bulb:
+
+<div style="font-size: 82%;">
+
+Consumer surplus measures **the net benefit consumers get** from participating in the market.
+
+:::: {.columns}
+::: {.column width="50%"}
+**Applications in tourism**:
+
+- :ticket: Dynamic pricing (airlines, hotels) aims to **capture** consumer surplus
+- :classical_building: Government tourist taxes **reduce** consumer surplus
+- :gift: Promotional offers **increase** consumer surplus to attract visitors
+:::
+
+::: {.column width="50%"}
+**Policy implications**:
+
+- CS helps measure the **welfare effects** of price changes, taxes, or subsidies
+- A **higher** CS means consumers are better off
+- We'll use CS again when studying **market equilibrium** and **market efficiency**
+:::
+::::
+
+</div>
+
+# Tourism Application
+
+## Tourism Demand in Practice :airplane:
+
+<div style="font-size: 78%;">
+
+**How does this theory apply to tourism?**
+
+:::: {.columns}
+::: {.column width="50%"}
+**Individual demand for travel**:
+
+Each tourist has a **reservation price** for a trip — shaped by income, preferences, time constraints.
+
+:chart_with_downwards_trend: As flight prices rise, fewer tourists travel (law of demand).
+
+:moneybag: As income grows, tourists demand more and higher-quality travel (normal good).
+:::
+
+::: {.column width="50%"}
+**Market demand for a destination**:
+
+The sum of all potential tourists' for a given price.
+
+Shifts when:
+
+- :globe_with_meridians: Exchange rates change (€ strengthens :arrow_right: more outbound tourism)
+- :iphone: Viral social media exposure
+- :warning: Safety concerns or natural disasters
+- :airplane: New direct flights to the destination
+:::
+::::
+
+
+:bulb: The concepts of **demand shifts** and **consumer surplus** help tourism managers set optimal prices!
+
+</div>
+
+## Summary :clipboard:
+
+<div style="font-size: 78%;">
+
+**Today's Key Takeaways**:
+
+1. **Individual demand** is derived from utility maximization as price changes
+2. The **Law of Demand**: higher price :arrow_right: lower quantity demanded (*ceteris paribus*)
+3. **Market demand** = horizontal sum of all individual demands
+4. **Linear demand**: $P = b + mQ$ (inverse) or $Q = \frac{P - b}{m}$ (direct)
+5. **Movement along** (own price change) vs. **Shift** (other factors change)
+6. **Consumer surplus** = area below demand, above price = net benefit to consumers
+
+**Connection to previous lectures**: Budget constraints and preferences (L5--L7) generate demand curves (today).
+
+**Next (Lecture 9, March 12)**: **Price Elasticity of Demand** — how sensitive is quantity demanded to price changes?
+
+:warning: **Reminder**: Test 1 is on **March 13** covering Fundamentals and Consumer!
+
+</div>
+
+## Exercises {.center}
+
+**Application Time!** :pencil2:
+
+Individual demand, market demand, and linear demand curves.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 85%;">
+
+**Question**: If the price of Airbnb accommodation falls significantly, what happens to the demand curve for hotel rooms?  
+
+A. The demand curve for hotels shifts to the right  
+B. The demand curve for hotels shifts to the left  
+C. There is a movement along the hotel demand curve  
+D. The demand curve for hotels becomes steeper  
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+Airbnb is a **substitute** for hotels. When the price of a substitute falls, demand for the good **decreases** (shifts left). Consumers switch from hotels to the now-cheaper Airbnb. This is a **shift** (not a movement along), because it's a change in the price of *another* good.
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 85%;">
+
+**Question**: The market demand for guided tours in Sintra is $P = 50 - 2Q$ (€ per tour). At a price of €20, what is the consumer surplus?
+
+A. €112.50  
+B. €500  
+C. €300  
+D. €225    
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: D**
+:::
+
+At $P = 20$: $20 = 50 - 2Q \Rightarrow 2Q = 30 \Rightarrow Q = 15$ tours.
+
+$$CS = \frac{1}{2} \times Q^* \times (b - P^*) = \frac{1}{2} \times 15 \times (50 - 20) = \frac{1}{2} \times 15 \times 30 = €225$$
+
+:point_right: The triangle has base $Q^* = 15$ and height $(b - P^*) = 30$.
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 72%;">
+
+**Suppose the Algarve hotel market has two types of tourists**:
+
+- **Domestic tourists** (Portugal): Individual demand $P = 200 - 4Q_D$
+- **International tourists**: Individual demand $P = 300 - 2Q_I$
+
+There are 100 domestic tourists and 50 international tourists. Assume all tourists of the same type are identical.
+
+**a)** Write the market demand for each group of tourists.
+
+**b)** Derive the **total market demand** curve for the Algarve hotel market.
+
+**c)** At a price of €100 per night, how many rooms are demanded by each group? What is total market demand?
+
+**d)** Calculate the consumer surplus for each group at $P = €100$.
+
+**e)** A new low-cost airline begins flights to Faro, reducing travel costs for international tourists. How would this affect the total market demand curve? Explain whether this is a movement along or a shift of demand.
+
+</div>
+
+## Exercise 3: Solution — Parts a & b
+
+<div style="font-size: 72%;">
+
+**a) Market demand for each group**:
+
+**Domestic** (100 identical tourists): $Q_D^{total} = 100 \times Q_D = 100 \times \frac{200 - P}{4} = \frac{100(200 - P)}{4} = 5000 - 25P$ for $P \leq 200$
+
+**International** (50 identical tourists): $Q_I^{total} = 50 \times Q_I = 50 \times \frac{300 - P}{2} = \frac{50(300 - P)}{2} = 7500 - 25P$ for $P \leq 300$
+
+**b) Total market demand** (horizontal sum):
+
+For $P \leq 200$ (both groups buy): $Q_{Total} = (5000 - 25P) + (7500 - 25P) = 12500 - 50P$
+
+For $200 < P \leq 300$ (only international): $Q_{Total} = 7500 - 25P$
+
+For $P > 300$: $Q_{Total} = 0$
+
+</div>
+
+## Exercise 3: Solution — Parts c & d
+
+<div style="font-size: 72%;">
+
+**c) At P = €100** (both groups are active since $100 < 200$):
+
+$Q_D^{total} = 5000 - 25(100) = 2500$ rooms
+
+$Q_I^{total} = 7500 - 25(100) = 5000$ rooms
+
+$Q_{Total} = 2500 + 5000 = 7500$ rooms :white_check_mark: (matches $12500 - 50(100) = 7500$)
+
+**d) Consumer surplus at P = €100**:
+
+**Domestic**: Inverse demand: $P = 200 - \frac{Q_D^{total}}{25}$. Choke price = 200. $Q^* = 2500$.
+
+$$CS_D = \frac{1}{2} \times 2500 \times (200 - 100) = \frac{1}{2} \times 2500 \times 100 = €125{,}000$$
+
+**International**: Inverse demand: $P = 300 - \frac{Q_I^{total}}{25}$. Choke price = 300. $Q^* = 5000$.
+
+$$CS_I = \frac{1}{2} \times 5000 \times (300 - 100) = \frac{1}{2} \times 5000 \times 200 = €500{,}000$$
+
+**Total CS** = €125,000 + €500,000 = **€625,000**
+
+</div>
+
+## Exercise 3: Solution — Part e
+
+<div style="font-size: 78%;">
+
+**e) New low-cost airline to Faro**:
+
+This reduces the **total cost** of visiting the Algarve for international tourists (complementary good: transport + accommodation).
+
+**Effect**: The demand curve for international tourists **shifts to the right**. At every price, international tourists now demand more hotel rooms.
+
+This is a **shift of the demand curve**, not a movement along it, because the change is caused by a factor **other than the hotel's own price** (namely, a fall in the price of a complementary good — flights).
+
+**On the graph**: The total market demand curve shifts right. The segment for $200 < P \leq 300$ shifts right (international demand increases), and the segment for $P \leq 200$ also shifts right (the international component is now larger at every price).
+
+The domestic demand curve is **unaffected** (they don't fly to Faro from within Portugal).
+
+</div>
+
+## Next Lecture {.center}
+
+**March 12, 2026**: Calculation and Determinants of Demand Elasticity
+
+How **sensitive** is quantity demanded to price changes?
+
+. . .
+
+:warning: **Test 1: March 13, 2026** — Fundamentals (Lectures 1--4) and Consumer (Lectures 5--8)
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Thursday, March 12, 2026*
+
+::: {.notes}
+This lecture bridges consumer theory (utility maximization) with demand analysis. Students should understand that demand curves are not arbitrary — they emerge from rational consumer behavior. The horizontal summation concept is key for understanding how individual preferences aggregate into market outcomes. The linear demand equation will be used extensively in future lectures on elasticity and market equilibrium.
+:::

@@ -1,0 +1,842 @@
+---
+title: "Economics Fundamentals"
+subtitle: "Lecture 7: Marginal Rate of Substitution, Utility Function, and Utility Maximization"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 7"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(patchwork)
+
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+```
+
+## Recap: Building the Consumer Model {.center}
+
+<div style="font-size: 85%;">
+
+| Lecture | Question | Tool |
+|:---:|:---|:---|
+| 5 | What can the consumer **afford**? | Budget constraint: $p_1 x_1 + p_2 x_2 \leq M$ |
+| 6 | How does the consumer **rank** bundles? | Preferences, axioms, indifference curves |
+| **7** | **How does the consumer choose?** | **MRS, utility, optimization** |
+
+</div>
+
+**Today we put it all together!** :jigsaw:
+
+## Today's Roadmap :compass:
+
+<div style="font-size: 82%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Part 1 — Marginal Rate of Substitution**
+
+- Definition and intuition
+- MRS along an indifference curve
+- Diminishing MRS
+
+**Part 2 — Utility Functions**
+
+- From preferences to utility
+- Marginal utility
+- MRS = ratio of marginal utilities
+:::
+
+::: {.column width="50%"}
+**Part 3 — Consumer's Optimal Choice**
+
+- The tangency condition: $MRS = \frac{p_1}{p_2}$
+- Graphical solution
+- Algebraic solution (step by step)
+
+**Part 4 — Worked Examples**
+
+- Tourism applications
+- Corner solutions
+:::
+::::
+
+</div>
+
+# Part 1: The Marginal Rate of Substitution
+
+## MRS: The Intuition :thinking:
+
+<div style="font-size: 82%;">
+
+We know from Lecture 6 that indifference curves are **downward sloping** — to stay equally happy, getting more of one good requires giving up some of the other.
+
+**The key question**: How much of good 2 is the consumer **willing to give up** to get one more unit of good 1?
+
+::: {.key-concept}
+**Marginal Rate of Substitution (MRS)**
+
+The MRS measures the rate at which a consumer is willing to **trade good 2 for good 1** while remaining on the same indifference curve.
+
+$$MRS = -\frac{\Delta x_2}{\Delta x_1} \bigg|_{\text{along IC}} = \text{slope of the IC (in absolute value)}$$
+:::
+
+</div>
+
+## MRS: Tourism Example :palm_tree:
+
+<div style="font-size: 88%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 15
+#| fig-height: 8.5
+#| fig-align: center
+
+x1 <- seq(0.4, 8, length.out = 300)
+ic <- data.frame(x1 = x1, x2 = 12 / x1)
+ic <- ic[ic$x2 <= 8, ]
+
+# Two points on the IC to show MRS
+ptA <- data.frame(x1 = 1.5, x2 = 12 / 1.5)    # (1.5, 8) -> but cap at 8
+ptB <- data.frame(x1 = 3, x2 = 12 / 3)         # (3, 4)
+ptC <- data.frame(x1 = 2, x2 = 12 / 2)         # (2, 6)
+ptD <- data.frame(x1 = 6, x2 = 12 / 6)         # (6, 2)
+
+ggplot() +
+  # IC
+  geom_line(data = ic, aes(x = x1, y = x2), color = ue_red, linewidth = 2) +
+  # Points
+  geom_point(aes(x = c(2, 3, 5, 6), y = c(6, 4, 2.4, 2)),
+             size = 4, color = ue_black) +
+  # Labels
+  annotate("text", x = 2.2, y = 6.5, label = "A (2, 6)", size = 4.5, fontface = "bold") +
+  annotate("text", x = 3.2, y = 4.5, label = "B (3, 4)", size = 4.5, fontface = "bold") +
+  annotate("text", x = 5, y = 2.9, label = "C (5, 2.4)", size = 4.5, fontface = "bold") +
+  annotate("text", x = 6.2, y = 2.5, label = "D (6, 2)", size = 4.5, fontface = "bold") +
+  # MRS at A→B: slope
+  geom_segment(aes(x = 2, y = 6, xend = 3, yend = 6), linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 3, y = 6, xend = 3, yend = 4), linetype = "dashed", color = ue_gray) +
+  annotate("text", x = 2.5, y = 6.3, label = "+1", size = 4, color = ue_red, fontface = "bold") +
+  annotate("text", x = 3.35, y = 5, label = "-2", size = 4, color = ue_red, fontface = "bold") +
+  # MRS at C→D: slope
+  geom_segment(aes(x = 5, y = 2.4, xend = 6, yend = 2.4), linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 6, y = 2.4, xend = 6, yend = 2), linetype = "dashed", color = ue_gray) +
+  annotate("text", x = 5.5, y = 2.7, label = "+1", size = 4, color = "#3498db", fontface = "bold") +
+  annotate("text", x = 6.35, y = 2.2, label = "-0.4", size = 4, color = "#3498db", fontface = "bold") +
+  # Annotations
+  annotate("label", x = 1, y = 3, label = "At A: MRS = 2\n(Give up 2 city\ntours per beach day)",
+           size = 3.8, fill = "#ffe0e0", color = ue_red, fontface = "bold", hjust = 0) +
+  annotate("label", x = 5.5, y = 1, label = "At C: MRS = 0.4\n(Give up only 0.4\ncity tours per beach day)",
+           size = 3.8, fill = "#e0e8ff", color = "#3498db", fontface = "bold", hjust = 0.5) +
+  scale_x_continuous(breaks = 0:8, limits = c(0, 8.5), expand = c(0, 0)) +
+  scale_y_continuous(breaks = 0:8, limits = c(0, 8.5), expand = c(0, 0)) +
+  labs(x = expression("Beach Days (" * x[1] * ")"),
+       y = expression("City Tours (" * x[2] * ")"),
+       title = "MRS Changes Along the Indifference Curve") +
+  theme_minimal(base_size = 16) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 18),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+</div>
+
+## Diminishing MRS :chart_with_downwards_trend:
+
+<div style="font-size: 82%;">
+
+::: {.key-concept}
+**Law of Diminishing MRS**
+
+As a consumer has **more** of good 1 and **less** of good 2, they are willing to give up **less** of good 2 for an additional unit of good 1.
+:::
+
+**Tourism intuition**: Imagine you have **1 beach day and 8 city tours**. You'd happily trade several city tours for another beach day.
+
+But if you have **7 beach days and 1 city tour**, you'd need a lot of beach days to compensate for losing that last city tour!
+
+:point_right: This is what makes indifference curves **convex** (bowed toward the origin).
+
+:point_right: Diminishing MRS reflects the idea that consumers **prefer variety**.
+
+</div>
+
+# Part 2: Utility Functions
+
+## From Preferences to Utility :bar_chart:
+
+<div style="font-size: 82%;">
+
+In Lecture 6, we described preferences using the symbols $\succ$, $\sim$, $\succsim$.
+
+A **utility function** translates those preferences into **numbers**.
+
+::: {.key-concept}
+**Utility Function**
+
+A function $U(x_1, x_2)$ that assigns a number to each bundle such that:
+
+$$A \succsim B \iff U(A) \geq U(B)$$
+
+The consumer prefers the bundle with the **higher utility number**.
+:::
+
+**Important**: Utility is **ordinal**, not cardinal. Only the **ranking** matters, not the size of the numbers. If $U(A) = 10$ and $U(B) = 5$, we know $A \succ B$, but we **cannot** say "A is twice as good."
+
+</div>
+
+## Common Utility Functions :gear:
+
+<div style="font-size: 78%;">
+
+| Utility Function | Formula | IC Shape | Example |
+|:---|:---:|:---:|:---|
+| **Cobb-Douglas** | $U = x_1^a \cdot x_2^b$ | Standard (convex) | Beach days & city tours |
+| **Perfect Substitutes** | $U = ax_1 + bx_2$ | Straight lines | Two equivalent airlines |
+| **Perfect Complements** | $U = \min(ax_1, bx_2)$ | L-shaped | Surfboard + accommodation |
+
+**For this course**, we will mostly work with **Cobb-Douglas** preferences.
+
+**Example**: $U(x_1, x_2) = x_1 \cdot x_2$
+
+| Bundle | $x_1$ | $x_2$ | $U = x_1 \cdot x_2$ | Ranking |
+|:---:|:---:|:---:|:---:|:---:|
+| A | 2 | 6 | 12 | $A \sim B$ |
+| B | 3 | 4 | 12 | $A \sim B$ |
+| C | 4 | 5 | 20 | $C \succ A$ |
+
+</div>
+
+## Marginal Utility :microscope:
+
+<div style="font-size: 82%;">
+
+::: {.key-concept}
+**Marginal Utility (MU)**
+
+The additional utility from consuming **one more unit** of a good, holding the other good constant.
+
+$$MU_1 = \frac{\partial U}{\partial x_1} \qquad MU_2 = \frac{\partial U}{\partial x_2}$$
+:::
+
+**Example**: For $U(x_1, x_2) = \sqrt{x_1 \cdot x_2}$:
+
+$$MU_1 = \frac{\partial (\sqrt{x_1 \cdot x_2})}{\partial x_1} = \frac{1}{2}\sqrt{\frac{x_2}{x_1}} \qquad MU_2 = \frac{\partial (\sqrt{x_1 \cdot x_2})}{\partial x_2} = \frac{1}{2}\sqrt{\frac{x_1}{x_2}}$$
+
+:point_right: **Diminishing marginal utility**: As you consume more of a good, each additional unit adds less satisfaction (same idea from the ice cream cone example in the Lecture Notes availabe in Canvas.).
+
+</div>
+
+## The Key Link: MRS = Ratio of Marginal Utilities :key:
+
+<div style="font-size: 80%;">
+
+There is a powerful connection between the MRS (from indifference curves) and marginal utilities (from the utility function):
+
+::: {.key-concept}
+**MRS and Marginal Utility**
+
+$$MRS = \frac{MU_1}{MU_2}$$
+
+The MRS equals the ratio of marginal utilities of the two goods.
+:::
+
+**Intuition**: If good 1 gives you a lot of extra utility ($MU_1$ is high) and good 2 gives you little ($MU_2$ is low), you are willing to give up a lot of good 2 for one more unit of good 1 — so MRS is high.
+
+**Example**: For $U = x_1 \cdot x_2$ at bundle $(2, 6)$:
+
+$$MRS = \frac{MU_1}{MU_2} = \frac{x_2}{x_1} = \frac{6}{2} = 3$$
+
+:point_right: The consumer would give up **3 units of good 2** for **1 more unit of good 1**.
+
+</div>
+
+## Why Does MRS = $MU_1 / MU_2$? :bulb:
+
+<div style="font-size: 80%;">
+
+**Derivation** (along an indifference curve, utility stays constant):
+
+$$dU = 0$$
+
+$$\frac{\partial U}{\partial x_1} dx_1 + \frac{\partial U}{\partial x_2} dx_2 = 0$$
+
+$$MU_1 \cdot dx_1 + MU_2 \cdot dx_2 = 0$$
+
+Rearranging:
+
+$$-\frac{dx_2}{dx_1} = \frac{MU_1}{MU_2}$$
+
+$$\boxed{MRS = \frac{MU_1}{MU_2}}$$
+
+:point_right: This formula lets us compute the MRS directly from the utility function — no graph needed!
+
+</div>
+
+# Part 3: The Consumer's Optimal Choice
+
+## The Consumer's Problem :dart:
+
+<div style="font-size: 82%;">
+
+Now we can put **everything together**:
+
+::: {.key-concept}
+**The Consumer's Problem**
+
+Maximize utility subject to the budget constraint:
+
+$$\max_{x_1, x_2} \; U(x_1, x_2) \quad \text{subject to} \quad p_1 x_1 + p_2 x_2 = M$$
+:::
+
+**In words**: Choose the bundle on the **highest possible indifference curve** that is still **affordable** (on or below the budget line).
+
+Since more is better (non-satiation), the consumer will always spend all income :arrow_right: the optimal bundle is **on** the budget line.
+
+</div>
+
+## Graphical Solution: Tangency :art:
+
+<div style="font-size: 78%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 11
+#| fig-height: 5.5
+#| fig-align: center
+
+x1 <- seq(0.3, 8, length.out = 300)
+
+# Budget line: p1=20, p2=10, M=100 => x2 = 10 - 2*x1
+bl <- data.frame(x1 = c(0, 5), x2 = c(10, 0))
+
+# U = x1 * x2; optimal at tangency where MRS = p1/p2 = 2
+# MRS = x2/x1 = 2 => x2 = 2*x1; with 20*x1 + 10*x2 = 100 => 20*x1 + 20*x1 = 100 => x1=2.5, x2=5
+# At optimum U* = 2.5 * 5 = 12.5
+
+ic_low  <- data.frame(x1 = x1, x2 = 6 / x1)
+ic_opt  <- data.frame(x1 = x1, x2 = 12.5 / x1)
+ic_high <- data.frame(x1 = x1, x2 = 20 / x1)
+
+# Suboptimal points on budget line
+sub1 <- data.frame(x1 = 1, x2 = 8)    # U = 8
+sub2 <- data.frame(x1 = 4, x2 = 2)    # U = 8
+
+ggplot() +
+  # Budget set shading
+  geom_ribbon(data = bl, aes(x = x1, ymin = 0, ymax = x2), fill = ue_gray, alpha = 0.06) +
+  # Budget line
+  geom_line(data = bl, aes(x = x1, y = x2), color = ue_black, linewidth = 2) +
+  # ICs
+  geom_line(data = ic_low[ic_low$x2 <= 10,], aes(x = x1, y = x2),
+            color = ue_gray, linewidth = 1, linetype = "dashed") +
+  geom_line(data = ic_opt[ic_opt$x2 <= 10,], aes(x = x1, y = x2),
+            color = ue_red, linewidth = 2) +
+  geom_line(data = ic_high[ic_high$x2 <= 10,], aes(x = x1, y = x2),
+            color = "#27ae60", linewidth = 1, linetype = "dashed") +
+  # Optimal point
+  geom_point(aes(x = 2.5, y = 5), size = 7, color = ue_red, shape = 18) +
+  annotate("text", x = 3.3, y = 5.6, label = "Optimal: (2.5, 5)\nU* = 12.5",
+           size = 4.5, fontface = "bold", color = ue_red) +
+  # Suboptimal points
+  geom_point(data = sub1, aes(x = x1, y = x2), size = 4, color = ue_gray) +
+  geom_point(data = sub2, aes(x = x1, y = x2), size = 4, color = ue_gray) +
+  annotate("text", x = 0.5, y = 8.5, label = "(1, 8)\nU = 8", size = 3.5, color = ue_gray) +
+  annotate("text", x = 4.5, y = 2.5, label = "(4, 2)\nU = 8", size = 3.5, color = ue_gray) +
+  # IC labels
+  annotate("text", x = 6.5, y = 1.1, label = "U = 6", color = ue_gray, size = 4) +
+  annotate("text", x = 7, y = 2, label = "U = 12.5", color = ue_red, size = 4) +
+  annotate("text", x = 7, y = 3.2, label = "U = 20\n(unaffordable)", color = "#27ae60", size = 3.5) +
+  # BL label
+  annotate("text", x = 0.8, y = 10.3, label = "Budget Line", fontface = "bold", color = ue_black, size = 4) +
+  scale_x_continuous(breaks = 0:8, limits = c(0, 8.5), expand = c(0, 0)) +
+  scale_y_continuous(breaks = 0:10, limits = c(0, 11), expand = c(0, 0)) +
+  labs(x = expression("Meals (" * x[1] * ")"),
+       y = expression("Museums (" * x[2] * ")"),
+       title = "Consumer Optimum: Tangency Between IC and Budget Line") +
+  theme_minimal(base_size = 16) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 17),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+</div>
+
+## The Tangency Condition :straight_ruler:
+
+<div style="font-size: 82%;">
+
+At the optimum, the **slope of the IC** equals the **slope of the budget line**:
+
+::: {.key-concept}
+**Optimality Condition (Interior Solution)**
+
+$$MRS = \frac{p_1}{p_2}$$
+
+$$\frac{MU_1}{MU_2} = \frac{p_1}{p_2}$$
+
+Or equivalently:
+
+$$\frac{MU_1}{p_1} = \frac{MU_2}{p_2}$$
+:::
+
+**Interpretation of** $\frac{MU_1}{p_1} = \frac{MU_2}{p_2}$: The **marginal utility per euro** spent must be equal for both goods. If it is not, the consumer can improve by reallocating spending.
+
+</div>
+
+## Why Must MRS = Price Ratio? :bulb:
+
+<div style="font-size: 78%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**If MRS > $p_1/p_2$** :arrow_right:
+
+The consumer values good 1 **more** than the market does.
+
+The consumer should **buy more** of good 1 and **less** of good 2.
+
+This moves them **down along the budget line**, increasing utility.
+:::
+
+::: {.column width="50%"}
+**If MRS < $p_1/p_2$** :arrow_left:
+
+The consumer values good 1 **less** than the market does.
+
+The consumer should **buy less** of good 1 and **more** of good 2.
+
+This moves them **up along the budget line**, increasing utility.
+:::
+::::
+
+**Only when MRS = $p_1/p_2$** is there no room for improvement — the consumer is at the **optimum**!
+
+**Analogy from Lecture 3**: This is exactly the **cost-benefit principle** applied to marginal reallocation of spending.
+
+</div>
+
+## Solving Algebraically: Step by Step :abacus:
+
+<div style="font-size: 78%;">
+
+**The method** (2 equations, 2 unknowns):
+
+**Equation 1** — Tangency condition:
+
+$$MRS = \frac{p_1}{p_2} \implies \frac{MU_1}{MU_2} = \frac{p_1}{p_2}$$
+
+**Equation 2** — Budget constraint:
+
+$$p_1 x_1 + p_2 x_2 = M$$
+
+**Steps**:
+
+:one: Compute $MU_1$ and $MU_2$ from the utility function
+
+:two: Set $MRS = p_1 / p_2$ and solve for $x_2$ in terms of $x_1$ (or vice versa)
+
+:three: Substitute into the budget constraint
+
+:four: Solve for $x_1^*$ and $x_2^*$
+
+</div>
+
+## Worked Example: Tourist in Lisbon :portugal:
+
+<div style="font-size: 75%;">
+
+**Problem**: $U(x_1, x_2) = x_1 \cdot x_2$, with $p_1 = 20$, $p_2 = 10$, $M = 100$.
+
+**Step 1**: Marginal utilities
+
+$$MU_1 = \frac{\partial(x_1 x_2)}{\partial x_1} = x_2 \qquad MU_2 = \frac{\partial(x_1 x_2)}{\partial x_2} = x_1$$
+
+**Step 2**: Tangency condition
+
+$$\frac{MU_1}{MU_2} = \frac{p_1}{p_2} \implies \frac{x_2}{x_1} = \frac{20}{10} = 2 \implies x_2 = 2x_1$$
+
+**Step 3**: Substitute into budget constraint
+
+$$20 x_1 + 10(2x_1) = 100 \implies 20x_1 + 20x_1 = 100 \implies 40x_1 = 100$$
+
+**Step 4**: Solve
+
+$$\boxed{x_1^* = 2.5 \text{ meals}} \qquad x_2^* = 2(2.5) = \boxed{5 \text{ museums}}$$
+
+$$U^* = 2.5 \times 5 = 12.5$$
+
+</div>
+
+## Verifying: $MU_1/p_1 = MU_2/p_2$ :white_check_mark:
+
+<div style="font-size: 82%;">
+
+At the optimum $(x_1^*, x_2^*) = (2.5, 5)$:
+
+$$\frac{MU_1}{p_1} = \frac{x_2}{p_1} = \frac{5}{20} = 0.25 \text{ utils per euro}$$
+
+$$\frac{MU_2}{p_2} = \frac{x_1}{p_2} = \frac{2.5}{10} = 0.25 \text{ utils per euro}$$
+
+:white_check_mark: Equal! The last euro spent on meals gives the **same** additional satisfaction as the last euro spent on museums.
+
+:point_right: If $MU_1/p_1 > MU_2/p_2$, the consumer should shift spending toward good 1 (meals give more "bang for the buck").
+
+:point_right: If $MU_1/p_1 < MU_2/p_2$, shift toward good 2.
+
+</div>
+
+## Another Example: Cobb-Douglas $U = x_1^{0.4} x_2^{0.6}$ :pencil2:
+
+<div style="font-size: 75%;">
+
+**Problem**: $p_1 = 5$, $p_2 = 10$, $M = 200$.
+
+**Step 1**: $MU_1 = 0.4 \cdot x_1^{-0.6} \cdot x_2^{0.6} \qquad MU_2 = 0.6 \cdot x_1^{0.4} \cdot x_2^{-0.4}$
+
+**Step 2**: Tangency
+
+$$\frac{MU_1}{MU_2} = \frac{0.4 \, x_2^{0.6} \, x_1^{-0.6}}{0.6 \, x_1^{0.4} \, x_2^{-0.4}} = \frac{0.4}{0.6} \cdot \frac{x_2}{x_1} = \frac{2}{3} \cdot \frac{x_2}{x_1}$$
+
+Setting equal to $p_1/p_2 = 5/10 = 1/2$:
+
+$$\frac{2}{3} \cdot \frac{x_2}{x_1} = \frac{1}{2} \implies x_2 = \frac{3}{4} x_1$$
+
+**Step 3**: Budget constraint: $5x_1 + 10 \left(\frac{3}{4}x_1\right) = 200 \implies 5x_1 + 7.5x_1 = 200 \implies 12.5x_1 = 200$
+
+**Step 4**: $\boxed{x_1^* = 16} \qquad x_2^* = \frac{3}{4}(16) = \boxed{12}$
+
+:bulb: **Shortcut for Cobb-Douglas** $U = x_1^a x_2^b$: spend fraction $\frac{a}{a+b}$ of income on good 1, and $\frac{b}{a+b}$ on good 2!
+
+</div>
+
+## The Cobb-Douglas Shortcut :rocket:
+
+<div style="font-size: 82%;">
+
+::: {.key-concept}
+**Cobb-Douglas Demand Shortcut**
+
+For $U = x_1^a \cdot x_2^b$, the optimal demands are:
+
+$$x_1^* = \frac{a}{a + b} \cdot \frac{M}{p_1} \qquad x_2^* = \frac{b}{a + b} \cdot \frac{M}{p_2}$$
+:::
+
+**Verify with our previous example**: $a = 0.4$, $b = 0.6$, $M = 200$, $p_1 = 5$, $p_2 = 10$
+
+$$x_1^* = \frac{0.4}{1} \cdot \frac{200}{5} = 0.4 \times 40 = 16 \quad \checkmark$$
+
+$$x_2^* = \frac{0.6}{1} \cdot \frac{200}{10} = 0.6 \times 20 = 12 \quad \checkmark$$
+
+:point_right: This shortcut works for **any** Cobb-Douglas utility. The **exponents determine budget shares**.
+
+</div>
+
+# Part 4: Special Cases and Intuition
+
+## Corner Solutions :triangular_flag_on_post:
+
+<div style="font-size: 78%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+The tangency condition gives **interior solutions** (positive amounts of both goods).
+
+Sometimes the optimum is at a **corner** — the consumer buys **only one good**.
+
+This happens with **perfect substitutes** when $MRS \neq p_1/p_2$ everywhere.
+
+**Rule for perfect substitutes** $U = ax_1 + bx_2$:
+
+- If $\frac{a}{b} > \frac{p_1}{p_2}$: buy only good 1
+- If $\frac{a}{b} < \frac{p_1}{p_2}$: buy only good 2
+- If $\frac{a}{b} = \frac{p_1}{p_2}$: any bundle on BL is optimal
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 6
+#| fig-height: 5.5
+
+# Corner solution example
+# U = 3x1 + 2x2 with p1=5, p2=10, M=50
+# MRS = 3/2 = 1.5 > p1/p2 = 0.5 => buy only good 1
+bl_corner <- data.frame(x1 = c(0, 10), x2 = c(5, 0))
+
+ggplot() +
+  # Budget line
+  geom_line(data = bl_corner, aes(x = x1, y = x2), color = ue_black, linewidth = 2) +
+  # ICs (straight lines)
+  geom_abline(intercept = 10, slope = -1.5, color = ue_gray, linewidth = 1, linetype = "dashed") +
+  geom_abline(intercept = 15, slope = -1.5, color = ue_red, linewidth = 1.5) +
+  geom_abline(intercept = 20, slope = -1.5, color = "#27ae60", linewidth = 1, linetype = "dashed") +
+  # Corner optimum
+  geom_point(aes(x = 10, y = 0), size = 7, color = ue_red, shape = 18) +
+  annotate("text", x = 8, y = 0.8, label = "Corner\nOptimum\n(10, 0)",
+           size = 4, fontface = "bold", color = ue_red) +
+  annotate("text", x = 1, y = 4.5, label = "BL", fontface = "bold", color = ue_black, size = 4) +
+  annotate("text", x = 7.5, y = 4, label = "IC (steeper\nthan BL)",
+           color = ue_red, size = 3.5, fontface = "italic") +
+  scale_x_continuous(breaks = seq(0, 12, 2), limits = c(0, 12), expand = c(0, 0)) +
+  scale_y_continuous(breaks = 0:8, limits = c(0, 8), expand = c(0, 0)) +
+  labs(x = expression(x[1]), y = expression(x[2]),
+       title = "Corner Solution: Perfect Substitutes") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+::::
+
+</div>
+
+## Perfect Complements: Optimum at the Kink :jigsaw:
+
+<div style="font-size: 78%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+For **perfect complements** $U = \min(ax_1, bx_2)$:
+
+No tangency exists (the IC has a kink!). The optimum is always at the **corner of the L**.
+
+**Condition**: $ax_1 = bx_2$
+
+Substitute into the budget constraint:
+
+$$p_1 x_1 + p_2 \left(\frac{a}{b} x_1\right) = M$$
+
+**Example**: "Surf & Stay" package, $U = \min(x_1, x_2)$, $p_1 = 40$, $p_2 = 60$, $M = 200$:
+
+$$40 x_1 + 60 x_1 = 200$$
+$$x_1^* = x_2^* = 2$$
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 6
+#| fig-height: 5.5
+
+# Perfect complements with budget line
+# U = min(x1, x2), p1=40, p2=60, M=200
+bl_comp <- data.frame(x1 = c(0, 5), x2 = c(200/60, 0))
+
+ggplot() +
+  # Budget line
+  geom_line(data = bl_comp, aes(x = x1, y = x2), color = ue_black, linewidth = 2) +
+  # L-shaped ICs
+  # IC at U=1
+  geom_segment(aes(x = 1, y = 1, xend = 1, yend = 5), color = ue_gray, linewidth = 1, linetype = "dashed") +
+  geom_segment(aes(x = 1, y = 1, xend = 5, yend = 1), color = ue_gray, linewidth = 1, linetype = "dashed") +
+  # IC at U=2 (optimal)
+  geom_segment(aes(x = 2, y = 2, xend = 2, yend = 5), color = ue_red, linewidth = 1.5) +
+  geom_segment(aes(x = 2, y = 2, xend = 5, yend = 2), color = ue_red, linewidth = 1.5) +
+  # IC at U=3
+  geom_segment(aes(x = 3, y = 3, xend = 3, yend = 5), color = "#27ae60", linewidth = 1, linetype = "dashed") +
+  geom_segment(aes(x = 3, y = 3, xend = 5, yend = 3), color = "#27ae60", linewidth = 1, linetype = "dashed") +
+  # 45-degree line
+  geom_abline(intercept = 0, slope = 1, linetype = "dotted", color = ue_gray) +
+  # Optimum
+  geom_point(aes(x = 2, y = 2), size = 7, color = ue_red, shape = 18) +
+  annotate("text", x = 2.8, y = 2.5, label = "Optimum\n(2, 2)",
+           size = 4, fontface = "bold", color = ue_red) +
+  scale_x_continuous(breaks = 0:5, limits = c(0, 5.5), expand = c(0, 0)) +
+  scale_y_continuous(breaks = 0:5, limits = c(0, 5.5), expand = c(0, 0)) +
+  labs(x = expression("Surfboard Rentals (" * x[1] * ")"),
+       y = expression("Accommodation Nights (" * x[2] * ")"),
+       title = "Perfect Complements: Kink Optimum") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+::::
+
+</div>
+
+## Summary of the Consumer's Solution :clipboard:
+
+<div style="font-size: 75%;">
+
+| Preference Type | Utility Function | Solution Method | Optimal Condition |
+|:---|:---:|:---:|:---:|
+| **Standard (Cobb-Douglas)** | $x_1^a x_2^b$ | Tangency + Budget | $MRS = p_1/p_2$ |
+| **Perfect Substitutes** | $ax_1 + bx_2$ | Compare $\frac{a}{b}$ vs $\frac{p_1}{p_2}$ | Corner or entire BL |
+| **Perfect Complements** | $\min(ax_1, bx_2)$ | Kink + Budget | $ax_1 = bx_2$ |
+
+::: {.key-concept}
+**The Consumer's Optimal Choice — Master Summary**
+
+:one: Write the utility function and compute $MU_1$, $MU_2$
+
+:two: Set $\frac{MU_1}{MU_2} = \frac{p_1}{p_2}$ (tangency)
+
+:three: Combine with $p_1 x_1 + p_2 x_2 = M$ (budget)
+
+:four: Solve the system for $x_1^*$ and $x_2^*$
+:::
+
+</div>
+
+## Summary: Today's Key Takeaways
+
+<div style="font-size: 80%;">
+
+:one: **MRS** = rate at which the consumer trades good 2 for good 1 along an IC
+
+:two: **Diminishing MRS** :arrow_right: indifference curves are convex :arrow_right: consumers prefer variety
+
+:three: **Utility functions** assign numbers to bundles; $MRS = MU_1/MU_2$
+
+:four: **Optimal choice**: highest IC touching the budget line :arrow_right: tangency condition $MRS = p_1/p_2$
+
+:five: **Equivalent condition**: $MU_1/p_1 = MU_2/p_2$ (equal marginal utility per euro)
+
+:six: **Cobb-Douglas shortcut**: spend fraction $a/(a+b)$ on good 1
+
+**Next lecture**: Lecture 8 — From individual demand to **market demand** and **linear demand curves**.
+
+</div>
+
+## Exercises {.center}
+
+**Application Time!** :pencil2:
+
+MRS, utility maximization, and graphical analysis.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: A consumer has utility $U = x_1 \cdot x_2$ and currently consumes the bundle $(4, 8)$. The MRS at this point is:
+
+A. 32
+
+B. 4
+
+C. 2
+
+D. 0.5
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: C — MRS = 2**
+:::
+
+$MRS = \frac{MU_1}{MU_2} = \frac{x_2}{x_1} = \frac{8}{4} = 2$. The consumer is willing to give up 2 units of good 2 for 1 additional unit of good 1.
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: At the optimal bundle, if $MU_1/p_1 > MU_2/p_2$, the consumer should:
+
+A. Buy more of good 1 and less of good 2
+
+B. Stay at the current bundle — it is already optimal
+
+C. Buy more of good 2 and less of good 1
+
+D. Increase total spending
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: A — Buy more of good 1 and less of good 2**
+:::
+
+If $MU_1/p_1 > MU_2/p_2$, the last euro spent on good 1 gives more satisfaction than the last euro on good 2. Shifting spending toward good 1 increases total utility. The consumer continues until $MU_1/p_1 = MU_2/p_2$.
+:::
+
+</div>
+
+## Exercise 3: Open Question
+
+<div style="font-size: 72%;">
+
+**A tourist in the Algarve has a daily budget of €120 to split between boat tours ($x_1$, price €30 each) and restaurant meals ($x_2$, price €20 each). Their utility function is $U(x_1, x_2) = x_1^{0.5} \cdot x_2^{0.5}$.**
+
+a) Write the budget constraint equation and find the intercepts.
+
+b) Compute $MU_1$ and $MU_2$. Derive the MRS.
+
+c) Using the tangency condition ($MRS = p_1/p_2$) and the budget constraint, find the optimal bundle $(x_1^*, x_2^*)$.
+
+d) Verify your answer using the Cobb-Douglas shortcut ($a = b = 0.5$).
+
+e) Compute the utility at the optimum. Now suppose the tourist's budget increases to €180 (everything else unchanged). Find the new optimal bundle and new utility. By what percentage did utility increase?
+
+::: {.fragment}
+*Hint: For part (b), recall that the partial derivative of $x^{0.5}$ is $0.5 x^{-0.5}$. For part (d), the Cobb-Douglas shortcut says spend fraction $\frac{a}{a+b}$ on each good.*
+:::
+
+</div>
+
+## Exercise 3: Solution
+
+a) $30 x_1+20 x_2 = 120$, $x_2= 6 - 1.5 x_1$. When $x_1=0$, $x_2=6$, when $x_2=0$, $x_1=4$.
+
+b) $MU_1=\frac{1}{2}\sqrt{x_2/x_1}$, $MU_2=\frac{1}{2}\sqrt{x_1/x_2}$, $MRS=x_2/x_1$
+
+c) $(x_1^*,x_2^*)=(2,3)$
+
+d) :white_check_mark:
+
+e) $u(2,3)=\sqrt{2\cdot 3}=\sqrt{6}\approx `r round(6^0.5,2)`$. If $M=180$, $(x_1^*,x_2^*)=(3,4.5)$, $u(3,4.5)=\sqrt{3\cdot 4.5}=\sqrt{13.5}\approx `r round(13.5^0.5,2)`$. The utility increased $\frac{3.67}{2.45}\approx `r round(3.67/2.45,2)`$, that is about 50%.
+
+## Next Lecture
+
+**February 27, 2026**: Demand — Individual and Market Demand, Linear Demands
+
+## Thank You! {.center}
+
+**Questions?**
+
+*Contact*: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Friday, February 27, 2026*
+
+::: {.notes}
+This is the culmination of the Consumer Theory block's core mechanics. Students should now be able to: compute MRS from a utility function, set up and solve the consumer optimization problem, and interpret the tangency condition economically. Next lecture applies this to derive individual demand curves and aggregate them into market demand.
+:::
