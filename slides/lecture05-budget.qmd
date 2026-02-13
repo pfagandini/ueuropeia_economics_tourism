@@ -1,0 +1,695 @@
+---
+title: "Consumer Theory"
+subtitle: "Lecture 5: Budget Set and Budget Constraint"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 5"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+```
+
+## Recap: Fundamentals Block :rewind: {.center}
+
+<div style="font-size: 80%;">
+
+**What we covered in Lectures 1--4**:
+
+- **Scarcity** forces choices :arrow_right: trade-offs everywhere
+- **Economic Systems**: Market, Centralized, Mixed
+- **Opportunity Cost** = accounting cost + surplus of the best alternative
+- **PPF**: Visualizes society's production trade-offs and efficiency
+
+**Today**: We zoom in from society to the **individual consumer**
+
+:point_right: How does a single person decide what to buy?
+
+</div>
+
+## Welcome to Consumer Theory :shopping_cart: {.center}
+
+<div style="font-size: 85%;">
+
+**The Big Question**: Given limited income and market prices, what can a consumer afford?
+
+:::: {.columns}
+::: {.column width="50%"}
+**Lectures 5--9 Roadmap**:
+
+5. :point_right: **Budget Set & Constraint** (today)
+6. Preferences & Rationality Axioms
+7. MRS, Utility & Maximization
+8. Individual & Market Demand
+9. Demand Elasticity
+:::
+
+::: {.column width="50%"}
+**Why it matters for tourism** :airplane:
+
+Tourists are consumers! Understanding budget constraints explains:
+
+- Why some choose hostels, others choose resorts
+- How exchange rates affect travel decisions
+- Why "all-inclusive" packages exist
+:::
+::::
+
+</div>
+
+# The Consumer's Problem
+
+## Starting Point: What Can You Afford? :money_with_wings:
+
+<div style="font-size: 85%;">
+
+Every consumer faces **three constraints**:
+
+:::: {.columns}
+::: {.column width="33%"}
+:moneybag: **Income** ($M$)
+
+The total money available to spend
+:::
+
+::: {.column width="33%"}
+:label: **Price of Good 1** ($p_1$)
+
+How much each unit of good 1 costs
+:::
+
+::: {.column width="34%"}
+:label: **Price of Good 2** ($p_2$)
+
+How much each unit of good 2 costs
+:::
+::::
+
+
+::: {.key-concept}
+**The Consumer's Problem**
+
+Given income $M$ and prices $p_1$, $p_2$, what combinations of goods 1 and 2 can the consumer purchase?
+:::
+
+</div>
+
+## A Tourism Example :palm_tree:
+
+<div style="font-size: 85%;">
+
+**Scenario**: A tourist arrives in Lisbon with a daily budget of **€100**.
+
+:::: {.columns}
+::: {.column width="50%"}
+**Two "goods" to spend on**:
+
+- :fork_and_knife: **Meals** at restaurants: €20 each
+- :ticket: **Museum tickets**: €10 each
+
+**Question**: What combinations of meals and museum visits can this tourist afford?
+:::
+
+::: {.column width="50%"}
+| Meals ($x_1$) | Museums ($x_2$) | Total Spent |
+|:-:|:-:|:-:|
+| 0 | 10 | €100 |
+| 1 | 8 | €100 |
+| 2 | 6 | €100 |
+| 3 | 4 | €100 |
+| 5 | 0 | €100 |
+:::
+::::
+
+</div>
+
+## The Budget Constraint Equation :straight_ruler:
+
+<div style="font-size: 85%;">
+
+The consumer spends **all** income on two goods:
+
+$$\underbrace{p_1 \cdot x_1 + p_2 \cdot x_2}_{Expenditure} = \underbrace{M}_{Budget}$$
+
+**From our example**: €20 $\cdot x_1$ + €10 $\cdot x_2$ = €100
+
+Solving for $x_2$ (to graph it):
+
+$$x_2 = \frac{M}{p_2} - \frac{p_1}{p_2} \cdot x_1$$
+
+$$x_2 = \frac{100}{10} - \frac{20}{10} \cdot x_1 = 10 - 2x_1$$
+
+</div>
+
+## Graphing the Budget Constraint :chart_with_downwards_trend:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 11
+#| fig-height: 5.5
+#| fig-align: center
+
+# Budget constraint: 20*x1 + 10*x2 = 100
+# x2 = 10 - 2*x1
+
+df_bc <- data.frame(x1 = c(0, 5), x2 = c(10, 0))
+
+ggplot(df_bc, aes(x = x1, y = x2)) +
+  geom_line(color = ue_red, linewidth = 2) +
+  geom_ribbon(aes(ymin = 0, ymax = x2), fill = ue_red, alpha = 0.12) +
+  geom_point(size = 4, color = ue_red) +
+  # Intercept labels
+  annotate("text", x = 0.3, y = 10.5, label = "M / p[2] == 10", parse = TRUE,
+           size = 5, color = ue_black, fontface = "bold") +
+  annotate("text", x = 5, y = 0.7, label = "M / p[1] == 5", parse = TRUE,
+           size = 5, color = ue_black, fontface = "bold") +
+  # Budget set label
+  annotate("text", x = 1.5, y = 3, label = "Budget\nSet", size = 6,
+           color = ue_red, fontface = "bold") +
+  # Budget line label
+  annotate("text", x = 4.5, y = 4, label = "Budget Constraint\n(spend all income)",
+           size = 4.5, color = ue_red, fontface = "italic", angle = -38) +
+  # Slope annotation
+  annotate("segment", x = 2, y = 6, xend = 3, yend = 6,
+           arrow = arrow(length = unit(0.2, "cm")), color = ue_black, linewidth = 0.8) +
+  annotate("segment", x = 3, y = 6, xend = 3, yend = 4,
+           arrow = arrow(length = unit(0.2, "cm")), color = ue_black, linewidth = 0.8) +
+  annotate("text", x = 2.5, y = 6.5, label = "+1", size = 4, color = ue_black) +
+  annotate("text", x = 3.4, y = 5, label = "-2", size = 4, color = ue_black) +
+  scale_x_continuous(breaks = 0:6, limits = c(0, 6.5), expand = c(0, 0)) +
+  scale_y_continuous(breaks = 0:12, limits = c(0, 12), expand = c(0, 0)) +
+  labs(x = expression("Meals (" * x[1] * ")"),
+       y = expression("Museums (" * x[2] * ")"),
+       title = "Budget Constraint: Tourist in Lisbon (M = €100)") +
+  theme_minimal(base_size = 16) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 18),
+    axis.title = element_text(face = "bold", size = 14),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Key Elements of the Budget Constraint
+
+<div style="font-size: 80%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Intercepts** (maximum of each good):
+
+- **Vertical** ($x_1 = 0$): $\frac{M}{p_2} = \frac{100}{10} = 10$ museums
+
+- **Horizontal** ($x_2 = 0$): $\frac{M}{p_1} = \frac{100}{20} = 5$ meals
+:::
+
+::: {.column width="50%"}
+**Slope** of the budget line:
+
+$$\text{Slope} = -\frac{p_1}{p_2} = -\frac{20}{10} = -2$$
+
+:point_right: For every **1 extra meal**, the tourist gives up **2 museum visits**
+
+This is the **economic rate of substitution** set by the market! Also known as the **opportunity cost** of an extra meal!
+:::
+::::
+
+</div>
+
+## Budget Set vs Budget Line :world_map:
+
+<div style="font-size: 85%;">
+
+::: {.key-concept}
+**Budget Line** vs **Budget Set**
+
+- **Budget Line** All bundles where the consumer spends *exactly* all income: $p_1 x_1 + p_2 x_2 = M$
+
+- **Budget Set** All *affordable* bundles (spend all or less): $p_1 x_1 + p_2 x_2 \leq M$
+
+The budget set is the **shaded area** including the line itself.
+:::
+
+Bundles **above** the budget line are **unaffordable** :x:
+
+Bundles **on** the budget line: spend all income :white_check_mark:
+
+Bundles **inside** the budget set: affordable with money left over :white_check_mark:
+
+</div>
+
+# What Shifts the Budget Constraint?
+
+## Change in Income :chart_with_upwards_trend:
+
+<div style="font-size: 80%;">
+
+**What happens if our tourist's budget increases from €100 to €150?**
+
+</div>
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 11
+#| fig-height: 5
+#| fig-align: center
+
+df_bc1 <- data.frame(x1 = c(0, 5), x2 = c(10, 0), budget = "M = €100")
+df_bc2 <- data.frame(x1 = c(0, 7.5), x2 = c(15, 0), budget = "M = €150")
+df_bc3 <- data.frame(x1 = c(0, 3), x2 = c(6, 0), budget = "M = €60")
+
+df_all <- bind_rows(df_bc1, df_bc2, df_bc3)
+df_all$budget <- factor(df_all$budget, levels = c("M = €60", "M = €100", "M = €150"))
+
+ggplot(df_all, aes(x = x1, y = x2, color = budget, linetype = budget)) +
+  geom_line(linewidth = 1.8) +
+  scale_color_manual(values = c(ue_gray, ue_red, ue_black)) +
+  scale_linetype_manual(values = c("dashed", "solid", "dashed")) +
+  annotate("segment", x = 2.5, y = 5, xend = 3.75, yend = 7.5,
+           arrow = arrow(length = unit(0.3, "cm")), color = ue_black, linewidth = 1) +
+  annotate("text", x = 4, y = 8.7, label = "Income\nincreases", size = 4.5,
+           color = ue_black, fontface = "bold") +
+  annotate("segment", x = 2.5, y = 5, xend = 1.5, yend = 3,
+           arrow = arrow(length = unit(0.3, "cm")), color = ue_gray, linewidth = 1) +
+  annotate("text", x = 0.8, y = 2.3, label = "Income\ndecreases", size = 4.5,
+           color = ue_gray, fontface = "bold") +
+  scale_x_continuous(breaks = 0:8, limits = c(0, 8.5), expand = c(0, 0)) +
+  scale_y_continuous(breaks = seq(0, 16, 2), limits = c(0, 17), expand = c(0, 0)) +
+  labs(x = expression("Meals (" * x[1] * ")"),
+       y = expression("Museums (" * x[2] * ")"),
+       title = "Effect of Income Changes on the Budget Constraint",
+       color = "Budget", linetype = "Budget") +
+  theme_minimal(base_size = 16) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 18),
+    axis.title = element_text(face = "bold", size = 14),
+    legend.position = c(0.85, 0.85),
+    legend.background = element_rect(fill = "white", color = ue_gray),
+    legend.text = element_text(size = 13),
+    panel.grid.minor = element_blank()
+  )
+```
+
+<div style="font-size: 80%;">
+
+:point_right: Income change: **parallel shift** (slope unchanged at $-p_1/p_2$)
+
+</div>
+
+## Change in Price of Good 1 :label:
+
+<div style="font-size: 80%;">
+
+**What if meal prices drop from €20 to €10?**
+
+</div>
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 11
+#| fig-height: 5
+#| fig-align: center
+
+df_p1 <- data.frame(x1 = c(0, 5), x2 = c(10, 0), price = "p₁ = €20 (original)")
+df_p2 <- data.frame(x1 = c(0, 10), x2 = c(10, 0), price = "p₁ = €10 (cheaper)")
+df_p3 <- data.frame(x1 = c(0, 2.5), x2 = c(10, 0), price = "p₁ = €40 (expensive)")
+
+df_prices <- bind_rows(df_p1, df_p2, df_p3)
+df_prices$price <- factor(df_prices$price,
+                           levels = c("p₁ = €40 (expensive)", "p₁ = €20 (original)", "p₁ = €10 (cheaper)"))
+
+ggplot(df_prices, aes(x = x1, y = x2, color = price, linetype = price)) +
+  geom_line(linewidth = 1.8) +
+  scale_color_manual(values = c(ue_gray, ue_red, ue_black)) +
+  scale_linetype_manual(values = c("dashed", "solid", "dashed")) +
+  geom_point(data = data.frame(x1 = 0, x2 = 10), aes(x = x1, y = x2),
+             color = ue_red, size = 4, inherit.aes = FALSE) +
+  annotate("text", x = 1, y = 11, label = "Pivot point\n(same y-intercept)",
+           size = 4, color = ue_red, fontface = "bold") +
+  annotate("curve", x = 6, y = 5.5, xend = 8, yend = 3,
+           arrow = arrow(length = unit(0.3, "cm")), color = ue_black,
+           curvature = 0.3, linewidth = 0.8) +
+  annotate("text", x = 6, y = 6.2, label = "Price falls:\nline pivots out",
+           size = 4, color = ue_black, fontface = "bold") +
+  scale_x_continuous(breaks = 0:11, limits = c(0, 11.5), expand = c(0, 0)) +
+  scale_y_continuous(breaks = 0:12, limits = c(0, 12), expand = c(0, 0)) +
+  labs(x = expression("Meals (" * x[1] * ")"),
+       y = expression("Museums (" * x[2] * ")"),
+       title = "Effect of Price Change (Good 1) on Budget Constraint",
+       color = "Scenario", linetype = "Scenario") +
+  theme_minimal(base_size = 16) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 18),
+    axis.title = element_text(face = "bold", size = 14),
+    legend.position = c(0.82, 0.85),
+    legend.background = element_rect(fill = "white", color = ue_gray),
+    legend.text = element_text(size = 12),
+    panel.grid.minor = element_blank()
+  )
+```
+
+<div style="font-size: 80%;">
+
+:point_right: Price change of **one** good: **pivot** around the other intercept (slope changes!)
+
+</div>
+
+## Summary: What Shifts What? :memo:
+
+<div style="font-size: 80%;">
+
+| Change | Effect on Budget Line | Slope | Intercepts |
+|:--|:--|:-:|:-:|
+| :arrow_up: Income ($M$) | Parallel shift **outward** | Same | Both increase |
+| :arrow_down: Income ($M$) | Parallel shift **inward** | Same | Both decrease |
+| :arrow_down: Price $p_1$ | Pivot **outward** on $x_1$ axis | Flatter | $x_1$-intercept increases |
+| :arrow_up: Price $p_1$ | Pivot **inward** on $x_1$ axis | Steeper | $x_1$-intercept decreases |
+| :arrow_down: Price $p_2$ | Pivot **outward** on $x_2$ axis | Steeper | $x_2$-intercept increases |
+| :arrow_up: Price $p_2$ | Pivot **inward** on $x_2$ axis | Flatter | $x_2$-intercept decreases |
+
+</div>
+
+:bulb: **Key insight**: The slope $-p_1/p_2$ is the **relative price** — what the *market* says one good costs in terms of the other.
+
+## The Slope as Opportunity Cost :balance_scale:
+
+<div style="font-size: 85%;">
+
+The slope of the budget constraint has a direct economic interpretation:
+
+$$\text{Slope} = -\frac{p_1}{p_2}$$
+
+This tells us the **market's exchange rate** between the two goods.
+
+:::: {.columns}
+::: {.column width="50%"}
+**Our example**: $-20/10 = -2$
+
+For 1 extra meal, you **must** give up 2 museum visits.
+
+This is **not** a preference — it is a constraint imposed by prices!
+:::
+
+::: {.column width="50%"}
+:point_right: Compare with the **PPF slope** from Lecture 4
+
+- PPF slope: society's opportunity cost (technology)
+- Budget line slope: individual's opportunity cost (prices)
+
+**Both represent trade-offs, at different scales!**
+:::
+::::
+
+</div>
+
+# Tourism Applications
+
+## Application: Exchange Rates & Tourist Budgets :euro:
+
+<div style="font-size: 80%;">
+
+**How exchange rates shift a tourist's budget constraint**
+
+A British tourist visits Portugal with **£500** to spend on:
+
+- :hotel: **Accommodation**: €80/night
+- :fork_and_knife: **Dining**: €20/meal
+  
+</div>
+  
+:::: {.columns}
+::: {.column width="50%"}
+**Scenario A**: £1 = €1.15
+
+Budget in €: £500 × 1.15 = **€575**
+
+- Max nights: 575/80 ≈ **7.2**
+- Max meals: 575/20 ≈ **28.8**
+:::
+
+::: {.column width="50%"}
+**Scenario B**: £1 = €1.30
+
+Budget in €: £500 × 1.30 = **€650**
+
+- Max nights: 650/80 ≈ **8.1**
+- Max meals: 650/20 ≈ **32.5**
+:::
+::::
+
+:point_right: A stronger pound = **parallel outward shift** of the budget constraint in euro terms. The tourist can afford more of *everything*!
+
+
+
+## Application: All-Inclusive vs. À La Carte :hotel:
+
+<div style="font-size: 80%;">
+
+**Why do all-inclusive packages exist?**
+
+:::: {.columns}
+::: {.column width="50%"}
+**À la carte** (standard budget constraint):
+
+- Tourist allocates budget freely between accommodation and experiences
+- Faces standard linear budget line
+- Trade-offs are clear: more luxury room = fewer excursions
+:::
+
+::: {.column width="50%"}
+**All-inclusive package**:
+
+- Fixed price for a **bundle** (room + meals + activities)
+- Effectively removes the trade-off within the bundle
+- Budget constraint becomes a **single point** for included goods
+- Remaining budget: free for souvenirs, extra trips, etc.
+:::
+::::
+
+:bulb: All-inclusive packages simplify the consumer's problem by **pre-selecting** a bundle. We'll revisit this when we study **preferences** in Lecture 6!
+
+</div>
+
+## Numerical Example: Step by Step :abacus:
+
+<div style="font-size: 78%;">
+
+**Problem**: A tourist has **€200** to spend. Surfing lessons cost **€40** each. Fado show tickets cost **€25** each.
+
+**Step 1**: Write the budget constraint
+
+$$40 x_1 + 25 x_2 = 200$$
+
+**Step 2**: Find intercepts
+
+- If $x_1 = 0$: $x_2 = 200/25 = 8$ fado shows
+- If $x_2 = 0$: $x_1 = 200/40 = 5$ surf lessons
+
+**Step 3**: Find the slope
+
+$$\text{Slope} = -\frac{p_1}{p_2} = -\frac{40}{25} = -1.6$$
+
+:point_right: 1 extra surf lesson costs 1.6 fado shows
+
+**Step 4**: Check an interior bundle — (2 surf, 4 fado): $40(2) + 25(4) = 80 + 100 = 180 \leq 200$ :white_check_mark: (inside budget set, €20 unspent)
+
+</div>
+
+## General Formulas: Cheat Sheet :clipboard:
+
+<div style="font-size: 82%;">
+
+::: {.key-concept}
+**Budget Constraint Formulas**
+
+**Equation**: $p_1 x_1 + p_2 x_2 = M$
+
+**Solved for** $x_2$: $\displaystyle x_2 = \frac{M}{p_2} - \frac{p_1}{p_2} x_1$
+
+**Vertical intercept** ($x_1 = 0$): $\displaystyle \frac{M}{p_2}$
+
+**Horizontal intercept** ($x_2 = 0$): $\displaystyle \frac{M}{p_1}$
+
+**Slope**: $\displaystyle -\frac{p_1}{p_2}$ (the relative price of good 1 in terms of good 2)
+:::
+
+</div>
+
+## Summary: Today's Key Takeaways
+
+<div style="font-size: 80%;">
+
+**Today's Lecture Integration**:
+
+1. **Income** ($M$) and **prices** ($p_1, p_2$) define the consumer's constraint
+2. **Budget line**: $p_1 x_1 + p_2 x_2 = M$ — all bundles spending exactly all income
+3. **Budget set**: $p_1 x_1 + p_2 x_2 \leq M$ — all affordable bundles
+4. **Slope** = $-p_1/p_2$ = market rate of exchange between goods
+5. Income changes :arrow_right: **parallel shift**
+6. Price changes :arrow_right: **pivot** (rotation)
+
+**Connection to previous lectures**: The budget line is the *individual-level analog* of the PPF — both show feasible combinations and trade-offs.
+
+**Next**: Lecture 6 — Consumer **Preferences** and axioms of rationality. We'll ask: *among all affordable bundles, which one does the consumer actually want?*
+
+</div>
+
+## Exercises {.center}
+
+**Application Time!** :pencil2:
+
+Budget constraint calculations and graphical analysis.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 85%;">
+
+**Question**: A consumer has income $M = 120$, with $p_1 = 15$ and $p_2 = 10$. The slope of the budget constraint is:  
+  
+A. $-10/15$  
+B. $-15/10$  
+C. $-120/15$  
+D. $-120/10$
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+The slope of the budget line is always $-p_1/p_2 = -15/10 = -1.5$. This means for each additional unit of good 1, the consumer must give up 1.5 units of good 2. Note: income affects the *position* of the line, not its slope.
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 85%;">
+
+**Question**: If the price of good 2 **doubles** while income and $p_1$ stay the same, the budget line:  
+  
+A. Shifts outward in parallel  
+B. Pivots inward around the $x_1$-intercept  
+C. Pivots outward around the $x_2$-intercept  
+D. Pivots inward around the $x_2$-intercept  
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+When $p_2$ doubles: the $x_2$-intercept ($M/p_2$) **halves** (moves down), while the $x_1$-intercept ($M/p_1$) **stays the same**. So the line **pivots inward around the $x_1$-intercept**. The consumer can buy less of good 2 but the same maximum of good 1. The slope $-p_1/p_2$ becomes smaller in absolute value (the line becomes flatter).
+:::
+
+</div>
+
+## Exercise 3: Open Question
+
+<div style="font-size: 75%;">
+
+**Scenario**: A Portuguese tourism student plans a weekend trip. She has a budget of **€150**. She wants to split spending between:
+
+- :surfing_woman: **Surf lessons**: €30 each ($x_1$)
+- :wine_glass: **Wine tasting tours**: €25 each ($x_2$)
+
+**Questions**:
+
+a) Write the budget constraint equation and solve for $x_2$.
+
+b) Calculate and interpret the slope. What is the opportunity cost of one surf lesson in terms of wine tastings?
+
+c) Find both intercepts. Draw the budget constraint with $x_1$ on the horizontal axis.
+
+d) Is the bundle (2 surf lessons, 3 wine tastings) affordable? Is it on the budget line?
+
+e) Suppose the student receives a €50 gift card (total budget now €200). Draw the new budget line on the same graph. What changed and what stayed the same?
+
+f) Now instead of the gift card, suppose surf lesson prices drop to €25 (budget stays at €150). Draw this new line. How does it differ from part (e)?
+
+</div>
+
+## Exercise 3: Solution — Parts a, b, c
+
+<div style="font-size: 75%;">
+
+**a)** Budget constraint: $30x_1 + 25x_2 = 150$
+
+Solving for $x_2$: $x_2 = \frac{150}{25} - \frac{30}{25}x_1 = 6 - 1.2x_1$
+
+**b)** Slope $= -p_1/p_2 = -30/25 = -1.2$
+
+:point_right: Each surf lesson costs 1.2 wine tastings. The opportunity cost of 1 surf lesson is 1.2 wine tours foregone.
+
+**c)** Intercepts:
+
+- $x_1 = 0 \Rightarrow x_2 = 150/25 = 6$ wine tastings (vertical intercept)
+- $x_2 = 0 \Rightarrow x_1 = 150/30 = 5$ surf lessons (horizontal intercept)
+
+Graph: straight line from $(0, 6)$ to $(5, 0)$.
+
+</div>
+
+## Exercise 3: Solution — Parts d, e, f
+
+<div style="font-size: 75%;">
+
+**d)** Bundle (2, 3): $30(2) + 25(3) = 60 + 75 = 135 \leq 150$ :white_check_mark:
+
+**Affordable?** Yes! **On the budget line?** No — she spends only €135, leaving €15 unspent. The bundle is **inside** the budget set.
+
+**e)** New budget €200: $30x_1 + 25x_2 = 200 \Rightarrow x_2 = 8 - 1.2x_1$
+
+- New intercepts: $(0, 8)$ and $(6.67, 0)$
+- **Parallel shift outward** — slope unchanged at $-1.2$
+
+**f)** Price drop $p_1 = 25$, $M = 150$: $25x_1 + 25x_2 = 150 \Rightarrow x_2 = 6 - x_1$
+
+- New intercepts: $(0, 6)$ and $(6, 0)$
+- **Pivot outward** around vertical intercept — slope changes to $-1$
+
+**Key difference**: (e) is a parallel shift (more of both goods equally); (f) is a pivot (relatively more surf lessons become affordable, wine tasting maximum unchanged).
+
+</div>
+
+## Next Lecture {.center}
+
+**February 20, 2026**: Consumer Preferences & Axioms of Rationality
+
+We answered: *What can the consumer afford?*
+
+Next, we ask: *What does the consumer **want**?* :thinking:
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Tomorrow, Friday, February 20, 2026*

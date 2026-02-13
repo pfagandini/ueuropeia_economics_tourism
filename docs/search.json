@@ -796,5 +796,180 @@
     "title": "Economics Fundamentals",
     "section": "Thank You! 👋",
     "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#recap-fundamentals-block",
+    "href": "slides/lecture05-budget.html#recap-fundamentals-block",
+    "title": "Consumer Theory",
+    "section": "Recap: Fundamentals Block ⏪",
+    "text": "Recap: Fundamentals Block ⏪\n\nWhat we covered in Lectures 1–4:\n\nScarcity forces choices ➡️ trade-offs everywhere\nEconomic Systems: Market, Centralized, Mixed\nOpportunity Cost = accounting cost + surplus of the best alternative\nPPF: Visualizes society’s production trade-offs and efficiency\n\nToday: We zoom in from society to the individual consumer\n👉 How does a single person decide what to buy?"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#welcome-to-consumer-theory",
+    "href": "slides/lecture05-budget.html#welcome-to-consumer-theory",
+    "title": "Consumer Theory",
+    "section": "Welcome to Consumer Theory 🛒",
+    "text": "Welcome to Consumer Theory 🛒\n\nThe Big Question: Given limited income and market prices, what can a consumer afford?\n\n\nLectures 5–9 Roadmap:\n\n👉 Budget Set & Constraint (today)\nPreferences & Rationality Axioms\nMRS, Utility & Maximization\nIndividual & Market Demand\nDemand Elasticity\n\n\nWhy it matters for tourism ✈️\nTourists are consumers! Understanding budget constraints explains:\n\nWhy some choose hostels, others choose resorts\nHow exchange rates affect travel decisions\nWhy “all-inclusive” packages exist"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#starting-point-what-can-you-afford",
+    "href": "slides/lecture05-budget.html#starting-point-what-can-you-afford",
+    "title": "Consumer Theory",
+    "section": "Starting Point: What Can You Afford? 💸",
+    "text": "Starting Point: What Can You Afford? 💸\n\nEvery consumer faces three constraints:\n\n\n💰 Income (\\(M\\))\nThe total money available to spend\n\n🏷️ Price of Good 1 (\\(p_1\\))\nHow much each unit of good 1 costs\n\n🏷️ Price of Good 2 (\\(p_2\\))\nHow much each unit of good 2 costs\n\n\nThe Consumer’s Problem\nGiven income \\(M\\) and prices \\(p_1\\), \\(p_2\\), what combinations of goods 1 and 2 can the consumer purchase?"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#a-tourism-example",
+    "href": "slides/lecture05-budget.html#a-tourism-example",
+    "title": "Consumer Theory",
+    "section": "A Tourism Example 🌴",
+    "text": "A Tourism Example 🌴\n\nScenario: A tourist arrives in Lisbon with a daily budget of €100.\n\n\nTwo “goods” to spend on:\n\n🍴 Meals at restaurants: €20 each\n🎫 Museum tickets: €10 each\n\nQuestion: What combinations of meals and museum visits can this tourist afford?\n\n\n\n\nMeals (\\(x_1\\))\nMuseums (\\(x_2\\))\nTotal Spent\n\n\n\n\n0\n10\n€100\n\n\n1\n8\n€100\n\n\n2\n6\n€100\n\n\n3\n4\n€100\n\n\n5\n0\n€100"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#the-budget-constraint-equation",
+    "href": "slides/lecture05-budget.html#the-budget-constraint-equation",
+    "title": "Consumer Theory",
+    "section": "The Budget Constraint Equation 📏",
+    "text": "The Budget Constraint Equation 📏\n\nThe consumer spends all income on two goods:\n\\[\\underbrace{p_1 \\cdot x_1 + p_2 \\cdot x_2}_{Expenditure} = \\underbrace{M}_{Budget}\\]\nFrom our example: €20 \\(\\cdot x_1\\) + €10 \\(\\cdot x_2\\) = €100\nSolving for \\(x_2\\) (to graph it):\n\\[x_2 = \\frac{M}{p_2} - \\frac{p_1}{p_2} \\cdot x_1\\]\n\\[x_2 = \\frac{100}{10} - \\frac{20}{10} \\cdot x_1 = 10 - 2x_1\\]"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#graphing-the-budget-constraint",
+    "href": "slides/lecture05-budget.html#graphing-the-budget-constraint",
+    "title": "Consumer Theory",
+    "section": "Graphing the Budget Constraint 📉",
+    "text": "Graphing the Budget Constraint 📉"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#key-elements-of-the-budget-constraint",
+    "href": "slides/lecture05-budget.html#key-elements-of-the-budget-constraint",
+    "title": "Consumer Theory",
+    "section": "Key Elements of the Budget Constraint",
+    "text": "Key Elements of the Budget Constraint\n\n\n\nIntercepts (maximum of each good):\n\nVertical (\\(x_1 = 0\\)): \\(\\frac{M}{p_2} = \\frac{100}{10} = 10\\) museums\nHorizontal (\\(x_2 = 0\\)): \\(\\frac{M}{p_1} = \\frac{100}{20} = 5\\) meals\n\n\nSlope of the budget line:\n\\[\\text{Slope} = -\\frac{p_1}{p_2} = -\\frac{20}{10} = -2\\]\n👉 For every 1 extra meal, the tourist gives up 2 museum visits\nThis is the economic rate of substitution set by the market! Also known as the opportunity cost of an extra meal!"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#budget-set-vs-budget-line",
+    "href": "slides/lecture05-budget.html#budget-set-vs-budget-line",
+    "title": "Consumer Theory",
+    "section": "Budget Set vs Budget Line 🗺️",
+    "text": "Budget Set vs Budget Line 🗺️\n\n\nBudget Line vs Budget Set\n\nBudget Line All bundles where the consumer spends exactly all income: \\(p_1 x_1 + p_2 x_2 = M\\)\nBudget Set All affordable bundles (spend all or less): \\(p_1 x_1 + p_2 x_2 \\leq M\\)\n\nThe budget set is the shaded area including the line itself.\n\nBundles above the budget line are unaffordable ❌\nBundles on the budget line: spend all income ✅\nBundles inside the budget set: affordable with money left over ✅"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#change-in-income",
+    "href": "slides/lecture05-budget.html#change-in-income",
+    "title": "Consumer Theory",
+    "section": "Change in Income 📈",
+    "text": "Change in Income 📈\n\nWhat happens if our tourist’s budget increases from €100 to €150?\n\n\n\n👉 Income change: parallel shift (slope unchanged at \\(-p_1/p_2\\))"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#change-in-price-of-good-1",
+    "href": "slides/lecture05-budget.html#change-in-price-of-good-1",
+    "title": "Consumer Theory",
+    "section": "Change in Price of Good 1 🏷️",
+    "text": "Change in Price of Good 1 🏷️\n\nWhat if meal prices drop from €20 to €10?\n\n\n\n👉 Price change of one good: pivot around the other intercept (slope changes!)"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#summary-what-shifts-what",
+    "href": "slides/lecture05-budget.html#summary-what-shifts-what",
+    "title": "Consumer Theory",
+    "section": "Summary: What Shifts What? 📝",
+    "text": "Summary: What Shifts What? 📝\n\n\n\n\n\n\n\n\n\n\nChange\nEffect on Budget Line\nSlope\nIntercepts\n\n\n\n\n⬆️ Income (\\(M\\))\nParallel shift outward\nSame\nBoth increase\n\n\n⬇️ Income (\\(M\\))\nParallel shift inward\nSame\nBoth decrease\n\n\n⬇️ Price \\(p_1\\)\nPivot outward on \\(x_1\\) axis\nFlatter\n\\(x_1\\)-intercept increases\n\n\n⬆️ Price \\(p_1\\)\nPivot inward on \\(x_1\\) axis\nSteeper\n\\(x_1\\)-intercept decreases\n\n\n⬇️ Price \\(p_2\\)\nPivot outward on \\(x_2\\) axis\nSteeper\n\\(x_2\\)-intercept increases\n\n\n⬆️ Price \\(p_2\\)\nPivot inward on \\(x_2\\) axis\nFlatter\n\\(x_2\\)-intercept decreases\n\n\n\n\n💡 Key insight: The slope \\(-p_1/p_2\\) is the relative price — what the market says one good costs in terms of the other."
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#the-slope-as-opportunity-cost",
+    "href": "slides/lecture05-budget.html#the-slope-as-opportunity-cost",
+    "title": "Consumer Theory",
+    "section": "The Slope as Opportunity Cost ⚖️",
+    "text": "The Slope as Opportunity Cost ⚖️\n\nThe slope of the budget constraint has a direct economic interpretation:\n\\[\\text{Slope} = -\\frac{p_1}{p_2}\\]\nThis tells us the market’s exchange rate between the two goods.\n\n\nOur example: \\(-20/10 = -2\\)\nFor 1 extra meal, you must give up 2 museum visits.\nThis is not a preference — it is a constraint imposed by prices!\n\n👉 Compare with the PPF slope from Lecture 4\n\nPPF slope: society’s opportunity cost (technology)\nBudget line slope: individual’s opportunity cost (prices)\n\nBoth represent trade-offs, at different scales!"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#application-exchange-rates-tourist-budgets",
+    "href": "slides/lecture05-budget.html#application-exchange-rates-tourist-budgets",
+    "title": "Consumer Theory",
+    "section": "Application: Exchange Rates & Tourist Budgets 💶",
+    "text": "Application: Exchange Rates & Tourist Budgets 💶\n\nHow exchange rates shift a tourist’s budget constraint\nA British tourist visits Portugal with £500 to spend on:\n\n🏨 Accommodation: €80/night\n🍴 Dining: €20/meal\n\n\n\n\nScenario A: £1 = €1.15\nBudget in €: £500 × 1.15 = €575\n\nMax nights: 575/80 ≈ 7.2\nMax meals: 575/20 ≈ 28.8\n\n\nScenario B: £1 = €1.30\nBudget in €: £500 × 1.30 = €650\n\nMax nights: 650/80 ≈ 8.1\nMax meals: 650/20 ≈ 32.5\n\n\n👉 A stronger pound = parallel outward shift of the budget constraint in euro terms. The tourist can afford more of everything!"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#application-all-inclusive-vs.-à-la-carte",
+    "href": "slides/lecture05-budget.html#application-all-inclusive-vs.-à-la-carte",
+    "title": "Consumer Theory",
+    "section": "Application: All-Inclusive vs. À La Carte 🏨",
+    "text": "Application: All-Inclusive vs. À La Carte 🏨\n\nWhy do all-inclusive packages exist?\n\n\nÀ la carte (standard budget constraint):\n\nTourist allocates budget freely between accommodation and experiences\nFaces standard linear budget line\nTrade-offs are clear: more luxury room = fewer excursions\n\n\nAll-inclusive package:\n\nFixed price for a bundle (room + meals + activities)\nEffectively removes the trade-off within the bundle\nBudget constraint becomes a single point for included goods\nRemaining budget: free for souvenirs, extra trips, etc.\n\n\n💡 All-inclusive packages simplify the consumer’s problem by pre-selecting a bundle. We’ll revisit this when we study preferences in Lecture 6!"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#numerical-example-step-by-step",
+    "href": "slides/lecture05-budget.html#numerical-example-step-by-step",
+    "title": "Consumer Theory",
+    "section": "Numerical Example: Step by Step 🧮",
+    "text": "Numerical Example: Step by Step 🧮\n\nProblem: A tourist has €200 to spend. Surfing lessons cost €40 each. Fado show tickets cost €25 each.\nStep 1: Write the budget constraint\n\\[40 x_1 + 25 x_2 = 200\\]\nStep 2: Find intercepts\n\nIf \\(x_1 = 0\\): \\(x_2 = 200/25 = 8\\) fado shows\nIf \\(x_2 = 0\\): \\(x_1 = 200/40 = 5\\) surf lessons\n\nStep 3: Find the slope\n\\[\\text{Slope} = -\\frac{p_1}{p_2} = -\\frac{40}{25} = -1.6\\]\n👉 1 extra surf lesson costs 1.6 fado shows\nStep 4: Check an interior bundle — (2 surf, 4 fado): \\(40(2) + 25(4) = 80 + 100 = 180 \\leq 200\\) ✅ (inside budget set, €20 unspent)"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#general-formulas-cheat-sheet",
+    "href": "slides/lecture05-budget.html#general-formulas-cheat-sheet",
+    "title": "Consumer Theory",
+    "section": "General Formulas: Cheat Sheet 📋",
+    "text": "General Formulas: Cheat Sheet 📋\n\n\nBudget Constraint Formulas\nEquation: \\(p_1 x_1 + p_2 x_2 = M\\)\nSolved for \\(x_2\\): \\(\\displaystyle x_2 = \\frac{M}{p_2} - \\frac{p_1}{p_2} x_1\\)\nVertical intercept (\\(x_1 = 0\\)): \\(\\displaystyle \\frac{M}{p_2}\\)\nHorizontal intercept (\\(x_2 = 0\\)): \\(\\displaystyle \\frac{M}{p_1}\\)\nSlope: \\(\\displaystyle -\\frac{p_1}{p_2}\\) (the relative price of good 1 in terms of good 2)"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#summary-todays-key-takeaways",
+    "href": "slides/lecture05-budget.html#summary-todays-key-takeaways",
+    "title": "Consumer Theory",
+    "section": "Summary: Today’s Key Takeaways",
+    "text": "Summary: Today’s Key Takeaways\n\nToday’s Lecture Integration:\n\nIncome (\\(M\\)) and prices (\\(p_1, p_2\\)) define the consumer’s constraint\nBudget line: \\(p_1 x_1 + p_2 x_2 = M\\) — all bundles spending exactly all income\nBudget set: \\(p_1 x_1 + p_2 x_2 \\leq M\\) — all affordable bundles\nSlope = \\(-p_1/p_2\\) = market rate of exchange between goods\nIncome changes ➡️ parallel shift\nPrice changes ➡️ pivot (rotation)\n\nConnection to previous lectures: The budget line is the individual-level analog of the PPF — both show feasible combinations and trade-offs.\nNext: Lecture 6 — Consumer Preferences and axioms of rationality. We’ll ask: among all affordable bundles, which one does the consumer actually want?"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#exercises",
+    "href": "slides/lecture05-budget.html#exercises",
+    "title": "Consumer Theory",
+    "section": "Exercises",
+    "text": "Exercises\nApplication Time! ✏️\nBudget constraint calculations and graphical analysis."
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#exercise-1-multiple-choice",
+    "href": "slides/lecture05-budget.html#exercise-1-multiple-choice",
+    "title": "Consumer Theory",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\n\nQuestion: A consumer has income \\(M = 120\\), with \\(p_1 = 15\\) and \\(p_2 = 10\\). The slope of the budget constraint is:\nA. \\(-10/15\\)\nB. \\(-15/10\\)\nC. \\(-120/15\\)\nD. \\(-120/10\\)\n\n\nAnswer: B\n\nThe slope of the budget line is always \\(-p_1/p_2 = -15/10 = -1.5\\). This means for each additional unit of good 1, the consumer must give up 1.5 units of good 2. Note: income affects the position of the line, not its slope."
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#exercise-2-multiple-choice",
+    "href": "slides/lecture05-budget.html#exercise-2-multiple-choice",
+    "title": "Consumer Theory",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\n\nQuestion: If the price of good 2 doubles while income and \\(p_1\\) stay the same, the budget line:\nA. Shifts outward in parallel\nB. Pivots inward around the \\(x_1\\)-intercept\nC. Pivots outward around the \\(x_2\\)-intercept\nD. Pivots inward around the \\(x_2\\)-intercept\n\n\nAnswer: B\n\nWhen \\(p_2\\) doubles: the \\(x_2\\)-intercept (\\(M/p_2\\)) halves (moves down), while the \\(x_1\\)-intercept (\\(M/p_1\\)) stays the same. So the line pivots inward around the \\(x_1\\)-intercept. The consumer can buy less of good 2 but the same maximum of good 1. The slope \\(-p_1/p_2\\) becomes smaller in absolute value (the line becomes flatter)."
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#exercise-3-open-question",
+    "href": "slides/lecture05-budget.html#exercise-3-open-question",
+    "title": "Consumer Theory",
+    "section": "Exercise 3: Open Question",
+    "text": "Exercise 3: Open Question\n\nScenario: A Portuguese tourism student plans a weekend trip. She has a budget of €150. She wants to split spending between:\n\n🏄‍♀️ Surf lessons: €30 each (\\(x_1\\))\n🍷 Wine tasting tours: €25 each (\\(x_2\\))\n\nQuestions:\n\nWrite the budget constraint equation and solve for \\(x_2\\).\nCalculate and interpret the slope. What is the opportunity cost of one surf lesson in terms of wine tastings?\nFind both intercepts. Draw the budget constraint with \\(x_1\\) on the horizontal axis.\nIs the bundle (2 surf lessons, 3 wine tastings) affordable? Is it on the budget line?\nSuppose the student receives a €50 gift card (total budget now €200). Draw the new budget line on the same graph. What changed and what stayed the same?\nNow instead of the gift card, suppose surf lesson prices drop to €25 (budget stays at €150). Draw this new line. How does it differ from part (e)?"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#exercise-3-solution-parts-a-b-c",
+    "href": "slides/lecture05-budget.html#exercise-3-solution-parts-a-b-c",
+    "title": "Consumer Theory",
+    "section": "Exercise 3: Solution — Parts a, b, c",
+    "text": "Exercise 3: Solution — Parts a, b, c\n\na) Budget constraint: \\(30x_1 + 25x_2 = 150\\)\nSolving for \\(x_2\\): \\(x_2 = \\frac{150}{25} - \\frac{30}{25}x_1 = 6 - 1.2x_1\\)\nb) Slope \\(= -p_1/p_2 = -30/25 = -1.2\\)\n👉 Each surf lesson costs 1.2 wine tastings. The opportunity cost of 1 surf lesson is 1.2 wine tours foregone.\nc) Intercepts:\n\n\\(x_1 = 0 \\Rightarrow x_2 = 150/25 = 6\\) wine tastings (vertical intercept)\n\\(x_2 = 0 \\Rightarrow x_1 = 150/30 = 5\\) surf lessons (horizontal intercept)\n\nGraph: straight line from \\((0, 6)\\) to \\((5, 0)\\)."
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#exercise-3-solution-parts-d-e-f",
+    "href": "slides/lecture05-budget.html#exercise-3-solution-parts-d-e-f",
+    "title": "Consumer Theory",
+    "section": "Exercise 3: Solution — Parts d, e, f",
+    "text": "Exercise 3: Solution — Parts d, e, f\n\nd) Bundle (2, 3): \\(30(2) + 25(3) = 60 + 75 = 135 \\leq 150\\) ✅\nAffordable? Yes! On the budget line? No — she spends only €135, leaving €15 unspent. The bundle is inside the budget set.\ne) New budget €200: \\(30x_1 + 25x_2 = 200 \\Rightarrow x_2 = 8 - 1.2x_1\\)\n\nNew intercepts: \\((0, 8)\\) and \\((6.67, 0)\\)\nParallel shift outward — slope unchanged at \\(-1.2\\)\n\nf) Price drop \\(p_1 = 25\\), \\(M = 150\\): \\(25x_1 + 25x_2 = 150 \\Rightarrow x_2 = 6 - x_1\\)\n\nNew intercepts: \\((0, 6)\\) and \\((6, 0)\\)\nPivot outward around vertical intercept — slope changes to \\(-1\\)\n\nKey difference: (e) is a parallel shift (more of both goods equally); (f) is a pivot (relatively more surf lessons become affordable, wine tasting maximum unchanged)."
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#next-lecture",
+    "href": "slides/lecture05-budget.html#next-lecture",
+    "title": "Consumer Theory",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nFebruary 20, 2026: Consumer Preferences & Axioms of Rationality\nWe answered: What can the consumer afford?\nNext, we ask: What does the consumer want? 🤔"
+  },
+  {
+    "objectID": "slides/lecture05-budget.html#thank-you",
+    "href": "slides/lecture05-budget.html#thank-you",
+    "title": "Consumer Theory",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
   }
 ]
