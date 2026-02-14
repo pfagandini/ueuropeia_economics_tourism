@@ -86,5 +86,27 @@
     "keepFlags": [false],
     "source": ["bulk"],
     "download_date": ["2026-02-13"]
+  },
+  "fa4ebd03aff004201c4d552b571c689d": {
+    "id": ["tour_occ_arnraw"],
+    "time_format": ["date"],
+    "filters": null,
+    "type": ["code"],
+    "select_time": null,
+    "stringsAsFactors": [false],
+    "keepFlags": [false],
+    "source": ["bulk"],
+    "download_date": ["2026-02-14"]
+  },
+  "92eee39e4a599c8aeb4e9832ff527f1e": {
+    "id": ["bop_its6_det"],
+    "time_format": ["date"],
+    "filters": null,
+    "type": ["code"],
+    "select_time": null,
+    "stringsAsFactors": [false],
+    "keepFlags": [false],
+    "source": ["bulk"],
+    "download_date": ["2026-02-14"]
   }
 }

@@ -368,7 +368,7 @@ p1 <- ggplot(df_a, aes(x = Q, y = P)) +
   scale_x_continuous(limits = c(0, 11), breaks = seq(0, 10, 2), expand = c(0, 0)) +
   scale_y_continuous(limits = c(0, 7), breaks = 0:6, expand = c(0, 0)) +
   labs(x = expression(Q[A]), y = "Price (€)", title = "Consumer A") +
-  annotate("text", x = 5, y = 1.5, label = expression(D[A]), color = ue_red,
+  annotate("text", x = 5, y = 1.5, label = "D[A]", parse = TRUE, color = ue_red,
            fontface = "bold.italic", size = 5) +
   theme_minimal(base_size = 12) +
   theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
@@ -380,7 +380,7 @@ p2 <- ggplot(df_b, aes(x = Q, y = P)) +
   scale_x_continuous(limits = c(0, 11), breaks = seq(0, 10, 2), expand = c(0, 0)) +
   scale_y_continuous(limits = c(0, 7), breaks = 0:6, expand = c(0, 0)) +
   labs(x = expression(Q[B]), y = "Price (€)", title = "Consumer B") +
-  annotate("text", x = 3, y = 1.5, label = expression(D[B]), color = ue_black,
+  annotate("text", x = 3, y = 1.5, label = "D[B]", parse = TRUE, color = ue_black,
            fontface = "bold.italic", size = 5) +
   theme_minimal(base_size = 12) +
   theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
@@ -392,7 +392,7 @@ p3 <- ggplot(df_mkt, aes(x = Q, y = P)) +
   scale_x_continuous(limits = c(0, 11), breaks = seq(0, 10, 2), expand = c(0, 0)) +
   scale_y_continuous(limits = c(0, 7), breaks = 0:6, expand = c(0, 0)) +
   labs(x = expression(Q[Market]), y = "Price (€)", title = "Market Demand") +
-  annotate("text", x = 7, y = 1.5, label = expression(D[Market]),
+  annotate("text", x = 7, y = 1.5, label = "D[Market]", parse = TRUE,
            color = ue_red, fontface = "bold.italic", size = 5) +
   # Show kink
   geom_point(data = data.frame(Q = 2, P = 4), aes(x = Q, y = P),
@@ -724,13 +724,13 @@ df_d2 <- data.frame(Q = seq(0, 13, length.out = 200)) %>% mutate(P = 13 - Q)
 p_shift <- ggplot() +
   geom_line(data = df_d1, aes(x = Q, y = P), color = ue_gray, linewidth = 1.5) +
   geom_line(data = df_d2, aes(x = Q, y = P), color = ue_red, linewidth = 1.5) +
-  annotate("text", x = 8.5, y = 2.5, label = expression(D[1]),
-           color = ue_gray, fontface = "bold.italic", size = 5) +
-  annotate("text", x = 11.5, y = 2.5, label = expression(D[2]),
-           color = ue_red, fontface = "bold.italic", size = 5) +
-  annotate("segment", x = 6, y = 5, xend = 8.5, yend = 5,
+  annotate("text", x = 8.5, y = 2.5, label = "D[1]", parse = TRUE,
+         color = ue_gray, fontface = "bold.italic", size = 5) +
+  annotate("text", x = 11.5, y = 2.5, label = "D[2]", parse = TRUE,
+         color = ue_red, fontface = "bold.italic", size = 5) +
+  annotate("segment", x = 5, y = 5, xend = 8, yend = 5,
            arrow = arrow(length = unit(0.2, "cm")), color = ue_black, linewidth = 1) +
-  annotate("text", x = 7.25, y = 5.6, label = "Shift right", fontface = "bold",
+  annotate("text", x = 6.25, y = 5.6, label = "Shift right", fontface = "bold",
            size = 3.5, color = ue_black) +
   scale_x_continuous(limits = c(0, 14), expand = c(0, 0)) +
   scale_y_continuous(limits = c(0, 14), expand = c(0, 0)) +
@@ -766,16 +766,16 @@ The difference between what consumers are **willing to pay** (reserve price) and
 #| fig-width: 5.5
 #| fig-height: 4
 #| fig-align: center
-
 # CS = triangle above price, below demand
 df_cs <- data.frame(Q = seq(0, 10, length.out = 200)) %>%
   mutate(P = 10 - Q)
-
 # Price = 4, Q* = 6
 p_star <- 4
 q_star <- 6
-
 ggplot() +
+  # TE rectangle (draw first so it's behind)
+  geom_rect(xmin = 0, xmax = q_star, ymin = 0, ymax = p_star,
+            fill = ue_gray, alpha = 0.1) +
   # CS shaded area
   geom_ribbon(data = df_cs %>% filter(Q <= q_star),
               aes(x = Q, ymin = p_star, ymax = P),
@@ -794,13 +794,11 @@ ggplot() +
   # TE rectangle label
   annotate("text", x = 3, y = 2, label = "Total\nExpenditure",
            color = ue_gray, fontface = "italic", size = 3.5) +
-  geom_rect(aes(xmin = 0, xmax = q_star, ymin = 0, ymax = p_star),
-            fill = ue_gray, alpha = 0.1) +
+  annotate("text", x = 8, y = 2.5, label = "D", color = ue_red,
+           fontface = "bold.italic", size = 6) +
   scale_x_continuous(limits = c(0, 11), expand = c(0, 0)) +
   scale_y_continuous(limits = c(0, 11), expand = c(0, 0)) +
   labs(x = "Q", y = "P", title = "Consumer Surplus") +
-  annotate("text", x = 8, y = 2.5, label = "D", color = ue_red,
-           fontface = "bold.italic", size = 6) +
   theme_minimal(base_size = 12) +
   theme(
     plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 13),
