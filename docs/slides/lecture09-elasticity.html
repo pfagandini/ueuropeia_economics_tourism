@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
+
+  <meta name="author" content="Paulo Fagandini">
+  <meta name="dcterms.date" content="2026-01-01">
+  <title>Economics of Tourism – Consumer Theory</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e109428474854d908f205605d54b47e4.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Consumer Theory</h1>
+  <p class="subtitle">Lecture 9: Calculation and Determinants of Demand Elasticity</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Paulo Fagandini 
+</div>
+</div>
+</div>
+
+  <p class="date">2026</p>
+</section>
+<section id="recap-lecture-8" class="slide level2">
+<h2>Recap: Lecture 8 <span class="emoji" data-emoji="rewind">⏪</span></h2>
+<div style="font-size: 82%;">
+<p><strong>What we covered last time</strong>:</p>
+<ul>
+<li><strong>Individual demand</strong>: derived from utility maximization as price changes</li>
+<li><strong>Market demand</strong>: horizontal sum of all individual demands</li>
+<li><strong>Linear demand</strong>: <span class="math inline">\(P = b - mQ\)</span> (inverse form)</li>
+<li><strong>Movements along</strong> (price change) vs.&nbsp;<strong>Shifts</strong> (income, preferences, related goods)</li>
+<li><strong>Consumer surplus</strong>: net benefit consumers get from market participation</li>
+</ul>
+<p><strong>The Key Question Today</strong>: How <strong>sensitive</strong> is quantity demanded to price changes? <span class="emoji" data-emoji="thinking">🤔</span></p>
+<p>Not all demand curves are created equal â€” some goods see huge changes in quantity when price moves; others barely budge!</p>
+</div>
+</section>
+<section>
+<section id="introduction-to-elasticity" class="title-slide slide level1 center">
+<h1>Introduction to Elasticity</h1>
+
+</section>
+<section id="why-elasticity-matters" class="slide level2">
+<h2>Why Elasticity Matters <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
+<div style="font-size: 80%;">
+<div class="key-concept">
+<p><strong>The Revenue Problem</strong></p>
+<p>A hotel wants to increase revenue. Should it raise or lower prices? The answer depends on <strong>how responsive</strong> tourists are to price changes!</p>
+</div>
+<p><strong>Two scenarios</strong>:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Scenario A</strong>: <span class="emoji" data-emoji="airplane">✈️</span> Flights from Lisbon to Paris</p>
+<p>Price increases 10% → Bookings drop 25%</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> <strong>Passengers are very sensitive</strong> to price</p>
+<p>Revenue <strong>falls</strong> when price rises!</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Scenario B</strong>: <span class="emoji" data-emoji="electric_plug">🔌</span> Hotel electricity</p>
+<p>Price increases 10% → Usage drops 2%</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> <strong>Hotels barely respond</strong> to price</p>
+<p>Revenue <strong>rises</strong> when price rises!</p>
+</div></div>
+<p><strong>Elasticity</strong> measures this <strong>price sensitivity</strong> precisely. Essential for pricing, taxation, and policy!</p>
+</div>
+</section>
+<section id="what-is-price-elasticity-of-demand" class="slide level2">
+<h2>What Is Price Elasticity of Demand? <span class="emoji" data-emoji="straight_ruler">📏</span></h2>
+<div style="font-size: 78%;">
+<div class="key-concept">
+<p><strong>Price Elasticity of Demand (PED or <span class="math inline">\(\varepsilon_d\)</span>)</strong></p>
+<p>The <strong>percentage change</strong> in quantity demanded when price changes by <strong>1%</strong>, <em>ceteris paribus</em>.</p>
+<p><span class="math display">\[\varepsilon_d = \frac{\% \Delta Q}{\% \Delta P} = \frac{\Delta Q / Q}{\Delta P / P}=\frac{\Delta Q}{\Delta P}\frac{P}{Q}\]</span></p>
+</div>
+<p><strong>Key properties</strong>:</p>
+<ul>
+<li><span class="math inline">\(\varepsilon_d\)</span> is almost always <strong>negative</strong> (law of demand: <span class="math inline">\(\uparrow P \Rightarrow \downarrow Q\)</span>)</li>
+<li>We often report the <strong>absolute value</strong>: <span class="math inline">\(|\varepsilon_d|\)</span></li>
+<li>It’s <strong>unit-free</strong>: same whether measuring in euros or dollars, trips or thousands of trips</li>
+</ul>
+<p><strong>Example</strong>: If <span class="math inline">\(\varepsilon_d = -2\)</span>, then a <strong>1% increase</strong> in price causes a <strong>2% decrease</strong> in quantity demanded.</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> Elasticity tells us the <strong>proportional response</strong>, not the absolute change!</p>
+</div>
+</section>
+<section id="elastic-vs.-inelastic-demand" class="slide level2">
+<h2>Elastic vs.&nbsp;Inelastic Demand <span class="emoji" data-emoji="balance_scale">⚖️</span></h2>
+<div style="font-size: 78%;">
+<p>We classify demand based on <span class="math inline">\(|\varepsilon_d|\)</span>:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 23%">
+<col style="width: 34%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Condition</th>
+<th style="text-align: left;">Interpretation</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Perfectly Inelastic</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\|\varepsilon_d\| = 0\)</span></td>
+<td style="text-align: left;">Quantity doesn’t change at all</td>
+<td style="text-align: left;">Life-saving medicine</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Inelastic</strong></td>
+<td style="text-align: left;"><span class="math inline">\(0 &lt; \|\varepsilon_d\| &lt; 1\)</span></td>
+<td style="text-align: left;">Quantity changes <em>less</em> than price</td>
+<td style="text-align: left;">Gasoline (short run)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Unit Elastic</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\|\varepsilon_d\| = 1\)</span></td>
+<td style="text-align: left;">Quantity changes <em>equally</em> with price</td>
+<td style="text-align: left;">Some textbooks estimate for housing</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Elastic</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\|\varepsilon_d\| &gt; 1\)</span></td>
+<td style="text-align: left;">Quantity changes <em>more</em> than price</td>
+<td style="text-align: left;">Restaurant meals, tourism</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Perfectly Elastic</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\|\varepsilon_d\| = \infty\)</span></td>
+<td style="text-align: left;">Any price increase → demand drops to zero</td>
+<td style="text-align: left;">Competitive market goods</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key insight</strong>: If <span class="math inline">\(|\varepsilon_d| &gt; 1\)</span> (elastic), consumers are <strong>very responsive</strong>. If <span class="math inline">\(|\varepsilon_d| &lt; 1\)</span> (inelastic), they are <strong>not very responsive</strong>.</p>
+</div>
+</section>
+<section id="visualizing-elasticity" class="slide level2">
+<h2>Visualizing Elasticity <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></h2>
+<div style="font-size: 75%;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture09-elasticity_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Visual intuition</strong>:</p>
+<p><strong>Inelastic demand</strong> (red):</p>
+<ul>
+<li><strong>Steeper</strong> curve</li>
+<li>Quantity barely responds to price</li>
+<li><span class="math inline">\(|\varepsilon_d| &lt; 1\)</span></li>
+</ul>
+<p><strong>Elastic demand</strong> (black):</p>
+<ul>
+<li><strong>Flatter</strong> curve</li>
+<li>Quantity responds a lot to price</li>
+<li><span class="math inline">\(|\varepsilon_d| &gt; 1\)</span></li>
+</ul>
+<p><span class="emoji" data-emoji="warning">⚠️</span> <strong>Careful</strong>: Steepness depends on units! Elasticity is the proper measure.</p>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="calculating-elasticity" class="title-slide slide level1 center">
+<h1>Calculating Elasticity</h1>
+
+</section>
+<section id="two-methods-of-calculation" class="slide level2">
+<h2>Two Methods of Calculation <span class="emoji" data-emoji="1234">🔢</span></h2>
+<div style="font-size: 78%;">
+<p><strong>Method 1: Point Elasticity</strong> (at a specific point on the demand curve)</p>
+<p><span class="math display">\[\varepsilon_d = \frac{dQ}{dP} \cdot \frac{P}{Q}\]</span></p>
+<ul>
+<li>Use when you have a <strong>demand function</strong> and want elasticity at a particular <span class="math inline">\((P, Q)\)</span></li>
+<li>For linear demand <span class="math inline">\(Q = a - bP\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\frac{dQ}{dP} = -b\)</span></li>
+</ul>
+<p><strong>Method 2: Arc Elasticity</strong> (between two points)</p>
+<p><span class="math display">\[\varepsilon_d = \frac{\Delta Q / Q_{avg}}{\Delta P / P_{avg}} = \frac{\frac{Q_2 - Q_1}{(Q_1 + Q_2)/2}}{ \frac{P_2 - P_1}{(P_1 + P_2)/2}}\]</span></p>
+<ul>
+<li>Use when you observe <strong>two discrete points</strong> (e.g., before/after price change)</li>
+<li>Uses <strong>midpoints</strong> to avoid asymmetry issues (increasing 10% <span class="math inline">\(\neq\)</span> decreasing 10%)</li>
+</ul>
+</div>
+</section>
+<section id="example-1-point-elasticity" class="slide level2">
+<h2>Example 1: Point Elasticity <span class="emoji" data-emoji="pencil2">✏️</span></h2>
+<div style="font-size: 75%;">
+<p><strong>Demand for hotel rooms in Porto</strong>: <span class="math inline">\(Q = 500 - 2P\)</span> (rooms per night, <span class="math inline">\(P\)</span> in €)</p>
+<p><strong>Question</strong>: What is the price elasticity of demand when <span class="math inline">\(P = €100\)</span>?</p>
+</div>
+<div class="fragment">
+<div style="font-size: 75%;">
+<p><strong>Solution</strong>:</p>
+<ol type="1">
+<li><p>Find <span class="math inline">\(Q\)</span> at <span class="math inline">\(P = 100\)</span>: <span class="math inline">\(Q = 500 - 2(100) = 300\)</span> rooms</p></li>
+<li><p>Calculate <span class="math inline">\(\frac{dQ}{dP}\)</span>: For <span class="math inline">\(Q = 500 - 2P\)</span>, we have <span class="math inline">\(\frac{dQ}{dP} = -2\)</span></p></li>
+<li><p>Apply formula: <span class="math display">\[\varepsilon_d = \frac{dQ}{dP} \cdot \frac{P}{Q} = (-2) \cdot \frac{100}{300} = -\frac{200}{300} = -0.67\]</span></p></li>
+</ol>
+<p><strong>Interpretation</strong>: At <span class="math inline">\(P = €100\)</span>, demand is <strong>inelastic</strong> (<span class="math inline">\(|\varepsilon_d| = 0.67 &lt; 1\)</span>). A 1% price increase causes only a 0.67% decrease in quantity demanded.</p>
+</div>
+</div>
+</section>
+<section id="example-2-arc-elasticity" class="slide level2">
+<h2>Example 2: Arc Elasticity <span class="emoji" data-emoji="pencil2">✏️</span></h2>
+<div style="font-size: 75%;">
+<p><strong>A museum in Sintra</strong> raises ticket prices from €10 to €12. Visitors fall from 1,000/day to 800/day.</p>
+<p><strong>Question</strong>: What is the arc elasticity of demand?</p>
+</div>
+<div class="fragment">
+<div style="font-size: 75%;">
+<p><strong>Solution</strong>:</p>
+<p><span class="math display">\[\varepsilon_d = \frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \div \frac{P_2 - P_1}{(P_1 + P_2)/2}\]</span></p>
+<p><span class="math display">\[= \frac{800 - 1000}{(1000 + 800)/2} \div \frac{12 - 10}{(10 + 12)/2}\]</span></p>
+<p><span class="math display">\[= \frac{-200}{900} \div \frac{2}{11} = -\frac{200}{900} \cdot \frac{11}{2} = -\frac{2200}{1800} \approx -1.22\]</span></p>
+<p><strong>Interpretation</strong>: Demand is <strong>elastic</strong> (<span class="math inline">\(|\varepsilon_d| = 1.22 &gt; 1\)</span>). A 1% price increase causes a 1.22% decrease in visitors.</p>
+</div>
+</div>
+</section>
+<section id="elasticity-along-a-linear-demand-curve" class="slide level2">
+<h2>Elasticity Along a Linear Demand Curve <span class="emoji" data-emoji="straight_ruler">📏</span></h2>
+<div style="font-size: 75%;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture09-elasticity_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Key insight</strong>: For a <strong>linear</strong> demand curve, elasticity <strong>varies</strong> along the curve!</p>
+<p><strong>Why?</strong> <span class="math inline">\(\varepsilon_d = \frac{dQ}{dP} \cdot \frac{P}{Q}\)</span></p>
+<ul>
+<li>Slope <span class="math inline">\(\frac{dQ}{dP}\)</span> is constant</li>
+<li>But <strong>ratio</strong> <span class="math inline">\(\frac{P}{Q}\)</span> changes</li>
+</ul>
+<p><strong>Three regions</strong>:</p>
+<ul>
+<li><strong>Top</strong> (high <span class="math inline">\(P\)</span>, low <span class="math inline">\(Q\)</span>): <span class="math inline">\(|\varepsilon_d| &gt; 1\)</span> (elastic)</li>
+<li><strong>Middle</strong> (midpoint): <span class="math inline">\(|\varepsilon_d| = 1\)</span> (unit elastic)</li>
+<li><strong>Bottom</strong> (low <span class="math inline">\(P\)</span>, high <span class="math inline">\(Q\)</span>): <span class="math inline">\(|\varepsilon_d| &lt; 1\)</span> (inelastic)</li>
+</ul>
+<p><span class="emoji" data-emoji="bulb">💡</span> The <strong>same</strong> demand curve is elastic at some prices, inelastic at others!</p>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="determinants-of-elasticity" class="title-slide slide level1 center">
+<h1>Determinants of Elasticity</h1>
+
+</section>
+<section id="what-makes-demand-more-elastic" class="slide level2">
+<h2>What Makes Demand More Elastic? <span class="emoji" data-emoji="thinking">🤔</span></h2>
+<div style="font-size: 78%;">
+<p><strong>Five key determinants</strong>:</p>
+<ol type="1">
+<li><strong>Availability of substitutes</strong> <span class="emoji" data-emoji="arrows_counterclockwise">🔄</span>
+<ul>
+<li>More/closer substitutes → <strong>more elastic</strong></li>
+<li>Example: Brand-name hotels (many alternatives) vs.&nbsp;only hotel in remote village</li>
+</ul></li>
+<li><strong>Share of budget</strong> <span class="emoji" data-emoji="moneybag">💰</span>
+<ul>
+<li>Larger expense → <strong>more elastic</strong></li>
+<li>Example: International vacation vs.&nbsp;coffee</li>
+</ul></li>
+<li><strong>Necessity vs.&nbsp;luxury</strong> <span class="emoji" data-emoji="gem">💎</span>
+<ul>
+<li>Luxuries → <strong>more elastic</strong>; Necessities → <strong>less elastic</strong></li>
+<li>Example: Business travel (necessity) vs.&nbsp;leisure tourism (luxury)</li>
+</ul></li>
+</ol>
+</div>
+</section>
+<section class="slide level2">
+
+<div style="font-size: 78%;">
+<ol start="4" type="1">
+<li><strong>Time horizon</strong> <span class="emoji" data-emoji="clock1">🕐</span>
+<ul>
+<li>Long run → <strong>more elastic</strong> (more time to adjust)</li>
+<li>Example: After fuel price increase, tourists eventually switch to closer destinations</li>
+</ul></li>
+<li><strong>Definition of the market</strong> <span class="emoji" data-emoji="world_map">🗺️</span>
+<ul>
+<li>Narrowly defined → <strong>more elastic</strong></li>
+<li>Example: “TAP flights to Paris” (elastic) vs.&nbsp;“all flights to Paris” (less elastic) vs.&nbsp;“all air travel” (even less elastic)</li>
+</ul></li>
+</ol>
+<p><strong>Summary</strong>: Demand is more elastic when consumers have <strong>options</strong>, <strong>time</strong>, and the good is <strong>less essential</strong>.</p>
+</div>
+</section>
+<section id="tourism-examples" class="slide level2">
+<h2>Tourism Examples <span class="emoji" data-emoji="airplane">✈️</span></h2>
+<div style="font-size: 78%;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Inelastic Tourism Demand</strong>:</p>
+<p><span class="emoji" data-emoji="one">1️⃣</span> <strong>Business travel</strong>: Fixed meetings, little flexibility → <span class="math inline">\(|\varepsilon_d| \approx 0.3\)</span></p>
+<p><span class="emoji" data-emoji="two">2️⃣</span> <strong>Last-minute bookings</strong>: Few alternatives, urgency → Low elasticity</p>
+<p><span class="emoji" data-emoji="three">3️⃣</span> <strong>Travel to visit family</strong>: Strong non-economic motivation</p>
+<p><span class="emoji" data-emoji="four">4️⃣</span> <strong>Unique destinations</strong> (e.g., Galápagos): No close substitutes</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Elastic Tourism Demand</strong>:</p>
+<p><span class="emoji" data-emoji="one">1️⃣</span> <strong>Leisure beach holidays</strong>: Many substitutes (Algarve, Greece, Spain) → <span class="math inline">\(|\varepsilon_d| \approx 2.5\)</span></p>
+<p><span class="emoji" data-emoji="two">2️⃣</span> <strong>Budget airlines</strong>: Highly price-sensitive consumers</p>
+<p><span class="emoji" data-emoji="three">3️⃣</span> <strong>Long-haul tourism</strong>: Large budget share, can be postponed</p>
+<p><span class="emoji" data-emoji="four">4️⃣</span> <strong>All-inclusive packages</strong>: Many competing offers</p>
+</div></div>
+<p><span class="emoji" data-emoji="bulb">💡</span> Tourism managers must understand <em>their</em> market’s elasticity to price optimally!</p>
+</div>
+</section></section>
+<section>
+<section id="elasticity-and-revenue" class="title-slide slide level1 center">
+<h1>Elasticity and Revenue</h1>
+
+</section>
+<section id="the-revenue-test" class="slide level2">
+<h2>The Revenue Test <span class="emoji" data-emoji="moneybag">💰</span></h2>
+<div style="font-size: 78%;">
+<div class="key-concept">
+<p><strong>Total Revenue and Elasticity</strong></p>
+<p>Total Revenue: <span class="math inline">\(TR = P \times Q\)</span></p>
+<p>When price changes:</p>
+<ul>
+<li>If demand is <strong>elastic</strong> (<span class="math inline">\(|\varepsilon_d| &gt; 1\)</span>): Price and revenue move in <strong>opposite</strong> directions</li>
+<li>If demand is <strong>inelastic</strong> (<span class="math inline">\(|\varepsilon_d| &lt; 1\)</span>): Price and revenue move in the <strong>same</strong> direction</li>
+<li>If demand is <strong>unit elastic</strong> (<span class="math inline">\(|\varepsilon_d| = 1\)</span>): Revenue is <strong>maximized</strong></li>
+</ul>
+</div>
+<p><strong>Why?</strong></p>
+<ul>
+<li><strong>Elastic</strong>: <span class="math inline">\(\%\Delta Q &gt; \%\Delta P\)</span> → quantity effect dominates</li>
+<li><strong>Inelastic</strong>: <span class="math inline">\(\%\Delta Q &lt; \%\Delta P\)</span> → price effect dominates</li>
+</ul>
+</div>
+</section>
+<section id="revenue-and-elasticity-graphical-view" class="slide level2">
+<h2>Revenue and Elasticity: Graphical View <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
+<div style="font-size: 75%;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture09-elasticity_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Key observations</strong>:</p>
+<ul>
+<li>Revenue is <strong>maximized</strong> where <span class="math inline">\(|\varepsilon_d| = 1\)</span></li>
+<li>To the <strong>left</strong> (low <span class="math inline">\(Q\)</span>, high <span class="math inline">\(P\)</span>): elastic region, raising <span class="math inline">\(P\)</span> <strong>reduces</strong> <span class="math inline">\(TR\)</span></li>
+<li>To the <strong>right</strong> (high <span class="math inline">\(Q\)</span>, low <span class="math inline">\(P\)</span>): inelastic region, raising <span class="math inline">\(P\)</span> <strong>increases</strong> <span class="math inline">\(TR\)</span></li>
+</ul>
+<p><strong>Managerial insight</strong>:</p>
+<p>If you’re in the <strong>elastic region</strong>, <strong>cut prices</strong> to boost revenue!</p>
+<p>If you’re in the <strong>inelastic region</strong>, <strong>raise prices</strong> to boost revenue!</p>
+</div></div>
+</div>
+</section>
+<section id="example-should-the-museum-raise-prices" class="slide level2">
+<h2>Example: Should the Museum Raise Prices? <span class="emoji" data-emoji="classical_building">🏛️</span></h2>
+<div style="font-size: 75%;">
+<p><strong>Gulbenkian Museum</strong> charges €8/ticket, sells 10,000 tickets/month. Managers estimate <span class="math inline">\(\varepsilon_d = -1.5\)</span>.</p>
+<p><strong>Should they raise the price to €10?</strong></p>
+</div>
+<div class="fragment">
+<div style="font-size: 75%;">
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>Current <span class="math inline">\(TR = 8 \times 10{,}000 = €80{,}000\)</span></li>
+<li>Demand is <strong>elastic</strong>: <span class="math inline">\(|\varepsilon_d| = 1.5 &gt; 1\)</span></li>
+<li><strong>Revenue test</strong>: Price and revenue move in <strong>opposite directions</strong></li>
+</ul>
+<p>If price rises, quantity will fall <strong>more than proportionally</strong> → revenue <strong>decreases</strong>.</p>
+<p><strong>Recommendation</strong>: <strong>Do NOT raise the price</strong>. Instead, consider <strong>lowering</strong> the price to increase revenue!</p>
+</div>
+</div>
+<div class="fragment">
+<div style="font-size: 75%;">
+<p><strong>Verification</strong>: If <span class="math inline">\(P = €10\)</span>, with <span class="math inline">\(\varepsilon_d = -1.5\)</span>, a <strong>25% price increase</strong> causes approximately <span class="math inline">\(-1.5 \times 25\% = -37.5\%\)</span> decrease in quantity → <span class="math inline">\(Q \approx 6{,}250\)</span> → <span class="math inline">\(TR = 10 \times 6{,}250 = €62{,}500 &lt; €80{,}000\)</span> <span class="emoji" data-emoji="x">❌</span></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="other-elasticities" class="title-slide slide level1 center">
+<h1>Other Elasticities</h1>
+
+</section>
+<section id="cross-price-elasticity" class="slide level2">
+<h2>Cross-Price Elasticity <span class="emoji" data-emoji="arrows_counterclockwise">🔄</span></h2>
+<div style="font-size: 80%;">
+<div class="key-concept">
+<p><strong>Cross-Price Elasticity of Demand</strong></p>
+<p>Measures how quantity demanded of good <span class="math inline">\(i\)</span> responds to a price change in good <span class="math inline">\(j\)</span>:</p>
+<p><span class="math display">\[\varepsilon_{ij} = \frac{\% \Delta Q_i}{\% \Delta P_j} = \frac{\Delta Q_i / Q_i}{\Delta P_j / P_j}\]</span></p>
+</div>
+<p><strong>Interpretation</strong>:</p>
+<ul>
+<li><span class="math inline">\(\varepsilon_{ij} &gt; 0\)</span>: Goods <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are <strong>substitutes</strong> (e.g., flights vs.&nbsp;trains)</li>
+<li><span class="math inline">\(\varepsilon_{ij} &lt; 0\)</span>: Goods <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are <strong>complements</strong> (e.g., flights and hotels)</li>
+<li><span class="math inline">\(\varepsilon_{ij} = 0\)</span>: Goods are <strong>independent</strong> (e.g., milk and concert tickets)</li>
+</ul>
+<p><strong>Example</strong>: If <span class="math inline">\(\varepsilon_{\text{hotels, flights}} = -0.4\)</span>, a <strong>10% increase</strong> in flight prices causes <strong>4% decrease</strong> in hotel demand.</p>
+</div>
+</section>
+<section id="income-elasticity" class="slide level2">
+<h2>Income Elasticity <span class="emoji" data-emoji="moneybag">💰</span></h2>
+<div style="font-size: 80%;">
+<div class="key-concept">
+<p><strong>Income Elasticity of Demand</strong></p>
+<p>Measures how quantity demanded responds to income changes:</p>
+<p><span class="math display">\[\varepsilon_M = \frac{\% \Delta Q}{\% \Delta M} = \frac{\Delta Q / Q}{\Delta M / M}\]</span></p>
+</div>
+<p><strong>Interpretation</strong>:</p>
+<ul>
+<li><span class="math inline">\(\varepsilon_M &gt; 1\)</span>: <strong>Luxury good</strong> (tourism, fine dining)</li>
+<li><span class="math inline">\(0 &lt; \varepsilon_M &lt; 1\)</span>: <strong>Normal good</strong> (most goods)</li>
+<li><span class="math inline">\(\varepsilon_M &lt; 0\)</span>: <strong>Inferior good</strong> (budget accommodations, bus travel)</li>
+</ul>
+<p><strong>Tourism application</strong>: International tourism has high income elasticity (<span class="math inline">\(\varepsilon_M \approx 1.5 - 2.5\)</span>). During recessions, tourism demand falls sharply!</p>
+</div>
+</section>
+<section id="summary-of-elasticities" class="slide level2">
+<h2>Summary of Elasticities <span class="emoji" data-emoji="clipboard">📋</span></h2>
+<div style="font-size: 78%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 20%">
+<col style="width: 13%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Elasticity</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: left;">Sign</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Price Elasticity</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\% \Delta Q}{\% \Delta P}\)</span></td>
+<td style="text-align: left;">Usually <strong>negative</strong></td>
+<td style="text-align: left;">Responsiveness to own price</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Cross-Price</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\% \Delta Q_i}{\% \Delta P_j}\)</span></td>
+<td style="text-align: left;"><strong>Positive</strong> (substitutes) / <strong>Negative</strong> (complements)</td>
+<td style="text-align: left;">Relationship between goods</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Income</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\% \Delta Q}{\% \Delta M}\)</span></td>
+<td style="text-align: left;"><strong>Positive</strong> (normal/luxury) / <strong>Negative</strong> (inferior)</td>
+<td style="text-align: left;">Responsiveness to income</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span class="emoji" data-emoji="bulb">💡</span> All measure <strong>percentage changes</strong> → comparable across markets and units!</p>
+</section></section>
+<section>
+<section id="applications-to-tourism" class="title-slide slide level1 center">
+<h1>Applications to Tourism</h1>
+
+</section>
+<section id="dynamic-pricing-in-tourism" class="slide level2">
+<h2>Dynamic Pricing in Tourism <span class="emoji" data-emoji="ticket">🎫</span></h2>
+<div style="font-size: 78%;">
+<p><strong>How airlines and hotels use elasticity</strong>:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Segment 1: Business travelers</strong></p>
+<ul>
+<li>Inelastic demand (<span class="math inline">\(|\varepsilon_d| \approx 0.3\)</span>)</li>
+<li>Book last-minute</li>
+<li>Need flexibility</li>
+<li><strong>Strategy</strong>: <strong>High prices</strong> (€300-500)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Segment 2: Leisure travelers</strong></p>
+<ul>
+<li>Elastic demand (<span class="math inline">\(|\varepsilon_d| \approx 2.5\)</span>)</li>
+<li>Book in advance</li>
+<li>Flexible dates</li>
+<li><strong>Strategy</strong>: <strong>Low prices</strong> (€50-100)</li>
+</ul>
+</div></div>
+<p><strong>Revenue maximization</strong>: Charge <strong>different prices</strong> to segments with <strong>different elasticities</strong>!</p>
+<p>This is called <strong>price discrimination</strong>.</p>
+</div>
+</section>
+<section id="taxation-and-tourism" class="slide level2">
+<h2>Taxation and Tourism <span class="emoji" data-emoji="classical_building">🏛️</span></h2>
+<div style="font-size: 75%;">
+<p><strong>Who really pays a tourism tax?</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture09-elasticity_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Tax incidence</strong> depends on <strong>relative elasticities</strong>!</p>
+<p>Here, demand is relatively <strong>elastic</strong> (tourists can visit other destinations).</p>
+<p><strong>Result</strong>: A €20 tax causes:</p>
+<ul>
+<li>Price paid by tourists rises by <strong>€13.33</strong></li>
+<li>Price received by hotels falls by <strong>€6.66</strong></li>
+<li><strong>Sellers bear more</strong> of the tax burden!</li>
+</ul>
+<p><strong>General rule</strong>: The side with <strong>less elastic</strong> response bears <strong>more</strong> of the tax.</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> If tourists are price-sensitive (elastic demand), tourism businesses absorb most taxes!</p>
+</div></div>
+</div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary <span class="emoji" data-emoji="clipboard">📋</span></h2>
+<div style="font-size: 75%;">
+<p><strong>Today’s Key Takeaways</strong>:</p>
+<ol type="1">
+<li><strong>Price elasticity of demand</strong> (<span class="math inline">\(\varepsilon_d\)</span>): percentage change in quantity per 1% price change</li>
+<li><strong>Elastic</strong> (<span class="math inline">\(|\varepsilon_d| &gt; 1\)</span>): quantity very responsive; <strong>Inelastic</strong> (<span class="math inline">\(|\varepsilon_d| &lt; 1\)</span>): not very responsive</li>
+<li><strong>Calculation</strong>: Point formula <span class="math inline">\(\varepsilon_d = \frac{dQ}{dP} \cdot \frac{P}{Q}\)</span> or arc formula (midpoint method)</li>
+<li><strong>Determinants</strong>: substitutes, budget share, necessity vs.&nbsp;luxury, time, market definition</li>
+<li><strong>Revenue</strong>: If elastic, price ↑ → revenue ↓; If inelastic, price ↑ → revenue ↑; Maximized at <span class="math inline">\(|\varepsilon_d| = 1\)</span></li>
+<li><strong>Other elasticities</strong>: cross-price (substitutes/complements), income (normal/inferior/luxury)</li>
+<li><strong>Tourism applications</strong>: dynamic pricing, tax incidence, demand forecasting</li>
+</ol>
+<p><strong>Connection</strong>: This builds on demand curves (L8) and leads into supply and market equilibrium (L11+).</p>
+<p><strong>Next (after Test 1)</strong>: Producer theory<span class="emoji" data-emoji="factory">🏭</span>: costs, profits, and supply!</p>
+<p><span class="emoji" data-emoji="warning">⚠️</span> <strong>Test 1 is TOMORROW, March 13!</strong> Covers Lectures 1–8 (Fundamentals + Consumer). Good luck! <span class="emoji" data-emoji="four_leaf_clover">🍀</span></p>
+</div>
+</section>
+<section id="exercises" class="slide level2 center">
+<h2>Exercises</h2>
+<p><strong>Practice Time!</strong> <span class="emoji" data-emoji="pencil2">✏️</span></p>
+<p>Elasticity calculation and applications.</p>
+</section>
+<section id="exercise-1-multiple-choice" class="slide level2">
+<h2>Exercise 1: Multiple Choice</h2>
+<div style="font-size: 85%;">
+<p><strong>Question</strong>: The demand for luxury cruises from Lisbon is estimated to have a price elasticity of <span class="math inline">\(\varepsilon_d = -2.5\)</span>. If cruise operators raise prices by 8%, what happens to total revenue?</p>
+<p>A. Total revenue increases<br>
+B. Total revenue decreases<br>
+C. Total revenue stays constant<br>
+D. Cannot determine without knowing the initial price</p>
+<div class="fragment">
+<div class="highlight-box">
+<p><strong>Answer: B</strong></p>
+</div>
+<p>Demand is <strong>elastic</strong> (<span class="math inline">\(|\varepsilon_d| = 2.5 &gt; 1\)</span>), so price and revenue move in <strong>opposite directions</strong>. An 8% price increase causes approximately <span class="math inline">\(-2.5 \times 8\% = -20\%\)</span> decrease in quantity. Since quantity falls more than price rises, <strong>total revenue decreases</strong>.</p>
+<p>This is the <strong>revenue test</strong>: elastic demand → price ↑ → revenue ↓.</p>
+</div>
+</div>
+</section>
+<section id="exercise-2-multiple-choice" class="slide level2">
+<h2>Exercise 2: Multiple Choice</h2>
+<div style="font-size: 85%;">
+<p><strong>Question</strong>: Airbnb and traditional hotels are substitutes. If the cross-price elasticity between Airbnb and hotels is <span class="math inline">\(\varepsilon_{AH} = 0.8\)</span>, and Airbnb prices increase by 10%, what happens to hotel demand?</p>
+<p>A. Hotel demand increases by 8%<br>
+B. Hotel demand decreases by 8%<br>
+C. Hotel demand increases by 10%<br>
+D. Hotel demand increases by 1.25%</p>
+<div class="fragment">
+<div class="highlight-box">
+<p><strong>Answer: A</strong></p>
+</div>
+<p>Cross-price elasticity formula: <span class="math inline">\(\varepsilon_{AH} = \frac{\% \Delta Q_{\text{hotels}}}{\% \Delta P_{\text{Airbnb}}}\)</span></p>
+<p><span class="math display">\[0.8 = \frac{\% \Delta Q_{\text{hotels}}}{10\%} \Rightarrow \% \Delta Q_{\text{hotels}} = 0.8 \times 10\% = 8\%\]</span></p>
+<p>Since <span class="math inline">\(\varepsilon_{AH} &gt; 0\)</span> (substitutes), when Airbnb price rises, hotel demand <strong>increases</strong> by 8%.</p>
+</div>
+</div>
+</section>
+<section id="exercise-3-open-question" class="slide level2">
+<h2>Exercise 3: Open Question <span class="emoji" data-emoji="writing_hand">✍️</span></h2>
+<div style="font-size: 70%;">
+<p><strong>The Algarve Tourism Authority</strong> is studying demand for beach resorts. They have the following demand function:</p>
+<p><span class="math display">\[Q = 10{,}000 - 20P\]</span></p>
+<p>where <span class="math inline">\(Q\)</span> is the number of tourists per month and <span class="math inline">\(P\)</span> is the average price per night (in €).</p>
+<p><strong>a)</strong> Calculate the price elasticity of demand when <span class="math inline">\(P = €100\)</span>.</p>
+<p><strong>b)</strong> Is demand elastic or inelastic at this price? What does this mean for revenue if resorts raise prices?</p>
+<p><strong>c)</strong> At what price is demand unit elastic (<span class="math inline">\(|\varepsilon_d| = 1\)</span>)? What is the quantity demanded and total revenue at this price?</p>
+<p><strong>d)</strong> The income elasticity for Algarve tourism is estimated at <span class="math inline">\(\varepsilon_M = 1.8\)</span>. If European incomes rise by 5% next year, by what percentage will demand for Algarve tourism increase?</p>
+</div>
+</section>
+<section id="exercise-3-solution-for-parts-a-b" class="slide level2">
+<h2>Exercise 3: Solution for Parts a &amp; b</h2>
+<div style="font-size: 72%;">
+<p><strong>a) Price elasticity at P = €100</strong>:</p>
+<p>Demand: <span class="math inline">\(Q = 10{,}000 - 20P\)</span></p>
+<p>At <span class="math inline">\(P = 100\)</span>: <span class="math inline">\(Q = 10{,}000 - 20(100) = 8{,}000\)</span> tourists</p>
+<p>Calculate elasticity: <span class="math inline">\(\varepsilon_d = \frac{dQ}{dP} \cdot \frac{P}{Q}\)</span></p>
+<p><span class="math display">\[\frac{dQ}{dP} = -20\]</span></p>
+<p><span class="math display">\[\varepsilon_d = (-20) \cdot \frac{100}{8000} = -\frac{2000}{8000} = -0.25\]</span></p>
+<p><strong>b) Elastic or inelastic?</strong></p>
+<p><span class="math inline">\(|\varepsilon_d| = 0.25 &lt; 1\)</span> → Demand is <strong>inelastic</strong> at <span class="math inline">\(P = €100\)</span>.</p>
+<p><strong>Revenue implication</strong>: Since demand is inelastic, price and revenue move in the <strong>same direction</strong>. If resorts <strong>raise prices</strong>, total revenue will <strong>increase</strong>. Quantity falls, but by a smaller percentage than price rises, so <span class="math inline">\(TR = P \times Q\)</span> increases.</p>
+</div>
+</section>
+<section id="exercise-3-solution-for-part-c" class="slide level2">
+<h2>Exercise 3: Solution for Part c</h2>
+<div style="font-size: 72%;">
+<p><strong>c) Unit elastic demand</strong> (<span class="math inline">\(|\varepsilon_d| = 1\)</span>):</p>
+<p>For linear demand <span class="math inline">\(Q = 10{,}000 - 20P\)</span> (or inverse: <span class="math inline">\(P = 500 - 0.05Q\)</span>), unit elasticity occurs at the <strong>midpoint</strong>.</p>
+<p><strong>Method 1</strong> (midpoint of inverse demand):</p>
+<p>Choke price (intercept): <span class="math inline">\(P = 500\)</span> when <span class="math inline">\(Q = 0\)</span></p>
+<p>Maximum quantity: <span class="math inline">\(Q = 10{,}000\)</span> when <span class="math inline">\(P = 0\)</span></p>
+<p>Midpoint: <span class="math inline">\(P^* = \frac{500}{2} = €250\)</span>, <span class="math inline">\(Q^* = \frac{10{,}000}{2} = 5{,}000\)</span> tourists</p>
+<p><strong>Verify</strong>: <span class="math inline">\(\varepsilon_d = (-20) \cdot \frac{250}{5000} = -\frac{5000}{5000} = -1\)</span> ✓</p>
+<p><strong>Total Revenue</strong> at unit elasticity:</p>
+<p><span class="math display">\[TR = P^* \times Q^* = 250 \times 5{,}000 = €1{,}250{,}000\]</span></p>
+<p>This is the <strong>maximum</strong> possible revenue on this demand curve!</p>
+</div>
+</section>
+<section id="exercise-3-solution-for-parts-d" class="slide level2">
+<h2>Exercise 3: Solution for Parts d</h2>
+<div style="font-size: 72%;">
+<p><strong>d) Income elasticity</strong>:</p>
+<p><span class="math inline">\(\varepsilon_M = 1.8\)</span> means a <strong>1% increase in income</strong> causes a <strong>1.8% increase in demand</strong>.</p>
+<p>If incomes rise by <strong>5%</strong>:</p>
+<p><span class="math display">\[\% \Delta Q = \varepsilon_M \times \% \Delta M = 1.8 \times 5\% = 9\%\]</span></p>
+<p>Demand for Algarve tourism will <strong>increase by 9%</strong>.</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> Since <span class="math inline">\(\varepsilon_M &gt; 1\)</span>, tourism is a <strong>luxury good</strong>, highly responsive to income changes!</p>
+</div>
+</section>
+<section id="next-lecture" class="slide level2 center">
+<h2>Next Lecture</h2>
+<p><strong>March 19, 2026</strong>: Market from a Cost Perspective: Geometry of Costs</p>
+<p>We shift from <strong>consumers</strong> to <strong>producers</strong>!</p>
+<div class="fragment">
+<p><span class="emoji" data-emoji="warning">⚠️</span> <strong>Tomorrow, March 13</strong>: Test 1 covering Fundamentals (L1–4) and Consumer (L5–8)</p>
+</div>
+<div class="fragment">
+<p><strong>Study tips</strong>:</p>
+<ul>
+<li>Review budget constraints, preferences, MRS, utility maximization</li>
+<li>Practice demand curve derivation and consumer surplus</li>
+<li>Understand elasticity calculations and determinants</li>
+</ul>
+</div>
+</section>
+<section id="thank-you" class="slide level2 center">
+<h2>Thank You!</h2>
+<p><strong>Questions?</strong> <span class="emoji" data-emoji="raising_hand">🙋</span></p>
+<p><span class="emoji" data-emoji="email">📧</span> paulo.fagandini@ext.universidadeeuropeia.pt</p>
+</section>
+<section class="slide level2">
+
+<p><em>Test 1: Thursday, March 13, 2026</em></p>
+<p><em>Next class (L10): Thursday, March 19, 2026</em></p>
+<aside class="notes">
+<p>This lecture completes the Consumer Theory module by introducing elasticity as a crucial tool for understanding demand responsiveness. Students should grasp that elasticity is a unit-free measure that allows comparison across markets and is essential for revenue management, taxation analysis, and policy design. The revenue test (elastic demand → price and revenue move opposite; inelastic → same direction) is particularly important for business applications. Emphasize that tourism generally has high price elasticity (especially leisure travel), making the industry vulnerable to economic shocks but also responsive to pricing strategies.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Economics of Tourism | Lecture 9</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

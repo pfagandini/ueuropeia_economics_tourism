@@ -2,6 +2,4 @@
 title: "ueuropeia_economics_tourism"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This website contains the material used for the course Economics of Tourism, from the Bachelor in Tourism at the Universidade Europeia.

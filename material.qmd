@@ -24,6 +24,7 @@ title: "Material"
 6. [Preferences](slides/lecture06-preferences.qmd) :page_facing_up: [PDF](PDF/lecture06-preferences.pdf)
 7. [MRS and Utility](slides/lecture07-mrs-utility.qmd) :page_facing_up: [PDF](PDF/lecture07-mrs-utility.pdf)
 8. [Demand](slides/lecture08-demand.qmd) :page_facing_up: [PDF](PDF/lecture08-demand.pdf)
+9. [Elasticity of Demand](slides/lecture09-elasticity.qmd) :page_facing_up: [PDF](PDF/lecture09-elasticity.pdf)
 
 
 #### Producer Theory: Behind the Supply

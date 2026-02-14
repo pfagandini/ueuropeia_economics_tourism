@@ -1,0 +1,943 @@
+---
+title: "Consumer Theory"
+subtitle: "Lecture 9: Calculation and Determinants of Demand Elasticity"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 9"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(patchwork)
+
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+```
+
+## Recap: Lecture 8 :rewind:
+
+<div style="font-size: 82%;">
+
+**What we covered last time**:
+
+- **Individual demand**: derived from utility maximization as price changes
+- **Market demand**: horizontal sum of all individual demands
+- **Linear demand**: $P = b - mQ$ (inverse form)
+- **Movements along** (price change) vs. **Shifts** (income, preferences, related goods)
+- **Consumer surplus**: net benefit consumers get from market participation
+
+**The Key Question Today**: How **sensitive** is quantity demanded to price changes? :thinking:
+
+Not all demand curves are created equal â€" some goods see huge changes in quantity when price moves; others barely budge!
+
+</div>
+
+# Introduction to Elasticity
+
+## Why Elasticity Matters :chart_with_upwards_trend:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**The Revenue Problem**
+
+A hotel wants to increase revenue. Should it raise or lower prices? The answer depends on **how responsive** tourists are to price changes!
+:::
+
+**Two scenarios**:
+
+:::: {.columns}
+::: {.column width="50%"}
+**Scenario A**: :airplane: Flights from Lisbon to Paris
+
+Price increases 10% → Bookings drop 25%
+
+:point_right: **Passengers are very sensitive** to price
+
+Revenue **falls** when price rises!
+:::
+
+::: {.column width="50%"}
+**Scenario B**: :electric_plug: Hotel electricity
+
+Price increases 10% → Usage drops 2%
+
+:point_right: **Hotels barely respond** to price
+
+Revenue **rises** when price rises!
+:::
+::::
+
+**Elasticity** measures this **price sensitivity** precisely. Essential for pricing, taxation, and policy!
+
+</div>
+
+## What Is Price Elasticity of Demand? :straight_ruler:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Price Elasticity of Demand (PED or $\varepsilon_d$)**
+
+The **percentage change** in quantity demanded when price changes by **1%**, *ceteris paribus*.
+
+$$\varepsilon_d = \frac{\% \Delta Q}{\% \Delta P} = \frac{\Delta Q / Q}{\Delta P / P}=\frac{\Delta Q}{\Delta P}\frac{P}{Q}$$
+:::
+
+**Key properties**:
+
+- $\varepsilon_d$ is almost always **negative** (law of demand: $\uparrow P \Rightarrow \downarrow Q$)
+- We often report the **absolute value**: $|\varepsilon_d|$
+- It's **unit-free**: same whether measuring in euros or dollars, trips or thousands of trips
+
+**Example**: If $\varepsilon_d = -2$, then a **1% increase** in price causes a **2% decrease** in quantity demanded.
+
+:bulb: Elasticity tells us the **proportional response**, not the absolute change!
+
+</div>
+
+## Elastic vs. Inelastic Demand :balance_scale:
+
+<div style="font-size: 78%;">
+
+We classify demand based on $|\varepsilon_d|$:
+
+| Category | Condition | Interpretation | Example |
+|:---------|:----------|:---------------|:--------|
+| **Perfectly Inelastic** | $\|\varepsilon_d\| = 0$ | Quantity doesn't change at all | Life-saving medicine |
+| **Inelastic** | $0 < \|\varepsilon_d\| < 1$ | Quantity changes *less* than price | Gasoline (short run) |
+| **Unit Elastic** | $\|\varepsilon_d\| = 1$ | Quantity changes *equally* with price | Some textbooks estimate for housing |
+| **Elastic** | $\|\varepsilon_d\| > 1$ | Quantity changes *more* than price | Restaurant meals, tourism |
+| **Perfectly Elastic** | $\|\varepsilon_d\| = \infty$ | Any price increase → demand drops to zero | Competitive market goods |
+
+**Key insight**: If $|\varepsilon_d| > 1$ (elastic), consumers are **very responsive**. If $|\varepsilon_d| < 1$ (inelastic), they are **not very responsive**.
+
+</div>
+
+## Visualizing Elasticity :chart_with_downwards_trend:
+
+<div style="font-size: 75%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 7
+#| fig-height: 6.5
+#| fig-align: center
+
+# Inelastic vs Elastic Demand
+df_inelastic <- data.frame(
+  Q = seq(8, 14, length.out = 100),
+  P = 100 - 8 * seq(7, 12, length.out = 100)
+)
+
+df_elastic <- data.frame(
+  Q = seq(1, 25, length.out = 100),
+  P = 50 - 1.5 * seq(1, 25, length.out = 100)
+)
+
+ggplot() +
+  # Inelastic (steeper)
+  geom_line(data = df_inelastic, aes(x = Q, y = P),
+            color = ue_red, linewidth = 1.8) +
+  annotate("text", x = 7, y = 25, 
+           label = "Inelastic\n(steeper, |ε| < 1)", 
+           color = ue_red, fontface = "bold", size = 4.5) +
+  # Elastic (flatter)
+  geom_line(data = df_elastic, aes(x = Q, y = P),
+            color = ue_black, linewidth = 1.8) +
+  annotate("text", x = 22, y = 25, 
+           label = "Elastic\n(flatter, |ε| > 1)", 
+           color = ue_black, fontface = "bold", size = 4.5) +
+  scale_x_continuous(limits = c(0, 26), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 52), expand = c(0, 0)) +
+  labs(x = "Quantity", y = "Price",
+       title = "Inelastic vs. Elastic Demand Curves") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+
+::: {.column width="50%"}
+
+**Visual intuition**:
+
+**Inelastic demand** (red):
+
+- **Steeper** curve
+- Quantity barely responds to price
+- $|\varepsilon_d| < 1$
+
+**Elastic demand** (black):
+
+- **Flatter** curve
+- Quantity responds a lot to price
+- $|\varepsilon_d| > 1$
+
+:warning: **Careful**: Steepness depends on units! Elasticity is the proper measure.
+
+:::
+::::
+
+</div>
+
+# Calculating Elasticity
+
+## Two Methods of Calculation :1234:
+
+<div style="font-size: 78%;">
+
+**Method 1: Point Elasticity** (at a specific point on the demand curve)
+
+$$\varepsilon_d = \frac{dQ}{dP} \cdot \frac{P}{Q}$$
+
+- Use when you have a **demand function** and want elasticity at a particular $(P, Q)$
+- For linear demand $Q = a - bP$ $\Rightarrow$ $\frac{dQ}{dP} = -b$
+
+**Method 2: Arc Elasticity** (between two points)
+
+$$\varepsilon_d = \frac{\Delta Q / Q_{avg}}{\Delta P / P_{avg}} = \frac{\frac{Q_2 - Q_1}{(Q_1 + Q_2)/2}}{ \frac{P_2 - P_1}{(P_1 + P_2)/2}}$$
+
+- Use when you observe **two discrete points** (e.g., before/after price change)
+- Uses **midpoints** to avoid asymmetry issues (increasing 10% $\neq$ decreasing 10%)
+
+</div>
+
+## Example 1: Point Elasticity :pencil2:
+
+<div style="font-size: 75%;">
+
+**Demand for hotel rooms in Porto**: $Q = 500 - 2P$ (rooms per night, $P$ in €)
+
+**Question**: What is the price elasticity of demand when $P = €100$?
+
+</div>
+
+. . .  
+
+<div style="font-size: 75%;">
+
+**Solution**:
+
+1. Find $Q$ at $P = 100$: $Q = 500 - 2(100) = 300$ rooms
+
+2. Calculate $\frac{dQ}{dP}$: For $Q = 500 - 2P$, we have $\frac{dQ}{dP} = -2$
+
+3. Apply formula:
+$$\varepsilon_d = \frac{dQ}{dP} \cdot \frac{P}{Q} = (-2) \cdot \frac{100}{300} = -\frac{200}{300} = -0.67$$
+
+**Interpretation**: At $P = €100$, demand is **inelastic** ($|\varepsilon_d| = 0.67 < 1$). A 1% price increase causes only a 0.67% decrease in quantity demanded.
+
+</div>
+
+## Example 2: Arc Elasticity :pencil2:
+
+<div style="font-size: 75%;">
+
+**A museum in Sintra** raises ticket prices from €10 to €12. Visitors fall from 1,000/day to 800/day.
+
+**Question**: What is the arc elasticity of demand?
+
+</div>
+
+. . .
+
+<div style="font-size: 75%;">
+
+**Solution**:
+
+$$\varepsilon_d = \frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \div \frac{P_2 - P_1}{(P_1 + P_2)/2}$$
+
+$$= \frac{800 - 1000}{(1000 + 800)/2} \div \frac{12 - 10}{(10 + 12)/2}$$
+
+$$= \frac{-200}{900} \div \frac{2}{11} = -\frac{200}{900} \cdot \frac{11}{2} = -\frac{2200}{1800} \approx -1.22$$
+
+**Interpretation**: Demand is **elastic** ($|\varepsilon_d| = 1.22 > 1$). A 1% price increase causes a 1.22% decrease in visitors.
+
+</div>
+
+## Elasticity Along a Linear Demand Curve :straight_ruler:
+
+<div style="font-size: 75%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 7
+#| fig-height: 5.5
+#| fig-align: center
+
+# Linear demand: P = 50 - 2Q => Q = 25 - 0.5P
+# At different prices, calculate elasticity
+
+df_linear <- data.frame(
+  Q = seq(0, 25, length.out = 200)
+) %>%
+  mutate(P = 50 - 2*Q)
+
+# Mark specific points
+points_df <- data.frame(
+  Q = c(2.5, 12.5, 22.5),
+  P = c(45, 25, 5),
+  label = c("ε = -9\n(Elastic)", "ε = -1\n(Unit Elastic)", "ε = -0.11\n(Inelastic)")
+)
+
+ggplot() +
+  geom_line(data = df_linear, aes(x = Q, y = P),
+            color = ue_red, linewidth = 2) +
+  geom_point(data = points_df, aes(x = Q, y = P),
+             size = 5, color = ue_black) +
+  geom_text(data = points_df, aes(x = Q + 2.5, y = P, label = label),
+            fontface = "bold", size = 3.8, hjust = 0, color = ue_black) +
+  # Add regions
+  annotate("rect", xmin = 0, xmax = 12.5, ymin = 0, ymax = 50,
+           alpha = 0.1, fill = ue_red) +
+  annotate("rect", xmin = 12.5, xmax = 25, ymin = 0, ymax = 50,
+           alpha = 0.1, fill = ue_black) +
+  annotate("text", x = 6, y = 48, label = "ELASTIC REGION", 
+           color = ue_red, fontface = "bold", size = 4) +
+  annotate("text", x = 19, y = 48, label = "INELASTIC REGION", 
+           color = ue_black, fontface = "bold", size = 4) +
+  geom_vline(xintercept = 12.5, linetype = "dashed", color = ue_gray, linewidth = 0.8) +
+  scale_x_continuous(limits = c(0, 27), expand = c(0, 0), breaks = seq(0, 25, 5)) +
+  scale_y_continuous(limits = c(0, 52), expand = c(0, 0), breaks = seq(0, 50, 10)) +
+  labs(x = "Quantity", y = "Price",
+       title = "Elasticity Varies Along a Linear Demand Curve") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+
+::: {.column width="50%"}
+
+**Key insight**: For a **linear** demand curve, elasticity **varies** along the curve!
+
+**Why?** $\varepsilon_d = \frac{dQ}{dP} \cdot \frac{P}{Q}$
+
+- Slope $\frac{dQ}{dP}$ is constant
+- But **ratio** $\frac{P}{Q}$ changes
+
+**Three regions**:
+
+- **Top** (high $P$, low $Q$): $|\varepsilon_d| > 1$ (elastic)
+- **Middle** (midpoint): $|\varepsilon_d| = 1$ (unit elastic)
+- **Bottom** (low $P$, high $Q$): $|\varepsilon_d| < 1$ (inelastic)
+
+:bulb: The **same** demand curve is elastic at some prices, inelastic at others!
+
+:::
+::::
+
+</div>
+
+# Determinants of Elasticity
+
+## What Makes Demand More Elastic? :thinking:
+
+<div style="font-size: 78%;">
+
+**Five key determinants**:
+
+1. **Availability of substitutes** :arrows_counterclockwise:
+   - More/closer substitutes → **more elastic**
+   - Example: Brand-name hotels (many alternatives) vs. only hotel in remote village
+
+2. **Share of budget** :moneybag:
+   - Larger expense → **more elastic**
+   - Example: International vacation vs. coffee
+
+3. **Necessity vs. luxury** :gem:
+   - Luxuries → **more elastic**; Necessities → **less elastic**
+   - Example: Business travel (necessity) vs. leisure tourism (luxury)
+
+</div>
+
+---
+
+<div style="font-size: 78%;">
+
+4. **Time horizon** :clock1:
+   - Long run → **more elastic** (more time to adjust)
+   - Example: After fuel price increase, tourists eventually switch to closer destinations
+
+5. **Definition of the market** :world_map:
+   - Narrowly defined → **more elastic**
+   - Example: "TAP flights to Paris" (elastic) vs. "all flights to Paris" (less elastic) vs. "all air travel" (even less elastic)
+
+**Summary**: Demand is more elastic when consumers have **options**, **time**, and the good is **less essential**.
+
+</div>
+
+## Tourism Examples :airplane:
+
+<div style="font-size: 78%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Inelastic Tourism Demand**:
+
+:one: **Business travel**: Fixed meetings, little flexibility → $|\varepsilon_d| \approx 0.3$
+
+:two: **Last-minute bookings**: Few alternatives, urgency → Low elasticity
+
+:three: **Travel to visit family**: Strong non-economic motivation
+
+:four: **Unique destinations** (e.g., Galápagos): No close substitutes
+:::
+
+::: {.column width="50%"}
+**Elastic Tourism Demand**:
+
+:one: **Leisure beach holidays**: Many substitutes (Algarve, Greece, Spain) → $|\varepsilon_d| \approx 2.5$
+
+:two: **Budget airlines**: Highly price-sensitive consumers
+
+:three: **Long-haul tourism**: Large budget share, can be postponed
+
+:four: **All-inclusive packages**: Many competing offers
+:::
+::::
+
+:bulb: Tourism managers must understand *their* market's elasticity to price optimally!
+
+</div>
+
+# Elasticity and Revenue
+
+## The Revenue Test :moneybag:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Total Revenue and Elasticity**
+
+Total Revenue: $TR = P \times Q$
+
+When price changes:
+
+- If demand is **elastic** ($|\varepsilon_d| > 1$): Price and revenue move in **opposite** directions
+- If demand is **inelastic** ($|\varepsilon_d| < 1$): Price and revenue move in the **same** direction
+- If demand is **unit elastic** ($|\varepsilon_d| = 1$): Revenue is **maximized**
+:::
+
+**Why?**
+
+- **Elastic**: $\%\Delta Q > \%\Delta P$ → quantity effect dominates
+- **Inelastic**: $\%\Delta Q < \%\Delta P$ → price effect dominates
+
+</div>
+
+## Revenue and Elasticity: Graphical View :chart_with_upwards_trend:
+
+<div style="font-size: 75%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 7
+#| fig-height: 7.5
+#| fig-align: center
+
+# Linear demand: P = 100 - 4Q
+df_rev <- data.frame(
+  Q = seq(0, 25, length.out = 200)
+) %>%
+  mutate(
+    P = 100 - 4*Q,
+    TR = P * Q
+  )
+
+# Mark max revenue point (Q = 12.5, P = 50, TR = 625)
+max_point <- df_rev %>% filter(TR == max(TR))
+
+ggplot(df_rev, aes(x = Q, y = TR)) +
+  geom_line(color = ue_red, linewidth = 2) +
+  geom_point(data = max_point, aes(x = Q, y = TR),
+             size = 5, color = ue_black) +
+  geom_vline(xintercept = max_point$Q, linetype = "dashed", color = ue_gray) +
+  annotate("text", x = max_point$Q + 2, y = max_point$TR - 85,
+           label = paste0("Max TR = ", round(max_point$TR), "\nε = -1"),
+           size = 4, color = ue_black) +
+  # Regions
+  annotate("text", x = 6, y = 550, label = "Elastic\n(ε < -1)", 
+           color = ue_red, fontface = "bold", size = 4) +
+  annotate("text", x = 20, y = 550, label = "Inelastic\n(-1 < ε < 0)", 
+           color = ue_black, fontface = "bold", size = 4) +
+  scale_x_continuous(limits = c(0, 26), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 650), expand = c(0, 0)) +
+  labs(x = "Quantity", y = "Total Revenue (€)",
+       title = "Total Revenue Curve (Demand: P = 100 - 4Q)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+
+::: {.column width="50%"}
+
+**Key observations**:
+
+- Revenue is **maximized** where $|\varepsilon_d| = 1$
+- To the **left** (low $Q$, high $P$): elastic region, raising $P$ **reduces** $TR$
+- To the **right** (high $Q$, low $P$): inelastic region, raising $P$ **increases** $TR$
+
+**Managerial insight**:
+
+If you're in the **elastic region**, **cut prices** to boost revenue!
+
+If you're in the **inelastic region**, **raise prices** to boost revenue!
+
+:::
+::::
+
+</div>
+
+## Example: Should the Museum Raise Prices? :classical_building:
+
+<div style="font-size: 75%;">
+
+**Gulbenkian Museum** charges €8/ticket, sells 10,000 tickets/month. Managers estimate $\varepsilon_d = -1.5$.
+
+**Should they raise the price to €10?**
+
+</div>
+
+. . .
+
+<div style="font-size: 75%;">
+
+**Analysis**:
+
+- Current $TR = 8 \times 10{,}000 = €80{,}000$
+- Demand is **elastic**: $|\varepsilon_d| = 1.5 > 1$
+- **Revenue test**: Price and revenue move in **opposite directions**
+
+If price rises, quantity will fall **more than proportionally** → revenue **decreases**.
+
+**Recommendation**: **Do NOT raise the price**. Instead, consider **lowering** the price to increase revenue!
+
+</div>
+
+. . .
+
+<div style="font-size: 75%;">
+
+**Verification**: If $P = €10$, with $\varepsilon_d = -1.5$, a **25% price increase** causes approximately $-1.5 \times 25\% = -37.5\%$ decrease in quantity → $Q \approx 6{,}250$ → $TR = 10 \times 6{,}250 = €62{,}500 < €80{,}000$ :x:
+
+</div>
+
+# Other Elasticities
+
+## Cross-Price Elasticity :arrows_counterclockwise:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Cross-Price Elasticity of Demand**
+
+Measures how quantity demanded of good $i$ responds to a price change in good $j$:
+
+$$\varepsilon_{ij} = \frac{\% \Delta Q_i}{\% \Delta P_j} = \frac{\Delta Q_i / Q_i}{\Delta P_j / P_j}$$
+:::
+
+**Interpretation**:
+
+- $\varepsilon_{ij} > 0$: Goods $i$ and $j$ are **substitutes** (e.g., flights vs. trains)
+- $\varepsilon_{ij} < 0$: Goods $i$ and $j$ are **complements** (e.g., flights and hotels)
+- $\varepsilon_{ij} = 0$: Goods are **independent** (e.g., milk and concert tickets)
+
+**Example**: If $\varepsilon_{\text{hotels, flights}} = -0.4$, a **10% increase** in flight prices causes **4% decrease** in hotel demand.
+
+</div>
+
+## Income Elasticity :moneybag:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Income Elasticity of Demand**
+
+Measures how quantity demanded responds to income changes:
+
+$$\varepsilon_M = \frac{\% \Delta Q}{\% \Delta M} = \frac{\Delta Q / Q}{\Delta M / M}$$
+:::
+
+**Interpretation**:
+
+- $\varepsilon_M > 1$: **Luxury good** (tourism, fine dining)
+- $0 < \varepsilon_M < 1$: **Normal good** (most goods)
+- $\varepsilon_M < 0$: **Inferior good** (budget accommodations, bus travel)
+
+**Tourism application**: International tourism has high income elasticity ($\varepsilon_M \approx 1.5 - 2.5$). During recessions, tourism demand falls sharply!
+
+</div>
+
+## Summary of Elasticities :clipboard:
+
+<div style="font-size: 78%;">
+
+| Elasticity | Formula | Sign | Interpretation |
+|:-----------|:--------|:-----|:---------------|
+| **Price Elasticity** | $\frac{\% \Delta Q}{\% \Delta P}$ | Usually **negative** | Responsiveness to own price |
+| **Cross-Price** | $\frac{\% \Delta Q_i}{\% \Delta P_j}$ | **Positive** (substitutes) / **Negative** (complements) | Relationship between goods |
+| **Income** | $\frac{\% \Delta Q}{\% \Delta M}$ | **Positive** (normal/luxury) / **Negative** (inferior) | Responsiveness to income |
+
+</div>
+
+:bulb: All measure **percentage changes** → comparable across markets and units!
+
+# Applications to Tourism
+
+## Dynamic Pricing in Tourism :ticket:
+
+<div style="font-size: 78%;">
+
+**How airlines and hotels use elasticity**:
+
+:::: {.columns}
+::: {.column width="50%"}
+**Segment 1: Business travelers**
+
+- Inelastic demand ($|\varepsilon_d| \approx 0.3$)
+- Book last-minute
+- Need flexibility
+- **Strategy**: **High prices** (€300-500)
+:::
+
+::: {.column width="50%"}
+**Segment 2: Leisure travelers**
+
+- Elastic demand ($|\varepsilon_d| \approx 2.5$)
+- Book in advance
+- Flexible dates
+- **Strategy**: **Low prices** (€50-100)
+:::
+::::
+
+**Revenue maximization**: Charge **different prices** to segments with **different elasticities**!
+
+This is called **price discrimination**.
+
+</div>
+
+## Taxation and Tourism :classical_building:
+
+<div style="font-size: 75%;">
+
+**Who really pays a tourism tax?**
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 7
+#| fig-height: 7.5
+#| fig-align: center
+
+# Tax incidence depends on elasticity
+# Demand: P = 100 - Q (elastic)
+# Supply: P = 20 + 0.5Q
+# Tax = €10 per unit
+
+df_tax <- data.frame(
+  Q = seq(0, 60, length.out = 200)
+) %>%
+  mutate(
+    D = 100 - Q,
+    S = 20 + 0.5*Q,
+    S_tax = 40 + 0.5*Q  # Supply shifts up by tax
+  )
+
+# Equilibrium without tax: 100 - Q = 20 + 0.5Q => Q = 53.33, P = 46.67
+# With tax: 100 - Q = 30 + 0.5Q => Q = 46.67, P_buyer = 53.33, P_seller = 43.33
+
+eq_no_tax <- data.frame(Q = 53.33, P = 46.67)
+eq_tax <- data.frame(Q = 40, P_buyer = 60, P_seller = 40)
+
+ggplot(df_tax) +
+  geom_line(aes(x = Q, y = D), color = ue_red, linewidth = 1.5) +
+  geom_line(aes(x = Q, y = S), color = ue_black, linewidth = 1.5) +
+  geom_line(aes(x = Q, y = S_tax), color = ue_gray, linewidth = 1.5, linetype = "dashed") +
+  # Points
+  geom_point(data = eq_no_tax, aes(x = Q, y = P), size = 4, color = ue_black) +
+  geom_point(data = eq_tax, aes(x = Q, y = P_buyer), size = 4, color = ue_red) +
+  geom_point(data = eq_tax, aes(x = Q, y = P_seller), size = 4, color = ue_black) +
+  # Tax wedge
+  geom_segment(aes(x = 40, y = 40, xend = 40, yend = 60),
+               color = ue_red, linewidth = 1.2, arrow = arrow(length = unit(0.3, "cm"), ends = "both")) +
+  annotate("text", x = 35, y = 48.33, label = "Tax = €20",
+           fontface = "bold", size = 4, color = ue_red) +
+  # Labels
+  annotate("text", x = 55, y = 50, label = "D", color = ue_red, fontface = "bold", size = 5) +
+  annotate("text", x = 55, y = 50, label = "S", color = ue_black, fontface = "bold", size = 5) +
+  annotate("text", x = 40, y = 66, label = "S + tax", color = ue_gray, fontface = "bold", size = 4) +
+  scale_x_continuous(limits = c(0, 62), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 105), expand = c(0, 0)) +
+  labs(x = "Quantity", y = "Price (€)",
+       title = "Tax Incidence: Relatively Elastic Demand") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 12),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+
+::: {.column width="50%"}
+
+**Tax incidence** depends on **relative elasticities**!
+
+Here, demand is relatively **elastic** (tourists can visit other destinations).
+
+**Result**: A €20 tax causes:
+
+- Price paid by tourists rises by **€13.33**
+- Price received by hotels falls by **€6.66**
+- **Sellers bear more** of the tax burden!
+
+**General rule**: The side with **less elastic** response bears **more** of the tax.
+
+:point_right: If tourists are price-sensitive (elastic demand), tourism businesses absorb most taxes!
+
+:::
+::::
+
+</div>
+
+## Summary :clipboard:
+
+<div style="font-size: 75%;">
+
+**Today's Key Takeaways**:
+
+1. **Price elasticity of demand** ($\varepsilon_d$): percentage change in quantity per 1% price change
+2. **Elastic** ($|\varepsilon_d| > 1$): quantity very responsive; **Inelastic** ($|\varepsilon_d| < 1$): not very responsive
+3. **Calculation**: Point formula $\varepsilon_d = \frac{dQ}{dP} \cdot \frac{P}{Q}$ or arc formula (midpoint method)
+4. **Determinants**: substitutes, budget share, necessity vs. luxury, time, market definition
+5. **Revenue**: If elastic, price ↑ → revenue ↓; If inelastic, price ↑ → revenue ↑; Maximized at $|\varepsilon_d| = 1$
+6. **Other elasticities**: cross-price (substitutes/complements), income (normal/inferior/luxury)
+7. **Tourism applications**: dynamic pricing, tax incidence, demand forecasting
+
+**Connection**: This builds on demand curves (L8) and leads into supply and market equilibrium (L11+).
+
+**Next (after Test 1)**: Producer theory:factory:: costs, profits, and supply!
+
+:warning: **Test 1 is TOMORROW, March 13!** Covers Lectures 1--8 (Fundamentals + Consumer). Good luck! :four_leaf_clover:
+
+</div>
+
+## Exercises {.center}
+
+**Practice Time!** :pencil2:
+
+Elasticity calculation and applications.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 85%;">
+
+**Question**: The demand for luxury cruises from Lisbon is estimated to have a price elasticity of $\varepsilon_d = -2.5$. If cruise operators raise prices by 8%, what happens to total revenue?
+
+A. Total revenue increases  
+B. Total revenue decreases  
+C. Total revenue stays constant  
+D. Cannot determine without knowing the initial price  
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+Demand is **elastic** ($|\varepsilon_d| = 2.5 > 1$), so price and revenue move in **opposite directions**. An 8% price increase causes approximately $-2.5 \times 8\% = -20\%$ decrease in quantity. Since quantity falls more than price rises, **total revenue decreases**.
+
+This is the **revenue test**: elastic demand → price ↑ → revenue ↓.
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 85%;">
+
+**Question**: Airbnb and traditional hotels are substitutes. If the cross-price elasticity between Airbnb and hotels is $\varepsilon_{AH} = 0.8$, and Airbnb prices increase by 10%, what happens to hotel demand?
+
+A. Hotel demand increases by 8%  
+B. Hotel demand decreases by 8%  
+C. Hotel demand increases by 10%  
+D. Hotel demand increases by 1.25%  
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: A**
+:::
+
+Cross-price elasticity formula: $\varepsilon_{AH} = \frac{\% \Delta Q_{\text{hotels}}}{\% \Delta P_{\text{Airbnb}}}$
+
+$$0.8 = \frac{\% \Delta Q_{\text{hotels}}}{10\%} \Rightarrow \% \Delta Q_{\text{hotels}} = 0.8 \times 10\% = 8\%$$
+
+Since $\varepsilon_{AH} > 0$ (substitutes), when Airbnb price rises, hotel demand **increases** by 8%.
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 70%;">
+
+**The Algarve Tourism Authority** is studying demand for beach resorts. They have the following demand function:
+
+$$Q = 10{,}000 - 20P$$
+
+where $Q$ is the number of tourists per month and $P$ is the average price per night (in €).
+
+**a)** Calculate the price elasticity of demand when $P = €100$.
+
+**b)** Is demand elastic or inelastic at this price? What does this mean for revenue if resorts raise prices?
+
+**c)** At what price is demand unit elastic ($|\varepsilon_d| = 1$)? What is the quantity demanded and total revenue at this price?
+
+**d)** The income elasticity for Algarve tourism is estimated at $\varepsilon_M = 1.8$. If European incomes rise by 5% next year, by what percentage will demand for Algarve tourism increase?
+
+</div>
+
+## Exercise 3: Solution for Parts a & b
+
+<div style="font-size: 72%;">
+
+**a) Price elasticity at P = €100**:
+
+Demand: $Q = 10{,}000 - 20P$
+
+At $P = 100$: $Q = 10{,}000 - 20(100) = 8{,}000$ tourists
+
+Calculate elasticity: $\varepsilon_d = \frac{dQ}{dP} \cdot \frac{P}{Q}$
+
+$$\frac{dQ}{dP} = -20$$
+
+$$\varepsilon_d = (-20) \cdot \frac{100}{8000} = -\frac{2000}{8000} = -0.25$$
+
+**b) Elastic or inelastic?**
+
+$|\varepsilon_d| = 0.25 < 1$ → Demand is **inelastic** at $P = €100$.
+
+**Revenue implication**: Since demand is inelastic, price and revenue move in the **same direction**. If resorts **raise prices**, total revenue will **increase**. Quantity falls, but by a smaller percentage than price rises, so $TR = P \times Q$ increases.
+
+</div>
+
+## Exercise 3: Solution for Part c
+
+<div style="font-size: 72%;">
+
+**c) Unit elastic demand** ($|\varepsilon_d| = 1$):
+
+For linear demand $Q = 10{,}000 - 20P$ (or inverse: $P = 500 - 0.05Q$), unit elasticity occurs at the **midpoint**.
+
+**Method 1** (midpoint of inverse demand):
+
+Choke price (intercept): $P = 500$ when $Q = 0$
+
+Maximum quantity: $Q = 10{,}000$ when $P = 0$
+
+Midpoint: $P^* = \frac{500}{2} = €250$, $Q^* = \frac{10{,}000}{2} = 5{,}000$ tourists
+
+**Verify**: $\varepsilon_d = (-20) \cdot \frac{250}{5000} = -\frac{5000}{5000} = -1$ ✓
+
+**Total Revenue** at unit elasticity:
+
+$$TR = P^* \times Q^* = 250 \times 5{,}000 = €1{,}250{,}000$$
+
+This is the **maximum** possible revenue on this demand curve!
+
+</div>
+
+## Exercise 3: Solution for Parts d
+
+<div style="font-size: 72%;">
+
+**d) Income elasticity**:
+
+$\varepsilon_M = 1.8$ means a **1% increase in income** causes a **1.8% increase in demand**.
+
+If incomes rise by **5%**:
+
+$$\% \Delta Q = \varepsilon_M \times \% \Delta M = 1.8 \times 5\% = 9\%$$
+
+Demand for Algarve tourism will **increase by 9%**.
+
+:bulb: Since $\varepsilon_M > 1$, tourism is a **luxury good**, highly responsive to income changes!
+
+</div>
+
+## Next Lecture {.center}
+
+**March 19, 2026**: Market from a Cost Perspective: Geometry of Costs
+
+We shift from **consumers** to **producers**!
+
+. . .
+
+:warning: **Tomorrow, March 13**: Test 1 covering Fundamentals (L1--4) and Consumer (L5--8)
+
+. . .
+
+**Study tips**:
+
+- Review budget constraints, preferences, MRS, utility maximization
+- Practice demand curve derivation and consumer surplus
+- Understand elasticity calculations and determinants
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Test 1: Thursday, March 13, 2026*
+
+*Next class (L10): Thursday, March 19, 2026*
+
+::: {.notes}
+This lecture completes the Consumer Theory module by introducing elasticity as a crucial tool for understanding demand responsiveness. Students should grasp that elasticity is a unit-free measure that allows comparison across markets and is essential for revenue management, taxation analysis, and policy design. The revenue test (elastic demand → price and revenue move opposite; inelastic → same direction) is particularly important for business applications. Emphasize that tourism generally has high price elasticity (especially leisure travel), making the industry vulnerable to economic shocks but also responsive to pricing strategies.
+:::
