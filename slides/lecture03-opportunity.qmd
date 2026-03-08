@@ -571,7 +571,7 @@ D. €250
 :::
 :::
 
-## Exercise 3: Open Question
+## Exercise 3: Open Question {.smaller}
 
 **Scenario**: A tour operator in Porto must decide between two summer season strategies:
 
