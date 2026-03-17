@@ -1,0 +1,974 @@
+---
+title: "Producer Theory"
+subtitle: "Lecture 10: The Geometry of Costs — Short Run vs Long Run"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 10"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(patchwork)
+
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_light_red <- "#F4C7CC"
+```
+
+## Welcome Back! :wave: {.center}
+
+**We've crossed the aisle:**
+
+:shopping_cart: Lectures 5--9: **Consumer Theory** (demand side)
+
+:factory: Lectures 10--17: **Producer Theory** (supply side)
+
+. . .
+
+:dart: **Today's Goal**: Understand the **cost structure** of firms
+
+How do costs behave as production changes?
+
+# From Consumer to Producer
+
+## The Other Side of the Market :handshake:
+
+<div style="font-size: 82%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Consumer** (Lectures 5--9):
+
+- Maximizes **utility** :chart_with_upwards_trend:
+- Subject to **budget constraint**
+- Generates **demand curves**
+- Tools: indifference curves, MRS, budget line
+:::
+
+::: {.column width="50%"}
+**Producer** (Lectures 10--17):
+
+- Maximizes **profit** :moneybag:
+- Subject to **cost structure**
+- Generates **supply curves**
+- Tools: cost curves, marginal analysis
+:::
+::::
+
+. . .
+
+:bulb: **Key parallel**: Just as consumers face trade-offs with limited income, producers face trade-offs with limited resources and technology.
+
+</div>
+
+## The Producer's Problem :factory:
+
+<div style="font-size: 82%;">
+
+::: {.key-concept}
+**The Producer's Goal**
+
+A firm wants to **maximize profit**. To do so, it must understand its costs at every level of output.
+
+$$\pi = \text{Total Revenue} - \text{Total Cost} = TR - TC$$
+:::
+
+**Before we can find the profit-maximizing quantity (next lecture), we need to master costs.**
+
+Today we answer:
+
+- :one: What types of costs does a firm face?
+- :two: How do costs change as output increases?
+- :three: What is the difference between short run and long run?
+
+</div>
+
+# Short Run vs Long Run
+
+## Defining the Time Horizons :hourglass_flowing_sand:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Short Run vs Long Run**
+
+**Short run**: A period in which **at least one** factor of production is **fixed** (cannot be changed). Typically, capital (machines, buildings) is fixed.
+
+**Long run**: A period long enough that **all** factors of production are **variable**. The firm can adjust everything: equipment, factory size, workforce.
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+:lock: **Short Run** — Tourism example:
+
+A hotel has 100 rooms. It **cannot build more rooms** this season. It can only hire/fire staff (variable input).
+:::
+
+::: {.column width="50%"}
+:unlock: **Long Run** — Tourism example:
+
+The hotel chain can build a **new wing**, open in a **new city**, or **exit** the market entirely.
+:::
+::::
+
+</div>
+
+## Inputs: Fixed vs Variable :wrench:
+
+<div style="font-size: 80%;">
+
+| | **Fixed Inputs** :lock: | **Variable Inputs** :arrows_counterclockwise: |
+|---|---|---|
+| **Definition** | Cannot change in the short run | Can be adjusted at any time |
+| **Examples** | Building, machines, lease contracts | Workers, raw materials, energy |
+| **Tourism** | Hotel building, aircraft, kitchen equipment | Staff, food supplies, fuel |
+| **Cost behavior** | Same cost regardless of output | Cost changes with output |
+
+. . .
+
+::: {.key-concept}
+**The Key Distinction**
+
+In the **short run**, the firm has both fixed and variable inputs. In the **long run**, **all** inputs are variable — there are no fixed costs.
+:::
+
+</div>
+
+## The Law of Diminishing Returns :chart_with_downwards_trend:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Law of Diminishing Returns**
+
+When we keep adding more of a **variable input** (e.g., workers) to a **fixed input** (e.g., a kitchen), eventually each additional worker adds **less and less** to total output.
+:::
+
+**Tourism example**: A restaurant kitchen with 5 stoves :cooking:
+
+| Extra chefs hired | Extra meals/hour produced |
+|:---:|:---:|
+| 1st chef | +30 meals |
+| 2nd chef | +25 meals |
+| 3rd chef | +18 meals |
+| 4th chef | +10 meals |
+| 5th chef | +4 meals (kitchen is crowded!) |
+
+:bulb: **Why?** The fixed input (kitchen space) gets **congested**. Chefs bump into each other, wait for stoves, compete for prep space.
+
+</div>
+
+# Types of Costs in the Short Run
+
+## The Cost Family :family:
+
+<div style="font-size: 78%;">
+
+**All short-run costs derive from three building blocks:**
+
+:::: {.columns}
+::: {.column width="33%"}
+:lock: **Fixed Cost (FC)**
+
+Costs that **do not change** with output.
+
+Must be paid even if $Q = 0$.
+
+*Hotel*: mortgage, insurance, property tax
+:::
+
+::: {.column width="33%"}
+:arrows_counterclockwise: **Variable Cost (VC)**
+
+Costs that **change** with the level of output.
+
+Zero when $Q = 0$.
+
+*Hotel*: staff wages, laundry, food, energy
+:::
+
+::: {.column width="34%"}
+:heavy_plus_sign: **Total Cost (TC)**
+
+The sum of all costs.
+
+$$TC = FC + VC$$
+
+*Hotel*: everything combined
+:::
+::::
+
+. . .
+
+:warning: **Important**: FC is a **sunk cost** in the short run — it cannot be recovered. Remember Lecture 3!
+
+</div>
+
+## A Worked Example: Algarve Beach Bar :beach_umbrella:
+
+<div style="font-size: 68%;">
+
+Imagine a small beach bar in Albufeira. The owner pays **€500/month** in rent (fixed), and hires staff and buys supplies (variable).
+
+| Output (Q) | Fixed Cost (FC) | Variable Cost (VC) | Total Cost (TC = FC + VC) |
+|:---:|:---:|:---:|:---:|
+| 0 | €500 | €0 | €500 |
+| 50 | €500 | €200 | €700 |
+| 100 | €500 | €350 | €850 |
+| 150 | €500 | €550 | €1,050 |
+| 200 | €500 | €800 | €1,300 |
+| 250 | €500 | €1,150 | €1,650 |
+| 300 | €500 | €1,650 | €2,150 |
+
+*Output = drinks served per month (hypothetical illustrative example)*
+
+:point_right: Notice: **FC stays at €500** always. **VC increases** — and it increases **faster and faster** (diminishing returns to the staff in the small bar!).
+
+</div>
+
+## Plotting the Total Cost Curves :bar_chart:
+
+<div style="font-size: 75%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 11
+#| fig-height: 5
+#| fig-align: center
+
+# Beach bar cost data (hypothetical illustrative example)
+Q <- seq(0, 300, by = 10)
+FC <- rep(500, length(Q))
+# VC increases at an increasing rate (diminishing returns)
+VC <- 0.00006 * Q^3 - 0.012 * Q^2 + 3.7 * Q
+VC <- pmax(VC, 0)
+TC <- FC + VC
+
+df_costs <- data.frame(
+  Q = rep(Q, 3),
+  Cost = c(FC, VC, TC),
+  Type = factor(rep(c("Fixed Cost (FC)", "Variable Cost (VC)", "Total Cost (TC)"),
+                    each = length(Q)),
+                levels = c("Total Cost (TC)", "Variable Cost (VC)", "Fixed Cost (FC)"))
+)
+
+ggplot(df_costs, aes(x = Q, y = Cost, color = Type, linetype = Type)) +
+  geom_line(linewidth = 1.4) +
+  scale_color_manual(values = c("Total Cost (TC)" = ue_red,
+                                "Variable Cost (VC)" = ue_black,
+                                "Fixed Cost (FC)" = ue_gray)) +
+  scale_linetype_manual(values = c("Total Cost (TC)" = "solid",
+                                   "Variable Cost (VC)" = "solid",
+                                   "Fixed Cost (FC)" = "dashed")) +
+  annotate("segment", x = 280, xend = 280, y = 500, yend = 0,
+           linetype = "dotted", color = ue_gray, linewidth = 0.4) +
+  annotate("text", x = 310, y = 250, label = "FC", color = ue_gray,
+           fontface = "bold", size = 4) +
+  annotate("text", x = 310, y = 1100, label = "VC", color = ue_black,
+           fontface = "bold", size = 4) +
+  labs(x = "Output (Q) — drinks served/month",
+       y = "Cost (€)",
+       title = "Total Cost Curves — Algarve Beach Bar (Hypothetical)") +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 330)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 2500),
+                     labels = scales::comma) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+```
+
+:point_right: **TC and VC have the same shape** — TC is just VC shifted **up by FC**. The vertical gap between TC and VC is always exactly **€500** (the fixed cost).
+
+</div>
+
+# Average and Marginal Costs
+
+## Why Averages Matter :thinking:
+
+<div style="font-size: 80%;">
+
+Total costs tell us the **whole bill**, but firms need to know the **cost per unit** to set prices and make decisions.
+
+::: {.key-concept}
+**Average Costs**
+
+$$AFC = \frac{FC}{Q} \qquad AVC = \frac{VC}{Q} \qquad ATC = \frac{TC}{Q} = AFC + AVC$$
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+**Average Fixed Cost (AFC)**:
+
+- FC spread over more units
+- **Always falls** as Q increases
+- :hotel: A hotel's mortgage cost per guest falls as occupancy rises
+:::
+
+::: {.column width="50%"}
+**Average Variable Cost (AVC)**:
+
+- Variable cost per unit
+- Falls first, then **rises** (due to diminishing returns)
+- :fork_and_knife: Food cost per meal — efficient at moderate volume, rising when kitchen is overloaded
+:::
+::::
+
+</div>
+
+## Marginal Cost: The Most Important Curve :star:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Marginal Cost (MC)**
+
+The **additional cost** of producing **one more unit** of output.
+
+$$MC = \frac{\Delta TC}{\Delta Q} = \frac{\text{Change in Total Cost}}{\text{Change in Output}}$$
+
+Equivalently: $MC = \frac{\Delta VC}{\Delta Q}$ (since FC doesn't change!)
+:::
+
+**Intuition**: If producing 100 drinks costs €850 total and producing 101 drinks costs €856, then $MC = €6$.
+
+**Why is MC so important?**
+
+- It tells the firm whether producing one more unit **adds to or subtracts from** profit
+- Rule of thumb: **produce more if the price you receive > MC**
+- MC is the **foundation of the supply curve** (Lectures 12--14)
+
+</div>
+
+## Computing Averages and MC: Beach Bar :pencil2:
+
+<div style="font-size: 62%;">
+
+| Q | FC | VC | TC | AFC = FC/Q | AVC = VC/Q | ATC = TC/Q | MC = ΔTC/ΔQ |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 500 | 0 | 500 | — | — | — | — |
+| 50 | 500 | 200 | 700 | 10.00 | 4.00 | 14.00 | 4.00 |
+| 100 | 500 | 350 | 850 | 5.00 | 3.50 | 8.50 | 3.00 |
+| 150 | 500 | 550 | 1,050 | 3.33 | 3.67 | 7.00 | 4.00 |
+| 200 | 500 | 800 | 1,300 | 2.50 | 4.00 | 6.50 | 5.00 |
+| 250 | 500 | 1,150 | 1,650 | 2.00 | 4.60 | 6.60 | 7.00 |
+| 300 | 500 | 1,650 | 2,150 | 1.67 | 5.50 | 7.17 | 10.00 |
+
+*Hypothetical illustrative example*
+
+:point_right: **Key observations**:
+
+- **AFC** always falls (spreading the fixed cost)
+- **AVC** falls then rises (U-shaped) — minimum at Q = 100 (AVC = €3.50)
+- **ATC** falls then rises (U-shaped) — minimum at Q = 200 (ATC = €6.50)
+- **MC** falls then rises — and **crosses AVC and ATC at their minimums**!
+
+</div>
+
+## The Geometry of Costs :triangular_ruler:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 5.5
+#| fig-align: center
+
+# Smooth cost functions for the beach bar
+Q_smooth <- seq(1, 320, by = 1)
+
+# TC function: cubic with realistic shape
+# VC = 0.00006*Q^3 - 0.012*Q^2 + 3.7*Q
+FC_val <- 500
+VC_smooth <- 0.00006 * Q_smooth^3 - 0.012 * Q_smooth^2 + 3.7 * Q_smooth
+VC_smooth <- pmax(VC_smooth, 0)
+TC_smooth <- FC_val + VC_smooth
+
+# Average and marginal costs
+AFC_smooth <- FC_val / Q_smooth
+AVC_smooth <- VC_smooth / Q_smooth
+ATC_smooth <- TC_smooth / Q_smooth
+
+# MC = dVC/dQ = 0.00018*Q^2 - 0.024*Q + 3.7
+MC_smooth <- 0.00018 * Q_smooth^2 - 0.024 * Q_smooth + 3.7
+
+df_avg <- data.frame(
+  Q = rep(Q_smooth, 4),
+  Cost = c(AFC_smooth, AVC_smooth, ATC_smooth, MC_smooth),
+  Type = factor(rep(c("AFC", "AVC", "ATC", "MC"), each = length(Q_smooth)),
+                levels = c("MC", "ATC", "AVC", "AFC"))
+)
+
+# Find minimums for annotation
+avc_min_q <- Q_smooth[which.min(AVC_smooth)]
+avc_min_val <- min(AVC_smooth)
+atc_min_q <- Q_smooth[which.min(ATC_smooth)]
+atc_min_val <- min(ATC_smooth)
+
+ggplot(df_avg, aes(x = Q, y = Cost, color = Type, linetype = Type)) +
+  geom_line(linewidth = 1.3) +
+  scale_color_manual(values = c("MC" = ue_red, "ATC" = ue_black,
+                                "AVC" = "#2E86AB", "AFC" = ue_gray)) +
+  scale_linetype_manual(values = c("MC" = "solid", "ATC" = "solid",
+                                   "AVC" = "solid", "AFC" = "dashed")) +
+  # Mark minimums
+  geom_point(data = data.frame(Q = c(avc_min_q, atc_min_q),
+                                Cost = c(avc_min_val, atc_min_val)),
+             aes(x = Q, y = Cost), color = ue_red, size = 3, inherit.aes = FALSE) +
+  annotate("text", x = avc_min_q + 20, y = avc_min_val - 0.3,
+           label = "MC crosses\nAVC at min", color = "#2E86AB",
+           fontface = "italic", size = 3.2, hjust = 0) +
+  annotate("text", x = atc_min_q + 15, y = atc_min_val + 0.5,
+           label = "MC crosses\nATC at min", color = ue_black,
+           fontface = "italic", size = 3.2, hjust = 0) +
+  coord_cartesian(ylim = c(0, 16), xlim = c(0, 330)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Output (Q)", y = "Cost per unit (€)",
+       title = "Average and Marginal Cost Curves (Hypothetical Beach Bar)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Why Does MC Cross AVC and ATC at Their Minimums? :bulb:
+
+<div style="font-size: 78%;">
+
+Think of it like your **grade point average** :mortar_board:
+
+:::: {.columns}
+::: {.column width="50%"}
+**The "exam grade" analogy**:
+
+- Your **average grade** = ATC (or AVC)
+- Your **next exam grade** = MC
+
+If your next exam grade is **below** your average → your average **falls** :arrow_down:
+
+If your next exam grade is **above** your average → your average **rises** :arrow_up:
+
+If your next exam grade **equals** your average → average **stays the same** (minimum!)
+:::
+
+::: {.column width="50%"}
+**Applied to costs**:
+
+- When $MC < AVC$ → AVC is **falling** :arrow_down:
+- When $MC > AVC$ → AVC is **rising** :arrow_up:
+- When $MC = AVC$ → AVC is at its **minimum**
+
+Same logic applies to ATC!
+
+:point_right: **MC always crosses average curves at their lowest point.**
+
+This is a **mathematical fact**, not an economic assumption.
+:::
+::::
+
+</div>
+
+## The Shapes You Must Know :art:
+
+<div style="font-size: 75%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Total Cost Curves**:
+
+- **FC**: Horizontal line (constant)
+- **VC**: Starts at origin, S-shaped (first rises slowly, then steeply)
+- **TC**: VC shifted up by FC (same S-shape)
+
+The S-shape comes from diminishing returns — costs eventually accelerate.
+:::
+
+::: {.column width="50%"}
+**Per-Unit Cost Curves**:
+
+- **AFC**: Always declining (hyperbola)
+- **AVC**: U-shaped (falls then rises)
+- **ATC**: U-shaped, above AVC (the gap is AFC)
+- **MC**: U-shaped, crosses AVC and ATC at their minimums
+
+:point_right: As Q grows, ATC gets closer to AVC because AFC shrinks.
+:::
+::::
+
+. . .
+
+:warning: **Don't confuse**: MC can be **below** ATC while ATC is still **falling**. ATC rises only after MC **crosses above** it.
+
+</div>
+
+# Tourism Application
+
+## Costs in the Hotel Industry :hotel:
+
+<div style="font-size: 75%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Fixed costs** (don't change with occupancy):
+
+- :house: Mortgage / building lease
+- :shield: Insurance
+- :receipt: Property tax
+- :computer: Booking system software license
+- :man_in_tuxedo: Core management salaries
+- :hammer_and_wrench: Scheduled maintenance
+
+These costs explain why hotels hate **empty rooms** — FC is already committed!
+:::
+
+::: {.column width="50%"}
+**Variable costs** (change with occupancy):
+
+- :soap: Cleaning and laundry per room
+- :electric_plug: Energy and water per guest
+- :croissant: Breakfast/meal supplies
+- :bed: Linen and amenity replacement
+- :busts_in_silhouette: Part-time/seasonal staff
+
+**That's why hotels offer last-minute discounts** — as long as $P > MC$ of hosting one more guest, it's worth it!
+:::
+::::
+
+. . .
+
+:bulb: The difference between FC and VC explains why **low-season pricing** exists: covering variable costs and **some** fixed costs is better than covering **none**.
+
+</div>
+
+## Spreading Fixed Costs: Why Airlines Overbook :airplane:
+
+<div style="font-size: 78%;">
+
+**The airline cost structure** (illustrative):
+
+An Algarve charter flight has roughly:
+
+- :lock: **High fixed costs**: aircraft lease, crew salaries, airport fees, fuel (mostly fixed per flight)
+- :arrows_counterclockwise: **Low variable costs per passenger**: meals, baggage handling, marginal fuel
+
+. . .
+
+::: {.key-concept}
+**Spreading the Fixed Cost**
+
+If a flight costs €20,000 to operate (mostly fixed) and has 200 seats:
+
+- **100 passengers**: AFC = €200/passenger
+- **150 passengers**: AFC = €133/passenger
+- **200 passengers**: AFC = €100/passenger
+
+Every additional passenger **dramatically lowers** the cost per passenger!
+:::
+
+:point_right: This is why airlines practice **overbooking** and **dynamic pricing** — filling seats spreads the enormous fixed cost.
+
+</div>
+
+# Long Run Costs
+
+## In the Long Run, Everything is Variable :unlock:
+
+<div style="font-size: 78%;">
+
+In the **long run**, the firm can adjust **all** inputs — including building size, number of machines, and technology.
+
+::: {.key-concept}
+**Long-Run Average Cost (LRAC)**
+
+The lowest possible average cost for each level of output, when the firm is free to choose the **optimal scale** (size) of operations.
+:::
+
+Think of it this way:
+
+- **Short run**: "Given our current hotel (100 rooms), what's our cost?"
+- **Long run**: "What **size of hotel** minimizes our cost per guest?"
+
+The LRAC curve is formed by choosing the **best short-run plant size** for each output level.
+
+:point_right: The LRAC is the **"envelope"** of all possible short-run ATC curves.
+
+</div>
+
+## The Envelope: LRAC as the Best of All Short Runs :love_letter:
+
+<div style="font-size: 72%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 5
+#| fig-align: center
+
+# Three short-run ATC curves for different plant sizes + LRAC envelope
+Q_lr <- seq(10, 500, by = 1)
+
+# Small hotel (100 rooms)
+ATC_small <- 12 - 0.04 * Q_lr + 0.0001 * Q_lr^2
+# Medium hotel (200 rooms)
+ATC_medium <- 9 - 0.02 * (Q_lr - 100) + 0.00005 * (Q_lr - 100)^2
+# Large hotel (300 rooms)
+ATC_large <- 8 - 0.015 * (Q_lr - 200) + 0.00004 * (Q_lr - 200)^2
+
+# LRAC = minimum of all three at each Q
+LRAC <- pmin(ATC_small, ATC_medium, ATC_large)
+
+df_lr <- data.frame(
+  Q = rep(Q_lr, 4),
+  Cost = c(ATC_small, ATC_medium, ATC_large, LRAC),
+  Type = factor(rep(c("Small hotel (SRATC₁)", "Medium hotel (SRATC₂)",
+                       "Large hotel (SRATC₃)", "LRAC"),
+                    each = length(Q_lr)),
+                levels = c("LRAC", "Small hotel (SRATC₁)",
+                          "Medium hotel (SRATC₂)", "Large hotel (SRATC₃)"))
+)
+
+ggplot(df_lr, aes(x = Q, y = Cost, color = Type, linewidth = Type, linetype = Type)) +
+  geom_line() +
+  scale_color_manual(values = c("LRAC" = ue_red,
+                                "Small hotel (SRATC₁)" = ue_gray,
+                                "Medium hotel (SRATC₂)" = "#2E86AB",
+                                "Large hotel (SRATC₃)" = ue_black)) +
+  scale_linewidth_manual(values = c("LRAC" = 2.2, "Small hotel (SRATC₁)" = 1,
+                                    "Medium hotel (SRATC₂)" = 1,
+                                    "Large hotel (SRATC₃)" = 1)) +
+  scale_linetype_manual(values = c("LRAC" = "solid", "Small hotel (SRATC₁)" = "dashed",
+                                   "Medium hotel (SRATC₂)" = "dashed",
+                                   "Large hotel (SRATC₃)" = "dashed")) +
+  coord_cartesian(ylim = c(4, 16), xlim = c(10, 450)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Output (guests per month)", y = "Average Cost (€ per guest)",
+       title = "Short-Run ATC Curves and the Long-Run Average Cost Envelope (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 14),
+    axis.title = element_text(face = "bold"),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+```
+
+Each dashed curve = one plant size (short run). The **bold red LRAC** = lowest cost achievable at each Q.
+
+:point_right: In the long run, the firm **chooses the plant size** that minimizes cost for its desired output.
+
+</div>
+
+## Economies and Diseconomies of Scale :balance_scale:
+
+<div style="font-size: 76%;">
+
+The shape of the LRAC curve reveals three zones:
+
+:::: {.columns}
+::: {.column width="33%"}
+:arrow_down: **Economies of Scale**
+
+LRAC is **falling**
+
+Bigger → cheaper per unit
+
+**Tourism**: Large hotel chains get bulk discounts, shared booking platforms, brand recognition
+
+*"Getting bigger makes us more efficient"*
+:::
+
+::: {.column width="34%"}
+:left_right_arrow: **Constant Returns**
+
+LRAC is **flat**
+
+Doubling inputs doubles output (cost per unit stays the same)
+
+**Tourism**: Mid-sized operators replicating a proven format across locations
+
+*"We're at the right size"*
+:::
+
+::: {.column width="33%"}
+:arrow_up: **Diseconomies of Scale**
+
+LRAC is **rising**
+
+Bigger → more expensive per unit
+
+**Tourism**: Huge resorts with bureaucracy, coordination problems, slow decision-making
+
+*"We've grown too big"*
+:::
+::::
+
+. . .
+
+:bulb: **Minimum Efficient Scale (MES)**: the smallest output where LRAC reaches its minimum. Firms should aim to operate **at or beyond** this point.
+
+</div>
+
+## Economies of Scale in Tourism: Real-World Logic :globe_with_meridians:
+
+<div style="font-size: 76%;">
+
+**Why do big hotel chains (Marriott, Accor, Hilton) have cost advantages?**
+
+:::: {.columns}
+::: {.column width="50%"}
+**Sources of economies of scale** :arrow_down::
+
+- :handshake: **Bulk purchasing**: negotiate lower prices with suppliers (linens, food, amenities)
+- :computer: **Technology**: one central booking system serves thousands of properties
+- :tv: **Marketing**: global advertising cost spread over many hotels
+- :mortar_board: **Training**: standardized programs cheaper per employee
+- :chart_with_upwards_trend: **Financing**: large firms borrow at lower interest rates
+:::
+
+::: {.column width="50%"}
+**Why not grow forever?** :arrow_up:
+
+- :snail: **Bureaucracy**: decisions take longer in large organizations
+- :speech_balloon: **Communication**: harder to coordinate across 8,000+ properties
+- :broken_heart: **Loss of local identity**: cookie-cutter hotels may lose appeal
+- :money_with_wings: **Monitoring costs**: ensuring quality across locations
+
+:point_right: This is why **boutique hotels** can survive alongside chains — they operate efficiently at a smaller scale with a different value proposition.
+:::
+::::
+
+</div>
+
+# Putting It All Together
+
+## Summary of Cost Curves :clipboard:
+
+<div style="font-size: 70%;">
+
+| Concept | Formula | Shape | Key Fact |
+|---|---|---|---|
+| **Fixed Cost (FC)** | Constant | Horizontal line | Doesn't change with output |
+| **Variable Cost (VC)** | Changes with Q | S-shaped (rises, accelerates) | Due to diminishing returns |
+| **Total Cost (TC)** | FC + VC | VC shifted up by FC | |
+| **Avg Fixed Cost (AFC)** | FC / Q | Always declining | Spreading the overhead |
+| **Avg Variable Cost (AVC)** | VC / Q | U-shaped | Min where MC crosses it |
+| **Avg Total Cost (ATC)** | TC / Q = AFC + AVC | U-shaped (above AVC) | Gap to AVC = AFC (shrinks) |
+| **Marginal Cost (MC)** | ΔTC / ΔQ | U-shaped | Crosses AVC & ATC at their mins |
+| **LRAC** | Envelope of SRATCs | U-shaped | Economies → constant → diseconomies |
+
+</div>
+
+## Summary :memo:
+
+<div style="font-size: 76%;">
+
+**Today's Key Takeaways**:
+
+1. **Short run**: at least one input is fixed; **Long run**: all inputs are variable
+2. **Total costs**: $TC = FC + VC$ — fixed costs don't depend on output
+3. **Average costs**: ATC = AFC + AVC — both per-unit measures
+4. **Marginal cost**: the extra cost of one more unit — **the most important curve**
+5. **MC crosses AVC and ATC at their minimums** (the "exam grade" rule)
+6. **LRAC**: the envelope of short-run ATC curves — shows optimal plant size
+7. **Economies of scale** explain why large hotel chains exist; **diseconomies** explain why they don't grow forever
+
+**Connection**: Costs are the **foundation** of supply. Next lecture we use MC to find the **profit-maximizing output**.
+
+**Next (Lecture 11, March 20)**: Companies — Profit Maximization :moneybag:
+
+</div>
+
+## Exercises {.center}
+
+**Practice Time!** :pencil2:
+
+Cost curves, short run, and long run.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: A tour operator in Lisbon has monthly fixed costs of €10,000 (office lease, software) and variable costs that depend on the number of tours sold. Currently, they sell 200 tours per month with an ATC of €80 per tour. If they increase to 250 tours and ATC falls to €72 per tour, what can we conclude?
+
+A. Marginal cost of the additional tours is below €72
+
+B. Marginal cost of the additional tours is above €80
+
+C. The firm is experiencing diseconomies of scale
+
+D. Fixed costs have increased
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: A**
+:::
+
+If ATC is **falling** (from €80 to €72), it must be that MC is **pulling the average down**. From the "exam grade" analogy: if your average falls, the new grade must be **below** the current average. So $MC < ATC = €72$ for those additional 50 tours.
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: In the short run, a small hotel in Sintra has fixed costs of €6,000/month. When occupancy rises from 80 to 90 guests/month, total costs rise from €14,000 to €15,500. What is the marginal cost per additional guest?
+
+A. €150
+
+B. €155
+
+C. €172
+
+D. €175
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: A**
+:::
+
+$MC = \frac{\Delta TC}{\Delta Q} = \frac{€15{,}500 - €14{,}000}{90 - 80} = \frac{€1{,}500}{10} = €150$ per guest.
+
+Note: FC (€6,000) is **irrelevant** to MC — it doesn't change! Only variable costs drive the change in TC.
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 66%;">
+
+**A small surf school in Ericeira** has monthly fixed costs of €2,000 (equipment rental, insurance) and the following cost structure:
+
+| Students/month (Q) | Variable Cost (VC) |
+|:---:|:---:|
+| 0 | €0 |
+| 10 | €800 |
+| 20 | €1,400 |
+| 30 | €1,900 |
+| 40 | €2,600 |
+| 50 | €3,500 |
+| 60 | €4,800 |
+
+**a)** Calculate TC, AFC, AVC, ATC, and MC for each output level.
+
+**b)** At what output level is AVC minimized? At what output is ATC minimized?
+
+**c)** Verify that MC = AVC at the minimum of AVC, and MC = ATC at the minimum of ATC.
+
+**d)** The school charges €90 per student. At what output level would you expect MC to equal this price? What does this tell us about the profit-maximizing output? (We'll formalize this in the next lecture!)
+
+**e)** In the long run, the school considers expanding to a second location. Explain, using the concept of economies of scale, under what conditions this expansion would lower the cost per student.
+
+</div>
+
+## Exercise 3: Solution — Part a
+
+<div style="font-size: 58%;">
+
+| Q | FC | VC | TC | AFC | AVC | ATC | MC (per 10 students) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 2,000 | 0 | 2,000 | — | — | — | — |
+| 10 | 2,000 | 800 | 2,800 | 200.00 | 80.00 | 280.00 | 80.00 |
+| 20 | 2,000 | 1,400 | 3,400 | 100.00 | 70.00 | 170.00 | 60.00 |
+| 30 | 2,000 | 1,900 | 3,900 | 66.67 | 63.33 | 130.00 | 50.00 |
+| 40 | 2,000 | 2,600 | 4,600 | 50.00 | 65.00 | 115.00 | 70.00 |
+| 50 | 2,000 | 3,500 | 5,500 | 40.00 | 70.00 | 110.00 | 90.00 |
+| 60 | 2,000 | 4,800 | 6,800 | 33.33 | 80.00 | 113.33 | 130.00 |
+
+**MC calculation example**: From Q = 20 to Q = 30: $MC = \frac{3{,}900 - 3{,}400}{30 - 20} = \frac{500}{10} = €50$ per student.
+
+</div>
+
+## Exercise 3: Solution — Parts b, c & d
+
+<div style="font-size: 68%;">
+
+**b)** AVC is minimized at **Q = 30** (AVC = €63.33). ATC is minimized at **Q = 50** (ATC = €110.00).
+
+:point_right: AVC minimum comes **before** ATC minimum — this is always the case because AFC is still pulling ATC down even after AVC starts rising.
+
+**c)** At Q = 30 (AVC minimum): MC just shifted from €60 (at Q=20) to €50 (at Q=30), and then rises to €70 (at Q=40). MC passes through the AVC minimum range, consistent with theory. At Q = 50 (ATC minimum): MC = €90, while ATC = €110. Between Q=40 and Q=50, MC (€90) is still below ATC (€110), pulling it down. At Q=60, MC = €130 > ATC = €113.33, so ATC starts rising. The crossing happens between Q=50 and Q=60. :white_check_mark:
+
+**d)** Price = €90. MC = €90 at **Q = 50**. This suggests the profit-maximizing output is around **50 students**. At this level, each additional student brings in exactly as much revenue (€90) as they cost to add. Producing more (Q=60) would mean MC = €130 > €90 = price → **losing money on each extra student**.
+
+</div>
+
+## Exercise 3: Solution — Part e
+
+<div style="font-size: 78%;">
+
+**e)** Expanding to a second location would lower the cost per student if the school can achieve **economies of scale**:
+
+- :handshake: **Shared equipment purchases**: buying boards and wetsuits in bulk at a discount
+- :computer: **Single booking/marketing system** serving both locations
+- :mortar_board: **Instructor training**: standardized program developed once, used at both sites
+- :chart_with_upwards_trend: **Brand recognition**: marketing costs spread over more students
+
+**However**, expansion could also create **diseconomies** if:
+
+- Coordination between locations is difficult (travel time, communication)
+- Quality control drops when the owner can't supervise both sites
+- Each beach has unique conditions requiring different approaches
+
+:point_right: Expansion makes sense if the LRAC **falls** at the combined output — that is, if the firm is still in the **economies of scale** region.
+
+</div>
+
+## Next Lecture {.center}
+
+**March 20, 2026**: Companies — Profit Maximization :moneybag:
+
+How do firms use cost curves to choose the **optimal output**?
+
+. . .
+
+:point_right: **Spoiler**: The answer involves setting **Price = MC** in perfect competition!
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Friday, March 20, 2026*
+
+::: {.notes}
+This lecture introduces the full cost structure that underpins producer theory. Students should leave understanding that (1) costs have a clear geometry with predictable shapes, (2) MC is the key decision-making curve, and (3) the short run/long run distinction is about flexibility of inputs, not calendar time. The LRAC envelope concept connects to why tourism has both large chains and small operators. Next lecture builds directly on this to find the profit-maximizing output level.
+:::

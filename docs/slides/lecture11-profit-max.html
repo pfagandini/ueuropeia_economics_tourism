@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <meta name="author" content="Paulo Fagandini">
+  <meta name="dcterms.date" content="2026-01-01">
+  <title>Economics of Tourism – Producer Theory</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e109428474854d908f205605d54b47e4.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Producer Theory</h1>
+  <p class="subtitle">Lecture 11: Companies — Profit Maximization</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Paulo Fagandini 
+</div>
+</div>
+</div>
+
+  <p class="date">2026</p>
+</section>
+<section id="recap-lecture-10" class="slide level2">
+<h2>Recap: Lecture 10 <span class="emoji" data-emoji="rewind">⏪</span></h2>
+<div style="font-size: 80%;">
+<p><strong>What we covered last time</strong>:</p>
+<ul>
+<li><strong>Short run</strong> vs <strong>Long run</strong>: fixed inputs vs all variable</li>
+<li><strong>Cost types</strong>: FC, VC, TC and their per-unit versions (AFC, AVC, ATC)</li>
+<li><strong>Marginal cost (MC)</strong>: the extra cost of one more unit — the key curve</li>
+<li><strong>MC crosses AVC and ATC at their minimums</strong> (the “exam grade” rule)</li>
+<li><strong>LRAC</strong>: the long-run envelope — economies and diseconomies of scale</li>
+</ul>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="dart">🎯</span> <strong>Today</strong>: Now that we know costs, how does a firm decide <strong>how much to produce</strong> to make the most profit?</p>
+</div>
+</section>
+<section>
+<section id="perfect-competition" class="title-slide slide level1 center">
+<h1>Perfect Competition</h1>
+
+</section>
+<section id="what-kind-of-market-are-we-studying" class="slide level2">
+<h2>What Kind of Market Are We Studying? <span class="emoji" data-emoji="classical_building">🏛️</span></h2>
+<div style="font-size: 78%;">
+<div class="key-concept">
+<p><strong>Perfect Competition</strong></p>
+<p>A market structure where:</p>
+<ol type="1">
+<li><strong>Many</strong> buyers and many sellers</li>
+<li><strong>Identical</strong> (homogeneous) products</li>
+<li><strong>Free entry and exit</strong> — firms can enter or leave the market</li>
+<li><strong>Perfect information</strong> — everyone knows prices and quality</li>
+</ol>
+</div>
+<p><strong>Result</strong>: No single firm can influence the market price. Each firm is a <strong>price taker</strong>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Close to perfect competition</strong>:</p>
+<ul>
+<li>Agricultural products (wheat, rice)</li>
+<li>Basic tourism services in competitive areas (generic hostels, taxis)</li>
+<li>Street food vendors in a tourist market</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="x">❌</span> <strong>Not perfect competition</strong>:</p>
+<ul>
+<li>Airlines (few carriers, differentiated)</li>
+<li>Luxury hotels (brand, location matter)</li>
+<li>Disney parks (unique product)</li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="the-price-taker" class="slide level2">
+<h2>The Price Taker <span class="emoji" data-emoji="label">🏷️</span></h2>
+<div style="font-size: 78%;">
+<div class="key-concept">
+<p><strong>Price Taker</strong></p>
+<p>A firm in perfect competition <strong>cannot choose its price</strong>. The market determines the price through supply and demand. The firm just decides <strong>how much to produce</strong> at that price.</p>
+</div>
+<p><strong>Think of it this way</strong>:</p>
+<ul>
+<li>A wheat farmer can’t charge €5/kg when the market price is €3/kg — nobody would buy</li>
+<li>There’s no reason to charge €2/kg either — they can sell all they want at €3/kg</li>
+<li>So the only decision is: <strong>how many kilograms to produce?</strong></li>
+</ul>
+<p>. . .</p>
+<p><strong>Tourism analogy</strong>: Imagine dozens of identical beach umbrella rental stands on a long Algarve beach. If one charges €12/day when all others charge €10/day, tourists just walk to the next stand. The market price is €10 — take it or leave it.</p>
+</div>
+</section>
+<section id="the-firms-demand-curve-in-perfect-competition" class="slide level2">
+<h2>The Firm’s Demand Curve in Perfect Competition <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></h2>
+<div style="font-size: 72%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture11-profit-max_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Left</strong>: Market supply and demand determine the equilibrium price <span class="math inline">\(P^*\)</span>.</p>
+<p><strong>Right</strong>: Each individual firm faces a <strong>perfectly horizontal demand curve</strong> at <span class="math inline">\(P^*\)</span>. It can sell as much as it wants at this price — but <strong>nothing</strong> above it.</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> For a price taker: <strong>Price = Marginal Revenue</strong>. Every extra unit sold brings in exactly <span class="math inline">\(P^*\)</span>.</p>
+</div>
+</section></section>
+<section>
+<section id="the-profit-maximization-problem" class="title-slide slide level1 center">
+<h1>The Profit Maximization Problem</h1>
+
+</section>
+<section id="profit-the-basics" class="slide level2">
+<h2>Profit: The Basics <span class="emoji" data-emoji="moneybag">💰</span></h2>
+<div style="font-size: 80%;">
+<div class="key-concept">
+<p><strong>Profit</strong></p>
+<p><span class="math display">\[\pi = TR - TC\]</span></p>
+<p>where <span class="math inline">\(TR = P \times Q\)</span> (total revenue) and <span class="math inline">\(TC = FC + VC\)</span> (total cost).</p>
+</div>
+<p><strong>The firm’s question</strong>: At what quantity <span class="math inline">\(Q\)</span> is <span class="math inline">\(\pi = TR - TC\)</span> as large as possible?</p>
+<p><strong>Two equivalent approaches</strong> to find the answer:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>Method</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="emoji" data-emoji="one">1️⃣</span> <strong>TR vs TC</strong></td>
+<td>Compare total revenue and total cost curves</td>
+<td>Maximize the <strong>gap</strong> <span class="math inline">\(TR - TC\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="emoji" data-emoji="two">2️⃣</span> <strong>MR vs MC</strong></td>
+<td>Compare marginal revenue and marginal cost</td>
+<td>Produce where <span class="math inline">\(MR = MC\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Both give the <strong>same answer</strong>! Approach <span class="emoji" data-emoji="two">2️⃣</span> is more practical and leads us to the supply curve.</p>
+</div>
+</section>
+<section id="approach-1-tr-vs-tc-the-total-curves" class="slide level2">
+<h2>Approach 1: TR vs TC — The Total Curves <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
+<div style="font-size: 72%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture11-profit-max_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="emoji" data-emoji="point_right">👉</span> <strong>Profit</strong> = vertical gap between TR and TC. Maximum profit is where this gap is <strong>widest</strong> — at around <strong>Q* ≈ 48 students</strong>.</p>
+<p><em>This uses the surf school data from last lecture’s exercise, with P = €90/student.</em></p>
+</div>
+</section>
+<section id="approach-2-mr-vs-mc-the-per-unit-view" class="slide level2">
+<h2>Approach 2: MR vs MC — The Per-Unit View <span class="emoji" data-emoji="star">⭐</span></h2>
+<div style="font-size: 78%;">
+<div class="key-concept">
+<p><strong>The Profit-Maximizing Rule</strong></p>
+<p>Produce the quantity where <strong>Marginal Revenue = Marginal Cost</strong>:</p>
+<p><span class="math display">\[MR = MC\]</span></p>
+<p>In <strong>perfect competition</strong>, since <span class="math inline">\(P = MR\)</span>, this becomes:</p>
+<p><span class="math display">\[\boxed{P = MC}\]</span></p>
+</div>
+<p><strong>Why does this work?</strong> Think about it one unit at a time:</p>
+<ul>
+<li>If <span class="math inline">\(P &gt; MC\)</span> for the next unit → producing it <strong>adds to profit</strong> → produce more! <span class="emoji" data-emoji="arrow_right">➡️</span></li>
+<li>If <span class="math inline">\(P &lt; MC\)</span> for the next unit → producing it <strong>reduces profit</strong> → produce less! <span class="emoji" data-emoji="arrow_left">⬅️</span></li>
+<li>If <span class="math inline">\(P = MC\)</span> → you’re at the <strong>sweet spot</strong> — no way to increase profit further <span class="emoji" data-emoji="dart">🎯</span></li>
+</ul>
+<p><span class="emoji" data-emoji="bulb">💡</span> This is just <strong>marginal analysis</strong> from Lecture 3 applied to the firm!</p>
+</div>
+</section>
+<section id="p-mc-graphically" class="slide level2">
+<h2>P = MC Graphically <span class="emoji" data-emoji="triangular_ruler">📐</span></h2>
+
+<img data-src="lecture11-profit-max_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1056"></section>
+<section id="reading-profit-on-the-graph" class="slide level2">
+<h2>Reading Profit on the Graph <span class="emoji" data-emoji="mag">🔍</span></h2>
+<div style="font-size: 76%;">
+<div class="key-concept">
+<p><strong>Profit as a Rectangle</strong></p>
+<p>At the profit-maximizing quantity <span class="math inline">\(Q^*\)</span>:</p>
+<p><span class="math display">\[\pi = (P - ATC) \times Q^*\]</span></p>
+<p>This appears on the graph as a <strong>rectangle</strong> with height <span class="math inline">\((P - ATC)\)</span> and width <span class="math inline">\(Q^*\)</span>.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Three possible outcomes</strong>:</p>
+<ul>
+<li><span class="emoji" data-emoji="chart_with_upwards_trend">📈</span> <span class="math inline">\(P &gt; ATC\)</span> → <strong>Positive profit</strong> (green rectangle)</li>
+<li><span class="emoji" data-emoji="left_right_arrow">↔︎️</span> <span class="math inline">\(P = ATC\)</span> → <strong>Zero economic profit</strong> (breakeven)</li>
+<li><span class="emoji" data-emoji="chart_with_downwards_trend">📉</span> <span class="math inline">\(P &lt; ATC\)</span> → <strong>Loss</strong> (red rectangle)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Important nuance</strong>: “Zero economic profit” is <strong>not bad</strong>!</p>
+<p>It means the firm covers <strong>all</strong> costs, including the owner’s opportunity cost of time and capital.</p>
+<p>The firm earns a <strong>normal return</strong> — the same as its best alternative. No reason to leave!</p>
+</div></div>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> Next lecture we’ll explore the loss case in detail: when should a firm <strong>shut down</strong> vs.&nbsp;<strong>keep operating at a loss</strong>?</p>
+</div>
+</section>
+<section id="profit-zero-profit-and-loss-three-scenarios" class="slide level2">
+<h2>Profit, Zero Profit, and Loss: Three Scenarios <span class="emoji" data-emoji="bar_chart">📊</span></h2>
+<div style="font-size: 68%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture11-profit-max_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In all three cases, the firm produces where <strong>P = MC</strong>. What changes is the <strong>relationship between P and ATC</strong> at that quantity.</p>
+</div>
+</section></section>
+<section>
+<section id="worked-example-tourism" class="title-slide slide level1 center">
+<h1>Worked Example: Tourism</h1>
+
+</section>
+<section id="bottle-factory-from-the-textbook-bottle" class="slide level2">
+<h2>Bottle Factory from the Textbook :bottle:</h2>
+<div style="font-size: 66%;">
+<p>The sebenta’s glass bottle factory has FC = €40/day and the following cost structure:</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Q (bottles/day)</th>
+<th style="text-align: center;">Total Revenue (€0.35/bottle)</th>
+<th style="text-align: center;">Labor Cost (€)</th>
+<th style="text-align: center;">TC (€)</th>
+<th style="text-align: center;">Profit (€)</th>
+<th style="text-align: center;">MC (per 100 bottles)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">−40</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">−15</td>
+<td style="text-align: center;">0.10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">0.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>400</strong></td>
+<td style="text-align: center;"><strong>140</strong></td>
+<td style="text-align: center;"><strong>70</strong></td>
+<td style="text-align: center;"><strong>110</strong></td>
+<td style="text-align: center;"><strong>30</strong></td>
+<td style="text-align: center;"><strong>0.30</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">500</td>
+<td style="text-align: center;">175</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">150</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">0.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">210</td>
+<td style="text-align: center;">160</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">700</td>
+<td style="text-align: center;">245</td>
+<td style="text-align: center;">220</td>
+<td style="text-align: center;">260</td>
+<td style="text-align: center;">−15</td>
+<td style="text-align: center;">0.60</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Course textbook (sebenta), Table 10</em></p>
+<p><span class="emoji" data-emoji="point_right">👉</span> Maximum profit (€30/day) at <strong>Q = 400 bottles/day</strong>. This is where MC is closest to the price (€0.35/bottle) on the rising portion of MC!</p>
+</div>
+</section>
+<section id="what-if-the-price-changes" class="slide level2">
+<h2>What If the Price Changes? <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
+<div style="font-size: 68%;">
+<p>The textbook shows what happens when the bottle price <strong>rises to €0.45/bottle</strong>:</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Q (bottles/day)</th>
+<th style="text-align: center;">TR at €0.35</th>
+<th style="text-align: center;">TR at €0.45</th>
+<th style="text-align: center;">TC (€)</th>
+<th style="text-align: center;">Profit at €0.35</th>
+<th style="text-align: center;">Profit at €0.45</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">−40</td>
+<td style="text-align: center;">−40</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">−15</td>
+<td style="text-align: center;">−5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">135</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">140</td>
+<td style="text-align: center;">180</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">70</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>500</strong></td>
+<td style="text-align: center;"><strong>175</strong></td>
+<td style="text-align: center;"><strong>225</strong></td>
+<td style="text-align: center;"><strong>150</strong></td>
+<td style="text-align: center;"><strong>25</strong></td>
+<td style="text-align: center;"><strong>75</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">210</td>
+<td style="text-align: center;">270</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">70</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">700</td>
+<td style="text-align: center;">245</td>
+<td style="text-align: center;">315</td>
+<td style="text-align: center;">260</td>
+<td style="text-align: center;">−15</td>
+<td style="text-align: center;">55</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Course textbook (sebenta), Tables 10 &amp; 11</em></p>
+<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Key insight</strong>: When price rises from €0.35 to €0.45, the firm <strong>produces more</strong> (400 → 500 bottles) and <strong>earns more profit</strong> (€30 → €75). The new optimum is where MC ≈ €0.40, closer to the new higher price.</p>
+</div>
+</section>
+<section id="the-general-lesson" class="slide level2">
+<h2>The General Lesson <span class="emoji" data-emoji="bulb">💡</span></h2>
+<div style="font-size: 80%;">
+<div class="key-concept">
+<p><strong>Higher Price → More Production → More Profit</strong></p>
+<p>When the market price rises, the <span class="math inline">\(P = MC\)</span> rule tells the firm to expand output along its MC curve. This is the seed of the <strong>supply curve</strong> (Lecture 13).</p>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>What higher prices do</strong>:</p>
+<ul>
+<li><span class="emoji" data-emoji="arrow_up">⬆️</span> Price rises</li>
+<li><span class="emoji" data-emoji="point_right">👉</span> New P = MC intersection at higher Q</li>
+<li><span class="emoji" data-emoji="moneybag">💰</span> Revenue rises (both price and quantity)</li>
+<li><span class="emoji" data-emoji="chart_with_upwards_trend">📈</span> Profit increases</li>
+</ul>
+<p>This is why supply curves slope <strong>upward</strong>!</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Tourism application</strong>:</p>
+<p>When hotel room prices rise in Lisbon during peak season:</p>
+<ul>
+<li>Hotels hire more staff, extend hours</li>
+<li>They serve more guests (higher Q)</li>
+<li>Profit per room rises</li>
+<li>More production at higher cost → <span class="math inline">\(P = MC\)</span> at a new, higher quantity</li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="what-about-changes-in-fixed-costs" class="slide level2">
+<h2>What About Changes in Fixed Costs? <span class="emoji" data-emoji="lock">🔒</span></h2>
+<div style="font-size: 76%;">
+<p>The textbook shows an important result: when <strong>fixed costs rise</strong> (from €40 to €70/day), the <strong>profit-maximizing quantity stays the same</strong> (Q = 400).</p>
+<p><strong>Why?</strong> Because <span class="math inline">\(P = MC\)</span> doesn’t involve FC at all! MC only reflects changes in <strong>variable costs</strong>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="key-concept">
+<p><strong>Fixed Costs Don’t Affect the Optimal Quantity</strong></p>
+<p>FC shifts the total cost curve <strong>up</strong> (and ATC up), reducing profit, but the <strong>optimal Q</strong> stays where P = MC.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">FC = €40</th>
+<th style="text-align: center;">FC = €70</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Optimal Q</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">400</td>
+</tr>
+<tr class="even">
+<td>Profit</td>
+<td style="text-align: center;">€30</td>
+<td style="text-align: center;">€0</td>
+</tr>
+<tr class="odd">
+<td>MC at Q = 400</td>
+<td style="text-align: center;">€0.30</td>
+<td style="text-align: center;">€0.30</td>
+</tr>
+</tbody>
+</table>
+<p><em>Same Q, but profit drops by exactly the FC increase (€30).</em></p>
+</div></div>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="warning">⚠️</span> FC <strong>does</strong> matter for the <strong>stay or exit</strong> decision — which we cover next lecture!</p>
+</div>
+</section></section>
+<section>
+<section id="marginal-revenue-in-detail" class="title-slide slide level1 center">
+<h1>Marginal Revenue in Detail</h1>
+
+</section>
+<section id="why-p-mr-in-perfect-competition" class="slide level2">
+<h2>Why P = MR in Perfect Competition <span class="emoji" data-emoji="balance_scale">⚖️</span></h2>
+<div style="font-size: 78%;">
+<p><strong>Marginal Revenue</strong> is the extra revenue from selling <strong>one more unit</strong>:</p>
+<p><span class="math display">\[MR = \frac{\Delta TR}{\Delta Q}\]</span></p>
+<p>In <strong>perfect competition</strong>, the firm sells every unit at the same market price <span class="math inline">\(P\)</span>:</p>
+<p><span class="math display">\[TR = P \times Q \quad \Rightarrow \quad \text{If Q goes up by 1:} \quad \Delta TR = P\]</span></p>
+<p>So <span class="math inline">\(MR = P\)</span> for every unit. That’s why the firm’s demand curve (<span class="math inline">\(d_i\)</span>) is also its MR curve — a <strong>horizontal line</strong> at <span class="math inline">\(P\)</span>.</p>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="warning">⚠️</span> <strong>This is specific to perfect competition!</strong> A monopolist (single seller) must lower the price to sell more, so <span class="math inline">\(MR &lt; P\)</span>. We’ll see this in later courses.</p>
+<p>For now: <strong>Price taker</strong> → <span class="math inline">\(P = MR\)</span> → profit-maximizing rule is simply <span class="math inline">\(P = MC\)</span>.</p>
+</div>
+</section>
+<section id="the-marginal-approach-step-by-step" class="slide level2">
+<h2>The Marginal Approach: Step by Step <span class="emoji" data-emoji="footprints">👣</span></h2>
+<div style="font-size: 72%;">
+<p><strong>Applying the P = MC rule to the bottle factory</strong> (P = €0.35/bottle):</p>
+<table class="caption-top" style="width:100%;">
+<caption>point_right: <strong>Stop at Q = 400</strong>: the last unit where MR ≥ MC. Going to 500 would cost more (€0.40) than it earns (€0.35).</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Going from…</th>
+<th style="text-align: center;">…to</th>
+<th style="text-align: center;">Extra revenue (MR)</th>
+<th style="text-align: center;">Extra cost (MC)</th>
+<th style="text-align: center;">Profit change</th>
+<th style="text-align: center;">Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0 → 100</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">€0.35</td>
+<td style="text-align: center;">€0.10</td>
+<td style="text-align: center;">+€25</td>
+<td style="text-align: center;"><span class="emoji" data-emoji="white_check_mark">✅</span> Produce</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100 → 200</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">€0.35</td>
+<td style="text-align: center;">€0.10</td>
+<td style="text-align: center;">+€25</td>
+<td style="text-align: center;"><span class="emoji" data-emoji="white_check_mark">✅</span> Produce</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">200 → 300</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">€0.35</td>
+<td style="text-align: center;">€0.20</td>
+<td style="text-align: center;">+€15</td>
+<td style="text-align: center;"><span class="emoji" data-emoji="white_check_mark">✅</span> Produce</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">300 → 400</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">€0.35</td>
+<td style="text-align: center;">€0.30</td>
+<td style="text-align: center;">+€5</td>
+<td style="text-align: center;"><span class="emoji" data-emoji="white_check_mark">✅</span> Produce</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">400 → 500</td>
+<td style="text-align: center;">500</td>
+<td style="text-align: center;">€0.35</td>
+<td style="text-align: center;">€0.40</td>
+<td style="text-align: center;">−€5</td>
+<td style="text-align: center;"><span class="emoji" data-emoji="x">❌</span> Stop!</td>
+</tr>
+</tbody>
+</table>
+<p><span class="emoji" data-emoji="bulb">💡</span> This step-by-step reasoning confirms the table’s answer: <strong>Q* = 400 bottles/day</strong>.</p>
+</div>
+</section></section>
+<section>
+<section id="tourism-application" class="title-slide slide level1 center">
+<h1>Tourism Application</h1>
+
+</section>
+<section id="hotel-revenue-management-a-profit-maximization-story" class="slide level2">
+<h2>Hotel Revenue Management: A Profit Maximization Story <span class="emoji" data-emoji="hotel">🏨</span></h2>
+<div style="font-size: 76%;">
+<p><strong>Why do hotels charge different prices at different times?</strong></p>
+<p>The <span class="math inline">\(P = MC\)</span> rule explains dynamic pricing:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="sunny">☀️</span> <strong>Peak season</strong> (summer, Lisbon festivals):</p>
+<ul>
+<li>Market price <span class="math inline">\(P\)</span> is <strong>high</strong> (demand is high)</li>
+<li>P = MC at a <strong>higher Q</strong> → hire more staff, open all rooms</li>
+<li>Profit per room is <strong>large</strong></li>
+<li>Hotels <strong>expand</strong> services</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="cloud">☁️</span> <strong>Off-season</strong> (January):</p>
+<ul>
+<li>Market price <span class="math inline">\(P\)</span> is <strong>low</strong></li>
+<li>P = MC at a <strong>lower Q</strong> → reduce staff, close a wing</li>
+<li>Profit per room is <strong>small</strong> (or even losses)</li>
+<li>Hotels <strong>scale back</strong></li>
+</ul>
+</div></div>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> The <span class="math inline">\(P = MC\)</span> rule doesn’t just say “how much to produce” — it explains the <strong>seasonal rhythm</strong> of tourism businesses!</p>
+</div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary <span class="emoji" data-emoji="memo">📝</span></h2>
+<div style="font-size: 74%;">
+<p><strong>Today’s Key Takeaways</strong>:</p>
+<ol type="1">
+<li><strong>Perfect competition</strong>: many firms, identical product, price taker</li>
+<li><strong>Price taker</strong>: the firm faces a horizontal demand curve at the market price → <span class="math inline">\(P = MR\)</span></li>
+<li><strong>Profit</strong> = <span class="math inline">\(TR - TC = (P - ATC) \times Q\)</span></li>
+<li><strong>Two approaches</strong>: maximize the gap between TR and TC (total curves), or set <span class="math inline">\(MR = MC\)</span> (per-unit curves)</li>
+<li><strong>The golden rule</strong>: in perfect competition, produce where <span class="math inline">\(P = MC\)</span> (on the rising portion of MC)</li>
+<li>If <span class="math inline">\(P &gt; ATC\)</span> → positive profit; <span class="math inline">\(P = ATC\)</span> → zero economic profit; <span class="math inline">\(P &lt; ATC\)</span> → loss</li>
+<li><strong>Fixed costs don’t affect the optimal Q</strong> — only variable costs (through MC) matter for the production decision</li>
+<li><strong>Higher price → higher quantity → higher profit</strong> — this is the seed of the supply curve</li>
+</ol>
+<p><strong>Connection</strong>: Lecture 10 gave us the cost curves. Today we used them to find <span class="math inline">\(Q^*\)</span>. Next lecture: what if the firm is making a <strong>loss</strong>? When should it shut down vs.&nbsp;continue?</p>
+<p><strong>Next (Lecture 12, March 26)</strong>: Profits, Shutdown and Breakeven Price Levels. Supply.</p>
+</div>
+</section>
+<section id="exercises" class="slide level2 center">
+<h2>Exercises</h2>
+<p><strong>Practice Time!</strong> <span class="emoji" data-emoji="pencil2">✏️</span></p>
+<p>Profit maximization with the <span class="math inline">\(P = MC\)</span> rule.</p>
+</section>
+<section id="exercise-1-multiple-choice" class="slide level2">
+<h2>Exercise 1: Multiple Choice</h2>
+<div style="font-size: 82%;">
+<p><strong>Question</strong>: A small souvenir shop in Sintra operates in a competitive market. The market price for a standard Sintra tile replica is €8. The shop’s marginal cost of producing the 50th tile per day is €6, and the marginal cost of the 51st tile is €8.50. How many tiles should the shop produce?</p>
+<p>A. 49 tiles</p>
+<p>B. 50 tiles</p>
+<p>C. 51 tiles</p>
+<p>D. Cannot be determined without knowing fixed costs</p>
+<div class="fragment">
+<div class="highlight-box">
+<p><strong>Answer: B</strong></p>
+</div>
+<p>At Q = 50: MC = €6 &lt; P = €8 → producing the 50th tile adds to profit <span class="emoji" data-emoji="white_check_mark">✅</span></p>
+<p>At Q = 51: MC = €8.50 &gt; P = €8 → producing the 51st tile reduces profit <span class="emoji" data-emoji="x">❌</span></p>
+<p>So produce <strong>50 tiles</strong>. Note: <strong>fixed costs are irrelevant</strong> to this decision (option D is a trap!).</p>
+</div>
+</div>
+</section>
+<section id="exercise-2-multiple-choice" class="slide level2">
+<h2>Exercise 2: Multiple Choice</h2>
+<div style="font-size: 82%;">
+<p><strong>Question</strong>: A perfectly competitive firm is producing at Q* where P = MC = €25. At this quantity, ATC = €20. What can we say about this firm?</p>
+<p>A. The firm is making a loss and should shut down</p>
+<p>B. The firm is earning zero economic profit</p>
+<p>C. The firm is earning a positive economic profit of €5 per unit</p>
+<p>D. The firm should increase output to reduce ATC further</p>
+<div class="fragment">
+<div class="highlight-box">
+<p><strong>Answer: C</strong></p>
+</div>
+<p>Profit per unit = <span class="math inline">\(P - ATC = €25 - €20 = €5\)</span>. Total profit = €5 × Q* &gt; 0.</p>
+<p>The firm is making <strong>positive economic profit</strong>. It should NOT increase output (D is wrong) because <span class="math inline">\(P = MC\)</span> already — producing more would mean <span class="math inline">\(MC &gt; P\)</span>, reducing profit.</p>
+</div>
+</div>
+</section>
+<section id="exercise-3-open-question" class="slide level2">
+<h2>Exercise 3: Open Question <span class="emoji" data-emoji="writing_hand">✍️</span></h2>
+<div style="font-size: 64%;">
+<p><strong>A small boat tour operator in Lagos (Algarve)</strong> offers coastal cave tours in a competitive market. The market price is <strong>€35 per ticket</strong>. The operator has the following cost structure:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Tours/day (Q)</th>
+<th style="text-align: center;">FC (€)</th>
+<th style="text-align: center;">VC (€)</th>
+<th style="text-align: center;">TC (€)</th>
+<th style="text-align: center;">MC (€/tour)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">220</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">235</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">280</td>
+<td style="text-align: center;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">115</td>
+<td style="text-align: center;">315</td>
+<td style="text-align: center;">35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">165</td>
+<td style="text-align: center;">365</td>
+<td style="text-align: center;">50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">235</td>
+<td style="text-align: center;">435</td>
+<td style="text-align: center;">70</td>
+</tr>
+</tbody>
+</table>
+<p><em>Hypothetical illustrative example</em></p>
+<p><strong>a)</strong> Calculate TR and profit at each output level. At what quantity is profit maximized?</p>
+<p><strong>b)</strong> Verify that this quantity is consistent with the <span class="math inline">\(P = MC\)</span> rule.</p>
+<p><strong>c)</strong> Calculate ATC at the profit-maximizing quantity. Is the firm earning positive, zero, or negative economic profit?</p>
+<p><strong>d)</strong> Suppose the market price drops to €20. What is the new profit-maximizing quantity? What is profit at this quantity?</p>
+<p><strong>e)</strong> If fixed costs rise from €200 to €300 (e.g., due to a higher boat lease), does the profit-maximizing quantity at P = €35 change? Explain.</p>
+</div>
+</section>
+<section id="exercise-3-solution-part-a" class="slide level2">
+<h2>Exercise 3: Solution — Part a</h2>
+<div style="font-size: 62%;">
+<p><strong>a)</strong> TR = P × Q = €35 × Q</p>
+<table class="caption-top">
+<caption>point_right: Profit is maximized (least negative = smallest loss) at <strong>Q = 4 or Q = 5</strong> (both yield −€140).</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Q</th>
+<th style="text-align: center;">TR (€)</th>
+<th style="text-align: center;">TC (€)</th>
+<th style="text-align: center;">Profit = TR − TC (€)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">−200</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">220</td>
+<td style="text-align: center;">−185</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">235</td>
+<td style="text-align: center;">−165</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">−150</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">140</td>
+<td style="text-align: center;">280</td>
+<td style="text-align: center;">−140</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><strong>175</strong></td>
+<td style="text-align: center;"><strong>315</strong></td>
+<td style="text-align: center;"><strong>−140</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">210</td>
+<td style="text-align: center;">365</td>
+<td style="text-align: center;">−155</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">245</td>
+<td style="text-align: center;">435</td>
+<td style="text-align: center;">−190</td>
+</tr>
+</tbody>
+</table>
+<p>Looking more carefully: at Q = 5, MC = €35 = P exactly, so <strong>Q* = 5</strong> is the profit-maximizing quantity. At Q = 4, the 5th tour still adds €35 revenue at €35 cost — it’s worth producing.</p>
+<p><span class="emoji" data-emoji="warning">⚠️</span> Note: the firm is making a <strong>loss</strong> at every output level! But Q = 5 minimizes that loss. Whether to keep operating or shut down is the topic of the next lecture.</p>
+</div>
+</section>
+<section id="exercise-3-solution-parts-b-c" class="slide level2">
+<h2>Exercise 3: Solution — Parts b &amp; c</h2>
+<div style="font-size: 72%;">
+<p><strong>b)</strong> Using the <span class="math inline">\(P = MC\)</span> rule:</p>
+<ul>
+<li>At Q = 4: MC = €25 &lt; P = €35 → produce the 4th tour <span class="emoji" data-emoji="white_check_mark">✅</span></li>
+<li>At Q = 5: MC = €35 = P = €35 → produce the 5th tour <span class="emoji" data-emoji="white_check_mark">✅</span> (MR = MC exactly)</li>
+<li>At Q = 6: MC = €50 &gt; P = €35 → don’t produce the 6th tour <span class="emoji" data-emoji="x">❌</span></li>
+</ul>
+<p>So the rule gives <strong>Q* = 5</strong>, consistent with the table! <span class="emoji" data-emoji="white_check_mark">✅</span></p>
+<p><strong>c)</strong> At Q* = 5:</p>
+<p><span class="math display">\[ATC = \frac{TC}{Q} = \frac{€315}{5} = €63 \text{ per tour}\]</span></p>
+<p>Since <span class="math inline">\(P = €35 &lt; ATC = €63\)</span>, the firm is earning <strong>negative economic profit</strong> (a loss):</p>
+<p><span class="math display">\[\pi = (P - ATC) \times Q = (35 - 63) \times 5 = -€28 \times 5 = -€140\]</span></p>
+<p>The firm is losing €140/day. <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></p>
+</div>
+</section>
+<section id="exercise-3-solution-parts-d-e" class="slide level2">
+<h2>Exercise 3: Solution — Parts d &amp; e</h2>
+<div style="font-size: 72%;">
+<p><strong>d)</strong> At P = €20:</p>
+<ul>
+<li>Q = 1: MC = €20 = P → this is where P = MC on the rising portion</li>
+<li>Q = 2: MC = €15 &lt; P → but this is the falling portion of MC (careful!)</li>
+<li>Q = 3: MC = €20 = P → this is on the rising portion <span class="emoji" data-emoji="white_check_mark">✅</span></li>
+</ul>
+<p>The profit-maximizing quantity is <strong>Q* = 3</strong> (where P = MC on the <strong>rising</strong> portion of MC).</p>
+<p>Profit at Q = 3: <span class="math inline">\(TR = 20 \times 3 = €60\)</span>, <span class="math inline">\(TC = €255\)</span>, <span class="math inline">\(\pi = 60 - 255 = -€195\)</span>.</p>
+<p>The loss worsened from −€140 to −€195. The lower price hurts!</p>
+<p><strong>e)</strong> If FC rises from €200 to €300:</p>
+<p><strong>No, the profit-maximizing quantity does not change!</strong> FC does not appear in the MC calculation. MC stays the same at every quantity, so <span class="math inline">\(P = MC\)</span> still gives <strong>Q* = 5</strong> at P = €35.</p>
+<p>However, profit falls by exactly €100 (the FC increase): <span class="math inline">\(\pi = -€140 - €100 = -€240\)</span>.</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> Fixed costs affect <strong>how much</strong> profit you earn, but not <strong>how many</strong> units to produce.</p>
+</div>
+</section>
+<section id="next-lecture" class="slide level2 center">
+<h2>Next Lecture</h2>
+<p><strong>March 26, 2026</strong>: Profits, Shutdown and Breakeven Price Levels. Supply. <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></p>
+<p>If the firm is making a <strong>loss</strong>, when should it keep operating and when should it <strong>shut down</strong>?</p>
+<div class="fragment">
+<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Hint</strong>: The answer involves comparing <span class="math inline">\(P\)</span> to <strong>AVC</strong>, not ATC!</p>
+</div>
+</section>
+<section id="thank-you" class="slide level2 center">
+<h2>Thank You!</h2>
+<p><strong>Questions?</strong> <span class="emoji" data-emoji="raising_hand">🙋</span></p>
+<p><span class="emoji" data-emoji="email">📧</span> paulo.fagandini@ext.universidadeeuropeia.pt</p>
+</section>
+<section class="slide level2">
+
+<p><em>Next class: Thursday, March 26, 2026</em></p>
+<aside class="notes">
+<p>This lecture establishes the central result of producer theory: firms maximize profit where P = MC. The key pedagogical goals are (1) understanding why P = MC works (marginal thinking), (2) reading profit as a rectangle on the graph, and (3) the irrelevance of FC for the production decision. The worked example from the textbook’s bottle factory grounds the theory in familiar material. Next lecture builds on the loss scenario to introduce shutdown and breakeven conditions, and connect MC to the supply curve.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Economics of Tourism | Lecture 11</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

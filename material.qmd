@@ -29,6 +29,9 @@ title: "Material"
 
 #### Producer Theory: Behind the Supply
 
+10. [Costs](slides/lecture10-costs.qmd)
+11. [Profit Maximization](slides/lecture11-profit-max.qmd)
+12. [Supply](slides/lecture12-shutdown-supply.qmd)
 
 #### Market Equilibrium
 

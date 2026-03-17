@@ -1,0 +1,955 @@
+---
+title: "Producer Theory"
+subtitle: "Lecture 11: Companies — Profit Maximization"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 11"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(patchwork)
+
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_blue <- "#2E86AB"
+ue_green <- "#27ae60"
+```
+
+## Recap: Lecture 10 :rewind:
+
+<div style="font-size: 80%;">
+
+**What we covered last time**:
+
+- **Short run** vs **Long run**: fixed inputs vs all variable
+- **Cost types**: FC, VC, TC and their per-unit versions (AFC, AVC, ATC)
+- **Marginal cost (MC)**: the extra cost of one more unit — the key curve
+- **MC crosses AVC and ATC at their minimums** (the "exam grade" rule)
+- **LRAC**: the long-run envelope — economies and diseconomies of scale
+
+. . .
+
+:dart: **Today**: Now that we know costs, how does a firm decide **how much to produce** to make the most profit?
+
+</div>
+
+# Perfect Competition
+
+## What Kind of Market Are We Studying? :classical_building:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Perfect Competition**
+
+A market structure where:
+
+1. **Many** buyers and many sellers
+2. **Identical** (homogeneous) products
+3. **Free entry and exit** — firms can enter or leave the market
+4. **Perfect information** — everyone knows prices and quality
+:::
+
+**Result**: No single firm can influence the market price. Each firm is a **price taker**.
+
+:::: {.columns}
+::: {.column width="50%"}
+:white_check_mark: **Close to perfect competition**:
+
+- Agricultural products (wheat, rice)
+- Basic tourism services in competitive areas (generic hostels, taxis)
+- Street food vendors in a tourist market
+:::
+
+::: {.column width="50%"}
+:x: **Not perfect competition**:
+
+- Airlines (few carriers, differentiated)
+- Luxury hotels (brand, location matter)
+- Disney parks (unique product)
+:::
+::::
+
+</div>
+
+## The Price Taker :label:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Price Taker**
+
+A firm in perfect competition **cannot choose its price**. The market determines the price through supply and demand. The firm just decides **how much to produce** at that price.
+:::
+
+**Think of it this way**:
+
+- A wheat farmer can't charge €5/kg when the market price is €3/kg — nobody would buy
+- There's no reason to charge €2/kg either — they can sell all they want at €3/kg
+- So the only decision is: **how many kilograms to produce?**
+
+. . .
+
+**Tourism analogy**: Imagine dozens of identical beach umbrella rental stands on a long Algarve beach. If one charges €12/day when all others charge €10/day, tourists just walk to the next stand. The market price is €10 — take it or leave it.
+
+</div>
+
+## The Firm's Demand Curve in Perfect Competition :chart_with_downwards_trend:
+
+<div style="font-size: 72%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 4.5
+#| fig-align: center
+
+# Two panels: market S&D determines price, firm faces horizontal demand
+p1 <- ggplot() +
+  # Market supply
+  geom_segment(aes(x = 0, y = 2, xend = 500, yend = 12),
+               color = ue_blue, linewidth = 1.3) +
+  # Market demand
+  geom_segment(aes(x = 0, y = 12, xend = 500, yend = 2),
+               color = ue_red, linewidth = 1.3) +
+  # Equilibrium point
+  geom_point(aes(x = 250, y = 7), size = 4, color = ue_black) +
+  # Dashed lines to axes
+  geom_segment(aes(x = 250, y = 0, xend = 250, yend = 7),
+               linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 0, y = 7, xend = 250, yend = 7),
+               linetype = "dashed", color = ue_gray) +
+  # Labels
+  annotate("text", x = 470, y = 11.5, label = "S", color = ue_blue,
+           fontface = "bold.italic", size = 6) +
+  annotate("text", x = 470, y = 2.5, label = "D", color = ue_red,
+           fontface = "bold.italic", size = 6) +
+  annotate("text", x = 260, y = 7.8, label = "E", fontface = "bold", size = 5) +
+  scale_x_continuous(limits = c(0, 520), expand = c(0, 0),
+                     breaks = c(250), labels = c("Q*")) +
+  scale_y_continuous(limits = c(0, 14), expand = c(0, 0),
+                     breaks = c(7), labels = c("P*")) +
+  labs(x = "Market Quantity", y = "Price (€)",
+       title = "(a) The Market") +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+p2 <- ggplot() +
+  # Horizontal demand at P*
+  geom_segment(aes(x = 0, y = 7, xend = 50, yend = 7),
+               color = ue_red, linewidth = 1.5) +
+  annotate("text", x = 48, y = 7.8, label = expression(d[i] == "P* = MR"),
+           color = ue_red, fontface = "bold", size = 4.5, hjust = 1) +
+  scale_x_continuous(limits = c(0, 55), expand = c(0, 0),
+                     breaks = NULL) +
+  scale_y_continuous(limits = c(0, 14), expand = c(0, 0),
+                     breaks = c(7), labels = c("P*")) +
+  labs(x = "Firm's Quantity (q)", y = "Price (€)",
+       title = "(b) The Individual Firm") +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+p1 + p2 + plot_layout(widths = c(1, 1))
+```
+
+**Left**: Market supply and demand determine the equilibrium price $P^*$.
+
+**Right**: Each individual firm faces a **perfectly horizontal demand curve** at $P^*$. It can sell as much as it wants at this price — but **nothing** above it.
+
+:point_right: For a price taker: **Price = Marginal Revenue**. Every extra unit sold brings in exactly $P^*$.
+
+</div>
+
+# The Profit Maximization Problem
+
+## Profit: The Basics :moneybag:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Profit**
+
+$$\pi = TR - TC$$
+
+where $TR = P \times Q$ (total revenue) and $TC = FC + VC$ (total cost).
+:::
+
+**The firm's question**: At what quantity $Q$ is $\pi = TR - TC$ as large as possible?
+
+**Two equivalent approaches** to find the answer:
+
+| Approach | Method | Rule |
+|---|---|---|
+| :one: **TR vs TC** | Compare total revenue and total cost curves | Maximize the **gap** $TR - TC$ |
+| :two: **MR vs MC** | Compare marginal revenue and marginal cost | Produce where $MR = MC$ |
+
+Both give the **same answer**! Approach :two: is more practical and leads us to the supply curve.
+
+</div>
+
+## Approach 1: TR vs TC — The Total Curves :chart_with_upwards_trend:
+
+<div style="font-size: 72%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 5
+#| fig-align: center
+
+# Use the surf school from L10 exercise, but now with a price
+# Price = €90 per student, FC = 2000
+# VC data from the exercise
+Q_data <- c(0, 10, 20, 30, 40, 50, 60)
+VC_data <- c(0, 800, 1400, 1900, 2600, 3500, 4800)
+FC_val <- 2000
+TC_data <- FC_val + VC_data
+P <- 90
+TR_data <- P * Q_data
+Profit_data <- TR_data - TC_data
+
+# Smooth interpolation for the curves
+Q_smooth <- seq(0, 65, by = 0.5)
+# Fit a smooth VC: use spline through the data points
+vc_spline <- splinefun(Q_data, VC_data, method = "natural")
+VC_smooth <- vc_spline(Q_smooth)
+TC_smooth <- FC_val + VC_smooth
+TR_smooth <- P * Q_smooth
+Profit_smooth <- TR_smooth - TC_smooth
+
+# Find max profit
+max_pi_idx <- which.max(Profit_smooth)
+q_star <- Q_smooth[max_pi_idx]
+
+df_tr_tc <- data.frame(
+  Q = rep(Q_smooth, 2),
+  Value = c(TR_smooth, TC_smooth),
+  Curve = factor(rep(c("TR = 90 × Q", "TC = FC + VC"), each = length(Q_smooth)),
+                 levels = c("TR = 90 × Q", "TC = FC + VC"))
+)
+
+ggplot(df_tr_tc, aes(x = Q, y = Value, color = Curve, linetype = Curve)) +
+  geom_line(linewidth = 1.4) +
+  scale_color_manual(values = c("TR = 90 × Q" = ue_green,
+                                "TC = FC + VC" = ue_red)) +
+  scale_linetype_manual(values = c("TR = 90 × Q" = "solid",
+                                   "TC = FC + VC" = "solid")) +
+  # Profit-maximizing point
+  geom_segment(aes(x = q_star, y = FC_val + vc_spline(q_star),
+                   xend = q_star, yend = P * q_star),
+               color = ue_black, linewidth = 1.2, linetype = "solid",
+               inherit.aes = FALSE) +
+  annotate("text", x = q_star + 2, y = (P * q_star + FC_val + vc_spline(q_star)) / 2,
+           label = paste0("Max π = €", round(P * q_star - FC_val - vc_spline(q_star))),
+           fontface = "bold", size = 4, color = ue_black, hjust = 0) +
+  geom_vline(xintercept = q_star, linetype = "dotted", color = ue_gray) +
+  annotate("text", x = q_star, y = -200, label = paste0("Q* ≈ ", round(q_star)),
+           fontface = "bold", size = 4, color = ue_black) +
+  # Break-even points
+  coord_cartesian(ylim = c(0, 7000), xlim = c(0, 68)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0), labels = scales::comma) +
+  labs(x = "Output (Q) — students/month",
+       y = "€",
+       title = "TR vs TC: Surf School in Ericeira (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+```
+
+:point_right: **Profit** = vertical gap between TR and TC. Maximum profit is where this gap is **widest** — at around **Q* ≈ 48 students**.
+
+*This uses the surf school data from last lecture's exercise, with P = €90/student.*
+
+</div>
+
+## Approach 2: MR vs MC — The Per-Unit View :star:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**The Profit-Maximizing Rule**
+
+Produce the quantity where **Marginal Revenue = Marginal Cost**:
+
+$$MR = MC$$
+
+In **perfect competition**, since $P = MR$, this becomes:
+
+$$\boxed{P = MC}$$
+:::
+
+**Why does this work?** Think about it one unit at a time:
+
+- If $P > MC$ for the next unit → producing it **adds to profit** → produce more! :arrow_right:
+- If $P < MC$ for the next unit → producing it **reduces profit** → produce less! :arrow_left:
+- If $P = MC$ → you're at the **sweet spot** — no way to increase profit further :dart:
+
+:bulb: This is just **marginal analysis** from Lecture 3 applied to the firm!
+
+</div>
+
+## P = MC Graphically :triangular_ruler:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 11
+#| fig-height: 5.5
+#| fig-align: center
+
+# MC curve (smooth, U-shaped) and horizontal price line
+# Use a simple MC: MC = 0.05*Q^2 - 2*Q + 50 (for a nice shape)
+Q_mc <- seq(1, 65, by = 0.5)
+MC_mc <- 0.06 * Q_mc^2 - 2.8 * Q_mc + 60
+
+# Price at €60
+P_line <- 60
+
+# Find intersection: MC = P
+# 0.06*Q^2 - 2.8*Q + 60 = 60 => 0.06*Q^2 - 2.8*Q = 0 => Q(0.06Q - 2.8) = 0
+# Q = 0 or Q = 2.8/0.06 = 46.67
+# We want the rising portion: Q* ≈ 47
+
+q_star_mc <- 46.67
+
+# ATC for shading: ATC = TC/Q. We need TC.
+# TC = integral of MC + FC. Let FC = 500.
+# TC = 0.02*Q^3 - 1.4*Q^2 + 60*Q + 500
+FC_firm <- 500
+TC_mc <- 0.02 * Q_mc^3 - 1.4 * Q_mc^2 + 60 * Q_mc + FC_firm
+ATC_mc <- TC_mc / Q_mc
+AVC_mc <- (TC_mc - FC_firm) / Q_mc
+
+ggplot() +
+  # MC curve
+  geom_line(data = data.frame(Q = Q_mc, MC = MC_mc),
+            aes(x = Q, y = MC), color = ue_red, linewidth = 1.5) +
+  # ATC curve
+  geom_line(data = data.frame(Q = Q_mc, ATC = ATC_mc),
+            aes(x = Q, y = ATC), color = ue_black, linewidth = 1.2) +
+  # Price line
+  geom_hline(yintercept = P_line, color = ue_green, linewidth = 1.3, linetype = "solid") +
+  # Intersection point
+  geom_point(aes(x = q_star_mc, y = P_line), size = 4, color = ue_red) +
+  # Dashed line down
+  geom_segment(aes(x = q_star_mc, y = 0, xend = q_star_mc, yend = P_line),
+               linetype = "dashed", color = ue_gray) +
+  # Labels
+  annotate("text", x = 58, y = 85, label = "MC",
+           color = ue_red, fontface = "bold.italic", size = 5.5) +
+  annotate("text", x = 58, y = 52, label = "ATC",
+           color = ue_black, fontface = "bold.italic", size = 5.5) +
+  annotate("text", x = 15, y = P_line + 3, label = "P = MR",
+           color = ue_green, fontface = "bold", size = 4.5) +
+  annotate("text", x = q_star_mc + 2, y = P_line + 5,
+           label = "P = MC", fontface = "bold", size = 4.5, color = ue_red) +
+  annotate("text", x = q_star_mc, y = -2, label = "Q*",
+           fontface = "bold", size = 5, color = ue_black) +
+  # Arrow showing "produce more" region
+  annotate("text", x = 25, y = 42,
+           label = "P > MC\n→ produce more", color = ue_green,
+           fontface = "italic", size = 3.5, hjust = 0.5) +
+  annotate("text", x = 56, y = 75,
+           label = "P < MC\n→ produce less", color = ue_red,
+           fontface = "italic", size = 3.5, hjust = 0.5) +
+  coord_cartesian(ylim = c(0, 95), xlim = c(0, 62)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Output (Q)", y = "€ per unit",
+       title = "Profit Maximization: P = MC (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Reading Profit on the Graph :mag:
+
+<div style="font-size: 76%;">
+
+::: {.key-concept}
+**Profit as a Rectangle**
+
+At the profit-maximizing quantity $Q^*$:
+
+$$\pi = (P - ATC) \times Q^*$$
+
+This appears on the graph as a **rectangle** with height $(P - ATC)$ and width $Q^*$.
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+**Three possible outcomes**:
+
+- :chart_with_upwards_trend: $P > ATC$ → **Positive profit** (green rectangle)
+- :left_right_arrow: $P = ATC$ → **Zero economic profit** (breakeven)
+- :chart_with_downwards_trend: $P < ATC$ → **Loss** (red rectangle)
+:::
+
+::: {.column width="50%"}
+**Important nuance**: "Zero economic profit" is **not bad**!
+
+It means the firm covers **all** costs, including the owner's opportunity cost of time and capital.
+
+The firm earns a **normal return** — the same as its best alternative. No reason to leave!
+:::
+::::
+
+. . .
+
+:point_right: Next lecture we'll explore the loss case in detail: when should a firm **shut down** vs. **keep operating at a loss**?
+
+</div>
+
+## Profit, Zero Profit, and Loss: Three Scenarios :bar_chart:
+
+<div style="font-size: 68%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 14
+#| fig-height: 4.5
+#| fig-align: center
+
+# Three panels: positive profit, zero profit, loss
+Q_curve <- seq(1, 65, by = 0.5)
+MC_curve <- 0.06 * Q_curve^2 - 2.8 * Q_curve + 60
+FC_f <- 500
+TC_curve <- 0.02 * Q_curve^3 - 1.4 * Q_curve^2 + 60 * Q_curve + FC_f
+ATC_curve <- TC_curve / Q_curve
+
+# Find ATC minimum
+atc_min_idx <- which.min(ATC_curve)
+atc_min_q <- Q_curve[atc_min_idx]
+atc_min_val <- ATC_curve[atc_min_idx]
+
+# Panel 1: P = 60 > ATC_min => profit
+P1 <- 60
+q1 <- 46.67  # MC = P at Q = 2.8/0.06 = 46.67
+atc_at_q1 <- (0.02 * q1^3 - 1.4 * q1^2 + 60 * q1 + FC_f) / q1
+profit1 <- (P1 - atc_at_q1) * q1
+
+# Panel 2: P = ATC_min => zero profit
+P2 <- round(atc_min_val, 1)
+q2 <- atc_min_q
+
+# Panel 3: P = 35 < ATC_min => loss
+P3 <- 35
+# MC = 35: 0.06*Q^2 - 2.8*Q + 25 = 0 => Q = (2.8 + sqrt(1.84))/0.12 = 34.64
+q3 <- 34.64
+atc_at_q3 <- (0.02 * q3^3 - 1.4 * q3^2 + 60 * q3 + FC_f) / q3
+
+make_panel <- function(P_val, q_val, title_str, profit_label) {
+  atc_val <- (0.02 * q_val^3 - 1.4 * q_val^2 + 60 * q_val + FC_f) / q_val
+  pi_val <- (P_val - atc_val) * q_val
+  
+  rect_color <- if (pi_val > 1) "#27ae6040" else if (pi_val < -1) "#C8102E30" else "#6D6E7130"
+  border_color <- if (pi_val > 1) ue_green else if (pi_val < -1) ue_red else ue_gray
+  
+  p <- ggplot() +
+    geom_line(data = data.frame(Q = Q_curve, MC = MC_curve),
+              aes(x = Q, y = MC), color = ue_red, linewidth = 1.2) +
+    geom_line(data = data.frame(Q = Q_curve, ATC = ATC_curve),
+              aes(x = Q, y = ATC), color = ue_black, linewidth = 1) +
+    geom_hline(yintercept = P_val, color = ue_green, linewidth = 1.1) +
+    geom_point(aes(x = q_val, y = P_val), size = 3, color = ue_red)
+  
+  # Add profit rectangle if profit is not zero
+  if (abs(pi_val) > 5) {
+    p <- p +
+      annotate("rect",
+               xmin = 0, xmax = q_val,
+               ymin = min(P_val, atc_val), ymax = max(P_val, atc_val),
+               fill = rect_color, color = border_color, linewidth = 0.5)
+  }
+  
+  p <- p +
+    geom_segment(aes(x = q_val, y = 0, xend = q_val, yend = P_val),
+                 linetype = "dashed", color = ue_gray, linewidth = 0.4) +
+    annotate("text", x = 60, y = MC_curve[length(MC_curve)] - 5,
+             label = "MC", color = ue_red, fontface = "bold.italic", size = 4) +
+    annotate("text", x = 60, y = ATC_curve[length(ATC_curve)] - 3,
+             label = "ATC", color = ue_black, fontface = "bold.italic", size = 4) +
+    annotate("text", x = 60, y = P_val + 1.5, label = "P",
+             color = ue_green, fontface = "bold", size = 4) +
+    annotate("text", x = q_val / 2, y = (P_val + atc_val) / 2,
+             label = profit_label, fontface = "bold", size = 3.5,
+             color = border_color) +
+    coord_cartesian(ylim = c(0, 75), xlim = c(0, 55)) +
+    scale_x_continuous(expand = c(0, 0),
+                       breaks = c(q_val), labels = c("Q*")) +
+    scale_y_continuous(expand = c(0, 0)) +
+    labs(x = "Q", y = "€/unit", title = title_str) +
+    theme_minimal(base_size = 12) +
+    theme(
+      plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 12),
+      axis.title = element_text(face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+  return(p)
+}
+
+pa <- make_panel(P1, q1, "(a) Positive Profit: P > ATC",
+                 paste0("π = €", round((P1 - atc_at_q1) * q1)))
+pb <- make_panel(round(atc_min_val, 1), round(atc_min_q, 1),
+                 "(b) Zero Economic Profit: P = ATC",
+                 "π = €0")
+pc <- make_panel(P3, q3, "(c) Loss: P < ATC",
+                 paste0("π = −€", abs(round((P3 - atc_at_q3) * q3))))
+
+pa + pb + pc + plot_layout(ncol = 3)
+```
+
+In all three cases, the firm produces where **P = MC**. What changes is the **relationship between P and ATC** at that quantity.
+
+</div>
+
+# Worked Example: Tourism
+
+## Bottle Factory from the Textbook :bottle:
+
+<div style="font-size: 66%;">
+
+The sebenta's glass bottle factory has FC = €40/day and the following cost structure:
+
+| Q (bottles/day) | Total Revenue (€0.35/bottle) | Labor Cost (€) | TC (€) | Profit (€) | MC (per 100 bottles) |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 0 | 0 | 40 | −40 | — |
+| 100 | 35 | 10 | 50 | −15 | 0.10 |
+| 200 | 70 | 20 | 60 | 10 | 0.10 |
+| 300 | 105 | 40 | 80 | 25 | 0.20 |
+| **400** | **140** | **70** | **110** | **30** | **0.30** |
+| 500 | 175 | 110 | 150 | 25 | 0.40 |
+| 600 | 210 | 160 | 200 | 10 | 0.50 |
+| 700 | 245 | 220 | 260 | −15 | 0.60 |
+
+*Source: Course textbook (sebenta), Table 10*
+
+:point_right: Maximum profit (€30/day) at **Q = 400 bottles/day**. This is where MC is closest to the price (€0.35/bottle) on the rising portion of MC!
+
+</div>
+
+## What If the Price Changes? :chart_with_upwards_trend:
+
+<div style="font-size: 68%;">
+
+The textbook shows what happens when the bottle price **rises to €0.45/bottle**:
+
+| Q (bottles/day) | TR at €0.35 | TR at €0.45 | TC (€) | Profit at €0.35 | Profit at €0.45 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 0 | 0 | 40 | −40 | −40 |
+| 100 | 35 | 45 | 50 | −15 | −5 |
+| 200 | 70 | 90 | 60 | 10 | 30 |
+| 300 | 105 | 135 | 80 | 25 | 55 |
+| 400 | 140 | 180 | 110 | 30 | 70 |
+| **500** | **175** | **225** | **150** | **25** | **75** |
+| 600 | 210 | 270 | 200 | 10 | 70 |
+| 700 | 245 | 315 | 260 | −15 | 55 |
+
+*Source: Course textbook (sebenta), Tables 10 & 11*
+
+:bulb: **Key insight**: When price rises from €0.35 to €0.45, the firm **produces more** (400 → 500 bottles) and **earns more profit** (€30 → €75). The new optimum is where MC ≈ €0.40, closer to the new higher price.
+
+</div>
+
+## The General Lesson :bulb:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Higher Price → More Production → More Profit**
+
+When the market price rises, the $P = MC$ rule tells the firm to expand output along its MC curve. This is the seed of the **supply curve** (Lecture 13).
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+**What higher prices do**:
+
+- :arrow_up: Price rises
+- :point_right: New P = MC intersection at higher Q
+- :moneybag: Revenue rises (both price and quantity)
+- :chart_with_upwards_trend: Profit increases
+
+This is why supply curves slope **upward**!
+:::
+
+::: {.column width="50%"}
+**Tourism application**:
+
+When hotel room prices rise in Lisbon during peak season:
+
+- Hotels hire more staff, extend hours
+- They serve more guests (higher Q)
+- Profit per room rises
+- More production at higher cost → $P = MC$ at a new, higher quantity
+:::
+::::
+
+</div>
+
+## What About Changes in Fixed Costs? :lock:
+
+<div style="font-size: 76%;">
+
+The textbook shows an important result: when **fixed costs rise** (from €40 to €70/day), the **profit-maximizing quantity stays the same** (Q = 400).
+
+**Why?** Because $P = MC$ doesn't involve FC at all! MC only reflects changes in **variable costs**.
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.key-concept}
+**Fixed Costs Don't Affect the Optimal Quantity**
+
+FC shifts the total cost curve **up** (and ATC up), reducing profit, but the **optimal Q** stays where P = MC.
+:::
+:::
+
+::: {.column width="50%"}
+| | FC = €40 | FC = €70 |
+|---|:---:|:---:|
+| Optimal Q | 400 | 400 |
+| Profit | €30 | €0 |
+| MC at Q = 400 | €0.30 | €0.30 |
+
+*Same Q, but profit drops by exactly the FC increase (€30).*
+:::
+::::
+
+. . .
+
+:warning: FC **does** matter for the **stay or exit** decision — which we cover next lecture!
+
+</div>
+
+# Marginal Revenue in Detail
+
+## Why P = MR in Perfect Competition :balance_scale:
+
+<div style="font-size: 78%;">
+
+**Marginal Revenue** is the extra revenue from selling **one more unit**:
+
+$$MR = \frac{\Delta TR}{\Delta Q}$$
+
+In **perfect competition**, the firm sells every unit at the same market price $P$:
+
+$$TR = P \times Q \quad \Rightarrow \quad \text{If Q goes up by 1:} \quad \Delta TR = P$$
+
+So $MR = P$ for every unit. That's why the firm's demand curve ($d_i$) is also its MR curve — a **horizontal line** at $P$.
+
+. . .
+
+:warning: **This is specific to perfect competition!** A monopolist (single seller) must lower the price to sell more, so $MR < P$. We'll see this in later courses.
+
+For now: **Price taker** → $P = MR$ → profit-maximizing rule is simply $P = MC$.
+
+</div>
+
+## The Marginal Approach: Step by Step :footprints:
+
+<div style="font-size: 72%;">
+
+**Applying the P = MC rule to the bottle factory** (P = €0.35/bottle):
+
+| Going from... | ...to | Extra revenue (MR) | Extra cost (MC) | Profit change | Decision |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 → 100 | 100 | €0.35 | €0.10 | +€25 | :white_check_mark: Produce |
+| 100 → 200 | 200 | €0.35 | €0.10 | +€25 | :white_check_mark: Produce |
+| 200 → 300 | 300 | €0.35 | €0.20 | +€15 | :white_check_mark: Produce |
+| 300 → 400 | 400 | €0.35 | €0.30 | +€5 | :white_check_mark: Produce |
+| 400 → 500 | 500 | €0.35 | €0.40 | −€5 | :x: Stop! |
+
+:point_right: **Stop at Q = 400**: the last unit where MR ≥ MC. Going to 500 would cost more (€0.40) than it earns (€0.35).
+
+:bulb: This step-by-step reasoning confirms the table's answer: **Q* = 400 bottles/day**.
+
+</div>
+
+# Tourism Application
+
+## Hotel Revenue Management: A Profit Maximization Story :hotel:
+
+<div style="font-size: 76%;">
+
+**Why do hotels charge different prices at different times?**
+
+The $P = MC$ rule explains dynamic pricing:
+
+:::: {.columns}
+::: {.column width="50%"}
+:sunny: **Peak season** (summer, Lisbon festivals):
+
+- Market price $P$ is **high** (demand is high)
+- P = MC at a **higher Q** → hire more staff, open all rooms
+- Profit per room is **large**
+- Hotels **expand** services
+:::
+
+::: {.column width="50%"}
+:cloud: **Off-season** (January):
+
+- Market price $P$ is **low**
+- P = MC at a **lower Q** → reduce staff, close a wing
+- Profit per room is **small** (or even losses)
+- Hotels **scale back**
+:::
+::::
+
+. . .
+
+:point_right: The $P = MC$ rule doesn't just say "how much to produce" — it explains the **seasonal rhythm** of tourism businesses!
+
+</div>
+
+## Summary :memo:
+
+<div style="font-size: 74%;">
+
+**Today's Key Takeaways**:
+
+1. **Perfect competition**: many firms, identical product, price taker
+2. **Price taker**: the firm faces a horizontal demand curve at the market price → $P = MR$
+3. **Profit** = $TR - TC = (P - ATC) \times Q$
+4. **Two approaches**: maximize the gap between TR and TC (total curves), or set $MR = MC$ (per-unit curves)
+5. **The golden rule**: in perfect competition, produce where $P = MC$ (on the rising portion of MC)
+6. If $P > ATC$ → positive profit; $P = ATC$ → zero economic profit; $P < ATC$ → loss
+7. **Fixed costs don't affect the optimal Q** — only variable costs (through MC) matter for the production decision
+8. **Higher price → higher quantity → higher profit** — this is the seed of the supply curve
+
+**Connection**: Lecture 10 gave us the cost curves. Today we used them to find $Q^*$. Next lecture: what if the firm is making a **loss**? When should it shut down vs. continue?
+
+**Next (Lecture 12, March 26)**: Profits, Shutdown and Breakeven Price Levels. Supply.
+
+</div>
+
+## Exercises {.center}
+
+**Practice Time!** :pencil2:
+
+Profit maximization with the $P = MC$ rule.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: A small souvenir shop in Sintra operates in a competitive market. The market price for a standard Sintra tile replica is €8. The shop's marginal cost of producing the 50th tile per day is €6, and the marginal cost of the 51st tile is €8.50. How many tiles should the shop produce?
+
+A. 49 tiles
+
+B. 50 tiles
+
+C. 51 tiles
+
+D. Cannot be determined without knowing fixed costs
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+At Q = 50: MC = €6 < P = €8 → producing the 50th tile adds to profit :white_check_mark:
+
+At Q = 51: MC = €8.50 > P = €8 → producing the 51st tile reduces profit :x:
+
+So produce **50 tiles**. Note: **fixed costs are irrelevant** to this decision (option D is a trap!).
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: A perfectly competitive firm is producing at Q* where P = MC = €25. At this quantity, ATC = €20. What can we say about this firm?
+
+A. The firm is making a loss and should shut down
+
+B. The firm is earning zero economic profit
+
+C. The firm is earning a positive economic profit of €5 per unit
+
+D. The firm should increase output to reduce ATC further
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: C**
+:::
+
+Profit per unit = $P - ATC = €25 - €20 = €5$. Total profit = €5 × Q* > 0.
+
+The firm is making **positive economic profit**. It should NOT increase output (D is wrong) because $P = MC$ already — producing more would mean $MC > P$, reducing profit.
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 64%;">
+
+**A small boat tour operator in Lagos (Algarve)** offers coastal cave tours in a competitive market. The market price is **€35 per ticket**. The operator has the following cost structure:
+
+| Tours/day (Q) | FC (€) | VC (€) | TC (€) | MC (€/tour) |
+|:---:|:---:|:---:|:---:|:---:|
+| 0 | 200 | 0 | 200 | — |
+| 1 | 200 | 20 | 220 | 20 |
+| 2 | 200 | 35 | 235 | 15 |
+| 3 | 200 | 55 | 255 | 20 |
+| 4 | 200 | 80 | 280 | 25 |
+| 5 | 200 | 115 | 315 | 35 |
+| 6 | 200 | 165 | 365 | 50 |
+| 7 | 200 | 235 | 435 | 70 |
+
+*Hypothetical illustrative example*
+
+**a)** Calculate TR and profit at each output level. At what quantity is profit maximized?
+
+**b)** Verify that this quantity is consistent with the $P = MC$ rule.
+
+**c)** Calculate ATC at the profit-maximizing quantity. Is the firm earning positive, zero, or negative economic profit?
+
+**d)** Suppose the market price drops to €20. What is the new profit-maximizing quantity? What is profit at this quantity?
+
+**e)** If fixed costs rise from €200 to €300 (e.g., due to a higher boat lease), does the profit-maximizing quantity at P = €35 change? Explain.
+
+</div>
+
+## Exercise 3: Solution — Part a
+
+<div style="font-size: 62%;">
+
+**a)** TR = P × Q = €35 × Q
+
+| Q | TR (€) | TC (€) | Profit = TR − TC (€) |
+|:---:|:---:|:---:|:---:|
+| 0 | 0 | 200 | −200 |
+| 1 | 35 | 220 | −185 |
+| 2 | 70 | 235 | −165 |
+| 3 | 105 | 255 | −150 |
+| 4 | 140 | 280 | −140 |
+| 5 | **175** | **315** | **−140** |
+| 6 | 210 | 365 | −155 |
+| 7 | 245 | 435 | −190 |
+
+:point_right: Profit is maximized (least negative = smallest loss) at **Q = 4 or Q = 5** (both yield −€140).
+
+Looking more carefully: at Q = 5, MC = €35 = P exactly, so **Q* = 5** is the profit-maximizing quantity. At Q = 4, the 5th tour still adds €35 revenue at €35 cost — it's worth producing.
+
+:warning: Note: the firm is making a **loss** at every output level! But Q = 5 minimizes that loss. Whether to keep operating or shut down is the topic of the next lecture.
+
+</div>
+
+## Exercise 3: Solution — Parts b & c
+
+<div style="font-size: 72%;">
+
+**b)** Using the $P = MC$ rule:
+
+- At Q = 4: MC = €25 < P = €35 → produce the 4th tour :white_check_mark:
+- At Q = 5: MC = €35 = P = €35 → produce the 5th tour :white_check_mark: (MR = MC exactly)
+- At Q = 6: MC = €50 > P = €35 → don't produce the 6th tour :x:
+
+So the rule gives **Q* = 5**, consistent with the table! :white_check_mark:
+
+**c)** At Q* = 5:
+
+$$ATC = \frac{TC}{Q} = \frac{€315}{5} = €63 \text{ per tour}$$
+
+Since $P = €35 < ATC = €63$, the firm is earning **negative economic profit** (a loss):
+
+$$\pi = (P - ATC) \times Q = (35 - 63) \times 5 = -€28 \times 5 = -€140$$
+
+The firm is losing €140/day. :chart_with_downwards_trend:
+
+</div>
+
+## Exercise 3: Solution — Parts d & e
+
+<div style="font-size: 72%;">
+
+**d)** At P = €20:
+
+- Q = 1: MC = €20 = P → this is where P = MC on the rising portion
+- Q = 2: MC = €15 < P → but this is the falling portion of MC (careful!)
+- Q = 3: MC = €20 = P → this is on the rising portion :white_check_mark:
+
+The profit-maximizing quantity is **Q* = 3** (where P = MC on the **rising** portion of MC).
+
+Profit at Q = 3: $TR = 20 \times 3 = €60$, $TC = €255$, $\pi = 60 - 255 = -€195$.
+
+The loss worsened from −€140 to −€195. The lower price hurts!
+
+**e)** If FC rises from €200 to €300:
+
+**No, the profit-maximizing quantity does not change!** FC does not appear in the MC calculation. MC stays the same at every quantity, so $P = MC$ still gives **Q* = 5** at P = €35.
+
+However, profit falls by exactly €100 (the FC increase): $\pi = -€140 - €100 = -€240$.
+
+:point_right: Fixed costs affect **how much** profit you earn, but not **how many** units to produce.
+
+</div>
+
+## Next Lecture {.center}
+
+**March 26, 2026**: Profits, Shutdown and Breakeven Price Levels. Supply. :chart_with_upwards_trend:
+
+If the firm is making a **loss**, when should it keep operating and when should it **shut down**?
+
+. . .
+
+:bulb: **Hint**: The answer involves comparing $P$ to **AVC**, not ATC!
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Thursday, March 26, 2026*
+
+::: {.notes}
+This lecture establishes the central result of producer theory: firms maximize profit where P = MC. The key pedagogical goals are (1) understanding why P = MC works (marginal thinking), (2) reading profit as a rectangle on the graph, and (3) the irrelevance of FC for the production decision. The worked example from the textbook's bottle factory grounds the theory in familiar material. Next lecture builds on the loss scenario to introduce shutdown and breakeven conditions, and connect MC to the supply curve.
+:::

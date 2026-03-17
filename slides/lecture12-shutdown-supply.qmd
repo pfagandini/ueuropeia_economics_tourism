@@ -1,0 +1,861 @@
+---
+title: "Producer Theory"
+subtitle: "Lecture 12: Profits, Shutdown & Breakeven. The Supply Curve."
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 12"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(patchwork)
+
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_blue <- "#2E86AB"
+ue_green <- "#27ae60"
+
+# --- Shared cost curves used throughout this lecture ---
+# MC = 0.06*Q^2 - 2.8*Q + 60  (same as Lecture 11)
+# TC = 0.02*Q^3 - 1.4*Q^2 + 60*Q + 500  (FC = 500)
+# AVC = 0.02*Q^2 - 1.4*Q + 60
+# ATC = 0.02*Q^2 - 1.4*Q + 60 + 500/Q
+# AVC min at Q = 35, AVC_min = 35.50  (shutdown price)
+# ATC min at Q ≈ 42, ATC_min ≈ 48.38  (breakeven price)
+
+FC_val <- 500
+Q_curve <- seq(1, 60, by = 0.5)
+MC_curve <- 0.06 * Q_curve^2 - 2.8 * Q_curve + 60
+AVC_curve <- 0.02 * Q_curve^2 - 1.4 * Q_curve + 60
+ATC_curve <- 0.02 * Q_curve^2 - 1.4 * Q_curve + 60 + FC_val / Q_curve
+
+avc_min_q <- 35
+avc_min_val <- 35.5
+atc_min_q <- 42.06
+atc_min_val <- 48.38
+```
+
+## Recap: Lecture 11 :rewind:
+
+<div style="font-size: 80%;">
+
+**What we covered last time**:
+
+- **Perfect competition**: many firms, identical product, **price taker**
+- **Profit**: $\pi = TR - TC = (P - ATC) \times Q$
+- **The golden rule**: produce where $P = MC$ (on the rising portion)
+- If $P > ATC$ → profit; if $P = ATC$ → breakeven; if $P < ATC$ → loss
+
+. . .
+
+:dart: **Today**: We left a big question unanswered — if a firm is making a **loss**, should it keep producing or **shut down**?
+
+And once we answer that, we'll see how MC becomes the **supply curve**!
+
+</div>
+
+# The Shutdown Decision
+
+## A Loss-Making Firm's Dilemma :thinking:
+
+<div style="font-size: 78%;">
+
+**Situation**: A hotel in the Algarve during winter. The market price is low, and the hotel is losing money ($P < ATC$).
+
+Two options:
+
+:::: {.columns}
+::: {.column width="50%"}
+:factory: **Keep operating**
+
+- Earns revenue: $TR = P \times Q$
+- Pays **all** costs: $FC + VC$
+- Loss = $TC - TR$
+:::
+
+::: {.column width="50%"}
+:no_entry_sign: **Shut down** (produce Q = 0)
+
+- Earns **no revenue**: $TR = 0$
+- Still pays **fixed costs**: $FC$ (lease, insurance, mortgage)
+- Loss = $FC$
+:::
+::::
+
+. . .
+
+::: {.key-concept}
+**The Key Question**
+
+When $P < ATC$, which loss is **smaller**? The loss from operating, or the loss from shutting down (= FC)?
+:::
+
+</div>
+
+## The Logic: Compare the Two Losses :balance_scale:
+
+<div style="font-size: 76%;">
+
+**Loss if operating** at $Q^*$ (where $P = MC$):
+
+$$\text{Loss}_{\text{operate}} = TC - TR = (FC + VC) - TR$$
+
+**Loss if shut down** ($Q = 0$):
+
+$$\text{Loss}_{\text{shutdown}} = FC$$
+
+**Operate if the operating loss is smaller than the shutdown loss**:
+
+$$(FC + VC) - TR < FC$$
+
+$$VC - TR < 0$$
+
+$$TR > VC$$
+
+Dividing both sides by $Q$:
+
+$$\boxed{P > AVC} \quad \Rightarrow \quad \text{Keep operating!}$$
+
+:bulb: If revenue covers **at least** the variable costs, operating is **less bad** than shutting down. The revenue above VC contributes something toward fixed costs.
+
+</div>
+
+## The Shutdown Rule :stop_sign:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Shutdown Rule (Short Run)**
+
+- If $P > AVC$ → **Operate** (even at a loss). Revenue covers VC and helps pay part of FC.
+- If $P = AVC$ → **Indifferent**. Loss is the same whether you operate or shut down (both = FC).
+- If $P < AVC$ → **Shut down**. Operating makes the loss **worse** than just paying FC.
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+**Tourism example** :hotel::
+
+A hotel's FC = €10,000/month (lease). During winter, it charges €40/night with AVC = €35/night.
+
+Since $P = €40 > AVC = €35$: **stay open!**
+
+Each guest contributes €5 toward fixed costs. Better than losing the full €10,000.
+:::
+
+::: {.column width="50%"}
+**But if** price drops to €30/night and AVC is still €35:
+
+$P = €30 < AVC = €35$: **shut down!**
+
+Every guest **costs more** to serve than the hotel earns. Operating makes losses *worse*.
+:::
+::::
+
+</div>
+
+## A Numerical Example: Boat Tours in Lagos :sailboat:
+
+<div style="font-size: 66%;">
+
+Recall the boat tour operator from last lecture's exercise: FC = €200/day, P = €35/ticket.
+
+| Q | FC | VC | TC | AVC = VC/Q | TR (P=35) | Profit | TR − VC |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 200 | 0 | 200 | — | 0 | −200 | 0 |
+| 1 | 200 | 20 | 220 | 20.00 | 35 | −185 | 15 |
+| 2 | 200 | 35 | 235 | 17.50 | 70 | −165 | 35 |
+| 3 | 200 | 55 | 255 | 18.33 | 105 | −150 | 50 |
+| 4 | 200 | 80 | 280 | 20.00 | 140 | −140 | 60 |
+| **5** | **200** | **115** | **315** | **23.00** | **175** | **−140** | **60** |
+| 6 | 200 | 165 | 365 | 27.50 | 210 | −155 | 45 |
+
+*Hypothetical illustrative example*
+
+:point_right: At Q* = 5: The firm **loses €140/day**. But if it shuts down, it loses **€200/day** (= FC).
+
+Since $P = €35 > AVC = €23$, operating **saves €60** compared to shutting down!
+
+That €60 = $TR - VC = 175 - 115$ is the **contribution toward fixed costs**.
+
+</div>
+
+# Two Critical Price Levels
+
+## The Breakeven Price :left_right_arrow:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Breakeven Price = Minimum ATC**
+
+The price at which the firm earns **zero economic profit**. Revenue exactly covers all costs (fixed and variable).
+
+$$P_{\text{breakeven}} = ATC_{\min}$$
+:::
+
+- At $P > ATC_{\min}$: the firm earns **positive profit** :chart_with_upwards_trend:
+- At $P = ATC_{\min}$: **zero economic profit** — but the firm is still happy! It covers all costs including opportunity costs
+- At $P < ATC_{\min}$: the firm operates at a **loss** (but may still choose to operate — see shutdown rule)
+
+. . .
+
+:bulb: Remember: "zero economic profit" ≠ "zero accounting profit." The firm's owners earn a **normal return** — exactly what they could earn elsewhere. There's no incentive to leave.
+
+</div>
+
+## The Shutdown Price :stop_sign:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Shutdown Price = Minimum AVC**
+
+The price **below which** the firm should produce nothing in the short run.
+
+$$P_{\text{shutdown}} = AVC_{\min}$$
+:::
+
+- At $P > AVC_{\min}$: **operate** — revenue covers variable costs and contributes to FC
+- At $P = AVC_{\min}$: **indifferent** — loss equals FC whether you operate or not
+- At $P < AVC_{\min}$: **shut down** — every unit produced makes losses worse
+
+. . .
+
+**The zone between shutdown and breakeven** ($AVC_{\min} < P < ATC_{\min}$) is where the firm operates **at a loss** but is better off producing than closing. This is a very real situation in tourism!
+
+</div>
+
+## The Five Price Zones: The Complete Picture :bar_chart:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 5.5
+#| fig-align: center
+
+ggplot() +
+  # Shaded zones
+  annotate("rect", xmin = 0, xmax = 62, ymin = atc_min_val, ymax = 72,
+           fill = "#27ae6020") +
+  annotate("rect", xmin = 0, xmax = 62, ymin = avc_min_val, ymax = atc_min_val,
+           fill = "#FFA50020") +
+  annotate("rect", xmin = 0, xmax = 62, ymin = 25, ymax = avc_min_val,
+           fill = "#C8102E15") +
+  # Cost curves
+  geom_line(data = data.frame(Q = Q_curve, y = MC_curve),
+            aes(x = Q, y = y), color = ue_red, linewidth = 1.5) +
+  geom_line(data = data.frame(Q = Q_curve, y = ATC_curve),
+            aes(x = Q, y = y), color = ue_black, linewidth = 1.2) +
+  geom_line(data = data.frame(Q = Q_curve, y = AVC_curve),
+            aes(x = Q, y = y), color = ue_blue, linewidth = 1.2) +
+  # Horizontal reference lines
+  geom_hline(yintercept = atc_min_val, linetype = "dashed", color = ue_black, linewidth = 0.5) +
+  geom_hline(yintercept = avc_min_val, linetype = "dashed", color = ue_blue, linewidth = 0.5) +
+  # Points at minimums
+  geom_point(aes(x = atc_min_q, y = atc_min_val), size = 3.5, color = ue_black) +
+  geom_point(aes(x = avc_min_q, y = avc_min_val), size = 3.5, color = ue_blue) +
+  # Curve labels
+  annotate("text", x = 58, y = 72, label = "MC", color = ue_red,
+           fontface = "bold.italic", size = 5) +
+  annotate("text", x = 58, y = 52, label = "ATC", color = ue_black,
+           fontface = "bold.italic", size = 5) +
+  annotate("text", x = 58, y = 42, label = "AVC", color = ue_blue,
+           fontface = "bold.italic", size = 5) +
+  # Zone labels
+  annotate("text", x = 8, y = 63, label = "Positive profit zone",
+           color = ue_green, fontface = "bold", size = 4, hjust = 0) +
+  annotate("text", x = 8, y = (atc_min_val + avc_min_val) / 2,
+           label = "Loss zone — but keep operating!",
+           color = "#CC8400", fontface = "bold", size = 4, hjust = 0) +
+  annotate("text", x = 8, y = 29,
+           label = "Shut down zone",
+           color = ue_red, fontface = "bold", size = 4, hjust = 0) +
+  # Price level labels on y-axis
+  annotate("text", x = 1, y = atc_min_val + 1.2,
+           label = paste0("Breakeven = €", round(atc_min_val, 1)),
+           color = ue_black, fontface = "italic", size = 3.2, hjust = 0) +
+  annotate("text", x = 1, y = avc_min_val - 1.2,
+           label = paste0("Shutdown = €", avc_min_val),
+           color = ue_blue, fontface = "italic", size = 3.2, hjust = 0) +
+  coord_cartesian(ylim = c(25, 75), xlim = c(0, 62)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Output (Q)", y = "€ per unit",
+       title = "The Five Price Zones (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Why Does the Shutdown Rule Use AVC, Not ATC? :bulb:
+
+<div style="font-size: 78%;">
+
+This is **the most common confusion** students have. Let's be very clear:
+
+:::: {.columns}
+::: {.column width="50%"}
+**ATC includes fixed costs.**
+
+If P < ATC, the firm **loses money** — but it might still be better off operating.
+
+Why? Because FC must be paid **regardless**.
+
+ATC answers: "Am I profitable?"
+:::
+
+::: {.column width="50%"}
+**AVC excludes fixed costs.**
+
+If P < AVC, every unit sold costs **more to produce** than it earns in revenue.
+
+Operating doesn't just fail to cover FC — it **adds** to losses.
+
+AVC answers: "Does producing make things **worse**?"
+:::
+::::
+
+. . .
+
+::: {.key-concept}
+**The Rule of Thumb**
+
+- Compare $P$ to **ATC** to know if you're making a **profit or loss**
+- Compare $P$ to **AVC** to know if you should **operate or shut down**
+:::
+
+</div>
+
+## The Hotel Off-Season: A Real-World Application :hotel:
+
+<div style="font-size: 76%;">
+
+**Why do Algarve hotels stay open in winter at very low occupancy?**
+
+:::: {.columns}
+::: {.column width="50%"}
+**The math**:
+
+- FC (lease, mortgage, insurance): €30,000/month
+- AVC per guest-night: €25
+- Winter price: €35/night
+- Occupancy: 30%
+
+Since $P = €35 > AVC = €25$: **stay open!**
+
+Each guest contributes €10 toward FC.
+
+Even at 30% occupancy, they recover **some** FC rather than none.
+:::
+
+::: {.column width="50%"}
+**But what if they close for winter?**
+
+- Loss = FC = €30,000/month
+- No revenue, no variable costs
+
+**Operating at a loss** (say −€20,000/month) is **better** than shutting down (−€30,000/month).
+
+:point_right: This explains why you see hotels with near-empty lobbies in January — they're still **better off** open than closed!
+:::
+::::
+
+. . .
+
+:warning: But if winter prices drop to €20/night ($P < AVC = €25$): now it's cheaper to **close** temporarily.
+
+</div>
+
+# From MC to the Supply Curve
+
+## The Birth of the Supply Curve :star2:
+
+<div style="font-size: 76%;">
+
+We now have everything we need to derive the **firm's short-run supply curve**:
+
+::: {.key-concept}
+**The Individual Firm's Supply Curve**
+
+The supply curve of a perfectly competitive firm is the portion of its **MC curve that lies above AVC**.
+
+- For $P \geq AVC_{\min}$: the firm produces $Q^*$ where $P = MC$
+- For $P < AVC_{\min}$: the firm shuts down → $Q = 0$
+:::
+
+**Intuition**: As the market price rises, the firm moves **up along its MC curve**, producing more. This is exactly what a supply curve shows — higher price → higher quantity supplied!
+
+:point_right: The **supply curve starts at the shutdown point** (minimum AVC) and follows MC upward.
+
+</div>
+
+## The Supply Curve Graphically :chart_with_upwards_trend:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 5.5
+#| fig-align: center
+
+# The supply curve = MC above AVC
+# Below AVC_min (Q < 35, P < 35.5): Q = 0
+# Above AVC_min: follow MC
+
+# Split MC into supply (above AVC) and non-supply (below AVC)
+df_mc_all <- data.frame(Q = Q_curve, MC = MC_curve, AVC = AVC_curve) %>%
+  mutate(is_supply = MC >= AVC & Q >= avc_min_q)
+
+# Non-supply portion of MC (faded)
+df_mc_faded <- df_mc_all %>% filter(!is_supply)
+# Supply portion (bold red)
+df_mc_supply <- df_mc_all %>% filter(is_supply)
+
+ggplot() +
+  # AVC and ATC curves (lighter)
+  geom_line(data = data.frame(Q = Q_curve, y = ATC_curve),
+            aes(x = Q, y = y), color = ue_gray, linewidth = 0.8, linetype = "dashed") +
+  geom_line(data = data.frame(Q = Q_curve, y = AVC_curve),
+            aes(x = Q, y = y), color = ue_blue, linewidth = 0.9, linetype = "dashed") +
+  # MC below AVC (faded, not part of supply)
+  geom_line(data = df_mc_faded, aes(x = Q, y = MC),
+            color = ue_gray, linewidth = 1, linetype = "dotted") +
+  # MC above AVC = SUPPLY CURVE (bold red)
+  geom_line(data = df_mc_supply, aes(x = Q, y = MC),
+            color = ue_red, linewidth = 2.5) +
+  # Shutdown point
+  geom_point(aes(x = avc_min_q, y = avc_min_val), size = 5, color = ue_red,
+             shape = 16) +
+  # Shutdown segment on y-axis (Q = 0 for P < AVC_min)
+  geom_segment(aes(x = 0, y = 25, xend = 0, yend = avc_min_val),
+               color = ue_red, linewidth = 2.5) +
+  # Labels
+  annotate("text", x = 56, y = 72, label = "S = MC",
+           color = ue_red, fontface = "bold.italic", size = 6) +
+  annotate("text", x = 56, y = 52, label = "ATC",
+           color = ue_gray, fontface = "italic", size = 4.5) +
+  annotate("text", x = 56, y = 42, label = "AVC",
+           color = ue_blue, fontface = "italic", size = 4.5) +
+  # Annotation for shutdown point
+  annotate("text", x = avc_min_q + 1.5, y = avc_min_val - 2.5,
+           label = paste0("Shutdown point\n(AVC min = €", avc_min_val, ")"),
+           color = ue_red, fontface = "bold", size = 3.5, hjust = 0) +
+  # Annotation for breakeven
+  annotate("text", x = atc_min_q + 1.5, y = atc_min_val + 2,
+           label = paste0("Breakeven\n(ATC min ≈ €", round(atc_min_val, 1), ")"),
+           color = ue_black, fontface = "bold", size = 3.5, hjust = 0) +
+  geom_point(aes(x = atc_min_q, y = atc_min_val), size = 3.5, color = ue_black) +
+  # Dotted "not supply" label
+  annotate("text", x = 20, y = 47, label = "Not part of\nsupply curve",
+           color = ue_gray, fontface = "italic", size = 3.5) +
+  coord_cartesian(ylim = c(25, 80), xlim = c(0, 62)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Output (Q)", y = "Price / Cost (€)",
+       title = "The Firm's Short-Run Supply Curve (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Reading the Supply Curve: Three Price Scenarios :mag:
+
+<div style="font-size: 68%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 14
+#| fig-height: 4.5
+#| fig-align: center
+
+make_supply_panel <- function(P_val, title_str, zone_label, zone_color) {
+  # Find Q* where MC = P on rising portion
+  # MC = 0.06*Q^2 - 2.8*Q + 60 = P
+  a <- 0.06; b <- -2.8; c <- 60 - P_val
+  disc <- b^2 - 4*a*c
+  if (disc >= 0 && P_val >= avc_min_val) {
+    q_star <- (-b + sqrt(disc)) / (2*a)
+    atc_star <- 0.02*q_star^2 - 1.4*q_star + 60 + FC_val/q_star
+    avc_star <- 0.02*q_star^2 - 1.4*q_star + 60
+    
+    profit_rect_min <- min(P_val, atc_star)
+    profit_rect_max <- max(P_val, atc_star)
+    rect_fill <- if (P_val > atc_star) "#27ae6025" else "#FFA50025"
+    rect_border <- if (P_val > atc_star) ue_green else "#CC8400"
+  } else {
+    q_star <- 0
+    atc_star <- NA
+    avc_star <- NA
+    rect_fill <- NA
+    rect_border <- NA
+  }
+  
+  p <- ggplot() +
+    geom_line(data = data.frame(Q = Q_curve, y = ATC_curve),
+              aes(x = Q, y = y), color = ue_gray, linewidth = 0.7, linetype = "dashed") +
+    geom_line(data = data.frame(Q = Q_curve, y = AVC_curve),
+              aes(x = Q, y = y), color = ue_blue, linewidth = 0.7, linetype = "dashed") +
+    geom_line(data = data.frame(Q = Q_curve, y = MC_curve),
+              aes(x = Q, y = y), color = ue_red, linewidth = 1.2) +
+    geom_hline(yintercept = P_val, color = ue_green, linewidth = 1.1)
+  
+  if (q_star > 0 && !is.na(atc_star)) {
+    if (abs(P_val - atc_star) > 0.5) {
+      p <- p + annotate("rect", xmin = 0, xmax = q_star,
+                         ymin = profit_rect_min, ymax = profit_rect_max,
+                         fill = rect_fill, color = rect_border, linewidth = 0.5)
+    }
+    p <- p +
+      geom_point(aes(x = q_star, y = P_val), size = 3, color = ue_red) +
+      geom_segment(aes(x = q_star, y = 25, xend = q_star, yend = P_val),
+                   linetype = "dashed", color = ue_gray, linewidth = 0.3)
+  }
+  
+  # Labels
+  p <- p +
+    annotate("text", x = 55, y = 72, label = "MC", color = ue_red,
+             fontface = "bold.italic", size = 3.5) +
+    annotate("text", x = 55, y = 52, label = "ATC", color = ue_gray,
+             fontface = "italic", size = 3) +
+    annotate("text", x = 55, y = 42, label = "AVC", color = ue_blue,
+             fontface = "italic", size = 3) +
+    annotate("text", x = 55, y = P_val + 1.5, label = "P",
+             color = ue_green, fontface = "bold", size = 3.5) +
+    annotate("text", x = 30, y = 27, label = zone_label,
+             color = zone_color, fontface = "bold", size = 3.5) +
+    coord_cartesian(ylim = c(25, 80), xlim = c(0, 60)) +
+    scale_x_continuous(expand = c(0, 0),
+                       breaks = if(q_star > 0) c(q_star) else NULL,
+                       labels = if(q_star > 0) c(paste0("Q*=", round(q_star))) else NULL) +
+    scale_y_continuous(expand = c(0, 0)) +
+    labs(x = "Q", y = "€/unit", title = title_str) +
+    theme_minimal(base_size = 11) +
+    theme(
+      plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 11),
+      axis.title = element_text(face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+  return(p)
+}
+
+pa <- make_supply_panel(60, "(a) P = €60 > ATC min → Profit", "Profit", ue_green)
+pb <- make_supply_panel(40, "(b) AVC min < P = €40 < ATC min → Loss, operate",
+                        "Loss, but operate!", "#CC8400")
+pc <- make_supply_panel(30, "(c) P = €30 < AVC min → Shut down",
+                        "Shut down! Q = 0", ue_red)
+
+pa + pb + pc + plot_layout(ncol = 3)
+```
+
+**(a)** $P > ATC$: Produce, earn profit (green area). **(b)** $AVC < P < ATC$: Produce at a loss (orange area), but operating is better than shutdown. **(c)** $P < AVC$: Shut down, produce nothing.
+
+</div>
+
+## The Firm's Decision Flowchart :clipboard:
+
+<div style="font-size: 76%;">
+
+::: {.key-concept}
+**Complete Decision Rules for a Firm in Perfect Competition**
+
+**Step 1**: Find $Q^*$ where $P = MC$ (rising portion)
+
+**Step 2**: Compare $P$ to $AVC$ at $Q^*$:
+
+- If $P < AVC$ → **shut down** ($Q = 0$)
+- If $P \geq AVC$ → **operate at $Q^*$**
+
+**Step 3**: Compare $P$ to $ATC$ at $Q^*$:
+
+- If $P > ATC$ → **positive economic profit** :chart_with_upwards_trend:
+- If $P = ATC$ → **zero economic profit (breakeven)** :left_right_arrow:
+- If $AVC \leq P < ATC$ → **operating at a loss**, but it's the best option :warning:
+:::
+
+:bulb: Steps 2 and 3 answer **different questions**: Step 2 = "should I produce?", Step 3 = "am I profitable?"
+
+</div>
+
+# Tourism Application
+
+## Seasonal Tourism and the Shutdown Rule :sunny: :cloud:
+
+<div style="font-size: 74%;">
+
+The shutdown rule explains a **major pattern** in tourism businesses:
+
+:::: {.columns}
+::: {.column width="50%"}
+:sunny: **Peak season (June–September)**
+
+- High demand → high market price
+- $P > ATC$ → **positive profits**
+- Hotels fully staffed, all facilities open
+- New temporary businesses open (beach bars, tour operators)
+
+*This is the profit zone!*
+:::
+
+::: {.column width="50%"}
+:cloud: **Off-season (November–February)**
+
+- Low demand → low market price
+- Three possibilities:
+  - $P > ATC$: still profitable (rare in deep off-season)
+  - $AVC < P < ATC$: **loss but keep operating** (common!)
+  - $P < AVC$: **shut down temporarily** (some businesses do this!)
+:::
+::::
+
+. . .
+
+:point_right: This is why some Algarve restaurants **close entirely** from November to March (P < AVC), while hotels **stay open at reduced capacity** (AVC < P < ATC). Different cost structures, different shutdown prices!
+
+</div>
+
+## Airlines: Load Factor and the Shutdown Logic :airplane:
+
+<div style="font-size: 78%;">
+
+Airlines face a similar decision for individual routes:
+
+**Should we keep flying the Lisbon–Faro route in January?**
+
+- :lock: **Fixed costs per flight**: aircraft lease, crew salaries, airport fees → very high
+- :arrows_counterclockwise: **Variable costs per passenger**: meals, baggage, marginal fuel → quite low
+
+Because AVC per passenger is **very low**, the shutdown price is low. Airlines will operate flights even at very low load factors because **almost any ticket price > AVC**.
+
+. . .
+
+**This explains**:
+
+- :chart_with_downwards_trend: Extremely cheap last-minute fares — as long as $P > AVC$ (a few euros!), it's worth filling the seat
+- :no_entry_sign: Route cancellations only when demand is **so low** that even rock-bottom fares can't cover variable costs
+- :arrows_counterclockwise: Seasonal route adjustments — winter routes to ski destinations replace summer beach routes
+
+</div>
+
+## Summary :memo:
+
+<div style="font-size: 72%;">
+
+**Today's Key Takeaways**:
+
+1. **Shutdown rule**: In the short run, operate if $P \geq AVC$; shut down if $P < AVC$
+2. **Breakeven price** = $ATC_{\min}$ — the price needed for zero economic profit
+3. **Shutdown price** = $AVC_{\min}$ — the price below which the firm should produce nothing
+4. **Between shutdown and breakeven** ($AVC_{\min} \leq P < ATC_{\min}$): the firm operates at a loss, but this loss is **smaller** than the loss from shutting down (which = FC)
+5. **The firm's supply curve** = MC above AVC (the rising portion of MC, starting at the shutdown point)
+6. **For $P < AVC_{\min}$**: $Q = 0$ (vertical segment along the y-axis)
+7. **Tourism application**: explains seasonal openings/closings, low-season pricing, and last-minute deals
+
+**Connection**: Today we derived the **individual firm's supply curve**. Next lecture: the **seller's supply rule** ($P = MC$) in more depth, and we start looking at **market supply** and **producer surplus**.
+
+**Next (Lecture 13, March 27)**: The Seller's Supply Rule: P = MC. :chart_with_upwards_trend:
+
+</div>
+
+## Exercises {.center}
+
+**Practice Time!** :pencil2:
+
+Shutdown decisions, breakeven, and the supply curve.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: A small *pastelaria* (pastry shop) near Belém Tower has fixed costs of €3,000/month and is currently losing €1,000/month. The owner considers closing for the winter. Should she?
+
+A. Yes — she is making a loss, so she should close immediately
+
+B. No — as long as her revenue exceeds her variable costs, she should stay open
+
+C. Yes — she should close and reopen when she can make a profit
+
+D. It depends on whether she likes making pastéis de nata
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+Her loss is €1,000/month. If she shuts down, her loss would be €3,000/month (= FC). Since −€1,000 > −€3,000, operating is **less bad**. This means her revenue must exceed her variable costs. The correct criterion is $P > AVC$, not $P > ATC$.
+
+Option A confuses breakeven (ATC) with shutdown (AVC). Option C gives up revenue that partially covers FC.
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: A competitive firm has AVC min = €20 and ATC min = €35. If the market price is €25, the firm should:
+
+A. Shut down because P < ATC
+
+B. Produce where P = MC and earn positive profit
+
+C. Produce where P = MC but operate at a loss
+
+D. Produce where P = AVC
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: C**
+:::
+
+$P = €25 > AVC_{\min} = €20$ → the firm should **operate** (not shut down, so A is wrong).
+
+$P = €25 < ATC_{\min} = €35$ → the firm is making a **loss** (so B is wrong).
+
+The firm produces at $Q^*$ where $P = MC = €25$, operating at a loss but minimizing that loss. The loss from operating is smaller than the loss from shutting down.
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 62%;">
+
+**A kayak rental business on the Douro River** in Porto has the following monthly cost structure:
+
+| Kayaks rented/month (Q) | FC (€) | VC (€) | TC (€) |
+|:---:|:---:|:---:|:---:|
+| 0 | 1,500 | 0 | 1,500 |
+| 50 | 1,500 | 1,000 | 2,500 |
+| 100 | 1,500 | 1,800 | 3,300 |
+| 150 | 1,500 | 2,400 | 3,900 |
+| 200 | 1,500 | 3,200 | 4,700 |
+| 250 | 1,500 | 4,500 | 6,000 |
+| 300 | 1,500 | 6,600 | 8,100 |
+
+*Hypothetical illustrative example*
+
+**a)** Calculate AVC, ATC, and MC for each output level.
+
+**b)** What is the shutdown price? What is the breakeven price?
+
+**c)** If the market price is €22/kayak, should the firm operate? What is the profit-maximizing output? Calculate the profit (or loss).
+
+**d)** If the market price drops to €14/kayak, should the firm operate? Explain and calculate the loss under each scenario (operate vs. shut down).
+
+**e)** In the **long run**, if firms in this market are making losses, what would you expect to happen? How does this relate to the long-run breakeven condition?
+
+</div>
+
+## Exercise 3: Solution — Part a
+
+<div style="font-size: 58%;">
+
+| Q | FC | VC | TC | AVC = VC/Q | ATC = TC/Q | MC = ΔTC/ΔQ |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 1,500 | 0 | 1,500 | — | — | — |
+| 50 | 1,500 | 1,000 | 2,500 | 20.00 | 50.00 | 20.00 |
+| 100 | 1,500 | 1,800 | 3,300 | 18.00 | 33.00 | 16.00 |
+| 150 | 1,500 | 2,400 | 3,900 | 16.00 | 26.00 | 12.00 |
+| 200 | 1,500 | 3,200 | 4,700 | 16.00 | 23.50 | 16.00 |
+| 250 | 1,500 | 4,500 | 6,000 | 18.00 | 24.00 | 26.00 |
+| 300 | 1,500 | 6,600 | 8,100 | 22.00 | 27.00 | 42.00 |
+
+**MC calculation example**: From Q = 100 to Q = 150: $MC = \frac{3{,}900 - 3{,}300}{150 - 100} = \frac{600}{50} = €12$ per kayak.
+
+**Key observations**: AVC is minimized at **Q = 150–200** (AVC = €16). ATC is minimized at **Q = 200** (ATC = €23.50). MC follows the U-shape: falls to €12, then rises.
+
+</div>
+
+## Exercise 3: Solution — Parts b & c
+
+<div style="font-size: 68%;">
+
+**b)** Shutdown and breakeven prices:
+
+- **Shutdown price** = $AVC_{\min} = €16$ (at Q = 150–200)
+- **Breakeven price** = $ATC_{\min} = €23.50$ (at Q = 200)
+
+**c)** At $P = €22$:
+
+Since $P = €22 > AVC_{\min} = €16$: **Yes, operate!**
+
+Find Q* where P = MC: MC = €16 at Q = 200, MC = €26 at Q = 250. Since P = €22 falls between, the firm produces between 200 and 250 kayaks. Since we only have discrete data, the firm produces **Q* = 200** (the last quantity where MC ≤ P).
+
+Profit at Q = 200: $\pi = TR - TC = (22 \times 200) - 4{,}700 = 4{,}400 - 4{,}700 = -€300$
+
+The firm is operating at a **loss of €300/month**. But this is better than shutting down, which would cost −€1,500 (= FC).
+
+</div>
+
+## Exercise 3: Solution — Parts d & e
+
+<div style="font-size: 68%;">
+
+**d)** At $P = €14$:
+
+Since $P = €14 < AVC_{\min} = €16$: **Shut down!**
+
+- **If operating**: Find Q where MC ≈ P = €14 (between Q = 100 and Q = 150). At Q = 150: $TR = 14 \times 150 = €2{,}100$, $TC = €3{,}900$, Loss = −€1,800.
+- **If shut down**: Loss = FC = −€1,500.
+
+Since $|-€1{,}500| < |-€1{,}800|$, shutting down is better. :white_check_mark:
+
+:point_right: At P = €14, operating makes things **worse** by €300 compared to just paying FC.
+
+**e)** In the **long run**, if firms are making losses:
+
+Some firms will **exit** the market (they can now escape fixed costs too). As firms exit, market supply shifts **left**, which raises the equilibrium price. Firms keep exiting until $P = ATC_{\min}$ for the remaining firms — the **long-run breakeven condition**. In the long run, perfectly competitive firms earn **zero economic profit**.
+
+</div>
+
+## Next Lecture {.center}
+
+**March 27, 2026**: The Seller's Supply Rule — P = MC in depth :chart_with_upwards_trend:
+
+. . .
+
+We'll formalize the $P = MC$ supply rule, derive the concept of **producer surplus**, and build the **market supply** curve from individual firms.
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Friday, March 27, 2026*
+
+::: {.notes}
+This lecture resolves the key open question from Lecture 11: what to do when making a loss. The shutdown condition (P vs AVC) is the crucial new concept, and students often confuse it with breakeven (P vs ATC). The graphical derivation of the supply curve from MC above AVC is the payoff — it connects cost theory to supply. The tourism examples (seasonal hotels, airlines, off-season closings) make this very tangible. The exercise deliberately walks through both the "operate at a loss" and "shut down" scenarios numerically.
+:::
