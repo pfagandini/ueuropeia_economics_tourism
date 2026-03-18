@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <meta name="author" content="Paulo Fagandini">
+  <meta name="dcterms.date" content="2026-01-01">
+  <title>Economics of Tourism – Producer Theory</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e109428474854d908f205605d54b47e4.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Producer Theory</h1>
+  <p class="subtitle">Lecture 15: Elasticity — Demand Recap &amp; Supply Elasticity</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Paulo Fagandini 
+</div>
+</div>
+</div>
+
+  <p class="date">2026</p>
+</section>
+<section id="recap-lecture-14" class="slide level2">
+<h2>Recap: Lecture 14 <span class="emoji" data-emoji="rewind">⏪</span></h2>
+<div style="font-size: 80%;">
+<p><strong>What we covered last time</strong>:</p>
+<ul>
+<li><strong>Producer surplus</strong>: <span class="math inline">\(PS = TR - VC\)</span> = area above supply, below price</li>
+<li><strong>Market supply</strong>: horizontal sum of individual supply curves (kinks when firms enter)</li>
+<li><strong>Linear supply</strong>: <span class="math inline">\(P = c + dQ\)</span>, with <span class="math inline">\(PS = \frac{1}{2} \times Q^* \times (P^* - c)\)</span></li>
+</ul>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="dart">🎯</span> <strong>Today</strong>: How <strong>responsive</strong> are quantities to price changes?</p>
+<p>Before we tackle <strong>supply</strong> elasticity, we need a quick recap of the <strong>demand</strong> elasticity concept — we ran out of time for it earlier in the course. The good news: the idea is the same on both sides!</p>
+</div>
+</section>
+<section>
+<section id="demand-elasticity-the-key-ideas" class="title-slide slide level1 center">
+<h1>Demand Elasticity: The Key Ideas</h1>
+
+</section>
+<section id="price-elasticity-of-demand" class="slide level2">
+<h2>Price Elasticity of Demand <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></h2>
+<div style="font-size: 76%;">
+<div class="key-concept">
+<p><strong>Price Elasticity of Demand (<span class="math inline">\(\varepsilon_d\)</span>)</strong></p>
+<p>The <strong>percentage change in quantity demanded</strong> resulting from a <strong>1% change in price</strong>:</p>
+<p><span class="math display">\[\varepsilon_d = \frac{\%\Delta Q_d}{\%\Delta P} = \frac{\Delta Q / Q}{\Delta P / P}\]</span></p>
+</div>
+<p>Since demand slopes downward (P↑ → Q↓), <span class="math inline">\(\varepsilon_d\)</span> is <strong>negative</strong>. We often use the <strong>absolute value</strong> <span class="math inline">\(|\varepsilon_d|\)</span>.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(|\varepsilon_d|\)</span></th>
+<th>Classification</th>
+<th>Meaning</th>
+<th>Tourism example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(&gt; 1\)</span></td>
+<td><strong>Elastic</strong></td>
+<td>Q responds <strong>more</strong> than P</td>
+<td>Leisure beach holidays</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(= 1\)</span></td>
+<td><strong>Unit elastic</strong></td>
+<td>Q responds <strong>exactly</strong> as P</td>
+<td>— (theoretical midpoint)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(&lt; 1\)</span></td>
+<td><strong>Inelastic</strong></td>
+<td>Q responds <strong>less</strong> than P</td>
+<td>Business travel</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(= 0\)</span></td>
+<td><strong>Perfectly inelastic</strong></td>
+<td>Q doesn’t respond at all</td>
+<td>Emergency medical flights</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(= \infty\)</span></td>
+<td><strong>Perfectly elastic</strong></td>
+<td>Infinite response</td>
+<td>Identical commodity, many sellers</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="calculating-demand-elasticity" class="slide level2">
+<h2>Calculating Demand Elasticity <span class="emoji" data-emoji="pencil2">✏️</span></h2>
+<div style="font-size: 74%;">
+<p><strong>Two methods</strong> (same as we’ll use for supply):</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="one">1️⃣</span> <strong>Point elasticity</strong> (at one point):</p>
+<p><span class="math display">\[\varepsilon_d = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} = \frac{1}{\text{slope}} \times \frac{P}{Q}\]</span></p>
+<p><strong>Example</strong>: Demand is <span class="math inline">\(P = 50 - 2Q\)</span>.</p>
+<p>At <span class="math inline">\(P = 30\)</span>, <span class="math inline">\(Q = 10\)</span>: slope = <span class="math inline">\(-2\)</span></p>
+<p><span class="math display">\[\varepsilon_d = \frac{1}{-2} \times \frac{30}{10} = -1.5\]</span></p>
+<p><span class="math inline">\(|\varepsilon_d| = 1.5 &gt; 1\)</span> → <strong>elastic</strong></p>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="two">2️⃣</span> <strong>Arc elasticity</strong> (midpoint method):</p>
+<p><span class="math display">\[\varepsilon_d = \frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \div \frac{P_2 - P_1}{(P_1 + P_2)/2}\]</span></p>
+<p><strong>Example</strong>: A museum raises price from €10 to €12. Visitors fall from 1,000 to 800.</p>
+<p><span class="math display">\[\varepsilon_d = \frac{-200}{900} \div \frac{2}{11} = -1.22\]</span></p>
+<p><span class="math inline">\(|\varepsilon_d| = 1.22 &gt; 1\)</span> → <strong>elastic</strong></p>
+</div></div>
+<p><span class="emoji" data-emoji="bulb">💡</span> Key insight for linear demand: elasticity <strong>varies</strong> along the curve — elastic at the top (high P, low Q), inelastic at the bottom (low P, high Q), unit elastic at the midpoint.</p>
+</div>
+</section>
+<section id="the-revenue-test-determinants" class="slide level2">
+<h2>The Revenue Test &amp; Determinants <span class="emoji" data-emoji="moneybag">💰</span></h2>
+<div style="font-size: 72%;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>The Revenue Test</strong>:</p>
+<p>How does total revenue (<span class="math inline">\(TR = P \times Q\)</span>) respond to a price increase?</p>
+<table class="caption-top">
+<caption>point_right: Hotel prices up 10%, but bookings only drop 3%? Demand is inelastic → revenue <strong>rises</strong>!</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elasticity</th>
+<th>P ↑ → TR?</th>
+<th>Intuition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Elastic (<span class="math inline">\(|\varepsilon_d| &gt; 1\)</span>)</td>
+<td>TR <strong>falls</strong> <span class="emoji" data-emoji="arrow_down">⬇️</span></td>
+<td>Q drops more than P rises</td>
+</tr>
+<tr class="even">
+<td>Unit elastic (<span class="math inline">\(|\varepsilon_d| = 1\)</span>)</td>
+<td>TR <strong>unchanged</strong></td>
+<td>Effects cancel</td>
+</tr>
+<tr class="odd">
+<td>Inelastic (<span class="math inline">\(|\varepsilon_d| &lt; 1\)</span>)</td>
+<td>TR <strong>rises</strong> <span class="emoji" data-emoji="arrow_up">⬆️</span></td>
+<td>Q drops less than P rises</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><strong>Five determinants of demand elasticity</strong>:</p>
+<ol type="1">
+<li><span class="emoji" data-emoji="arrows_counterclockwise">🔄</span> <strong>Substitutes</strong>: more substitutes → more elastic</li>
+<li><span class="emoji" data-emoji="moneybag">💰</span> <strong>Budget share</strong>: bigger expense → more elastic</li>
+<li><span class="emoji" data-emoji="gem">💎</span> <strong>Necessity vs luxury</strong>: luxuries more elastic</li>
+<li><span class="emoji" data-emoji="hourglass">⌛</span> <strong>Time horizon</strong>: long run → more elastic</li>
+<li><span class="emoji" data-emoji="world_map">🗺️</span> <strong>Market definition</strong>: narrower → more elastic</li>
+</ol>
+<p><strong>Tourism</strong>: Leisure travel is very elastic (<span class="math inline">\(|\varepsilon_d| \approx 2\)</span>–3), business travel is inelastic (<span class="math inline">\(|\varepsilon_d| \approx 0.3\)</span>). Airlines use this to price-discriminate!</p>
+</div></div>
+</div>
+</section>
+<section id="demand-elasticity-quick-practice" class="slide level2">
+<h2>Demand Elasticity: Quick Practice <span class="emoji" data-emoji="dart">🎯</span></h2>
+<div style="font-size: 78%;">
+<p><strong>Quick check — try these mentally before revealing the answers!</strong></p>
+<p><strong>Q1</strong>: Algarve resort demand: <span class="math inline">\(P = 500 - 0.05Q\)</span>. At <span class="math inline">\(P = 100\)</span>, <span class="math inline">\(Q = 8{,}000\)</span>. Is demand elastic or inelastic?</p>
+<div class="fragment">
+<p><span class="math inline">\(\varepsilon_d = \frac{1}{-0.05} \times \frac{100}{8000} = -20 \times 0.0125 = -0.25\)</span> → <strong>Inelastic</strong> (<span class="math inline">\(|\varepsilon_d| = 0.25 &lt; 1\)</span>). Raising prices would <strong>increase</strong> revenue!</p>
+</div>
+<p><strong>Q2</strong>: If luxury cruise demand has <span class="math inline">\(|\varepsilon_d| = 2.5\)</span> and operators raise prices by 8%, what happens to revenue?</p>
+<div class="fragment">
+<p>Elastic demand → price and revenue move in <strong>opposite directions</strong>. Revenue <strong>falls</strong>. (<span class="math inline">\(\%\Delta Q \approx -20\%\)</span>, much larger than the 8% price rise.)</p>
+</div>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> Now let’s apply the <strong>exact same logic</strong> to the supply side!</p>
+</div>
+</section></section>
+<section>
+<section id="price-elasticity-of-supply" class="title-slide slide level1 center">
+<h1>Price Elasticity of Supply</h1>
+
+</section>
+<section id="definition" class="slide level2">
+<h2>Definition <span class="emoji" data-emoji="straight_ruler">📏</span></h2>
+<div style="font-size: 78%;">
+<div class="key-concept">
+<p><strong>Price Elasticity of Supply (<span class="math inline">\(\varepsilon_s\)</span>)</strong></p>
+<p>The <strong>percentage change in quantity supplied</strong> resulting from a <strong>1% change in price</strong>:</p>
+<p><span class="math display">\[\varepsilon_s = \frac{\%\Delta Q_s}{\%\Delta P} = \frac{\Delta Q / Q}{\Delta P / P}\]</span></p>
+</div>
+<p><strong>Key differences from demand elasticity</strong>:</p>
+<table class="caption-top">
+<caption>bulb: The formula is <strong>identical</strong> — the only difference is that supply slopes upward, so <span class="math inline">\(\varepsilon_s &gt; 0\)</span>.</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Demand elasticity (<span class="math inline">\(\varepsilon_d\)</span>)</th>
+<th>Supply elasticity (<span class="math inline">\(\varepsilon_s\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Sign</strong></td>
+<td>Negative (P↑ → Q↓)</td>
+<td><strong>Positive</strong> (P↑ → Q↑)</td>
+</tr>
+<tr class="even">
+<td><strong>We use absolute value?</strong></td>
+<td>Yes (<span class="math inline">\(|\varepsilon_d|\)</span>)</td>
+<td>No — it’s already positive</td>
+</tr>
+<tr class="odd">
+<td><strong>Interpretation</strong></td>
+<td>Responsiveness of buyers</td>
+<td>Responsiveness of sellers</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="classification" class="slide level2">
+<h2>Classification <span class="emoji" data-emoji="bar_chart">📊</span></h2>
+<div style="font-size: 78%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 27%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Elasticity value</th>
+<th>Classification</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_s &gt; 1\)</span></td>
+<td><strong>Elastic</strong></td>
+<td>Quantity supplied responds <strong>more</strong> than proportionally to price</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_s = 1\)</span></td>
+<td><strong>Unit elastic</strong></td>
+<td>Quantity supplied responds <strong>exactly</strong> proportionally</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_s &lt; 1\)</span></td>
+<td><strong>Inelastic</strong></td>
+<td>Quantity supplied responds <strong>less</strong> than proportionally</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_s = 0\)</span></td>
+<td><strong>Perfectly inelastic</strong></td>
+<td>Quantity doesn’t respond at all (vertical supply)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_s = \infty\)</span></td>
+<td><strong>Perfectly elastic</strong></td>
+<td>Any quantity at one fixed price (horizontal supply)</td>
+</tr>
+</tbody>
+</table>
+<p>. . .</p>
+<p><strong>Tourism intuition</strong>:</p>
+<ul>
+<li><span class="emoji" data-emoji="hotel">🏨</span> Hotel rooms in Lisbon in the short run → <strong>inelastic</strong> (can’t build new rooms overnight)</li>
+<li><span class="emoji" data-emoji="fork_and_knife">🍴</span> Street food vendors in a tourist area → <strong>elastic</strong> (easy to set up a new stall)</li>
+<li><span class="emoji" data-emoji="classical_building">🏛️</span> UNESCO heritage sites → <strong>perfectly inelastic</strong> (supply is fixed!)</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="calculating-supply-elasticity" class="title-slide slide level1 center">
+<h1>Calculating Supply Elasticity</h1>
+
+</section>
+<section id="point-and-arc-methods" class="slide level2">
+<h2>Point and Arc Methods <span class="emoji" data-emoji="pencil2">✏️</span></h2>
+<div style="font-size: 72%;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="one">1️⃣</span> <strong>Point elasticity</strong>:</p>
+<p><span class="math display">\[\varepsilon_s = \frac{1}{\text{slope}} \times \frac{P}{Q}\]</span></p>
+<p><strong>Example</strong>: Supply is <span class="math inline">\(P = 5 + 0.25Q\)</span>. At <span class="math inline">\(P = 30\)</span>, <span class="math inline">\(Q = 100\)</span>:</p>
+<p>Slope = <span class="math inline">\(0.25\)</span>, so <span class="math inline">\(\frac{1}{\text{slope}} = 4\)</span></p>
+<p><span class="math display">\[\varepsilon_s = 4 \times \frac{30}{100} = 1.2\]</span></p>
+<p><strong>Elastic</strong> — a 1% price increase leads to a 1.2% increase in quantity supplied.</p>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="two">2️⃣</span> <strong>Arc elasticity</strong> (midpoint):</p>
+<p><span class="math display">\[\varepsilon_s = \frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \div \frac{P_2 - P_1}{(P_1 + P_2)/2}\]</span></p>
+<p><strong>Example</strong>: Tour operator increases tours from 40 to 50/month when price rises from €80 to €100.</p>
+<p><span class="math display">\[\varepsilon_s = \frac{10}{45} \div \frac{20}{90} = 0.222 \div 0.222 = 1.0\]</span></p>
+<p><strong>Unit elastic</strong> — quantity and price change by the same percentage.</p>
+</div></div>
+<p><span class="emoji" data-emoji="point_right">👉</span> Same methods as demand elasticity — just applied to the supply curve!</p>
+</div>
+</section>
+<section id="elasticity-along-a-linear-supply-curve" class="slide level2">
+<h2>Elasticity Along a Linear Supply Curve <span class="emoji" data-emoji="straight_ruler">📏</span></h2>
+<div style="font-size: 72%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture15-supply-elasticity_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Left</strong>: Supply through the origin → <span class="math inline">\(\varepsilon_s = 1\)</span> at <strong>every</strong> point (P and Q always change proportionally).</p>
+<p><strong>Right</strong>: Supply with positive intercept (<span class="math inline">\(c &gt; 0\)</span>) → <span class="math inline">\(\varepsilon_s &gt; 1\)</span> near the intercept, <strong>falling</strong> as Q increases.</p>
+</div>
+</section>
+<section id="the-origin-rule-quick-guide" class="slide level2">
+<h2>The Origin Rule &amp; Quick Guide <span class="emoji" data-emoji="bulb">💡</span></h2>
+<div style="font-size: 78%;">
+<p><strong>Why does supply through the origin always have <span class="math inline">\(\varepsilon_s = 1\)</span>?</strong></p>
+<p>If <span class="math inline">\(P = dQ\)</span>: <span class="math inline">\(\quad \varepsilon_s = \frac{1}{d} \times \frac{P}{Q} = \frac{1}{d} \times \frac{dQ}{Q} = 1\)</span></p>
+<p>The <span class="math inline">\(P/Q\)</span> ratio always equals <span class="math inline">\(d\)</span>, which cancels perfectly with <span class="math inline">\(1/d\)</span>.</p>
+<p>. . .</p>
+<div class="key-concept">
+<p><strong>Quick Elasticity Guide for Linear Supply <span class="math inline">\(P = c + dQ\)</span></strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Intercept</th>
+<th>Elasticity</th>
+<th>Shortcut formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(c = 0\)</span> (through origin)</td>
+<td><span class="math inline">\(\varepsilon_s = 1\)</span> everywhere</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(c &gt; 0\)</span> (positive intercept)</td>
+<td><span class="math inline">\(\varepsilon_s &gt; 1\)</span>, falling toward 1</td>
+<td><span class="math inline">\(\varepsilon_s = \frac{P}{P - c}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(c &lt; 0\)</span> (hits Q-axis)</td>
+<td><span class="math inline">\(\varepsilon_s &lt; 1\)</span> everywhere</td>
+<td><span class="math inline">\(\varepsilon_s = \frac{P}{P - c}\)</span> (where <span class="math inline">\(c &lt; 0\)</span>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span class="emoji" data-emoji="point_right">👉</span> <strong>Contrast with demand</strong>: demand elasticity varies from <span class="math inline">\(\infty\)</span> to <span class="math inline">\(0\)</span> along a linear curve. Supply elasticity is more “stable.”</p>
+</div>
+</section>
+<section id="extreme-cases" class="slide level2">
+<h2>Extreme Cases <span class="emoji" data-emoji="triangular_ruler">📐</span></h2>
+<div style="font-size: 72%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture15-supply-elasticity_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Perfectly inelastic</strong> (<span class="math inline">\(\varepsilon_s = 0\)</span>): Quantity fixed regardless of price.</p>
+<p><em>Tourism</em>: Hotel rooms in a fully built-up area, UNESCO sites, beach space.</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Perfectly elastic</strong> (<span class="math inline">\(\varepsilon_s = \infty\)</span>): Any quantity at one price — constant MC.</p>
+<p><em>Tourism</em>: Digital products (e-tickets, online guides) — near-zero MC per copy.</p>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="determinants-of-supply-elasticity" class="title-slide slide level1 center">
+<h1>Determinants of Supply Elasticity</h1>
+
+</section>
+<section id="what-makes-supply-more-or-less-elastic" class="slide level2">
+<h2>What Makes Supply More or Less Elastic? <span class="emoji" data-emoji="thinking">🤔</span></h2>
+<div style="font-size: 72%;">
+<p>The textbook identifies <strong>four key determinants</strong> (plus time):</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="one">1️⃣</span> <strong>Flexibility of production factors</strong></p>
+<p>Can inputs be used for other things? If yes → elastic.</p>
+<ul>
+<li><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Elastic</strong>: Unskilled labor (waiters can switch from retail to tourism)</li>
+<li><span class="emoji" data-emoji="x">❌</span> <strong>Inelastic</strong>: Specialized skills (brain surgeons, master sommeliers)</li>
+</ul>
+<p><span class="emoji" data-emoji="two">2️⃣</span> <strong>Mobility of production factors</strong></p>
+<p>Can inputs move between locations? If yes → elastic.</p>
+<ul>
+<li><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Elastic</strong>: Touring musicians, portable equipment</li>
+<li><span class="emoji" data-emoji="x">❌</span> <strong>Inelastic</strong>: Beachfront land, historical buildings</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="three">3️⃣</span> <strong>Ability to produce substitute inputs</strong></p>
+<p>Can inputs be replicated over time? If yes → elastic.</p>
+<ul>
+<li><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Elastic</strong>: Train more tour guides, build more hotel rooms</li>
+<li><span class="emoji" data-emoji="x">❌</span> <strong>Inelastic</strong>: Rare natural resources (diamond mines, volcanic hot springs)</li>
+</ul>
+<p><span class="emoji" data-emoji="four">4️⃣</span> <strong>Time horizon</strong> <span class="emoji" data-emoji="hourglass">⌛</span></p>
+<ul>
+<li><strong>Short run</strong>: At least one input is fixed → more <strong>inelastic</strong></li>
+<li><strong>Long run</strong>: All inputs adjustable → more <strong>elastic</strong></li>
+<li><strong>Very short run</strong> (market period): supply is nearly <strong>vertical</strong></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="time-and-supply-elasticity" class="slide level2">
+<h2>Time and Supply Elasticity <span class="emoji" data-emoji="hourglass">⌛</span></h2>
+<div style="font-size: 70%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture15-supply-elasticity_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The <strong>longer the time horizon</strong>, the more firms can adjust all inputs → supply becomes <strong>flatter</strong> (more elastic).</p>
+</div>
+</section></section>
+<section>
+<section id="tourism-applications" class="title-slide slide level1 center">
+<h1>Tourism Applications</h1>
+
+</section>
+<section id="elasticity-in-tourism-both-sides" class="slide level2">
+<h2>Elasticity in Tourism: Both Sides <span class="emoji" data-emoji="airplane">✈️</span></h2>
+<div style="font-size: 72%;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Inelastic supply</strong> (<span class="math inline">\(\varepsilon_s\)</span> small):</p>
+<ul>
+<li><span class="emoji" data-emoji="hotel">🏨</span> <strong>Hotel rooms in central Lisbon</strong>: limited space, takes years to build</li>
+<li><span class="emoji" data-emoji="classical_building">🏛️</span> <strong>Museum capacity</strong>: Jerónimos can’t add rooms</li>
+<li><span class="emoji" data-emoji="beach_umbrella">🏖️</span> <strong>Beach access in Algarve</strong>: fixed coastline</li>
+</ul>
+<p><strong>Implication</strong>: When demand rises (peak season), price rises <strong>sharply</strong> because supply can’t respond much.</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Elastic supply</strong> (<span class="math inline">\(\varepsilon_s\)</span> large):</p>
+<ul>
+<li><span class="emoji" data-emoji="bus">🚌</span> <strong>Tour buses</strong>: can add more buses relatively quickly</li>
+<li><span class="emoji" data-emoji="fork_and_knife">🍴</span> <strong>Food trucks at festivals</strong>: quick to set up</li>
+<li><span class="emoji" data-emoji="iphone">📱</span> <strong>Online booking services</strong>: near-zero cost to scale</li>
+</ul>
+<p><strong>Implication</strong>: When demand rises, quantity adjusts more than price — price stays relatively stable.</p>
+</div></div>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> <strong>Both elasticities together</strong> determine <strong>who bears the burden</strong> of taxes and price shocks! The side with <strong>less elastic</strong> response absorbs more of the burden.</p>
+</div>
+</section>
+<section id="the-full-parallel-demand-vs-supply-elasticity" class="slide level2">
+<h2>The Full Parallel: Demand vs Supply Elasticity <span class="emoji" data-emoji="handshake">🤝</span></h2>
+<div style="font-size: 70%;">
+<table class="caption-top">
+<caption>point_right: Both sides use the <strong>same formula</strong> and <strong>same classification</strong>. The determinants differ because they reflect different underlying decisions (buying vs producing).</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Demand Elasticity</th>
+<th>Supply Elasticity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Formula</strong></td>
+<td><span class="math inline">\(\varepsilon_d = \frac{\Delta Q/Q}{\Delta P/P}\)</span></td>
+<td><span class="math inline">\(\varepsilon_s = \frac{\Delta Q/Q}{\Delta P/P}\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Sign</strong></td>
+<td>Negative (use <span class="math inline">\(|\varepsilon_d|\)</span>)</td>
+<td><strong>Positive</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Elastic</strong></td>
+<td><span class="math inline">\(|\varepsilon_d| &gt; 1\)</span></td>
+<td><span class="math inline">\(\varepsilon_s &gt; 1\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Revenue test</strong></td>
+<td>Elastic: P↑ → TR↓</td>
+<td>No direct revenue test</td>
+</tr>
+<tr class="odd">
+<td><strong>Along linear curve</strong></td>
+<td>Varies: ∞ → 1 → 0</td>
+<td>More stable; through origin = 1</td>
+</tr>
+<tr class="even">
+<td><strong>Key determinants</strong></td>
+<td>Substitutes, budget share, necessity, time, market definition</td>
+<td><strong>Input flexibility, mobility, replicability, time</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Perfectly inelastic</strong></td>
+<td>Vertical demand</td>
+<td>Vertical supply</td>
+</tr>
+<tr class="even">
+<td><strong>Perfectly elastic</strong></td>
+<td>Horizontal demand</td>
+<td>Horizontal supply</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary <span class="emoji" data-emoji="memo">📝</span></h2>
+<div style="font-size: 70%;">
+<p><strong>Today’s Key Takeaways</strong>:</p>
+<p><strong>Demand elasticity recap</strong>:</p>
+<ol type="1">
+<li><span class="math inline">\(\varepsilon_d = \frac{\%\Delta Q}{\%\Delta P}\)</span> — negative, use <span class="math inline">\(|\varepsilon_d|\)</span>. Elastic &gt; 1, inelastic &lt; 1</li>
+<li><strong>Revenue test</strong>: elastic → P↑ means TR↓; inelastic → P↑ means TR↑</li>
+<li><strong>Determinants</strong>: substitutes, budget share, necessity/luxury, time, market definition</li>
+</ol>
+<p><strong>Supply elasticity (new)</strong>:</p>
+<ol start="4" type="1">
+<li><span class="math inline">\(\varepsilon_s = \frac{\%\Delta Q_s}{\%\Delta P}\)</span> — always positive. Same formula, same classification</li>
+<li><strong>Linear supply through origin</strong>: <span class="math inline">\(\varepsilon_s = 1\)</span> everywhere. Positive intercept: <span class="math inline">\(\varepsilon_s &gt; 1\)</span></li>
+<li><strong>Determinants</strong>: flexibility, mobility, and replicability of inputs, <strong>time horizon</strong></li>
+<li><strong>Time</strong>: very short run (inelastic) → short run → long run (elastic)</li>
+<li>Both elasticities together determine <strong>price volatility</strong> and <strong>tax burden sharing</strong></li>
+</ol>
+<p><strong>Next (Lecture 16, April 16)</strong>: Short Run and Long Run Market Equilibrium <span class="emoji" data-emoji="balance_scale">⚖️</span></p>
+</div>
+</section>
+<section id="exercises" class="slide level2 center">
+<h2>Exercises</h2>
+<p><strong>Practice Time!</strong> <span class="emoji" data-emoji="pencil2">✏️</span></p>
+<p>Demand and supply elasticity calculation.</p>
+</section>
+<section id="exercise-1-multiple-choice" class="slide level2">
+<h2>Exercise 1: Multiple Choice</h2>
+<div style="font-size: 82%;">
+<p><strong>Question</strong>: The supply of hotel rooms in Porto’s city center has <span class="math inline">\(\varepsilon_s = 0.3\)</span>. If room prices increase by 20%, what happens to the quantity of rooms supplied?</p>
+<p>A. Quantity increases by 60%</p>
+<p>B. Quantity increases by 6%</p>
+<p>C. Quantity increases by 0.6%</p>
+<p>D. Quantity increases by 20%</p>
+<div class="fragment">
+<div class="highlight-box">
+<p><strong>Answer: B</strong></p>
+</div>
+<p><span class="math inline">\(\%\Delta Q_s = \varepsilon_s \times \%\Delta P = 0.3 \times 20\% = 6\%\)</span></p>
+<p>Supply is <strong>inelastic</strong> (<span class="math inline">\(\varepsilon_s = 0.3 &lt; 1\)</span>): even a large price increase (20%) produces only a small quantity response (6%). You can’t build new hotel rooms quickly!</p>
+</div>
+</div>
+</section>
+<section id="exercise-2-multiple-choice" class="slide level2">
+<h2>Exercise 2: Multiple Choice</h2>
+<div style="font-size: 82%;">
+<p><strong>Question</strong>: Demand for TAP flights from Lisbon to London has <span class="math inline">\(|\varepsilon_d| = 1.8\)</span>. If TAP raises fares by 10%, what happens to total revenue from this route?</p>
+<p>A. Revenue increases by 18%</p>
+<p>B. Revenue increases because higher price means more money per ticket</p>
+<p>C. Revenue falls because passenger numbers drop by more than 10%</p>
+<p>D. Revenue stays the same</p>
+<div class="fragment">
+<div class="highlight-box">
+<p><strong>Answer: C</strong></p>
+</div>
+<p>Demand is <strong>elastic</strong> (<span class="math inline">\(|\varepsilon_d| = 1.8 &gt; 1\)</span>): a 10% fare increase causes approximately <span class="math inline">\(1.8 \times 10\% = 18\%\)</span> fewer passengers. Since quantity drops <strong>proportionally more</strong> than price rises, <span class="math inline">\(TR = P \times Q\)</span> <strong>falls</strong>. This is the <strong>revenue test</strong> for elastic demand.</p>
+</div>
+</div>
+</section>
+<section id="exercise-3-open-question" class="slide level2">
+<h2>Exercise 3: Open Question <span class="emoji" data-emoji="writing_hand">✍️</span></h2>
+<div style="font-size: 60%;">
+<p><strong>The market for <em>tuk-tuk</em> tours in Lisbon</strong> has the following estimated curves:</p>
+<ul>
+<li><strong>Demand</strong>: <span class="math inline">\(P = 36 - 0.2Q\)</span> (€ per tour)</li>
+<li><strong>Supply</strong>: <span class="math inline">\(P = 6 + 0.1Q\)</span> (€ per tour)</li>
+</ul>
+<p><strong>a)</strong> Find the equilibrium price and quantity.</p>
+<p><strong>b)</strong> Calculate the <strong>price elasticity of demand</strong> at the equilibrium point. Is demand elastic or inelastic?</p>
+<p><strong>c)</strong> Calculate the <strong>price elasticity of supply</strong> at the equilibrium point. Is supply elastic or inelastic?</p>
+<p><strong>d)</strong> At the equilibrium, if the city council imposes a small price increase (say €1), would you expect total revenue to rise or fall? Use the revenue test from part (b).</p>
+<p><strong>e)</strong> The supply has a positive intercept (<span class="math inline">\(c = 6\)</span>). Using the shortcut formula <span class="math inline">\(\varepsilon_s = \frac{P}{P - c}\)</span>, verify your answer from part (c). At what price would supply elasticity equal exactly 2?</p>
+<p><strong>f)</strong> The city council considers a €3 per-tour tax on operators. This shifts supply to <span class="math inline">\(P = 9 + 0.1Q\)</span>. Find the new equilibrium. Who bears more of the tax burden — tourists or operators? Relate your answer to the elasticities you calculated.</p>
+</div>
+</section>
+<section id="exercise-3-solution-parts-a-b-c" class="slide level2">
+<h2>Exercise 3: Solution — Parts a, b &amp; c</h2>
+<div style="font-size: 66%;">
+<p><strong>a)</strong> Equilibrium: <span class="math inline">\(36 - 0.2Q = 6 + 0.1Q\)</span> → <span class="math inline">\(30 = 0.3Q\)</span> → <span class="math inline">\(Q^* = 100\)</span>, <span class="math inline">\(P^* = 36 - 0.2(100) = €16\)</span></p>
+<p><strong>b)</strong> Demand elasticity at <span class="math inline">\((Q^* = 100, P^* = 16)\)</span>:</p>
+<p>Demand slope = <span class="math inline">\(-0.2\)</span>, so <span class="math inline">\(\frac{1}{\text{slope}} = \frac{1}{-0.2} = -5\)</span></p>
+<p><span class="math display">\[\varepsilon_d = -5 \times \frac{16}{100} = -0.8\]</span></p>
+<p><span class="math inline">\(|\varepsilon_d| = 0.8 &lt; 1\)</span> → Demand is <strong>inelastic</strong> at the equilibrium.</p>
+<p><strong>c)</strong> Supply elasticity at <span class="math inline">\((Q^* = 100, P^* = 16)\)</span>:</p>
+<p>Supply slope = <span class="math inline">\(0.1\)</span>, so <span class="math inline">\(\frac{1}{\text{slope}} = 10\)</span></p>
+<p><span class="math display">\[\varepsilon_s = 10 \times \frac{16}{100} = 1.6\]</span></p>
+<p><span class="math inline">\(\varepsilon_s = 1.6 &gt; 1\)</span> → Supply is <strong>elastic</strong> at the equilibrium.</p>
+</div>
+</section>
+<section id="exercise-3-solution-parts-d-e" class="slide level2">
+<h2>Exercise 3: Solution — Parts d &amp; e</h2>
+<div style="font-size: 70%;">
+<p><strong>d)</strong> Since demand is <strong>inelastic</strong> (<span class="math inline">\(|\varepsilon_d| = 0.8 &lt; 1\)</span>), the revenue test says: a price increase → total revenue <strong>rises</strong>. Quantity falls, but by a smaller percentage than price rises. The €1 increase would increase TR.</p>
+<p><strong>e)</strong> Shortcut: <span class="math inline">\(\varepsilon_s = \frac{P}{P - c} = \frac{16}{16 - 6} = \frac{16}{10} = 1.6\)</span> <span class="emoji" data-emoji="white_check_mark">✅</span> Matches part (c)!</p>
+<p>For <span class="math inline">\(\varepsilon_s = 2\)</span>: <span class="math inline">\(\frac{P}{P - 6} = 2\)</span> → <span class="math inline">\(P = 2P - 12\)</span> → <span class="math inline">\(P = €12\)</span></p>
+<p>At <span class="math inline">\(P = 12\)</span>: <span class="math inline">\(Q = \frac{12 - 6}{0.1} = 60\)</span> tours. So supply is more elastic at <strong>lower prices</strong> (closer to the intercept).</p>
+</div>
+</section>
+<section id="exercise-3-solution-part-f" class="slide level2">
+<h2>Exercise 3: Solution — Part f</h2>
+<div style="font-size: 68%;">
+<p><strong>f)</strong> New supply with €3 tax: <span class="math inline">\(P = 9 + 0.1Q\)</span></p>
+<p>New equilibrium: <span class="math inline">\(36 - 0.2Q = 9 + 0.1Q\)</span> → <span class="math inline">\(27 = 0.3Q\)</span> → <span class="math inline">\(Q^* = 90\)</span>, <span class="math inline">\(P^* = 36 - 0.2(90) = €18\)</span></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Before tax</th>
+<th style="text-align: center;">After tax</th>
+<th style="text-align: center;">Change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Price paid by tourists</strong></td>
+<td style="text-align: center;">€16</td>
+<td style="text-align: center;">€18</td>
+<td style="text-align: center;">+€2</td>
+</tr>
+<tr class="even">
+<td><strong>Price received by operators</strong> (net of tax)</td>
+<td style="text-align: center;">€16</td>
+<td style="text-align: center;">€18 − €3 = €15</td>
+<td style="text-align: center;">−€1</td>
+</tr>
+<tr class="odd">
+<td><strong>Quantity</strong></td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">−10</td>
+</tr>
+</tbody>
+</table>
+<p>Of the €3 tax: tourists pay <strong>€2 more</strong>, operators receive <strong>€1 less</strong>.</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> <strong>Tourists bear more</strong> (€2 out of €3) because <strong>demand is more inelastic</strong> (<span class="math inline">\(|\varepsilon_d| = 0.8\)</span>) than supply is (<span class="math inline">\(\varepsilon_s = 1.6\)</span>). The side with <strong>less elastic</strong> response absorbs more of the tax.</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> This is a <strong>general rule</strong>: tax burden falls more heavily on the side of the market that is <strong>less responsive</strong> to price changes.</p>
+</div>
+</section>
+<section id="next-lecture" class="slide level2 center">
+<h2>Next Lecture</h2>
+<p><strong>April 16, 2026</strong>: Short Run and Long Run Market Equilibrium <span class="emoji" data-emoji="balance_scale">⚖️</span></p>
+<p>We finally put <strong>demand and supply together</strong> to find prices and quantities!</p>
+<div class="fragment">
+<p><span class="emoji" data-emoji="point_right">👉</span> This is the payoff of Lectures 5–15: consumer theory meets producer theory!</p>
+</div>
+</section>
+<section id="thank-you" class="slide level2 center">
+<h2>Thank You!</h2>
+<p><strong>Questions?</strong> <span class="emoji" data-emoji="raising_hand">🙋</span></p>
+<p><span class="emoji" data-emoji="email">📧</span> paulo.fagandini@ext.universidadeeuropeia.pt</p>
+</section>
+<section class="slide level2">
+
+<p><em>Next class: Thursday, April 16, 2026</em></p>
+<aside class="notes">
+<p>This lecture serves double duty: it provides the demand elasticity content that was skipped (L9) in condensed form, then teaches supply elasticity as its mirror. The demand recap is kept to 3-4 slides covering definition, calculation, revenue test, and determinants — just enough for students to use the concept. The supply elasticity section follows the same structure. The exercise integrates both sides with a tax incidence analysis that requires comparing demand and supply elasticities, which is the conceptual payoff of learning both.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Economics of Tourism | Lecture 15</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

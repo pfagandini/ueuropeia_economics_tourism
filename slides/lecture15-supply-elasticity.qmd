@@ -1,0 +1,747 @@
+---
+title: "Producer Theory"
+subtitle: "Lecture 15: Elasticity — Demand Recap & Supply Elasticity"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 15"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(patchwork)
+
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_blue <- "#2E86AB"
+ue_green <- "#27ae60"
+ue_orange <- "#E67E22"
+```
+
+## Recap: Lecture 14 :rewind:
+
+<div style="font-size: 80%;">
+
+**What we covered last time**:
+
+- **Producer surplus**: $PS = TR - VC$ = area above supply, below price
+- **Market supply**: horizontal sum of individual supply curves (kinks when firms enter)
+- **Linear supply**: $P = c + dQ$, with $PS = \frac{1}{2} \times Q^* \times (P^* - c)$
+
+. . .
+
+:dart: **Today**: How **responsive** are quantities to price changes?
+
+Before we tackle **supply** elasticity, we need a quick recap of the **demand** elasticity concept — we ran out of time for it earlier in the course. The good news: the idea is the same on both sides!
+
+</div>
+
+# Demand Elasticity: The Key Ideas
+
+## Price Elasticity of Demand :chart_with_downwards_trend:
+
+<div style="font-size: 76%;">
+
+::: {.key-concept}
+**Price Elasticity of Demand ($\varepsilon_d$)**
+
+The **percentage change in quantity demanded** resulting from a **1% change in price**:
+
+$$\varepsilon_d = \frac{\%\Delta Q_d}{\%\Delta P} = \frac{\Delta Q / Q}{\Delta P / P}$$
+:::
+
+Since demand slopes downward (P↑ → Q↓), $\varepsilon_d$ is **negative**. We often use the **absolute value** $|\varepsilon_d|$.
+
+| $|\varepsilon_d|$ | Classification | Meaning | Tourism example |
+|:---:|---|---|---|
+| $> 1$ | **Elastic** | Q responds **more** than P | Leisure beach holidays |
+| $= 1$ | **Unit elastic** | Q responds **exactly** as P | — (theoretical midpoint) |
+| $< 1$ | **Inelastic** | Q responds **less** than P | Business travel |
+| $= 0$ | **Perfectly inelastic** | Q doesn't respond at all | Emergency medical flights |
+| $= \infty$ | **Perfectly elastic** | Infinite response | Identical commodity, many sellers |
+
+</div>
+
+## Calculating Demand Elasticity :pencil2:
+
+<div style="font-size: 74%;">
+
+**Two methods** (same as we'll use for supply):
+
+:::: {.columns}
+::: {.column width="50%"}
+:one: **Point elasticity** (at one point):
+
+$$\varepsilon_d = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} = \frac{1}{\text{slope}} \times \frac{P}{Q}$$
+
+**Example**: Demand is $P = 50 - 2Q$.
+
+At $P = 30$, $Q = 10$: slope = $-2$
+
+$$\varepsilon_d = \frac{1}{-2} \times \frac{30}{10} = -1.5$$
+
+$|\varepsilon_d| = 1.5 > 1$ → **elastic**
+:::
+
+::: {.column width="50%"}
+:two: **Arc elasticity** (midpoint method):
+
+$$\varepsilon_d = \frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \div \frac{P_2 - P_1}{(P_1 + P_2)/2}$$
+
+**Example**: A museum raises price from €10 to €12. Visitors fall from 1,000 to 800.
+
+$$\varepsilon_d = \frac{-200}{900} \div \frac{2}{11} = -1.22$$
+
+$|\varepsilon_d| = 1.22 > 1$ → **elastic**
+:::
+::::
+
+:bulb: Key insight for linear demand: elasticity **varies** along the curve — elastic at the top (high P, low Q), inelastic at the bottom (low P, high Q), unit elastic at the midpoint.
+
+</div>
+
+## The Revenue Test & Determinants :moneybag:
+
+<div style="font-size: 72%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**The Revenue Test**:
+
+How does total revenue ($TR = P \times Q$) respond to a price increase?
+
+| Elasticity | P ↑ → TR? | Intuition |
+|---|---|---|
+| Elastic ($|\varepsilon_d| > 1$) | TR **falls** :arrow_down: | Q drops more than P rises |
+| Unit elastic ($|\varepsilon_d| = 1$) | TR **unchanged** | Effects cancel |
+| Inelastic ($|\varepsilon_d| < 1$) | TR **rises** :arrow_up: | Q drops less than P rises |
+
+:point_right: Hotel prices up 10%, but bookings only drop 3%? Demand is inelastic → revenue **rises**!
+:::
+
+::: {.column width="50%"}
+**Five determinants of demand elasticity**:
+
+1. :arrows_counterclockwise: **Substitutes**: more substitutes → more elastic
+2. :moneybag: **Budget share**: bigger expense → more elastic
+3. :gem: **Necessity vs luxury**: luxuries more elastic
+4. :hourglass: **Time horizon**: long run → more elastic
+5. :world_map: **Market definition**: narrower → more elastic
+
+**Tourism**: Leisure travel is very elastic ($|\varepsilon_d| \approx 2$–3), business travel is inelastic ($|\varepsilon_d| \approx 0.3$). Airlines use this to price-discriminate!
+:::
+::::
+
+</div>
+
+## Demand Elasticity: Quick Practice :dart:
+
+<div style="font-size: 78%;">
+
+**Quick check — try these mentally before revealing the answers!**
+
+**Q1**: Algarve resort demand: $P = 500 - 0.05Q$. At $P = 100$, $Q = 8{,}000$. Is demand elastic or inelastic?
+
+::: {.fragment}
+$\varepsilon_d = \frac{1}{-0.05} \times \frac{100}{8000} = -20 \times 0.0125 = -0.25$ → **Inelastic** ($|\varepsilon_d| = 0.25 < 1$). Raising prices would **increase** revenue!
+:::
+
+**Q2**: If luxury cruise demand has $|\varepsilon_d| = 2.5$ and operators raise prices by 8%, what happens to revenue?
+
+::: {.fragment}
+Elastic demand → price and revenue move in **opposite directions**. Revenue **falls**. ($\%\Delta Q \approx -20\%$, much larger than the 8% price rise.)
+:::
+
+. . .
+
+:point_right: Now let's apply the **exact same logic** to the supply side!
+
+</div>
+
+# Price Elasticity of Supply
+
+## Definition :straight_ruler:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Price Elasticity of Supply ($\varepsilon_s$)**
+
+The **percentage change in quantity supplied** resulting from a **1% change in price**:
+
+$$\varepsilon_s = \frac{\%\Delta Q_s}{\%\Delta P} = \frac{\Delta Q / Q}{\Delta P / P}$$
+:::
+
+**Key differences from demand elasticity**:
+
+| | Demand elasticity ($\varepsilon_d$) | Supply elasticity ($\varepsilon_s$) |
+|---|---|---|
+| **Sign** | Negative (P↑ → Q↓) | **Positive** (P↑ → Q↑) |
+| **We use absolute value?** | Yes ($|\varepsilon_d|$) | No — it's already positive |
+| **Interpretation** | Responsiveness of buyers | Responsiveness of sellers |
+
+:bulb: The formula is **identical** — the only difference is that supply slopes upward, so $\varepsilon_s > 0$.
+
+</div>
+
+## Classification :bar_chart:
+
+<div style="font-size: 78%;">
+
+| Elasticity value | Classification | Meaning |
+|:---:|---|---|
+| $\varepsilon_s > 1$ | **Elastic** | Quantity supplied responds **more** than proportionally to price |
+| $\varepsilon_s = 1$ | **Unit elastic** | Quantity supplied responds **exactly** proportionally |
+| $\varepsilon_s < 1$ | **Inelastic** | Quantity supplied responds **less** than proportionally |
+| $\varepsilon_s = 0$ | **Perfectly inelastic** | Quantity doesn't respond at all (vertical supply) |
+| $\varepsilon_s = \infty$ | **Perfectly elastic** | Any quantity at one fixed price (horizontal supply) |
+
+. . .
+
+**Tourism intuition**:
+
+- :hotel: Hotel rooms in Lisbon in the short run → **inelastic** (can't build new rooms overnight)
+- :fork_and_knife: Street food vendors in a tourist area → **elastic** (easy to set up a new stall)
+- :classical_building: UNESCO heritage sites → **perfectly inelastic** (supply is fixed!)
+
+</div>
+
+# Calculating Supply Elasticity
+
+## Point and Arc Methods :pencil2:
+
+<div style="font-size: 72%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+:one: **Point elasticity**:
+
+$$\varepsilon_s = \frac{1}{\text{slope}} \times \frac{P}{Q}$$
+
+**Example**: Supply is $P = 5 + 0.25Q$. At $P = 30$, $Q = 100$:
+
+Slope = $0.25$, so $\frac{1}{\text{slope}} = 4$
+
+$$\varepsilon_s = 4 \times \frac{30}{100} = 1.2$$
+
+**Elastic** — a 1% price increase leads to a 1.2% increase in quantity supplied.
+:::
+
+::: {.column width="50%"}
+:two: **Arc elasticity** (midpoint):
+
+$$\varepsilon_s = \frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \div \frac{P_2 - P_1}{(P_1 + P_2)/2}$$
+
+**Example**: Tour operator increases tours from 40 to 50/month when price rises from €80 to €100.
+
+$$\varepsilon_s = \frac{10}{45} \div \frac{20}{90} = 0.222 \div 0.222 = 1.0$$
+
+**Unit elastic** — quantity and price change by the same percentage.
+:::
+::::
+
+:point_right: Same methods as demand elasticity — just applied to the supply curve!
+
+</div>
+
+## Elasticity Along a Linear Supply Curve :straight_ruler:
+
+<div style="font-size: 72%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 5
+#| fig-align: center
+
+df_origin <- data.frame(Q = seq(0, 18, by = 0.5)) %>%
+  mutate(P = Q / 3)
+
+df_noorigin <- data.frame(Q = seq(0.5, 18, by = 0.5)) %>%
+  mutate(P = 2 + Q)
+
+pts_no <- data.frame(
+  Q = c(2, 6, 14),
+  P = c(4, 8, 16)
+) %>%
+  mutate(eps = P / Q,
+         label = paste0("ε = ", round(eps, 2)))
+
+p1 <- ggplot() +
+  geom_line(data = df_origin, aes(x = Q, y = P),
+            color = ue_red, linewidth = 1.5) +
+  annotate("text", x = 16, y = 4, label = "S (through origin)",
+           color = ue_red, fontface = "bold", size = 4) +
+  annotate("text", x = 9, y = 1.5,
+           label = "ε = 1 everywhere!", color = ue_red,
+           fontface = "bold.italic", size = 4.5) +
+  coord_cartesian(ylim = c(0, 7), xlim = c(0, 20)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Q", y = "P",
+       title = "Supply Through the Origin: ε = 1 Always") +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 13),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+p2 <- ggplot() +
+  geom_line(data = df_noorigin, aes(x = Q, y = P),
+            color = ue_blue, linewidth = 1.5) +
+  geom_point(data = pts_no, aes(x = Q, y = P), size = 3.5, color = ue_black) +
+  geom_text(data = pts_no, aes(x = Q + 1.5, y = P - 0.8, label = label),
+            fontface = "bold", size = 3.5, color = ue_black, hjust = 0) +
+  annotate("text", x = 15, y = 12, label = "S (positive intercept)",
+           color = ue_blue, fontface = "bold", size = 4) +
+  annotate("text", x = 1.2, y = 3, label = "c = 2",
+           color = ue_gray, fontface = "italic", size = 3.5) +
+  coord_cartesian(ylim = c(0, 20), xlim = c(0, 20)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Q", y = "P",
+       title = "Supply with Positive Intercept: ε Decreases") +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(color = ue_blue, face = "bold", hjust = 0.5, size = 13),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+p1 + p2
+```
+
+**Left**: Supply through the origin → $\varepsilon_s = 1$ at **every** point (P and Q always change proportionally).
+
+**Right**: Supply with positive intercept ($c > 0$) → $\varepsilon_s > 1$ near the intercept, **falling** as Q increases.
+
+</div>
+
+## The Origin Rule & Quick Guide :bulb:
+
+<div style="font-size: 78%;">
+
+**Why does supply through the origin always have $\varepsilon_s = 1$?**
+
+If $P = dQ$: $\quad \varepsilon_s = \frac{1}{d} \times \frac{P}{Q} = \frac{1}{d} \times \frac{dQ}{Q} = 1$
+
+The $P/Q$ ratio always equals $d$, which cancels perfectly with $1/d$.
+
+. . .
+
+::: {.key-concept}
+**Quick Elasticity Guide for Linear Supply $P = c + dQ$**
+
+| Intercept | Elasticity | Shortcut formula |
+|---|---|---|
+| $c = 0$ (through origin) | $\varepsilon_s = 1$ everywhere | — |
+| $c > 0$ (positive intercept) | $\varepsilon_s > 1$, falling toward 1 | $\varepsilon_s = \frac{P}{P - c}$ |
+| $c < 0$ (hits Q-axis) | $\varepsilon_s < 1$ everywhere | $\varepsilon_s = \frac{P}{P - c}$ (where $c < 0$) |
+:::
+
+:point_right: **Contrast with demand**: demand elasticity varies from $\infty$ to $0$ along a linear curve. Supply elasticity is more "stable."
+
+</div>
+
+## Extreme Cases :triangular_ruler:
+
+<div style="font-size: 72%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 4.5
+#| fig-align: center
+
+p_inelastic <- ggplot() +
+  geom_vline(xintercept = 50, color = ue_red, linewidth = 2) +
+  annotate("text", x = 52, y = 7, label = "S", color = ue_red,
+           fontface = "bold.italic", size = 6) +
+  annotate("text", x = 30, y = 5, label = "ε = 0\nPerfectly\nInelastic",
+           color = ue_red, fontface = "bold", size = 4.5) +
+  coord_cartesian(ylim = c(0, 10), xlim = c(0, 100)) +
+  scale_x_continuous(expand = c(0, 0), breaks = 50, labels = expression(bar(Q))) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Q", y = "P", title = "Perfectly Inelastic Supply") +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 13),
+        axis.title = element_text(face = "bold"), panel.grid.minor = element_blank())
+
+p_elastic <- ggplot() +
+  geom_hline(yintercept = 5, color = ue_blue, linewidth = 2) +
+  annotate("text", x = 80, y = 6.5, label = "S", color = ue_blue,
+           fontface = "bold.italic", size = 6) +
+  annotate("text", x = 50, y = 8, label = "ε = ∞\nPerfectly\nElastic",
+           color = ue_blue, fontface = "bold", size = 4.5) +
+  coord_cartesian(ylim = c(0, 10), xlim = c(0, 100)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0), breaks = 5, labels = expression(bar(P))) +
+  labs(x = "Q", y = "P", title = "Perfectly Elastic Supply") +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_blue, face = "bold", hjust = 0.5, size = 13),
+        axis.title = element_text(face = "bold"), panel.grid.minor = element_blank())
+
+p_inelastic + p_elastic
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+**Perfectly inelastic** ($\varepsilon_s = 0$): Quantity fixed regardless of price.
+
+*Tourism*: Hotel rooms in a fully built-up area, UNESCO sites, beach space.
+:::
+
+::: {.column width="50%"}
+**Perfectly elastic** ($\varepsilon_s = \infty$): Any quantity at one price — constant MC.
+
+*Tourism*: Digital products (e-tickets, online guides) — near-zero MC per copy.
+:::
+::::
+
+</div>
+
+# Determinants of Supply Elasticity
+
+## What Makes Supply More or Less Elastic? :thinking:
+
+<div style="font-size: 72%;">
+
+The textbook identifies **four key determinants** (plus time):
+
+:::: {.columns}
+::: {.column width="50%"}
+:one: **Flexibility of production factors**
+
+Can inputs be used for other things? If yes → elastic.
+
+- :white_check_mark: **Elastic**: Unskilled labor (waiters can switch from retail to tourism)
+- :x: **Inelastic**: Specialized skills (brain surgeons, master sommeliers)
+
+:two: **Mobility of production factors**
+
+Can inputs move between locations? If yes → elastic.
+
+- :white_check_mark: **Elastic**: Touring musicians, portable equipment
+- :x: **Inelastic**: Beachfront land, historical buildings
+:::
+
+::: {.column width="50%"}
+:three: **Ability to produce substitute inputs**
+
+Can inputs be replicated over time? If yes → elastic.
+
+- :white_check_mark: **Elastic**: Train more tour guides, build more hotel rooms
+- :x: **Inelastic**: Rare natural resources (diamond mines, volcanic hot springs)
+
+:four: **Time horizon** :hourglass:
+
+- **Short run**: At least one input is fixed → more **inelastic**
+- **Long run**: All inputs adjustable → more **elastic**
+- **Very short run** (market period): supply is nearly **vertical**
+:::
+::::
+
+</div>
+
+## Time and Supply Elasticity :hourglass:
+
+<div style="font-size: 70%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 5
+#| fig-align: center
+
+df_vsr <- data.frame(Q = seq(0, 120, by = 1)) %>% mutate(P = 5 + 0.8 * Q)
+df_sr <- data.frame(Q = seq(0, 120, by = 1)) %>% mutate(P = 5 + 0.25 * Q)
+df_lr <- data.frame(Q = seq(0, 120, by = 1)) %>% mutate(P = 5 + 0.08 * Q)
+
+ggplot() +
+  geom_line(data = df_vsr, aes(x = Q, y = P), color = ue_red,
+            linewidth = 1.3, linetype = "dashed") +
+  geom_line(data = df_sr, aes(x = Q, y = P), color = ue_orange, linewidth = 1.3) +
+  geom_line(data = df_lr, aes(x = Q, y = P), color = ue_green,
+            linewidth = 1.3, linetype = "longdash") +
+  annotate("text", x = 35, y = 38, label = "Very Short Run\n(nearly fixed)",
+           color = ue_red, fontface = "bold", size = 3.8) +
+  annotate("text", x = 85, y = 28, label = "Short Run",
+           color = ue_orange, fontface = "bold", size = 3.8) +
+  annotate("text", x = 105, y = 12, label = "Long Run\n(all inputs adjustable)",
+           color = ue_green, fontface = "bold", size = 3.8) +
+  coord_cartesian(ylim = c(0, 45), xlim = c(0, 120)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Quantity (Q)", y = "Price (€)",
+       title = "Supply Elasticity Increases with Time (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+        axis.title = element_text(face = "bold"), panel.grid.minor = element_blank())
+```
+
+The **longer the time horizon**, the more firms can adjust all inputs → supply becomes **flatter** (more elastic).
+
+</div>
+
+# Tourism Applications
+
+## Elasticity in Tourism: Both Sides :airplane:
+
+<div style="font-size: 72%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Inelastic supply** ($\varepsilon_s$ small):
+
+- :hotel: **Hotel rooms in central Lisbon**: limited space, takes years to build
+- :classical_building: **Museum capacity**: Jerónimos can't add rooms
+- :beach_umbrella: **Beach access in Algarve**: fixed coastline
+
+**Implication**: When demand rises (peak season), price rises **sharply** because supply can't respond much.
+:::
+
+::: {.column width="50%"}
+**Elastic supply** ($\varepsilon_s$ large):
+
+- :bus: **Tour buses**: can add more buses relatively quickly
+- :fork_and_knife: **Food trucks at festivals**: quick to set up
+- :iphone: **Online booking services**: near-zero cost to scale
+
+**Implication**: When demand rises, quantity adjusts more than price — price stays relatively stable.
+:::
+::::
+
+. . .
+
+:point_right: **Both elasticities together** determine **who bears the burden** of taxes and price shocks! The side with **less elastic** response absorbs more of the burden.
+
+</div>
+
+## The Full Parallel: Demand vs Supply Elasticity :handshake:
+
+<div style="font-size: 70%;">
+
+| Concept | Demand Elasticity | Supply Elasticity |
+|---|---|---|
+| **Formula** | $\varepsilon_d = \frac{\Delta Q/Q}{\Delta P/P}$ | $\varepsilon_s = \frac{\Delta Q/Q}{\Delta P/P}$ |
+| **Sign** | Negative (use $|\varepsilon_d|$) | **Positive** |
+| **Elastic** | $|\varepsilon_d| > 1$ | $\varepsilon_s > 1$ |
+| **Revenue test** | Elastic: P↑ → TR↓ | No direct revenue test |
+| **Along linear curve** | Varies: ∞ → 1 → 0 | More stable; through origin = 1 |
+| **Key determinants** | Substitutes, budget share, necessity, time, market definition | **Input flexibility, mobility, replicability, time** |
+| **Perfectly inelastic** | Vertical demand | Vertical supply |
+| **Perfectly elastic** | Horizontal demand | Horizontal supply |
+
+:point_right: Both sides use the **same formula** and **same classification**. The determinants differ because they reflect different underlying decisions (buying vs producing).
+
+</div>
+
+## Summary :memo:
+
+<div style="font-size: 70%;">
+
+**Today's Key Takeaways**:
+
+**Demand elasticity recap**:
+
+1. $\varepsilon_d = \frac{\%\Delta Q}{\%\Delta P}$ — negative, use $|\varepsilon_d|$. Elastic > 1, inelastic < 1
+2. **Revenue test**: elastic → P↑ means TR↓; inelastic → P↑ means TR↑
+3. **Determinants**: substitutes, budget share, necessity/luxury, time, market definition
+
+**Supply elasticity (new)**:
+
+4. $\varepsilon_s = \frac{\%\Delta Q_s}{\%\Delta P}$ — always positive. Same formula, same classification
+5. **Linear supply through origin**: $\varepsilon_s = 1$ everywhere. Positive intercept: $\varepsilon_s > 1$
+6. **Determinants**: flexibility, mobility, and replicability of inputs, **time horizon**
+7. **Time**: very short run (inelastic) → short run → long run (elastic)
+8. Both elasticities together determine **price volatility** and **tax burden sharing**
+
+**Next (Lecture 16, April 16)**: Short Run and Long Run Market Equilibrium :balance_scale:
+
+</div>
+
+## Exercises {.center}
+
+**Practice Time!** :pencil2:
+
+Demand and supply elasticity calculation.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: The supply of hotel rooms in Porto's city center has $\varepsilon_s = 0.3$. If room prices increase by 20%, what happens to the quantity of rooms supplied?
+
+A. Quantity increases by 60%
+
+B. Quantity increases by 6%
+
+C. Quantity increases by 0.6%
+
+D. Quantity increases by 20%
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+$\%\Delta Q_s = \varepsilon_s \times \%\Delta P = 0.3 \times 20\% = 6\%$
+
+Supply is **inelastic** ($\varepsilon_s = 0.3 < 1$): even a large price increase (20%) produces only a small quantity response (6%). You can't build new hotel rooms quickly!
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: Demand for TAP flights from Lisbon to London has $|\varepsilon_d| = 1.8$. If TAP raises fares by 10%, what happens to total revenue from this route?
+
+A. Revenue increases by 18%
+
+B. Revenue increases because higher price means more money per ticket
+
+C. Revenue falls because passenger numbers drop by more than 10%
+
+D. Revenue stays the same
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: C**
+:::
+
+Demand is **elastic** ($|\varepsilon_d| = 1.8 > 1$): a 10% fare increase causes approximately $1.8 \times 10\% = 18\%$ fewer passengers. Since quantity drops **proportionally more** than price rises, $TR = P \times Q$ **falls**. This is the **revenue test** for elastic demand.
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 60%;">
+
+**The market for *tuk-tuk* tours in Lisbon** has the following estimated curves:
+
+- **Demand**: $P = 36 - 0.2Q$ (€ per tour)
+- **Supply**: $P = 6 + 0.1Q$ (€ per tour)
+
+**a)** Find the equilibrium price and quantity.
+
+**b)** Calculate the **price elasticity of demand** at the equilibrium point. Is demand elastic or inelastic?
+
+**c)** Calculate the **price elasticity of supply** at the equilibrium point. Is supply elastic or inelastic?
+
+**d)** At the equilibrium, if the city council imposes a small price increase (say €1), would you expect total revenue to rise or fall? Use the revenue test from part (b).
+
+**e)** The supply has a positive intercept ($c = 6$). Using the shortcut formula $\varepsilon_s = \frac{P}{P - c}$, verify your answer from part (c). At what price would supply elasticity equal exactly 2?
+
+**f)** The city council considers a €3 per-tour tax on operators. This shifts supply to $P = 9 + 0.1Q$. Find the new equilibrium. Who bears more of the tax burden — tourists or operators? Relate your answer to the elasticities you calculated.
+
+</div>
+
+## Exercise 3: Solution — Parts a, b & c
+
+<div style="font-size: 66%;">
+
+**a)** Equilibrium: $36 - 0.2Q = 6 + 0.1Q$ → $30 = 0.3Q$ → $Q^* = 100$, $P^* = 36 - 0.2(100) = €16$
+
+**b)** Demand elasticity at $(Q^* = 100, P^* = 16)$:
+
+Demand slope = $-0.2$, so $\frac{1}{\text{slope}} = \frac{1}{-0.2} = -5$
+
+$$\varepsilon_d = -5 \times \frac{16}{100} = -0.8$$
+
+$|\varepsilon_d| = 0.8 < 1$ → Demand is **inelastic** at the equilibrium.
+
+**c)** Supply elasticity at $(Q^* = 100, P^* = 16)$:
+
+Supply slope = $0.1$, so $\frac{1}{\text{slope}} = 10$
+
+$$\varepsilon_s = 10 \times \frac{16}{100} = 1.6$$
+
+$\varepsilon_s = 1.6 > 1$ → Supply is **elastic** at the equilibrium.
+
+</div>
+
+## Exercise 3: Solution — Parts d & e
+
+<div style="font-size: 70%;">
+
+**d)** Since demand is **inelastic** ($|\varepsilon_d| = 0.8 < 1$), the revenue test says: a price increase → total revenue **rises**. Quantity falls, but by a smaller percentage than price rises. The €1 increase would increase TR.
+
+**e)** Shortcut: $\varepsilon_s = \frac{P}{P - c} = \frac{16}{16 - 6} = \frac{16}{10} = 1.6$ :white_check_mark: Matches part (c)!
+
+For $\varepsilon_s = 2$: $\frac{P}{P - 6} = 2$ → $P = 2P - 12$ → $P = €12$
+
+At $P = 12$: $Q = \frac{12 - 6}{0.1} = 60$ tours. So supply is more elastic at **lower prices** (closer to the intercept).
+
+</div>
+
+## Exercise 3: Solution — Part f
+
+<div style="font-size: 68%;">
+
+**f)** New supply with €3 tax: $P = 9 + 0.1Q$
+
+New equilibrium: $36 - 0.2Q = 9 + 0.1Q$ → $27 = 0.3Q$ → $Q^* = 90$, $P^* = 36 - 0.2(90) = €18$
+
+| | Before tax | After tax | Change |
+|---|:---:|:---:|:---:|
+| **Price paid by tourists** | €16 | €18 | +€2 |
+| **Price received by operators** (net of tax) | €16 | €18 − €3 = €15 | −€1 |
+| **Quantity** | 100 | 90 | −10 |
+
+Of the €3 tax: tourists pay **€2 more**, operators receive **€1 less**.
+
+:point_right: **Tourists bear more** (€2 out of €3) because **demand is more inelastic** ($|\varepsilon_d| = 0.8$) than supply is ($\varepsilon_s = 1.6$). The side with **less elastic** response absorbs more of the tax.
+
+:bulb: This is a **general rule**: tax burden falls more heavily on the side of the market that is **less responsive** to price changes.
+
+</div>
+
+## Next Lecture {.center}
+
+**April 16, 2026**: Short Run and Long Run Market Equilibrium :balance_scale:
+
+We finally put **demand and supply together** to find prices and quantities!
+
+. . .
+
+:point_right: This is the payoff of Lectures 5–15: consumer theory meets producer theory!
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Thursday, April 16, 2026*
+
+::: {.notes}
+This lecture serves double duty: it provides the demand elasticity content that was skipped (L9) in condensed form, then teaches supply elasticity as its mirror. The demand recap is kept to 3-4 slides covering definition, calculation, revenue test, and determinants — just enough for students to use the concept. The supply elasticity section follows the same structure. The exercise integrates both sides with a tax incidence analysis that requires comparing demand and supply elasticities, which is the conceptual payoff of learning both.
+:::

@@ -1,0 +1,761 @@
+---
+title: "Producer Theory"
+subtitle: "Lecture 13: The Seller's Supply Rule — Price = Marginal Cost"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 13"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(patchwork)
+
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_blue <- "#2E86AB"
+ue_green <- "#27ae60"
+ue_orange <- "#E67E22"
+```
+
+## Recap: Lecture 12 :rewind:
+
+<div style="font-size: 80%;">
+
+**What we covered last time**:
+
+- **Shutdown rule**: Operate if $P \geq AVC$; shut down if $P < AVC$
+- **Breakeven price** = $ATC_{\min}$ (zero economic profit)
+- **Shutdown price** = $AVC_{\min}$ (below this, stop producing)
+- **The firm's supply curve** = the MC curve above AVC
+
+. . .
+
+:dart: **Today**: We formalize the **seller's supply rule** and explore what makes the supply curve **shift**.
+
+:point_right: The supply rule is the **producer's equivalent** of the demand curve we derived in Lecture 8!
+
+</div>
+
+# The Seller's Supply Rule
+
+## The Cost-Benefit Principle Applied to Firms :balance_scale:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**The Seller's Supply Rule**
+
+A profit-maximizing firm in perfect competition should produce at the level of output where:
+
+$$\text{Price} = \text{Marginal Cost} \qquad (P = MC)$$
+
+on the **rising** portion of the MC curve, provided $P \geq AVC$.
+:::
+
+**Why?** The **cost-benefit principle** (from Lecture 3!) applied to each unit:
+
+- The **benefit** of producing one more unit = the revenue it brings = $P$
+- The **cost** of producing one more unit = $MC$
+
+:point_right: Keep producing as long as $P \geq MC$. Stop when the next unit would cost more than it earns.
+
+This is just **marginal analysis** — the same logic we've used since the very beginning of the course!
+
+</div>
+
+## The Rule in Action: Step by Step :footprints:
+
+<div style="font-size: 68%;">
+
+**The bottle factory** (from the textbook): P = €0.35/bottle, FC = €40/day
+
+| Going from → to | Extra bottles | Revenue per bottle (MR = P) | MC per bottle | MR vs MC | Decision |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 → 100 | 100 | €0.35 | €0.10 | MR > MC | :white_check_mark: Produce |
+| 100 → 200 | 100 | €0.35 | €0.10 | MR > MC | :white_check_mark: Produce |
+| 200 → 300 | 100 | €0.35 | €0.20 | MR > MC | :white_check_mark: Produce |
+| 300 → 400 | 100 | €0.35 | €0.30 | MR > MC | :white_check_mark: Produce |
+| 400 → 500 | 100 | €0.35 | €0.40 | MR < MC | :x: Stop! |
+
+*Source: Course textbook (sebenta), Table 10*
+
+:point_right: **Optimal output: Q* = 400 bottles/day**. At Q = 400, the MC of the next batch (€0.40) exceeds the price (€0.35), so expanding further would **reduce** profit.
+
+:bulb: At Q = 300, MC = €0.20 < P = €0.35 — there's still €0.15/bottle of "profit margin" to capture. That's why the firm doesn't stop at 300!
+
+</div>
+
+## Why "Rising Portion" Matters :warning:
+
+<div style="font-size: 78%;">
+
+MC is U-shaped — it may intersect the price line **twice**. Which intersection is correct?
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 4.5
+#| fig-align: center
+
+Q_mc <- seq(1, 60, by = 0.5)
+MC_mc <- 0.06 * Q_mc^2 - 2.8 * Q_mc + 60
+P_val <- 40
+
+# Two intersections: 0.06*Q^2 - 2.8*Q + 20 = 0
+# Q = (2.8 ± sqrt(7.84 - 4.8)) / 0.12 = (2.8 ± sqrt(3.04)) / 0.12
+q_low <- (2.8 - sqrt(3.04)) / 0.12
+q_high <- (2.8 + sqrt(3.04)) / 0.12
+
+ggplot() +
+  geom_line(data = data.frame(Q = Q_mc, MC = MC_mc),
+            aes(x = Q, y = MC), color = ue_red, linewidth = 1.5) +
+  geom_hline(yintercept = P_val, color = ue_green, linewidth = 1.2) +
+  # Two intersection points
+  geom_point(aes(x = q_low, y = P_val), size = 5, shape = 4,
+             color = ue_red, stroke = 2) +
+  geom_point(aes(x = q_high, y = P_val), size = 5, shape = 16,
+             color = ue_green) +
+  # Labels
+  annotate("text", x = q_low, y = P_val - 3.5,
+           label = paste0("Q₁ ≈ ", round(q_low)), fontface = "bold",
+           size = 4, color = ue_red) +
+  annotate("text", x = q_low, y = P_val - 6,
+           label = "✗ Falling MC\n(not profit-max)", fontface = "italic",
+           size = 3.2, color = ue_red) +
+  annotate("text", x = q_high, y = P_val + 4,
+           label = paste0("Q* ≈ ", round(q_high)), fontface = "bold",
+           size = 4, color = ue_green) +
+  annotate("text", x = q_high, y = P_val + 7.5,
+           label = "✓ Rising MC\n(profit-maximizing!)", fontface = "italic",
+           size = 3.2, color = ue_green) +
+  annotate("text", x = 56, y = 65, label = "MC", color = ue_red,
+           fontface = "bold.italic", size = 5) +
+  annotate("text", x = 56, y = P_val + 2, label = "P", color = ue_green,
+           fontface = "bold", size = 5) +
+  coord_cartesian(ylim = c(25, 75), xlim = c(0, 60)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Output (Q)", y = "€ per unit",
+       title = "Two Intersections — Only the Rising Portion Is Correct (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 14),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+At Q₁ (falling MC): if you produce one more unit, MC is still falling — you can **increase** profit further! At Q* (rising MC): producing one more unit would cost **more** than the price. This is the true optimum.
+
+</div>
+
+## The Supply Rule: Formal Summary :clipboard:
+
+<div style="font-size: 76%;">
+
+::: {.key-concept}
+**The Complete Supply Rule for a Competitive Firm**
+
+1. Find $Q^*$ where $P = MC$ on the **rising** portion of MC
+2. If $P \geq AVC$ at $Q^*$ → **supply $Q^*$ units**
+3. If $P < AVC$ at $Q^*$ → **supply 0 units** (shut down)
+
+The individual supply curve is the **MC curve above AVC_min**.
+:::
+
+**This rule answers three questions at once**:
+
+| Question | Answer |
+|---|---|
+| **How much** to produce? | Where $P = MC$ (rising portion) |
+| **Whether** to produce? | Only if $P \geq AVC$ |
+| **How much profit?** | $\pi = (P - ATC) \times Q^*$ |
+
+:point_right: One rule, three answers — that's the power of marginal analysis!
+
+</div>
+
+# What Happens When Costs Change?
+
+## The Textbook's Key Insight: Changing the Price :chart_with_upwards_trend:
+
+<div style="font-size: 68%;">
+
+The textbook shows what happens when the bottle price **rises from €0.35 to €0.45**:
+
+| Q (bottles/day) | MC per bottle | Profit at P=€0.35 | Profit at P=€0.45 |
+|:---:|:---:|:---:|:---:|
+| 0 | — | −40 | −40 |
+| 100 | 0.10 | −15 | −5 |
+| 200 | 0.10 | 10 | 30 |
+| 300 | 0.20 | 25 | 55 |
+| **400** | **0.30** | **30** | 70 |
+| **500** | **0.40** | 25 | **75** |
+| 600 | 0.50 | 10 | 70 |
+| 700 | 0.60 | −15 | 55 |
+
+*Source: Course textbook (sebenta), Tables 10 & 11*
+
+- At P = €0.35: **Q* = 400** (MC ≈ 0.30, next batch MC = 0.40 > P)
+- At P = €0.45: **Q* = 500** (MC ≈ 0.40, next batch MC = 0.50 > P)
+
+:point_right: **Higher price → produce more → earn more profit**. The firm moves **up along its MC/supply curve**.
+
+</div>
+
+## The Textbook's Key Insight: Changing Wages :moneybag:
+
+<div style="font-size: 70%;">
+
+What if wages rise from €10/hour to **€12/hour** (keeping P = €0.35)?
+
+| Q | LC at €10/hr | LC at €12/hr | TC (w=10) | TC (w=12) | Profit (w=10) | Profit (w=12) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 0 | 0 | 40 | 40 | −40 | −40 |
+| 100 | 10 | 12 | 50 | 52 | −15 | −17 |
+| 200 | 20 | 24 | 60 | 64 | 10 | 6 |
+| **300** | 40 | 48 | 80 | 88 | 25 | **17** |
+| **400** | 70 | 84 | 110 | 124 | **30** | 16 |
+| 500 | 110 | 132 | 150 | 172 | 25 | 3 |
+
+*Source: Course textbook (sebenta), Tables 10 & 12*
+
+- At w = €10/hr: **Q* = 400**, max profit = €30
+- At w = €12/hr: **Q* = 300**, max profit = €17
+
+:point_right: **Higher wages → MC rises at every Q → firm produces less at the same price**. The supply curve has **shifted left**!
+
+</div>
+
+## Visualizing a Supply Shift :arrows_counterclockwise:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 11
+#| fig-height: 5
+#| fig-align: center
+
+# Original MC and shifted MC (higher wages)
+Q_s <- seq(1, 60, by = 0.5)
+MC_original <- 0.06 * Q_s^2 - 2.8 * Q_s + 60
+MC_shifted <- 0.06 * Q_s^2 - 2.8 * Q_s + 70  # +10 shift up (higher wages)
+
+P_line <- 50
+
+# Find Q* for each
+# Original: 0.06Q^2 - 2.8Q + 60 = 50 => 0.06Q^2 - 2.8Q + 10 = 0
+q_orig <- (2.8 + sqrt(2.8^2 - 4*0.06*10)) / (2*0.06)
+# Shifted: 0.06Q^2 - 2.8Q + 70 = 50 => 0.06Q^2 - 2.8Q + 20 = 0
+q_shift <- (2.8 + sqrt(2.8^2 - 4*0.06*20)) / (2*0.06)
+
+ggplot() +
+  geom_line(data = data.frame(Q = Q_s, MC = MC_original),
+            aes(x = Q, y = MC), color = ue_red, linewidth = 1.5) +
+  geom_line(data = data.frame(Q = Q_s, MC = MC_shifted),
+            aes(x = Q, y = MC), color = ue_orange, linewidth = 1.5, linetype = "dashed") +
+  geom_hline(yintercept = P_line, color = ue_green, linewidth = 1) +
+  # Original Q*
+  geom_point(aes(x = q_orig, y = P_line), size = 4, color = ue_red) +
+  geom_segment(aes(x = q_orig, y = 25, xend = q_orig, yend = P_line),
+               linetype = "dotted", color = ue_gray) +
+  # Shifted Q*
+  geom_point(aes(x = q_shift, y = P_line), size = 4, color = ue_orange) +
+  geom_segment(aes(x = q_shift, y = 25, xend = q_shift, yend = P_line),
+               linetype = "dotted", color = ue_gray) +
+  # Arrow showing shift
+  annotate("segment", x = q_orig - 1, y = 44, xend = q_shift + 1, yend = 44,
+           arrow = arrow(length = unit(0.3, "cm")), color = ue_black, linewidth = 1) +
+  annotate("text", x = (q_orig + q_shift) / 2, y = 42,
+           label = "Supply shifts left", fontface = "bold", size = 4, color = ue_black) +
+  # Labels
+  annotate("text", x = 56, y = MC_original[length(MC_original)] - 8,
+           label = expression(S[1] ~ "(low wages)"), color = ue_red,
+           fontface = "bold", size = 4) +
+  annotate("text", x = 56, y = MC_shifted[length(MC_shifted)] - 8,
+           label = expression(S[2] ~ "(high wages)"), color = ue_orange,
+           fontface = "bold", size = 4) +
+  annotate("text", x = 2, y = P_line + 2, label = "P = €50", color = ue_green,
+           fontface = "bold", size = 4, hjust = 0) +
+  annotate("text", x = q_orig, y = 27, label = paste0("Q₁* = ", round(q_orig)),
+           fontface = "bold", size = 3.5, color = ue_red) +
+  annotate("text", x = q_shift, y = 27, label = paste0("Q₂* = ", round(q_shift)),
+           fontface = "bold", size = 3.5, color = ue_orange) +
+  coord_cartesian(ylim = c(25, 85), xlim = c(0, 60)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Output (Q)", y = "€ per unit",
+       title = "Effect of Higher Wages: Supply Shifts Left (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Does Changing Fixed Costs Shift Supply? :lock:
+
+<div style="font-size: 76%;">
+
+The textbook also shows: when **FC rises from €40 to €70** (price stays at €0.35):
+
+- **Q* stays at 400!** The profit-maximizing quantity doesn't change.
+- Profit drops from €30 to €0, but the **production decision** is unchanged.
+
+. . .
+
+::: {.key-concept}
+**Fixed Costs Do Not Shift the Supply Curve in the Short Run**
+
+MC depends only on **variable costs**. Since FC doesn't affect MC, it doesn't change the $P = MC$ intersection, and the supply curve stays in the same position.
+
+FC affects **profit** (and the shutdown/exit decision in the long run), but not the **quantity supplied** at each price.
+:::
+
+:point_right: **Movement along** the supply curve: caused by a change in the product's **own price**
+
+:point_right: **Shift of** the supply curve: caused by a change in **input prices** (wages, materials), **technology**, or **number of firms**
+
+</div>
+
+# Supply Curve Shifters
+
+## What Shifts the Supply Curve? :arrows_counterclockwise:
+
+<div style="font-size: 72%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Shift RIGHT** (increase in supply) :arrow_right:
+
+More is supplied at every price when:
+
+- :chart_with_downwards_trend: **Input prices fall** (cheaper labor, fuel, materials)
+- :gear: **Technology improves** (online booking systems, automation)
+- :thermometer: **Favorable conditions** (good weather for agriculture, tourism)
+- :heavy_plus_sign: **More firms enter** the market
+- :classical_building: **Government subsidies** or reduced regulation
+
+*Tourism*: New low-cost airline tech → cheaper flights → supply of flights shifts right
+:::
+
+::: {.column width="50%"}
+**Shift LEFT** (decrease in supply) :arrow_left:
+
+Less is supplied at every price when:
+
+- :chart_with_upwards_trend: **Input prices rise** (higher wages, energy costs)
+- :no_entry_sign: **Regulation increases** (stricter licensing, environmental rules)
+- :warning: **Adverse events** (natural disaster, pandemic)
+- :heavy_minus_sign: **Firms exit** the market
+- :receipt: **Higher taxes** on producers
+
+*Tourism*: New tourist tax → higher costs for hotels → supply shifts left
+:::
+::::
+
+</div>
+
+## Movement Along vs Shift: Supply Edition :mag:
+
+<div style="font-size: 76%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 4.5
+#| fig-align: center
+
+# Left: movement along supply curve
+p_move <- ggplot() +
+  geom_segment(aes(x = 0, y = 2, xend = 10, yend = 8),
+               color = ue_red, linewidth = 1.5) +
+  geom_point(aes(x = 3.75, y = 5), size = 4, color = ue_black) +
+  geom_point(aes(x = 6.25, y = 7), size = 4, color = ue_black) +
+  annotate("text", x = 3.75, y = 4.3, label = "A", fontface = "bold", size = 4.5) +
+  annotate("text", x = 6.25, y = 7.7, label = "B", fontface = "bold", size = 4.5) +
+  geom_segment(aes(x = 0, y = 5, xend = 3.75, yend = 5),
+               linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 0, y = 7, xend = 6.25, yend = 7),
+               linetype = "dashed", color = ue_gray) +
+  annotate("segment", x = 4.5, y = 5.5, xend = 5.5, yend = 6.5,
+           arrow = arrow(length = unit(0.2, "cm")), color = ue_red, linewidth = 1) +
+  annotate("text", x = 9, y = 7.5, label = "S", color = ue_red,
+           fontface = "bold.italic", size = 6) +
+  scale_x_continuous(limits = c(0, 11), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 10), expand = c(0, 0),
+                     breaks = c(5, 7), labels = c("P₁", "P₂")) +
+  labs(x = "Q", y = "P",
+       title = "Movement Along (own price ↑)") +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+
+# Right: shift of supply
+p_shift <- ggplot() +
+  geom_segment(aes(x = 2, y = 2, xend = 10, yend = 8),
+               color = ue_gray, linewidth = 1.5) +
+  geom_segment(aes(x = 0, y = 2, xend = 8, yend = 8),
+               color = ue_red, linewidth = 1.5) +
+  annotate("text", x = 9.5, y = 7.5, label = expression(S[1]), color = ue_gray,
+           fontface = "bold.italic", size = 5) +
+  annotate("text", x = 7.5, y = 7.5, label = expression(S[2]), color = ue_red,
+           fontface = "bold.italic", size = 5) +
+  annotate("segment", x = 7, y = 5, xend = 5, yend = 5,
+           arrow = arrow(length = unit(0.2, "cm")), color = ue_black, linewidth = 1) +
+  annotate("text", x = 6, y = 5.6, label = "Shift left",
+           fontface = "bold", size = 3.5, color = ue_black) +
+  scale_x_continuous(limits = c(0, 11), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 10), expand = c(0, 0)) +
+  labs(x = "Q", y = "P",
+       title = "Shift of Supply (input costs ↑)") +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+
+p_move + p_shift +
+  plot_annotation(title = "Movement Along vs. Shift of Supply",
+                  theme = theme(plot.title = element_text(color = ue_red,
+                                face = "bold", hjust = 0.5, size = 14)))
+```
+
+**Left**: When the product's own price rises, the firm moves **along** its supply curve → $Q$ increases.
+
+**Right**: When input costs rise (wages, energy), the entire supply curve **shifts left** → less supplied at every price.
+
+:bulb: Exactly the same logic as demand (Lecture 8): own-price = movement along; other factors = shift!
+
+</div>
+
+# Tourism Applications
+
+## Supply Shifts in Portuguese Tourism :portugal:
+
+<div style="font-size: 74%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Example 1: Minimum wage increase** :moneybag:
+
+Portugal's minimum wage has been rising. For tourism businesses:
+
+- Labor is a major variable cost (housekeeping, waitstaff, guides)
+- Higher wages → MC shifts up → supply shifts **left**
+- At the same hotel room price, fewer rooms are profitably offered
+- Some marginal businesses may shut down ($P < AVC$ at new costs)
+
+**Effect**: fewer beds at every price level, or higher prices to compensate
+:::
+
+::: {.column width="50%"}
+**Example 2: Online booking technology** :computer:
+
+Platforms like Booking.com, Airbnb:
+
+- Reduce distribution costs (no need for travel agents)
+- Lower marketing costs per booking
+- MC shifts **down** → supply shifts **right**
+- More accommodation available at every price point
+
+**Effect**: more rooms at every price level — which has been the trend!
+:::
+::::
+
+. . .
+
+:point_right: Both examples change **variable costs**, which shifts MC and therefore the supply curve.
+
+</div>
+
+## Supply Shifts: Seasonal Staffing in the Algarve :sunny:
+
+<div style="font-size: 78%;">
+
+**Why is the supply of tourism services different in summer vs winter?**
+
+The $P = MC$ rule explains it:
+
+:::: {.columns}
+::: {.column width="50%"}
+:sunny: **Summer**:
+
+- Abundant seasonal workers → wages moderate
+- MC is **relatively low** for extra services
+- Supply curve is **further right**
+- More tours, restaurants, activities offered
+:::
+
+::: {.column width="50%"}
+:snowflake: **Winter**:
+
+- Workers move to other sectors → must pay more to retain
+- Energy costs higher (heating)
+- MC is **higher** for the same services
+- Supply curve shifts **left**
+- Fewer services offered
+:::
+::::
+
+. . .
+
+:bulb: **Combined with demand shifts**: In summer, both supply and demand are higher. In winter, both shift left. The net effect on price depends on which shift is larger — this is **market equilibrium** (Lecture 17)!
+
+</div>
+
+## The Parallel with Demand :handshake:
+
+<div style="font-size: 76%;">
+
+Throughout the course, we've built **mirror-image** tools for consumers and producers:
+
+| Concept | Consumer (Demand) | Producer (Supply) |
+|---|---|---|
+| **Goal** | Maximize utility | Maximize profit |
+| **Constraint** | Budget ($M$) | Cost structure ($TC$) |
+| **Individual curve** | From utility maximization | From $P = MC$ (above AVC) |
+| **Curve shape** | Downward-sloping :chart_with_downwards_trend: | Upward-sloping :chart_with_upwards_trend: |
+| **Movement along** | Own price changes | Own price changes |
+| **Shift** | Income, preferences, other prices | Input costs, technology, # firms |
+| **Surplus** | Consumer surplus (area below D, above P) | Producer surplus (next lecture!) |
+| **Market curve** | Horizontal sum of individual D | Horizontal sum of individual S |
+
+:point_right: Next lecture we complete the right column: **producer surplus** and **market supply**!
+
+</div>
+
+## Summary :memo:
+
+<div style="font-size: 74%;">
+
+**Today's Key Takeaways**:
+
+1. **The seller's supply rule**: Produce where $P = MC$ on the rising portion of MC, provided $P \geq AVC$
+2. This follows directly from the **cost-benefit principle** — produce as long as $P \geq MC$
+3. The rule answers three questions: **how much**, **whether**, and **how profitable**
+4. **Higher product price** → movement **along** the supply curve (more produced)
+5. **Higher input costs** (wages, energy) → MC shifts up → supply curve shifts **left**
+6. **Better technology** → MC shifts down → supply curve shifts **right**
+7. **Fixed costs don't shift supply** in the short run (they don't affect MC)
+8. Supply and demand are **mirror images** — built from the same marginal analysis logic
+
+**Connection**: We now have the individual firm's supply curve. Next lecture: **producer surplus** and how to build the **market supply** from individual firms.
+
+**Next (Lecture 14, April 9)**: Producer Surplus, Market Supply, and Linear Supply :chart_with_upwards_trend:
+
+</div>
+
+## Exercises {.center}
+
+**Practice Time!** :pencil2:
+
+The supply rule, cost changes, and supply shifts.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: A sardine restaurant in Lisbon operates in a competitive market. Currently, $P = €12$ per meal and $MC = €10$ at the restaurant's current output level. The restaurant should:
+
+A. Keep output the same — it is already maximizing profit
+
+B. Increase output — producing more will add to profit
+
+C. Decrease output — the restaurant is overproducing
+
+D. Shut down — it is not covering costs
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+Since $P = €12 > MC = €10$, each additional meal earns €12 in revenue but costs only €10. The restaurant should **expand output** until MC rises to meet $P = €12$. At the current output, there is still "room" to increase profit by producing more.
+
+Only when $P = MC$ should the firm stop expanding.
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 80%;">
+
+**Question**: The Portuguese government introduces a new tourist tax of €2 per hotel night, paid by the hotel. Which of the following is correct?
+
+A. The hotel's supply curve shifts right by €2
+
+B. The hotel's supply curve shifts left (up by €2) — at each price, less is supplied
+
+C. The hotel moves along its existing supply curve
+
+D. The hotel's demand curve shifts left
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+The tax increases the **variable cost** of each room-night by €2. This shifts MC **up** by €2 at every output level, which means the supply curve shifts **left** (equivalently, upward by €2).
+
+At any given market price, the hotel now produces **less** because $P = MC$ is reached at a lower quantity. This is a **shift** of supply, not a movement along it (C is wrong), because the change is in costs, not the product's own price. And it's the supply curve, not demand (D is wrong).
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 62%;">
+
+**A small boat tour company in Cascais** faces the following situation. The market price for a coastal tour is **€40 per ticket**. The firm's cost structure is:
+
+| Tours/day (Q) | FC (€) | VC (€) | TC (€) | MC (€/tour) |
+|:---:|:---:|:---:|:---:|:---:|
+| 0 | 300 | 0 | 300 | — |
+| 1 | 300 | 15 | 315 | 15 |
+| 2 | 300 | 28 | 328 | 13 |
+| 3 | 300 | 39 | 339 | 11 |
+| 4 | 300 | 52 | 352 | 13 |
+| 5 | 300 | 70 | 370 | 18 |
+| 6 | 300 | 96 | 396 | 26 |
+| 7 | 300 | 133 | 433 | 37 |
+| 8 | 300 | 184 | 484 | 51 |
+
+*Hypothetical illustrative example*
+
+**a)** Using the $P = MC$ rule, what is the profit-maximizing output at $P = €40$? Calculate profit.
+
+**b)** Now fuel costs rise, adding €10 to the MC of each tour. Write the new MC column. What is the new profit-maximizing output? Calculate the new profit.
+
+**c)** Has the supply curve shifted or has the firm moved along it? Explain.
+
+**d)** At the original cost structure, what is the lowest price at which this firm would still produce? (What is the shutdown price?)
+
+**e)** Draw (describe) what the firm's supply curve looks like: at what price does it "start," and what does it follow?
+
+</div>
+
+## Exercise 3: Solution — Part a
+
+<div style="font-size: 72%;">
+
+**a)** Apply $P = MC$ on the rising portion:
+
+| Q | MC | P vs MC |
+|:---:|:---:|:---:|
+| 3 | 11 | P = 40 > MC → produce |
+| 4 | 13 | P = 40 > MC → produce |
+| 5 | 18 | P = 40 > MC → produce |
+| 6 | 26 | P = 40 > MC → produce |
+| 7 | 37 | P = 40 > MC → produce |
+| 8 | 51 | P = 40 < MC → **stop!** |
+
+**Q* = 7 tours/day** (last tour where $P \geq MC$).
+
+Profit: $\pi = TR - TC = (40 \times 7) - 433 = 280 - 433 = -€153$
+
+The firm makes a **loss** of €153/day. But should it still operate? AVC at Q = 7: $\frac{133}{7} = €19$. Since $P = €40 > AVC = €19$: **yes, operate!** Shutdown loss would be −€300 (= FC), which is worse.
+
+</div>
+
+## Exercise 3: Solution — Parts b & c
+
+<div style="font-size: 68%;">
+
+**b)** New MC = old MC + €10:
+
+| Q | Old MC | New MC | P = 40 vs New MC |
+|:---:|:---:|:---:|:---:|
+| 1 | 15 | 25 | 40 > 25 → produce |
+| 2 | 13 | 23 | 40 > 23 → produce |
+| 3 | 11 | 21 | 40 > 21 → produce |
+| 4 | 13 | 23 | 40 > 23 → produce |
+| 5 | 18 | 28 | 40 > 28 → produce |
+| 6 | 26 | 36 | 40 > 36 → produce |
+| 7 | 37 | **47** | 40 < 47 → **stop!** |
+
+**New Q* = 6 tours/day** (down from 7).
+
+New VC at Q = 6: old VC + 6 × €10 = €96 + €60 = €156. New TC = 300 + 156 = €456.
+
+New profit: $\pi = (40 \times 6) - 456 = 240 - 456 = -€216$ (loss worsened from −€153 to −€216).
+
+**c)** This is a **shift of the supply curve**, not a movement along it. The price didn't change (still €40) — what changed was the **input cost** (fuel). Higher variable costs shift MC upward, which shifts the supply curve **left**. At the same price, the firm now supplies fewer tours (6 instead of 7).
+
+</div>
+
+## Exercise 3: Solution — Parts d & e
+
+<div style="font-size: 72%;">
+
+**d)** The shutdown price = $AVC_{\min}$.
+
+Calculate AVC at each Q:
+
+| Q | VC | AVC = VC/Q |
+|:---:|:---:|:---:|
+| 1 | 15 | 15.00 |
+| 2 | 28 | 14.00 |
+| 3 | 39 | 13.00 |
+| 4 | 52 | **13.00** |
+| 5 | 70 | 14.00 |
+| 6 | 96 | 16.00 |
+
+**Shutdown price** = $AVC_{\min}$ = **€13** (at Q = 3–4). Below €13, the firm should produce nothing.
+
+**e)** The firm's supply curve:
+
+- For $P < €13$: **Q = 0** (shut down)
+- For $P \geq €13$: follow the **MC curve on its rising portion** (starting around Q = 3–4)
+- As P rises, Q* increases: e.g., P = 18 → Q = 5, P = 26 → Q = 6, P = 37 → Q = 7, etc.
+
+The supply curve **starts at the shutdown point** (P = €13, Q ≈ 3–4) and follows MC upward.
+
+</div>
+
+## Next Lecture {.center}
+
+**April 9, 2026**: Producer Surplus, Market Supply, and Linear Supply :chart_with_upwards_trend:
+
+. . .
+
+We'll introduce **producer surplus** (the supply-side mirror of consumer surplus), build **market supply** from individual firms, and work with **linear supply equations**.
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Wednesday, April 9, 2026*
+
+::: {.notes}
+This lecture formalizes the P = MC supply rule that has been building across Lectures 10–12. The textbook examples (bottle factory) ground the abstract rule in familiar numerical territory. The key new content is supply shifters — students need to distinguish clearly between movements along the supply curve (own price) and shifts (input costs, technology). The parallel table with demand concepts helps students see the symmetry. The exercise includes a fuel cost increase that shifts MC, giving students practice with the difference between movement and shift.
+:::

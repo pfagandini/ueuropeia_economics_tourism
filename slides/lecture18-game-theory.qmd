@@ -1,0 +1,573 @@
+---
+title: "Game Theory"
+subtitle: "Lecture 18: Introduction — Prisoner's Dilemma & Nash Equilibrium"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 18"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(patchwork)
+
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_blue <- "#2E86AB"
+ue_green <- "#27ae60"
+ue_orange <- "#E67E22"
+```
+
+## A New World: Beyond Perfect Competition :world_map:
+
+<div style="font-size: 78%;">
+
+In Lectures 10–17, we studied **perfect competition**: many firms, identical products, no firm affects the market price.
+
+But most real markets aren't like that!
+
+:::: {.columns}
+::: {.column width="50%"}
+:x: **Not perfect competition**:
+
+- :airplane: **Airlines**: TAP vs Ryanair on the same route
+- :hotel: **Hotels**: Marriott vs Hilton in the same city
+- :iphone: **Platforms**: Booking.com vs Airbnb
+- :hamburger: **Restaurants**: competing for tourists on the same street
+:::
+
+::: {.column width="50%"}
+:thinking: **The key difference**:
+
+In these markets, each firm's decision **depends on what the other firms do**.
+
+- If Ryanair cuts prices, TAP must respond
+- If one hotel offers free breakfast, the neighbor considers matching
+
+This is **strategic interaction** — the domain of **Game Theory**!
+:::
+::::
+
+</div>
+
+## What Is Game Theory? :chess_pawn:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Game Theory**
+
+The study of **strategic decision-making** — situations where the outcome for each player depends not only on their own choices, but also on the choices of others.
+:::
+
+**Every game has three ingredients**:
+
+| Ingredient | Definition | Tourism example |
+|---|---|---|
+| :busts_in_silhouette: **Players** | The decision-makers | TAP and Ryanair |
+| :joystick: **Strategies** | The options available to each player | High price or Low price |
+| :trophy: **Payoffs** | The outcome (profit, utility) for each combination of strategies | Revenue from each pricing scenario |
+
+:point_right: We'll start with **simultaneous games** (players choose at the same time, without knowing the other's choice). Next lecture: **sequential games** (one player moves first).
+
+</div>
+
+# The Payoff Matrix
+
+## How to Read a Payoff Matrix :book:
+
+<div style="font-size: 72%;">
+
+**Two airlines** (TAP and Ryanair) compete on the Lisbon–London route. Each can set a **High** or **Low** fare.
+
+<div style="margin: 0 auto; width: 70%;">
+
+|  | **Ryanair: High** | **Ryanair: Low** |
+|:---:|:---:|:---:|
+| **TAP: High** | (€500k , €500k) | (€200k , €600k) |
+| **TAP: Low** | (€600k , €200k) | (€350k , €350k) |
+
+</div>
+
+*Payoffs: (TAP's profit , Ryanair's profit). Hypothetical illustrative example.*
+
+**How to read**: Each cell shows what happens for a specific combination of choices.
+
+- If **both set High prices**: each earns €500k (they share the market at high margins)
+- If **TAP goes Low, Ryanair stays High**: TAP steals customers → TAP earns €600k, Ryanair earns only €200k
+- If **both go Low**: price war → each earns only €350k
+
+:point_right: Each player picks a **row** (TAP) or **column** (Ryanair). The cell at the intersection is the outcome.
+
+</div>
+
+## How Should TAP Decide? :thinking:
+
+<div style="font-size: 76%;">
+
+**TAP's reasoning** (looking at its own payoffs — the **first** number):
+
+**If Ryanair chooses High**:
+
+- TAP High → €500k
+- TAP Low → €600k :arrow_left: **Better!**
+
+**If Ryanair chooses Low**:
+
+- TAP High → €200k
+- TAP Low → €350k :arrow_left: **Better!**
+
+. . .
+
+::: {.key-concept}
+**Dominant Strategy**
+
+A strategy that gives a **better payoff regardless** of what the other player does.
+
+For TAP: **Low** is a dominant strategy — it's better no matter what Ryanair does!
+:::
+
+:point_right: By the same logic, Ryanair also finds **Low** is dominant (check the second numbers!).
+
+</div>
+
+# The Prisoner's Dilemma
+
+## The Classic Story :lock:
+
+<div style="font-size: 74%;">
+
+Two suspects are arrested and interrogated **separately**. Each can **Confess** (betray) or **Stay Silent** (cooperate).
+
+<div style="margin: 0 auto; width: 75%;">
+
+|  | **Suspect B: Silent** | **Suspect B: Confess** |
+|:---:|:---:|:---:|
+| **Suspect A: Silent** | (1 year , 1 year) | (10 years , 0 years) |
+| **Suspect A: Confess** | (0 years , 10 years) | (5 years , 5 years) |
+
+</div>
+
+*Payoffs are years in prison (lower is better).*
+
+**The dilemma**:
+
+- If both stay **Silent**: only 1 year each (best collective outcome!)
+- But **Confess** is a **dominant strategy** for each: whatever the other does, confessing gives a shorter sentence
+- Result: both confess → **5 years each** — worse than if they'd cooperated!
+
+:point_right: **Individual rationality leads to a collectively worse outcome.** This is the Prisoner's Dilemma.
+
+</div>
+
+## The Airline Pricing Game IS a Prisoner's Dilemma! :airplane:
+
+<div style="font-size: 76%;">
+
+Look at our airline game again:
+
+<div style="margin: 0 auto; width: 70%;">
+
+|  | **Ryanair: High** | **Ryanair: Low** |
+|:---:|:---:|:---:|
+| **TAP: High** | **(€500k , €500k)** :star: | (€200k , €600k) |
+| **TAP: Low** | (€600k , €200k) | **(€350k , €350k)** :lock: |
+
+</div>
+
+:star: = best collective outcome. :lock: = dominant strategy outcome.
+
+Both airlines **want** (High, High) = €500k each. But each has an incentive to **deviate** to Low and steal customers.
+
+Since both follow their dominant strategy (Low), they end up at **(€350k, €350k)** — **€150k worse** for each than if they'd cooperated!
+
+. . .
+
+:bulb: This explains **price wars** in tourism: airlines, hotels, and tour operators often end up competing on price even though they'd all be better off with higher prices. The structure of the game **traps** them.
+
+</div>
+
+## The Prisoner's Dilemma in Tourism :palm_tree:
+
+<div style="font-size: 76%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Where we see it**:
+
+- :airplane: Airlines cutting fares on competitive routes
+- :hotel: Hotels on Booking.com undercutting each other's prices
+- :fork_and_knife: Restaurants near Praça do Comércio all lowering prices to attract tourists
+- :beach_umbrella: Beach vendors offering "special discounts"
+
+Each would be better off if **all** kept prices higher, but each individually gains from cutting.
+:::
+
+::: {.column width="50%"}
+**Can cooperation work?**
+
+- :handshake: **Cartels** (illegal!): airlines agreeing on prices → fined by EU regulators
+- :repeat: **Repeated games**: if firms interact repeatedly, cooperation can emerge through **reputation** and **retaliation** (tit-for-tat)
+- :classical_building: **Industry associations**: soft coordination through "quality standards" rather than explicit price-fixing
+
+:point_right: We'll explore sequential and repeated games more in the next lecture!
+:::
+::::
+
+</div>
+
+# Nash Equilibrium
+
+## The Central Concept :star2:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Nash Equilibrium**
+
+A combination of strategies where **no player can improve their payoff by unilaterally changing their strategy**, given what the other players are doing.
+
+In a Nash Equilibrium, every player is doing the **best they can** given the other players' choices.
+:::
+
+**In the airline game**: (Low, Low) is a Nash Equilibrium because:
+
+- TAP plays Low. Could TAP do better by switching to High? No — TAP would go from €350k to €200k. :x:
+- Ryanair plays Low. Could Ryanair do better by switching to High? No — same reasoning. :x:
+
+:point_right: **Neither** player wants to deviate → it's a Nash Equilibrium!
+
+:bulb: A dominant strategy equilibrium is always a Nash Equilibrium, but **not all Nash Equilibria involve dominant strategies** (as we'll see).
+
+</div>
+
+## Finding Nash Equilibrium: The Underline Method :pencil2:
+
+<div style="font-size: 72%;">
+
+**Step-by-step method** to find Nash Equilibria in any 2×2 game:
+
+:one: For each of **Ryanair's strategies** (each column), find TAP's **best response** — underline TAP's highest payoff in that column.
+
+:two: For each of **TAP's strategies** (each row), find Ryanair's **best response** — underline Ryanair's highest payoff in that row.
+
+:three: Any cell where **both** payoffs are underlined is a **Nash Equilibrium**.
+
+<div style="margin: 0 auto; width: 70%;">
+
+|  | **Ryanair: High** | **Ryanair: Low** |
+|:---:|:---:|:---:|
+| **TAP: High** | (500k , 500k) | (200k , [**600k**]{style="text-decoration: underline;"}) |
+| **TAP: Low** | ([**600k**]{style="text-decoration: underline;"} , 200k) | ([**350k**]{style="text-decoration: underline;"} , [**350k**]{style="text-decoration: underline;"}) |
+
+</div>
+
+:point_right: Only **(Low, Low)** has **both** payoffs underlined → it's the unique Nash Equilibrium.
+
+</div>
+
+## A Game Without Dominant Strategies :balance_scale:
+
+<div style="font-size: 70%;">
+
+**Two hotels in Porto** decide their marketing strategy: focus on **Luxury** positioning or **Budget** positioning.
+
+<div style="margin: 0 auto; width: 75%;">
+
+|  | **Hotel B: Luxury** | **Hotel B: Budget** |
+|:---:|:---:|:---:|
+| **Hotel A: Luxury** | (€300k , €300k) | (€500k , €400k) |
+| **Hotel A: Budget** | (€400k , €500k) | (€200k , €200k) |
+
+</div>
+
+*Hypothetical illustrative example.*
+
+**Does Hotel A have a dominant strategy?** Let's check:
+
+- If B chooses Luxury: A prefers Budget (€400k > €300k)
+- If B chooses Budget: A prefers Luxury (€500k > €200k)
+
+:x: **No dominant strategy!** A's best choice depends on what B does.
+
+**Nash Equilibria** (underline method): **(Luxury, Budget)** and **(Budget, Luxury)** are **both** NE!
+
+:point_right: This game has **two Nash Equilibria** — differentiation is better than being identical. The market "wants" the hotels to be **different** from each other.
+
+</div>
+
+## Nash Equilibrium: Key Properties :clipboard:
+
+<div style="font-size: 78%;">
+
+**What NE tells us:**
+
+- :white_check_mark: It's a **stable** outcome — no one wants to deviate alone
+- :white_check_mark: It's a **prediction** of what rational players will do
+- :white_check_mark: Every game has **at least one** Nash Equilibrium (though it might involve randomization — "mixed strategies," which we won't cover)
+
+**What NE does NOT tell us:**
+
+- :x: NE is not necessarily **efficient** (Prisoner's Dilemma: NE is worse for both!)
+- :x: NE is not necessarily **unique** (the hotel game has two)
+- :x: NE doesn't require dominant strategies
+
+. . .
+
+::: {.key-concept}
+**The Power of Nash Equilibrium**
+
+It gives us a way to predict outcomes in **any** strategic situation — not just perfect competition. It's the most widely used solution concept in economics, political science, biology, and computer science.
+:::
+
+</div>
+
+# Tourism Applications
+
+## Strategic Thinking in Tourism :globe_with_meridians:
+
+<div style="font-size: 72%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Airbnb vs Hotels: Entry Game**
+
+Should a hotel lower prices to fight Airbnb, or differentiate on quality?
+
+|  | **Airbnb: Expand** | **Airbnb: Hold** |
+|:---:|:---:|:---:|
+| **Hotel: Cut Price** | (Low , Medium) | (Medium , Low) |
+| **Hotel: Differentiate** | (Medium , High) | (High , Medium) |
+
+If Airbnb expands, hotel is better off **differentiating** (focus on service, luxury). This explains why many hotels responded to Airbnb by going **upmarket** rather than competing on price.
+:::
+
+::: {.column width="50%"}
+**Overbooking Game**
+
+Airlines overbook flights because some passengers no-show. But if **two** airlines on the same route both overbook aggressively:
+
+- Both light → both fine
+- One aggressive, one conservative → aggressive wins
+- Both aggressive → chaos, bad PR for both
+
+:point_right: This has a Prisoner's Dilemma structure — airlines tend to overbook more than is collectively optimal.
+:::
+::::
+
+</div>
+
+## Summary :memo:
+
+<div style="font-size: 72%;">
+
+**Today's Key Takeaways**:
+
+1. **Game theory** studies strategic interaction — your outcome depends on others' choices
+2. **Three ingredients**: players, strategies, payoffs
+3. **Payoff matrix**: shows outcomes for all strategy combinations (read the row player's payoff first)
+4. **Dominant strategy**: best regardless of what others do
+5. **Prisoner's Dilemma**: individual rationality → collectively bad outcome. Both players have a dominant strategy, but the equilibrium is **not** the best outcome for the group
+6. **Nash Equilibrium**: no player can improve by unilaterally deviating. Found via the **underline method**
+7. NE can be unique or multiple, efficient or inefficient
+8. **Tourism**: price wars (airlines, hotels), entry decisions (Airbnb), overbooking — all have game-theoretic structure
+
+**Next (Lecture 19, April 23)**: Sequential Games & Backward Induction — what happens when one player moves **first**?
+
+</div>
+
+## Exercises {.center}
+
+**Practice Time!** :pencil2:
+
+Payoff matrices, dominant strategies, and Nash Equilibrium.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 80%;">
+
+**Question**: Two tour operators in Lisbon decide simultaneously whether to offer **Free cancellation** or **No cancellation** policies. The payoff matrix (profits in €k) is:
+
+|  | **Op B: Free** | **Op B: No** |
+|:---:|:---:|:---:|
+| **Op A: Free** | (80 , 80) | (120 , 60) |
+| **Op A: No** | (60 , 120) | (100 , 100) |
+
+What is the Nash Equilibrium?
+
+A. (Free, Free) — B. (No, No) — C. (Free, No) — D. (No, Free)
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: A — (Free, Free)**
+:::
+
+Check for dominant strategies. If B plays Free: A prefers Free (80 > 60). If B plays No: A prefers Free (120 > 100). So **Free** is dominant for A. By symmetry, Free is also dominant for B. NE = **(Free, Free)** with payoffs (80, 80). Note: this is a Prisoner's Dilemma — both would prefer (No, No) = (100, 100), but neither can sustain it!
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 78%;">
+
+**Question**: In a Nash Equilibrium:
+
+A. Both players are maximizing their joint profit
+
+B. Neither player can improve their payoff by changing their strategy alone
+
+C. Both players must have dominant strategies
+
+D. The outcome is always the best possible for society
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+NE is defined as: no player can **unilaterally** improve. It does **not** require dominant strategies (C is wrong — the hotel differentiation game had NE without dominant strategies). It does **not** maximize joint profit (A is wrong — Prisoner's Dilemma NE is worse than cooperation). It's **not** always socially optimal (D is wrong — same reason).
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 60%;">
+
+**Two beach bars** in Albufeira (Bar A and Bar B) must decide their pricing strategy for the summer: **High prices** (€8 per cocktail) or **Low prices** (€5 per cocktail). The payoff matrix (daily profits in €) is:
+
+<div style="margin: 0 auto; width: 60%;">
+
+|  | **Bar B: High (€8)** | **Bar B: Low (€5)** |
+|:---:|:---:|:---:|
+| **Bar A: High (€8)** | (400 , 400) | (150 , 450) |
+| **Bar A: Low (€5)** | (450 , 150) | (250 , 250) |
+
+</div>
+
+*Hypothetical illustrative example.*
+
+**a)** Does Bar A have a dominant strategy? Does Bar B? Explain.
+
+**b)** Find the Nash Equilibrium using the underline method. Show your work.
+
+**c)** Is the Nash Equilibrium efficient? That is, is there another outcome that makes **both** bars better off?
+
+**d)** This is a Prisoner's Dilemma. Explain why, using the definition from today's lecture.
+
+**e)** Suppose the two bars are owned by the **same company**. What pricing strategy would the company choose? What does this tell us about the value of **coordination** (or merger)?
+
+**f)** Now suppose the bars compete **every day for the entire summer** (90 days), not just once. How might this change the outcome? Think about reputation and retaliation.
+
+</div>
+
+## Exercise 3: Solution — Parts a & b
+
+<div style="font-size: 70%;">
+
+**a)** Bar A's dominant strategy:
+
+- If B plays High: A prefers Low (€450 > €400)
+- If B plays Low: A prefers Low (€250 > €150)
+
+**Low is dominant for A.** By symmetry (the game is symmetric), **Low is also dominant for B.**
+
+**b)** Underline method:
+
+|  | **B: High** | **B: Low** |
+|:---:|:---:|:---:|
+| **A: High** | (400 , 400) | (150 , [**450**]{style="text-decoration: underline;"}) |
+| **A: Low** | ([**450**]{style="text-decoration: underline;"} , 150) | ([**250**]{style="text-decoration: underline;"} , [**250**]{style="text-decoration: underline;"}) |
+
+Column "B: High": A's best = 450 (Low) → underline. Column "B: Low": A's best = 250 (Low) → underline.
+
+Row "A: High": B's best = 450 (Low) → underline. Row "A: Low": B's best = 250 (Low) → underline.
+
+**Both underlined** in **(Low, Low)** → Nash Equilibrium = **(Low, Low)** with payoffs **(€250, €250)**.
+
+</div>
+
+## Exercise 3: Solution — Parts c & d
+
+<div style="font-size: 72%;">
+
+**c)** Is **(Low, Low) = (250, 250)** efficient?
+
+**No!** The outcome **(High, High) = (400, 400)** gives **both** bars higher profits. Each bar earns €150 more per day if they both keep prices high. The NE is **Pareto inefficient** — there exists another outcome that is better for everyone.
+
+**d)** This is a Prisoner's Dilemma because:
+
+- Both players have a **dominant strategy** (Low)
+- The dominant strategy equilibrium **(Low, Low) = (250, 250)** is **worse for both** players than the cooperative outcome **(High, High) = (400, 400)**
+- Each player has an individual incentive to **deviate** from cooperation (if B plays High, A gains €50 by switching to Low: 450 > 400)
+- But when **both** follow this incentive, they end up worse off
+
+:point_right: Individual rationality → collective irrationality. This is the essence of the Prisoner's Dilemma.
+
+</div>
+
+## Exercise 3: Solution — Parts e & f
+
+<div style="font-size: 72%;">
+
+**e)** If both bars are owned by the **same company**:
+
+The company maximizes **total profit** = A's profit + B's profit.
+
+- (High, High): total = €400 + €400 = **€800** :arrow_left: **Best!**
+- (Low, High) or (High, Low): total = €450 + €150 = €600
+- (Low, Low): total = €250 + €250 = €500
+
+The company chooses **(High, High)** → total profit = €800.
+
+:point_right: This shows the value of **coordination** (or merger): by internalizing the competition, the company avoids the Prisoner's Dilemma and achieves €300/day more in total profit. This is also why **cartels** are tempting (and illegal) — they replicate the merger outcome.
+
+**f)** With **90 days of repeated interaction**:
+
+Bars can adopt strategies like **tit-for-tat**: start with High, and match whatever the other bar did yesterday. If Bar B cuts to Low, Bar A retaliates the next day. The **threat of future punishment** can sustain cooperation at (High, High) — as long as both bars value **future profits** enough. Repeated games can **solve** the Prisoner's Dilemma through reputation!
+
+</div>
+
+## Next Lecture {.center}
+
+**April 23, 2026**: Sequential Games & Backward Induction :deciduous_tree:
+
+What happens when one player moves **first**? Entry games and reputation in tourism.
+
+. . .
+
+:point_right: We'll learn to think **backwards** from the end of the game!
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Thursday, April 23, 2026*
+
+::: {.notes}
+This lecture introduces game theory as a new analytical framework beyond perfect competition. The key pedagogical goals are: (1) students can read and construct payoff matrices, (2) they understand dominant strategies and can identify them, (3) they grasp the Prisoner's Dilemma as a fundamental tension between individual and collective rationality, (4) they can find Nash Equilibria using the underline method. The tourism examples (airline pricing, hotel differentiation, Airbnb entry, beach bar competition) make the abstract concepts tangible. The exercise walks through the full analysis of a Prisoner's Dilemma and extends to coordination (merger) and repeated games, previewing next lecture.
+:::

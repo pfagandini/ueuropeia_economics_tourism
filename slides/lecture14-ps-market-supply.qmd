@@ -1,0 +1,840 @@
+---
+title: "Producer Theory"
+subtitle: "Lecture 14: Producer Surplus, Market Supply & Linear Supply"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 14"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(patchwork)
+
+# Define UE brand colors
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_blue <- "#2E86AB"
+ue_green <- "#27ae60"
+ue_orange <- "#E67E22"
+```
+
+## Recap: Lecture 13 :rewind:
+
+<div style="font-size: 80%;">
+
+**What we covered last time**:
+
+- **The seller's supply rule**: Produce where $P = MC$ (rising portion, $P \geq AVC$)
+- The individual supply curve = MC above AVC
+- **Supply shifts**: input costs ↑ → supply shifts left; technology ↑ → supply shifts right
+- Fixed costs don't shift the short-run supply curve
+
+. . .
+
+:dart: **Today**: Three new pieces to complete the supply-side toolkit:
+
+- :one: **Producer surplus** — the supply-side mirror of consumer surplus
+- :two: **Market supply** — adding up individual firms' supply curves
+- :three: **Linear supply** — the equation $P = c + dQ$ and how to work with it
+
+</div>
+
+# Producer Surplus
+
+## The Intuition: What Do Producers Gain? :moneybag:
+
+<div style="font-size: 78%;">
+
+In Lecture 8, we learned that **consumer surplus** measures the net benefit buyers get from a market — the gap between what they're **willing to pay** and what they **actually pay**.
+
+::: {.key-concept}
+**Producer Surplus (PS)**
+
+The net benefit producers get from selling in a market. It is the difference between the price they **receive** and the **minimum price** they would have been willing to accept (their marginal cost).
+
+$$PS = \text{Total Revenue} - \text{Total Variable Cost} = TR - VC$$
+
+Graphically: the area **above the supply curve** and **below the price line**.
+:::
+
+:bulb: Producer surplus is **not** the same as profit! Profit = TR − TC = TR − VC − FC. Producer surplus = TR − VC. The difference is **fixed costs**:
+
+$$PS = \pi + FC$$
+
+</div>
+
+## PS vs Profit: Why the Difference Matters :thinking:
+
+<div style="font-size: 78%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Producer Surplus** = $TR - VC$
+
+- Measures the **gain from trading** in this market
+- Does not subtract FC (which must be paid regardless)
+- Equals the area **above the supply curve, below P**
+- Always ≥ 0 (if the firm is operating)
+:::
+
+::: {.column width="50%"}
+**Economic Profit** = $TR - TC = TR - VC - FC$
+
+- Measures the **bottom-line result** after all costs
+- Subtracts both VC and FC
+- Can be positive, zero, or negative
+- $\pi = PS - FC$
+:::
+::::
+
+. . .
+
+**Example**: A hotel earns TR = €50,000, has VC = €30,000 and FC = €25,000.
+
+- $PS = 50{,}000 - 30{,}000 = €20{,}000$ :arrow_right: the hotel gains €20,000 from operating
+- $\pi = 50{,}000 - 55{,}000 = -€5{,}000$ :arrow_right: the hotel makes a loss!
+- But $PS > 0$ means the hotel is still **better off operating** (it covers VC and contributes €20,000 toward FC)
+
+:point_right: This is exactly the **shutdown logic** from Lecture 12!
+
+</div>
+
+## Producer Surplus Graphically :bar_chart:
+
+<div style="font-size: 72%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-height: 5
+#| fig-align: center
+
+# Linear supply: P = 10 + 0.5Q => Q = 2P - 20
+# At P = 30: Q = 40
+P_star <- 30
+Q_star <- 40
+
+df_supply <- data.frame(Q = seq(0, 55, by = 0.5)) %>%
+  mutate(P = 10 + 0.5 * Q)
+
+p1 <- ggplot() +
+  # PS triangle
+  geom_polygon(data = data.frame(
+    x = c(0, Q_star, Q_star, 0),
+    y = c(10, P_star, P_star, P_star)),
+    aes(x = x, y = y), fill = ue_red, alpha = 0.15) +
+  geom_polygon(data = data.frame(
+    x = c(0, Q_star, 0),
+    y = c(10, P_star, P_star)),
+    aes(x = x, y = y), fill = ue_red, alpha = 0.2) +
+  # Supply curve
+  geom_line(data = df_supply, aes(x = Q, y = P),
+            color = ue_red, linewidth = 1.5) +
+  # Price line
+  geom_hline(yintercept = P_star, color = ue_green, linewidth = 1.2) +
+  # Dashed lines
+  geom_segment(aes(x = Q_star, y = 0, xend = Q_star, yend = P_star),
+               linetype = "dashed", color = ue_gray) +
+  # Labels
+  annotate("text", x = 12, y = 25, label = "Producer\nSurplus",
+           color = ue_red, fontface = "bold", size = 5) +
+  annotate("text", x = 50, y = P_star + 2, label = "P* = €30",
+           color = ue_green, fontface = "bold", size = 4.5) +
+  annotate("text", x = 50, y = 33, label = "S", color = ue_red,
+           fontface = "bold.italic", size = 6) +
+  annotate("text", x = Q_star, y = -1.5, label = "Q* = 40",
+           fontface = "bold", size = 4) +
+  annotate("text", x = -2, y = 10, label = "c = 10",
+           color = ue_gray, fontface = "italic", size = 3.5) +
+  coord_cartesian(ylim = c(0, 42), xlim = c(0, 55)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Quantity (Q)", y = "Price (€)",
+       title = "Producer Surplus (Linear Supply)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+# Side by side with CS for comparison
+df_demand <- data.frame(Q = seq(0, 55, by = 0.5)) %>%
+  mutate(P = 50 - 0.5 * Q)
+
+p2 <- ggplot() +
+  # CS triangle
+  geom_polygon(data = data.frame(
+    x = c(0, Q_star, 0),
+    y = c(50, P_star, P_star)),
+    aes(x = x, y = y), fill = ue_blue, alpha = 0.2) +
+  # Demand curve
+  geom_line(data = df_demand %>% filter(P >= 0), aes(x = Q, y = P),
+            color = ue_blue, linewidth = 1.5) +
+  # Price line
+  geom_hline(yintercept = P_star, color = ue_green, linewidth = 1.2) +
+  # Dashed lines
+  geom_segment(aes(x = Q_star, y = 0, xend = Q_star, yend = P_star),
+               linetype = "dashed", color = ue_gray) +
+  # Labels
+  annotate("text", x = 12, y = 38, label = "Consumer\nSurplus",
+           color = ue_blue, fontface = "bold", size = 5) +
+  annotate("text", x = 50, y = P_star + 2, label = "P* = €30",
+           color = ue_green, fontface = "bold", size = 4.5) +
+  annotate("text", x = 50, y = 27, label = "D", color = ue_blue,
+           fontface = "bold.italic", size = 6) +
+  annotate("text", x = Q_star, y = -1.5, label = "Q* = 40",
+           fontface = "bold", size = 4) +
+  coord_cartesian(ylim = c(0, 55), xlim = c(0, 55)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Quantity (Q)", y = "Price (€)",
+       title = "Consumer Surplus (Linear Demand)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_blue, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+p1 + p2
+```
+
+**Left**: PS = area above supply, below price = triangle. **Right**: CS = area below demand, above price = triangle (from Lecture 8). They are **mirror images**!
+
+</div>
+
+## Calculating PS for Linear Supply :pencil2:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Producer Surplus Formula (Linear Supply)**
+
+$$PS = \frac{1}{2} \times Q^* \times (P^* - c)$$
+
+where $c$ is the **vertical intercept** of the supply curve (the minimum price at which any output is supplied) and $P^*$ is the market price.
+:::
+
+**Example** (from the graph): Supply is $P = 10 + 0.5Q$, market price $P^* = €30$.
+
+At $P^* = 30$: $Q^* = \frac{30 - 10}{0.5} = 40$
+
+$$PS = \frac{1}{2} \times 40 \times (30 - 10) = \frac{1}{2} \times 40 \times 20 = €400$$
+
+:point_right: Compare with CS formula: $CS = \frac{1}{2} \times Q^* \times (b - P^*)$. Same triangle logic, just flipped!
+
+</div>
+
+## What Does PS Tell Us in Tourism? :airplane:
+
+<div style="font-size: 78%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**PS measures the net gain to producers** from selling at the market price.
+
+**Tourism applications**:
+
+- :hotel: Higher hotel prices in peak season → **PS rises** (the area above supply expands)
+- :receipt: A tourist tax → price received by hotel falls → **PS falls**
+- :chart_with_upwards_trend: New technology (lower MC) → supply shifts right → PS can rise even at the same price
+:::
+
+::: {.column width="50%"}
+**Policy perspective**:
+
+- **Total welfare** = CS + PS
+- Taxes/regulations reduce CS + PS (deadweight loss)
+- PS helps measure the **impact on producers** of any policy change
+
+:point_right: When Portugal debates a tourist tax, PS is one way to measure **how much hotels and tour operators lose**.
+:::
+::::
+
+</div>
+
+# Market Supply
+
+## From Individual to Market Supply :factory: :arrow_right: :classical_building:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Market Supply = Horizontal Sum of Individual Supply Curves**
+
+Just as we built market demand by adding individual demand curves **horizontally** (Lecture 8), we build market supply the same way: at each price, add up the quantities supplied by all firms.
+:::
+
+**The process**:
+
+1. At a given price $P$, each firm $i$ supplies $q_i$ (where $P = MC_i$)
+2. **Market quantity** at that price: $Q_S = q_1 + q_2 + q_3 + \ldots$
+3. Repeat for every price
+4. Connect the dots → **market supply curve**
+
+:point_right: If firms have different cost structures, the market supply curve may have **kinks** (just like market demand in Lecture 8!)
+
+</div>
+
+## Horizontal Summation: Two Firms Example :heavy_plus_sign:
+
+<div style="font-size: 68%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 14
+#| fig-height: 4.5
+#| fig-align: center
+
+# Firm A: S_A: P = 10 + 2*q_A => q_A = (P-10)/2 for P >= 10
+# Firm B: S_B: P = 20 + q_B => q_B = P - 20 for P >= 20
+
+Q_a <- function(P) ifelse(P >= 10, (P - 10) / 2, 0)
+Q_b <- function(P) ifelse(P >= 20, P - 20, 0)
+Q_mkt <- function(P) Q_a(P) + Q_b(P)
+
+P_seq <- seq(0, 50, by = 0.5)
+
+df_a <- data.frame(P = P_seq, Q = Q_a(P_seq)) %>% filter(Q >= 0)
+df_b <- data.frame(P = P_seq, Q = Q_b(P_seq)) %>% filter(Q >= 0)
+df_mkt <- data.frame(P = P_seq, Q = Q_mkt(P_seq)) %>% filter(Q >= 0)
+
+# Firm A
+p_a <- ggplot(df_a %>% filter(Q > 0), aes(x = Q, y = P)) +
+  geom_line(color = ue_red, linewidth = 1.5) +
+  scale_x_continuous(limits = c(0, 25), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 52), expand = c(0, 0),
+                     breaks = seq(0, 50, 10)) +
+  labs(x = expression(q[A]), y = "Price (€)", title = "Firm A") +
+  annotate("text", x = 18, y = 42, label = expression(S[A]),
+           color = ue_red, fontface = "bold.italic", size = 5) +
+  annotate("text", x = 1, y = 12, label = "c = 10",
+           color = ue_gray, fontface = "italic", size = 3) +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+
+# Firm B
+p_b <- ggplot(df_b %>% filter(Q > 0), aes(x = Q, y = P)) +
+  geom_line(color = ue_blue, linewidth = 1.5) +
+  scale_x_continuous(limits = c(0, 25), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 52), expand = c(0, 0),
+                     breaks = seq(0, 50, 10)) +
+  labs(x = expression(q[B]), y = "Price (€)", title = "Firm B") +
+  annotate("text", x = 22, y = 42, label = expression(S[B]),
+           color = ue_blue, fontface = "bold.italic", size = 5) +
+  annotate("text", x = 1, y = 22, label = "c = 20",
+           color = ue_gray, fontface = "italic", size = 3) +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+
+# Market Supply
+p_mkt <- ggplot(df_mkt %>% filter(Q > 0), aes(x = Q, y = P)) +
+  geom_line(color = ue_red, linewidth = 1.8) +
+  # Mark the kink
+  geom_point(data = data.frame(Q = Q_mkt(20), P = 20),
+             aes(x = Q, y = P), size = 3, color = ue_black) +
+  annotate("text", x = Q_mkt(20) + 2.5, y = 21.5,
+           label = "Kink (B enters)", size = 3, color = ue_gray) +
+  scale_x_continuous(limits = c(0, 40), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 52), expand = c(0, 0),
+                     breaks = seq(0, 50, 10)) +
+  labs(x = expression(Q[Market]), y = "Price (€)", title = "Market Supply") +
+  annotate("text", x = 33, y = 42, label = expression(S[Market]),
+           color = ue_red, fontface = "bold.italic", size = 5) +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
+        axis.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
+
+p_a + p_b + p_mkt +
+  plot_annotation(title = "Horizontal Summation: Individual → Market Supply",
+                  theme = theme(plot.title = element_text(color = ue_red,
+                                face = "bold", hjust = 0.5, size = 14)))
+```
+
+- For $P < 10$: no firm produces → $Q_S = 0$
+- For $10 \leq P < 20$: only Firm A produces → $Q_S = q_A$
+- For $P \geq 20$: both firms produce → $Q_S = q_A + q_B$ (kink at P = 20!)
+
+:point_right: The **kink** occurs when Firm B's supply "turns on" — same logic as the demand kink in Lecture 8.
+
+</div>
+
+## Building the Market Supply Equation :straight_ruler:
+
+<div style="font-size: 76%;">
+
+From the previous example:
+
+**Firm A**: $P = 10 + 2q_A$ → $q_A = \frac{P - 10}{2}$ for $P \geq 10$
+
+**Firm B**: $P = 20 + q_B$ → $q_B = P - 20$ for $P \geq 20$
+
+**Market supply** (horizontal sum = add quantities at each price):
+
+For $10 \leq P < 20$ (only A): $Q_S = q_A = \frac{P - 10}{2}$
+
+For $P \geq 20$ (A + B): $Q_S = \frac{P - 10}{2} + (P - 20) = \frac{P - 10 + 2P - 40}{2} = \frac{3P - 50}{2}$
+
+. . .
+
+::: {.key-concept}
+**With identical firms, it's simpler!**
+
+If there are $n$ identical firms each with supply $q = \frac{P - c}{d}$, then:
+
+$$Q_S = n \times q = n \times \frac{P - c}{d}$$
+
+The market supply has the **same intercept** but a **flatter slope** (more responsive to price).
+:::
+
+</div>
+
+# Linear Supply
+
+## The Linear Supply Equation :straight_ruler:
+
+<div style="font-size: 80%;">
+
+::: {.key-concept}
+**Linear Supply — Inverse Form**
+
+$$P = c + dQ$$
+
+where $P$ is price, $Q$ is quantity supplied, $c$ is the **vertical intercept**, and $d > 0$ is the **slope**.
+:::
+
+**Interpreting the parameters**:
+
+- $c$ = the **minimum price** needed for any production (supply "turns on" at $P = c$)
+- $d = \frac{\Delta P}{\Delta Q}$ (positive!) — how much price must rise to induce one more unit of output
+- **Direct form**: $Q = \frac{P - c}{d}$ (useful for horizontal summation)
+
+:point_right: Compare with demand: $P = b + mQ$ where $m < 0$. Supply has $d > 0$ — that's the **upward slope**!
+
+</div>
+
+## Reading a Linear Supply Curve :mag:
+
+<div style="font-size: 72%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+#| fig-align: center
+
+# Supply: P = 5 + 0.25*Q
+c_val <- 5
+d_val <- 0.25
+df_s <- data.frame(Q = seq(0, 200, by = 1)) %>%
+  mutate(P = c_val + d_val * Q)
+
+P_ex <- 30
+Q_ex <- (P_ex - c_val) / d_val  # = 100
+
+ggplot() +
+  geom_line(data = df_s, aes(x = Q, y = P),
+            color = ue_red, linewidth = 1.5) +
+  # Price and quantity
+  geom_hline(yintercept = P_ex, linetype = "dashed", color = ue_green, linewidth = 0.8) +
+  geom_segment(aes(x = Q_ex, y = 0, xend = Q_ex, yend = P_ex),
+               linetype = "dashed", color = ue_gray) +
+  geom_point(aes(x = Q_ex, y = P_ex), size = 4, color = ue_black) +
+  # PS triangle
+  geom_polygon(data = data.frame(
+    x = c(0, Q_ex, 0),
+    y = c(c_val, P_ex, P_ex)),
+    aes(x = x, y = y), fill = ue_red, alpha = 0.15) +
+  # Annotations
+  annotate("text", x = 30, y = 22, label = "PS = ½ × 100 × 25\n= €1,250",
+           color = ue_red, fontface = "bold", size = 4.5) +
+  annotate("text", x = 180, y = 48, label = "S: P = 5 + 0.25Q",
+           color = ue_red, fontface = "bold", size = 4.5) +
+  annotate("text", x = Q_ex + 5, y = 2, label = "Q* = 100",
+           fontface = "bold", size = 4, color = ue_black) +
+  annotate("text", x = 5, y = P_ex + 2, label = "P* = €30",
+           color = ue_green, fontface = "bold", size = 4, hjust = 0) +
+  # Intercept label
+  annotate("text", x = 8, y = c_val + 2, label = "c = €5",
+           color = ue_gray, fontface = "italic", size = 3.5, hjust = 0) +
+  # Slope annotation
+  annotate("segment", x = 60, y = 5 + 0.25*60, xend = 100, yend = 5 + 0.25*60,
+           color = ue_black, linewidth = 0.5) +
+  annotate("segment", x = 100, y = 5 + 0.25*60, xend = 100, yend = 5 + 0.25*100,
+           color = ue_black, linewidth = 0.5) +
+  annotate("text", x = 80, y = 5 + 0.25*60 - 2, label = "ΔQ = 40",
+           size = 3, color = ue_black) +
+  annotate("text", x = 105, y = (5 + 0.25*60 + 5 + 0.25*100)/2,
+           label = "ΔP = 10", size = 3, color = ue_black, hjust = 0) +
+  coord_cartesian(ylim = c(0, 55), xlim = c(0, 210)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Quantity (Q)", y = "Price (€)",
+       title = "Linear Supply: P = 5 + 0.25Q (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+Supply: $P = 5 + 0.25Q$. At $P^* = €30$: $Q^* = \frac{30 - 5}{0.25} = 100$. Slope = $\frac{\Delta P}{\Delta Q} = \frac{10}{40} = 0.25$.
+
+$PS = \frac{1}{2} \times 100 \times (30 - 5) = €1{,}250$.
+
+</div>
+
+## Demand and Supply Together: The Big Picture :handshake:
+
+<div style="font-size: 78%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 10
+#| fig-height: 5
+#| fig-align: center
+
+# Demand: P = 50 - 0.25Q and Supply: P = 10 + 0.25Q
+# Equilibrium: 50 - 0.25Q = 10 + 0.25Q => 40 = 0.5Q => Q* = 80, P* = 30
+Q_eq <- 80
+P_eq <- 30
+
+df_d <- data.frame(Q = seq(0, 200, by = 1)) %>% mutate(P = 50 - 0.25 * Q)
+df_s2 <- data.frame(Q = seq(0, 200, by = 1)) %>% mutate(P = 10 + 0.25 * Q)
+
+ggplot() +
+  # CS triangle
+  geom_polygon(data = data.frame(x = c(0, Q_eq, 0), y = c(50, P_eq, P_eq)),
+               aes(x = x, y = y), fill = ue_blue, alpha = 0.15) +
+  # PS triangle
+  geom_polygon(data = data.frame(x = c(0, Q_eq, 0), y = c(10, P_eq, P_eq)),
+               aes(x = x, y = y), fill = ue_red, alpha = 0.15) +
+  # Curves
+  geom_line(data = df_d %>% filter(P >= 0), aes(x = Q, y = P),
+            color = ue_blue, linewidth = 1.5) +
+  geom_line(data = df_s2, aes(x = Q, y = P),
+            color = ue_red, linewidth = 1.5) +
+  # Equilibrium
+  geom_point(aes(x = Q_eq, y = P_eq), size = 4, color = ue_black) +
+  geom_segment(aes(x = Q_eq, y = 0, xend = Q_eq, yend = P_eq),
+               linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 0, y = P_eq, xend = Q_eq, yend = P_eq),
+               linetype = "dashed", color = ue_gray) +
+  # Labels
+  annotate("text", x = 20, y = 40, label = "CS", color = ue_blue,
+           fontface = "bold", size = 5) +
+  annotate("text", x = 20, y = 20, label = "PS", color = ue_red,
+           fontface = "bold", size = 5) +
+  annotate("text", x = 170, y = 8, label = "D", color = ue_blue,
+           fontface = "bold.italic", size = 6) +
+  annotate("text", x = 170, y = 52, label = "S", color = ue_red,
+           fontface = "bold.italic", size = 6) +
+  annotate("text", x = Q_eq + 3, y = P_eq + 2, label = "E",
+           fontface = "bold", size = 5) +
+  annotate("text", x = Q_eq, y = -2, label = "Q* = 80",
+           fontface = "bold", size = 3.5) +
+  annotate("text", x = -5, y = P_eq, label = "P* = 30",
+           fontface = "bold", size = 3.5) +
+  coord_cartesian(ylim = c(0, 55), xlim = c(0, 200)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Quantity (Q)", y = "Price (€)",
+       title = "Consumer and Producer Surplus at Equilibrium (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 14),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+:point_right: **Total welfare** = CS + PS. At the competitive equilibrium, total welfare is **maximized** — there's no way to make one side better off without making the other worse off. We'll explore this more in Lecture 17 (market equilibrium).
+
+</div>
+
+# Tourism Application
+
+## Tourism Market: CS and PS in Action :palm_tree:
+
+<div style="font-size: 76%;">
+
+**Imagine the market for guided tours in Lisbon**:
+
+:::: {.columns}
+::: {.column width="50%"}
+**Demand** (tourists): $P = 50 - 0.25Q$
+
+- Tourists are willing to pay up to €50 for a unique tour
+- As price rises, fewer tourists book
+
+**Consumer surplus** at equilibrium:
+
+$$CS = \frac{1}{2} \times 80 \times (50 - 30) = €800$$
+
+Tourists collectively gain €800 from buying tours below their willingness to pay.
+:::
+
+::: {.column width="50%"}
+**Supply** (tour operators): $P = 10 + 0.25Q$
+
+- Tour guides need at least €10 to cover their minimum cost
+- As more tours are offered, MC rises (hiring less experienced guides, longer hours)
+
+**Producer surplus** at equilibrium:
+
+$$PS = \frac{1}{2} \times 80 \times (30 - 10) = €800$$
+
+Operators collectively gain €800 from selling tours above their minimum acceptable price.
+:::
+::::
+
+. . .
+
+:point_right: **Total welfare** = €800 + €800 = **€1,600**. This is the total gain from trade in this market!
+
+</div>
+
+## Summary :memo:
+
+<div style="font-size: 72%;">
+
+**Today's Key Takeaways**:
+
+1. **Producer surplus** = $TR - VC$ = area above supply, below price. It measures the **gain to producers** from trading
+2. PS ≠ profit! $\pi = PS - FC$. A firm can have positive PS but negative profit (and still rationally operate)
+3. **PS for linear supply**: $PS = \frac{1}{2} \times Q^* \times (P^* - c)$ — a triangle, mirroring CS
+4. **Market supply** = horizontal sum of individual supply curves (add quantities at each price)
+5. With different firms, market supply may have **kinks** (when new firms "turn on" at higher prices)
+6. **Linear supply**: $P = c + dQ$ — intercept $c$ is the minimum supply price, slope $d > 0$
+7. **Total welfare** = CS + PS, maximized at the competitive equilibrium
+8. **Direct form** $Q = \frac{P - c}{d}$ is useful for horizontal summation
+
+**Connection**: We now have both sides of the market: demand (Lectures 5–9) and supply (Lectures 10–14). Next lecture: **supply elasticity** — how sensitive is quantity supplied to price?
+
+**Next (Lecture 15, April 10)**: Calculation and Determinants of Supply Elasticity
+
+</div>
+
+## Exercises {.center}
+
+**Practice Time!** :pencil2:
+
+Producer surplus, market supply, and linear supply.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: A hotel has TR = €80,000/month, VC = €50,000/month, and FC = €35,000/month. What is its producer surplus and economic profit?
+
+A. PS = €30,000, Profit = €30,000
+
+B. PS = €30,000, Profit = −€5,000
+
+C. PS = −€5,000, Profit = −€5,000
+
+D. PS = €45,000, Profit = €10,000
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+$PS = TR - VC = 80{,}000 - 50{,}000 = €30{,}000$
+
+$\pi = TR - TC = 80{,}000 - (50{,}000 + 35{,}000) = 80{,}000 - 85{,}000 = -€5{,}000$
+
+The hotel has **positive PS** (worth operating!) but **negative profit** (making a loss). This is consistent: $PS = \pi + FC = -5{,}000 + 35{,}000 = €30{,}000$. :white_check_mark:
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: The market supply for beach umbrella rentals in Cascais is $P = 2 + 0.1Q$ (€ per rental). At a market price of €12, what is the producer surplus?
+
+A. €500
+
+B. €600
+
+C. €1,000
+
+D. €1,200
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: A**
+:::
+
+At $P^* = 12$: $Q^* = \frac{12 - 2}{0.1} = 100$ rentals.
+
+$$PS = \frac{1}{2} \times Q^* \times (P^* - c) = \frac{1}{2} \times 100 \times (12 - 2) = \frac{1}{2} \times 100 \times 10 = €500$$
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 62%;">
+
+**The market for walking tours in Porto** has two types of operators:
+
+- **Professional guides** (20 identical firms): individual supply $P = 8 + 2q_P$ (€ per tour)
+- **Freelance guides** (30 identical firms): individual supply $P = 15 + q_F$ (€ per tour)
+
+**a)** Write the **individual** direct supply function ($q$ as a function of $P$) for each type of guide.
+
+**b)** At what price does each type "enter" the market (start supplying)?
+
+**c)** Write the **market supply** function for each price range. (Hint: there will be a kink!)
+
+**d)** At a market price of €25 per tour, how many tours does each type of guide offer? What is total market supply?
+
+**e)** Calculate the **total producer surplus** at $P = €25$. (Calculate PS for each group separately, then sum.)
+
+**f)** A new regulation requires all guides to have a €5 license per tour. How does this affect the market supply curve? Write the new market supply equation(s).
+
+</div>
+
+## Exercise 3: Solution — Parts a & b
+
+<div style="font-size: 72%;">
+
+**a)** Direct supply functions (solve for $q$):
+
+**Professional**: $P = 8 + 2q_P$ → $q_P = \frac{P - 8}{2}$ for $P \geq 8$
+
+**Freelance**: $P = 15 + q_F$ → $q_F = P - 15$ for $P \geq 15$
+
+**b)** Each type "enters" at the vertical intercept of their supply:
+
+- **Professionals** enter at $P = €8$ (lower costs, enter first)
+- **Freelancers** enter at $P = €15$ (higher costs, enter later)
+
+:point_right: The kink in market supply occurs at $P = €15$, where freelancers join the professionals.
+
+</div>
+
+## Exercise 3: Solution — Parts c & d
+
+<div style="font-size: 68%;">
+
+**c)** Market supply (horizontal sum):
+
+**For $8 \leq P < 15$** (only professionals, 20 firms):
+
+$$Q_S = 20 \times \frac{P - 8}{2} = 10(P - 8) = 10P - 80$$
+
+**For $P \geq 15$** (professionals + freelancers, 20 + 30 firms):
+
+$$Q_S = 20 \times \frac{P - 8}{2} + 30 \times (P - 15) = 10P - 80 + 30P - 450 = 40P - 530$$
+
+**d)** At $P = €25$:
+
+- Each professional: $q_P = \frac{25 - 8}{2} = 8.5$ tours → 20 firms × 8.5 = **170 tours**
+- Each freelancer: $q_F = 25 - 15 = 10$ tours → 30 firms × 10 = **300 tours**
+- **Total market supply**: $Q_S = 170 + 300 = 470$ tours
+
+:white_check_mark: Check: $Q_S = 40(25) - 530 = 1000 - 530 = 470$ :white_check_mark:
+
+</div>
+
+## Exercise 3: Solution — Part e
+
+<div style="font-size: 70%;">
+
+**e)** Producer surplus at $P = €25$:
+
+**Professionals** (20 firms): Each firm's PS = $\frac{1}{2} \times q_P \times (P - c_P) = \frac{1}{2} \times 8.5 \times (25 - 8) = \frac{1}{2} \times 8.5 \times 17 = €72.25$
+
+Total PS for professionals: $20 \times 72.25 = €1{,}445$
+
+**Freelancers** (30 firms): Each firm's PS = $\frac{1}{2} \times q_F \times (P - c_F) = \frac{1}{2} \times 10 \times (25 - 15) = \frac{1}{2} \times 10 \times 10 = €50$
+
+Total PS for freelancers: $30 \times 50 = €1{,}500$
+
+**Total market PS** = €1,445 + €1,500 = **€2,945**
+
+:bulb: Professionals have a higher PS per firm (€72.25 vs €50) because their costs are lower — they capture more surplus from each sale. But freelancers contribute more in aggregate because there are more of them.
+
+</div>
+
+## Exercise 3: Solution — Part f
+
+<div style="font-size: 70%;">
+
+**f)** A €5 license fee per tour **increases MC by €5** for every firm.
+
+New individual supply curves (MC shifts up by €5):
+
+- **Professionals**: $P = (8 + 5) + 2q_P = 13 + 2q_P$ → $q_P = \frac{P - 13}{2}$ for $P \geq 13$
+- **Freelancers**: $P = (15 + 5) + q_F = 20 + q_F$ → $q_F = P - 20$ for $P \geq 20$
+
+New market supply:
+
+**For $13 \leq P < 20$**: $Q_S = 20 \times \frac{P - 13}{2} = 10P - 130$
+
+**For $P \geq 20$**: $Q_S = 10P - 130 + 30(P - 20) = 40P - 730$
+
+:point_right: The supply curve shifts **left** (up by €5). At $P = €25$: new $Q_S = 40(25) - 730 = 270$ tours (down from 470!). The kink moves from $P = 15$ to $P = 20$.
+
+The license fee has a **large effect**: supply falls by almost half because many freelancers are priced out of the market.
+
+</div>
+
+## Next Lecture {.center}
+
+**April 10, 2026**: Calculation and Determinants of Supply Elasticity :chart_with_upwards_trend:
+
+How **sensitive** is quantity supplied to price changes?
+
+. . .
+
+:point_right: This mirrors Lecture 9 (demand elasticity) — the same formula, applied to supply!
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Friday, April 10, 2026*
+
+::: {.notes}
+This lecture completes the supply-side toolkit by introducing producer surplus and market supply construction. The PS concept mirrors CS from Lecture 8, and the horizontal summation of supply mirrors the horizontal summation of demand. The linear supply equation gives students the algebraic tools they'll need for equilibrium analysis. The exercise is deliberately parallel to Lecture 8's market demand exercise (two types of agents, kink, summation) so students see the symmetry. The license fee in part (f) connects back to supply shifters from Lecture 13.
+:::

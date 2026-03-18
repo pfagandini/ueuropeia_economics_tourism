@@ -1,0 +1,785 @@
+---
+title: "Producer Theory"
+subtitle: "Lecture 16: Short Run & Long Run Market Equilibrium"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 16"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(patchwork)
+
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_blue <- "#2E86AB"
+ue_green <- "#27ae60"
+ue_orange <- "#E67E22"
+```
+
+## Recap: Where We Are :rewind:
+
+<div style="font-size: 78%;">
+
+Over Lectures 5–15, we built **both sides** of the market:
+
+:::: {.columns}
+::: {.column width="50%"}
+:shopping_cart: **Demand side** (L5–L9):
+
+- Utility maximization → demand curve
+- Market demand (horizontal sum)
+- Consumer surplus
+- Demand elasticity
+:::
+
+::: {.column width="50%"}
+:factory: **Supply side** (L10–L15):
+
+- Cost structure → $P = MC$ → supply curve
+- Market supply (horizontal sum)
+- Producer surplus
+- Supply elasticity
+:::
+::::
+
+. . .
+
+:dart: **Today**: We put them **together** to find the market equilibrium — the price and quantity where buyers and sellers agree. This is the **payoff** of the entire course so far!
+
+</div>
+
+# Short-Run Market Equilibrium
+
+## Where Supply Meets Demand :handshake:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Market Equilibrium**
+
+The price and quantity at which **quantity demanded equals quantity supplied**:
+
+$$Q_d(P^*) = Q_s(P^*)$$
+
+At the equilibrium price $P^*$, every buyer who wants to buy at that price can, and every seller who wants to sell can. **No one is left unsatisfied.**
+:::
+
+**Finding equilibrium algebraically** (linear curves):
+
+Given $D: P = 50 - 0.5Q$ and $S: P = 10 + 0.25Q$
+
+Set equal: $50 - 0.5Q = 10 + 0.25Q$ → $40 = 0.75Q$ → $Q^* = 53.3$ → $P^* = €23.3$
+
+:point_right: At this price, the quantity buyers want to buy **exactly matches** the quantity sellers want to sell.
+
+</div>
+
+## Equilibrium Graphically :bar_chart:
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 11
+#| fig-height: 5.5
+#| fig-align: center
+
+# D: P = 50 - 0.5Q, S: P = 10 + 0.25Q
+# Eq: Q* = 53.33, P* = 23.33
+Q_eq <- 40/0.75
+P_eq <- 50 - 0.5 * Q_eq
+
+df_d <- data.frame(Q = seq(0, 100, by = 1)) %>% mutate(P = 50 - 0.5 * Q)
+df_s <- data.frame(Q = seq(0, 100, by = 1)) %>% mutate(P = 10 + 0.25 * Q)
+
+ggplot() +
+  # CS triangle
+  geom_polygon(data = data.frame(x = c(0, Q_eq, 0), y = c(50, P_eq, P_eq)),
+               aes(x = x, y = y), fill = ue_blue, alpha = 0.12) +
+  # PS triangle
+  geom_polygon(data = data.frame(x = c(0, Q_eq, 0), y = c(10, P_eq, P_eq)),
+               aes(x = x, y = y), fill = ue_red, alpha = 0.12) +
+  # Curves
+  geom_line(data = df_d %>% filter(P >= 0), aes(x = Q, y = P),
+            color = ue_blue, linewidth = 1.5) +
+  geom_line(data = df_s, aes(x = Q, y = P), color = ue_red, linewidth = 1.5) +
+  # Equilibrium
+  geom_point(aes(x = Q_eq, y = P_eq), size = 4, color = ue_black) +
+  geom_segment(aes(x = Q_eq, y = 0, xend = Q_eq, yend = P_eq),
+               linetype = "dashed", color = ue_gray) +
+  geom_segment(aes(x = 0, y = P_eq, xend = Q_eq, yend = P_eq),
+               linetype = "dashed", color = ue_gray) +
+  # Labels
+  annotate("text", x = 18, y = 38, label = "CS", color = ue_blue,
+           fontface = "bold", size = 5) +
+  annotate("text", x = 18, y = 15, label = "PS", color = ue_red,
+           fontface = "bold", size = 5) +
+  annotate("text", x = 90, y = 8, label = "D", color = ue_blue,
+           fontface = "bold.italic", size = 6) +
+  annotate("text", x = 90, y = 35, label = "S", color = ue_red,
+           fontface = "bold.italic", size = 6) +
+  annotate("text", x = Q_eq + 2, y = P_eq + 2.5, label = "E",
+           fontface = "bold", size = 5) +
+  annotate("text", x = Q_eq, y = -2, label = paste0("Q* ≈ ", round(Q_eq, 1)),
+           fontface = "bold", size = 3.8) +
+  annotate("text", x = -4, y = P_eq, label = paste0("P* ≈ ", round(P_eq, 1)),
+           fontface = "bold", size = 3.8) +
+  coord_cartesian(ylim = c(0, 55), xlim = c(0, 105)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Quantity (Q)", y = "Price (€)",
+       title = "Market Equilibrium with CS and PS (Hypothetical)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## What Happens Away from Equilibrium? :warning:
+
+<div style="font-size: 76%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**Price too HIGH** ($P > P^*$): **Surplus** (excess supply)
+
+- $Q_s > Q_d$ → goods pile up
+- Sellers compete by **lowering prices**
+- Price falls toward $P^*$
+
+:hotel: *Tourism*: Hotels with too many empty rooms in off-season → prices drop on Booking.com
+:::
+
+::: {.column width="50%"}
+**Price too LOW** ($P < P^*$): **Shortage** (excess demand)
+
+- $Q_d > Q_s$ → not enough goods
+- Buyers compete by **bidding prices up**
+- Price rises toward $P^*$
+
+:airplane: *Tourism*: Flight demand exceeds seats during holidays → prices rise, last-minute fares skyrocket
+:::
+::::
+
+. . .
+
+::: {.key-concept}
+**Self-Correcting Mechanism**
+
+Markets **naturally tend toward equilibrium**. Surpluses push prices down; shortages push prices up. This process continues until $Q_d = Q_s$.
+:::
+
+</div>
+
+## The Four Shift Rules :arrows_counterclockwise:
+
+<div style="font-size: 68%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 14
+#| fig-height: 5
+#| fig-align: center
+
+make_shift_panel <- function(shift_type, title_str) {
+  # Base: D: P = 50 - 0.5Q, S: P = 10 + 0.25Q, Eq: Q=53.3, P=23.3
+  d1 <- function(Q) 50 - 0.5 * Q
+  s1 <- function(Q) 10 + 0.25 * Q
+  
+  if (shift_type == "D_up") {
+    d2 <- function(Q) 65 - 0.5 * Q  # demand shifts right
+    s2 <- s1
+    # New eq: 65 - 0.5Q = 10 + 0.25Q => 55 = 0.75Q => Q=73.3, P=28.3
+    d2_col <- ue_blue; s2_col <- ue_red
+    arrow_x <- 60; arrow_y <- 20
+    d_label <- expression(D[2]); d_old_label <- expression(D[1])
+    result <- "P↑ Q↑"
+  } else if (shift_type == "D_down") {
+    d2 <- function(Q) 35 - 0.5 * Q
+    s2 <- s1
+    d2_col <- ue_blue; s2_col <- ue_red
+    result <- "P↓ Q↓"
+  } else if (shift_type == "S_up") {
+    d2 <- d1
+    s2 <- function(Q) 10 + 0.25 * Q + 10  # supply shifts left (up)
+    d2_col <- ue_blue; s2_col <- ue_red
+    result <- "P↑ Q↓"
+  } else {  # S_down
+    d2 <- d1
+    s2 <- function(Q) 10 + 0.25 * Q - 8  # supply shifts right (down)
+    d2_col <- ue_blue; s2_col <- ue_red
+    result <- "P↓ Q↑"
+  }
+  
+  Q_seq <- seq(0, 100, by = 1)
+  
+  p <- ggplot() +
+    # Old curves (gray)
+    geom_line(data = data.frame(Q = Q_seq, P = d1(Q_seq)) %>% filter(P >= 0),
+              aes(x = Q, y = P), color = ue_gray, linewidth = 0.8, linetype = "dashed") +
+    geom_line(data = data.frame(Q = Q_seq, P = s1(Q_seq)),
+              aes(x = Q, y = P), color = ue_gray, linewidth = 0.8, linetype = "dashed") +
+    # New curves (bold)
+    geom_line(data = data.frame(Q = Q_seq, P = d2(Q_seq)) %>% filter(P >= 0),
+              aes(x = Q, y = P), color = ue_blue, linewidth = 1.3) +
+    geom_line(data = data.frame(Q = Q_seq, P = s2(Q_seq)),
+              aes(x = Q, y = P), color = ue_red, linewidth = 1.3)
+  
+  # Old equilibrium
+  # Solve d1 = s1: 50 - 0.5Q = 10 + 0.25Q => Q = 53.3
+  q_old <- 40 / 0.75; p_old <- d1(q_old)
+  p <- p + geom_point(aes(x = q_old, y = p_old), size = 2, color = ue_gray)
+  
+  # New equilibrium (solve d2 = s2 numerically)
+  # Find intersection
+  f_diff <- function(Q) d2(Q) - s2(Q)
+  q_new <- uniroot(f_diff, c(0, 150))$root
+  p_new <- d2(q_new)
+  p <- p +
+    geom_point(aes(x = q_new, y = p_new), size = 3, color = ue_black) +
+    annotate("text", x = q_new + 4, y = p_new + 3,
+             label = result, fontface = "bold", size = 4, color = ue_black)
+  
+  p <- p +
+    coord_cartesian(ylim = c(0, 55), xlim = c(0, 100)) +
+    scale_x_continuous(expand = c(0, 0)) +
+    scale_y_continuous(expand = c(0, 0)) +
+    labs(x = "Q", y = "P", title = title_str) +
+    theme_minimal(base_size = 11) +
+    theme(
+      plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 11),
+      axis.title = element_text(face = "bold"),
+      panel.grid.minor = element_blank()
+    )
+  return(p)
+}
+
+p1 <- make_shift_panel("D_up", "(a) Demand ↑: P↑ Q↑")
+p2 <- make_shift_panel("D_down", "(b) Demand ↓: P↓ Q↓")
+p3 <- make_shift_panel("S_up", "(c) Supply ↓: P↑ Q↓")
+p4 <- make_shift_panel("S_down", "(d) Supply ↑: P↓ Q↑")
+
+(p1 + p2) / (p3 + p4) +
+  plot_annotation(title = "The Four Shift Rules",
+                  theme = theme(plot.title = element_text(color = ue_red,
+                                face = "bold", hjust = 0.5, size = 14)))
+```
+
+</div>
+
+## The Four Rules Summarized :clipboard:
+
+<div style="font-size: 78%;">
+
+| Shift | Price | Quantity | Tourism Example |
+|---|:---:|:---:|---|
+| **Demand ↑** (right) | ↑ | ↑ | Summer season → more tourists want hotels |
+| **Demand ↓** (left) | ↓ | ↓ | Pandemic → fewer tourists travel |
+| **Supply ↑** (right) | ↓ | ↑ | New technology → cheaper flights |
+| **Supply ↓** (left) | ↑ | ↓ | Fuel crisis → airline costs rise |
+
+. . .
+
+:warning: **When both curves shift simultaneously**, the direction of **one** variable (P or Q) becomes **ambiguous** — it depends on the **relative size** of the shifts.
+
+**Example**: Summer in the Algarve — demand shifts right (tourists) AND supply shifts right (seasonal workers). Quantity definitely rises, but price? Depends on which shift is bigger!
+
+</div>
+
+## Welfare at Equilibrium :star:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Total Economic Welfare**
+
+$$W = CS + PS$$
+
+At the competitive equilibrium, total welfare is **maximized**. Any other price/quantity combination would reduce the combined surplus.
+:::
+
+From our example ($D: P = 50 - 0.5Q$, $S: P = 10 + 0.25Q$, $Q^* \approx 53.3$, $P^* \approx 23.3$):
+
+$$CS = \frac{1}{2} \times 53.3 \times (50 - 23.3) = \frac{1}{2} \times 53.3 \times 26.7 \approx €711$$
+
+$$PS = \frac{1}{2} \times 53.3 \times (23.3 - 10) = \frac{1}{2} \times 53.3 \times 13.3 \approx €356$$
+
+$$W = 711 + 356 \approx €1{,}067$$
+
+:point_right: Any **tax**, **price ceiling**, or **price floor** would reduce total welfare by creating **deadweight loss**.
+
+</div>
+
+# Long-Run Market Equilibrium
+
+## The Short Run vs Long Run Revisited :hourglass:
+
+<div style="font-size: 78%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+:lock: **Short-run equilibrium**:
+
+- Number of firms is **fixed**
+- Firms may earn **positive profit**, **zero profit**, or **losses**
+- Some factors of production are fixed
+- This is what we've been analyzing!
+:::
+
+::: {.column width="50%"}
+:unlock: **Long-run equilibrium**:
+
+- Firms can **enter** or **exit** the market
+- All factors of production are variable
+- A special condition emerges: **zero economic profit**
+- The market adjusts to a new, more fundamental equilibrium
+:::
+::::
+
+. . .
+
+::: {.key-concept}
+**The Key Long-Run Question**
+
+What happens over time when firms in a competitive market are earning positive profits? Or making losses?
+:::
+
+</div>
+
+## The Entry and Exit Mechanism :door:
+
+<div style="font-size: 76%;">
+
+**If firms earn positive economic profit** ($P > ATC$):
+
+1. :arrow_right: New firms are attracted → they **enter** the market
+2. :chart_with_upwards_trend: Market supply shifts **right** (more firms = more supply)
+3. :arrow_down: Equilibrium price **falls**
+4. :repeat: Process continues until $P = ATC_{\min}$ → **zero economic profit**
+
+**If firms make losses** ($P < ATC$):
+
+1. :arrow_left: Some firms **exit** the market
+2. :chart_with_downwards_trend: Market supply shifts **left** (fewer firms = less supply)
+3. :arrow_up: Equilibrium price **rises**
+4. :repeat: Process continues until $P = ATC_{\min}$ → **zero economic profit**
+
+. . .
+
+::: {.key-concept}
+**Long-Run Equilibrium Condition**
+
+In a perfectly competitive market: $P = MC = ATC_{\min}$
+
+Firms produce at minimum average cost and earn **zero economic profit**.
+:::
+
+</div>
+
+## Visualizing the Long-Run Adjustment :cinema:
+
+<div style="font-size: 68%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 14
+#| fig-height: 5
+#| fig-align: center
+
+# Left: Market with profit -> entry -> new equilibrium
+# Right: Individual firm goes from profit to zero profit
+
+# Market panel
+df_d <- data.frame(Q = seq(0, 200, by = 1)) %>% mutate(P = 50 - 0.15 * Q)
+df_s1 <- data.frame(Q = seq(0, 200, by = 1)) %>% mutate(P = 10 + 0.15 * Q)
+df_s2 <- data.frame(Q = seq(0, 200, by = 1)) %>% mutate(P = 5 + 0.15 * Q)
+# S1 eq: 50 - 0.15Q = 10 + 0.15Q => 40 = 0.3Q => Q=133.3, P=30
+# S2 eq: 50 - 0.15Q = 5 + 0.15Q => 45 = 0.3Q => Q=150, P=27.5
+
+p_market <- ggplot() +
+  geom_line(data = df_d %>% filter(P >= 0), aes(x = Q, y = P),
+            color = ue_blue, linewidth = 1.3) +
+  geom_line(data = df_s1, aes(x = Q, y = P),
+            color = ue_gray, linewidth = 1, linetype = "dashed") +
+  geom_line(data = df_s2, aes(x = Q, y = P),
+            color = ue_red, linewidth = 1.3) +
+  # Old eq
+  geom_point(aes(x = 133.3, y = 30), size = 3, color = ue_gray) +
+  # New eq
+  geom_point(aes(x = 150, y = 27.5), size = 3, color = ue_black) +
+  # Arrow
+  annotate("segment", x = 133.3, y = 30, xend = 148, yend = 27.8,
+           arrow = arrow(length = unit(0.2, "cm")), color = ue_black, linewidth = 0.8) +
+  annotate("text", x = 175, y = 45, label = "D", color = ue_blue,
+           fontface = "bold.italic", size = 5) +
+  annotate("text", x = 175, y = 22, label = expression(S[1]),
+           color = ue_gray, fontface = "italic", size = 4) +
+  annotate("text", x = 175, y = 32, label = expression(S[2] ~ "(entry)"),
+           color = ue_red, fontface = "bold", size = 4) +
+  annotate("text", x = 80, y = 5,
+           label = "Entry → Supply shifts right → Price falls",
+           color = ue_black, fontface = "italic", size = 3.5) +
+  coord_cartesian(ylim = c(0, 55), xlim = c(0, 200)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Market Quantity", y = "Price (€)",
+       title = "(a) Market: Entry Shifts Supply Right") +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 12),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+# Firm panel: MC and ATC, two price levels
+Q_f <- seq(1, 55, by = 0.5)
+MC_f <- 0.06 * Q_f^2 - 2.8 * Q_f + 60
+ATC_f <- 0.02 * Q_f^3 / Q_f - 1.4 * Q_f + 60 + 500 / Q_f
+# Simplify: ATC = 0.02*Q^2 - 1.4*Q + 60 + 500/Q
+
+p_firm <- ggplot() +
+  geom_line(data = data.frame(Q = Q_f, MC = MC_f),
+            aes(x = Q, y = MC), color = ue_red, linewidth = 1.2) +
+  geom_line(data = data.frame(Q = Q_f, ATC = ATC_f),
+            aes(x = Q, y = ATC), color = ue_black, linewidth = 1) +
+  # High price (SR with profit)
+  geom_hline(yintercept = 60, color = ue_green, linewidth = 0.9, linetype = "dashed") +
+  # LR price = ATC min ≈ 48.38
+  geom_hline(yintercept = 48.38, color = ue_orange, linewidth = 1.2) +
+  # Profit rectangle at high price (approx)
+  annotate("rect", xmin = 0, xmax = 46.7, ymin = 48.38, ymax = 60,
+           fill = ue_green, alpha = 0.1) +
+  # Labels
+  annotate("text", x = 52, y = 62, label = expression(P[SR] ~ "(profit)"),
+           color = ue_green, fontface = "bold", size = 3.5) +
+  annotate("text", x = 52, y = 46, label = expression(P[LR] == ATC[min]),
+           color = ue_orange, fontface = "bold", size = 3.5) +
+  annotate("text", x = 52, y = 72, label = "MC", color = ue_red,
+           fontface = "bold.italic", size = 4.5) +
+  annotate("text", x = 52, y = 52, label = "ATC", color = ue_black,
+           fontface = "italic", size = 4) +
+  annotate("text", x = 20, y = 54, label = "Profit\n(SR)", color = ue_green,
+           fontface = "bold", size = 3.5) +
+  annotate("segment", x = 25, y = 57, xend = 25, yend = 49,
+           arrow = arrow(length = unit(0.15, "cm"), ends = "both"),
+           color = ue_green, linewidth = 0.5) +
+  coord_cartesian(ylim = c(25, 80), xlim = c(0, 55)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Firm Quantity (q)", y = "€/unit",
+       title = "(b) Firm: Profit Attracts Entry → Price Falls to ATC min") +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 11),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+p_market + p_firm
+```
+
+**(a)** Positive profits attract **entry** → supply shifts right → price falls. **(b)** Price falls until $P = ATC_{\min}$ → zero economic profit → **entry stops**.
+
+</div>
+
+## Zero Profit ≠ Failure! :bulb:
+
+<div style="font-size: 78%;">
+
+**"Zero economic profit"** sounds bad — but remember what it means:
+
+::: {.key-concept}
+**Zero Economic Profit**
+
+The firm covers **all** costs, including the **opportunity cost** of the owner's time and capital. The owner earns exactly what they could earn in their **best alternative** — a **normal return**.
+
+$$\text{Economic Profit} = 0 \implies \text{Accounting Profit} = \text{Normal Return}$$
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+:white_check_mark: **What zero economic profit means**:
+
+- The business is sustainable
+- The owner has no reason to leave
+- No new firms want to enter
+- The market is in **long-run rest**
+:::
+
+::: {.column width="50%"}
+:x: **What it does NOT mean**:
+
+- The owner earns no money
+- The business is failing
+- The owner should close
+- There are no accounting profits
+:::
+::::
+
+</div>
+
+## The Long-Run Supply Curve :chart_with_upwards_trend:
+
+<div style="font-size: 76%;">
+
+If all firms have the **same cost structure** (constant-cost industry):
+
+::: {.key-concept}
+**Long-Run Supply in a Constant-Cost Industry**
+
+The long-run supply curve is **horizontal** at $P = ATC_{\min}$.
+
+- If demand increases → new firms enter, supply shifts right, price returns to $ATC_{\min}$
+- If demand decreases → firms exit, supply shifts left, price returns to $ATC_{\min}$
+- **Quantity adjusts**, but **price stays the same** in the long run!
+:::
+
+:point_right: In reality, costs may **rise** as the industry grows (increasing-cost industry → upward-sloping LR supply) or **fall** (decreasing-cost industry → downward-sloping LR supply). But the constant-cost case is the baseline.
+
+**Tourism**: The long-run supply of standardized tour packages may be nearly horizontal — if tour operators can easily enter/exit and all face similar costs, the long-run price settles at the minimum cost of providing a tour.
+
+</div>
+
+# Tourism Application
+
+## Tourism Markets: SR vs LR :airplane:
+
+<div style="font-size: 72%;">
+
+**What happened to Lisbon's hotel market after the tourism boom (post-2015)?**
+
+:::: {.columns}
+::: {.column width="50%"}
+:one: **Short run** (2015–2017):
+
+- Demand surged (low-cost airlines, Lisbon's popularity)
+- Supply was **fixed** (existing hotels)
+- Result: **prices skyrocketed**, occupancy hit record highs
+- Existing hotels earned **large profits**
+- $P >> ATC_{\min}$ → well above breakeven
+:::
+
+::: {.column width="50%"}
+:two: **Long run** (2018–2024):
+
+- Profits attracted **entry**: new hotels, Airbnb, hostels
+- Supply shifted **right** significantly
+- Result: prices stabilized (or even fell for some segments)
+- Competition increased, profit margins **narrowed**
+- Market moved toward $P \approx ATC_{\min}$
+
+:point_right: This is the **entry mechanism** in action!
+:::
+::::
+
+. . .
+
+:bulb: The pandemic (2020–2021) reversed this: demand collapsed → firms exited → supply shifted left → the cycle restarted.
+
+</div>
+
+## Summary :memo:
+
+<div style="font-size: 70%;">
+
+**Today's Key Takeaways**:
+
+1. **SR equilibrium**: where $Q_d = Q_s$. Price too high → surplus (price falls). Price too low → shortage (price rises).
+2. **Four shift rules**: D↑ → P↑Q↑; D↓ → P↓Q↓; S↑ → P↓Q↑; S↓ → P↑Q↓
+3. **Simultaneous shifts**: direction of one variable is ambiguous — depends on magnitude
+4. **Total welfare** = CS + PS, maximized at competitive equilibrium
+5. **LR equilibrium**: entry (if profit > 0) and exit (if profit < 0) drive $P → ATC_{\min}$
+6. **Zero economic profit** in the LR = normal return = sustainable. It's not failure!
+7. **LR supply** (constant-cost): horizontal at $P = ATC_{\min}$
+
+**This completes the Producer Theory block!** :tada:
+
+Lectures 10–16: Costs → Profit max → Shutdown → Supply rule → PS & Market supply → Elasticity → Equilibrium
+
+**Next (Lecture 17, April 17)**: Introduction to Game Theory — Prisoner's Dilemma & Nash Equilibrium :chess_pawn:
+
+</div>
+
+## Exercises {.center}
+
+**Practice Time!** :pencil2:
+
+Market equilibrium, shifts, and long-run adjustment.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: In the Algarve hotel market, a new low-cost airline begins flying to Faro from Northern Europe. At the same time, the Portuguese government introduces a new tourist tax on hotel stays. What is the effect on the equilibrium **quantity** of hotel room-nights?
+
+A. Quantity definitely increases
+
+B. Quantity definitely decreases
+
+C. Quantity definitely stays the same
+
+D. The effect on quantity is ambiguous
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: D**
+:::
+
+The new airline increases demand (shift right → Q↑). The tourist tax increases costs (supply shifts left → Q↓). Since one shift pushes Q up and the other pushes Q down, the net effect is **ambiguous** — it depends on which shift is larger. However, we can say that price **definitely rises** (both shifts push P upward).
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 82%;">
+
+**Question**: In a perfectly competitive market, if firms are currently earning positive economic profits in the short run, what will happen in the long run?
+
+A. The government will impose a price ceiling
+
+B. New firms enter, supply shifts right, price falls until profit = 0
+
+C. Existing firms raise prices to increase profits further
+
+D. Demand shifts left as consumers find substitutes
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: B**
+:::
+
+Positive profit → **entry** → supply shifts right → equilibrium price falls → profit is competed away until $P = ATC_{\min}$ → **zero economic profit**. This is the self-correcting mechanism of competitive markets. No government action needed (A), firms can't set prices (C — they're price takers!), and the question is about the supply side, not demand (D).
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 60%;">
+
+**The market for guided walking tours in Sintra** has the following curves:
+
+- **Demand**: $P = 40 - 0.2Q$ (€ per tour)
+- **Short-run supply**: $P = 8 + 0.12Q$ (€ per tour)
+
+All firms are identical with $ATC_{\min} = €20$.
+
+**a)** Find the short-run equilibrium price and quantity.
+
+**b)** Calculate CS, PS, and total welfare at the SR equilibrium.
+
+**c)** Are firms making positive economic profit, zero profit, or losses? How do you know?
+
+**d)** Describe what will happen in the **long run**. What will the new equilibrium price be? Will the number of firms increase or decrease?
+
+**e)** A surge in tourist arrivals shifts demand to $P = 52 - 0.2Q$. Find the new SR equilibrium. Are firms now earning profits or losses?
+
+**f)** After the demand surge, describe the long-run adjustment process. What is the final LR equilibrium price?
+
+</div>
+
+## Exercise 3: Solution — Parts a & b
+
+<div style="font-size: 68%;">
+
+**a)** SR equilibrium: $40 - 0.2Q = 8 + 0.12Q$
+
+$32 = 0.32Q$ → $Q^* = 100$ tours, $P^* = 40 - 0.2(100) = €20$
+
+**b)** At ($Q^* = 100$, $P^* = €20$):
+
+$$CS = \frac{1}{2} \times 100 \times (40 - 20) = \frac{1}{2} \times 100 \times 20 = €1{,}000$$
+
+$$PS = \frac{1}{2} \times 100 \times (20 - 8) = \frac{1}{2} \times 100 \times 12 = €600$$
+
+$$W = CS + PS = 1{,}000 + 600 = €1{,}600$$
+
+</div>
+
+## Exercise 3: Solution — Parts c & d
+
+<div style="font-size: 70%;">
+
+**c)** $P^* = €20 = ATC_{\min} = €20$
+
+Since price equals minimum ATC, firms are earning **zero economic profit**. The market is already at its **long-run equilibrium**! :white_check_mark:
+
+**d)** Since profit is already zero, there is **no incentive** for firms to enter or exit. The long-run equilibrium price **stays at €20**. The number of firms remains the same.
+
+:point_right: This is a special case where SR equilibrium **coincides** with LR equilibrium — the market is at rest.
+
+</div>
+
+## Exercise 3: Solution — Parts e & f
+
+<div style="font-size: 68%;">
+
+**e)** New demand: $P = 52 - 0.2Q$
+
+New SR equilibrium: $52 - 0.2Q = 8 + 0.12Q$ → $44 = 0.32Q$ → $Q^* = 137.5$, $P^* = 52 - 0.2(137.5) = €24.50$
+
+Since $P^* = €24.50 > ATC_{\min} = €20$: firms are now earning **positive economic profit**!
+
+Profit per firm = $(24.50 - 20) \times q_i = €4.50 \times q_i > 0$ (exact firm quantity depends on individual MC).
+
+**f)** Long-run adjustment:
+
+1. Positive profits attract **new firms** → they enter the market
+2. Supply shifts **right** (more firms)
+3. Equilibrium price **falls** from €24.50 toward $ATC_{\min}$
+4. Entry continues until $P = ATC_{\min} = €20$
+
+**Final LR equilibrium**: $P_{LR} = €20$. At this price with the new demand: $Q = \frac{52 - 20}{0.2} = 160$ tours.
+
+The market serves **more tours** (160 vs 100 originally) at the **same price** (€20). The adjustment came entirely through **more firms** entering, not through higher prices. :white_check_mark:
+
+</div>
+
+## Next Lecture {.center}
+
+**April 17, 2026**: Introduction to Game Theory — Prisoner's Dilemma & Nash Equilibrium :chess_pawn:
+
+A brand new topic — what happens when firms are **not** price takers and **interact strategically**?
+
+. . .
+
+:wave: **This completes the Producer Theory block!** Time to move beyond perfect competition.
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Friday, April 17, 2026*
+
+::: {.notes}
+This is the capstone lecture of the producer theory block. It ties together everything from Lectures 10–15: cost curves determine supply, supply meets demand at equilibrium, and the long-run entry/exit mechanism drives profits to zero. The Lisbon hotel boom example makes the LR adjustment process tangible. Students should leave understanding that competitive markets self-correct through entry and exit, and that zero economic profit is the natural long-run state — not a sign of failure. The exercise deliberately starts at a long-run equilibrium, then shocks demand to show the full SR→LR adjustment process.
+:::

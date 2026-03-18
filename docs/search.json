@@ -18,7 +18,7 @@
     "href": "material.html#slides",
     "title": "Material",
     "section": "Slides",
-    "text": "Slides\n\nEconomics Fundamentals\n\nIntroduction 📄 PDF\nEconomic Systems 📄 PDF\nOpportunity Cost 📄 PDF\nProduction Possibility Frontier 📄 PDF\n\n\n\nMicroeconomics\n\nConsumer Theory: Behind the Demand\n\nBudget Set and Constraint 📄 PDF\nPreferences 📄 PDF\nMRS and Utility 📄 PDF\nDemand 📄 PDF\nElasticity of Demand 📄 PDF\n\n\n\nProducer Theory: Behind the Supply\n\n\nMarket Equilibrium\n\n\n\nMacroeconomics"
+    "text": "Slides\n\nEconomics Fundamentals\n\nIntroduction 📄 PDF\nEconomic Systems 📄 PDF\nOpportunity Cost 📄 PDF\nProduction Possibility Frontier 📄 PDF\n\n\n\nMicroeconomics\n\nConsumer Theory: Behind the Demand\n\nBudget Set and Constraint 📄 PDF\nPreferences 📄 PDF\nMRS and Utility 📄 PDF\nDemand 📄 PDF\nElasticity of Demand 📄 PDF\n\n\n\nProducer Theory: Behind the Supply\n\nCosts\nProfit Maximization\nSupply\nSupply rule\nProducer Surplus and Market Supply\nSupply (and demand) Elasticity\n\n\n\nMarket Equilibrium and Game Theory\n\nEquilibrium\nGame Theory: Intro\nGame Theory: Sequential Games\n\n\n\n\nMacroeconomics"
   },
   {
     "objectID": "slides/lecture12-shutdown-supply.html#recap-lecture-11",
@@ -2385,5 +2385,992 @@
     "title": "ueuropeia_economics_tourism",
     "section": "",
     "text": "This website contains the material used for the course Economics of Tourism, from the Bachelor in Tourism at the Universidade Europeia."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#recap-lecture-12",
+    "href": "slides/lecture13-supply-rule.html#recap-lecture-12",
+    "title": "Producer Theory",
+    "section": "Recap: Lecture 12 ⏪",
+    "text": "Recap: Lecture 12 ⏪\n\nWhat we covered last time:\n\nShutdown rule: Operate if \\(P \\geq AVC\\); shut down if \\(P &lt; AVC\\)\nBreakeven price = \\(ATC_{\\min}\\) (zero economic profit)\nShutdown price = \\(AVC_{\\min}\\) (below this, stop producing)\nThe firm’s supply curve = the MC curve above AVC\n\n. . .\n🎯 Today: We formalize the seller’s supply rule and explore what makes the supply curve shift.\n👉 The supply rule is the producer’s equivalent of the demand curve we derived in Lecture 8!"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#the-cost-benefit-principle-applied-to-firms",
+    "href": "slides/lecture13-supply-rule.html#the-cost-benefit-principle-applied-to-firms",
+    "title": "Producer Theory",
+    "section": "The Cost-Benefit Principle Applied to Firms ⚖️",
+    "text": "The Cost-Benefit Principle Applied to Firms ⚖️\n\n\nThe Seller’s Supply Rule\nA profit-maximizing firm in perfect competition should produce at the level of output where:\n\\[\\text{Price} = \\text{Marginal Cost} \\qquad (P = MC)\\]\non the rising portion of the MC curve, provided \\(P \\geq AVC\\).\n\nWhy? The cost-benefit principle (from Lecture 3!) applied to each unit:\n\nThe benefit of producing one more unit = the revenue it brings = \\(P\\)\nThe cost of producing one more unit = \\(MC\\)\n\n👉 Keep producing as long as \\(P \\geq MC\\). Stop when the next unit would cost more than it earns.\nThis is just marginal analysis — the same logic we’ve used since the very beginning of the course!"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#the-rule-in-action-step-by-step",
+    "href": "slides/lecture13-supply-rule.html#the-rule-in-action-step-by-step",
+    "title": "Producer Theory",
+    "section": "The Rule in Action: Step by Step 👣",
+    "text": "The Rule in Action: Step by Step 👣\n\nThe bottle factory (from the textbook): P = €0.35/bottle, FC = €40/day\n\n\n\n\n\n\n\n\n\n\n\nGoing from → to\nExtra bottles\nRevenue per bottle (MR = P)\nMC per bottle\nMR vs MC\nDecision\n\n\n\n\n0 → 100\n100\n€0.35\n€0.10\nMR &gt; MC\n✅ Produce\n\n\n100 → 200\n100\n€0.35\n€0.10\nMR &gt; MC\n✅ Produce\n\n\n200 → 300\n100\n€0.35\n€0.20\nMR &gt; MC\n✅ Produce\n\n\n300 → 400\n100\n€0.35\n€0.30\nMR &gt; MC\n✅ Produce\n\n\n400 → 500\n100\n€0.35\n€0.40\nMR &lt; MC\n❌ Stop!\n\n\n\nSource: Course textbook (sebenta), Table 10\n👉 Optimal output: Q* = 400 bottles/day. At Q = 400, the MC of the next batch (€0.40) exceeds the price (€0.35), so expanding further would reduce profit.\n💡 At Q = 300, MC = €0.20 &lt; P = €0.35 — there’s still €0.15/bottle of “profit margin” to capture. That’s why the firm doesn’t stop at 300!"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#why-rising-portion-matters",
+    "href": "slides/lecture13-supply-rule.html#why-rising-portion-matters",
+    "title": "Producer Theory",
+    "section": "Why “Rising Portion” Matters ⚠️",
+    "text": "Why “Rising Portion” Matters ⚠️\n\nMC is U-shaped — it may intersect the price line twice. Which intersection is correct?\n\n\n\n\n\n\n\n\n\nAt Q₁ (falling MC): if you produce one more unit, MC is still falling — you can increase profit further! At Q* (rising MC): producing one more unit would cost more than the price. This is the true optimum."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#the-supply-rule-formal-summary",
+    "href": "slides/lecture13-supply-rule.html#the-supply-rule-formal-summary",
+    "title": "Producer Theory",
+    "section": "The Supply Rule: Formal Summary 📋",
+    "text": "The Supply Rule: Formal Summary 📋\n\n\nThe Complete Supply Rule for a Competitive Firm\n\nFind \\(Q^*\\) where \\(P = MC\\) on the rising portion of MC\nIf \\(P \\geq AVC\\) at \\(Q^*\\) → supply \\(Q^*\\) units\nIf \\(P &lt; AVC\\) at \\(Q^*\\) → supply 0 units (shut down)\n\nThe individual supply curve is the MC curve above AVC_min.\n\nThis rule answers three questions at once:\n\npoint_right: One rule, three answers — that’s the power of marginal analysis!\n\n\nQuestion\nAnswer\n\n\n\n\nHow much to produce?\nWhere \\(P = MC\\) (rising portion)\n\n\nWhether to produce?\nOnly if \\(P \\geq AVC\\)\n\n\nHow much profit?\n\\(\\pi = (P - ATC) \\times Q^*\\)"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#the-textbooks-key-insight-changing-the-price",
+    "href": "slides/lecture13-supply-rule.html#the-textbooks-key-insight-changing-the-price",
+    "title": "Producer Theory",
+    "section": "The Textbook’s Key Insight: Changing the Price 📈",
+    "text": "The Textbook’s Key Insight: Changing the Price 📈\n\nThe textbook shows what happens when the bottle price rises from €0.35 to €0.45:\n\n\n\n\n\n\n\n\n\nQ (bottles/day)\nMC per bottle\nProfit at P=€0.35\nProfit at P=€0.45\n\n\n\n\n0\n—\n−40\n−40\n\n\n100\n0.10\n−15\n−5\n\n\n200\n0.10\n10\n30\n\n\n300\n0.20\n25\n55\n\n\n400\n0.30\n30\n70\n\n\n500\n0.40\n25\n75\n\n\n600\n0.50\n10\n70\n\n\n700\n0.60\n−15\n55\n\n\n\nSource: Course textbook (sebenta), Tables 10 & 11\n\nAt P = €0.35: Q* = 400 (MC ≈ 0.30, next batch MC = 0.40 &gt; P)\nAt P = €0.45: Q* = 500 (MC ≈ 0.40, next batch MC = 0.50 &gt; P)\n\n👉 Higher price → produce more → earn more profit. The firm moves up along its MC/supply curve."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#the-textbooks-key-insight-changing-wages",
+    "href": "slides/lecture13-supply-rule.html#the-textbooks-key-insight-changing-wages",
+    "title": "Producer Theory",
+    "section": "The Textbook’s Key Insight: Changing Wages 💰",
+    "text": "The Textbook’s Key Insight: Changing Wages 💰\n\nWhat if wages rise from €10/hour to €12/hour (keeping P = €0.35)?\n\n\n\n\n\n\n\n\n\n\n\n\nQ\nLC at €10/hr\nLC at €12/hr\nTC (w=10)\nTC (w=12)\nProfit (w=10)\nProfit (w=12)\n\n\n\n\n0\n0\n0\n40\n40\n−40\n−40\n\n\n100\n10\n12\n50\n52\n−15\n−17\n\n\n200\n20\n24\n60\n64\n10\n6\n\n\n300\n40\n48\n80\n88\n25\n17\n\n\n400\n70\n84\n110\n124\n30\n16\n\n\n500\n110\n132\n150\n172\n25\n3\n\n\n\nSource: Course textbook (sebenta), Tables 10 & 12\n\nAt w = €10/hr: Q* = 400, max profit = €30\nAt w = €12/hr: Q* = 300, max profit = €17\n\n👉 Higher wages → MC rises at every Q → firm produces less at the same price. The supply curve has shifted left!"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#visualizing-a-supply-shift",
+    "href": "slides/lecture13-supply-rule.html#visualizing-a-supply-shift",
+    "title": "Producer Theory",
+    "section": "Visualizing a Supply Shift 🔄",
+    "text": "Visualizing a Supply Shift 🔄"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#does-changing-fixed-costs-shift-supply",
+    "href": "slides/lecture13-supply-rule.html#does-changing-fixed-costs-shift-supply",
+    "title": "Producer Theory",
+    "section": "Does Changing Fixed Costs Shift Supply? 🔒",
+    "text": "Does Changing Fixed Costs Shift Supply? 🔒\n\nThe textbook also shows: when FC rises from €40 to €70 (price stays at €0.35):\n\nQ* stays at 400! The profit-maximizing quantity doesn’t change.\nProfit drops from €30 to €0, but the production decision is unchanged.\n\n. . .\n\nFixed Costs Do Not Shift the Supply Curve in the Short Run\nMC depends only on variable costs. Since FC doesn’t affect MC, it doesn’t change the \\(P = MC\\) intersection, and the supply curve stays in the same position.\nFC affects profit (and the shutdown/exit decision in the long run), but not the quantity supplied at each price.\n\n👉 Movement along the supply curve: caused by a change in the product’s own price\n👉 Shift of the supply curve: caused by a change in input prices (wages, materials), technology, or number of firms"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#what-shifts-the-supply-curve",
+    "href": "slides/lecture13-supply-rule.html#what-shifts-the-supply-curve",
+    "title": "Producer Theory",
+    "section": "What Shifts the Supply Curve? 🔄",
+    "text": "What Shifts the Supply Curve? 🔄\n\n\n\nShift RIGHT (increase in supply) ➡️\nMore is supplied at every price when:\n\n📉 Input prices fall (cheaper labor, fuel, materials)\n⚙️ Technology improves (online booking systems, automation)\n🌡️ Favorable conditions (good weather for agriculture, tourism)\n➕ More firms enter the market\n🏛️ Government subsidies or reduced regulation\n\nTourism: New low-cost airline tech → cheaper flights → supply of flights shifts right\n\nShift LEFT (decrease in supply) ⬅️\nLess is supplied at every price when:\n\n📈 Input prices rise (higher wages, energy costs)\n🚫 Regulation increases (stricter licensing, environmental rules)\n⚠️ Adverse events (natural disaster, pandemic)\n➖ Firms exit the market\n🧾 Higher taxes on producers\n\nTourism: New tourist tax → higher costs for hotels → supply shifts left"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#movement-along-vs-shift-supply-edition",
+    "href": "slides/lecture13-supply-rule.html#movement-along-vs-shift-supply-edition",
+    "title": "Producer Theory",
+    "section": "Movement Along vs Shift: Supply Edition 🔍",
+    "text": "Movement Along vs Shift: Supply Edition 🔍\n\n\n\n\n\n\n\n\n\n\nLeft: When the product’s own price rises, the firm moves along its supply curve → \\(Q\\) increases.\nRight: When input costs rise (wages, energy), the entire supply curve shifts left → less supplied at every price.\n💡 Exactly the same logic as demand (Lecture 8): own-price = movement along; other factors = shift!"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#supply-shifts-in-portuguese-tourism",
+    "href": "slides/lecture13-supply-rule.html#supply-shifts-in-portuguese-tourism",
+    "title": "Producer Theory",
+    "section": "Supply Shifts in Portuguese Tourism 🇵🇹",
+    "text": "Supply Shifts in Portuguese Tourism 🇵🇹\n\n\n\nExample 1: Minimum wage increase 💰\nPortugal’s minimum wage has been rising. For tourism businesses:\n\nLabor is a major variable cost (housekeeping, waitstaff, guides)\nHigher wages → MC shifts up → supply shifts left\nAt the same hotel room price, fewer rooms are profitably offered\nSome marginal businesses may shut down (\\(P &lt; AVC\\) at new costs)\n\nEffect: fewer beds at every price level, or higher prices to compensate\n\nExample 2: Online booking technology 💻\nPlatforms like Booking.com, Airbnb:\n\nReduce distribution costs (no need for travel agents)\nLower marketing costs per booking\nMC shifts down → supply shifts right\nMore accommodation available at every price point\n\nEffect: more rooms at every price level — which has been the trend!\n\n. . .\n👉 Both examples change variable costs, which shifts MC and therefore the supply curve."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#supply-shifts-seasonal-staffing-in-the-algarve",
+    "href": "slides/lecture13-supply-rule.html#supply-shifts-seasonal-staffing-in-the-algarve",
+    "title": "Producer Theory",
+    "section": "Supply Shifts: Seasonal Staffing in the Algarve ☀️",
+    "text": "Supply Shifts: Seasonal Staffing in the Algarve ☀️\n\nWhy is the supply of tourism services different in summer vs winter?\nThe \\(P = MC\\) rule explains it:\n\n\n☀️ Summer:\n\nAbundant seasonal workers → wages moderate\nMC is relatively low for extra services\nSupply curve is further right\nMore tours, restaurants, activities offered\n\n\n❄️ Winter:\n\nWorkers move to other sectors → must pay more to retain\nEnergy costs higher (heating)\nMC is higher for the same services\nSupply curve shifts left\nFewer services offered\n\n\n. . .\n💡 Combined with demand shifts: In summer, both supply and demand are higher. In winter, both shift left. The net effect on price depends on which shift is larger — this is market equilibrium (Lecture 17)!"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#the-parallel-with-demand",
+    "href": "slides/lecture13-supply-rule.html#the-parallel-with-demand",
+    "title": "Producer Theory",
+    "section": "The Parallel with Demand 🤝",
+    "text": "The Parallel with Demand 🤝\n\nThroughout the course, we’ve built mirror-image tools for consumers and producers:\n\npoint_right: Next lecture we complete the right column: producer surplus and market supply!\n\n\n\n\n\n\n\nConcept\nConsumer (Demand)\nProducer (Supply)\n\n\n\n\nGoal\nMaximize utility\nMaximize profit\n\n\nConstraint\nBudget (\\(M\\))\nCost structure (\\(TC\\))\n\n\nIndividual curve\nFrom utility maximization\nFrom \\(P = MC\\) (above AVC)\n\n\nCurve shape\nDownward-sloping 📉\nUpward-sloping 📈\n\n\nMovement along\nOwn price changes\nOwn price changes\n\n\nShift\nIncome, preferences, other prices\nInput costs, technology, # firms\n\n\nSurplus\nConsumer surplus (area below D, above P)\nProducer surplus (next lecture!)\n\n\nMarket curve\nHorizontal sum of individual D\nHorizontal sum of individual S"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#summary",
+    "href": "slides/lecture13-supply-rule.html#summary",
+    "title": "Producer Theory",
+    "section": "Summary 📝",
+    "text": "Summary 📝\n\nToday’s Key Takeaways:\n\nThe seller’s supply rule: Produce where \\(P = MC\\) on the rising portion of MC, provided \\(P \\geq AVC\\)\nThis follows directly from the cost-benefit principle — produce as long as \\(P \\geq MC\\)\nThe rule answers three questions: how much, whether, and how profitable\nHigher product price → movement along the supply curve (more produced)\nHigher input costs (wages, energy) → MC shifts up → supply curve shifts left\nBetter technology → MC shifts down → supply curve shifts right\nFixed costs don’t shift supply in the short run (they don’t affect MC)\nSupply and demand are mirror images — built from the same marginal analysis logic\n\nConnection: We now have the individual firm’s supply curve. Next lecture: producer surplus and how to build the market supply from individual firms.\nNext (Lecture 14, April 9): Producer Surplus, Market Supply, and Linear Supply 📈"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#exercises",
+    "href": "slides/lecture13-supply-rule.html#exercises",
+    "title": "Producer Theory",
+    "section": "Exercises",
+    "text": "Exercises\nPractice Time! ✏️\nThe supply rule, cost changes, and supply shifts."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#exercise-1-multiple-choice",
+    "href": "slides/lecture13-supply-rule.html#exercise-1-multiple-choice",
+    "title": "Producer Theory",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\n\nQuestion: A sardine restaurant in Lisbon operates in a competitive market. Currently, \\(P = €12\\) per meal and \\(MC = €10\\) at the restaurant’s current output level. The restaurant should:\nA. Keep output the same — it is already maximizing profit\nB. Increase output — producing more will add to profit\nC. Decrease output — the restaurant is overproducing\nD. Shut down — it is not covering costs\n\n\nAnswer: B\n\nSince \\(P = €12 &gt; MC = €10\\), each additional meal earns €12 in revenue but costs only €10. The restaurant should expand output until MC rises to meet \\(P = €12\\). At the current output, there is still “room” to increase profit by producing more.\nOnly when \\(P = MC\\) should the firm stop expanding."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#exercise-2-multiple-choice",
+    "href": "slides/lecture13-supply-rule.html#exercise-2-multiple-choice",
+    "title": "Producer Theory",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\n\nQuestion: The Portuguese government introduces a new tourist tax of €2 per hotel night, paid by the hotel. Which of the following is correct?\nA. The hotel’s supply curve shifts right by €2\nB. The hotel’s supply curve shifts left (up by €2) — at each price, less is supplied\nC. The hotel moves along its existing supply curve\nD. The hotel’s demand curve shifts left\n\n\nAnswer: B\n\nThe tax increases the variable cost of each room-night by €2. This shifts MC up by €2 at every output level, which means the supply curve shifts left (equivalently, upward by €2).\nAt any given market price, the hotel now produces less because \\(P = MC\\) is reached at a lower quantity. This is a shift of supply, not a movement along it (C is wrong), because the change is in costs, not the product’s own price. And it’s the supply curve, not demand (D is wrong)."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#exercise-3-open-question",
+    "href": "slides/lecture13-supply-rule.html#exercise-3-open-question",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Open Question ✍️",
+    "text": "Exercise 3: Open Question ✍️\n\nA small boat tour company in Cascais faces the following situation. The market price for a coastal tour is €40 per ticket. The firm’s cost structure is:\n\n\n\nTours/day (Q)\nFC (€)\nVC (€)\nTC (€)\nMC (€/tour)\n\n\n\n\n0\n300\n0\n300\n—\n\n\n1\n300\n15\n315\n15\n\n\n2\n300\n28\n328\n13\n\n\n3\n300\n39\n339\n11\n\n\n4\n300\n52\n352\n13\n\n\n5\n300\n70\n370\n18\n\n\n6\n300\n96\n396\n26\n\n\n7\n300\n133\n433\n37\n\n\n8\n300\n184\n484\n51\n\n\n\nHypothetical illustrative example\na) Using the \\(P = MC\\) rule, what is the profit-maximizing output at \\(P = €40\\)? Calculate profit.\nb) Now fuel costs rise, adding €10 to the MC of each tour. Write the new MC column. What is the new profit-maximizing output? Calculate the new profit.\nc) Has the supply curve shifted or has the firm moved along it? Explain.\nd) At the original cost structure, what is the lowest price at which this firm would still produce? (What is the shutdown price?)\ne) Draw (describe) what the firm’s supply curve looks like: at what price does it “start,” and what does it follow?"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#exercise-3-solution-part-a",
+    "href": "slides/lecture13-supply-rule.html#exercise-3-solution-part-a",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Part a",
+    "text": "Exercise 3: Solution — Part a\n\na) Apply \\(P = MC\\) on the rising portion:\n\n\n\nQ\nMC\nP vs MC\n\n\n\n\n3\n11\nP = 40 &gt; MC → produce\n\n\n4\n13\nP = 40 &gt; MC → produce\n\n\n5\n18\nP = 40 &gt; MC → produce\n\n\n6\n26\nP = 40 &gt; MC → produce\n\n\n7\n37\nP = 40 &gt; MC → produce\n\n\n8\n51\nP = 40 &lt; MC → stop!\n\n\n\nQ* = 7 tours/day (last tour where \\(P \\geq MC\\)).\nProfit: \\(\\pi = TR - TC = (40 \\times 7) - 433 = 280 - 433 = -€153\\)\nThe firm makes a loss of €153/day. But should it still operate? AVC at Q = 7: \\(\\frac{133}{7} = €19\\). Since \\(P = €40 &gt; AVC = €19\\): yes, operate! Shutdown loss would be −€300 (= FC), which is worse."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#exercise-3-solution-parts-b-c",
+    "href": "slides/lecture13-supply-rule.html#exercise-3-solution-parts-b-c",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Parts b & c",
+    "text": "Exercise 3: Solution — Parts b & c\n\nb) New MC = old MC + €10:\n\n\n\nQ\nOld MC\nNew MC\nP = 40 vs New MC\n\n\n\n\n1\n15\n25\n40 &gt; 25 → produce\n\n\n2\n13\n23\n40 &gt; 23 → produce\n\n\n3\n11\n21\n40 &gt; 21 → produce\n\n\n4\n13\n23\n40 &gt; 23 → produce\n\n\n5\n18\n28\n40 &gt; 28 → produce\n\n\n6\n26\n36\n40 &gt; 36 → produce\n\n\n7\n37\n47\n40 &lt; 47 → stop!\n\n\n\nNew Q* = 6 tours/day (down from 7).\nNew VC at Q = 6: old VC + 6 × €10 = €96 + €60 = €156. New TC = 300 + 156 = €456.\nNew profit: \\(\\pi = (40 \\times 6) - 456 = 240 - 456 = -€216\\) (loss worsened from −€153 to −€216).\nc) This is a shift of the supply curve, not a movement along it. The price didn’t change (still €40) — what changed was the input cost (fuel). Higher variable costs shift MC upward, which shifts the supply curve left. At the same price, the firm now supplies fewer tours (6 instead of 7)."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#exercise-3-solution-parts-d-e",
+    "href": "slides/lecture13-supply-rule.html#exercise-3-solution-parts-d-e",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Parts d & e",
+    "text": "Exercise 3: Solution — Parts d & e\n\nd) The shutdown price = \\(AVC_{\\min}\\).\nCalculate AVC at each Q:\n\n\n\nQ\nVC\nAVC = VC/Q\n\n\n\n\n1\n15\n15.00\n\n\n2\n28\n14.00\n\n\n3\n39\n13.00\n\n\n4\n52\n13.00\n\n\n5\n70\n14.00\n\n\n6\n96\n16.00\n\n\n\nShutdown price = \\(AVC_{\\min}\\) = €13 (at Q = 3–4). Below €13, the firm should produce nothing.\ne) The firm’s supply curve:\n\nFor \\(P &lt; €13\\): Q = 0 (shut down)\nFor \\(P \\geq €13\\): follow the MC curve on its rising portion (starting around Q = 3–4)\nAs P rises, Q* increases: e.g., P = 18 → Q = 5, P = 26 → Q = 6, P = 37 → Q = 7, etc.\n\nThe supply curve starts at the shutdown point (P = €13, Q ≈ 3–4) and follows MC upward."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#next-lecture",
+    "href": "slides/lecture13-supply-rule.html#next-lecture",
+    "title": "Producer Theory",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nApril 9, 2026: Producer Surplus, Market Supply, and Linear Supply 📈\n\nWe’ll introduce producer surplus (the supply-side mirror of consumer surplus), build market supply from individual firms, and work with linear supply equations."
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html#thank-you",
+    "href": "slides/lecture13-supply-rule.html#thank-you",
+    "title": "Producer Theory",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#recap-lecture-13",
+    "href": "slides/lecture14-ps-market-supply.html#recap-lecture-13",
+    "title": "Producer Theory",
+    "section": "Recap: Lecture 13 ⏪",
+    "text": "Recap: Lecture 13 ⏪\n\nWhat we covered last time:\n\nThe seller’s supply rule: Produce where \\(P = MC\\) (rising portion, \\(P \\geq AVC\\))\nThe individual supply curve = MC above AVC\nSupply shifts: input costs ↑ → supply shifts left; technology ↑ → supply shifts right\nFixed costs don’t shift the short-run supply curve\n\n. . .\n🎯 Today: Three new pieces to complete the supply-side toolkit:\n\n1️⃣ Producer surplus — the supply-side mirror of consumer surplus\n2️⃣ Market supply — adding up individual firms’ supply curves\n3️⃣ Linear supply — the equation \\(P = c + dQ\\) and how to work with it"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#the-intuition-what-do-producers-gain",
+    "href": "slides/lecture14-ps-market-supply.html#the-intuition-what-do-producers-gain",
+    "title": "Producer Theory",
+    "section": "The Intuition: What Do Producers Gain? 💰",
+    "text": "The Intuition: What Do Producers Gain? 💰\n\nIn Lecture 8, we learned that consumer surplus measures the net benefit buyers get from a market — the gap between what they’re willing to pay and what they actually pay.\n\nProducer Surplus (PS)\nThe net benefit producers get from selling in a market. It is the difference between the price they receive and the minimum price they would have been willing to accept (their marginal cost).\n\\[PS = \\text{Total Revenue} - \\text{Total Variable Cost} = TR - VC\\]\nGraphically: the area above the supply curve and below the price line.\n\n💡 Producer surplus is not the same as profit! Profit = TR − TC = TR − VC − FC. Producer surplus = TR − VC. The difference is fixed costs:\n\\[PS = \\pi + FC\\]"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#ps-vs-profit-why-the-difference-matters",
+    "href": "slides/lecture14-ps-market-supply.html#ps-vs-profit-why-the-difference-matters",
+    "title": "Producer Theory",
+    "section": "PS vs Profit: Why the Difference Matters 🤔",
+    "text": "PS vs Profit: Why the Difference Matters 🤔\n\n\n\nProducer Surplus = \\(TR - VC\\)\n\nMeasures the gain from trading in this market\nDoes not subtract FC (which must be paid regardless)\nEquals the area above the supply curve, below P\nAlways ≥ 0 (if the firm is operating)\n\n\nEconomic Profit = \\(TR - TC = TR - VC - FC\\)\n\nMeasures the bottom-line result after all costs\nSubtracts both VC and FC\nCan be positive, zero, or negative\n\\(\\pi = PS - FC\\)\n\n\n. . .\nExample: A hotel earns TR = €50,000, has VC = €30,000 and FC = €25,000.\n\n\\(PS = 50{,}000 - 30{,}000 = €20{,}000\\) ➡️ the hotel gains €20,000 from operating\n\\(\\pi = 50{,}000 - 55{,}000 = -€5{,}000\\) ➡️ the hotel makes a loss!\nBut \\(PS &gt; 0\\) means the hotel is still better off operating (it covers VC and contributes €20,000 toward FC)\n\n👉 This is exactly the shutdown logic from Lecture 12!"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#producer-surplus-graphically",
+    "href": "slides/lecture14-ps-market-supply.html#producer-surplus-graphically",
+    "title": "Producer Theory",
+    "section": "Producer Surplus Graphically 📊",
+    "text": "Producer Surplus Graphically 📊\n\n\n\n\n\n\n\n\n\n\nLeft: PS = area above supply, below price = triangle. Right: CS = area below demand, above price = triangle (from Lecture 8). They are mirror images!"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#calculating-ps-for-linear-supply",
+    "href": "slides/lecture14-ps-market-supply.html#calculating-ps-for-linear-supply",
+    "title": "Producer Theory",
+    "section": "Calculating PS for Linear Supply ✏️",
+    "text": "Calculating PS for Linear Supply ✏️\n\n\nProducer Surplus Formula (Linear Supply)\n\\[PS = \\frac{1}{2} \\times Q^* \\times (P^* - c)\\]\nwhere \\(c\\) is the vertical intercept of the supply curve (the minimum price at which any output is supplied) and \\(P^*\\) is the market price.\n\nExample (from the graph): Supply is \\(P = 10 + 0.5Q\\), market price \\(P^* = €30\\).\nAt \\(P^* = 30\\): \\(Q^* = \\frac{30 - 10}{0.5} = 40\\)\n\\[PS = \\frac{1}{2} \\times 40 \\times (30 - 10) = \\frac{1}{2} \\times 40 \\times 20 = €400\\]\n👉 Compare with CS formula: \\(CS = \\frac{1}{2} \\times Q^* \\times (b - P^*)\\). Same triangle logic, just flipped!"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#what-does-ps-tell-us-in-tourism",
+    "href": "slides/lecture14-ps-market-supply.html#what-does-ps-tell-us-in-tourism",
+    "title": "Producer Theory",
+    "section": "What Does PS Tell Us in Tourism? ✈️",
+    "text": "What Does PS Tell Us in Tourism? ✈️\n\n\n\nPS measures the net gain to producers from selling at the market price.\nTourism applications:\n\n🏨 Higher hotel prices in peak season → PS rises (the area above supply expands)\n🧾 A tourist tax → price received by hotel falls → PS falls\n📈 New technology (lower MC) → supply shifts right → PS can rise even at the same price\n\n\nPolicy perspective:\n\nTotal welfare = CS + PS\nTaxes/regulations reduce CS + PS (deadweight loss)\nPS helps measure the impact on producers of any policy change\n\n👉 When Portugal debates a tourist tax, PS is one way to measure how much hotels and tour operators lose."
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#from-individual-to-market-supply",
+    "href": "slides/lecture14-ps-market-supply.html#from-individual-to-market-supply",
+    "title": "Producer Theory",
+    "section": "From Individual to Market Supply 🏭 ➡️ 🏛️",
+    "text": "From Individual to Market Supply 🏭 ➡️ 🏛️\n\n\nMarket Supply = Horizontal Sum of Individual Supply Curves\nJust as we built market demand by adding individual demand curves horizontally (Lecture 8), we build market supply the same way: at each price, add up the quantities supplied by all firms.\n\nThe process:\n\nAt a given price \\(P\\), each firm \\(i\\) supplies \\(q_i\\) (where \\(P = MC_i\\))\nMarket quantity at that price: \\(Q_S = q_1 + q_2 + q_3 + \\ldots\\)\nRepeat for every price\nConnect the dots → market supply curve\n\n👉 If firms have different cost structures, the market supply curve may have kinks (just like market demand in Lecture 8!)"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#horizontal-summation-two-firms-example",
+    "href": "slides/lecture14-ps-market-supply.html#horizontal-summation-two-firms-example",
+    "title": "Producer Theory",
+    "section": "Horizontal Summation: Two Firms Example ➕",
+    "text": "Horizontal Summation: Two Firms Example ➕\n\n\n\n\n\n\n\n\n\n\n\nFor \\(P &lt; 10\\): no firm produces → \\(Q_S = 0\\)\nFor \\(10 \\leq P &lt; 20\\): only Firm A produces → \\(Q_S = q_A\\)\nFor \\(P \\geq 20\\): both firms produce → \\(Q_S = q_A + q_B\\) (kink at P = 20!)\n\n👉 The kink occurs when Firm B’s supply “turns on” — same logic as the demand kink in Lecture 8."
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#building-the-market-supply-equation",
+    "href": "slides/lecture14-ps-market-supply.html#building-the-market-supply-equation",
+    "title": "Producer Theory",
+    "section": "Building the Market Supply Equation 📏",
+    "text": "Building the Market Supply Equation 📏\n\nFrom the previous example:\nFirm A: \\(P = 10 + 2q_A\\) → \\(q_A = \\frac{P - 10}{2}\\) for \\(P \\geq 10\\)\nFirm B: \\(P = 20 + q_B\\) → \\(q_B = P - 20\\) for \\(P \\geq 20\\)\nMarket supply (horizontal sum = add quantities at each price):\nFor \\(10 \\leq P &lt; 20\\) (only A): \\(Q_S = q_A = \\frac{P - 10}{2}\\)\nFor \\(P \\geq 20\\) (A + B): \\(Q_S = \\frac{P - 10}{2} + (P - 20) = \\frac{P - 10 + 2P - 40}{2} = \\frac{3P - 50}{2}\\)\n. . .\n\nWith identical firms, it’s simpler!\nIf there are \\(n\\) identical firms each with supply \\(q = \\frac{P - c}{d}\\), then:\n\\[Q_S = n \\times q = n \\times \\frac{P - c}{d}\\]\nThe market supply has the same intercept but a flatter slope (more responsive to price)."
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#the-linear-supply-equation",
+    "href": "slides/lecture14-ps-market-supply.html#the-linear-supply-equation",
+    "title": "Producer Theory",
+    "section": "The Linear Supply Equation 📏",
+    "text": "The Linear Supply Equation 📏\n\n\nLinear Supply — Inverse Form\n\\[P = c + dQ\\]\nwhere \\(P\\) is price, \\(Q\\) is quantity supplied, \\(c\\) is the vertical intercept, and \\(d &gt; 0\\) is the slope.\n\nInterpreting the parameters:\n\n\\(c\\) = the minimum price needed for any production (supply “turns on” at \\(P = c\\))\n\\(d = \\frac{\\Delta P}{\\Delta Q}\\) (positive!) — how much price must rise to induce one more unit of output\nDirect form: \\(Q = \\frac{P - c}{d}\\) (useful for horizontal summation)\n\n👉 Compare with demand: \\(P = b + mQ\\) where \\(m &lt; 0\\). Supply has \\(d &gt; 0\\) — that’s the upward slope!"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#reading-a-linear-supply-curve",
+    "href": "slides/lecture14-ps-market-supply.html#reading-a-linear-supply-curve",
+    "title": "Producer Theory",
+    "section": "Reading a Linear Supply Curve 🔍",
+    "text": "Reading a Linear Supply Curve 🔍\n\n\n\n\n\n\n\n\n\n\nSupply: \\(P = 5 + 0.25Q\\). At \\(P^* = €30\\): \\(Q^* = \\frac{30 - 5}{0.25} = 100\\). Slope = \\(\\frac{\\Delta P}{\\Delta Q} = \\frac{10}{40} = 0.25\\).\n\\(PS = \\frac{1}{2} \\times 100 \\times (30 - 5) = €1{,}250\\)."
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#demand-and-supply-together-the-big-picture",
+    "href": "slides/lecture14-ps-market-supply.html#demand-and-supply-together-the-big-picture",
+    "title": "Producer Theory",
+    "section": "Demand and Supply Together: The Big Picture 🤝",
+    "text": "Demand and Supply Together: The Big Picture 🤝\n\n\n\n\n\n\n\n\n\n\n👉 Total welfare = CS + PS. At the competitive equilibrium, total welfare is maximized — there’s no way to make one side better off without making the other worse off. We’ll explore this more in Lecture 17 (market equilibrium)."
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#tourism-market-cs-and-ps-in-action",
+    "href": "slides/lecture14-ps-market-supply.html#tourism-market-cs-and-ps-in-action",
+    "title": "Producer Theory",
+    "section": "Tourism Market: CS and PS in Action 🌴",
+    "text": "Tourism Market: CS and PS in Action 🌴\n\nImagine the market for guided tours in Lisbon:\n\n\nDemand (tourists): \\(P = 50 - 0.25Q\\)\n\nTourists are willing to pay up to €50 for a unique tour\nAs price rises, fewer tourists book\n\nConsumer surplus at equilibrium:\n\\[CS = \\frac{1}{2} \\times 80 \\times (50 - 30) = €800\\]\nTourists collectively gain €800 from buying tours below their willingness to pay.\n\nSupply (tour operators): \\(P = 10 + 0.25Q\\)\n\nTour guides need at least €10 to cover their minimum cost\nAs more tours are offered, MC rises (hiring less experienced guides, longer hours)\n\nProducer surplus at equilibrium:\n\\[PS = \\frac{1}{2} \\times 80 \\times (30 - 10) = €800\\]\nOperators collectively gain €800 from selling tours above their minimum acceptable price.\n\n. . .\n👉 Total welfare = €800 + €800 = €1,600. This is the total gain from trade in this market!"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#summary",
+    "href": "slides/lecture14-ps-market-supply.html#summary",
+    "title": "Producer Theory",
+    "section": "Summary 📝",
+    "text": "Summary 📝\n\nToday’s Key Takeaways:\n\nProducer surplus = \\(TR - VC\\) = area above supply, below price. It measures the gain to producers from trading\nPS ≠ profit! \\(\\pi = PS - FC\\). A firm can have positive PS but negative profit (and still rationally operate)\nPS for linear supply: \\(PS = \\frac{1}{2} \\times Q^* \\times (P^* - c)\\) — a triangle, mirroring CS\nMarket supply = horizontal sum of individual supply curves (add quantities at each price)\nWith different firms, market supply may have kinks (when new firms “turn on” at higher prices)\nLinear supply: \\(P = c + dQ\\) — intercept \\(c\\) is the minimum supply price, slope \\(d &gt; 0\\)\nTotal welfare = CS + PS, maximized at the competitive equilibrium\nDirect form \\(Q = \\frac{P - c}{d}\\) is useful for horizontal summation\n\nConnection: We now have both sides of the market: demand (Lectures 5–9) and supply (Lectures 10–14). Next lecture: supply elasticity — how sensitive is quantity supplied to price?\nNext (Lecture 15, April 10): Calculation and Determinants of Supply Elasticity"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#exercises",
+    "href": "slides/lecture14-ps-market-supply.html#exercises",
+    "title": "Producer Theory",
+    "section": "Exercises",
+    "text": "Exercises\nPractice Time! ✏️\nProducer surplus, market supply, and linear supply."
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#exercise-1-multiple-choice",
+    "href": "slides/lecture14-ps-market-supply.html#exercise-1-multiple-choice",
+    "title": "Producer Theory",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\n\nQuestion: A hotel has TR = €80,000/month, VC = €50,000/month, and FC = €35,000/month. What is its producer surplus and economic profit?\nA. PS = €30,000, Profit = €30,000\nB. PS = €30,000, Profit = −€5,000\nC. PS = −€5,000, Profit = −€5,000\nD. PS = €45,000, Profit = €10,000\n\n\nAnswer: B\n\n\\(PS = TR - VC = 80{,}000 - 50{,}000 = €30{,}000\\)\n\\(\\pi = TR - TC = 80{,}000 - (50{,}000 + 35{,}000) = 80{,}000 - 85{,}000 = -€5{,}000\\)\nThe hotel has positive PS (worth operating!) but negative profit (making a loss). This is consistent: \\(PS = \\pi + FC = -5{,}000 + 35{,}000 = €30{,}000\\). ✅"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#exercise-2-multiple-choice",
+    "href": "slides/lecture14-ps-market-supply.html#exercise-2-multiple-choice",
+    "title": "Producer Theory",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\n\nQuestion: The market supply for beach umbrella rentals in Cascais is \\(P = 2 + 0.1Q\\) (€ per rental). At a market price of €12, what is the producer surplus?\nA. €500\nB. €600\nC. €1,000\nD. €1,200\n\n\nAnswer: A\n\nAt \\(P^* = 12\\): \\(Q^* = \\frac{12 - 2}{0.1} = 100\\) rentals.\n\\[PS = \\frac{1}{2} \\times Q^* \\times (P^* - c) = \\frac{1}{2} \\times 100 \\times (12 - 2) = \\frac{1}{2} \\times 100 \\times 10 = €500\\]"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#exercise-3-open-question",
+    "href": "slides/lecture14-ps-market-supply.html#exercise-3-open-question",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Open Question ✍️",
+    "text": "Exercise 3: Open Question ✍️\n\nThe market for walking tours in Porto has two types of operators:\n\nProfessional guides (20 identical firms): individual supply \\(P = 8 + 2q_P\\) (€ per tour)\nFreelance guides (30 identical firms): individual supply \\(P = 15 + q_F\\) (€ per tour)\n\na) Write the individual direct supply function (\\(q\\) as a function of \\(P\\)) for each type of guide.\nb) At what price does each type “enter” the market (start supplying)?\nc) Write the market supply function for each price range. (Hint: there will be a kink!)\nd) At a market price of €25 per tour, how many tours does each type of guide offer? What is total market supply?\ne) Calculate the total producer surplus at \\(P = €25\\). (Calculate PS for each group separately, then sum.)\nf) A new regulation requires all guides to have a €5 license per tour. How does this affect the market supply curve? Write the new market supply equation(s)."
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#exercise-3-solution-parts-a-b",
+    "href": "slides/lecture14-ps-market-supply.html#exercise-3-solution-parts-a-b",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Parts a & b",
+    "text": "Exercise 3: Solution — Parts a & b\n\na) Direct supply functions (solve for \\(q\\)):\nProfessional: \\(P = 8 + 2q_P\\) → \\(q_P = \\frac{P - 8}{2}\\) for \\(P \\geq 8\\)\nFreelance: \\(P = 15 + q_F\\) → \\(q_F = P - 15\\) for \\(P \\geq 15\\)\nb) Each type “enters” at the vertical intercept of their supply:\n\nProfessionals enter at \\(P = €8\\) (lower costs, enter first)\nFreelancers enter at \\(P = €15\\) (higher costs, enter later)\n\n👉 The kink in market supply occurs at \\(P = €15\\), where freelancers join the professionals."
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#exercise-3-solution-parts-c-d",
+    "href": "slides/lecture14-ps-market-supply.html#exercise-3-solution-parts-c-d",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Parts c & d",
+    "text": "Exercise 3: Solution — Parts c & d\n\nc) Market supply (horizontal sum):\nFor \\(8 \\leq P &lt; 15\\) (only professionals, 20 firms):\n\\[Q_S = 20 \\times \\frac{P - 8}{2} = 10(P - 8) = 10P - 80\\]\nFor \\(P \\geq 15\\) (professionals + freelancers, 20 + 30 firms):\n\\[Q_S = 20 \\times \\frac{P - 8}{2} + 30 \\times (P - 15) = 10P - 80 + 30P - 450 = 40P - 530\\]\nd) At \\(P = €25\\):\n\nEach professional: \\(q_P = \\frac{25 - 8}{2} = 8.5\\) tours → 20 firms × 8.5 = 170 tours\nEach freelancer: \\(q_F = 25 - 15 = 10\\) tours → 30 firms × 10 = 300 tours\nTotal market supply: \\(Q_S = 170 + 300 = 470\\) tours\n\n✅ Check: \\(Q_S = 40(25) - 530 = 1000 - 530 = 470\\) ✅"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#exercise-3-solution-part-e",
+    "href": "slides/lecture14-ps-market-supply.html#exercise-3-solution-part-e",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Part e",
+    "text": "Exercise 3: Solution — Part e\n\ne) Producer surplus at \\(P = €25\\):\nProfessionals (20 firms): Each firm’s PS = \\(\\frac{1}{2} \\times q_P \\times (P - c_P) = \\frac{1}{2} \\times 8.5 \\times (25 - 8) = \\frac{1}{2} \\times 8.5 \\times 17 = €72.25\\)\nTotal PS for professionals: \\(20 \\times 72.25 = €1{,}445\\)\nFreelancers (30 firms): Each firm’s PS = \\(\\frac{1}{2} \\times q_F \\times (P - c_F) = \\frac{1}{2} \\times 10 \\times (25 - 15) = \\frac{1}{2} \\times 10 \\times 10 = €50\\)\nTotal PS for freelancers: \\(30 \\times 50 = €1{,}500\\)\nTotal market PS = €1,445 + €1,500 = €2,945\n💡 Professionals have a higher PS per firm (€72.25 vs €50) because their costs are lower — they capture more surplus from each sale. But freelancers contribute more in aggregate because there are more of them."
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#exercise-3-solution-part-f",
+    "href": "slides/lecture14-ps-market-supply.html#exercise-3-solution-part-f",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Part f",
+    "text": "Exercise 3: Solution — Part f\n\nf) A €5 license fee per tour increases MC by €5 for every firm.\nNew individual supply curves (MC shifts up by €5):\n\nProfessionals: \\(P = (8 + 5) + 2q_P = 13 + 2q_P\\) → \\(q_P = \\frac{P - 13}{2}\\) for \\(P \\geq 13\\)\nFreelancers: \\(P = (15 + 5) + q_F = 20 + q_F\\) → \\(q_F = P - 20\\) for \\(P \\geq 20\\)\n\nNew market supply:\nFor \\(13 \\leq P &lt; 20\\): \\(Q_S = 20 \\times \\frac{P - 13}{2} = 10P - 130\\)\nFor \\(P \\geq 20\\): \\(Q_S = 10P - 130 + 30(P - 20) = 40P - 730\\)\n👉 The supply curve shifts left (up by €5). At \\(P = €25\\): new \\(Q_S = 40(25) - 730 = 270\\) tours (down from 470!). The kink moves from \\(P = 15\\) to \\(P = 20\\).\nThe license fee has a large effect: supply falls by almost half because many freelancers are priced out of the market."
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#next-lecture",
+    "href": "slides/lecture14-ps-market-supply.html#next-lecture",
+    "title": "Producer Theory",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nApril 10, 2026: Calculation and Determinants of Supply Elasticity 📈\nHow sensitive is quantity supplied to price changes?\n\n👉 This mirrors Lecture 9 (demand elasticity) — the same formula, applied to supply!"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html#thank-you",
+    "href": "slides/lecture14-ps-market-supply.html#thank-you",
+    "title": "Producer Theory",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#recap-lecture-14",
+    "href": "slides/lecture15-supply-elasticity.html#recap-lecture-14",
+    "title": "Producer Theory",
+    "section": "Recap: Lecture 14 ⏪",
+    "text": "Recap: Lecture 14 ⏪\n\nWhat we covered last time:\n\nProducer surplus: \\(PS = TR - VC\\) = area above supply, below price\nMarket supply: horizontal sum of individual supply curves (kinks when firms enter)\nLinear supply: \\(P = c + dQ\\), with \\(PS = \\frac{1}{2} \\times Q^* \\times (P^* - c)\\)\n\n. . .\n🎯 Today: How responsive are quantities to price changes?\nBefore we tackle supply elasticity, we need a quick recap of the demand elasticity concept — we ran out of time for it earlier in the course. The good news: the idea is the same on both sides!"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#price-elasticity-of-demand",
+    "href": "slides/lecture15-supply-elasticity.html#price-elasticity-of-demand",
+    "title": "Producer Theory",
+    "section": "Price Elasticity of Demand 📉",
+    "text": "Price Elasticity of Demand 📉\n\n\nPrice Elasticity of Demand (\\(\\varepsilon_d\\))\nThe percentage change in quantity demanded resulting from a 1% change in price:\n\\[\\varepsilon_d = \\frac{\\%\\Delta Q_d}{\\%\\Delta P} = \\frac{\\Delta Q / Q}{\\Delta P / P}\\]\n\nSince demand slopes downward (P↑ → Q↓), \\(\\varepsilon_d\\) is negative. We often use the absolute value \\(|\\varepsilon_d|\\).\n\n\n\n\n\n\n\n\n\n\\(|\\varepsilon_d|\\)\nClassification\nMeaning\nTourism example\n\n\n\n\n\\(&gt; 1\\)\nElastic\nQ responds more than P\nLeisure beach holidays\n\n\n\\(= 1\\)\nUnit elastic\nQ responds exactly as P\n— (theoretical midpoint)\n\n\n\\(&lt; 1\\)\nInelastic\nQ responds less than P\nBusiness travel\n\n\n\\(= 0\\)\nPerfectly inelastic\nQ doesn’t respond at all\nEmergency medical flights\n\n\n\\(= \\infty\\)\nPerfectly elastic\nInfinite response\nIdentical commodity, many sellers"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#calculating-demand-elasticity",
+    "href": "slides/lecture15-supply-elasticity.html#calculating-demand-elasticity",
+    "title": "Producer Theory",
+    "section": "Calculating Demand Elasticity ✏️",
+    "text": "Calculating Demand Elasticity ✏️\n\nTwo methods (same as we’ll use for supply):\n\n\n1️⃣ Point elasticity (at one point):\n\\[\\varepsilon_d = \\frac{\\Delta Q}{\\Delta P} \\times \\frac{P}{Q} = \\frac{1}{\\text{slope}} \\times \\frac{P}{Q}\\]\nExample: Demand is \\(P = 50 - 2Q\\).\nAt \\(P = 30\\), \\(Q = 10\\): slope = \\(-2\\)\n\\[\\varepsilon_d = \\frac{1}{-2} \\times \\frac{30}{10} = -1.5\\]\n\\(|\\varepsilon_d| = 1.5 &gt; 1\\) → elastic\n\n2️⃣ Arc elasticity (midpoint method):\n\\[\\varepsilon_d = \\frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \\div \\frac{P_2 - P_1}{(P_1 + P_2)/2}\\]\nExample: A museum raises price from €10 to €12. Visitors fall from 1,000 to 800.\n\\[\\varepsilon_d = \\frac{-200}{900} \\div \\frac{2}{11} = -1.22\\]\n\\(|\\varepsilon_d| = 1.22 &gt; 1\\) → elastic\n\n💡 Key insight for linear demand: elasticity varies along the curve — elastic at the top (high P, low Q), inelastic at the bottom (low P, high Q), unit elastic at the midpoint."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#the-revenue-test-determinants",
+    "href": "slides/lecture15-supply-elasticity.html#the-revenue-test-determinants",
+    "title": "Producer Theory",
+    "section": "The Revenue Test & Determinants 💰",
+    "text": "The Revenue Test & Determinants 💰\n\n\n\nThe Revenue Test:\nHow does total revenue (\\(TR = P \\times Q\\)) respond to a price increase?\n\npoint_right: Hotel prices up 10%, but bookings only drop 3%? Demand is inelastic → revenue rises!\n\n\n\n\n\n\n\nElasticity\nP ↑ → TR?\nIntuition\n\n\n\n\nElastic (\\(|\\varepsilon_d| &gt; 1\\))\nTR falls ⬇️\nQ drops more than P rises\n\n\nUnit elastic (\\(|\\varepsilon_d| = 1\\))\nTR unchanged\nEffects cancel\n\n\nInelastic (\\(|\\varepsilon_d| &lt; 1\\))\nTR rises ⬆️\nQ drops less than P rises\n\n\n\n\nFive determinants of demand elasticity:\n\n🔄 Substitutes: more substitutes → more elastic\n💰 Budget share: bigger expense → more elastic\n💎 Necessity vs luxury: luxuries more elastic\n⌛ Time horizon: long run → more elastic\n🗺️ Market definition: narrower → more elastic\n\nTourism: Leisure travel is very elastic (\\(|\\varepsilon_d| \\approx 2\\)–3), business travel is inelastic (\\(|\\varepsilon_d| \\approx 0.3\\)). Airlines use this to price-discriminate!"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#demand-elasticity-quick-practice",
+    "href": "slides/lecture15-supply-elasticity.html#demand-elasticity-quick-practice",
+    "title": "Producer Theory",
+    "section": "Demand Elasticity: Quick Practice 🎯",
+    "text": "Demand Elasticity: Quick Practice 🎯\n\nQuick check — try these mentally before revealing the answers!\nQ1: Algarve resort demand: \\(P = 500 - 0.05Q\\). At \\(P = 100\\), \\(Q = 8{,}000\\). Is demand elastic or inelastic?\n\n\\(\\varepsilon_d = \\frac{1}{-0.05} \\times \\frac{100}{8000} = -20 \\times 0.0125 = -0.25\\) → Inelastic (\\(|\\varepsilon_d| = 0.25 &lt; 1\\)). Raising prices would increase revenue!\n\nQ2: If luxury cruise demand has \\(|\\varepsilon_d| = 2.5\\) and operators raise prices by 8%, what happens to revenue?\n\nElastic demand → price and revenue move in opposite directions. Revenue falls. (\\(\\%\\Delta Q \\approx -20\\%\\), much larger than the 8% price rise.)\n\n. . .\n👉 Now let’s apply the exact same logic to the supply side!"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#definition",
+    "href": "slides/lecture15-supply-elasticity.html#definition",
+    "title": "Producer Theory",
+    "section": "Definition 📏",
+    "text": "Definition 📏\n\n\nPrice Elasticity of Supply (\\(\\varepsilon_s\\))\nThe percentage change in quantity supplied resulting from a 1% change in price:\n\\[\\varepsilon_s = \\frac{\\%\\Delta Q_s}{\\%\\Delta P} = \\frac{\\Delta Q / Q}{\\Delta P / P}\\]\n\nKey differences from demand elasticity:\n\nbulb: The formula is identical — the only difference is that supply slopes upward, so \\(\\varepsilon_s &gt; 0\\).\n\n\n\n\n\n\n\n\nDemand elasticity (\\(\\varepsilon_d\\))\nSupply elasticity (\\(\\varepsilon_s\\))\n\n\n\n\nSign\nNegative (P↑ → Q↓)\nPositive (P↑ → Q↑)\n\n\nWe use absolute value?\nYes (\\(|\\varepsilon_d|\\))\nNo — it’s already positive\n\n\nInterpretation\nResponsiveness of buyers\nResponsiveness of sellers"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#classification",
+    "href": "slides/lecture15-supply-elasticity.html#classification",
+    "title": "Producer Theory",
+    "section": "Classification 📊",
+    "text": "Classification 📊\n\n\n\n\n\n\n\n\n\nElasticity value\nClassification\nMeaning\n\n\n\n\n\\(\\varepsilon_s &gt; 1\\)\nElastic\nQuantity supplied responds more than proportionally to price\n\n\n\\(\\varepsilon_s = 1\\)\nUnit elastic\nQuantity supplied responds exactly proportionally\n\n\n\\(\\varepsilon_s &lt; 1\\)\nInelastic\nQuantity supplied responds less than proportionally\n\n\n\\(\\varepsilon_s = 0\\)\nPerfectly inelastic\nQuantity doesn’t respond at all (vertical supply)\n\n\n\\(\\varepsilon_s = \\infty\\)\nPerfectly elastic\nAny quantity at one fixed price (horizontal supply)\n\n\n\n. . .\nTourism intuition:\n\n🏨 Hotel rooms in Lisbon in the short run → inelastic (can’t build new rooms overnight)\n🍴 Street food vendors in a tourist area → elastic (easy to set up a new stall)\n🏛️ UNESCO heritage sites → perfectly inelastic (supply is fixed!)"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#point-and-arc-methods",
+    "href": "slides/lecture15-supply-elasticity.html#point-and-arc-methods",
+    "title": "Producer Theory",
+    "section": "Point and Arc Methods ✏️",
+    "text": "Point and Arc Methods ✏️\n\n\n\n1️⃣ Point elasticity:\n\\[\\varepsilon_s = \\frac{1}{\\text{slope}} \\times \\frac{P}{Q}\\]\nExample: Supply is \\(P = 5 + 0.25Q\\). At \\(P = 30\\), \\(Q = 100\\):\nSlope = \\(0.25\\), so \\(\\frac{1}{\\text{slope}} = 4\\)\n\\[\\varepsilon_s = 4 \\times \\frac{30}{100} = 1.2\\]\nElastic — a 1% price increase leads to a 1.2% increase in quantity supplied.\n\n2️⃣ Arc elasticity (midpoint):\n\\[\\varepsilon_s = \\frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \\div \\frac{P_2 - P_1}{(P_1 + P_2)/2}\\]\nExample: Tour operator increases tours from 40 to 50/month when price rises from €80 to €100.\n\\[\\varepsilon_s = \\frac{10}{45} \\div \\frac{20}{90} = 0.222 \\div 0.222 = 1.0\\]\nUnit elastic — quantity and price change by the same percentage.\n\n👉 Same methods as demand elasticity — just applied to the supply curve!"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#elasticity-along-a-linear-supply-curve",
+    "href": "slides/lecture15-supply-elasticity.html#elasticity-along-a-linear-supply-curve",
+    "title": "Producer Theory",
+    "section": "Elasticity Along a Linear Supply Curve 📏",
+    "text": "Elasticity Along a Linear Supply Curve 📏\n\n\n\n\n\n\n\n\n\n\nLeft: Supply through the origin → \\(\\varepsilon_s = 1\\) at every point (P and Q always change proportionally).\nRight: Supply with positive intercept (\\(c &gt; 0\\)) → \\(\\varepsilon_s &gt; 1\\) near the intercept, falling as Q increases."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#the-origin-rule-quick-guide",
+    "href": "slides/lecture15-supply-elasticity.html#the-origin-rule-quick-guide",
+    "title": "Producer Theory",
+    "section": "The Origin Rule & Quick Guide 💡",
+    "text": "The Origin Rule & Quick Guide 💡\n\nWhy does supply through the origin always have \\(\\varepsilon_s = 1\\)?\nIf \\(P = dQ\\): \\(\\quad \\varepsilon_s = \\frac{1}{d} \\times \\frac{P}{Q} = \\frac{1}{d} \\times \\frac{dQ}{Q} = 1\\)\nThe \\(P/Q\\) ratio always equals \\(d\\), which cancels perfectly with \\(1/d\\).\n. . .\n\nQuick Elasticity Guide for Linear Supply \\(P = c + dQ\\)\n\n\n\n\n\n\n\n\nIntercept\nElasticity\nShortcut formula\n\n\n\n\n\\(c = 0\\) (through origin)\n\\(\\varepsilon_s = 1\\) everywhere\n—\n\n\n\\(c &gt; 0\\) (positive intercept)\n\\(\\varepsilon_s &gt; 1\\), falling toward 1\n\\(\\varepsilon_s = \\frac{P}{P - c}\\)\n\n\n\\(c &lt; 0\\) (hits Q-axis)\n\\(\\varepsilon_s &lt; 1\\) everywhere\n\\(\\varepsilon_s = \\frac{P}{P - c}\\) (where \\(c &lt; 0\\))\n\n\n\n\n👉 Contrast with demand: demand elasticity varies from \\(\\infty\\) to \\(0\\) along a linear curve. Supply elasticity is more “stable.”"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#extreme-cases",
+    "href": "slides/lecture15-supply-elasticity.html#extreme-cases",
+    "title": "Producer Theory",
+    "section": "Extreme Cases 📐",
+    "text": "Extreme Cases 📐\n\n\n\n\n\n\n\n\n\n\n\n\nPerfectly inelastic (\\(\\varepsilon_s = 0\\)): Quantity fixed regardless of price.\nTourism: Hotel rooms in a fully built-up area, UNESCO sites, beach space.\n\nPerfectly elastic (\\(\\varepsilon_s = \\infty\\)): Any quantity at one price — constant MC.\nTourism: Digital products (e-tickets, online guides) — near-zero MC per copy."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#what-makes-supply-more-or-less-elastic",
+    "href": "slides/lecture15-supply-elasticity.html#what-makes-supply-more-or-less-elastic",
+    "title": "Producer Theory",
+    "section": "What Makes Supply More or Less Elastic? 🤔",
+    "text": "What Makes Supply More or Less Elastic? 🤔\n\nThe textbook identifies four key determinants (plus time):\n\n\n1️⃣ Flexibility of production factors\nCan inputs be used for other things? If yes → elastic.\n\n✅ Elastic: Unskilled labor (waiters can switch from retail to tourism)\n❌ Inelastic: Specialized skills (brain surgeons, master sommeliers)\n\n2️⃣ Mobility of production factors\nCan inputs move between locations? If yes → elastic.\n\n✅ Elastic: Touring musicians, portable equipment\n❌ Inelastic: Beachfront land, historical buildings\n\n\n3️⃣ Ability to produce substitute inputs\nCan inputs be replicated over time? If yes → elastic.\n\n✅ Elastic: Train more tour guides, build more hotel rooms\n❌ Inelastic: Rare natural resources (diamond mines, volcanic hot springs)\n\n4️⃣ Time horizon ⌛\n\nShort run: At least one input is fixed → more inelastic\nLong run: All inputs adjustable → more elastic\nVery short run (market period): supply is nearly vertical"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#time-and-supply-elasticity",
+    "href": "slides/lecture15-supply-elasticity.html#time-and-supply-elasticity",
+    "title": "Producer Theory",
+    "section": "Time and Supply Elasticity ⌛",
+    "text": "Time and Supply Elasticity ⌛\n\n\n\n\n\n\n\n\n\n\nThe longer the time horizon, the more firms can adjust all inputs → supply becomes flatter (more elastic)."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#elasticity-in-tourism-both-sides",
+    "href": "slides/lecture15-supply-elasticity.html#elasticity-in-tourism-both-sides",
+    "title": "Producer Theory",
+    "section": "Elasticity in Tourism: Both Sides ✈️",
+    "text": "Elasticity in Tourism: Both Sides ✈️\n\n\n\nInelastic supply (\\(\\varepsilon_s\\) small):\n\n🏨 Hotel rooms in central Lisbon: limited space, takes years to build\n🏛️ Museum capacity: Jerónimos can’t add rooms\n🏖️ Beach access in Algarve: fixed coastline\n\nImplication: When demand rises (peak season), price rises sharply because supply can’t respond much.\n\nElastic supply (\\(\\varepsilon_s\\) large):\n\n🚌 Tour buses: can add more buses relatively quickly\n🍴 Food trucks at festivals: quick to set up\n📱 Online booking services: near-zero cost to scale\n\nImplication: When demand rises, quantity adjusts more than price — price stays relatively stable.\n\n. . .\n👉 Both elasticities together determine who bears the burden of taxes and price shocks! The side with less elastic response absorbs more of the burden."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#the-full-parallel-demand-vs-supply-elasticity",
+    "href": "slides/lecture15-supply-elasticity.html#the-full-parallel-demand-vs-supply-elasticity",
+    "title": "Producer Theory",
+    "section": "The Full Parallel: Demand vs Supply Elasticity 🤝",
+    "text": "The Full Parallel: Demand vs Supply Elasticity 🤝\n\n\npoint_right: Both sides use the same formula and same classification. The determinants differ because they reflect different underlying decisions (buying vs producing).\n\n\n\n\n\n\n\nConcept\nDemand Elasticity\nSupply Elasticity\n\n\n\n\nFormula\n\\(\\varepsilon_d = \\frac{\\Delta Q/Q}{\\Delta P/P}\\)\n\\(\\varepsilon_s = \\frac{\\Delta Q/Q}{\\Delta P/P}\\)\n\n\nSign\nNegative (use \\(|\\varepsilon_d|\\))\nPositive\n\n\nElastic\n\\(|\\varepsilon_d| &gt; 1\\)\n\\(\\varepsilon_s &gt; 1\\)\n\n\nRevenue test\nElastic: P↑ → TR↓\nNo direct revenue test\n\n\nAlong linear curve\nVaries: ∞ → 1 → 0\nMore stable; through origin = 1\n\n\nKey determinants\nSubstitutes, budget share, necessity, time, market definition\nInput flexibility, mobility, replicability, time\n\n\nPerfectly inelastic\nVertical demand\nVertical supply\n\n\nPerfectly elastic\nHorizontal demand\nHorizontal supply"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#summary",
+    "href": "slides/lecture15-supply-elasticity.html#summary",
+    "title": "Producer Theory",
+    "section": "Summary 📝",
+    "text": "Summary 📝\n\nToday’s Key Takeaways:\nDemand elasticity recap:\n\n\\(\\varepsilon_d = \\frac{\\%\\Delta Q}{\\%\\Delta P}\\) — negative, use \\(|\\varepsilon_d|\\). Elastic &gt; 1, inelastic &lt; 1\nRevenue test: elastic → P↑ means TR↓; inelastic → P↑ means TR↑\nDeterminants: substitutes, budget share, necessity/luxury, time, market definition\n\nSupply elasticity (new):\n\n\\(\\varepsilon_s = \\frac{\\%\\Delta Q_s}{\\%\\Delta P}\\) — always positive. Same formula, same classification\nLinear supply through origin: \\(\\varepsilon_s = 1\\) everywhere. Positive intercept: \\(\\varepsilon_s &gt; 1\\)\nDeterminants: flexibility, mobility, and replicability of inputs, time horizon\nTime: very short run (inelastic) → short run → long run (elastic)\nBoth elasticities together determine price volatility and tax burden sharing\n\nNext (Lecture 16, April 16): Short Run and Long Run Market Equilibrium ⚖️"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#exercises",
+    "href": "slides/lecture15-supply-elasticity.html#exercises",
+    "title": "Producer Theory",
+    "section": "Exercises",
+    "text": "Exercises\nPractice Time! ✏️\nDemand and supply elasticity calculation."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#exercise-1-multiple-choice",
+    "href": "slides/lecture15-supply-elasticity.html#exercise-1-multiple-choice",
+    "title": "Producer Theory",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\n\nQuestion: The supply of hotel rooms in Porto’s city center has \\(\\varepsilon_s = 0.3\\). If room prices increase by 20%, what happens to the quantity of rooms supplied?\nA. Quantity increases by 60%\nB. Quantity increases by 6%\nC. Quantity increases by 0.6%\nD. Quantity increases by 20%\n\n\nAnswer: B\n\n\\(\\%\\Delta Q_s = \\varepsilon_s \\times \\%\\Delta P = 0.3 \\times 20\\% = 6\\%\\)\nSupply is inelastic (\\(\\varepsilon_s = 0.3 &lt; 1\\)): even a large price increase (20%) produces only a small quantity response (6%). You can’t build new hotel rooms quickly!"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#exercise-2-multiple-choice",
+    "href": "slides/lecture15-supply-elasticity.html#exercise-2-multiple-choice",
+    "title": "Producer Theory",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\n\nQuestion: Demand for TAP flights from Lisbon to London has \\(|\\varepsilon_d| = 1.8\\). If TAP raises fares by 10%, what happens to total revenue from this route?\nA. Revenue increases by 18%\nB. Revenue increases because higher price means more money per ticket\nC. Revenue falls because passenger numbers drop by more than 10%\nD. Revenue stays the same\n\n\nAnswer: C\n\nDemand is elastic (\\(|\\varepsilon_d| = 1.8 &gt; 1\\)): a 10% fare increase causes approximately \\(1.8 \\times 10\\% = 18\\%\\) fewer passengers. Since quantity drops proportionally more than price rises, \\(TR = P \\times Q\\) falls. This is the revenue test for elastic demand."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#exercise-3-open-question",
+    "href": "slides/lecture15-supply-elasticity.html#exercise-3-open-question",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Open Question ✍️",
+    "text": "Exercise 3: Open Question ✍️\n\nThe market for tuk-tuk tours in Lisbon has the following estimated curves:\n\nDemand: \\(P = 36 - 0.2Q\\) (€ per tour)\nSupply: \\(P = 6 + 0.1Q\\) (€ per tour)\n\na) Find the equilibrium price and quantity.\nb) Calculate the price elasticity of demand at the equilibrium point. Is demand elastic or inelastic?\nc) Calculate the price elasticity of supply at the equilibrium point. Is supply elastic or inelastic?\nd) At the equilibrium, if the city council imposes a small price increase (say €1), would you expect total revenue to rise or fall? Use the revenue test from part (b).\ne) The supply has a positive intercept (\\(c = 6\\)). Using the shortcut formula \\(\\varepsilon_s = \\frac{P}{P - c}\\), verify your answer from part (c). At what price would supply elasticity equal exactly 2?\nf) The city council considers a €3 per-tour tax on operators. This shifts supply to \\(P = 9 + 0.1Q\\). Find the new equilibrium. Who bears more of the tax burden — tourists or operators? Relate your answer to the elasticities you calculated."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#exercise-3-solution-parts-a-b-c",
+    "href": "slides/lecture15-supply-elasticity.html#exercise-3-solution-parts-a-b-c",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Parts a, b & c",
+    "text": "Exercise 3: Solution — Parts a, b & c\n\na) Equilibrium: \\(36 - 0.2Q = 6 + 0.1Q\\) → \\(30 = 0.3Q\\) → \\(Q^* = 100\\), \\(P^* = 36 - 0.2(100) = €16\\)\nb) Demand elasticity at \\((Q^* = 100, P^* = 16)\\):\nDemand slope = \\(-0.2\\), so \\(\\frac{1}{\\text{slope}} = \\frac{1}{-0.2} = -5\\)\n\\[\\varepsilon_d = -5 \\times \\frac{16}{100} = -0.8\\]\n\\(|\\varepsilon_d| = 0.8 &lt; 1\\) → Demand is inelastic at the equilibrium.\nc) Supply elasticity at \\((Q^* = 100, P^* = 16)\\):\nSupply slope = \\(0.1\\), so \\(\\frac{1}{\\text{slope}} = 10\\)\n\\[\\varepsilon_s = 10 \\times \\frac{16}{100} = 1.6\\]\n\\(\\varepsilon_s = 1.6 &gt; 1\\) → Supply is elastic at the equilibrium."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#exercise-3-solution-parts-d-e",
+    "href": "slides/lecture15-supply-elasticity.html#exercise-3-solution-parts-d-e",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Parts d & e",
+    "text": "Exercise 3: Solution — Parts d & e\n\nd) Since demand is inelastic (\\(|\\varepsilon_d| = 0.8 &lt; 1\\)), the revenue test says: a price increase → total revenue rises. Quantity falls, but by a smaller percentage than price rises. The €1 increase would increase TR.\ne) Shortcut: \\(\\varepsilon_s = \\frac{P}{P - c} = \\frac{16}{16 - 6} = \\frac{16}{10} = 1.6\\) ✅ Matches part (c)!\nFor \\(\\varepsilon_s = 2\\): \\(\\frac{P}{P - 6} = 2\\) → \\(P = 2P - 12\\) → \\(P = €12\\)\nAt \\(P = 12\\): \\(Q = \\frac{12 - 6}{0.1} = 60\\) tours. So supply is more elastic at lower prices (closer to the intercept)."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#exercise-3-solution-part-f",
+    "href": "slides/lecture15-supply-elasticity.html#exercise-3-solution-part-f",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Part f",
+    "text": "Exercise 3: Solution — Part f\n\nf) New supply with €3 tax: \\(P = 9 + 0.1Q\\)\nNew equilibrium: \\(36 - 0.2Q = 9 + 0.1Q\\) → \\(27 = 0.3Q\\) → \\(Q^* = 90\\), \\(P^* = 36 - 0.2(90) = €18\\)\n\n\n\n\n\n\n\n\n\n\nBefore tax\nAfter tax\nChange\n\n\n\n\nPrice paid by tourists\n€16\n€18\n+€2\n\n\nPrice received by operators (net of tax)\n€16\n€18 − €3 = €15\n−€1\n\n\nQuantity\n100\n90\n−10\n\n\n\nOf the €3 tax: tourists pay €2 more, operators receive €1 less.\n👉 Tourists bear more (€2 out of €3) because demand is more inelastic (\\(|\\varepsilon_d| = 0.8\\)) than supply is (\\(\\varepsilon_s = 1.6\\)). The side with less elastic response absorbs more of the tax.\n💡 This is a general rule: tax burden falls more heavily on the side of the market that is less responsive to price changes."
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#next-lecture",
+    "href": "slides/lecture15-supply-elasticity.html#next-lecture",
+    "title": "Producer Theory",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nApril 16, 2026: Short Run and Long Run Market Equilibrium ⚖️\nWe finally put demand and supply together to find prices and quantities!\n\n👉 This is the payoff of Lectures 5–15: consumer theory meets producer theory!"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html#thank-you",
+    "href": "slides/lecture15-supply-elasticity.html#thank-you",
+    "title": "Producer Theory",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#recap-where-we-are",
+    "href": "slides/lecture16-equilibrium.html#recap-where-we-are",
+    "title": "Producer Theory",
+    "section": "Recap: Where We Are ⏪",
+    "text": "Recap: Where We Are ⏪\n\nOver Lectures 5–15, we built both sides of the market:\n\n\n🛒 Demand side (L5–L9):\n\nUtility maximization → demand curve\nMarket demand (horizontal sum)\nConsumer surplus\nDemand elasticity\n\n\n🏭 Supply side (L10–L15):\n\nCost structure → \\(P = MC\\) → supply curve\nMarket supply (horizontal sum)\nProducer surplus\nSupply elasticity\n\n\n. . .\n🎯 Today: We put them together to find the market equilibrium — the price and quantity where buyers and sellers agree. This is the payoff of the entire course so far!"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#where-supply-meets-demand",
+    "href": "slides/lecture16-equilibrium.html#where-supply-meets-demand",
+    "title": "Producer Theory",
+    "section": "Where Supply Meets Demand 🤝",
+    "text": "Where Supply Meets Demand 🤝\n\n\nMarket Equilibrium\nThe price and quantity at which quantity demanded equals quantity supplied:\n\\[Q_d(P^*) = Q_s(P^*)\\]\nAt the equilibrium price \\(P^*\\), every buyer who wants to buy at that price can, and every seller who wants to sell can. No one is left unsatisfied.\n\nFinding equilibrium algebraically (linear curves):\nGiven \\(D: P = 50 - 0.5Q\\) and \\(S: P = 10 + 0.25Q\\)\nSet equal: \\(50 - 0.5Q = 10 + 0.25Q\\) → \\(40 = 0.75Q\\) → \\(Q^* = 53.3\\) → \\(P^* = €23.3\\)\n👉 At this price, the quantity buyers want to buy exactly matches the quantity sellers want to sell."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#equilibrium-graphically",
+    "href": "slides/lecture16-equilibrium.html#equilibrium-graphically",
+    "title": "Producer Theory",
+    "section": "Equilibrium Graphically 📊",
+    "text": "Equilibrium Graphically 📊"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#what-happens-away-from-equilibrium",
+    "href": "slides/lecture16-equilibrium.html#what-happens-away-from-equilibrium",
+    "title": "Producer Theory",
+    "section": "What Happens Away from Equilibrium? ⚠️",
+    "text": "What Happens Away from Equilibrium? ⚠️\n\n\n\nPrice too HIGH (\\(P &gt; P^*\\)): Surplus (excess supply)\n\n\\(Q_s &gt; Q_d\\) → goods pile up\nSellers compete by lowering prices\nPrice falls toward \\(P^*\\)\n\n🏨 Tourism: Hotels with too many empty rooms in off-season → prices drop on Booking.com\n\nPrice too LOW (\\(P &lt; P^*\\)): Shortage (excess demand)\n\n\\(Q_d &gt; Q_s\\) → not enough goods\nBuyers compete by bidding prices up\nPrice rises toward \\(P^*\\)\n\n✈️ Tourism: Flight demand exceeds seats during holidays → prices rise, last-minute fares skyrocket\n\n. . .\n\nSelf-Correcting Mechanism\nMarkets naturally tend toward equilibrium. Surpluses push prices down; shortages push prices up. This process continues until \\(Q_d = Q_s\\)."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#the-four-shift-rules",
+    "href": "slides/lecture16-equilibrium.html#the-four-shift-rules",
+    "title": "Producer Theory",
+    "section": "The Four Shift Rules 🔄",
+    "text": "The Four Shift Rules 🔄"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#the-four-rules-summarized",
+    "href": "slides/lecture16-equilibrium.html#the-four-rules-summarized",
+    "title": "Producer Theory",
+    "section": "The Four Rules Summarized 📋",
+    "text": "The Four Rules Summarized 📋\n\n\n\n\n\n\n\n\n\n\nShift\nPrice\nQuantity\nTourism Example\n\n\n\n\nDemand ↑ (right)\n↑\n↑\nSummer season → more tourists want hotels\n\n\nDemand ↓ (left)\n↓\n↓\nPandemic → fewer tourists travel\n\n\nSupply ↑ (right)\n↓\n↑\nNew technology → cheaper flights\n\n\nSupply ↓ (left)\n↑\n↓\nFuel crisis → airline costs rise\n\n\n\n. . .\n⚠️ When both curves shift simultaneously, the direction of one variable (P or Q) becomes ambiguous — it depends on the relative size of the shifts.\nExample: Summer in the Algarve — demand shifts right (tourists) AND supply shifts right (seasonal workers). Quantity definitely rises, but price? Depends on which shift is bigger!"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#welfare-at-equilibrium",
+    "href": "slides/lecture16-equilibrium.html#welfare-at-equilibrium",
+    "title": "Producer Theory",
+    "section": "Welfare at Equilibrium ⭐",
+    "text": "Welfare at Equilibrium ⭐\n\n\nTotal Economic Welfare\n\\[W = CS + PS\\]\nAt the competitive equilibrium, total welfare is maximized. Any other price/quantity combination would reduce the combined surplus.\n\nFrom our example (\\(D: P = 50 - 0.5Q\\), \\(S: P = 10 + 0.25Q\\), \\(Q^* \\approx 53.3\\), \\(P^* \\approx 23.3\\)):\n\\[CS = \\frac{1}{2} \\times 53.3 \\times (50 - 23.3) = \\frac{1}{2} \\times 53.3 \\times 26.7 \\approx €711\\]\n\\[PS = \\frac{1}{2} \\times 53.3 \\times (23.3 - 10) = \\frac{1}{2} \\times 53.3 \\times 13.3 \\approx €356\\]\n\\[W = 711 + 356 \\approx €1{,}067\\]\n👉 Any tax, price ceiling, or price floor would reduce total welfare by creating deadweight loss."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#the-short-run-vs-long-run-revisited",
+    "href": "slides/lecture16-equilibrium.html#the-short-run-vs-long-run-revisited",
+    "title": "Producer Theory",
+    "section": "The Short Run vs Long Run Revisited ⌛",
+    "text": "The Short Run vs Long Run Revisited ⌛\n\n\n\n🔒 Short-run equilibrium:\n\nNumber of firms is fixed\nFirms may earn positive profit, zero profit, or losses\nSome factors of production are fixed\nThis is what we’ve been analyzing!\n\n\n🔓 Long-run equilibrium:\n\nFirms can enter or exit the market\nAll factors of production are variable\nA special condition emerges: zero economic profit\nThe market adjusts to a new, more fundamental equilibrium\n\n\n. . .\n\nThe Key Long-Run Question\nWhat happens over time when firms in a competitive market are earning positive profits? Or making losses?"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#the-entry-and-exit-mechanism",
+    "href": "slides/lecture16-equilibrium.html#the-entry-and-exit-mechanism",
+    "title": "Producer Theory",
+    "section": "The Entry and Exit Mechanism 🚪",
+    "text": "The Entry and Exit Mechanism 🚪\n\nIf firms earn positive economic profit (\\(P &gt; ATC\\)):\n\n➡️ New firms are attracted → they enter the market\n📈 Market supply shifts right (more firms = more supply)\n⬇️ Equilibrium price falls\n🔁 Process continues until \\(P = ATC_{\\min}\\) → zero economic profit\n\nIf firms make losses (\\(P &lt; ATC\\)):\n\n⬅️ Some firms exit the market\n📉 Market supply shifts left (fewer firms = less supply)\n⬆️ Equilibrium price rises\n🔁 Process continues until \\(P = ATC_{\\min}\\) → zero economic profit\n\n. . .\n\nLong-Run Equilibrium Condition\nIn a perfectly competitive market: \\(P = MC = ATC_{\\min}\\)\nFirms produce at minimum average cost and earn zero economic profit."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#visualizing-the-long-run-adjustment",
+    "href": "slides/lecture16-equilibrium.html#visualizing-the-long-run-adjustment",
+    "title": "Producer Theory",
+    "section": "Visualizing the Long-Run Adjustment 🎦",
+    "text": "Visualizing the Long-Run Adjustment 🎦\n\n\n\n\n\n\n\n\n\n\n(a) Positive profits attract entry → supply shifts right → price falls. (b) Price falls until \\(P = ATC_{\\min}\\) → zero economic profit → entry stops."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#zero-profit-failure",
+    "href": "slides/lecture16-equilibrium.html#zero-profit-failure",
+    "title": "Producer Theory",
+    "section": "Zero Profit ≠ Failure! 💡",
+    "text": "Zero Profit ≠ Failure! 💡\n\n“Zero economic profit” sounds bad — but remember what it means:\n\nZero Economic Profit\nThe firm covers all costs, including the opportunity cost of the owner’s time and capital. The owner earns exactly what they could earn in their best alternative — a normal return.\n\\[\\text{Economic Profit} = 0 \\implies \\text{Accounting Profit} = \\text{Normal Return}\\]\n\n\n\n✅ What zero economic profit means:\n\nThe business is sustainable\nThe owner has no reason to leave\nNo new firms want to enter\nThe market is in long-run rest\n\n\n❌ What it does NOT mean:\n\nThe owner earns no money\nThe business is failing\nThe owner should close\nThere are no accounting profits"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#the-long-run-supply-curve",
+    "href": "slides/lecture16-equilibrium.html#the-long-run-supply-curve",
+    "title": "Producer Theory",
+    "section": "The Long-Run Supply Curve 📈",
+    "text": "The Long-Run Supply Curve 📈\n\nIf all firms have the same cost structure (constant-cost industry):\n\nLong-Run Supply in a Constant-Cost Industry\nThe long-run supply curve is horizontal at \\(P = ATC_{\\min}\\).\n\nIf demand increases → new firms enter, supply shifts right, price returns to \\(ATC_{\\min}\\)\nIf demand decreases → firms exit, supply shifts left, price returns to \\(ATC_{\\min}\\)\nQuantity adjusts, but price stays the same in the long run!\n\n\n👉 In reality, costs may rise as the industry grows (increasing-cost industry → upward-sloping LR supply) or fall (decreasing-cost industry → downward-sloping LR supply). But the constant-cost case is the baseline.\nTourism: The long-run supply of standardized tour packages may be nearly horizontal — if tour operators can easily enter/exit and all face similar costs, the long-run price settles at the minimum cost of providing a tour."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#tourism-markets-sr-vs-lr",
+    "href": "slides/lecture16-equilibrium.html#tourism-markets-sr-vs-lr",
+    "title": "Producer Theory",
+    "section": "Tourism Markets: SR vs LR ✈️",
+    "text": "Tourism Markets: SR vs LR ✈️\n\nWhat happened to Lisbon’s hotel market after the tourism boom (post-2015)?\n\n\n1️⃣ Short run (2015–2017):\n\nDemand surged (low-cost airlines, Lisbon’s popularity)\nSupply was fixed (existing hotels)\nResult: prices skyrocketed, occupancy hit record highs\nExisting hotels earned large profits\n\\(P &gt;&gt; ATC_{\\min}\\) → well above breakeven\n\n\n2️⃣ Long run (2018–2024):\n\nProfits attracted entry: new hotels, Airbnb, hostels\nSupply shifted right significantly\nResult: prices stabilized (or even fell for some segments)\nCompetition increased, profit margins narrowed\nMarket moved toward \\(P \\approx ATC_{\\min}\\)\n\n👉 This is the entry mechanism in action!\n\n. . .\n💡 The pandemic (2020–2021) reversed this: demand collapsed → firms exited → supply shifted left → the cycle restarted."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#summary",
+    "href": "slides/lecture16-equilibrium.html#summary",
+    "title": "Producer Theory",
+    "section": "Summary 📝",
+    "text": "Summary 📝\n\nToday’s Key Takeaways:\n\nSR equilibrium: where \\(Q_d = Q_s\\). Price too high → surplus (price falls). Price too low → shortage (price rises).\nFour shift rules: D↑ → P↑Q↑; D↓ → P↓Q↓; S↑ → P↓Q↑; S↓ → P↑Q↓\nSimultaneous shifts: direction of one variable is ambiguous — depends on magnitude\nTotal welfare = CS + PS, maximized at competitive equilibrium\nLR equilibrium: entry (if profit &gt; 0) and exit (if profit &lt; 0) drive \\(P → ATC_{\\min}\\)\nZero economic profit in the LR = normal return = sustainable. It’s not failure!\nLR supply (constant-cost): horizontal at \\(P = ATC_{\\min}\\)\n\nThis completes the Producer Theory block! 🎉\nLectures 10–16: Costs → Profit max → Shutdown → Supply rule → PS & Market supply → Elasticity → Equilibrium\nNext (Lecture 17, April 17): Introduction to Game Theory — Prisoner’s Dilemma & Nash Equilibrium ♟️"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#exercises",
+    "href": "slides/lecture16-equilibrium.html#exercises",
+    "title": "Producer Theory",
+    "section": "Exercises",
+    "text": "Exercises\nPractice Time! ✏️\nMarket equilibrium, shifts, and long-run adjustment."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#exercise-1-multiple-choice",
+    "href": "slides/lecture16-equilibrium.html#exercise-1-multiple-choice",
+    "title": "Producer Theory",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\n\nQuestion: In the Algarve hotel market, a new low-cost airline begins flying to Faro from Northern Europe. At the same time, the Portuguese government introduces a new tourist tax on hotel stays. What is the effect on the equilibrium quantity of hotel room-nights?\nA. Quantity definitely increases\nB. Quantity definitely decreases\nC. Quantity definitely stays the same\nD. The effect on quantity is ambiguous\n\n\nAnswer: D\n\nThe new airline increases demand (shift right → Q↑). The tourist tax increases costs (supply shifts left → Q↓). Since one shift pushes Q up and the other pushes Q down, the net effect is ambiguous — it depends on which shift is larger. However, we can say that price definitely rises (both shifts push P upward)."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#exercise-2-multiple-choice",
+    "href": "slides/lecture16-equilibrium.html#exercise-2-multiple-choice",
+    "title": "Producer Theory",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\n\nQuestion: In a perfectly competitive market, if firms are currently earning positive economic profits in the short run, what will happen in the long run?\nA. The government will impose a price ceiling\nB. New firms enter, supply shifts right, price falls until profit = 0\nC. Existing firms raise prices to increase profits further\nD. Demand shifts left as consumers find substitutes\n\n\nAnswer: B\n\nPositive profit → entry → supply shifts right → equilibrium price falls → profit is competed away until \\(P = ATC_{\\min}\\) → zero economic profit. This is the self-correcting mechanism of competitive markets. No government action needed (A), firms can’t set prices (C — they’re price takers!), and the question is about the supply side, not demand (D)."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#exercise-3-open-question",
+    "href": "slides/lecture16-equilibrium.html#exercise-3-open-question",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Open Question ✍️",
+    "text": "Exercise 3: Open Question ✍️\n\nThe market for guided walking tours in Sintra has the following curves:\n\nDemand: \\(P = 40 - 0.2Q\\) (€ per tour)\nShort-run supply: \\(P = 8 + 0.12Q\\) (€ per tour)\n\nAll firms are identical with \\(ATC_{\\min} = €20\\).\na) Find the short-run equilibrium price and quantity.\nb) Calculate CS, PS, and total welfare at the SR equilibrium.\nc) Are firms making positive economic profit, zero profit, or losses? How do you know?\nd) Describe what will happen in the long run. What will the new equilibrium price be? Will the number of firms increase or decrease?\ne) A surge in tourist arrivals shifts demand to \\(P = 52 - 0.2Q\\). Find the new SR equilibrium. Are firms now earning profits or losses?\nf) After the demand surge, describe the long-run adjustment process. What is the final LR equilibrium price?"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#exercise-3-solution-parts-a-b",
+    "href": "slides/lecture16-equilibrium.html#exercise-3-solution-parts-a-b",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Parts a & b",
+    "text": "Exercise 3: Solution — Parts a & b\n\na) SR equilibrium: \\(40 - 0.2Q = 8 + 0.12Q\\)\n\\(32 = 0.32Q\\) → \\(Q^* = 100\\) tours, \\(P^* = 40 - 0.2(100) = €20\\)\nb) At (\\(Q^* = 100\\), \\(P^* = €20\\)):\n\\[CS = \\frac{1}{2} \\times 100 \\times (40 - 20) = \\frac{1}{2} \\times 100 \\times 20 = €1{,}000\\]\n\\[PS = \\frac{1}{2} \\times 100 \\times (20 - 8) = \\frac{1}{2} \\times 100 \\times 12 = €600\\]\n\\[W = CS + PS = 1{,}000 + 600 = €1{,}600\\]"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#exercise-3-solution-parts-c-d",
+    "href": "slides/lecture16-equilibrium.html#exercise-3-solution-parts-c-d",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Parts c & d",
+    "text": "Exercise 3: Solution — Parts c & d\n\nc) \\(P^* = €20 = ATC_{\\min} = €20\\)\nSince price equals minimum ATC, firms are earning zero economic profit. The market is already at its long-run equilibrium! ✅\nd) Since profit is already zero, there is no incentive for firms to enter or exit. The long-run equilibrium price stays at €20. The number of firms remains the same.\n👉 This is a special case where SR equilibrium coincides with LR equilibrium — the market is at rest."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#exercise-3-solution-parts-e-f",
+    "href": "slides/lecture16-equilibrium.html#exercise-3-solution-parts-e-f",
+    "title": "Producer Theory",
+    "section": "Exercise 3: Solution — Parts e & f",
+    "text": "Exercise 3: Solution — Parts e & f\n\ne) New demand: \\(P = 52 - 0.2Q\\)\nNew SR equilibrium: \\(52 - 0.2Q = 8 + 0.12Q\\) → \\(44 = 0.32Q\\) → \\(Q^* = 137.5\\), \\(P^* = 52 - 0.2(137.5) = €24.50\\)\nSince \\(P^* = €24.50 &gt; ATC_{\\min} = €20\\): firms are now earning positive economic profit!\nProfit per firm = \\((24.50 - 20) \\times q_i = €4.50 \\times q_i &gt; 0\\) (exact firm quantity depends on individual MC).\nf) Long-run adjustment:\n\nPositive profits attract new firms → they enter the market\nSupply shifts right (more firms)\nEquilibrium price falls from €24.50 toward \\(ATC_{\\min}\\)\nEntry continues until \\(P = ATC_{\\min} = €20\\)\n\nFinal LR equilibrium: \\(P_{LR} = €20\\). At this price with the new demand: \\(Q = \\frac{52 - 20}{0.2} = 160\\) tours.\nThe market serves more tours (160 vs 100 originally) at the same price (€20). The adjustment came entirely through more firms entering, not through higher prices. ✅"
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#next-lecture",
+    "href": "slides/lecture16-equilibrium.html#next-lecture",
+    "title": "Producer Theory",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nApril 17, 2026: Introduction to Game Theory — Prisoner’s Dilemma & Nash Equilibrium ♟️\nA brand new topic — what happens when firms are not price takers and interact strategically?\n\n👋 This completes the Producer Theory block! Time to move beyond perfect competition."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html#thank-you",
+    "href": "slides/lecture16-equilibrium.html#thank-you",
+    "title": "Producer Theory",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#a-new-world-beyond-perfect-competition",
+    "href": "slides/lecture18-game-theory.html#a-new-world-beyond-perfect-competition",
+    "title": "Game Theory",
+    "section": "A New World: Beyond Perfect Competition 🗺️",
+    "text": "A New World: Beyond Perfect Competition 🗺️\n\nIn Lectures 10–17, we studied perfect competition: many firms, identical products, no firm affects the market price.\nBut most real markets aren’t like that!\n\n\n❌ Not perfect competition:\n\n✈️ Airlines: TAP vs Ryanair on the same route\n🏨 Hotels: Marriott vs Hilton in the same city\n📱 Platforms: Booking.com vs Airbnb\n🍔 Restaurants: competing for tourists on the same street\n\n\n🤔 The key difference:\nIn these markets, each firm’s decision depends on what the other firms do.\n\nIf Ryanair cuts prices, TAP must respond\nIf one hotel offers free breakfast, the neighbor considers matching\n\nThis is strategic interaction — the domain of Game Theory!"
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#what-is-game-theory",
+    "href": "slides/lecture18-game-theory.html#what-is-game-theory",
+    "title": "Game Theory",
+    "section": "What Is Game Theory? ♟️",
+    "text": "What Is Game Theory? ♟️\n\n\nGame Theory\nThe study of strategic decision-making — situations where the outcome for each player depends not only on their own choices, but also on the choices of others.\n\nEvery game has three ingredients:\n\npoint_right: We’ll start with simultaneous games (players choose at the same time, without knowing the other’s choice). Next lecture: sequential games (one player moves first).\n\n\n\n\n\n\n\nIngredient\nDefinition\nTourism example\n\n\n\n\n👥 Players\nThe decision-makers\nTAP and Ryanair\n\n\n🕹️ Strategies\nThe options available to each player\nHigh price or Low price\n\n\n🏆 Payoffs\nThe outcome (profit, utility) for each combination of strategies\nRevenue from each pricing scenario"
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#how-to-read-a-payoff-matrix",
+    "href": "slides/lecture18-game-theory.html#how-to-read-a-payoff-matrix",
+    "title": "Game Theory",
+    "section": "How to Read a Payoff Matrix 📖",
+    "text": "How to Read a Payoff Matrix 📖\n\nTwo airlines (TAP and Ryanair) compete on the Lisbon–London route. Each can set a High or Low fare.\n\n\n\n\n\nRyanair: High\nRyanair: Low\n\n\n\n\nTAP: High\n(€500k , €500k)\n(€200k , €600k)\n\n\nTAP: Low\n(€600k , €200k)\n(€350k , €350k)\n\n\n\n\nPayoffs: (TAP’s profit , Ryanair’s profit). Hypothetical illustrative example.\nHow to read: Each cell shows what happens for a specific combination of choices.\n\nIf both set High prices: each earns €500k (they share the market at high margins)\nIf TAP goes Low, Ryanair stays High: TAP steals customers → TAP earns €600k, Ryanair earns only €200k\nIf both go Low: price war → each earns only €350k\n\n👉 Each player picks a row (TAP) or column (Ryanair). The cell at the intersection is the outcome."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#how-should-tap-decide",
+    "href": "slides/lecture18-game-theory.html#how-should-tap-decide",
+    "title": "Game Theory",
+    "section": "How Should TAP Decide? 🤔",
+    "text": "How Should TAP Decide? 🤔\n\nTAP’s reasoning (looking at its own payoffs — the first number):\nIf Ryanair chooses High:\n\nTAP High → €500k\nTAP Low → €600k ⬅️ Better!\n\nIf Ryanair chooses Low:\n\nTAP High → €200k\nTAP Low → €350k ⬅️ Better!\n\n. . .\n\nDominant Strategy\nA strategy that gives a better payoff regardless of what the other player does.\nFor TAP: Low is a dominant strategy — it’s better no matter what Ryanair does!\n\n👉 By the same logic, Ryanair also finds Low is dominant (check the second numbers!)."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#the-classic-story",
+    "href": "slides/lecture18-game-theory.html#the-classic-story",
+    "title": "Game Theory",
+    "section": "The Classic Story 🔒",
+    "text": "The Classic Story 🔒\n\nTwo suspects are arrested and interrogated separately. Each can Confess (betray) or Stay Silent (cooperate).\n\n\n\n\n\nSuspect B: Silent\nSuspect B: Confess\n\n\n\n\nSuspect A: Silent\n(1 year , 1 year)\n(10 years , 0 years)\n\n\nSuspect A: Confess\n(0 years , 10 years)\n(5 years , 5 years)\n\n\n\n\nPayoffs are years in prison (lower is better).\nThe dilemma:\n\nIf both stay Silent: only 1 year each (best collective outcome!)\nBut Confess is a dominant strategy for each: whatever the other does, confessing gives a shorter sentence\nResult: both confess → 5 years each — worse than if they’d cooperated!\n\n👉 Individual rationality leads to a collectively worse outcome. This is the Prisoner’s Dilemma."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#the-airline-pricing-game-is-a-prisoners-dilemma",
+    "href": "slides/lecture18-game-theory.html#the-airline-pricing-game-is-a-prisoners-dilemma",
+    "title": "Game Theory",
+    "section": "The Airline Pricing Game IS a Prisoner’s Dilemma! ✈️",
+    "text": "The Airline Pricing Game IS a Prisoner’s Dilemma! ✈️\n\nLook at our airline game again:\n\n\n\n\n\nRyanair: High\nRyanair: Low\n\n\n\n\nTAP: High\n(€500k , €500k) ⭐\n(€200k , €600k)\n\n\nTAP: Low\n(€600k , €200k)\n(€350k , €350k) 🔒\n\n\n\n\n⭐ = best collective outcome. 🔒 = dominant strategy outcome.\nBoth airlines want (High, High) = €500k each. But each has an incentive to deviate to Low and steal customers.\nSince both follow their dominant strategy (Low), they end up at (€350k, €350k) — €150k worse for each than if they’d cooperated!\n. . .\n💡 This explains price wars in tourism: airlines, hotels, and tour operators often end up competing on price even though they’d all be better off with higher prices. The structure of the game traps them."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#the-prisoners-dilemma-in-tourism",
+    "href": "slides/lecture18-game-theory.html#the-prisoners-dilemma-in-tourism",
+    "title": "Game Theory",
+    "section": "The Prisoner’s Dilemma in Tourism 🌴",
+    "text": "The Prisoner’s Dilemma in Tourism 🌴\n\n\n\nWhere we see it:\n\n✈️ Airlines cutting fares on competitive routes\n🏨 Hotels on Booking.com undercutting each other’s prices\n🍴 Restaurants near Praça do Comércio all lowering prices to attract tourists\n🏖️ Beach vendors offering “special discounts”\n\nEach would be better off if all kept prices higher, but each individually gains from cutting.\n\nCan cooperation work?\n\n🤝 Cartels (illegal!): airlines agreeing on prices → fined by EU regulators\n🔁 Repeated games: if firms interact repeatedly, cooperation can emerge through reputation and retaliation (tit-for-tat)\n🏛️ Industry associations: soft coordination through “quality standards” rather than explicit price-fixing\n\n👉 We’ll explore sequential and repeated games more in the next lecture!"
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#the-central-concept",
+    "href": "slides/lecture18-game-theory.html#the-central-concept",
+    "title": "Game Theory",
+    "section": "The Central Concept 🌟",
+    "text": "The Central Concept 🌟\n\n\nNash Equilibrium\nA combination of strategies where no player can improve their payoff by unilaterally changing their strategy, given what the other players are doing.\nIn a Nash Equilibrium, every player is doing the best they can given the other players’ choices.\n\nIn the airline game: (Low, Low) is a Nash Equilibrium because:\n\nTAP plays Low. Could TAP do better by switching to High? No — TAP would go from €350k to €200k. ❌\nRyanair plays Low. Could Ryanair do better by switching to High? No — same reasoning. ❌\n\n👉 Neither player wants to deviate → it’s a Nash Equilibrium!\n💡 A dominant strategy equilibrium is always a Nash Equilibrium, but not all Nash Equilibria involve dominant strategies (as we’ll see)."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#finding-nash-equilibrium-the-underline-method",
+    "href": "slides/lecture18-game-theory.html#finding-nash-equilibrium-the-underline-method",
+    "title": "Game Theory",
+    "section": "Finding Nash Equilibrium: The Underline Method ✏️",
+    "text": "Finding Nash Equilibrium: The Underline Method ✏️\n\nStep-by-step method to find Nash Equilibria in any 2×2 game:\n1️⃣ For each of Ryanair’s strategies (each column), find TAP’s best response — underline TAP’s highest payoff in that column.\n2️⃣ For each of TAP’s strategies (each row), find Ryanair’s best response — underline Ryanair’s highest payoff in that row.\n3️⃣ Any cell where both payoffs are underlined is a Nash Equilibrium.\n\n\n\n\n\n\n\n\n\n\nRyanair: High\nRyanair: Low\n\n\n\n\nTAP: High\n(500k , 500k)\n(200k , 600k)\n\n\nTAP: Low\n(600k , 200k)\n(350k , 350k)\n\n\n\n\n👉 Only (Low, Low) has both payoffs underlined → it’s the unique Nash Equilibrium."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#a-game-without-dominant-strategies",
+    "href": "slides/lecture18-game-theory.html#a-game-without-dominant-strategies",
+    "title": "Game Theory",
+    "section": "A Game Without Dominant Strategies ⚖️",
+    "text": "A Game Without Dominant Strategies ⚖️\n\nTwo hotels in Porto decide their marketing strategy: focus on Luxury positioning or Budget positioning.\n\n\n\n\n\nHotel B: Luxury\nHotel B: Budget\n\n\n\n\nHotel A: Luxury\n(€300k , €300k)\n(€500k , €400k)\n\n\nHotel A: Budget\n(€400k , €500k)\n(€200k , €200k)\n\n\n\n\nHypothetical illustrative example.\nDoes Hotel A have a dominant strategy? Let’s check:\n\nIf B chooses Luxury: A prefers Budget (€400k &gt; €300k)\nIf B chooses Budget: A prefers Luxury (€500k &gt; €200k)\n\n❌ No dominant strategy! A’s best choice depends on what B does.\nNash Equilibria (underline method): (Luxury, Budget) and (Budget, Luxury) are both NE!\n👉 This game has two Nash Equilibria — differentiation is better than being identical. The market “wants” the hotels to be different from each other."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#nash-equilibrium-key-properties",
+    "href": "slides/lecture18-game-theory.html#nash-equilibrium-key-properties",
+    "title": "Game Theory",
+    "section": "Nash Equilibrium: Key Properties 📋",
+    "text": "Nash Equilibrium: Key Properties 📋\n\nWhat NE tells us:\n\n✅ It’s a stable outcome — no one wants to deviate alone\n✅ It’s a prediction of what rational players will do\n✅ Every game has at least one Nash Equilibrium (though it might involve randomization — “mixed strategies,” which we won’t cover)\n\nWhat NE does NOT tell us:\n\n❌ NE is not necessarily efficient (Prisoner’s Dilemma: NE is worse for both!)\n❌ NE is not necessarily unique (the hotel game has two)\n❌ NE doesn’t require dominant strategies\n\n. . .\n\nThe Power of Nash Equilibrium\nIt gives us a way to predict outcomes in any strategic situation — not just perfect competition. It’s the most widely used solution concept in economics, political science, biology, and computer science."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#strategic-thinking-in-tourism",
+    "href": "slides/lecture18-game-theory.html#strategic-thinking-in-tourism",
+    "title": "Game Theory",
+    "section": "Strategic Thinking in Tourism 🌐",
+    "text": "Strategic Thinking in Tourism 🌐\n\n\n\nAirbnb vs Hotels: Entry Game\nShould a hotel lower prices to fight Airbnb, or differentiate on quality?\n\n\n\n\nAirbnb: Expand\nAirbnb: Hold\n\n\n\n\nHotel: Cut Price\n(Low , Medium)\n(Medium , Low)\n\n\nHotel: Differentiate\n(Medium , High)\n(High , Medium)\n\n\n\nIf Airbnb expands, hotel is better off differentiating (focus on service, luxury). This explains why many hotels responded to Airbnb by going upmarket rather than competing on price.\n\nOverbooking Game\nAirlines overbook flights because some passengers no-show. But if two airlines on the same route both overbook aggressively:\n\nBoth light → both fine\nOne aggressive, one conservative → aggressive wins\nBoth aggressive → chaos, bad PR for both\n\n👉 This has a Prisoner’s Dilemma structure — airlines tend to overbook more than is collectively optimal."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#summary",
+    "href": "slides/lecture18-game-theory.html#summary",
+    "title": "Game Theory",
+    "section": "Summary 📝",
+    "text": "Summary 📝\n\nToday’s Key Takeaways:\n\nGame theory studies strategic interaction — your outcome depends on others’ choices\nThree ingredients: players, strategies, payoffs\nPayoff matrix: shows outcomes for all strategy combinations (read the row player’s payoff first)\nDominant strategy: best regardless of what others do\nPrisoner’s Dilemma: individual rationality → collectively bad outcome. Both players have a dominant strategy, but the equilibrium is not the best outcome for the group\nNash Equilibrium: no player can improve by unilaterally deviating. Found via the underline method\nNE can be unique or multiple, efficient or inefficient\nTourism: price wars (airlines, hotels), entry decisions (Airbnb), overbooking — all have game-theoretic structure\n\nNext (Lecture 19, April 23): Sequential Games & Backward Induction — what happens when one player moves first?"
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#exercises",
+    "href": "slides/lecture18-game-theory.html#exercises",
+    "title": "Game Theory",
+    "section": "Exercises",
+    "text": "Exercises\nPractice Time! ✏️\nPayoff matrices, dominant strategies, and Nash Equilibrium."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#exercise-1-multiple-choice",
+    "href": "slides/lecture18-game-theory.html#exercise-1-multiple-choice",
+    "title": "Game Theory",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\n\nQuestion: Two tour operators in Lisbon decide simultaneously whether to offer Free cancellation or No cancellation policies. The payoff matrix (profits in €k) is:\n\n\n\n\nOp B: Free\nOp B: No\n\n\n\n\nOp A: Free\n(80 , 80)\n(120 , 60)\n\n\nOp A: No\n(60 , 120)\n(100 , 100)\n\n\n\nWhat is the Nash Equilibrium?\nA. (Free, Free) — B. (No, No) — C. (Free, No) — D. (No, Free)\n\n\nAnswer: A — (Free, Free)\n\nCheck for dominant strategies. If B plays Free: A prefers Free (80 &gt; 60). If B plays No: A prefers Free (120 &gt; 100). So Free is dominant for A. By symmetry, Free is also dominant for B. NE = (Free, Free) with payoffs (80, 80). Note: this is a Prisoner’s Dilemma — both would prefer (No, No) = (100, 100), but neither can sustain it!"
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#exercise-2-multiple-choice",
+    "href": "slides/lecture18-game-theory.html#exercise-2-multiple-choice",
+    "title": "Game Theory",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\n\nQuestion: In a Nash Equilibrium:\nA. Both players are maximizing their joint profit\nB. Neither player can improve their payoff by changing their strategy alone\nC. Both players must have dominant strategies\nD. The outcome is always the best possible for society\n\n\nAnswer: B\n\nNE is defined as: no player can unilaterally improve. It does not require dominant strategies (C is wrong — the hotel differentiation game had NE without dominant strategies). It does not maximize joint profit (A is wrong — Prisoner’s Dilemma NE is worse than cooperation). It’s not always socially optimal (D is wrong — same reason)."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#exercise-3-open-question",
+    "href": "slides/lecture18-game-theory.html#exercise-3-open-question",
+    "title": "Game Theory",
+    "section": "Exercise 3: Open Question ✍️",
+    "text": "Exercise 3: Open Question ✍️\n\nTwo beach bars in Albufeira (Bar A and Bar B) must decide their pricing strategy for the summer: High prices (€8 per cocktail) or Low prices (€5 per cocktail). The payoff matrix (daily profits in €) is:\n\n\n\n\n\nBar B: High (€8)\nBar B: Low (€5)\n\n\n\n\nBar A: High (€8)\n(400 , 400)\n(150 , 450)\n\n\nBar A: Low (€5)\n(450 , 150)\n(250 , 250)\n\n\n\n\nHypothetical illustrative example.\na) Does Bar A have a dominant strategy? Does Bar B? Explain.\nb) Find the Nash Equilibrium using the underline method. Show your work.\nc) Is the Nash Equilibrium efficient? That is, is there another outcome that makes both bars better off?\nd) This is a Prisoner’s Dilemma. Explain why, using the definition from today’s lecture.\ne) Suppose the two bars are owned by the same company. What pricing strategy would the company choose? What does this tell us about the value of coordination (or merger)?\nf) Now suppose the bars compete every day for the entire summer (90 days), not just once. How might this change the outcome? Think about reputation and retaliation."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#exercise-3-solution-parts-a-b",
+    "href": "slides/lecture18-game-theory.html#exercise-3-solution-parts-a-b",
+    "title": "Game Theory",
+    "section": "Exercise 3: Solution — Parts a & b",
+    "text": "Exercise 3: Solution — Parts a & b\n\na) Bar A’s dominant strategy:\n\nIf B plays High: A prefers Low (€450 &gt; €400)\nIf B plays Low: A prefers Low (€250 &gt; €150)\n\nLow is dominant for A. By symmetry (the game is symmetric), Low is also dominant for B.\nb) Underline method:\n\n\n\n\n\n\n\n\n\nB: High\nB: Low\n\n\n\n\nA: High\n(400 , 400)\n(150 , 450)\n\n\nA: Low\n(450 , 150)\n(250 , 250)\n\n\n\nColumn “B: High”: A’s best = 450 (Low) → underline. Column “B: Low”: A’s best = 250 (Low) → underline.\nRow “A: High”: B’s best = 450 (Low) → underline. Row “A: Low”: B’s best = 250 (Low) → underline.\nBoth underlined in (Low, Low) → Nash Equilibrium = (Low, Low) with payoffs (€250, €250)."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#exercise-3-solution-parts-c-d",
+    "href": "slides/lecture18-game-theory.html#exercise-3-solution-parts-c-d",
+    "title": "Game Theory",
+    "section": "Exercise 3: Solution — Parts c & d",
+    "text": "Exercise 3: Solution — Parts c & d\n\nc) Is (Low, Low) = (250, 250) efficient?\nNo! The outcome (High, High) = (400, 400) gives both bars higher profits. Each bar earns €150 more per day if they both keep prices high. The NE is Pareto inefficient — there exists another outcome that is better for everyone.\nd) This is a Prisoner’s Dilemma because:\n\nBoth players have a dominant strategy (Low)\nThe dominant strategy equilibrium (Low, Low) = (250, 250) is worse for both players than the cooperative outcome (High, High) = (400, 400)\nEach player has an individual incentive to deviate from cooperation (if B plays High, A gains €50 by switching to Low: 450 &gt; 400)\nBut when both follow this incentive, they end up worse off\n\n👉 Individual rationality → collective irrationality. This is the essence of the Prisoner’s Dilemma."
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#exercise-3-solution-parts-e-f",
+    "href": "slides/lecture18-game-theory.html#exercise-3-solution-parts-e-f",
+    "title": "Game Theory",
+    "section": "Exercise 3: Solution — Parts e & f",
+    "text": "Exercise 3: Solution — Parts e & f\n\ne) If both bars are owned by the same company:\nThe company maximizes total profit = A’s profit + B’s profit.\n\n(High, High): total = €400 + €400 = €800 ⬅️ Best!\n(Low, High) or (High, Low): total = €450 + €150 = €600\n(Low, Low): total = €250 + €250 = €500\n\nThe company chooses (High, High) → total profit = €800.\n👉 This shows the value of coordination (or merger): by internalizing the competition, the company avoids the Prisoner’s Dilemma and achieves €300/day more in total profit. This is also why cartels are tempting (and illegal) — they replicate the merger outcome.\nf) With 90 days of repeated interaction:\nBars can adopt strategies like tit-for-tat: start with High, and match whatever the other bar did yesterday. If Bar B cuts to Low, Bar A retaliates the next day. The threat of future punishment can sustain cooperation at (High, High) — as long as both bars value future profits enough. Repeated games can solve the Prisoner’s Dilemma through reputation!"
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#next-lecture",
+    "href": "slides/lecture18-game-theory.html#next-lecture",
+    "title": "Game Theory",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nApril 23, 2026: Sequential Games & Backward Induction 🌳\nWhat happens when one player moves first? Entry games and reputation in tourism.\n\n👉 We’ll learn to think backwards from the end of the game!"
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html#thank-you",
+    "href": "slides/lecture18-game-theory.html#thank-you",
+    "title": "Game Theory",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#recap-lecture-18",
+    "href": "slides/lecture19-sequential-games.html#recap-lecture-18",
+    "title": "Game Theory",
+    "section": "Recap: Lecture 18 ⏪",
+    "text": "Recap: Lecture 18 ⏪\n\nWhat we covered last time:\n\nGame theory: strategic interaction (players, strategies, payoffs)\nPayoff matrix: reading outcomes in simultaneous games\nDominant strategy: best regardless of what others do\nPrisoner’s Dilemma: individual rationality → collectively worse outcome\nNash Equilibrium: no player can improve by deviating alone\n\n. . .\n🎯 Today: What changes when players move one at a time rather than simultaneously?\n👉 Sequential games introduce timing, observation, and the crucial concept of credible threats."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#the-key-difference",
+    "href": "slides/lecture19-sequential-games.html#the-key-difference",
+    "title": "Game Theory",
+    "section": "The Key Difference ⌛",
+    "text": "The Key Difference ⌛\n\n\n\n🔄 Simultaneous (Lecture 18):\n\nPlayers choose at the same time\nNeither knows the other’s choice\nRepresented by a payoff matrix\nSolution: Nash Equilibrium\n\nExample: Two airlines set prices for next season without knowing the other’s decision.\n\n▶️ Sequential (today):\n\nPlayers move in order\nLater players observe earlier moves\nRepresented by a game tree\nSolution: Backward Induction\n\nExample: Ryanair announces a new route, then TAP decides whether to respond.\n\n. . .\n\nWhy it matters: When you move first, you can influence what the other player does. This gives the first mover a strategic advantage (or disadvantage!) that doesn’t exist in simultaneous games."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#extensive-form-drawing-the-game",
+    "href": "slides/lecture19-sequential-games.html#extensive-form-drawing-the-game",
+    "title": "Game Theory",
+    "section": "Extensive Form: Drawing the Game 🌳",
+    "text": "Extensive Form: Drawing the Game 🌳\n\nA simple entry game: A new tour operator (Entrant) considers entering the Lisbon market. The incumbent (existing operator) observes this and decides how to react.\n\n\n\n\n\n\n\n\n\nPayoffs: (Entrant’s profit €k, Incumbent’s profit €k). The Entrant moves first, then the Incumbent responds."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#reading-the-game-tree",
+    "href": "slides/lecture19-sequential-games.html#reading-the-game-tree",
+    "title": "Game Theory",
+    "section": "Reading the Game Tree 🔍",
+    "text": "Reading the Game Tree 🔍\n\nThe structure:\n\n⚫ Decision nodes: where a player makes a choice\n◼️ Terminal nodes: end of the game (payoffs are listed)\nBranches: the available actions at each node\nPayoffs: listed as (First mover, Second mover)\n\nThe entry game has three possible outcomes:\n\nthinking: If you were the Entrant, what would you do?\n\n\nOutcome\nEntrant\nIncumbent\nWhat happens\n\n\n\n\nStay Out\n€0k\n€500k\nIncumbent keeps monopoly\n\n\nEnter → Fight\n−€100k\n−€50k\nPrice war, both lose\n\n\nEnter → Accommodate\n€200k\n€250k\nMarket shared peacefully\n\n\n\nThe answer depends on what you think the Incumbent will do after you enter…"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#thinking-backwards",
+    "href": "slides/lecture19-sequential-games.html#thinking-backwards",
+    "title": "Game Theory",
+    "section": "Thinking Backwards 🧠",
+    "text": "Thinking Backwards 🧠\n\n\nBackward Induction\nSolve a sequential game by starting at the end and working backwards to the beginning.\n\nLook at the last player to move — what will they choose?\nThe earlier player anticipates this and makes their choice accordingly.\nContinue backwards until you reach the first move.\n\n\nApplied to the entry game:\nStep 1 (last mover = Incumbent): If the Entrant enters, the Incumbent chooses between:\n\nFight → Incumbent gets −€50k ❌\nAccommodate → Incumbent gets €250k ✅\n\n👉 The Incumbent will Accommodate (€250k &gt; −€50k). A rational Incumbent would never fight!"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#backward-induction-step-2",
+    "href": "slides/lecture19-sequential-games.html#backward-induction-step-2",
+    "title": "Game Theory",
+    "section": "Backward Induction: Step 2 👣",
+    "text": "Backward Induction: Step 2 👣\n\nStep 2 (first mover = Entrant): The Entrant knows the Incumbent will Accommodate if entry occurs. So the Entrant’s real choice is:\n\nStay Out → Entrant gets €0k\nEnter → Incumbent will Accommodate → Entrant gets €200k ✅\n\n👉 The Entrant enters, and the Incumbent accommodates.\n. . .\n\nBackward Induction Solution\nEntrant enters → Incumbent accommodates → Payoffs: (€200k, €250k)\nThis is the subgame perfect equilibrium — the strategy combination that survives backward induction at every decision point.\n\n💡 Notice: the Incumbent might want the Entrant to stay out (€500k &gt; €250k), but once entry happens, fighting is irrational."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#ill-start-a-price-war-if-you-enter",
+    "href": "slides/lecture19-sequential-games.html#ill-start-a-price-war-if-you-enter",
+    "title": "Game Theory",
+    "section": "“I’ll Start a Price War If You Enter!” 💢",
+    "text": "“I’ll Start a Price War If You Enter!” 💢\n\nSuppose the Incumbent threatens: “If you enter, I will fight a price war and destroy you!”\nShould the Entrant believe this threat?\n\n\n❌ The threat is NOT credible!\nIf the Entrant actually enters, the Incumbent faces:\n\nFight → −€50k (loses money!)\nAccommodate → €250k (earns profit)\n\nNo rational Incumbent would follow through on the threat. It’s a bluff.\nThe Entrant knows this and enters anyway.\n\n\nCredible vs Non-Credible Threats\nA threat is credible if the player would actually carry it out when the time comes.\nA threat is non-credible if following through would make the threatening player worse off — so they wouldn’t actually do it.\n\n👉 Backward induction automatically filters out non-credible threats. That’s its power!"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#making-a-threat-credible-commitment",
+    "href": "slides/lecture19-sequential-games.html#making-a-threat-credible-commitment",
+    "title": "Game Theory",
+    "section": "Making a Threat Credible: Commitment 🔒",
+    "text": "Making a Threat Credible: Commitment 🔒\n\nWhat if the Incumbent could make the threat credible?\nStrategies for commitment — actions that make fighting rational if entry occurs:\n\n\n1️⃣ Build excess capacity\nThe Incumbent invests €200k in a much larger fleet/facility. Now if the Entrant enters, the Incumbent’s costs of fighting are lower (capacity already paid for), and accommodation means wasted investment.\nNew payoffs if Enter:\n\nFight → Incumbent gets €100k (capacity advantage)\nAccommodate → Incumbent gets €50k (wasted capacity)\n\nNow Fight &gt; Accommodate → threat is credible!\n\n2️⃣ Reputation for toughness\nIf the Incumbent operates in many markets, fighting in one market sends a signal to potential entrants in other markets: “We always fight.”\nThe short-term loss from fighting (−€50k) is outweighed by the long-term gain of deterring entry everywhere.\n👉 This is why large hotel chains or airlines sometimes engage in seemingly irrational price wars — they’re investing in reputation."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#the-entry-game-with-credible-commitment",
+    "href": "slides/lecture19-sequential-games.html#the-entry-game-with-credible-commitment",
+    "title": "Game Theory",
+    "section": "The Entry Game with Credible Commitment 🛡️",
+    "text": "The Entry Game with Credible Commitment 🛡️\n\n\n\n\n\n\n\n\n\n\nBackward induction: Incumbent prefers Fight (€100k &gt; €50k) → Entrant anticipates this → Stay Out (€0 &gt; −€100k). Entry is deterred! The €200k investment in capacity pays for itself by preserving the monopoly."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#does-moving-first-always-help",
+    "href": "slides/lecture19-sequential-games.html#does-moving-first-always-help",
+    "title": "Game Theory",
+    "section": "Does Moving First Always Help? 🏆",
+    "text": "Does Moving First Always Help? 🏆\n\n\n\n✅ First-mover advantage:\nWhen moving first lets you commit to a favorable position.\n\n✈️ Ryanair opens a new route first → captures market share → TAP faces a harder entry decision\n🏨 A hotel chain secures the best beachfront location → later entrants get inferior spots\n💻 Booking.com builds the platform first → network effects make it hard for competitors\n\n“The early bird catches the worm”\n\n❌ Second-mover advantage:\nWhen waiting lets you observe and adapt.\n\n📱 A tourism app watches competitors’ mistakes before launching a better version\n🍴 A restaurant sees what menu concepts work on a tourist street before opening\n📈 Late entrants can free-ride on first movers’ market research\n\n“Good artists copy, great artists steal”\n\n. . .\n👉 Whether first or second mover is better depends on the specific game structure — there’s no universal rule!"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#stackelberg-leadership-first-mover-in-quantity",
+    "href": "slides/lecture19-sequential-games.html#stackelberg-leadership-first-mover-in-quantity",
+    "title": "Game Theory",
+    "section": "Stackelberg Leadership: First Mover in Quantity 🏭",
+    "text": "Stackelberg Leadership: First Mover in Quantity 🏭\n\n\nStackelberg Model (Intuition)\nIn a quantity-competition game, the leader (first mover) chooses its output first. The follower observes this and chooses its output second.\nThe leader commits to a large output, knowing the follower will produce less to avoid flooding the market. The leader earns more than the follower.\n\nTourism example: Two cruise companies serve the Lisbon–Madeira route.\n\nLeader announces 3 sailings/week for the summer\nFollower sees this and decides: if it also does 3, the market is oversupplied and prices crash. So it chooses 2 sailings/week.\nLeader: 3 sailings at good prices. Follower: 2 sailings at good prices.\nIf they’d chosen simultaneously (Cournot), each might do 2.5 — less favorable for the leader.\n\n👉 By committing first to a large quantity, the leader “crowds out” the follower."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#sequential-games-in-the-tourism-industry",
+    "href": "slides/lecture19-sequential-games.html#sequential-games-in-the-tourism-industry",
+    "title": "Game Theory",
+    "section": "Sequential Games in the Tourism Industry 🌐",
+    "text": "Sequential Games in the Tourism Industry 🌐\n\n\n\n1️⃣ Hotel chain expansion\nA major chain (e.g., Marriott) decides whether to enter Porto. A local boutique hotel observes and responds.\n\nIf Marriott enters → local hotel must choose: fight (lower prices) or differentiate (go more boutique)\nBackward induction: Marriott predicts the local hotel will differentiate (rational response)\nMarriott enters, knowing it won’t face a destructive price war\n\n2️⃣ Airbnb regulation\nCity council moves first: regulate or not. Then hosts respond: comply, exit, or operate underground.\n\nCouncil anticipates host responses when choosing policy\nToo strict → mass exit → less tourism revenue\nToo lax → overtourism complaints\n\n\n3️⃣ Airline route decisions\nAn airline considers opening Lisbon–Tokyo direct.\n\nMove 1: Airline decides whether to launch\nMove 2: If launched, competitors decide whether to match\nKey question: is competitors’ threat to match credible? Only if the route is profitable enough for two airlines.\n\n4️⃣ Tourism infrastructure\nGovernment decides whether to build a new airport terminal.\n\nMove 1: Government invests (or not)\nMove 2: Airlines decide whether to add routes to the destination\nThe investment signals commitment, making it credible that the destination will be accessible long-term → airlines enter."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#connecting-the-two-lectures",
+    "href": "slides/lecture19-sequential-games.html#connecting-the-two-lectures",
+    "title": "Game Theory",
+    "section": "Connecting the Two Lectures 🔗",
+    "text": "Connecting the Two Lectures 🔗\n\n\npoint_right: Real-world strategic situations often combine elements of both — some decisions are simultaneous, others are sequential. Game theory gives us tools for all of them!\n\n\n\n\n\n\n\nConcept\nSimultaneous (L18)\nSequential (today)\n\n\n\n\nRepresentation\nPayoff matrix\nGame tree\n\n\nInformation\nDon’t know other’s choice\nObserve earlier moves\n\n\nSolution\nNash Equilibrium\nBackward Induction\n\n\nKey idea\nBest response to each other\nAnticipate future responses\n\n\nThreats\nAll threats “count”\nOnly credible threats count\n\n\nTiming\nDoesn’t matter who “goes first”\nFirst mover can gain or lose\n\n\nTourism\nPrice wars, PD in competition\nEntry decisions, investment, regulation"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#summary",
+    "href": "slides/lecture19-sequential-games.html#summary",
+    "title": "Game Theory",
+    "section": "Summary 📝",
+    "text": "Summary 📝\n\nToday’s Key Takeaways:\n\nSequential games: players move in order, later players observe earlier moves\nGame tree (extensive form): nodes (decisions), branches (actions), terminal nodes (payoffs)\nBackward induction: solve from the end backwards — what will the last mover do? The first mover anticipates this.\nCredible threats: a threat is credible only if carrying it out is rational when the time comes. Backward induction filters out non-credible threats.\nCommitment: investments (excess capacity, reputation) can make threats credible and deter entry\nFirst-mover advantage: not universal — depends on whether commitment is possible and valuable\nStackelberg: first mover in quantity competition can gain by committing to large output\nTourism: entry games (new airlines, Airbnb), regulation, infrastructure investment\n\nThis completes the Game Theory block! 🎉\nNext (Lecture 20, April 24): The Main Macroeconomic Issues — we zoom out from firms and markets to the whole economy! 🌐"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#exercises",
+    "href": "slides/lecture19-sequential-games.html#exercises",
+    "title": "Game Theory",
+    "section": "Exercises",
+    "text": "Exercises\nPractice Time! ✏️\nSequential games, backward induction, and credible threats."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#exercise-1-multiple-choice",
+    "href": "slides/lecture19-sequential-games.html#exercise-1-multiple-choice",
+    "title": "Game Theory",
+    "section": "Exercise 1: Multiple Choice",
+    "text": "Exercise 1: Multiple Choice\n\nQuestion: A budget airline threatens to match any fare cut by a competitor on the Lisbon–Barcelona route. The competitor knows the budget airline is already operating at a loss on this route. Is the threat credible?\nA. Yes — the airline said it publicly, so it must follow through\nB. Yes — airlines always match competitors’ prices\nC. No — matching the fare cut would increase the airline’s losses, so it’s irrational to follow through\nD. No — only the government can make credible threats\n\n\nAnswer: C\n\nA threat is credible only if carrying it out would be rational when the time comes. If the airline is already losing money, cutting fares further increases losses — a rational airline wouldn’t do it. The competitor should ignore the threat and cut prices anyway. Public statements (A) don’t make irrational actions rational!"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#exercise-2-multiple-choice",
+    "href": "slides/lecture19-sequential-games.html#exercise-2-multiple-choice",
+    "title": "Game Theory",
+    "section": "Exercise 2: Multiple Choice",
+    "text": "Exercise 2: Multiple Choice\n\nQuestion: In backward induction, we solve the game by:\nA. Starting from the first move and working forward\nB. Finding the Nash Equilibrium of the payoff matrix\nC. Starting from the last decision and working backwards to the first move\nD. Letting both players randomize their strategies\n\n\nAnswer: C\n\nBackward induction starts at the end of the game (the last decision node), determines what the last player would rationally do, then moves backwards — each earlier player anticipates the later players’ rational choices. This filters out non-credible threats automatically."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#exercise-3-open-question",
+    "href": "slides/lecture19-sequential-games.html#exercise-3-open-question",
+    "title": "Game Theory",
+    "section": "Exercise 3: Open Question ✍️",
+    "text": "Exercise 3: Open Question ✍️\n\nAn established surf school in Ericeira (Incumbent) faces a potential new competitor (Entrant). The game is sequential:\n\nMove 1: Entrant decides whether to Enter or Stay Out\nMove 2: If Entrant enters, Incumbent decides whether to Fight (aggressive price cuts, heavy advertising) or Accommodate (maintain prices, share the market)\n\nPayoffs (€k per season): (Entrant, Incumbent)\n\nStay Out: (0, 400)\nEnter → Fight: (−80, −20)\nEnter → Accommodate: (150, 200)\n\na) Draw the game tree.\nb) Use backward induction to find the solution. What does the Entrant do? What does the Incumbent do?\nc) Is the Incumbent’s threat to fight credible? Explain.\nd) Now suppose the Incumbent can invest €100k before the game to buy exclusive rights to the best beach section. This changes the payoffs to: Stay Out = (0, 300); Enter → Fight = (−80, 80); Enter → Accommodate = (150, 100). Use backward induction on this new game. Does the Entrant still enter?\ne) Was the €100k investment worthwhile for the Incumbent? Compare the Incumbent’s payoff with and without the investment.\nf) Relate this to a real-world tourism example: why do established hotels invest heavily in loyalty programs and brand renovations even when no new competitor is currently threatening?"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#exercise-3-solution-parts-a-b",
+    "href": "slides/lecture19-sequential-games.html#exercise-3-solution-parts-a-b",
+    "title": "Game Theory",
+    "section": "Exercise 3: Solution — Parts a & b",
+    "text": "Exercise 3: Solution — Parts a & b\n\na) Game tree:\n\nRoot: Entrant chooses Enter or Stay Out\nIf Stay Out → terminal node: (0, 400)\nIf Enter → Incumbent chooses Fight or Accommodate\n\nFight → terminal node: (−80, −20)\nAccommodate → terminal node: (150, 200)\n\n\nb) Backward induction:\nStep 1 (Incumbent’s decision, if Entrant has entered):\n\nFight → Incumbent gets −20 ❌\nAccommodate → Incumbent gets 200 ✅\n\nIncumbent will Accommodate.\nStep 2 (Entrant’s decision, knowing Incumbent will Accommodate):\n\nStay Out → Entrant gets 0\nEnter → (Incumbent accommodates) → Entrant gets 150 ✅\n\nSolution: Entrant enters, Incumbent accommodates. Payoffs: (150, 200)."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#exercise-3-solution-parts-c-d",
+    "href": "slides/lecture19-sequential-games.html#exercise-3-solution-parts-c-d",
+    "title": "Game Theory",
+    "section": "Exercise 3: Solution — Parts c & d",
+    "text": "Exercise 3: Solution — Parts c & d\n\nc) Is the threat to fight credible?\nNo! If the Entrant enters, the Incumbent faces: Fight (−20) vs Accommodate (200). Fighting makes the Incumbent worse off. No rational Incumbent would follow through. The threat is a bluff, and the Entrant knows it.\nd) New game (after €100k investment in exclusive beach rights):\nStep 1 (Incumbent, if Entrant enters):\n\nFight → Incumbent gets 80 ✅\nAccommodate → Incumbent gets 100 ✅\n\nWait — Accommodate (100) &gt; Fight (80), so Incumbent still accommodates!\nStep 2 (Entrant, knowing Incumbent accommodates):\n\nStay Out → 0\nEnter → 150 ✅\n\nEntrant still enters! The investment didn’t change the game’s outcome because Accommodate is still better than Fight for the Incumbent. The threat to fight is still not credible.\n⚠️ The investment only works as entry deterrence if it makes Fight better than Accommodate for the Incumbent!"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#exercise-3-solution-parts-e-f",
+    "href": "slides/lecture19-sequential-games.html#exercise-3-solution-parts-e-f",
+    "title": "Game Theory",
+    "section": "Exercise 3: Solution — Parts e & f",
+    "text": "Exercise 3: Solution — Parts e & f\n\ne) Was the investment worthwhile?\n\n\n\n\nWithout investment\nWith investment\n\n\n\n\nOutcome\nEnter, Accommodate\nEnter, Accommodate\n\n\nIncumbent payoff\n€200k\n€100k (200 − 100 investment)\n\n\nEntrant payoff\n€150k\n€150k\n\n\n\nThe investment cost €100k but didn’t deter entry — the Incumbent is worse off by €100k! The investment was not worthwhile because it failed to make the threat credible.\n👉 Lesson: Not all investments deter entry. The commitment must change the Incumbent’s incentives so that fighting becomes the rational choice after entry. Only then does the Entrant stay out.\nf) Real-world application: Hotels invest in loyalty programs and renovations as commitment devices. These investments are sunk costs that make it more rational to compete aggressively (protecting the return on investment) and signal to potential entrants that the market is well-defended. Even without a visible threat, the investment raises the bar for entry — potential competitors see the commitment and reconsider entering."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#next-lecture",
+    "href": "slides/lecture19-sequential-games.html#next-lecture",
+    "title": "Game Theory",
+    "section": "Next Lecture",
+    "text": "Next Lecture\nApril 24, 2026: The Main Macroeconomic Issues 🌐\nWe zoom out from individual firms and strategic games to the whole economy!\n\n👋 This completes the Game Theory block!\nMicro is done (Consumer + Producer + Game Theory). Now: Macro!"
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html#thank-you",
+    "href": "slides/lecture19-sequential-games.html#thank-you",
+    "title": "Game Theory",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
   }
 ]

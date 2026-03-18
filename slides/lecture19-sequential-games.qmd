@@ -1,0 +1,710 @@
+---
+title: "Game Theory"
+subtitle: "Lecture 19: Sequential Games & Backward Induction"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 19"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+
+ue_red <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_blue <- "#2E86AB"
+ue_green <- "#27ae60"
+ue_orange <- "#E67E22"
+```
+
+## Recap: Lecture 18 :rewind:
+
+<div style="font-size: 80%;">
+
+**What we covered last time**:
+
+- **Game theory**: strategic interaction (players, strategies, payoffs)
+- **Payoff matrix**: reading outcomes in simultaneous games
+- **Dominant strategy**: best regardless of what others do
+- **Prisoner's Dilemma**: individual rationality → collectively worse outcome
+- **Nash Equilibrium**: no player can improve by deviating alone
+
+. . .
+
+:dart: **Today**: What changes when players move **one at a time** rather than simultaneously?
+
+:point_right: Sequential games introduce **timing**, **observation**, and the crucial concept of **credible threats**.
+
+</div>
+
+# Simultaneous vs Sequential
+
+## The Key Difference :hourglass:
+
+<div style="font-size: 78%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+:arrows_counterclockwise: **Simultaneous** (Lecture 18):
+
+- Players choose **at the same time**
+- Neither knows the other's choice
+- Represented by a **payoff matrix**
+- Solution: Nash Equilibrium
+
+*Example*: Two airlines set prices for next season without knowing the other's decision.
+:::
+
+::: {.column width="50%"}
+:arrow_forward: **Sequential** (today):
+
+- Players move **in order**
+- Later players **observe** earlier moves
+- Represented by a **game tree**
+- Solution: **Backward Induction**
+
+*Example*: Ryanair announces a new route, then TAP decides whether to respond.
+:::
+::::
+
+. . .
+
+::: {.key-concept}
+**Why it matters**: When you move first, you can **influence** what the other player does. This gives the first mover a strategic advantage (or disadvantage!) that doesn't exist in simultaneous games.
+:::
+
+</div>
+
+# The Game Tree
+
+## Extensive Form: Drawing the Game :deciduous_tree:
+
+<div style="font-size: 72%;">
+
+**A simple entry game**: A new tour operator (Entrant) considers entering the Lisbon market. The incumbent (existing operator) observes this and decides how to react.
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 11
+#| fig-height: 5.5
+#| fig-align: center
+
+# Draw game tree using ggplot
+ggplot() +
+  # Branches from Entrant
+  geom_segment(aes(x = 0, y = 5, xend = -3, yend = 3), linewidth = 1.2, color = ue_black) +
+  geom_segment(aes(x = 0, y = 5, xend = 3, yend = 3), linewidth = 1.2, color = ue_black) +
+  # Branches from Incumbent (only if Enter)
+  geom_segment(aes(x = 3, y = 3, xend = 1.5, yend = 1), linewidth = 1.2, color = ue_red) +
+  geom_segment(aes(x = 3, y = 3, xend = 4.5, yend = 1), linewidth = 1.2, color = ue_red) +
+  # Decision nodes
+  geom_point(aes(x = 0, y = 5), size = 6, color = ue_black) +
+  geom_point(aes(x = 3, y = 3), size = 6, color = ue_red) +
+  # Terminal nodes
+  geom_point(aes(x = -3, y = 1), size = 5, shape = 15, color = ue_gray) +
+  geom_point(aes(x = 1.5, y = 1), size = 5, shape = 15, color = ue_gray) +
+  geom_point(aes(x = 4.5, y = 1), size = 5, shape = 15, color = ue_gray) +
+  # Player labels
+  annotate("text", x = 0, y = 5.6, label = "Entrant", fontface = "bold",
+           size = 5, color = ue_black) +
+  annotate("text", x = 3, y = 3.6, label = "Incumbent", fontface = "bold",
+           size = 5, color = ue_red) +
+  # Action labels
+  annotate("text", x = -2, y = 4.3, label = "Stay Out", fontface = "bold",
+           size = 4.5, color = ue_gray) +
+  annotate("text", x = 2, y = 4.3, label = "Enter", fontface = "bold",
+           size = 4.5, color = ue_green) +
+  annotate("text", x = 1.8, y = 2.2, label = "Fight\n(price war)", fontface = "bold",
+           size = 3.8, color = ue_red) +
+  annotate("text", x = 4.2, y = 2.2, label = "Accommodate\n(share market)", fontface = "bold",
+           size = 3.8, color = ue_blue) +
+  # Payoffs (Entrant, Incumbent)
+  annotate("label", x = -3, y = 0.3, label = "(0 , 500)",
+           size = 4.5, fontface = "bold", fill = ue_white, color = ue_black) +
+  annotate("label", x = 1.5, y = 0.3, label = "(-100 , -50)",
+           size = 4.5, fontface = "bold", fill = "#FFE0E0", color = ue_red) +
+  annotate("label", x = 4.5, y = 0.3, label = "(200 , 250)",
+           size = 4.5, fontface = "bold", fill = "#E0FFE0", color = ue_green) +
+  # Legend
+  annotate("text", x = -3, y = -0.3, label = "Entrant stays out\nIncumbent is monopolist",
+           size = 2.8, color = ue_gray, fontface = "italic") +
+  annotate("text", x = 1.5, y = -0.3, label = "Price war\nBoth lose money",
+           size = 2.8, color = ue_red, fontface = "italic") +
+  annotate("text", x = 4.5, y = -0.3, label = "Shared market\nBoth earn profit",
+           size = 2.8, color = ue_green, fontface = "italic") +
+  coord_cartesian(ylim = c(-0.8, 6.2), xlim = c(-5, 6.5)) +
+  theme_void() +
+  labs(title = "The Entry Game (Hypothetical)") +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 16))
+```
+
+*Payoffs: (Entrant's profit €k, Incumbent's profit €k). The Entrant moves first, then the Incumbent responds.*
+
+</div>
+
+## Reading the Game Tree :mag:
+
+<div style="font-size: 78%;">
+
+**The structure**:
+
+- :black_circle: **Decision nodes**: where a player makes a choice
+- :black_medium_square: **Terminal nodes**: end of the game (payoffs are listed)
+- **Branches**: the available actions at each node
+- **Payoffs**: listed as (First mover, Second mover)
+
+**The entry game has three possible outcomes**:
+
+| Outcome | Entrant | Incumbent | What happens |
+|---|:---:|:---:|---|
+| Stay Out | €0k | €500k | Incumbent keeps monopoly |
+| Enter → Fight | −€100k | −€50k | Price war, both lose |
+| Enter → Accommodate | €200k | €250k | Market shared peacefully |
+
+:thinking: **If you were the Entrant, what would you do?**
+
+The answer depends on what you think the Incumbent will do **after** you enter...
+
+</div>
+
+# Backward Induction
+
+## Thinking Backwards :brain:
+
+<div style="font-size: 78%;">
+
+::: {.key-concept}
+**Backward Induction**
+
+Solve a sequential game by starting at the **end** and working **backwards** to the beginning.
+
+1. Look at the **last** player to move — what will they choose?
+2. The earlier player **anticipates** this and makes their choice accordingly.
+3. Continue backwards until you reach the first move.
+:::
+
+**Applied to the entry game**:
+
+**Step 1** (last mover = Incumbent): If the Entrant enters, the Incumbent chooses between:
+
+- Fight → Incumbent gets **−€50k** :x:
+- Accommodate → Incumbent gets **€250k** :white_check_mark:
+
+:point_right: The Incumbent will **Accommodate** (€250k > −€50k). A rational Incumbent would never fight!
+
+</div>
+
+## Backward Induction: Step 2 :footprints:
+
+<div style="font-size: 78%;">
+
+**Step 2** (first mover = Entrant): The Entrant **knows** the Incumbent will Accommodate if entry occurs. So the Entrant's real choice is:
+
+- Stay Out → Entrant gets **€0k**
+- Enter → Incumbent will Accommodate → Entrant gets **€200k** :white_check_mark:
+
+:point_right: The Entrant **enters**, and the Incumbent **accommodates**.
+
+. . .
+
+::: {.key-concept}
+**Backward Induction Solution**
+
+**Entrant enters** → **Incumbent accommodates** → Payoffs: **(€200k, €250k)**
+
+This is the **subgame perfect equilibrium** — the strategy combination that survives backward induction at every decision point.
+:::
+
+:bulb: Notice: the Incumbent might *want* the Entrant to stay out (€500k > €250k), but once entry happens, fighting is **irrational**.
+
+</div>
+
+# Credible vs Non-Credible Threats
+
+## "I'll Start a Price War If You Enter!" :anger:
+
+<div style="font-size: 76%;">
+
+**Suppose the Incumbent threatens**: "If you enter, I will fight a price war and destroy you!"
+
+Should the Entrant believe this threat?
+
+:::: {.columns}
+::: {.column width="50%"}
+:x: **The threat is NOT credible!**
+
+If the Entrant actually enters, the Incumbent faces:
+
+- Fight → **−€50k** (loses money!)
+- Accommodate → **€250k** (earns profit)
+
+No rational Incumbent would follow through on the threat. It's a **bluff**.
+
+The Entrant knows this and enters anyway.
+:::
+
+::: {.column width="50%"}
+::: {.key-concept}
+**Credible vs Non-Credible Threats**
+
+A threat is **credible** if the player would actually carry it out when the time comes.
+
+A threat is **non-credible** if following through would make the threatening player **worse off** — so they wouldn't actually do it.
+:::
+
+:point_right: Backward induction automatically **filters out non-credible threats**. That's its power!
+:::
+::::
+
+</div>
+
+## Making a Threat Credible: Commitment :lock:
+
+<div style="font-size: 74%;">
+
+**What if the Incumbent could make the threat credible?**
+
+Strategies for **commitment** — actions that make fighting **rational** if entry occurs:
+
+:::: {.columns}
+::: {.column width="50%"}
+:one: **Build excess capacity**
+
+The Incumbent invests €200k in a much larger fleet/facility. Now if the Entrant enters, the Incumbent's costs of fighting are lower (capacity already paid for), and accommodation means wasted investment.
+
+New payoffs if Enter:
+
+- Fight → Incumbent gets **€100k** (capacity advantage)
+- Accommodate → Incumbent gets **€50k** (wasted capacity)
+
+Now Fight > Accommodate → **threat is credible!**
+:::
+
+::: {.column width="50%"}
+:two: **Reputation for toughness**
+
+If the Incumbent operates in **many markets**, fighting in one market sends a signal to potential entrants in **other** markets: "We always fight."
+
+The short-term loss from fighting (−€50k) is outweighed by the long-term gain of **deterring entry** everywhere.
+
+:point_right: This is why large hotel chains or airlines sometimes engage in seemingly irrational price wars — they're investing in **reputation**.
+:::
+::::
+
+</div>
+
+## The Entry Game with Credible Commitment :shield:
+
+<div style="font-size: 72%;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 11
+#| fig-height: 5.5
+#| fig-align: center
+
+# Game tree with commitment: now Fight is better for Incumbent
+ggplot() +
+  # Branches from Entrant
+  geom_segment(aes(x = 0, y = 5, xend = -3, yend = 3), linewidth = 1.2, color = ue_black) +
+  geom_segment(aes(x = 0, y = 5, xend = 3, yend = 3), linewidth = 1.2, color = ue_black) +
+  # Branches from Incumbent
+  geom_segment(aes(x = 3, y = 3, xend = 1.5, yend = 1), linewidth = 1.2, color = ue_red) +
+  geom_segment(aes(x = 3, y = 3, xend = 4.5, yend = 1), linewidth = 1.2, color = ue_red) +
+  # Nodes
+  geom_point(aes(x = 0, y = 5), size = 6, color = ue_black) +
+  geom_point(aes(x = 3, y = 3), size = 6, color = ue_red) +
+  geom_point(aes(x = -3, y = 1), size = 5, shape = 15, color = ue_gray) +
+  geom_point(aes(x = 1.5, y = 1), size = 5, shape = 15, color = ue_gray) +
+  geom_point(aes(x = 4.5, y = 1), size = 5, shape = 15, color = ue_gray) +
+  # Labels
+  annotate("text", x = 0, y = 5.6, label = "Entrant", fontface = "bold",
+           size = 5, color = ue_black) +
+  annotate("text", x = 3, y = 3.6, label = "Incumbent\n(with excess capacity)",
+           fontface = "bold", size = 4.5, color = ue_red) +
+  annotate("text", x = -2, y = 4.3, label = "Stay Out", fontface = "bold",
+           size = 4.5, color = ue_gray) +
+  annotate("text", x = 2, y = 4.3, label = "Enter", fontface = "bold",
+           size = 4.5, color = ue_green) +
+  annotate("text", x = 1.8, y = 2.2, label = "Fight", fontface = "bold",
+           size = 4, color = ue_red) +
+  annotate("text", x = 4.2, y = 2.2, label = "Accommodate", fontface = "bold",
+           size = 4, color = ue_blue) +
+  # Payoffs — now Fight is better for Incumbent!
+  annotate("label", x = -3, y = 0.3, label = "(0 , 300)",
+           size = 4.5, fontface = "bold", fill = ue_white, color = ue_black) +
+  annotate("label", x = 1.5, y = 0.3, label = "(-100 , 100)",
+           size = 4.5, fontface = "bold", fill = "#FFE0E0", color = ue_red) +
+  annotate("label", x = 4.5, y = 0.3, label = "(200 , 50)",
+           size = 4.5, fontface = "bold", fill = "#E0F0FF", color = ue_blue) +
+  # Backward induction arrows
+  annotate("text", x = 3.8, y = 1.6, label = "100 > 50 ✓",
+           size = 3.5, color = ue_red, fontface = "bold") +
+  annotate("text", x = -1.8, y = 3.5, label = "0 > -100 ✓",
+           size = 3.5, color = ue_black, fontface = "bold") +
+  # Solution path
+  annotate("text", x = -4.5, y = 3, label = "BI Solution:\nStay Out → (0, 300)",
+           size = 4, color = ue_red, fontface = "bold", hjust = 0) +
+  coord_cartesian(ylim = c(-0.3, 6.2), xlim = c(-5, 6.5)) +
+  theme_void() +
+  labs(title = "Entry Game with Commitment: Entry Deterred! (Hypothetical)") +
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5, size = 15))
+```
+
+**Backward induction**: Incumbent prefers Fight (€100k > €50k) → Entrant anticipates this → Stay Out (€0 > −€100k). **Entry is deterred!** The €200k investment in capacity **pays for itself** by preserving the monopoly.
+
+</div>
+
+# First-Mover Advantage
+
+## Does Moving First Always Help? :trophy:
+
+<div style="font-size: 76%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+:white_check_mark: **First-mover advantage**:
+
+When moving first lets you **commit** to a favorable position.
+
+- :airplane: Ryanair opens a new route first → captures market share → TAP faces a harder entry decision
+- :hotel: A hotel chain secures the best beachfront location → later entrants get inferior spots
+- :computer: Booking.com builds the platform first → network effects make it hard for competitors
+
+*"The early bird catches the worm"*
+:::
+
+::: {.column width="50%"}
+:x: **Second-mover advantage**:
+
+When waiting lets you **observe** and **adapt**.
+
+- :iphone: A tourism app watches competitors' mistakes before launching a better version
+- :fork_and_knife: A restaurant sees what menu concepts work on a tourist street before opening
+- :chart_with_upwards_trend: Late entrants can free-ride on first movers' market research
+
+*"Good artists copy, great artists steal"*
+:::
+::::
+
+. . .
+
+:point_right: Whether first or second mover is better depends on the **specific game structure** — there's no universal rule!
+
+</div>
+
+## Stackelberg Leadership: First Mover in Quantity :factory:
+
+<div style="font-size: 76%;">
+
+::: {.key-concept}
+**Stackelberg Model (Intuition)**
+
+In a quantity-competition game, the **leader** (first mover) chooses its output first. The **follower** observes this and chooses its output second.
+
+The leader commits to a **large** output, knowing the follower will produce less to avoid flooding the market. The leader earns **more** than the follower.
+:::
+
+**Tourism example**: Two cruise companies serve the Lisbon–Madeira route.
+
+- **Leader** announces 3 sailings/week for the summer
+- **Follower** sees this and decides: if it also does 3, the market is oversupplied and prices crash. So it chooses **2 sailings/week**.
+- Leader: 3 sailings at good prices. Follower: 2 sailings at good prices.
+- If they'd chosen simultaneously (Cournot), each might do 2.5 — less favorable for the leader.
+
+:point_right: By **committing first** to a large quantity, the leader "crowds out" the follower.
+
+</div>
+
+# Tourism Applications
+
+## Sequential Games in the Tourism Industry :globe_with_meridians:
+
+<div style="font-size: 72%;">
+
+:::: {.columns}
+::: {.column width="50%"}
+**:one: Hotel chain expansion**
+
+A major chain (e.g., Marriott) decides whether to enter Porto. A local boutique hotel observes and responds.
+
+- If Marriott enters → local hotel must choose: fight (lower prices) or differentiate (go more boutique)
+- Backward induction: Marriott predicts the local hotel will differentiate (rational response)
+- Marriott enters, knowing it won't face a destructive price war
+
+**:two: Airbnb regulation**
+
+City council moves first: regulate or not. Then hosts respond: comply, exit, or operate underground.
+
+- Council anticipates host responses when choosing policy
+- Too strict → mass exit → less tourism revenue
+- Too lax → overtourism complaints
+:::
+
+::: {.column width="50%"}
+**:three: Airline route decisions**
+
+An airline considers opening Lisbon–Tokyo direct.
+
+- Move 1: Airline decides whether to launch
+- Move 2: If launched, competitors decide whether to match
+- Key question: is competitors' threat to match **credible**? Only if the route is profitable enough for two airlines.
+
+**:four: Tourism infrastructure**
+
+Government decides whether to build a new airport terminal.
+
+- Move 1: Government invests (or not)
+- Move 2: Airlines decide whether to add routes to the destination
+- The investment signals **commitment**, making it credible that the destination will be accessible long-term → airlines enter.
+:::
+::::
+
+</div>
+
+## Connecting the Two Lectures :link:
+
+<div style="font-size: 76%;">
+
+| Concept | Simultaneous (L18) | Sequential (today) |
+|---|---|---|
+| **Representation** | Payoff matrix | Game tree |
+| **Information** | Don't know other's choice | Observe earlier moves |
+| **Solution** | Nash Equilibrium | Backward Induction |
+| **Key idea** | Best response to each other | Anticipate future responses |
+| **Threats** | All threats "count" | Only **credible** threats count |
+| **Timing** | Doesn't matter who "goes first" | First mover can gain or lose |
+| **Tourism** | Price wars, PD in competition | Entry decisions, investment, regulation |
+
+:point_right: Real-world strategic situations often combine elements of both — some decisions are simultaneous, others are sequential. Game theory gives us tools for all of them!
+
+</div>
+
+## Summary :memo:
+
+<div style="font-size: 72%;">
+
+**Today's Key Takeaways**:
+
+1. **Sequential games**: players move in order, later players observe earlier moves
+2. **Game tree** (extensive form): nodes (decisions), branches (actions), terminal nodes (payoffs)
+3. **Backward induction**: solve from the end backwards — what will the last mover do? The first mover anticipates this.
+4. **Credible threats**: a threat is credible only if carrying it out is **rational** when the time comes. Backward induction filters out non-credible threats.
+5. **Commitment**: investments (excess capacity, reputation) can make threats credible and deter entry
+6. **First-mover advantage**: not universal — depends on whether commitment is possible and valuable
+7. **Stackelberg**: first mover in quantity competition can gain by committing to large output
+8. **Tourism**: entry games (new airlines, Airbnb), regulation, infrastructure investment
+
+**This completes the Game Theory block!** :tada:
+
+**Next (Lecture 20, April 24)**: The Main Macroeconomic Issues — we zoom out from firms and markets to the **whole economy**! :globe_with_meridians:
+
+</div>
+
+## Exercises {.center}
+
+**Practice Time!** :pencil2:
+
+Sequential games, backward induction, and credible threats.
+
+## Exercise 1: Multiple Choice
+
+<div style="font-size: 80%;">
+
+**Question**: A budget airline threatens to match any fare cut by a competitor on the Lisbon–Barcelona route. The competitor knows the budget airline is already operating at a loss on this route. Is the threat credible?
+
+A. Yes — the airline said it publicly, so it must follow through
+
+B. Yes — airlines always match competitors' prices
+
+C. No — matching the fare cut would increase the airline's losses, so it's irrational to follow through
+
+D. No — only the government can make credible threats
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: C**
+:::
+
+A threat is **credible** only if carrying it out would be **rational** when the time comes. If the airline is already losing money, cutting fares further increases losses — a rational airline wouldn't do it. The competitor should **ignore** the threat and cut prices anyway. Public statements (A) don't make irrational actions rational!
+:::
+
+</div>
+
+## Exercise 2: Multiple Choice
+
+<div style="font-size: 80%;">
+
+**Question**: In backward induction, we solve the game by:
+
+A. Starting from the first move and working forward
+
+B. Finding the Nash Equilibrium of the payoff matrix
+
+C. Starting from the last decision and working backwards to the first move
+
+D. Letting both players randomize their strategies
+
+::: {.fragment}
+::: {.highlight-box}
+**Answer: C**
+:::
+
+Backward induction starts at the **end** of the game (the last decision node), determines what the last player would rationally do, then moves backwards — each earlier player anticipates the later players' rational choices. This filters out non-credible threats automatically.
+:::
+
+</div>
+
+## Exercise 3: Open Question :writing_hand:
+
+<div style="font-size: 58%;">
+
+**An established surf school in Ericeira** (Incumbent) faces a potential new competitor (Entrant). The game is sequential:
+
+- **Move 1**: Entrant decides whether to **Enter** or **Stay Out**
+- **Move 2**: If Entrant enters, Incumbent decides whether to **Fight** (aggressive price cuts, heavy advertising) or **Accommodate** (maintain prices, share the market)
+
+Payoffs (€k per season): (Entrant, Incumbent)
+
+- Stay Out: **(0, 400)**
+- Enter → Fight: **(−80, −20)**
+- Enter → Accommodate: **(150, 200)**
+
+**a)** Draw the game tree.
+
+**b)** Use backward induction to find the solution. What does the Entrant do? What does the Incumbent do?
+
+**c)** Is the Incumbent's threat to fight credible? Explain.
+
+**d)** Now suppose the Incumbent can invest **€100k** before the game to buy exclusive rights to the best beach section. This changes the payoffs to: Stay Out = (0, 300); Enter → Fight = (−80, 80); Enter → Accommodate = (150, 100). Use backward induction on this new game. Does the Entrant still enter?
+
+**e)** Was the €100k investment worthwhile for the Incumbent? Compare the Incumbent's payoff with and without the investment.
+
+**f)** Relate this to a real-world tourism example: why do established hotels invest heavily in loyalty programs and brand renovations even when no new competitor is currently threatening?
+
+</div>
+
+## Exercise 3: Solution — Parts a & b
+
+<div style="font-size: 72%;">
+
+**a)** Game tree:
+
+- **Root**: Entrant chooses Enter or Stay Out
+- If Stay Out → terminal node: **(0, 400)**
+- If Enter → Incumbent chooses Fight or Accommodate
+  - Fight → terminal node: **(−80, −20)**
+  - Accommodate → terminal node: **(150, 200)**
+
+**b)** Backward induction:
+
+**Step 1** (Incumbent's decision, if Entrant has entered):
+
+- Fight → Incumbent gets **−20** :x:
+- Accommodate → Incumbent gets **200** :white_check_mark:
+
+Incumbent will **Accommodate**.
+
+**Step 2** (Entrant's decision, knowing Incumbent will Accommodate):
+
+- Stay Out → Entrant gets **0**
+- Enter → (Incumbent accommodates) → Entrant gets **150** :white_check_mark:
+
+**Solution**: **Entrant enters, Incumbent accommodates**. Payoffs: **(150, 200)**.
+
+</div>
+
+## Exercise 3: Solution — Parts c & d
+
+<div style="font-size: 70%;">
+
+**c)** Is the threat to fight credible?
+
+**No!** If the Entrant enters, the Incumbent faces: Fight (−20) vs Accommodate (200). Fighting makes the Incumbent **worse off**. No rational Incumbent would follow through. The threat is a **bluff**, and the Entrant knows it.
+
+**d)** New game (after €100k investment in exclusive beach rights):
+
+**Step 1** (Incumbent, if Entrant enters):
+
+- Fight → Incumbent gets **80** :white_check_mark:
+- Accommodate → Incumbent gets **100** :white_check_mark:
+
+Wait — Accommodate (100) > Fight (80), so Incumbent still accommodates!
+
+**Step 2** (Entrant, knowing Incumbent accommodates):
+
+- Stay Out → **0**
+- Enter → **150** :white_check_mark:
+
+**Entrant still enters!** The investment didn't change the game's outcome because Accommodate is still better than Fight for the Incumbent. The threat to fight is **still not credible**.
+
+:warning: The investment only works as entry deterrence if it makes Fight **better** than Accommodate for the Incumbent!
+
+</div>
+
+## Exercise 3: Solution — Parts e & f
+
+<div style="font-size: 72%;">
+
+**e)** Was the investment worthwhile?
+
+| | Without investment | With investment |
+|---|:---:|:---:|
+| Outcome | Enter, Accommodate | Enter, Accommodate |
+| Incumbent payoff | €200k | €100k (200 − 100 investment) |
+| Entrant payoff | €150k | €150k |
+
+The investment cost €100k but **didn't deter entry** — the Incumbent is **worse off** by €100k! The investment was **not worthwhile** because it failed to make the threat credible.
+
+:point_right: **Lesson**: Not all investments deter entry. The commitment must change the Incumbent's **incentives** so that fighting becomes the rational choice after entry. Only then does the Entrant stay out.
+
+**f)** Real-world application: Hotels invest in loyalty programs and renovations as **commitment devices**. These investments are sunk costs that make it **more rational** to compete aggressively (protecting the return on investment) and signal to potential entrants that the market is well-defended. Even without a visible threat, the investment **raises the bar** for entry — potential competitors see the commitment and reconsider entering.
+
+</div>
+
+## Next Lecture {.center}
+
+**April 24, 2026**: The Main Macroeconomic Issues :globe_with_meridians:
+
+We zoom out from individual firms and strategic games to the **whole economy**!
+
+. . .
+
+:wave: **This completes the Game Theory block!**
+
+Micro is done (Consumer + Producer + Game Theory). Now: **Macro!**
+
+## Thank You! {.center}
+
+**Questions?** :raising_hand:
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+
+*Next class: Thursday, April 24, 2026*
+
+::: {.notes}
+This lecture completes the game theory module by introducing sequential games, game trees, and backward induction. The key conceptual payoff is the distinction between credible and non-credible threats — students learn that not all threats should be believed, and that backward induction automatically filters out bluffs. The entry game is the central example, first without commitment (entry succeeds) and then with commitment (entry deterred). The exercise deliberately includes a case where the investment FAILS to deter entry, teaching students that commitment only works if it changes the incentive structure at the relevant decision node. This avoids the common misconception that any investment deters entry.
+:::

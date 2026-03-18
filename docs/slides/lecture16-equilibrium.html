@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <meta name="author" content="Paulo Fagandini">
+  <meta name="dcterms.date" content="2026-01-01">
+  <title>Economics of Tourism – Producer Theory</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e109428474854d908f205605d54b47e4.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Producer Theory</h1>
+  <p class="subtitle">Lecture 16: Short Run &amp; Long Run Market Equilibrium</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Paulo Fagandini 
+</div>
+</div>
+</div>
+
+  <p class="date">2026</p>
+</section>
+<section id="recap-where-we-are" class="slide level2">
+<h2>Recap: Where We Are <span class="emoji" data-emoji="rewind">⏪</span></h2>
+<div style="font-size: 78%;">
+<p>Over Lectures 5–15, we built <strong>both sides</strong> of the market:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="shopping_cart">🛒</span> <strong>Demand side</strong> (L5–L9):</p>
+<ul>
+<li>Utility maximization → demand curve</li>
+<li>Market demand (horizontal sum)</li>
+<li>Consumer surplus</li>
+<li>Demand elasticity</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="factory">🏭</span> <strong>Supply side</strong> (L10–L15):</p>
+<ul>
+<li>Cost structure → <span class="math inline">\(P = MC\)</span> → supply curve</li>
+<li>Market supply (horizontal sum)</li>
+<li>Producer surplus</li>
+<li>Supply elasticity</li>
+</ul>
+</div></div>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="dart">🎯</span> <strong>Today</strong>: We put them <strong>together</strong> to find the market equilibrium — the price and quantity where buyers and sellers agree. This is the <strong>payoff</strong> of the entire course so far!</p>
+</div>
+</section>
+<section>
+<section id="short-run-market-equilibrium" class="title-slide slide level1 center">
+<h1>Short-Run Market Equilibrium</h1>
+
+</section>
+<section id="where-supply-meets-demand" class="slide level2">
+<h2>Where Supply Meets Demand <span class="emoji" data-emoji="handshake">🤝</span></h2>
+<div style="font-size: 78%;">
+<div class="key-concept">
+<p><strong>Market Equilibrium</strong></p>
+<p>The price and quantity at which <strong>quantity demanded equals quantity supplied</strong>:</p>
+<p><span class="math display">\[Q_d(P^*) = Q_s(P^*)\]</span></p>
+<p>At the equilibrium price <span class="math inline">\(P^*\)</span>, every buyer who wants to buy at that price can, and every seller who wants to sell can. <strong>No one is left unsatisfied.</strong></p>
+</div>
+<p><strong>Finding equilibrium algebraically</strong> (linear curves):</p>
+<p>Given <span class="math inline">\(D: P = 50 - 0.5Q\)</span> and <span class="math inline">\(S: P = 10 + 0.25Q\)</span></p>
+<p>Set equal: <span class="math inline">\(50 - 0.5Q = 10 + 0.25Q\)</span> → <span class="math inline">\(40 = 0.75Q\)</span> → <span class="math inline">\(Q^* = 53.3\)</span> → <span class="math inline">\(P^* = €23.3\)</span></p>
+<p><span class="emoji" data-emoji="point_right">👉</span> At this price, the quantity buyers want to buy <strong>exactly matches</strong> the quantity sellers want to sell.</p>
+</div>
+</section>
+<section id="equilibrium-graphically" class="slide level2">
+<h2>Equilibrium Graphically <span class="emoji" data-emoji="bar_chart">📊</span></h2>
+
+<img data-src="lecture16-equilibrium_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1056"></section>
+<section id="what-happens-away-from-equilibrium" class="slide level2">
+<h2>What Happens Away from Equilibrium? <span class="emoji" data-emoji="warning">⚠️</span></h2>
+<div style="font-size: 76%;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Price too HIGH</strong> (<span class="math inline">\(P &gt; P^*\)</span>): <strong>Surplus</strong> (excess supply)</p>
+<ul>
+<li><span class="math inline">\(Q_s &gt; Q_d\)</span> → goods pile up</li>
+<li>Sellers compete by <strong>lowering prices</strong></li>
+<li>Price falls toward <span class="math inline">\(P^*\)</span></li>
+</ul>
+<p><span class="emoji" data-emoji="hotel">🏨</span> <em>Tourism</em>: Hotels with too many empty rooms in off-season → prices drop on Booking.com</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Price too LOW</strong> (<span class="math inline">\(P &lt; P^*\)</span>): <strong>Shortage</strong> (excess demand)</p>
+<ul>
+<li><span class="math inline">\(Q_d &gt; Q_s\)</span> → not enough goods</li>
+<li>Buyers compete by <strong>bidding prices up</strong></li>
+<li>Price rises toward <span class="math inline">\(P^*\)</span></li>
+</ul>
+<p><span class="emoji" data-emoji="airplane">✈️</span> <em>Tourism</em>: Flight demand exceeds seats during holidays → prices rise, last-minute fares skyrocket</p>
+</div></div>
+<p>. . .</p>
+<div class="key-concept">
+<p><strong>Self-Correcting Mechanism</strong></p>
+<p>Markets <strong>naturally tend toward equilibrium</strong>. Surpluses push prices down; shortages push prices up. This process continues until <span class="math inline">\(Q_d = Q_s\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="the-four-shift-rules" class="slide level2">
+<h2>The Four Shift Rules <span class="emoji" data-emoji="arrows_counterclockwise">🔄</span></h2>
+<div style="font-size: 68%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture16-equilibrium_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-four-rules-summarized" class="slide level2">
+<h2>The Four Rules Summarized <span class="emoji" data-emoji="clipboard">📋</span></h2>
+<div style="font-size: 78%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 31%">
+<col style="width: 31%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Shift</th>
+<th style="text-align: center;">Price</th>
+<th style="text-align: center;">Quantity</th>
+<th>Tourism Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Demand ↑</strong> (right)</td>
+<td style="text-align: center;">↑</td>
+<td style="text-align: center;">↑</td>
+<td>Summer season → more tourists want hotels</td>
+</tr>
+<tr class="even">
+<td><strong>Demand ↓</strong> (left)</td>
+<td style="text-align: center;">↓</td>
+<td style="text-align: center;">↓</td>
+<td>Pandemic → fewer tourists travel</td>
+</tr>
+<tr class="odd">
+<td><strong>Supply ↑</strong> (right)</td>
+<td style="text-align: center;">↓</td>
+<td style="text-align: center;">↑</td>
+<td>New technology → cheaper flights</td>
+</tr>
+<tr class="even">
+<td><strong>Supply ↓</strong> (left)</td>
+<td style="text-align: center;">↑</td>
+<td style="text-align: center;">↓</td>
+<td>Fuel crisis → airline costs rise</td>
+</tr>
+</tbody>
+</table>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="warning">⚠️</span> <strong>When both curves shift simultaneously</strong>, the direction of <strong>one</strong> variable (P or Q) becomes <strong>ambiguous</strong> — it depends on the <strong>relative size</strong> of the shifts.</p>
+<p><strong>Example</strong>: Summer in the Algarve — demand shifts right (tourists) AND supply shifts right (seasonal workers). Quantity definitely rises, but price? Depends on which shift is bigger!</p>
+</div>
+</section>
+<section id="welfare-at-equilibrium" class="slide level2">
+<h2>Welfare at Equilibrium <span class="emoji" data-emoji="star">⭐</span></h2>
+<div style="font-size: 78%;">
+<div class="key-concept">
+<p><strong>Total Economic Welfare</strong></p>
+<p><span class="math display">\[W = CS + PS\]</span></p>
+<p>At the competitive equilibrium, total welfare is <strong>maximized</strong>. Any other price/quantity combination would reduce the combined surplus.</p>
+</div>
+<p>From our example (<span class="math inline">\(D: P = 50 - 0.5Q\)</span>, <span class="math inline">\(S: P = 10 + 0.25Q\)</span>, <span class="math inline">\(Q^* \approx 53.3\)</span>, <span class="math inline">\(P^* \approx 23.3\)</span>):</p>
+<p><span class="math display">\[CS = \frac{1}{2} \times 53.3 \times (50 - 23.3) = \frac{1}{2} \times 53.3 \times 26.7 \approx €711\]</span></p>
+<p><span class="math display">\[PS = \frac{1}{2} \times 53.3 \times (23.3 - 10) = \frac{1}{2} \times 53.3 \times 13.3 \approx €356\]</span></p>
+<p><span class="math display">\[W = 711 + 356 \approx €1{,}067\]</span></p>
+<p><span class="emoji" data-emoji="point_right">👉</span> Any <strong>tax</strong>, <strong>price ceiling</strong>, or <strong>price floor</strong> would reduce total welfare by creating <strong>deadweight loss</strong>.</p>
+</div>
+</section></section>
+<section>
+<section id="long-run-market-equilibrium" class="title-slide slide level1 center">
+<h1>Long-Run Market Equilibrium</h1>
+
+</section>
+<section id="the-short-run-vs-long-run-revisited" class="slide level2">
+<h2>The Short Run vs Long Run Revisited <span class="emoji" data-emoji="hourglass">⌛</span></h2>
+<div style="font-size: 78%;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="lock">🔒</span> <strong>Short-run equilibrium</strong>:</p>
+<ul>
+<li>Number of firms is <strong>fixed</strong></li>
+<li>Firms may earn <strong>positive profit</strong>, <strong>zero profit</strong>, or <strong>losses</strong></li>
+<li>Some factors of production are fixed</li>
+<li>This is what we’ve been analyzing!</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="unlock">🔓</span> <strong>Long-run equilibrium</strong>:</p>
+<ul>
+<li>Firms can <strong>enter</strong> or <strong>exit</strong> the market</li>
+<li>All factors of production are variable</li>
+<li>A special condition emerges: <strong>zero economic profit</strong></li>
+<li>The market adjusts to a new, more fundamental equilibrium</li>
+</ul>
+</div></div>
+<p>. . .</p>
+<div class="key-concept">
+<p><strong>The Key Long-Run Question</strong></p>
+<p>What happens over time when firms in a competitive market are earning positive profits? Or making losses?</p>
+</div>
+</div>
+</section>
+<section id="the-entry-and-exit-mechanism" class="slide level2">
+<h2>The Entry and Exit Mechanism <span class="emoji" data-emoji="door">🚪</span></h2>
+<div style="font-size: 76%;">
+<p><strong>If firms earn positive economic profit</strong> (<span class="math inline">\(P &gt; ATC\)</span>):</p>
+<ol type="1">
+<li><span class="emoji" data-emoji="arrow_right">➡️</span> New firms are attracted → they <strong>enter</strong> the market</li>
+<li><span class="emoji" data-emoji="chart_with_upwards_trend">📈</span> Market supply shifts <strong>right</strong> (more firms = more supply)</li>
+<li><span class="emoji" data-emoji="arrow_down">⬇️</span> Equilibrium price <strong>falls</strong></li>
+<li><span class="emoji" data-emoji="repeat">🔁</span> Process continues until <span class="math inline">\(P = ATC_{\min}\)</span> → <strong>zero economic profit</strong></li>
+</ol>
+<p><strong>If firms make losses</strong> (<span class="math inline">\(P &lt; ATC\)</span>):</p>
+<ol type="1">
+<li><span class="emoji" data-emoji="arrow_left">⬅️</span> Some firms <strong>exit</strong> the market</li>
+<li><span class="emoji" data-emoji="chart_with_downwards_trend">📉</span> Market supply shifts <strong>left</strong> (fewer firms = less supply)</li>
+<li><span class="emoji" data-emoji="arrow_up">⬆️</span> Equilibrium price <strong>rises</strong></li>
+<li><span class="emoji" data-emoji="repeat">🔁</span> Process continues until <span class="math inline">\(P = ATC_{\min}\)</span> → <strong>zero economic profit</strong></li>
+</ol>
+<p>. . .</p>
+<div class="key-concept">
+<p><strong>Long-Run Equilibrium Condition</strong></p>
+<p>In a perfectly competitive market: <span class="math inline">\(P = MC = ATC_{\min}\)</span></p>
+<p>Firms produce at minimum average cost and earn <strong>zero economic profit</strong>.</p>
+</div>
+</div>
+</section>
+<section id="visualizing-the-long-run-adjustment" class="slide level2">
+<h2>Visualizing the Long-Run Adjustment <span class="emoji" data-emoji="cinema">🎦</span></h2>
+<div style="font-size: 68%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture16-equilibrium_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>(a)</strong> Positive profits attract <strong>entry</strong> → supply shifts right → price falls. <strong>(b)</strong> Price falls until <span class="math inline">\(P = ATC_{\min}\)</span> → zero economic profit → <strong>entry stops</strong>.</p>
+</div>
+</section>
+<section id="zero-profit-failure" class="slide level2">
+<h2>Zero Profit ≠ Failure! <span class="emoji" data-emoji="bulb">💡</span></h2>
+<div style="font-size: 78%;">
+<p><strong>“Zero economic profit”</strong> sounds bad — but remember what it means:</p>
+<div class="key-concept">
+<p><strong>Zero Economic Profit</strong></p>
+<p>The firm covers <strong>all</strong> costs, including the <strong>opportunity cost</strong> of the owner’s time and capital. The owner earns exactly what they could earn in their <strong>best alternative</strong> — a <strong>normal return</strong>.</p>
+<p><span class="math display">\[\text{Economic Profit} = 0 \implies \text{Accounting Profit} = \text{Normal Return}\]</span></p>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>What zero economic profit means</strong>:</p>
+<ul>
+<li>The business is sustainable</li>
+<li>The owner has no reason to leave</li>
+<li>No new firms want to enter</li>
+<li>The market is in <strong>long-run rest</strong></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="x">❌</span> <strong>What it does NOT mean</strong>:</p>
+<ul>
+<li>The owner earns no money</li>
+<li>The business is failing</li>
+<li>The owner should close</li>
+<li>There are no accounting profits</li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="the-long-run-supply-curve" class="slide level2">
+<h2>The Long-Run Supply Curve <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
+<div style="font-size: 76%;">
+<p>If all firms have the <strong>same cost structure</strong> (constant-cost industry):</p>
+<div class="key-concept">
+<p><strong>Long-Run Supply in a Constant-Cost Industry</strong></p>
+<p>The long-run supply curve is <strong>horizontal</strong> at <span class="math inline">\(P = ATC_{\min}\)</span>.</p>
+<ul>
+<li>If demand increases → new firms enter, supply shifts right, price returns to <span class="math inline">\(ATC_{\min}\)</span></li>
+<li>If demand decreases → firms exit, supply shifts left, price returns to <span class="math inline">\(ATC_{\min}\)</span></li>
+<li><strong>Quantity adjusts</strong>, but <strong>price stays the same</strong> in the long run!</li>
+</ul>
+</div>
+<p><span class="emoji" data-emoji="point_right">👉</span> In reality, costs may <strong>rise</strong> as the industry grows (increasing-cost industry → upward-sloping LR supply) or <strong>fall</strong> (decreasing-cost industry → downward-sloping LR supply). But the constant-cost case is the baseline.</p>
+<p><strong>Tourism</strong>: The long-run supply of standardized tour packages may be nearly horizontal — if tour operators can easily enter/exit and all face similar costs, the long-run price settles at the minimum cost of providing a tour.</p>
+</div>
+</section></section>
+<section>
+<section id="tourism-application" class="title-slide slide level1 center">
+<h1>Tourism Application</h1>
+
+</section>
+<section id="tourism-markets-sr-vs-lr" class="slide level2">
+<h2>Tourism Markets: SR vs LR <span class="emoji" data-emoji="airplane">✈️</span></h2>
+<div style="font-size: 72%;">
+<p><strong>What happened to Lisbon’s hotel market after the tourism boom (post-2015)?</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="one">1️⃣</span> <strong>Short run</strong> (2015–2017):</p>
+<ul>
+<li>Demand surged (low-cost airlines, Lisbon’s popularity)</li>
+<li>Supply was <strong>fixed</strong> (existing hotels)</li>
+<li>Result: <strong>prices skyrocketed</strong>, occupancy hit record highs</li>
+<li>Existing hotels earned <strong>large profits</strong></li>
+<li><span class="math inline">\(P &gt;&gt; ATC_{\min}\)</span> → well above breakeven</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="two">2️⃣</span> <strong>Long run</strong> (2018–2024):</p>
+<ul>
+<li>Profits attracted <strong>entry</strong>: new hotels, Airbnb, hostels</li>
+<li>Supply shifted <strong>right</strong> significantly</li>
+<li>Result: prices stabilized (or even fell for some segments)</li>
+<li>Competition increased, profit margins <strong>narrowed</strong></li>
+<li>Market moved toward <span class="math inline">\(P \approx ATC_{\min}\)</span></li>
+</ul>
+<p><span class="emoji" data-emoji="point_right">👉</span> This is the <strong>entry mechanism</strong> in action!</p>
+</div></div>
+<p>. . .</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> The pandemic (2020–2021) reversed this: demand collapsed → firms exited → supply shifted left → the cycle restarted.</p>
+</div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary <span class="emoji" data-emoji="memo">📝</span></h2>
+<div style="font-size: 70%;">
+<p><strong>Today’s Key Takeaways</strong>:</p>
+<ol type="1">
+<li><strong>SR equilibrium</strong>: where <span class="math inline">\(Q_d = Q_s\)</span>. Price too high → surplus (price falls). Price too low → shortage (price rises).</li>
+<li><strong>Four shift rules</strong>: D↑ → P↑Q↑; D↓ → P↓Q↓; S↑ → P↓Q↑; S↓ → P↑Q↓</li>
+<li><strong>Simultaneous shifts</strong>: direction of one variable is ambiguous — depends on magnitude</li>
+<li><strong>Total welfare</strong> = CS + PS, maximized at competitive equilibrium</li>
+<li><strong>LR equilibrium</strong>: entry (if profit &gt; 0) and exit (if profit &lt; 0) drive <span class="math inline">\(P → ATC_{\min}\)</span></li>
+<li><strong>Zero economic profit</strong> in the LR = normal return = sustainable. It’s not failure!</li>
+<li><strong>LR supply</strong> (constant-cost): horizontal at <span class="math inline">\(P = ATC_{\min}\)</span></li>
+</ol>
+<p><strong>This completes the Producer Theory block!</strong> <span class="emoji" data-emoji="tada">🎉</span></p>
+<p>Lectures 10–16: Costs → Profit max → Shutdown → Supply rule → PS &amp; Market supply → Elasticity → Equilibrium</p>
+<p><strong>Next (Lecture 17, April 17)</strong>: Introduction to Game Theory — Prisoner’s Dilemma &amp; Nash Equilibrium <span class="emoji" data-emoji="chess_pawn">♟️</span></p>
+</div>
+</section>
+<section id="exercises" class="slide level2 center">
+<h2>Exercises</h2>
+<p><strong>Practice Time!</strong> <span class="emoji" data-emoji="pencil2">✏️</span></p>
+<p>Market equilibrium, shifts, and long-run adjustment.</p>
+</section>
+<section id="exercise-1-multiple-choice" class="slide level2">
+<h2>Exercise 1: Multiple Choice</h2>
+<div style="font-size: 82%;">
+<p><strong>Question</strong>: In the Algarve hotel market, a new low-cost airline begins flying to Faro from Northern Europe. At the same time, the Portuguese government introduces a new tourist tax on hotel stays. What is the effect on the equilibrium <strong>quantity</strong> of hotel room-nights?</p>
+<p>A. Quantity definitely increases</p>
+<p>B. Quantity definitely decreases</p>
+<p>C. Quantity definitely stays the same</p>
+<p>D. The effect on quantity is ambiguous</p>
+<div class="fragment">
+<div class="highlight-box">
+<p><strong>Answer: D</strong></p>
+</div>
+<p>The new airline increases demand (shift right → Q↑). The tourist tax increases costs (supply shifts left → Q↓). Since one shift pushes Q up and the other pushes Q down, the net effect is <strong>ambiguous</strong> — it depends on which shift is larger. However, we can say that price <strong>definitely rises</strong> (both shifts push P upward).</p>
+</div>
+</div>
+</section>
+<section id="exercise-2-multiple-choice" class="slide level2">
+<h2>Exercise 2: Multiple Choice</h2>
+<div style="font-size: 82%;">
+<p><strong>Question</strong>: In a perfectly competitive market, if firms are currently earning positive economic profits in the short run, what will happen in the long run?</p>
+<p>A. The government will impose a price ceiling</p>
+<p>B. New firms enter, supply shifts right, price falls until profit = 0</p>
+<p>C. Existing firms raise prices to increase profits further</p>
+<p>D. Demand shifts left as consumers find substitutes</p>
+<div class="fragment">
+<div class="highlight-box">
+<p><strong>Answer: B</strong></p>
+</div>
+<p>Positive profit → <strong>entry</strong> → supply shifts right → equilibrium price falls → profit is competed away until <span class="math inline">\(P = ATC_{\min}\)</span> → <strong>zero economic profit</strong>. This is the self-correcting mechanism of competitive markets. No government action needed (A), firms can’t set prices (C — they’re price takers!), and the question is about the supply side, not demand (D).</p>
+</div>
+</div>
+</section>
+<section id="exercise-3-open-question" class="slide level2">
+<h2>Exercise 3: Open Question <span class="emoji" data-emoji="writing_hand">✍️</span></h2>
+<div style="font-size: 60%;">
+<p><strong>The market for guided walking tours in Sintra</strong> has the following curves:</p>
+<ul>
+<li><strong>Demand</strong>: <span class="math inline">\(P = 40 - 0.2Q\)</span> (€ per tour)</li>
+<li><strong>Short-run supply</strong>: <span class="math inline">\(P = 8 + 0.12Q\)</span> (€ per tour)</li>
+</ul>
+<p>All firms are identical with <span class="math inline">\(ATC_{\min} = €20\)</span>.</p>
+<p><strong>a)</strong> Find the short-run equilibrium price and quantity.</p>
+<p><strong>b)</strong> Calculate CS, PS, and total welfare at the SR equilibrium.</p>
+<p><strong>c)</strong> Are firms making positive economic profit, zero profit, or losses? How do you know?</p>
+<p><strong>d)</strong> Describe what will happen in the <strong>long run</strong>. What will the new equilibrium price be? Will the number of firms increase or decrease?</p>
+<p><strong>e)</strong> A surge in tourist arrivals shifts demand to <span class="math inline">\(P = 52 - 0.2Q\)</span>. Find the new SR equilibrium. Are firms now earning profits or losses?</p>
+<p><strong>f)</strong> After the demand surge, describe the long-run adjustment process. What is the final LR equilibrium price?</p>
+</div>
+</section>
+<section id="exercise-3-solution-parts-a-b" class="slide level2">
+<h2>Exercise 3: Solution — Parts a &amp; b</h2>
+<div style="font-size: 68%;">
+<p><strong>a)</strong> SR equilibrium: <span class="math inline">\(40 - 0.2Q = 8 + 0.12Q\)</span></p>
+<p><span class="math inline">\(32 = 0.32Q\)</span> → <span class="math inline">\(Q^* = 100\)</span> tours, <span class="math inline">\(P^* = 40 - 0.2(100) = €20\)</span></p>
+<p><strong>b)</strong> At (<span class="math inline">\(Q^* = 100\)</span>, <span class="math inline">\(P^* = €20\)</span>):</p>
+<p><span class="math display">\[CS = \frac{1}{2} \times 100 \times (40 - 20) = \frac{1}{2} \times 100 \times 20 = €1{,}000\]</span></p>
+<p><span class="math display">\[PS = \frac{1}{2} \times 100 \times (20 - 8) = \frac{1}{2} \times 100 \times 12 = €600\]</span></p>
+<p><span class="math display">\[W = CS + PS = 1{,}000 + 600 = €1{,}600\]</span></p>
+</div>
+</section>
+<section id="exercise-3-solution-parts-c-d" class="slide level2">
+<h2>Exercise 3: Solution — Parts c &amp; d</h2>
+<div style="font-size: 70%;">
+<p><strong>c)</strong> <span class="math inline">\(P^* = €20 = ATC_{\min} = €20\)</span></p>
+<p>Since price equals minimum ATC, firms are earning <strong>zero economic profit</strong>. The market is already at its <strong>long-run equilibrium</strong>! <span class="emoji" data-emoji="white_check_mark">✅</span></p>
+<p><strong>d)</strong> Since profit is already zero, there is <strong>no incentive</strong> for firms to enter or exit. The long-run equilibrium price <strong>stays at €20</strong>. The number of firms remains the same.</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> This is a special case where SR equilibrium <strong>coincides</strong> with LR equilibrium — the market is at rest.</p>
+</div>
+</section>
+<section id="exercise-3-solution-parts-e-f" class="slide level2">
+<h2>Exercise 3: Solution — Parts e &amp; f</h2>
+<div style="font-size: 68%;">
+<p><strong>e)</strong> New demand: <span class="math inline">\(P = 52 - 0.2Q\)</span></p>
+<p>New SR equilibrium: <span class="math inline">\(52 - 0.2Q = 8 + 0.12Q\)</span> → <span class="math inline">\(44 = 0.32Q\)</span> → <span class="math inline">\(Q^* = 137.5\)</span>, <span class="math inline">\(P^* = 52 - 0.2(137.5) = €24.50\)</span></p>
+<p>Since <span class="math inline">\(P^* = €24.50 &gt; ATC_{\min} = €20\)</span>: firms are now earning <strong>positive economic profit</strong>!</p>
+<p>Profit per firm = <span class="math inline">\((24.50 - 20) \times q_i = €4.50 \times q_i &gt; 0\)</span> (exact firm quantity depends on individual MC).</p>
+<p><strong>f)</strong> Long-run adjustment:</p>
+<ol type="1">
+<li>Positive profits attract <strong>new firms</strong> → they enter the market</li>
+<li>Supply shifts <strong>right</strong> (more firms)</li>
+<li>Equilibrium price <strong>falls</strong> from €24.50 toward <span class="math inline">\(ATC_{\min}\)</span></li>
+<li>Entry continues until <span class="math inline">\(P = ATC_{\min} = €20\)</span></li>
+</ol>
+<p><strong>Final LR equilibrium</strong>: <span class="math inline">\(P_{LR} = €20\)</span>. At this price with the new demand: <span class="math inline">\(Q = \frac{52 - 20}{0.2} = 160\)</span> tours.</p>
+<p>The market serves <strong>more tours</strong> (160 vs 100 originally) at the <strong>same price</strong> (€20). The adjustment came entirely through <strong>more firms</strong> entering, not through higher prices. <span class="emoji" data-emoji="white_check_mark">✅</span></p>
+</div>
+</section>
+<section id="next-lecture" class="slide level2 center">
+<h2>Next Lecture</h2>
+<p><strong>April 17, 2026</strong>: Introduction to Game Theory — Prisoner’s Dilemma &amp; Nash Equilibrium <span class="emoji" data-emoji="chess_pawn">♟️</span></p>
+<p>A brand new topic — what happens when firms are <strong>not</strong> price takers and <strong>interact strategically</strong>?</p>
+<div class="fragment">
+<p><span class="emoji" data-emoji="wave">👋</span> <strong>This completes the Producer Theory block!</strong> Time to move beyond perfect competition.</p>
+</div>
+</section>
+<section id="thank-you" class="slide level2 center">
+<h2>Thank You!</h2>
+<p><strong>Questions?</strong> <span class="emoji" data-emoji="raising_hand">🙋</span></p>
+<p><span class="emoji" data-emoji="email">📧</span> paulo.fagandini@ext.universidadeeuropeia.pt</p>
+</section>
+<section class="slide level2">
+
+<p><em>Next class: Friday, April 17, 2026</em></p>
+<aside class="notes">
+<p>This is the capstone lecture of the producer theory block. It ties together everything from Lectures 10–15: cost curves determine supply, supply meets demand at equilibrium, and the long-run entry/exit mechanism drives profits to zero. The Lisbon hotel boom example makes the LR adjustment process tangible. Students should leave understanding that competitive markets self-correct through entry and exit, and that zero economic profit is the natural long-run state — not a sign of failure. The exercise deliberately starts at a long-run equilibrium, then shocks demand to show the full SR→LR adjustment process.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Economics of Tourism | Lecture 16</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
