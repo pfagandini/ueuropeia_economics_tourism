@@ -2160,14 +2160,14 @@
     "href": "slides/lecture10-costs.html#welcome-back",
     "title": "Producer Theory",
     "section": "Welcome Back! 👋",
-    "text": "Welcome Back! 👋\nWe’ve crossed the aisle:\n🛒 Lectures 5–9: Consumer Theory (demand side)\n🏭 Lectures 10–17: Producer Theory (supply side)\n\n🎯 Today’s Goal: Understand the cost structure of firms\nHow do costs behave as production changes?"
+    "text": "Welcome Back! 👋\nWe’ve crossed the aisle:\n🛒 Lectures 5–9: Consumer Theory (demand side)\n🏭 Lectures 10–15: Producer Theory (supply side)\n\n🎯 Today’s Goal: Understand the cost structure of firms\nHow do costs behave as production changes?"
   },
   {
     "objectID": "slides/lecture10-costs.html#the-other-side-of-the-market",
     "href": "slides/lecture10-costs.html#the-other-side-of-the-market",
     "title": "Producer Theory",
     "section": "The Other Side of the Market 🤝",
-    "text": "The Other Side of the Market 🤝\n\n\n\nConsumer (Lectures 5–9):\n\nMaximizes utility 📈\nSubject to budget constraint\nGenerates demand curves\nTools: indifference curves, MRS, budget line\n\n\nProducer (Lectures 10–17):\n\nMaximizes profit 💰\nSubject to cost structure\nGenerates supply curves\nTools: cost curves, marginal analysis\n\n\n. . .\n💡 Key parallel: Just as consumers face trade-offs with limited income, producers face trade-offs with limited resources and technology."
+    "text": "The Other Side of the Market 🤝\n\n\n\nConsumer (Lectures 5–9):\n\nMaximizes utility 📈\nSubject to budget constraint\nGenerates demand curves\nTools: indifference curves, MRS, budget line\n\n\nProducer (Lectures 10–15):\n\nMaximizes profit 💰\nSubject to cost structure\nGenerates supply curves\nTools: cost curves, marginal analysis\n\n\n. . .\n💡 Key parallel: Just as consumers face trade-offs with limited income, producers face trade-offs with limited resources and technology."
   },
   {
     "objectID": "slides/lecture10-costs.html#the-producers-problem",
@@ -2195,7 +2195,7 @@
     "href": "slides/lecture10-costs.html#the-law-of-diminishing-returns",
     "title": "Producer Theory",
     "section": "The Law of Diminishing Returns 📉",
-    "text": "The Law of Diminishing Returns 📉\n\n\nLaw of Diminishing Returns\nWhen we keep adding more of a variable input (e.g., workers) to a fixed input (e.g., a kitchen), eventually each additional worker adds less and less to total output.\n\nTourism example: A restaurant kitchen with 5 stoves :cooking:\n\nbulb: Why? The fixed input (kitchen space) gets congested. Chefs bump into each other, wait for stoves, compete for prep space.\n\n\nExtra chefs hired\nExtra meals/hour produced\n\n\n\n\n1st chef\n+30 meals\n\n\n2nd chef\n+25 meals\n\n\n3rd chef\n+18 meals\n\n\n4th chef\n+10 meals\n\n\n5th chef\n+4 meals (kitchen is crowded!)"
+    "text": "The Law of Diminishing Returns 📉\n\n\nLaw of Diminishing Returns\nWhen we keep adding more of a variable input (e.g., workers) to a fixed input (e.g., a kitchen), eventually each additional worker adds less and less to total output.\n\nTourism example: A restaurant kitchen with 5 stoves 🍳\n\n\n\n\n\n\n\n\nExtra chefs hired\nExtra meals/hour produced\nPhase\n\n\n\n\n1st chef\n+10 meals\nInitial Setup\n\n\n2nd chef\n+25 meals\nIncreasing returns (Specialization)\n\n\n3rd chef\n+18 meals\nDiminishing returns (Space starts to limit)\n\n\n4th chef\n+10 meals\nFurther diminishing\n\n\n5th chef\n+3 meals\nCrowding (Stoves are fully occupied!)\n\n\n\n\n💡 Why? The fixed input (kitchen space) gets congested. Chefs bump into each other, wait for stoves, compete for prep space."
   },
   {
     "objectID": "slides/lecture10-costs.html#the-cost-family",

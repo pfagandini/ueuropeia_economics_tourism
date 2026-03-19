@@ -42,7 +42,7 @@ ue_light_red <- "#F4C7CC"
 
 :shopping_cart: Lectures 5--9: **Consumer Theory** (demand side)
 
-:factory: Lectures 10--17: **Producer Theory** (supply side)
+:factory: Lectures 10--15: **Producer Theory** (supply side)
 
 . . .
 
@@ -67,7 +67,7 @@ How do costs behave as production changes?
 :::
 
 ::: {.column width="50%"}
-**Producer** (Lectures 10--17):
+**Producer** (Lectures 10--15):
 
 - Maximizes **profit** :moneybag:
 - Subject to **cost structure**
@@ -165,19 +165,21 @@ In the **short run**, the firm has both fixed and variable inputs. In the **long
 When we keep adding more of a **variable input** (e.g., workers) to a **fixed input** (e.g., a kitchen), eventually each additional worker adds **less and less** to total output.
 :::
 
-**Tourism example**: A restaurant kitchen with 5 stoves :cooking:
+**Tourism example**: A restaurant kitchen with 5 stoves :fried_egg:
 
-| Extra chefs hired | Extra meals/hour produced |
-|:---:|:---:|
-| 1st chef | +30 meals |
-| 2nd chef | +25 meals |
-| 3rd chef | +18 meals |
-| 4th chef | +10 meals |
-| 5th chef | +4 meals (kitchen is crowded!) |
+| Extra chefs hired | Extra meals/hour produced | Phase |
+|:---:|:---:|:---|
+| 1st chef | +10 meals | Initial Setup |
+| 2nd chef | +25 meals | **Increasing returns** (Specialization) |
+| 3rd chef | +18 meals | **Diminishing returns** (Space starts to limit) |
+| 4th chef | +10 meals | Further diminishing |
+| 5th chef | +3 meals | Crowding (Stoves are fully occupied!) |
+
+</div>
+
 
 :bulb: **Why?** The fixed input (kitchen space) gets **congested**. Chefs bump into each other, wait for stoves, compete for prep space.
 
-</div>
 
 # Types of Costs in the Short Run
 
