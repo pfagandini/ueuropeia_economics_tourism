@@ -143,9 +143,9 @@ p1 <- ggplot() +
   geom_segment(aes(x = 0, y = 7, xend = 250, yend = 7),
                linetype = "dashed", color = ue_gray) +
   # Labels
-  annotate("text", x = 470, y = 11.5, label = "S", color = ue_blue,
+  annotate("text", x = 470, y = 10.5, label = "S", color = ue_blue,
            fontface = "bold.italic", size = 6) +
-  annotate("text", x = 470, y = 2.5, label = "D", color = ue_red,
+  annotate("text", x = 470, y = 3.5, label = "D", color = ue_red,
            fontface = "bold.italic", size = 6) +
   annotate("text", x = 260, y = 7.8, label = "E", fontface = "bold", size = 5) +
   scale_x_continuous(limits = c(0, 520), expand = c(0, 0),
@@ -236,7 +236,7 @@ Q_data <- c(0, 10, 20, 30, 40, 50, 60)
 VC_data <- c(0, 800, 1400, 1900, 2600, 3500, 4800)
 FC_val <- 2000
 TC_data <- FC_val + VC_data
-P <- 90
+P <- 120
 TR_data <- P * Q_data
 Profit_data <- TR_data - TC_data
 
@@ -256,15 +256,15 @@ q_star <- Q_smooth[max_pi_idx]
 df_tr_tc <- data.frame(
   Q = rep(Q_smooth, 2),
   Value = c(TR_smooth, TC_smooth),
-  Curve = factor(rep(c("TR = 90 × Q", "TC = FC + VC"), each = length(Q_smooth)),
-                 levels = c("TR = 90 × Q", "TC = FC + VC"))
+  Curve = factor(rep(c("TR = 120 × Q", "TC = FC + VC"), each = length(Q_smooth)),
+                 levels = c("TR = 120 × Q", "TC = FC + VC"))
 )
 
 ggplot(df_tr_tc, aes(x = Q, y = Value, color = Curve, linetype = Curve)) +
   geom_line(linewidth = 1.4) +
-  scale_color_manual(values = c("TR = 90 × Q" = ue_green,
+  scale_color_manual(values = c("TR = 120 × Q" = ue_green,
                                 "TC = FC + VC" = ue_red)) +
-  scale_linetype_manual(values = c("TR = 90 × Q" = "solid",
+  scale_linetype_manual(values = c("TR = 120 × Q" = "solid",
                                    "TC = FC + VC" = "solid")) +
   # Profit-maximizing point
   geom_segment(aes(x = q_star, y = FC_val + vc_spline(q_star),
@@ -294,9 +294,9 @@ ggplot(df_tr_tc, aes(x = Q, y = Value, color = Curve, linetype = Curve)) +
   )
 ```
 
-:point_right: **Profit** = vertical gap between TR and TC. Maximum profit is where this gap is **widest** — at around **Q* ≈ 48 students**.
+:point_right: **Profit** = vertical gap between TR and TC. Maximum profit is where this gap is **widest** — at around **Q* ≈ 52 students**.
 
-*This uses the surf school data from last lecture's exercise, with P = €90/student.*
+*This uses the surf school data from last lecture's exercise, with P = €120/student.*
 
 </div>
 
