@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <meta name="author" content="Paulo Fagandini">
+  <meta name="dcterms.date" content="2026-01-01">
+  <title>Economics of Tourism – The Balance of Payments</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e109428474854d908f205605d54b47e4.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">The Balance of Payments</h1>
+  <p class="subtitle">Lecture 26: The Current Account and International Transactions</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Paulo Fagandini 
+</div>
+</div>
+</div>
+
+  <p class="date">2026</p>
+</section>
+<section id="recap-fiscal-policy" class="slide level2">
+<h2>Recap: Fiscal Policy <span class="emoji" data-emoji="rewind">⏪</span></h2>
+<p>Last lecture: the government’s lever for managing the economy:</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Expansionary</strong> — raise G / cut taxes → stimulate AD → fight recession</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Contractionary</strong> — cut G / raise taxes → cool AD → fight inflation or debt</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> The <strong>multiplier</strong>: one euro of government spending triggers more than one euro of GDP</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Automatic stabilisers</strong>: unemployment benefits and tax cycles cushion downturns automatically</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Portugal’s story</strong>: Troika austerity 2011–2014 → recovery → surplus 2019 → COVID stimulus 2020</p>
+<div class="fragment">
+<p><span class="emoji" data-emoji="point_right">👉</span> Today — the <strong>last lecture</strong> of the course <span class="emoji" data-emoji="mortar_board">🎓</span></p>
+<p>We zoom out to the global picture: <strong>how do we record all of a country’s international transactions?</strong></p>
+</div>
+</section>
+<section>
+<section id="part-i-what-is-the-balance-of-payments" class="title-slide slide level1 center">
+<h1>Part I: What is the Balance of Payments?</h1>
+
+</section>
+<section id="every-transaction-with-the-world" class="slide level2">
+<h2>Every Transaction With the World <span class="emoji" data-emoji="globe_with_meridians">🌐</span></h2>
+<p>Every time a Portuguese resident interacts economically with a foreign counterpart, that transaction needs to be recorded somewhere.</p>
+<div class="fragment">
+<p><span class="emoji" data-emoji="hotel">🏨</span> A German tourist pays €200/night at a Lisbon hotel</p>
+<p><span class="emoji" data-emoji="airplane">✈️</span> A Portuguese student buys a flight on Ryanair (Irish company)</p>
+<p><span class="emoji" data-emoji="factory">🏭</span> Volkswagen sends dividend payments from its Portuguese plant to Germany</p>
+<p><span class="emoji" data-emoji="bank">🏦</span> A Portuguese bank borrows from a French bank</p>
+<p><span class="emoji" data-emoji="eu">🇪🇺</span> Portugal receives EU structural funds</p>
+</div>
+<div class="fragment">
+<div class="key-concept">
+<p>The <strong>Balance of Payments (BoP)</strong> is a systematic record of <strong>all economic transactions</strong> between residents of a country and the rest of the world over a given period of time. It always <strong>balances</strong> — every transaction has a debit and a credit entry.</p>
+</div>
+</div>
+</section>
+<section id="the-structure-of-the-balance-of-payments" class="slide level2">
+<h2>The Structure of the Balance of Payments <span class="emoji" data-emoji="bar_chart">📊</span></h2>
+<p>The BoP is divided into three main accounts:</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><span class="emoji" data-emoji="shopping_cart">🛒</span> <strong>Current Account</strong></p>
+<p>Records flows of goods, services, income, and transfers</p>
+<ul>
+<li>Trade in goods</li>
+<li>Trade in services <em>(tourism is here)</em></li>
+<li>Primary income (wages, dividends)</li>
+<li>Secondary income (remittances, aid)</li>
+</ul>
+</div><div class="column" style="width:33%;">
+<p><span class="emoji" data-emoji="construction">🚧</span> <strong>Capital Account</strong></p>
+<p>Records transfers of non-produced, non-financial assets</p>
+<ul>
+<li>EU structural funds &amp; grants</li>
+<li>Debt forgiveness</li>
+<li>Relatively small for most countries</li>
+</ul>
+</div><div class="column" style="width:33%;">
+<p><span class="emoji" data-emoji="bank">🏦</span> <strong>Financial Account</strong></p>
+<p>Records flows of financial assets and liabilities</p>
+<ul>
+<li>Foreign Direct Investment (FDI)</li>
+<li>Portfolio investment (stocks, bonds)</li>
+<li>Other investment (bank loans)</li>
+<li>Reserve assets</li>
+</ul>
+</div></div>
+</div>
+<div class="fragment">
+<div class="key-concept">
+<p><strong>The fundamental identity:</strong> <span class="math display">\[\text{Current Account} + \text{Capital Account} + \text{Financial Account} = 0\]</span> Every euro that leaves the current account must come back through the financial account — the BoP always balances.</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="part-ii-the-current-account-in-depth" class="title-slide slide level1 center">
+<h1>Part II: The Current Account in Depth</h1>
+
+</section>
+<section id="current-account-components" class="slide level2">
+<h2>Current Account Components <span class="emoji" data-emoji="receipt">🧾</span></h2>
+<div class="key-concept">
+<p>The <strong>Current Account</strong> records <strong>all flows of real resources</strong> (goods, services, income) between a country and the rest of the world. <span class="math display">\[CA = \text{Trade in Goods} + \text{Trade in Services} + \text{Primary Income} + \text{Secondary Income}\]</span></p>
+</div>
+<div class="fragment">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Credit (inflow)</th>
+<th>Debit (outflow)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Goods</strong></td>
+<td>Exports of goods</td>
+<td>Imports of goods</td>
+</tr>
+<tr class="even">
+<td><strong>Services</strong></td>
+<td>Tourism receipts, transport</td>
+<td>Tourism abroad, freight</td>
+</tr>
+<tr class="odd">
+<td><strong>Primary income</strong></td>
+<td>Wages earned abroad, dividends received</td>
+<td>Profits sent to foreign owners</td>
+</tr>
+<tr class="even">
+<td><strong>Secondary income</strong></td>
+<td>Remittances received, EU transfers</td>
+<td>Remittances sent abroad, contributions</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p><span class="emoji" data-emoji="beach_umbrella">🏖️</span> <strong>Tourism sits in “Services”</strong> — one of the most important items in Portugal’s current account.</p>
+</div>
+</section>
+<section id="trade-in-goods-vs-trade-in-services" class="slide level2">
+<h2>Trade in Goods vs Trade in Services <span class="emoji" data-emoji="package">📦</span></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="package">📦</span> <strong>Trade in goods</strong> (the “visible trade balance”)</p>
+<p>Physical products that cross borders: - Portugal <strong>exports</strong>: wine, cork, footwear, machinery, olive oil - Portugal <strong>imports</strong>: cars, petroleum, electronics, machinery</p>
+<p>Portugal typically runs a <strong>goods trade deficit</strong> — imports more goods than it exports.</p>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="handshake">🤝</span> <strong>Trade in services</strong> (the “invisible trade balance”)</p>
+<p>Intangible services: - Portugal <strong>exports services</strong>: tourism (foreigners visiting), transport, financial services - Portugal <strong>imports services</strong>: travel abroad by Portuguese residents, shipping</p>
+<p>Portugal runs a <strong>services trade surplus</strong> — and <strong>tourism is the main reason</strong>.</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> Tourism receipts are one of Portugal’s most powerful economic engines, consistently offsetting the goods deficit.</p>
+</div></div>
+</section>
+<section id="current-account-balance-portugal" class="slide level2">
+<h2>Current Account Balance — Portugal <span class="emoji" data-emoji="portugal">🇵🇹</span></h2>
+
+<img data-src="lecture26-bop_files/figure-revealjs/unnamed-chunk-2-1.png" width="1056" class="r-stretch"><p><span class="emoji" data-emoji="point_right">👉</span> Portugal ran persistent <strong>current account deficits</strong> before 2013 — a key driver of the debt crisis. The adjustment to surplus was painful but necessary.</p>
+</section></section>
+<section>
+<section id="part-iii-tourism-in-the-balance-of-payments" class="title-slide slide level1 center">
+<h1>Part III: Tourism in the Balance of Payments</h1>
+
+</section>
+<section id="tourism-as-an-export-of-services" class="slide level2">
+<h2>Tourism as an Export of Services <span class="emoji" data-emoji="airplane">✈️</span></h2>
+<p>This is one of the most important conceptual points of the course:</p>
+<div class="key-concept">
+<p>When a <strong>foreign tourist spends money in Portugal</strong>, that spending counts as an <strong>export of services</strong> — money flows <strong>into</strong> Portugal from abroad, appearing as a <strong>credit</strong> in the current account.</p>
+<p>When a <strong>Portuguese resident travels abroad</strong>, that spending counts as an <strong>import of services</strong> — money flows <strong>out</strong> of Portugal, appearing as a <strong>debit</strong> in the current account.</p>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Inbound tourism = export of services</strong></p>
+<p><span class="emoji" data-emoji="de">🇩🇪</span> German tourist in Algarve: spends €1,500</p>
+<p><span class="emoji" data-emoji="gb">🇬🇧</span> British tourist in Lisbon: spends €800</p>
+<p><span class="emoji" data-emoji="us">🇺🇸</span> American tourist in Porto: spends €2,000</p>
+<p>→ All of these <strong>increase Portugal’s current account credit</strong></p>
+<p><span class="emoji" data-emoji="point_right">👉</span> Portugal does not need to ship anything — the tourist comes to us. Tourism is an “invisible export.”</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Outbound tourism = import of services</strong></p>
+<p><span class="emoji" data-emoji="portugal">🇵🇹</span> Portuguese family holidays in Spain: spends €1,200</p>
+<p><span class="emoji" data-emoji="portugal">🇵🇹</span> Portuguese student studies in UK: pays tuition €15,000</p>
+<p>→ These <strong>increase Portugal’s current account debit</strong></p>
+<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Net tourism balance</strong> = inbound receipts − outbound expenditure</p>
+<p>Portugal’s net tourism balance is <strong>strongly positive</strong> — we receive far more from foreign visitors than we spend abroad.</p>
+</div></div>
+</div>
+</section>
+<section id="portugals-tourism-in-the-current-account" class="slide level2">
+<h2>Portugal’s Tourism in the Current Account <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
+
+<img data-src="lecture26-bop_files/figure-revealjs/unnamed-chunk-3-1.png" width="1056" class="r-stretch"></section>
+<section id="why-tourism-matters-so-much-for-portugal" class="slide level2">
+<h2>Why Tourism Matters So Much for Portugal <span class="emoji" data-emoji="portugal">🇵🇹</span></h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Tourism is Portugal’s <strong>most important single export</strong> — larger than any manufactured good.</p>
+<p><strong>What makes Portugal’s tourism balance so powerful:</strong></p>
+<p><span class="emoji" data-emoji="one">1️⃣</span> <strong>High receipts per visitor</strong> — Lisbon and Algarve attract high-spending segments</p>
+<p><span class="emoji" data-emoji="two">2️⃣</span> <strong>Low import content</strong> — Portuguese hospitality relies heavily on <strong>domestic</strong> food, wine, labour, and culture. Unlike manufacturing, it doesn’t require importing lots of components.</p>
+<p><span class="emoji" data-emoji="three">3️⃣</span> <strong>Year-round growth</strong> — pre-COVID, tourism demand was growing every year (2013–2019 was a golden period)</p>
+<p><span class="emoji" data-emoji="four">4️⃣</span> <strong>Services deficit elsewhere</strong> — Portugal pays for freight, insurance, and financial services imported from abroad; tourism is the main offset</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> When tourism collapses (as in 2020), Portugal’s <strong>current account deteriorates sharply</strong> — as clearly visible in the chart.</p>
+</div><div class="column" style="width:45%;">
+<div class="key-concept">
+<p><strong>The structural importance:</strong></p>
+<p>Portugal’s historical <strong>current account deficit</strong> (pre-2013) was driven by importing more goods than it exported.</p>
+<p>The <strong>correction</strong> came through:</p>
+<ol type="1">
+<li>Painful reduction of imports (recession cut demand)</li>
+<li><strong>Massive growth of tourism exports</strong> (2013–2019)</li>
+</ol>
+<p>Tourism — as a service export — was essential to Portugal’s economic rebalancing. This is a live example of the macroeconomic role tourism plays.</p>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="part-iv-exchange-rates-and-the-current-account" class="title-slide slide level1 center">
+<h1>Part IV: Exchange Rates and the Current Account</h1>
+
+</section>
+<section id="the-exchange-rate" class="slide level2">
+<h2>The Exchange Rate <span class="emoji" data-emoji="currency_exchange">💱</span></h2>
+<div class="key-concept">
+<p>The <strong>exchange rate</strong> is the price of one currency in terms of another.</p>
+<p>A <strong>depreciation</strong> of the euro (€ becomes cheaper relative to £, $, etc.) → Portugal becomes cheaper for foreign visitors → <strong>tourism exports rise</strong></p>
+<p>An <strong>appreciation</strong> of the euro (€ becomes more expensive) → Portugal becomes pricier for non-euro visitors → <strong>tourism exports fall</strong></p>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Portugal in the Eurozone:</strong></p>
+<p>Since 1999, Portugal uses the euro — <strong>no independent exchange rate</strong>.</p>
+<p>The euro/sterling and euro/dollar exchange rates are determined by ECB policy and market forces, not by Portugal alone.</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> A weak euro (as in 2022–2023) <strong>boosted</strong> UK and US visitor numbers in Portugal — holidays became cheaper in pound and dollar terms.</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Real vs Nominal Exchange Rate:</strong></p>
+<p>The <strong>nominal</strong> rate is the raw currency ratio.</p>
+<p>The <strong>real</strong> exchange rate adjusts for inflation differences:</p>
+<p><span class="math display">\[q = \frac{e \times P^*}{P}\]</span></p>
+<p>Where <span class="math inline">\(e\)</span> = nominal rate, <span class="math inline">\(P^*\)</span> = foreign prices, <span class="math inline">\(P\)</span> = domestic prices.</p>
+<p><span class="emoji" data-emoji="point_right">👉</span> If Portuguese inflation is higher than UK inflation, Portugal becomes <strong>relatively more expensive</strong> for British tourists — even if the nominal exchange rate is unchanged.</p>
+</div></div>
+</div>
+</section>
+<section id="exchange-rates-and-tourism-flows" class="slide level2">
+<h2>Exchange Rates and Tourism Flows <span class="emoji" data-emoji="airplane">✈️</span></h2>
+
+<img data-src="lecture26-bop_files/figure-revealjs/unnamed-chunk-4-1.png" width="1056" class="r-stretch"><p><span class="emoji" data-emoji="point_right">👉</span> Brexit (2016) caused a <strong>sharp GBP depreciation</strong> — British tourists found Portugal more expensive overnight. A key example of exchange rate risk for tourism.</p>
+</section></section>
+<section>
+<section id="part-v-tying-it-all-together" class="title-slide slide level1 center">
+<h1>Part V: Tying It All Together</h1>
+
+</section>
+<section id="the-macro-block-what-we-have-learned" class="slide level2">
+<h2>The Macro Block — What We Have Learned <span class="emoji" data-emoji="books">📚</span></h2>
+<p>Over the last seven lectures, we have built a complete macroeconomic framework:</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Measurement tools:</strong></p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Aggregation</strong> — summing individual transactions into economy-wide totals</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>GDP</strong> — the economy’s total output (C+I+G+NX)</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Inflation (CPI/HICP)</strong> — the general price level</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Balance of Payments</strong> — recording all international transactions</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Policy tools:</strong></p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Monetary policy (ECB)</strong> — interest rates control credit and spending</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Fiscal policy (Government)</strong> — taxes and spending control aggregate demand</p>
+<p><strong>Key tensions:</strong></p>
+<p><span class="emoji" data-emoji="arrows_counterclockwise">🔄</span> Growth vs inflation</p>
+<p><span class="emoji" data-emoji="arrows_counterclockwise">🔄</span> Stimulus vs debt sustainability</p>
+<p><span class="emoji" data-emoji="arrows_counterclockwise">🔄</span> Competitiveness vs price stability</p>
+</div></div>
+</div>
+</section>
+<section id="tourism-through-every-macro-lens" class="slide level2">
+<h2>Tourism Through Every Macro Lens <span class="emoji" data-emoji="beach_umbrella">🏖️</span></h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Macro concept</th>
+<th>Tourism connection</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GDP</strong></td>
+<td>Tourism receipts from abroad = export of services, part of NX</td>
+</tr>
+<tr class="even">
+<td><strong>Inflation</strong></td>
+<td>Hotel/restaurant CPI tracked directly; cost competitiveness</td>
+</tr>
+<tr class="odd">
+<td><strong>Unemployment</strong></td>
+<td>Tourism creates 9%+ of Portuguese employment</td>
+</tr>
+<tr class="even">
+<td><strong>Monetary policy</strong></td>
+<td>Low rates → investment boom; high rates → investment pause</td>
+</tr>
+<tr class="odd">
+<td><strong>Fiscal policy</strong></td>
+<td>Tourist taxes; COVID subsidies; VAT on hospitality</td>
+</tr>
+<tr class="even">
+<td><strong>Current account</strong></td>
+<td>Tourism = Portugal’s largest service export; key to external balance</td>
+</tr>
+<tr class="odd">
+<td><strong>Exchange rates</strong></td>
+<td>Euro strength vs £ and $ directly affects inbound visitor numbers</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><span class="emoji" data-emoji="point_right">👉</span> Tourism is not just an industry — it is a <strong>macroeconomic phenomenon</strong> that appears in every major indicator we have studied.</p>
+</div>
+</section>
+<section id="course-wrap-up" class="slide level2 center">
+<h2>Course Wrap-Up <span class="emoji" data-emoji="mortar_board">🎓</span></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>What you can now do:</strong></p>
+<p><span class="emoji" data-emoji="microscope">🔬</span> Apply <strong>microeconomic reasoning</strong> — consumer choice, producer decisions, market equilibrium</p>
+<p><span class="emoji" data-emoji="chess_pawn">♟️</span> Think <strong>strategically</strong> — game theory, Nash equilibrium, backward induction</p>
+<p><span class="emoji" data-emoji="telescope">🔭</span> Read <strong>macroeconomic data</strong> — GDP, inflation, current account, policy stances</p>
+<p><span class="emoji" data-emoji="beach_umbrella">🏖️</span> Connect it all to <strong>tourism</strong> — the industry you are training for</p>
+</div><div class="column" style="width:50%;">
+<p><strong>What comes next:</strong></p>
+<p><span class="emoji" data-emoji="calendar">📆</span> <strong>Test 2</strong> — May 28th</p>
+<p>Covers: Producer theory (Lectures 11–17) + Macroeconomics (Lectures 20–26)</p>
+<p><span class="emoji" data-emoji="busts_in_silhouette">👥</span> <strong>Group Presentations</strong> — May 29th</p>
+<p><span class="emoji" data-emoji="books">📚</span> For the <strong>final exam</strong>: the whole course</p>
+<p><span class="emoji" data-emoji="muscle">💪</span> You’ve covered more economics in one semester than most business graduates do in a full year. Well done.</p>
+</div></div>
+</section></section>
+<section>
+<section id="exercises" class="title-slide slide level1 center">
+<h1>Exercises</h1>
+
+</section>
+<section id="exercise-1-multiple-choice" class="slide level2">
+<h2><span class="emoji" data-emoji="pencil">📝</span> Exercise 1 — Multiple Choice</h2>
+<p><strong>A British travel company brings 5,000 tourists to Portugal each summer, each spending an average of €1,200 in the country. From the perspective of Portugal’s Balance of Payments, how are these transactions classified?</strong></p>
+<div class="fragment">
+<p><strong>(A)</strong> As imports of services in Portugal’s current account — Portugal is buying tourism from the UK</p>
+<p><strong>(B)</strong> As exports of services in Portugal’s current account — Portugal is providing tourism services to foreigners</p>
+<p><strong>(C)</strong> As Foreign Direct Investment in Portugal’s financial account — British money entering the Portuguese economy</p>
+<p><strong>(D)</strong> As secondary income in Portugal’s current account — it represents a transfer from the UK to Portugal</p>
+<div class="fragment">
+<div class="highlight-box">
+<p><strong>Correct answer: (B)</strong></p>
+<p>When foreigners spend money on services provided in Portugal, it is an <strong>export of services</strong> — Portugal is “selling” tourism to the UK. This creates a <strong>credit</strong> in the services component of the current account, improving Portugal’s current account balance. Option A confuses the direction. Option C would apply if the British company was buying a Portuguese hotel. Option D (secondary income) covers transfers like remittances, not market transactions.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-multiple-choice" class="slide level2">
+<h2><span class="emoji" data-emoji="pencil">📝</span> Exercise 2 — Multiple Choice</h2>
+<p><strong>In 2016, the UK voted to leave the EU (Brexit). The British pound immediately depreciated approximately 15% against the euro. Which of the following best describes the likely short-run effect on Portugal’s tourism sector?</strong></p>
+<div class="fragment">
+<p><strong>(A)</strong> Positive — British tourists now find Portugal 15% cheaper, increasing inbound demand</p>
+<p><strong>(B)</strong> Negative — British tourists find Portugal 15% more expensive, reducing inbound demand</p>
+<p><strong>(C)</strong> Neutral — exchange rate changes do not affect tourism as prices are set in local currency</p>
+<p><strong>(D)</strong> Positive — a weaker pound means Portuguese tourists can holiday more cheaply in the UK, boosting Portugal’s imports</p>
+<div class="fragment">
+<div class="highlight-box">
+<p><strong>Correct answer: (B)</strong></p>
+<p>A GBP depreciation means each pound buys <strong>fewer euros</strong>. From a British tourist’s perspective, Portuguese prices (in euros) now cost <strong>more pounds</strong>. A €100 hotel night that cost £85 before depreciation now costs £100. This reduces the real purchasing power of British visitors in Portugal, lowering demand for Portuguese tourism. Option A gets the direction backwards. Option D describes an increase in Portuguese imports (outbound tourism), which worsens Portugal’s current account — the opposite of helping the tourism sector.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-open-question" class="slide level2">
+<h2><span class="emoji" data-emoji="pencil">📝</span> Exercise 3 — Open Question</h2>
+<p><strong>The table below shows simplified Balance of Payments data for Portugal in a given year (€ billion):</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Value (€bn)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Goods exports</td>
+<td>65</td>
+</tr>
+<tr class="even">
+<td>Goods imports</td>
+<td>−85</td>
+</tr>
+<tr class="odd">
+<td>Services exports (incl.&nbsp;tourism)</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>Services imports</td>
+<td>−22</td>
+</tr>
+<tr class="odd">
+<td>Primary income (net)</td>
+<td>−8</td>
+</tr>
+<tr class="even">
+<td>Secondary income (net)</td>
+<td>+4</td>
+</tr>
+<tr class="odd">
+<td>Capital account (net)</td>
+<td>+3</td>
+</tr>
+<tr class="even">
+<td>Financial account (net)</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(a)</strong> Calculate the <strong>trade in goods balance</strong>, the <strong>trade in services balance</strong>, and the <strong>current account balance</strong>. <em>(4 marks)</em></p>
+<p><strong>(b)</strong> Using the fundamental BoP identity, calculate the <strong>financial account balance</strong>. <em>(2 marks)</em></p>
+<p><strong>(c)</strong> Tourism receipts account for <strong>€28bn</strong> of the services exports figure. Calculate tourism’s share of total goods and services exports, and briefly explain what this implies for Portugal’s economic vulnerability. <em>(4 marks)</em></p>
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong></p>
+<p>Trade in goods balance = 65 − 85 = <strong>−€20bn</strong> (goods deficit)</p>
+<p>Trade in services balance = 45 − 22 = <strong>+€23bn</strong> (services surplus)</p>
+<p>Current account = (65−85) + (45−22) + (−8) + 4 = −20 + 23 − 8 + 4 = <strong>−€1bn</strong> (small deficit)</p>
+<p><strong>(b)</strong></p>
+<p>BoP identity: Current Account + Capital Account + Financial Account = 0</p>
+<p>−1 + 3 + Financial Account = 0 → Financial Account = <strong>−€2bn</strong></p>
+<p>(A negative financial account = net capital outflow, meaning Portugal is acquiring more foreign assets than foreigners are acquiring Portuguese assets — consistent with a small current account deficit.)</p>
+<p><strong>(c)</strong></p>
+<p>Total goods + services exports = 65 + 45 = <strong>€110bn</strong></p>
+<p>Tourism share = 28 / 110 × 100 = <strong>25.5%</strong></p>
+<p>This implies significant <strong>concentration risk</strong>: a quarter of all export earnings comes from a single sector that is highly sensitive to external shocks (pandemics, exchange rates, terrorism, climate). When tourism collapses (as in 2020), Portugal’s current account deteriorates sharply and the economy loses a critical income source. Diversifying the export base — developing manufacturing, tech, and other services — would reduce this vulnerability.</p>
+</div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary <span class="emoji" data-emoji="books">📚</span></h2>
+<p><strong>Today we covered:</strong></p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> The <strong>Balance of Payments</strong> — a complete record of all international economic transactions</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> Three accounts: <strong>Current</strong> (goods, services, income), <strong>Capital</strong> (grants, transfers), <strong>Financial</strong> (investment flows)</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> The <strong>fundamental identity</strong>: CA + KA + FA = 0</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Tourism as an export of services</strong> — foreign spending in Portugal = credit in current account</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> Portugal’s <strong>current account history</strong> — chronic deficit pre-2013, adjustment via tourism growth</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Exchange rates</strong> — EUR/GBP and EUR/USD directly affect inbound tourism competitiveness</p>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> Brexit as a live example of exchange rate risk for tourism</p>
+<p><span class="emoji" data-emoji="trophy">🏆</span> <strong>The macro block is complete!</strong></p>
+</section>
+<section id="thank-you-and-good-luck" class="slide level2 center">
+<h2>Thank You — and Good Luck! <span class="emoji" data-emoji="wave">👋</span> <span class="emoji" data-emoji="four_leaf_clover">🍀</span></h2>
+<p><strong>Test 2: May 28th</strong></p>
+<p>Producer theory (Lectures 11–17) + Macroeconomics (Lectures 20–26)</p>
+<p><strong>Group Presentations: May 29th</strong></p>
+<div class="fragment">
+<p><span class="emoji" data-emoji="email">📧</span> paulo.fagandini@ext.universidadeeuropeia.pt</p>
+<p><em>“An economist is someone who sees something working in practice and wonders if it would work in theory.”</em> — Ronald Reagan</p>
+
+
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Economics of Tourism | Lecture 26</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

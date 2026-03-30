@@ -1,0 +1,698 @@
+---
+title: "Central Banks & Monetary Policy"
+subtitle: "Lecture 24: Expansionary and Contractionary Monetary Policies"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 24"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(eurostat)
+library(tidyverse)
+library(lubridate)
+
+ue_red   <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray  <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_light <- "#F5F5F5"
+```
+
+## Recap: Inflation :rewind:
+
+Last lecture we studied **inflation** — the general, sustained rise in prices:
+
+:white_check_mark: Measured by the **CPI / HICP** — a fixed consumer basket repriced each period
+
+:white_check_mark: Three causes: demand-pull, cost-push, monetary expansion
+
+:white_check_mark: Consequences: erodes purchasing power, savings, competitiveness, social stability
+
+:white_check_mark: The ECB targets inflation **close to but below 2%**
+
+. . .
+
+:point_right: Today: **who fights inflation?** And how?
+
+The answer is **Central Banks** — and the tool is **monetary policy**.
+
+# Part I: What is a Central Bank?
+
+## The Central Bank :bank:
+
+::: {.key-concept}
+A **Central Bank** is the institution responsible for managing a country's (or currency area's) **money supply and interest rates**. It acts as the "bank of banks" and the ultimate guardian of monetary stability.
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Key Central Banks:**
+
+:eu: **ECB** — European Central Bank
+Serves all 20 Eurozone countries, including Portugal
+
+:us: **Federal Reserve** (the Fed)
+USA
+
+:gb: **Bank of England**
+United Kingdom
+
+:jp: **Bank of Japan**
+Japan
+:::
+::: {.column width="50%"}
+**Core functions:**
+
+:one: Set **interest rates** (the price of money)
+
+:two: Control the **money supply**
+
+:three: Supervise and regulate **commercial banks**
+
+:four: Act as **lender of last resort** in financial crises
+
+:five: Maintain **financial stability**
+
+:point_right: For Portugal: the ECB makes monetary policy decisions. The Banco de Portugal implements them locally.
+:::
+::::
+
+## Central Bank Independence :classical_building:
+
+:::: {.columns}
+::: {.column width="55%"}
+Central banks are deliberately kept **independent from governments**.
+
+**Why?** :thinking:
+
+Politicians face election pressure to stimulate growth (cut rates, print money) even when this would cause inflation.
+
+An independent central bank can make **unpopular but necessary** decisions — like raising rates to fight inflation — without fear of being removed.
+
+. . .
+
+:bulb: **The time inconsistency problem:**
+
+Governments have incentives to promise low inflation, then inflate away their debts once people have locked in wage contracts. An independent CB makes such commitments credible.
+:::
+::: {.column width="45%"}
+::: {.key-concept}
+**ECB Mandate**
+
+The primary objective of the ECB is to maintain **price stability** — defined as inflation **close to but below 2%** over the medium term.
+
+Secondary: support the general economic policies of the EU (growth, employment) — *without prejudice to price stability*.
+:::
+
+:calendar: The ECB was established in **1998** and took over monetary policy for the Eurozone in **1999** when the euro was launched.
+:::
+::::
+
+# Part II: Monetary Policy Tools
+
+## The Key Tool: Interest Rates :control_knobs:
+
+The main instrument of monetary policy is the **policy interest rate** — the rate at which commercial banks borrow from the central bank overnight.
+
+. . .
+
+:::: {.columns}
+::: {.column width="55%"}
+**How it works — the transmission chain:**
+
+:one: ECB sets the **policy rate**
+
+:two: Commercial banks adjust their **lending rates** to businesses and households
+
+:three: Higher rates → **more expensive credit** → less borrowing → less spending and investment
+
+:four: Lower rates → **cheaper credit** → more borrowing → more spending and investment
+
+:five: Changes in spending affect **output, employment, and prices**
+
+:hourglass: The full effect takes **12–18 months** to work through the economy — monetary policy acts with long and variable lags.
+:::
+::: {.column width="45%"}
+**Three ECB rates (the "rate corridor"):**
+
+| Rate | Purpose |
+|---|---|
+| **Deposit facility** | Banks park excess reserves here overnight |
+| **Main refinancing** | Core policy rate — banks borrow for 1 week |
+| **Marginal lending** | Emergency overnight borrowing |
+
+:point_right: When we talk about ECB rate hikes/cuts, we usually mean changes to the **deposit facility rate** and **main refinancing rate** together.
+:::
+::::
+
+## Other Tools: Beyond Interest Rates :toolbox:
+
+:::: {.columns}
+::: {.column width="33%"}
+:printer: **Quantitative Easing (QE)**
+
+The central bank buys government bonds and other assets, injecting money directly into the financial system.
+
+Used when interest rates are already near **zero** (the "zero lower bound").
+
+ECB deployed massively after 2012 (Draghi: "whatever it takes") and again in 2020 (COVID).
+:::
+::: {.column width="33%"}
+:bank: **Reserve Requirements**
+
+Commercial banks must hold a fraction of their deposits as reserves (not lent out).
+
+Raising reserve requirements → banks lend less → money supply shrinks.
+
+Used more in developing economies — ECB relies mainly on interest rates.
+:::
+::: {.column width="33%"}
+:mega: **Forward Guidance**
+
+The central bank communicates its **future intentions** clearly to influence expectations today.
+
+If businesses expect rates to stay low for 2 years, they invest now.
+
+If they expect rate rises, they may wait.
+
+:bulb: Expectations *themselves* affect the economy — the CB manages them deliberately.
+:::
+::::
+
+# Part III: Expansionary vs Contractionary Policy
+
+## The Two Directions :arrows_counterclockwise:
+
+::: {.key-concept}
+**Expansionary monetary policy** — used when the economy is **slowing or in recession**:
+Lower interest rates + increase money supply → cheaper credit → stimulate consumption and investment → boost output and employment
+
+**Contractionary monetary policy** — used when **inflation is too high**:
+Raise interest rates + reduce money supply → expensive credit → reduce consumption and investment → cool demand → bring inflation down
+:::
+
+. . .
+
+:warning: Neither is free of trade-offs:
+
+- **Expansionary** risks **fuelling inflation** if applied too aggressively or for too long
+- **Contractionary** risks **triggering recession** and **rising unemployment**
+
+## Expansionary Policy — The Mechanics :chart_with_upwards_trend:
+
+**Scenario:** Portugal (and the Eurozone) enters recession. Unemployment rises. Inflation is below target.
+
+. . .
+
+```{r}
+#| fig-width: 11
+#| fig-height: 3.8
+
+steps <- data.frame(
+  x     = 1:6,
+  label = c(
+    "ECB cuts\npolicy rate",
+    "Banks lower\nlending rates",
+    "Cheaper\nmortgages\n& business loans",
+    "Households &\nfirms borrow\n& spend more",
+    "AD rises:\nmore output\n& employment",
+    "Inflation\nmoves toward\n2% target"
+  ),
+  col = c(ue_red, ue_red, "#E07B00", "#E07B00", ue_black, ue_black)
+)
+
+ggplot(steps) +
+  geom_tile(aes(x = x, y = 1), width = 0.85, height = 0.7,
+            fill = steps$col, alpha = 0.85) +
+  geom_text(aes(x = x, y = 1, label = label),
+            color = "white", fontface = "bold", size = 3.1,
+            lineheight = 0.9) +
+  geom_segment(
+    data = data.frame(x = 1:5 + 0.43, xend = 1:5 + 0.57, y = 1, yend = 1),
+    aes(x = x, xend = xend, y = y, yend = yend),
+    arrow = arrow(length = unit(0.25, "cm"), type = "closed"),
+    color = ue_gray, linewidth = 1
+  ) +
+  annotate("text", x = 3.5, y = 0.45,
+           label = "Transmission mechanism — takes 12–18 months",
+           color = ue_gray, size = 3, fontface = "italic") +
+  xlim(0.5, 6.5) + ylim(0.2, 1.6) +
+  theme_void() +
+  labs(title = "Expansionary Monetary Policy: Transmission Chain",
+       subtitle = "Hypothetical illustration") +
+  theme(
+    plot.title    = element_text(color = ue_red, face = "bold", size = 13,
+                                 hjust = 0.5),
+    plot.subtitle = element_text(color = ue_gray, size = 9, hjust = 0.5)
+  )
+```
+
+## Contractionary Policy — The Mechanics :chart_with_downwards_trend:
+
+**Scenario:** Inflation surges to 8% (as in 2022). The ECB must act.
+
+. . .
+
+```{r}
+#| fig-width: 11
+#| fig-height: 3.8
+
+steps2 <- data.frame(
+  x     = 1:6,
+  label = c(
+    "ECB raises\npolicy rate",
+    "Banks raise\nlending rates",
+    "Expensive\nmortgages\n& business loans",
+    "Households &\nfirms borrow\n& spend less",
+    "AD falls:\nless demand\npressure",
+    "Inflation\nfalls toward\n2% target"
+  ),
+  col = c(ue_black, ue_black, "#5B8DB8", "#5B8DB8", "#E07B00", ue_red)
+)
+
+ggplot(steps2) +
+  geom_tile(aes(x = x, y = 1), width = 0.85, height = 0.7,
+            fill = steps2$col, alpha = 0.85) +
+  geom_text(aes(x = x, y = 1, label = label),
+            color = "white", fontface = "bold", size = 3.1,
+            lineheight = 0.9) +
+  geom_segment(
+    data = data.frame(x = 1:5 + 0.43, xend = 1:5 + 0.57, y = 1, yend = 1),
+    aes(x = x, xend = xend, y = y, yend = yend),
+    arrow = arrow(length = unit(0.25, "cm"), type = "closed"),
+    color = ue_gray, linewidth = 1
+  ) +
+  annotate("text", x = 3.5, y = 0.45,
+           label = "Risk: slowdown & higher unemployment as side effect",
+           color = ue_gray, size = 3, fontface = "italic") +
+  xlim(0.5, 6.5) + ylim(0.2, 1.6) +
+  theme_void() +
+  labs(title = "Contractionary Monetary Policy: Transmission Chain",
+       subtitle = "Hypothetical illustration") +
+  theme(
+    plot.title    = element_text(color = ue_red, face = "bold", size = 13,
+                                 hjust = 0.5),
+    plot.subtitle = element_text(color = ue_gray, size = 9, hjust = 0.5)
+  )
+```
+
+## Side-by-Side Comparison :balance_scale:
+
+| | :chart_with_upwards_trend: Expansionary | :chart_with_downwards_trend: Contractionary |
+|---|---|---|
+| **When used** | Recession, low inflation, high unemployment | High inflation, overheating economy |
+| **Action** | :arrow_down: Cut interest rates / :printer: increase money supply | :arrow_up: Raise interest rates / reduce money supply |
+| **Effect on credit** | Cheaper — more borrowing | More expensive — less borrowing |
+| **Effect on spending** | :arrow_up: Rises | :arrow_down: Falls |
+| **Effect on inflation** | :arrow_up: Rises (risk) | :arrow_down: Falls (goal) |
+| **Effect on employment** | :arrow_up: Improves | :arrow_down: May worsen |
+| **Risk** | Inflation if overdone | Recession / unemployment |
+
+# Part IV: The ECB in Action
+
+## ECB Interest Rates — History :portugal:
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.6
+
+# ECB deposit facility rate — Eurostat irt_st_a (short-term interest rates annual)
+# Using MIR (money market) or ECB rate from Eurostat
+# Most reliable: irt_lt_mcby_a (long rates) or irt_st_a (short rates)
+# For ECB policy rates, use irt_st_a — EURIBOR overnight (EONIA/ESTR as proxy)
+
+ecb_raw <- get_eurostat("irt_st_a",
+  filters = list(
+    geo   = "EA",
+    int_rt = "IRT_M3"          # 3-month money market rate — close proxy for policy
+  ),
+  time_format = "num"
+) |>
+  filter(time >= 1999, !is.na(values)) |>
+  arrange(time)
+
+ggplot(ecb_raw, aes(x = time, y = values)) +
+  geom_line(color = ue_red, linewidth = 1.4) +
+  geom_area(fill = ue_red, alpha = 0.08) +
+  geom_hline(yintercept = 0, color = ue_black, linewidth = 0.4) +
+  # Key episodes
+  annotate("rect", xmin = 2008, xmax = 2010,
+           ymin = -Inf, ymax = Inf, fill = ue_gray, alpha = 0.1) +
+  annotate("text", x = 2009, y = 4.2, label = "GFC",
+           color = ue_gray, size = 3, fontface = "italic") +
+  annotate("rect", xmin = 2011.8, xmax = 2013.5,
+           ymin = -Inf, ymax = Inf, fill = ue_gray, alpha = 0.1) +
+  annotate("text", x = 2012.5, y = 4.2, label = "Debt\ncrisis",
+           color = ue_gray, size = 3, fontface = "italic") +
+  annotate("rect", xmin = 2020, xmax = 2021,
+           ymin = -Inf, ymax = Inf, fill = ue_gray, alpha = 0.1) +
+  annotate("text", x = 2020.5, y = 4.2, label = "COVID",
+           color = ue_gray, size = 3, fontface = "italic") +
+  annotate("rect", xmin = 2022, xmax = 2024,
+           ymin = -Inf, ymax = Inf, fill = "#E07B00", alpha = 0.08) +
+  annotate("text", x = 2023, y = 4.2, label = "Rate\nhike cycle",
+           color = "#E07B00", size = 3, fontface = "italic") +
+  labs(
+    title = "Eurozone: 3-Month Money Market Rate (annual average)",
+    subtitle = "Proxy for ECB monetary policy stance",
+    x = NULL, y = "% per annum",
+    caption = "Source: Eurostat (irt_st_a, IRT_M3, EA)"
+  ) +
+  scale_x_continuous(breaks = seq(1999, 2024, 3)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title       = element_text(color = ue_red, face = "bold"),
+    plot.subtitle    = element_text(color = ue_gray, size = 10),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Reading the Rate History :mag:
+
+The chart tells the story of modern monetary policy in four acts:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+:one: **1999–2008:** Rates moderate (2–5%), Eurozone growing
+
+:two: **2008–2015:** Aggressive cuts after Global Financial Crisis. Near-zero by 2012. Asset purchase programmes begin.
+
+:three: **2015–2022:** Negative territory — ECB charges banks to park money, incentivising lending. Extraordinary accommodation to fight deflation risk.
+:::
+::: {.column width="50%"}
+:four: **2022–2024:** Fastest rate-hiking cycle in ECB history. Inflation hit 10%+ across the Eurozone. ECB raised rates from -0.5% to 4% in just 14 months.
+
+. . .
+
+:bulb: **For tourism:**
+
+- Near-zero rates (2015–2022) made hotel investment loans very cheap → boom in new capacity
+- Rapid rate rises (2022–2024) increased mortgage costs → less household spending power → potential impact on holiday budgets
+:::
+::::
+
+## Interest Rates and Tourism Investment :hotel:
+
+:::: {.columns}
+::: {.column width="55%"}
+**How monetary policy affects tourism supply:**
+
+:arrow_down: **Low interest rates** (expansionary):
+
+- Hotel construction loans become affordable
+- Tour operators can invest in new equipment/fleets
+- Airbnb hosts finance renovations cheaply
+- New capacity is built → tourism supply expands
+
+:arrow_up: **High interest rates** (contractionary):
+
+- Debt servicing costs rise for existing hotel loans
+- New investment projects shelved
+- Some leveraged hotel groups face financial stress
+- Supply expansion slows or reverses
+
+:point_right: The 2015–2022 low-rate era directly contributed to the **tourism boom and hotel construction wave** in Lisbon, Porto, and the Algarve.
+:::
+::: {.column width="45%"}
+```{r}
+#| fig-width: 4.8
+#| fig-height: 4.5
+
+# Mortgage/lending rates in Portugal — irt_h_eurclt_a
+# Using harmonised long-term interest rates as proxy
+lt_raw <- get_eurostat("irt_lt_mcby_a",
+  filters = list(geo = "PT"),
+  time_format = "num"
+) |>
+  filter(time >= 2005, !is.na(values)) |>
+  arrange(time)
+
+ggplot(lt_raw, aes(x = time, y = values)) +
+  geom_line(color = ue_red, linewidth = 1.3) +
+  geom_area(fill = ue_red, alpha = 0.08) +
+  geom_hline(yintercept = 0, color = ue_black, linewidth = 0.4) +
+  labs(
+    title = "Portugal: Long-Term\nGovernment Bond Yield",
+    subtitle = "Proxy for borrowing costs",
+    x = NULL, y = "% per annum",
+    caption = "Source: Eurostat (irt_lt_mcby_a)"
+  ) +
+  scale_x_continuous(breaks = seq(2005, 2024, 4)) +
+  theme_minimal(base_size = 11) +
+  theme(
+    plot.title       = element_text(color = ue_red, face = "bold", size = 11),
+    plot.subtitle    = element_text(color = ue_gray, size = 9),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+::::
+
+# Part V: Monetary Policy Trade-offs
+
+## The Impossible Trinity :triangular_flag_on_post:
+
+A country cannot simultaneously have all three of:
+
+. . .
+
+:::: {.columns}
+::: {.column width="33%"}
+:globe_with_meridians: **Free capital flows**
+
+Money moves freely across borders
+:::
+::: {.column width="33%"}
+:currency_exchange: **Fixed exchange rate**
+
+Stable currency value vs other currencies
+:::
+::: {.column width="33%"}
+:control_knobs: **Independent monetary policy**
+
+Set own interest rates freely
+:::
+::::
+
+. . .
+
+:point_right: **Portugal's situation:** By joining the euro, Portugal gave up :three: (independent monetary policy) in exchange for :one: (free capital flows within EU) and :two: (stable exchange rates within the Eurozone).
+
+The **ECB** sets rates for the whole Eurozone — Portugal cannot cut rates on its own if it is in recession while Germany is overheating.
+
+## The Inflation–Unemployment Trade-off Revisited :balance_scale:
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.3
+
+# Illustrative Phillips Curve
+u_range <- seq(3, 15, length.out = 200)
+phillips <- 14 - 0.9 * u_range + rnorm(200, 0, 0.3)
+
+df_pc <- data.frame(u = u_range, pi = phillips)
+
+ggplot(df_pc, aes(x = u, y = pi)) +
+  geom_line(color = ue_red, linewidth = 1.4) +
+  geom_hline(yintercept = 2, linetype = "dashed",
+             color = ue_gray, linewidth = 0.8) +
+  annotate("text", x = 14, y = 2.6,
+           label = "ECB target: 2%", color = ue_gray,
+           size = 3.2, fontface = "italic") +
+  # Contractionary zone
+  annotate("rect", xmin = 8, xmax = 15,
+           ymin = -Inf, ymax = Inf, fill = "#5B8DB8", alpha = 0.07) +
+  annotate("text", x = 11.5, y = 8,
+           label = "High unemployment\nLow inflation\n(Expansionary policy needed)",
+           color = "#5B8DB8", size = 3, hjust = 0.5) +
+  # Expansionary zone
+  annotate("rect", xmin = 3, xmax = 6,
+           ymin = -Inf, ymax = Inf, fill = ue_red, alpha = 0.07) +
+  annotate("text", x = 4.5, y = 1,
+           label = "Low unemployment\nHigh inflation\n(Contractionary policy needed)",
+           color = ue_red, size = 3, hjust = 0.5) +
+  labs(
+    title = "The Phillips Curve: Inflation–Unemployment Trade-off",
+    subtitle = "Hypothetical — illustrative only",
+    x = "Unemployment rate (%)", y = "Inflation rate (%)",
+    caption = "Hypothetical data for illustration"
+  ) +
+  scale_x_continuous(breaks = seq(3, 15, 2)) +
+  scale_y_continuous(breaks = seq(0, 12, 2)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title       = element_text(color = ue_red, face = "bold"),
+    plot.subtitle    = element_text(color = ue_gray, size = 10),
+    panel.grid.minor = element_blank()
+  )
+```
+
+:point_right: Contractionary policy (fighting inflation) moves the economy **right along the curve** — lower inflation but higher unemployment. Central bankers navigate this trade-off constantly.
+
+## Monetary Policy and Tourism — Putting it Together :beach_umbrella:
+
+:::: {.columns}
+::: {.column width="50%"}
+**Expansionary policy → tourism boost:**
+
+:arrow_down: Low mortgage rates → households have more disposable income → more holiday spending
+
+:arrow_down: Cheap business credit → hotels invest in new capacity and renovation
+
+:currency_exchange: Potential currency depreciation → destination becomes more attractive to foreign visitors
+
+:chart_with_upwards_trend: Economic recovery → rising incomes → more tourism demand
+
+. . .
+
+**Example:** ECB near-zero rates 2015–2019 coincided with **record tourism years** in Portugal
+:::
+::: {.column width="50%"}
+**Contractionary policy → tourism headwinds:**
+
+:arrow_up: High mortgage rates → household budgets squeezed → discretionary travel cut first
+
+:arrow_up: Expensive hotel loans → investment pauses, some projects cancelled
+
+:currency_exchange: Potential currency appreciation → destination becomes pricier for non-euro visitors
+
+:chart_with_downwards_trend: Slowdown risk → uncertainty → consumers postpone holidays
+
+. . .
+
+**Example:** ECB rate hikes 2022–2023 raised Euribor sharply → many Portuguese homeowners' mortgage payments increased by €200–400/month → less money for holidays
+:::
+::::
+
+# Exercises
+
+## :pencil: Exercise 1 — Multiple Choice
+
+**The ECB raises its policy interest rate from 2% to 3.5% in response to rising inflation. Which of the following best describes the expected chain of effects?**
+
+. . .
+
+**(A)** Banks lower their lending rates → households borrow more → consumption rises → inflation falls
+
+**(B)** Banks raise their lending rates → credit becomes more expensive → spending and investment fall → inflation falls
+
+**(C)** The money supply automatically increases → purchasing power rises → inflation falls
+
+**(D)** Government spending rises → aggregate demand increases → prices stabilise
+
+::: {.fragment}
+::: {.highlight-box}
+**Correct answer: (B)**
+
+This is the contractionary monetary policy transmission chain. Higher ECB rates → higher commercial lending rates → more expensive credit → less borrowing, spending, and investment → reduced aggregate demand → inflation falls. Option A describes expansionary policy (opposite direction). Options C and D are incorrect descriptions of the mechanism.
+:::
+:::
+
+## :pencil: Exercise 2 — Multiple Choice
+
+**Portugal joined the Eurozone in 1999. In 2024, Portugal's unemployment rate is 6.5% while Germany's is 3.1% and inflation is higher in Portugal than in Germany. Which statement best describes Portugal's monetary policy constraint?**
+
+. . .
+
+**(A)** Portugal can cut interest rates independently to boost its economy
+
+**(B)** The ECB will set a rate that suits Portugal specifically, as it is the most affected country
+
+**(C)** Portugal cannot set its own interest rates — the ECB sets a single rate for the whole Eurozone, which may not be optimal for every member
+
+**(D)** Portugal can use quantitative easing independently to stimulate its own economy
+
+::: {.fragment}
+::: {.highlight-box}
+**Correct answer: (C)**
+
+This is the "one size fits all" problem of a currency union. The ECB sets a single rate for all 20 Eurozone members based on aggregate conditions. A rate optimal for Germany may be too tight for Portugal (if Portugal needs stimulus) or too loose (if Portugal is overheating while Germany is not). Portugal gave up independent monetary policy when it adopted the euro.
+:::
+:::
+
+## :pencil: Exercise 3 — Open Question
+
+**In 2022, Eurozone inflation surged to over 8%, driven primarily by energy and food price shocks following the war in Ukraine. The ECB responded by raising its policy rate from -0.5% in June 2022 to 4.0% by September 2023 — the fastest rate-hiking cycle in its history.**
+
+**(a)** Classify this ECB action as expansionary or contractionary monetary policy, and explain why this classification applies. *(2 marks)*
+
+**(b)** Describe the **transmission mechanism** through which this rate increase was intended to reduce inflation. Identify at least three steps in the chain. *(4 marks)*
+
+**(c)** A hotel group in Lisbon had taken on €20 million in variable-rate debt to finance a new property, at an interest rate of Euribor + 1%. When Euribor was -0.3%, the annual interest bill was approximately €140,000. After the rate hike cycle, Euribor reached 3.9%. Calculate the new annual interest bill and comment on the implications for the hotel group's investment decisions. *(4 marks)*
+
+---
+
+::: {.fragment}
+
+**Solution:**
+
+**(a)** This is **contractionary monetary policy**. The ECB raised rates and implicitly tightened financial conditions. The goal was to reduce aggregate demand and bring inflation back toward the 2% target by making credit more expensive and slowing borrowing and spending. Contractionary policy is appropriate when inflation is above target, as it was (8% >> 2%).
+
+**(b)** Transmission chain: (1) ECB raises policy rate → (2) commercial banks raise their lending rates (mortgages, business loans, consumer credit) → (3) households face higher mortgage payments, reducing disposable income → (4) businesses face higher borrowing costs, reducing investment → (5) aggregate demand falls → (6) less pressure on prices → inflation declines toward target. Additional: (7) higher rates may strengthen the euro → imports become cheaper → imported inflation falls.
+
+**(c)** New interest rate = Euribor (3.9%) + 1% = **4.9%**
+
+New annual interest bill = €20,000,000 × 4.9% = **€980,000**
+
+Increase: €980,000 − €140,000 = **€840,000 more per year** (~6× higher)
+
+Implications: The hotel group's fixed costs have risen dramatically. At the margin, this makes new investment projects less viable (higher hurdle rate), may force the group to raise room prices (contributing to tourism inflation), and could threaten financial viability if occupancy falls. It also illustrates why cheap money during 2015–2022 drove the hotel construction boom — and why the rate normalisation slowed it.
+
+:::
+
+## Summary :books:
+
+**Today we covered:**
+
+:white_check_mark: **Central banks** — their role, independence, and mandate (ECB: ~2% inflation)
+
+:white_check_mark: The main tool: **policy interest rates** and how they transmit through the economy
+
+:white_check_mark: Other tools: QE, reserve requirements, forward guidance
+
+:white_check_mark: **Expansionary policy** — cut rates, stimulate growth (risk: inflation)
+
+:white_check_mark: **Contractionary policy** — raise rates, fight inflation (risk: recession)
+
+:white_check_mark: The **ECB rate cycle**: near-zero 2015–2022 → fastest hike cycle in history 2022–2024
+
+:white_check_mark: The **impossible trinity** — Portugal gave up independent monetary policy to join the euro
+
+:white_check_mark: How all of this flows through to **tourism investment and demand**
+
+. . .
+
+**Next lecture (Lecture 25):**
+
+:receipt: Fiscal policy — the government's other lever: taxes and public spending
+
+## Thank You! :wave: {.center}
+
+**Questions?**
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+*Next class: Wednesday, May 21st, 2026*

@@ -1,0 +1,748 @@
+---
+title: "Inflation"
+subtitle: "Lecture 23: Measuring and Understanding Rising Prices"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 23"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(eurostat)
+library(tidyverse)
+library(lubridate)
+
+ue_red   <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray  <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_light <- "#F5F5F5"
+```
+
+## Recap: GDP :rewind:
+
+Last lecture we built the core measurement tool of macroeconomics:
+
+:white_check_mark: **GDP** = market value of final goods & services produced in a country
+
+:white_check_mark: Three approaches: expenditure ($Y = C+I+G+NX$), income, value-added
+
+:white_check_mark: **Nominal GDP** uses current prices — **Real GDP** strips out inflation
+
+:white_check_mark: The **GDP deflator** measures economy-wide price changes
+
+. . .
+
+:point_right: Today we go deep on that price change itself: **inflation**
+
+What is it? How is it measured? What does it do to an economy — and to tourism?
+
+# Part I: What is Inflation?
+
+## The Definition :fire:
+
+::: {.key-concept}
+**Inflation** is the **general and sustained increase** in the prices of goods and services over time.
+
+When inflation is high, the **purchasing power of money falls** — the same amount of money buys fewer goods and services than before.
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Three key words:**
+
+:one: **General** — not one price rising (that's a relative price change), but prices across the board
+
+:two: **Sustained** — not a one-off spike, but a persistent upward trend
+
+:three: **Prices** — we are measuring the cost of a representative basket, not output
+:::
+::: {.column width="50%"}
+**Related concepts:**
+
+:snowflake: **Deflation** — prices falling (inflation < 0)
+
+:snail: **Disinflation** — inflation still positive but slowing down
+
+:rocket: **Hyperinflation** — extreme, out-of-control inflation (e.g. Zimbabwe 2008, Germany 1923)
+
+:dart: **Target** — ECB targets inflation **close to but below 2%**
+:::
+::::
+
+## What Causes Inflation? :thinking:
+
+:::: {.columns}
+::: {.column width="33%"}
+:shopping_cart: **Demand-pull**
+
+"Too much money chasing too few goods"
+
+When aggregate demand rises faster than the economy can produce:
+
+- Strong consumer spending
+- Government stimulus
+- Easy credit / low interest rates
+
+:point_right: *Post-COVID boom: pent-up demand surged, supply couldn't keep up*
+:::
+::: {.column width="33%"}
+:factory: **Cost-push**
+
+Rising production costs passed on to consumers:
+
+- Higher energy prices
+- Rising wages
+- Supply chain disruptions
+- Raw material shortages
+
+:point_right: *2022 energy crisis: gas prices spiked → heating, transport, food all rose*
+:::
+::: {.column width="33%"}
+:moneybag: **Monetary**
+
+"Inflation is always and everywhere a monetary phenomenon" — Milton Friedman
+
+Too rapid expansion of the money supply eventually feeds into prices.
+
+:point_right: *Central banks printing money to fund deficits can trigger hyperinflation*
+:::
+::::
+
+## A Tourism Example :beach_umbrella:
+
+Imagine a hotel in the Algarve in 2019 vs 2023:
+
+. . .
+
+| Cost item | 2019 | 2023 | Change |
+|---|---|---|---|
+| Energy (electricity/gas) | €8,000/month | €14,000/month | +75% |
+| Food supplies | €12,000/month | €16,000/month | +33% |
+| Cleaning staff wages | €15,000/month | €18,500/month | +23% |
+| Total costs | €35,000/month | €48,500/month | **+39%** |
+
+. . .
+
+:point_right: The hotel **must raise room rates** to survive — contributing to tourism price inflation.
+
+:point_right: But if room rates rise faster than wages in source markets (Germany, UK), **tourists face a real price increase** — demand may fall.
+
+:bulb: This is why inflation matters so directly for the tourism industry — costs and competitiveness move together.
+
+# Part II: Measuring Inflation — The CPI
+
+## The Consumer Price Index (CPI) :shopping_bags:
+
+::: {.key-concept}
+The **Consumer Price Index (CPI)** measures the cost of a **fixed basket of goods and services** representative of a typical household's consumption, relative to the cost of that same basket in a **base year**.
+
+$$\text{CPI}_t = \frac{\text{Cost of basket in year } t}{\text{Cost of basket in base year}} \times 100$$
+:::
+
+. . .
+
+$$\text{Inflation rate} = \frac{\text{CPI}_t - \text{CPI}_{t-1}}{\text{CPI}_{t-1}} \times 100\%$$
+
+## Building the CPI Basket :basket:
+
+The basket is constructed to reflect **what a typical household buys**. In the EU, this is called the **HICP** (Harmonised Index of Consumer Prices) — harmonised across member states for comparability.
+
+. . .
+
+:::: {.columns}
+::: {.column width="55%"}
+**Main HICP categories:**
+
+| Category | Approx. share |
+|---|---|
+| Housing, water, electricity | ~25% |
+| Food & non-alcoholic beverages | ~20% |
+| Transport | ~13% |
+| Recreation & culture | ~9% |
+| Restaurants & hotels | ~8% |
+| Clothing & footwear | ~6% |
+| Other | ~19% |
+
+:point_right: **Restaurants & hotels** is explicitly tracked — tourism prices feed directly into the CPI.
+:::
+::: {.column width="45%"}
+:bulb: **Key properties of the CPI basket:**
+
+:one: Fixed quantities — we re-price the same bundle each period
+
+:two: Updated periodically — basket weights are revised every few years to reflect changing consumption patterns
+
+:three: Reflects consumer spending, not production — differs from the GDP deflator
+
+:warning: **The CPI can overstate inflation** if consumers substitute away from goods that have become expensive (substitution bias)
+:::
+::::
+
+## CPI Calculation — Worked Example :pencil:
+
+**A simple economy with three goods — a tourist town in the Algarve:**
+
+. . .
+
+| Good | Basket qty | Price 2022 | Price 2023 | Price 2024 |
+|---|---|---|---|---|
+| Hotel night | 5 | €80 | €92 | €98 |
+| Restaurant meal | 10 | €20 | €23 | €24 |
+| Bus ticket | 8 | €5 | €5.50 | €6 |
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Cost of basket:**
+
+- 2022: $(5×80)+(10×20)+(8×5) = €640$ → **CPI = 100** (base)
+- 2023: $(5×92)+(10×23)+(8×5.50) = €734$ → **CPI = 114.7**
+- 2024: $(5×98)+(10×24)+(8×6) = €778$ → **CPI = 121.6**
+:::
+::: {.column width="50%"}
+**Inflation rates:**
+
+- 2022→2023: $\frac{114.7 - 100}{100} = \mathbf{14.7\%}$
+- 2023→2024: $\frac{121.6 - 114.7}{114.7} = \mathbf{6.0\%}$
+
+:point_right: Inflation **slowed** from 14.7% to 6.0% — this is **disinflation** (still rising prices, but more slowly).
+:::
+::::
+
+## Portugal's HICP Inflation :portugal:
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.6
+
+hicp_raw <- get_eurostat("prc_hicp_aind",
+  filters = list(
+    geo    = "PT",
+    coicop = "CP00",
+    unit   = "RCH_A_AVG"
+  ),
+  time_format = "num"
+) |>
+  filter(time >= 2000, !is.na(values)) |>
+  arrange(time)
+
+ggplot(hicp_raw, aes(x = time, y = values)) +
+  geom_col(aes(fill = values >= 0), show.legend = FALSE) +
+  scale_fill_manual(values = c("TRUE" = ue_red, "FALSE" = "#5B8DB8")) +
+  geom_hline(yintercept = 0, color = ue_black, linewidth = 0.5) +
+  geom_hline(yintercept = 2, color = ue_gray, linewidth = 0.8,
+             linetype = "dashed") +
+  annotate("text", x = 2001, y = 2.4, label = "ECB target: ~2%",
+           color = ue_gray, size = 3.2, fontface = "italic") +
+  annotate("rect", xmin = 2021.5, xmax = 2023.5,
+           ymin = -Inf, ymax = Inf, fill = ue_red, alpha = 0.07) +
+  annotate("text", x = 2022.5, y = 9.5,
+           label = "Energy\ncrisis", color = ue_red,
+           size = 3, fontface = "italic") +
+  labs(
+    title = "Portugal: HICP Inflation (annual rate)",
+    x = NULL, y = "% change year-on-year",
+    caption = "Source: Eurostat (prc_hicp_aind, CP00). Blue bars = deflation."
+  ) +
+  scale_x_continuous(breaks = seq(2000, 2024, 4)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title       = element_text(color = ue_red, face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Inflation Across EU Countries — The 2022 Spike :globe_with_meridians:
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.5
+
+hicp_eu <- get_eurostat("prc_hicp_aind",
+  filters = list(
+    geo    = c("PT", "ES", "DE", "FR", "PL", "EE", "EU27_2020"),
+    coicop = "CP00",
+    unit   = "RCH_A_AVG"
+  ),
+  time_format = "num"
+) |>
+  filter(time >= 2018, !is.na(values)) |>
+  mutate(geo_label = case_when(
+    geo == "PT"        ~ "Portugal",
+    geo == "ES"        ~ "Spain",
+    geo == "DE"        ~ "Germany",
+    geo == "FR"        ~ "France",
+    geo == "PL"        ~ "Poland",
+    geo == "EE"        ~ "Estonia",
+    geo == "EU27_2020" ~ "EU-27"
+  ))
+
+ggplot(hicp_eu, aes(x = time, y = values,
+                    color = geo_label,
+                    linewidth = geo_label == "Portugal")) +
+  geom_line() +
+  scale_linewidth_manual(values = c("TRUE" = 1.6, "FALSE" = 0.9),
+                         guide = "none") +
+  scale_color_manual(values = c(
+    "Portugal" = ue_red,
+    "Spain"    = "#E07B00",
+    "Germany"  = ue_black,
+    "France"   = "#4472C4",
+    "Poland"   = "#70AD47",
+    "Estonia"  = "#7030A0",
+    "EU-27"    = ue_gray
+  )) +
+  geom_hline(yintercept = 2, linetype = "dashed",
+             color = ue_gray, linewidth = 0.6) +
+  labs(
+    title = "HICP Inflation — Selected EU Countries",
+    x = NULL, y = "% change year-on-year",
+    color = NULL,
+    caption = "Source: Eurostat (prc_hicp_aind)"
+  ) +
+  scale_x_continuous(breaks = 2018:2024) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title       = element_text(color = ue_red, face = "bold"),
+    legend.position  = "right",
+    panel.grid.minor = element_blank()
+  )
+```
+
+:point_right: The 2022 energy shock hit **all** EU countries — but Eastern Europe faced much higher peaks.
+
+# Part III: Consequences of High Inflation
+
+## 1. Loss of Purchasing Power :money_with_wings:
+
+::: {.key-concept}
+The most immediate consequence: **the same wage buys less**.
+
+$$\text{Real wage} = \frac{\text{Nominal wage}}{\text{Price level}}$$
+
+If your salary rises 3% but inflation is 8% → your **real wage fell by ~5%**.
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="55%"}
+**Who suffers most:**
+
+:older_adult: **Pensioners and fixed-income earners** — income doesn't automatically adjust
+
+:low_brightness: **Low-income households** — spend a higher share of income on essentials (food, energy) which tend to rise fastest
+
+:moneybag: **Savers** — money in the bank loses real value if interest rates are below inflation
+:::
+::: {.column width="45%"}
+**Tourism impact:**
+
+:airplane: Foreign tourists from **low-inflation countries** visiting **high-inflation Portugal** find prices rising faster than expected
+
+:hotel: Portuguese domestic tourists face squeezed budgets — may **downgrade or cancel** holidays
+
+:point_right: Inflation erodes the **real income** available for discretionary spending like tourism
+:::
+::::
+
+## 2. Erosion of Savings :bank:
+
+:::: {.columns}
+::: {.column width="55%"}
+**Real interest rate** = nominal interest rate − inflation rate
+
+$$r = i - \pi$$
+
+:bulb: **Example:**
+
+- Bank pays **2%** annual interest on savings
+- Inflation is **8%**
+- Real return = $2\% - 8\% = \mathbf{-6\%}$
+
+Your savings are **losing 6% of their real value every year**.
+
+. . .
+
+:point_right: Rational response: spend now rather than save, or move money into **real assets** (property, gold, foreign currency) — which can fuel further inflation.
+:::
+::: {.column width="45%"}
+```{r}
+#| fig-width: 4.8
+#| fig-height: 4.5
+
+# Illustrate real interest rate erosion
+years <- 0:10
+inflation_rate <- 0.08
+nominal_rate   <- 0.02
+
+savings_nominal <- 1000 * (1 + nominal_rate)^years
+savings_real    <- 1000 * ((1 + nominal_rate) / (1 + inflation_rate))^years
+
+df_sav <- data.frame(
+  year    = rep(years, 2),
+  value   = c(savings_nominal, savings_real),
+  type    = rep(c("Nominal value", "Real value (purchasing power)"),
+                each = length(years))
+)
+
+ggplot(df_sav, aes(x = year, y = value, color = type, linetype = type)) +
+  geom_line(linewidth = 1.3) +
+  geom_hline(yintercept = 1000, color = ue_gray,
+             linetype = "dotted", linewidth = 0.7) +
+  scale_color_manual(values = c(
+    "Nominal value"                   = ue_black,
+    "Real value (purchasing power)"   = ue_red
+  )) +
+  scale_linetype_manual(values = c(
+    "Nominal value"                   = "dashed",
+    "Real value (purchasing power)"   = "solid"
+  )) +
+  labs(
+    title = "€1,000 savings: 2% interest, 8% inflation",
+    subtitle = "Hypothetical — illustrative only",
+    x = "Years", y = "Value (€)",
+    color = NULL, linetype = NULL,
+    caption = "Hypothetical data for illustration"
+  ) +
+  scale_y_continuous(labels = scales::label_dollar(prefix = "€", suffix = "")) +
+  theme_minimal(base_size = 11) +
+  theme(
+    plot.title      = element_text(color = ue_red, face = "bold", size = 11),
+    plot.subtitle   = element_text(color = ue_gray, size = 9),
+    legend.position = "bottom",
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+::::
+
+## 3. Economic Uncertainty :question:
+
+High inflation makes it **harder to plan**:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+:hotel: **For tourism businesses:**
+
+- Cannot confidently price a holiday package 12 months ahead
+- Suppliers (food, energy, cleaning) revise costs unpredictably
+- Investment decisions (new pool? renovation?) become riskier
+- Long-term contracts become liabilities
+
+. . .
+
+:airplane: **For tour operators:**
+
+- Brochure prices set months in advance may no longer be profitable
+- Hedging fuel costs becomes essential but expensive
+:::
+::: {.column width="50%"}
+:family: **For households:**
+
+- Difficult to budget for a holiday when prices change rapidly
+- Postpone large discretionary purchases (holidays, travel)
+- Uncertainty reduces **consumer confidence**
+
+:chart_with_downwards_trend: **The result:**
+
+Investment falls → growth slows → potentially **more unemployment**
+
+:point_right: This is the classic inflation-unemployment trade-off we saw in Lecture 20 (the Phillips Curve)
+:::
+::::
+
+## 4. Social and Political Consequences :protest:
+
+::: {.key-concept}
+Uncontrolled inflation — **hyperinflation** — can destabilise entire societies.
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Historical examples:**
+
+:de: **Germany, 1923** — Weimar Republic hyperinflation. A wheelbarrow of cash to buy bread. Wiped out the middle class's savings, contributed to political radicalisation.
+
+:zimbabwe: **Zimbabwe, 2008** — inflation peaked at ~89.7 **sextillion** percent per month. Prices doubled every 24 hours. Currency became worthless.
+
+:venezuela: **Venezuela, 2018** — ~1,000,000% annual inflation. Severe shortages of food and medicine.
+:::
+::: {.column width="50%"}
+**Why does this destabilise?**
+
+:balance_scale: Inequality surges — debtors gain, creditors and savers lose
+
+:family: Middle class wealth destroyed
+
+:chart_with_downwards_trend: Business investment collapses
+
+:anger: Public trust in government and institutions erodes
+
+:handshake: Social contracts break down
+
+. . .
+
+:bulb: **For tourism:** political instability and currency collapse make a country immediately unattractive as a destination *and* unaffordable for domestic travel.
+:::
+::::
+
+## 5. Export Competitiveness :globe_with_meridians:
+
+::: {.key-concept}
+If Portugal's prices rise **faster** than those of competitor destinations, Portuguese tourism becomes **relatively more expensive** for foreign visitors.
+:::
+
+. . .
+
+$$\text{Real exchange rate} = \frac{e \times P^*}{P}$$
+
+Where $e$ = nominal exchange rate, $P^*$ = foreign price level, $P$ = domestic price level.
+
+. . .
+
+:::: {.columns}
+::: {.column width="55%"}
+**Example:**
+
+A British tourist compares holidays in Portugal vs Spain.
+
+- Both cost ~£800 in 2019
+- Portugal's inflation 2019-2023: **+20%** cumulative
+- Spain's inflation 2019-2023: **+15%** cumulative
+- GBP/EUR exchange rate unchanged
+
+:point_right: Portugal's holiday now costs ~£960 vs Spain's ~£920 → **Portugal loses competitiveness**
+:::
+::: {.column width="45%"}
+**The good news for Portugal:**
+
+Since Portugal uses the **euro**, there is no exchange rate risk against other Eurozone countries.
+
+The risk is mainly vs **non-euro** source markets: UK :gb:, USA :us:, Brazil :brazil:
+
+:point_right: Sterling or dollar depreciation vs euro = Portugal becomes more expensive for those visitors, even without domestic inflation.
+:::
+::::
+
+# Part IV: CPI vs GDP Deflator
+
+## Two Ways to Measure Prices :straight_ruler:
+
+We now have **two inflation measures** — it's important to understand when to use which:
+
+. . .
+
+| | **CPI / HICP** | **GDP Deflator** |
+|---|---|---|
+| **Covers** | Fixed basket of consumer goods | All goods in GDP (C+I+G+NX) |
+| **Basket** | Fixed weights (updated periodically) | Changes with production mix |
+| **Imports** | Included (we buy imported goods) | Excluded (not domestic production) |
+| **Used for** | Wage negotiations, pension indexing, ECB target | National accounts, real GDP calculation |
+| **Best for** | Measuring cost of living | Measuring economy-wide price level |
+
+. . .
+
+:bulb: For **tourism policy**, the CPI (especially the "restaurants & hotels" component) is the most relevant — it directly measures the price of tourism services to consumers.
+
+## Portugal HICP — Tourism Component :beach_umbrella:
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.5
+
+hicp_comp <- get_eurostat("prc_hicp_aind",
+  filters = list(
+    geo    = "PT",
+    coicop = c("CP00", "CP111", "CP112"),
+    unit   = "RCH_A_AVG"
+  ),
+  time_format = "num"
+) |>
+  filter(time >= 2005, !is.na(values)) |>
+  mutate(label = case_when(
+    coicop == "CP00"  ~ "Overall HICP",
+    coicop == "CP111" ~ "Restaurants & cafes",
+    coicop == "CP112" ~ "Accommodation services"
+  ))
+
+ggplot(hicp_comp, aes(x = time, y = values,
+                      color = label, linewidth = label == "Overall HICP")) +
+  geom_line() +
+  scale_linewidth_manual(values = c("TRUE" = 0.9, "FALSE" = 1.4),
+                         guide = "none") +
+  scale_color_manual(values = c(
+    "Overall HICP"          = ue_gray,
+    "Restaurants & cafes"   = ue_red,
+    "Accommodation services"= ue_black
+  )) +
+  geom_hline(yintercept = 0, linewidth = 0.4, color = ue_gray) +
+  labs(
+    title = "Portugal: HICP Inflation — Tourism vs Overall",
+    x = NULL, y = "% change year-on-year",
+    color = NULL,
+    caption = "Source: Eurostat (prc_hicp_aind). CP111 = Restaurants & cafes; CP112 = Accommodation."
+  ) +
+  scale_x_continuous(breaks = seq(2005, 2024, 3)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title       = element_text(color = ue_red, face = "bold"),
+    legend.position  = "bottom",
+    panel.grid.minor = element_blank()
+  )
+```
+
+:point_right: Accommodation and restaurant prices often **diverge from overall inflation** — sometimes rising faster (peak demand), sometimes slower (competitive pressure).
+
+# Exercises
+
+## :pencil: Exercise 1 — Multiple Choice
+
+**In 2022, the CPI in Portugal was 108.5. In 2023, it was 115.7. What was the inflation rate in 2023?**
+
+. . .
+
+**(A)** 7.2%
+
+**(B)** 6.6%
+
+**(C)** 8.5%
+
+**(D)** 5.9%
+
+::: {.fragment}
+::: {.highlight-box}
+**Correct answer: (B)**
+
+$$\text{Inflation} = \frac{115.7 - 108.5}{108.5} \times 100 = \frac{7.2}{108.5} \times 100 = \mathbf{6.6\%}$$
+
+Option A (7.2%) is the absolute point difference, not the rate — a common error. Always divide by the **starting** CPI, not subtract directly.
+:::
+:::
+
+## :pencil: Exercise 2 — Multiple Choice
+
+**A Portuguese hotel manager locks in a supply contract for food at fixed prices for 12 months, starting January 2022. Inflation then hits 8% over the year. Which statement best describes the outcome?**
+
+. . .
+
+**(A)** The hotel benefits: its input costs are fixed while it can raise room prices
+
+**(B)** The hotel is harmed: it must honour the fixed contract but its own revenue is eroded by inflation
+
+**(C)** The supplier benefits: it receives payments that are worth more in real terms
+
+**(D)** Neither party is affected because fixed contracts are inflation-neutral
+
+::: {.fragment}
+::: {.highlight-box}
+**Correct answer: (A)**
+
+The hotel **locked in input costs** — it pays the same nominal price for food regardless of 8% inflation. Meanwhile, it can pass inflation onto guests via higher room rates. The **supplier is harmed** (receives fixed nominal payment worth less in real terms). Option C is the opposite of what happens. Option D is wrong — fixed contracts have distributional effects under inflation.
+:::
+:::
+
+## :pencil: Exercise 3 — Open Question
+
+**Consider the following data for a small coastal tourism economy. The consumption basket contains three goods:**
+
+| Good | Qty in basket | Price 2022 | Price 2023 | Price 2024 |
+|---|---|---|---|---|
+| Hotel night | 4 | €90 | €105 | €112 |
+| Meal at restaurant | 8 | €25 | €28 | €29 |
+| Museum ticket | 3 | €12 | €12.50 | €13 |
+
+**(a)** Calculate the **CPI** for 2022, 2023 and 2024, using 2022 as the base year. *(3 marks)*
+
+**(b)** Calculate the **inflation rate** for 2023 and 2024. *(2 marks)*
+
+**(c)** Is the economy experiencing **inflation, disinflation, or deflation** between 2023 and 2024? Explain. *(2 marks)*
+
+**(d)** A hotel worker earns **€1,800/month** in 2022. Their wage rises to **€1,950** in 2023 and **€2,000** in 2024. Calculate their **real wage** in each year (in 2022 prices) and comment on whether they are better or worse off. *(3 marks)*
+
+---
+
+::: {.fragment}
+
+**Solution:**
+
+**(a)** Cost of basket:
+
+- 2022: $(4×90)+(8×25)+(3×12) = 360+200+36 = €596$ → **CPI = 100**
+- 2023: $(4×105)+(8×28)+(3×12.50) = 420+224+37.50 = €681.50$ → **CPI = 114.3**
+- 2024: $(4×112)+(8×29)+(3×13) = 448+232+39 = €719$ → **CPI = 120.6**
+
+**(b)** Inflation rates:
+
+- 2023: $(114.3 - 100)/100 = \mathbf{14.3\%}$
+- 2024: $(120.6 - 114.3)/114.3 = \mathbf{5.5\%}$
+
+**(c)** Between 2023 and 2024 the economy is experiencing **disinflation**: prices are still rising (CPI went from 114.3 to 120.6, inflation still positive at 5.5%) but the **rate of increase slowed sharply** from 14.3% to 5.5%. This is not deflation (that would require CPI to fall).
+
+**(d)** Real wage = Nominal wage / (CPI/100):
+
+- 2022: €1,800 / 1.000 = **€1,800**
+- 2023: €1,950 / 1.143 = **€1,706** ← worse off despite the raise
+- 2024: €2,000 / 1.206 = **€1,659** ← still falling
+
+The worker received two nominal pay rises but is **worse off in real terms each year** — their wages grew much more slowly than prices (8.3% and 2.6% nominal vs 14.3% and 5.5% inflation).
+
+:::
+
+## Summary :books:
+
+**Today we covered:**
+
+:white_check_mark: **Inflation** = general, sustained price increase; erodes purchasing power
+
+:white_check_mark: Three causes: **demand-pull**, **cost-push**, **monetary**
+
+:white_check_mark: The **CPI/HICP** — measuring a fixed basket at current prices
+
+:white_check_mark: CPI inflation formula: $\frac{CPI_t - CPI_{t-1}}{CPI_{t-1}} \times 100\%$
+
+:white_check_mark: **Real wage** = nominal wage / price level — the welfare-relevant measure
+
+:white_check_mark: Eight consequences of uncontrolled inflation: purchasing power, savings, uncertainty, social instability, relative prices, capital flight, exports
+
+:white_check_mark: **CPI vs GDP deflator** — different coverage, different uses
+
+. . .
+
+**Next lecture (Lecture 24):**
+
+:bank: Central Banks and Monetary Policy — how the ECB uses interest rates to fight inflation
+
+## Thank You! :wave: {.center}
+
+**Questions?**
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+*Next class: Thursday, May 15th, 2026*

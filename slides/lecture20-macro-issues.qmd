@@ -1,0 +1,732 @@
+---
+title: "The Panorama of Macroeconomics"
+subtitle: "Lecture 20: The Main Macroeconomic Issues"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 20"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(eurostat)
+library(tidyverse)
+library(lubridate)
+
+ue_red    <- "#C8102E"
+ue_black  <- "#1D1D1B"
+ue_gray   <- "#6D6E71"
+ue_white  <- "#FFFFFF"
+ue_light  <- "#F5F5F5"
+```
+
+## Recap: Where We Have Been :rewind:
+
+:::: {.columns}
+::: {.column width="50%"}
+**Microeconomics block** :microscope:
+
+:one: Fundamentals, scarcity, opportunity cost
+
+:two: Consumer theory — preferences, utility, demand
+
+:three: Producer theory — costs, profit, supply
+
+:four: Market equilibrium — price & quantity
+:::
+::: {.column width="50%"}
+**Game Theory block** :chess_pawn:
+
+:five: Strategic interaction — Nash equilibrium
+
+:six: Sequential games — backward induction
+
+. . .
+
+:point_right: **Today we zoom out** :telescope:
+
+We move from individual markets to the **economy as a whole**
+:::
+::::
+
+# Part I: From Micro to Macro
+
+## The Key Difference :mag:
+
+:::: {.columns}
+::: {.column width="48%"}
+:microscope: **Microeconomics**
+
+Studies **individual** agents and **specific** markets
+
+- One firm's pricing decision
+- One consumer's demand for hotel nights
+- Equilibrium in the Lisbon restaurant market
+:::
+::: {.column width="4%"}
+:::
+::: {.column width="48%"}
+:telescope: **Macroeconomics**
+
+Studies the **economy as a whole**
+
+- Total output of the entire Portuguese economy
+- Overall unemployment rate
+- The general level of prices (inflation)
+:::
+::::
+
+::: {.fragment}
+::: {.key-concept}
+**Aggregation** is the tool that bridges the two. Macroeconomists **sum up** individual variables — millions of consumers, thousands of firms — into economy-wide totals.
+:::
+:::
+
+## Why Aggregation? :jigsaw:
+
+:::: {.columns}
+::: {.column width="55%"}
+Imagine trying to manage a flight by tracking every single **air molecule** in the cabin.
+
+Instead, pilots watch **aggregate** gauges:
+
+:thermometer: Cabin temperature
+
+:wind_face: Air pressure
+
+:fuel_pump: Total fuel remaining
+
+. . .
+
+Macroeconomics works the same way. We cannot track every transaction, so we build **aggregate indicators** that summarize the economy's health.
+:::
+::: {.column width="45%"}
+| Individual variable | Aggregate |
+|---|---|
+| Your wage | Total wages in the economy |
+| One firm's output | GDP |
+| One hotel's prices | Overall inflation |
+| One worker unemployed | Unemployment rate |
+:::
+::::
+
+## The Macroeconomic Dashboard :bar_chart:
+
+::: {.key-concept}
+**Macroeconomics** is the study of the performance of the **national economy** and the policy measures used to improve it.
+:::
+
+. . .
+
+**Six big questions macroeconomists ask:**
+
+:seedling: Economic growth & living standards
+
+:factory: Productivity
+
+:roller_coaster: Recessions & expansions
+
+:briefcase: Unemployment
+
+:fire: Inflation
+
+:globe_with_meridians: Economic interdependence of nations
+
+# Part II: The Six Main Issues
+
+## :seedling: 1. Economic Growth & Living Standards
+
+:::: {.columns}
+::: {.column width="55%"}
+Over the past century, living standards in industrialised countries have improved **dramatically**.
+
+- Life expectancy up
+- Access to health, education, technology
+- Real incomes higher
+
+**Macroeconomics asks:**
+
+- Why do some countries grow faster than others?
+- What drives long-run improvements in well-being?
+- Can tourism-dependent economies sustain growth?
+:::
+::: {.column width="45%"}
+```{r}
+#| fig-width: 5.5
+#| fig-height: 4.5
+
+# Real GDP per capita Portugal — Eurostat nama_10_pc
+gdp_raw <- get_eurostat("nama_10_pc",
+  filters = list(
+    geo   = "PT",
+    na_item = "B1GQ",
+    unit  = "CP_EUR_HAB"
+  ),
+  time_format = "num"
+)
+
+gdp <- gdp_raw |>
+  filter(time >= 2000) |>
+  arrange(time)
+
+ggplot(gdp, aes(x = time, y = values / 1000)) +
+  geom_line(color = ue_red, linewidth = 1.3) +
+  geom_area(fill = ue_red, alpha = 0.1) +
+  annotate("rect", xmin = 2008.5, xmax = 2013.5,
+           ymin = -Inf, ymax = Inf,
+           fill = ue_gray, alpha = 0.15) +
+  annotate("text", x = 2011, y = 12,
+           label = "Financial\nCrisis", color = ue_gray,
+           size = 3, fontface = "italic") +
+  annotate("rect", xmin = 2019.8, xmax = 2021,
+           ymin = -Inf, ymax = Inf,
+           fill = ue_gray, alpha = 0.15) +
+  annotate("text", x = 2020.4, y = 12,
+           label = "COVID", color = ue_gray,
+           size = 3, fontface = "italic") +
+  labs(
+    title = "Portugal: GDP per capita",
+    x = NULL, y = "Thousand €",
+    caption = "Source: Eurostat (nama_10_pc)"
+  ) +
+  scale_x_continuous(breaks = seq(2000, 2024, 4)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+::::
+
+## :factory: 2. Productivity
+
+::: {.key-concept}
+**Labour productivity** = Output per worker employed
+
+It is the **single most important** determinant of living standards in the long run.
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Why does it matter for tourism?**
+
+:beach_umbrella: A hotel with better-trained staff can serve **more guests** at **higher quality**
+
+:airplane: A tour operator using better software books more itineraries per employee
+
+:moneybag: Higher productivity → higher wages → higher living standards
+:::
+::: {.column width="50%"}
+**What drives productivity?**
+
+:books: Education & training
+
+:computer: Technology & capital
+
+:gear: Better management practices
+
+:recycle: Infrastructure (transport, broadband)
+
+:point_right: Countries that invest in these grow **faster and richer**
+:::
+::::
+
+## :roller_coaster: 3. Recessions & Expansions
+
+:::: {.columns}
+::: {.column width="55%"}
+Economies do **not** grow smoothly. They experience:
+
+**Expansions** :chart_with_upwards_trend: — periods of rising output & employment
+
+**Recessions** :chart_with_downwards_trend: — periods of falling output (two or more consecutive quarters of negative growth)
+
+**Why does this matter for tourism?**
+
+Tourism is highly **cyclical** — one of the first sectors to suffer in recessions and one of the first to bounce back in expansions.
+:::
+::: {.column width="45%"}
+```{r}
+#| fig-width: 5.5
+#| fig-height: 4.5
+
+# GDP growth rate Portugal — Eurostat nama_10_gdp
+growth_raw <- get_eurostat("namq_10_gdp",
+  filters = list(
+    geo    = "PT",
+    na_item = "B1GQ",
+    unit   = "CLV_PCH_PRE",
+    s_adj  = "SCA"
+  ),
+  time_format = "date"
+)
+
+growth <- growth_raw |>
+  filter(time >= as.Date("2005-01-01")) |>
+  arrange(time)
+
+ggplot(growth, aes(x = time, y = values)) +
+  geom_col(aes(fill = values >= 0), show.legend = FALSE) +
+  scale_fill_manual(values = c("TRUE" = ue_red, "FALSE" = ue_black)) +
+  geom_hline(yintercept = 0, color = ue_gray, linewidth = 0.6) +
+  labs(
+    title = "Portugal: GDP Growth Rate (quarterly)",
+    x = NULL, y = "% change (prev. quarter)",
+    caption = "Source: Eurostat (namq_10_gdp)"
+  ) +
+  scale_x_date(date_breaks = "3 years", date_labels = "%Y") +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+::::
+
+## :briefcase: 4. Unemployment
+
+::: {.key-concept}
+**Unemployment rate** = % of people who are **willing and able** to work but **cannot find a job**
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="55%"}
+**Key facts:**
+
+- Unemployment rises sharply in recessions
+- Even in booms, some unemployment always exists (people switching jobs, new graduates entering the market)
+- Youth unemployment tends to be much higher than overall unemployment
+- Tourism creates a lot of employment — but often **seasonal and precarious**
+:::
+::: {.column width="45%"}
+```{r}
+#| fig-width: 5.5
+#| fig-height: 4.5
+
+unemp_raw <- get_eurostat("une_rt_a",
+  filters = list(
+    geo  = c("PT", "EU27_2020"),
+    age  = "Y15-74",
+    sex  = "T",
+    unit = "PC_ACT"
+  ),
+  time_format = "num"
+)
+
+unemp <- unemp_raw |>
+  filter(time >= 2000) |>
+  mutate(geo_label = case_when(
+    geo == "PT" ~ "Portugal",
+    TRUE        ~ "EU-27"
+  ))
+
+ggplot(unemp, aes(x = time, y = values, color = geo_label)) +
+  geom_line(linewidth = 1.3) +
+  scale_color_manual(values = c("Portugal" = ue_red, "EU-27" = ue_black)) +
+  labs(
+    title = "Unemployment Rate",
+    x = NULL, y = "%", color = NULL,
+    caption = "Source: Eurostat (une_rt_a)"
+  ) +
+  scale_x_continuous(breaks = seq(2000, 2024, 4)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title   = element_text(color = ue_red, face = "bold"),
+    legend.position = "bottom",
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+::::
+
+## :fire: 5. Inflation
+
+::: {.key-concept}
+**Inflation** = the rate at which the **general level of prices** rises over time. If inflation is 3%, a basket of goods that cost €100 today will cost **€103** next year.
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Why does it matter for tourism?**
+
+:hotel: Higher hotel prices reduce the purchasing power of tourists
+
+:airplane: Flight costs affect travel decisions
+
+:currency_exchange: Inflation differences between countries affect **exchange rates** and **competitiveness**
+
+:point_right: Portugal's inflation relative to Germany or the UK affects how attractive it is as a destination
+:::
+::: {.column width="50%"}
+```{r}
+#| fig-width: 5.5
+#| fig-height: 4.5
+
+hicp_raw <- get_eurostat("prc_hicp_aind",
+  filters = list(
+    geo   = "PT",
+    coicop = "CP00",
+    unit  = "RCH_A_AVG"
+  ),
+  time_format = "num"
+)
+
+hicp <- hicp_raw |>
+  filter(time >= 2000) |>
+  arrange(time)
+
+ggplot(hicp, aes(x = time, y = values)) +
+  geom_col(aes(fill = values >= 0), show.legend = FALSE) +
+  scale_fill_manual(values = c("TRUE" = ue_red, "FALSE" = ue_black)) +
+  geom_hline(yintercept = 0, color = ue_gray, linewidth = 0.5) +
+  labs(
+    title = "Portugal: HICP Inflation (annual)",
+    x = NULL, y = "%",
+    caption = "Source: Eurostat (prc_hicp_aind)"
+  ) +
+  scale_x_continuous(breaks = seq(2000, 2024, 4)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title   = element_text(color = ue_red, face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+::::
+
+## :globe_with_meridians: 6. Economic Interdependence of Nations
+
+:::: {.columns}
+::: {.column width="55%"}
+Modern economies are **deeply interconnected**:
+
+:ship: Trade in goods and services
+
+:bank: International capital flows
+
+:currency_exchange: Exchange rate fluctuations
+
+:handshake: Trade agreements (EU single market, WTO)
+
+**For tourism, this is especially visible:**
+
+Portugal receives visitors from Germany, the UK, the US, Brazil — each with their own economic cycles, exchange rates, and purchasing power.
+
+:point_right: A recession in Germany directly **reduces tourism demand** in the Algarve.
+:::
+::: {.column width="45%"}
+```{r}
+#| fig-width: 5.5
+#| fig-height: 4.5
+
+# Tourism receipts from Eurostat (tour_dem_extot or bop_its6_det)
+# Use trade openness as a robust proxy: exports + imports / GDP
+trade_raw <- get_eurostat("nama_10_gdp",
+  filters = list(
+    geo     = "PT",
+    na_item = c("P6", "P7", "B1GQ"),
+    unit    = "CP_MEUR"
+  ),
+  time_format = "num"
+)
+
+trade <- trade_raw |>
+  filter(time >= 2000) |>
+  select(time, na_item, values) |>
+  pivot_wider(names_from = na_item, values_from = values) |>
+  mutate(openness = (P6 + P7) / B1GQ * 100) |>
+  filter(!is.na(openness))
+
+ggplot(trade, aes(x = time, y = openness)) +
+  geom_line(color = ue_red, linewidth = 1.3) +
+  geom_area(fill = ue_red, alpha = 0.1) +
+  labs(
+    title = "Portugal: Trade Openness",
+    subtitle = "(Exports + Imports) / GDP × 100",
+    x = NULL, y = "%",
+    caption = "Source: Eurostat (nama_10_gdp)"
+  ) +
+  scale_x_continuous(breaks = seq(2000, 2024, 4)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title   = element_text(color = ue_red, face = "bold"),
+    plot.subtitle = element_text(color = ue_gray, size = 10),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+::::
+
+# Part III: The Macro Toolkit
+
+## How Do Macroeconomists Think? :wrench:
+
+Macroeconomics does not just describe problems — it tries to **explain and fix** them.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Two types of analysis:**
+
+:straight_ruler: **Positive analysis**
+
+Objective study of cause and effect.
+"If interest rates rise, what happens to investment?"
+
+:balance_scale: **Normative analysis**
+
+Value judgments about what *should* be done.
+"Should the government reduce unemployment even if it raises inflation?"
+:::
+::: {.column width="50%"}
+**Two main policy levers:**
+
+:bank: **Monetary policy**
+
+Central banks control money supply and interest rates (e.g., the ECB for Portugal)
+
+:receipt: **Fiscal policy**
+
+Government controls taxes and public spending
+
+:point_right: We will study both in detail in the coming lectures.
+:::
+::::
+
+## The Macroeconomic Policy Triangle :triangular_flag_on_post:
+
+:::: {.columns}
+::: {.column width="55%"}
+Policymakers juggle three goals that are often **in tension**:
+
+:chart_with_upwards_trend: **Growth** — increase output and living standards
+
+:briefcase: **Low unemployment** — keep people employed
+
+:fire: **Low inflation** — keep prices stable
+
+. . .
+
+**The tension:**
+
+Policies that boost growth and cut unemployment often *raise* inflation.
+
+Policies that reduce inflation often *slow* growth and *raise* unemployment.
+
+:point_right: This is the classic **Phillips Curve** trade-off (we will revisit this).
+:::
+::: {.column width="45%"}
+```{r}
+#| fig-width: 5
+#| fig-height: 4.5
+
+# Scatter: unemployment vs inflation Portugal
+u_raw <- get_eurostat("une_rt_a",
+  filters = list(geo = "PT", age = "Y15-74", sex = "T",
+                 unit = "PC_ACT"),
+  time_format = "num"
+) |> filter(time >= 2000) |> select(time, unemp = values)
+
+p_raw <- get_eurostat("prc_hicp_aind",
+  filters = list(geo = "PT", coicop = "CP00", unit = "RCH_A_AVG"),
+  time_format = "num"
+) |> filter(time >= 2000) |> select(time, infl = values)
+
+scatter <- inner_join(u_raw, p_raw, by = "time") |>
+  filter(!is.na(unemp), !is.na(infl))
+
+ggplot(scatter, aes(x = unemp, y = infl)) +
+  geom_point(color = ue_red, size = 3, alpha = 0.8) +
+  geom_text(aes(label = time), nudge_y = 0.3, size = 2.8,
+            color = ue_gray) +
+  geom_smooth(method = "lm", se = FALSE,
+              color = ue_black, linewidth = 0.8, linetype = "dashed") +
+  labs(
+    title = "Unemployment vs Inflation — Portugal",
+    x = "Unemployment rate (%)",
+    y = "Inflation rate (%)",
+    caption = "Source: Eurostat"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+:::
+::::
+
+## Tourism and Macroeconomics :beach_umbrella:
+
+Macroeconomic variables directly shape tourism:
+
+. . .
+
+:::: {.columns}
+::: {.column width="33%"}
+:chart_with_upwards_trend: **GDP Growth**
+
+When incomes rise, households spend **more** on tourism — especially international trips.
+
+Tourism is a **normal good** with income elasticity > 1 (luxury good behaviour).
+:::
+::: {.column width="33%"}
+:briefcase: **Unemployment**
+
+High unemployment → lower household incomes → **less discretionary spending** on travel.
+
+Tourism jobs are often the **first cut** in downturns.
+:::
+::: {.column width="33%"}
+:fire: **Inflation**
+
+Rising prices in destination countries reduce **price competitiveness**.
+
+Exchange rate shifts alter the **real cost** of foreign travel.
+:::
+::::
+
+. . .
+
+:point_right: The 2008 financial crisis, COVID-19 in 2020, and the 2022 inflation spike all hit tourism **hard and fast** — illustrating exactly why macro matters for this industry.
+
+## The Road Ahead :map:
+
+Over the next lectures, we will build the **macro toolkit** piece by piece:
+
+| Lecture | Topic |
+|---|---|
+| 21 | Aggregation: the concept |
+| 22 | GDP: measuring total production |
+| 23 | Inflation |
+| 24 | Central Banks & Monetary Policy |
+| 25 | Fiscal Policy |
+| 26 | Balance of Payments |
+
+:calendar: **Test 2** covers producer theory and macroeconomics — May 28th.
+
+# Exercises
+
+## :pencil: Exercise 1 — Multiple Choice
+
+**Which of the following best describes macroeconomics?**
+
+. . .
+
+**(A)** The study of how an individual firm decides how much to produce
+
+**(B)** The study of the performance of the national economy and the policies used to improve it
+
+**(C)** The analysis of how a single consumer chooses between two goods given a budget constraint
+
+**(D)** The study of price formation in a single competitive market
+
+::: {.fragment}
+::: {.highlight-box}
+**Correct answer: (B)**
+
+Macroeconomics studies economy-wide outcomes — GDP, unemployment, inflation — and the policies that affect them. Options A, C, and D are microeconomic questions.
+:::
+:::
+
+## :pencil: Exercise 2 — Multiple Choice
+
+**Portugal's unemployment rate rose sharply after 2008 and again in 2020. Which macroeconomic concept best explains why tourism revenues typically fall during such periods?**
+
+. . .
+
+**(A)** Tourism is an inferior good, so demand rises when incomes fall
+
+**(B)** Inflation is always lower during recessions, making tourism cheaper
+
+**(C)** Tourism has high income elasticity; falling incomes reduce discretionary travel spending
+
+**(D)** Monetary policy automatically increases tourism demand during downturns
+
+::: {.fragment}
+::: {.highlight-box}
+**Correct answer: (C)**
+
+Tourism behaves as a luxury/normal good with income elasticity > 1. When unemployment rises and household incomes fall, discretionary spending — like holidays — is cut first. Option A is incorrect (it is a normal good), B is unrelated, and D is wrong.
+:::
+:::
+
+## :pencil: Exercise 3 — Open Question
+
+**Consider the following macroeconomic context for Portugal:**
+
+A severe recession hits the Eurozone. GDP contracts by 3%, unemployment rises to 15%, and inflation falls to near zero. The British pound also depreciates 15% against the euro.
+
+**(a)** Using the macroeconomic issues covered in this lecture, identify **three** distinct channels through which this scenario affects Portugal's tourism sector. *(6 marks)*
+
+**(b)** For each channel, indicate whether the effect on tourism demand is **positive or negative**, and briefly justify. *(6 marks)*
+
+**(c)** The recession in the Eurozone is accompanied by a **strong growth period in Brazil**. How might this partially offset the effects identified in (a)? *(3 marks)*
+
+---
+
+::: {.fragment}
+
+**Solution outline:**
+
+**(a)** Channels: (1) GDP/income of EU tourists falls → less demand from Germany, France, Spain; (2) Unemployment rises → fewer households can afford international travel; (3) GBP depreciation → UK tourists face higher real price for Portuguese holidays.
+
+**(b)** (1) Negative — lower incomes reduce outbound tourism; (2) Negative — unemployed households cut discretionary travel first; (3) Negative — Portugal becomes 15% more expensive for British visitors.
+
+**(c)** Brazilian GDP growth → Brazilian tourists have higher incomes and more demand for European travel. Brazil is a key source market for Portugal (language, cultural ties). Positive demand shock from non-EU markets can partially offset EU-origin declines.
+
+:::
+
+## Summary :books:
+
+**Today we covered:**
+
+:white_check_mark: The micro-macro distinction — individual markets vs economy-wide aggregates
+
+:white_check_mark: Aggregation as the key tool of macroeconomics
+
+:white_check_mark: The **six main macroeconomic issues**: growth, productivity, recessions/expansions, unemployment, inflation, and international interdependence
+
+:white_check_mark: The two policy levers: monetary and fiscal policy
+
+:white_check_mark: Why all of this matters directly for **tourism**
+
+. . .
+
+**Next lecture (Lecture 21):**
+
+:jigsaw: Aggregation — the concept in depth; building up from individual transactions to economy-wide totals
+
+## Thank You! :wave: {.center}
+
+**Questions?**
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+*Next class: Wednesday, May 7th, 2026*

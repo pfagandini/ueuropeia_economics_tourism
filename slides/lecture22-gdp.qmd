@@ -1,0 +1,703 @@
+---
+title: "Gross Domestic Product"
+subtitle: "Lecture 22: The Measurement of Total Production"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 22"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(eurostat)
+library(tidyverse)
+library(lubridate)
+library(scales)
+
+ue_red   <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray  <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_light <- "#F5F5F5"
+```
+
+## Recap: Aggregation :rewind:
+
+Last lecture we established **why** we aggregate:
+
+:white_check_mark: Individual transactions → economy-wide totals
+
+:white_check_mark: The circular flow: $Y = C + I + G + NX$
+
+:white_check_mark: Value-added approach avoids double-counting
+
+:white_check_mark: Three equivalent measurement approaches: **expenditure, income, production**
+
+. . .
+
+**Today** we go deep on the most important aggregate of all:
+
+:point_right: **Gross Domestic Product (GDP)** — the economy's single most-watched number
+
+# Part I: What Exactly is GDP?
+
+## The Definition — Three Parts :straight_ruler:
+
+::: {.key-concept}
+**Gross Domestic Product (GDP)** is the **market value** :one: of **final goods and services** :two: **produced in a country** during a **given period of time** :three:
+:::
+
+. . .
+
+Each word matters. Let us unpack all three parts carefully.
+
+## :one: Market Value — Why Use Prices?
+
+A modern economy produces **thousands** of different goods and services:
+
+- Hotel nights :hotel:
+- Flights :airplane:
+- Restaurant meals :fork_and_knife:
+- Sunscreen :sunny:
+- Legal advice :briefcase:
+
+. . .
+
+You cannot simply **add them up** in physical units. How many hotel nights equal one flight?
+
+:point_right: We use **market prices** to convert everything to euros, making addition possible.
+
+$$\text{GDP} = \sum_{n=1}^{N} P_n \times Q_n$$
+
+:bulb: *Goods that aren't sold on markets (e.g. unpaid domestic work) are NOT included. Government services are included at cost.*
+
+## The "Motorália" Example :factory:
+
+*From the textbook* — imagine a tiny economy producing only **engine filters** and **spark plugs**:
+
+. . .
+
+:::: {.columns}
+::: {.column width="55%"}
+| Good | Qty | Price | Value |
+|---|---|---|---|
+| Engine filters | 4 | €3.50 | €14.00 |
+| Spark plugs | 6 | €5.00 | €30.00 |
+| Shoes | 3 pairs | €20.00 | €60.00 |
+| **GDP** | | | **€104.00** |
+
+We cannot add "4 filters + 6 plugs + 3 shoes". But we *can* add €14 + €30 + €60 = **€104**.
+
+:point_right: Prices act as **weights** — more valuable goods count for more in GDP.
+:::
+::: {.column width="45%"}
+:thinking: **Quick check:**
+
+If instead the economy produced **3 filters, 3 plugs, and 4 pairs of shoes** (same prices):
+
+$(3 \times 3.50) + (3 \times 5.00) + (4 \times 20.00)$
+
+$= 10.50 + 15.00 + 80.00 = \mathbf{€105.50}$
+
+GDP is *higher* — even though fewer filters and plugs were made — because **shoes are more valuable**.
+:::
+::::
+
+## :two: Final Goods and Services — No Double Counting
+
+::: {.key-concept}
+**Final goods and services** are sold to **end users**. **Intermediate goods** are used as inputs in the production of other goods and are **not counted separately** in GDP.
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="55%"}
+**The bread chain — tourism breakfast in Porto:**
+
+| Stage | Revenue | Input cost | Value Added |
+|---|---|---|---|
+| Wheat farm | €0.50 | €0.00 | **€0.50** |
+| Flour mill | €1.20 | €0.50 | **€0.70** |
+| Bakery | €2.00 | €1.20 | **€0.80** |
+| **GDP contribution** | | | **€2.00** |
+
+:x: Wrong: €0.50 + €1.20 + €2.00 = €3.70 (triple-counts the wheat)
+
+:heavy_check_mark: Right: €0.50 + €0.70 + €0.80 = **€2.00**
+:::
+::: {.column width="45%"}
+:hotel: **Tourism example:**
+
+A tour operator buys bus transport (€20/person) and packages it into a day trip sold for €80/person.
+
+- Bus company value added: the fare they charged their suppliers (say €8 in fuel/maintenance) subtracted from €20 → **€12**
+- Tour operator value added: €80 − €20 = **€60**
+- Total GDP contribution: **€72**
+
+:point_right: The €80 ticket price is **not** all GDP — it contains the bus company's contribution too.
+:::
+::::
+
+## :three: Produced in a Country, in a Given Period
+
+:::: {.columns}
+::: {.column width="50%"}
+**"In a country"** = within **borders**, regardless of ownership
+
+:heavy_check_mark: A German-owned hotel operating in Lisbon → counted in **Portugal's GDP**
+
+:x: A Portuguese-owned hotel operating in London → counted in **UK's GDP**, not Portugal's
+
+. . .
+
+**"During a given period"** = only **current production** counts
+
+:heavy_check_mark: A new apartment built in 2025 → counts in 2025 GDP
+
+:x: A 20-year-old house sold in 2025 → **not** in 2025 GDP (it was counted when built)
+
+:heavy_check_mark: BUT the estate agent's commission on that sale → **counted** (a new service)
+:::
+::: {.column width="50%"}
+::: {.key-concept}
+**Tricky cases:**
+
+:question: Stock market purchases?
+**No** — financial transactions, not production
+
+:question: Government pensions?
+**No** — transfer payments, not new production
+
+:question: Illegal activities?
+**No** (in standard accounts) — not market transactions
+
+:question: Tourism spending by foreigners in Portugal?
+**Yes** — production of services within Portuguese borders → **export of services**
+:::
+:::
+::::
+
+# Part II: The Expenditure Approach
+
+## GDP = C + I + G + NX :bar_chart:
+
+The **expenditure approach** adds up all spending on final goods and services:
+
+. . .
+
+| Agent | Component | Symbol | Tourism example |
+|---|---|---|---|
+| Households | Consumption | **C** | Portuguese family's domestic holiday |
+| Firms | Investment | **I** | Hotel building new pool |
+| Government | Gov. expenditure | **G** | Airport expansion by the state |
+| Rest of world | Net exports | **NX** | German tourist spending in Algarve |
+
+$$\boxed{Y = C + I + G + NX}$$
+
+## Portugal's GDP Components — A Look at the Data :portugal:
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.6
+
+# Eurostat nama_10_gdp — expenditure components as % of GDP
+comp_raw <- get_eurostat("nama_10_gdp",
+  filters = list(
+    geo     = "PT",
+    na_item = c("P31_S14_S15", "P51G", "P3_S13", "P6", "P7"),
+    unit    = "CP_MEUR"
+  ),
+  time_format = "num"
+)
+
+gdp_tot <- get_eurostat("nama_10_gdp",
+  filters = list(geo = "PT", na_item = "B1GQ", unit = "CP_MEUR"),
+  time_format = "num"
+) |> select(time, gdp = values)
+
+comp <- comp_raw |>
+  filter(time >= 2005) |>
+  left_join(gdp_tot, by = "time") |>
+  mutate(
+    share = values / gdp * 100,
+    component = case_when(
+      na_item == "P31_S14_S15" ~ "Consumption (C)",
+      na_item == "P51G"       ~ "Investment (I)",
+      na_item == "P3_S13"     ~ "Government (G)",
+      na_item == "P6"         ~ "Exports (X)",
+      na_item == "P7"         ~ "Imports (M)"
+    )
+  ) |>
+  filter(!is.na(share))
+
+ggplot(comp, aes(x = time, y = share, color = component)) +
+  geom_line(linewidth = 1.1) +
+  scale_color_manual(values = c(
+    "Consumption (C)" = ue_red,
+    "Investment (I)"  = ue_black,
+    "Government (G)"  = ue_gray,
+    "Exports (X)"     = "#E07B00",
+    "Imports (M)"     = "#5B8DB8"
+  )) +
+  labs(
+    title = "Portugal: GDP Expenditure Components (% of GDP)",
+    x = NULL, y = "% of GDP", color = NULL,
+    caption = "Source: Eurostat (nama_10_gdp)"
+  ) +
+  scale_x_continuous(breaks = seq(2005, 2024, 3)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title      = element_text(color = ue_red, face = "bold"),
+    legend.position = "right",
+    panel.grid.minor = element_blank()
+  )
+```
+
+:point_right: Notice how **exports** have grown substantially — tourism plays a major role here.
+
+## A Worked Example: Portugal-Sized Economy :pencil:
+
+Using the structure from the textbook (Table 15), here is a hypothetical national accounts table:
+
+:::: {.columns}
+::: {.column width="50%"}
+| Component | Sub-item | €bn |
+|---|---|---|
+| **Consumption (C)** | | **395** |
+| | Durable goods | 100 |
+| | Non-durable goods | 125 |
+| | Services | 170 |
+| **Investment (I)** | | **142** |
+| | Business fixed capital | 80 |
+| | Residential housing | 40 |
+| | Inventory change | 22 |
+| **Government (G)** | | **178** |
+| **Net Exports (NX)** | | **58** |
+| | Exports | 95 |
+| | Imports | −37 |
+| **GDP = C+I+G+NX** | | **773** |
+:::
+::: {.column width="50%"}
+:bulb: **Key observations:**
+
+- **C** is always the largest component (~50% of GDP in most economies)
+- **I** is the most *volatile* component — it collapses in recessions
+- **G** is relatively stable (government keeps spending even in downturns)
+- **NX** can be negative (trade deficit) or positive (surplus)
+
+:beach_umbrella: **Tourism in NX:**
+
+When a foreign tourist spends in Portugal, it counts as an **export of services** (increases X and therefore NX).
+
+When a Portuguese resident holidays abroad, it counts as an **import of services** (increases M, reduces NX).
+:::
+::::
+
+# Part III: Nominal vs Real GDP
+
+## The Problem with Nominal GDP :warning:
+
+**Nominal GDP** is calculated using **current year prices**.
+
+. . .
+
+::: {.key-concept}
+$$\text{Nominal GDP}_t = \sum_n P_{n,t} \times Q_{n,t}$$
+:::
+
+**The problem:** Nominal GDP can rise even if **nothing more is produced** — simply because prices went up.
+
+. . .
+
+**Example from the textbook** — economy producing only pizzas and shorts:
+
+| Year | Q Pizza | P Pizza | Q Shorts | P Shorts | **Nominal GDP** |
+|---|---|---|---|---|---|
+| 2022 | 10 | €10 | 15 | €5 | **(10×10)+(15×5) = €175** |
+| 2023 | 20 | €12 | 30 | €6 | **(20×12)+(30×6) = €420** |
+
+Nominal GDP rose by a factor of **2.4**. But quantities only **doubled**. Why the discrepancy?
+
+:point_right: **Prices also rose** — inflation inflated the nominal figure.
+
+## Real GDP — Stripping Out Inflation :broom:
+
+::: {.key-concept}
+**Real GDP** values quantities at **base year prices**, removing the effect of inflation:
+$$\text{Real GDP}_t = \sum_n P_{n,\text{base}} \times Q_{n,t}$$
+:::
+
+. . .
+
+**Continuing the example** — base year = 2022:
+
+$$\text{Real GDP}_{2023} = (20 \times \underbrace{€10}_{\text{2022 price}}) + (30 \times \underbrace{€5}_{\text{2022 price}}) = €200 + €150 = \mathbf{€350}$$
+
+| | Nominal GDP | Real GDP |
+|---|---|---|
+| 2022 | €175 | €175 (base year: same) |
+| 2023 | €420 | €350 |
+| **Change** | **×2.4** | **×2.0** ✓ |
+
+:heavy_check_mark: Real GDP correctly shows production **doubled** — matching the actual quantities.
+
+## The GDP Deflator :fire:
+
+The gap between nominal and real GDP tells us about **inflation**.
+
+. . .
+
+::: {.key-concept}
+$$\text{GDP Deflator} = \frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100$$
+$$\text{Inflation rate} \approx \frac{\text{Deflator}_t - \text{Deflator}_{t-1}}{\text{Deflator}_{t-1}} \times 100\%$$
+:::
+
+. . .
+
+**From our example:**
+
+$$\text{GDP Deflator}_{2023} = \frac{€420}{€350} \times 100 = \mathbf{120}$$
+
+Prices rose by **20%** between 2022 and 2023.
+
+:bulb: The GDP deflator is broader than the CPI (covers all goods in the economy, not just a consumer basket) — we will study the CPI in the inflation lecture.
+
+## Nominal vs Real GDP — Portugal :portugal:
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.5
+
+nom_raw <- get_eurostat("nama_10_gdp",
+  filters = list(geo = "PT", na_item = "B1GQ", unit = "CP_MEUR"),
+  time_format = "num"
+) |> filter(time >= 2000) |> select(time, nominal = values)
+
+real_raw <- get_eurostat("nama_10_gdp",
+  filters = list(geo = "PT", na_item = "B1GQ", unit = "CLV10_MEUR"),
+  time_format = "num"
+) |> filter(time >= 2000) |> select(time, real = values)
+
+gdp_both <- inner_join(nom_raw, real_raw, by = "time") |>
+  pivot_longer(cols = c(nominal, real),
+               names_to = "type", values_to = "value") |>
+  mutate(type = case_when(
+    type == "nominal" ~ "Nominal GDP",
+    type == "real"    ~ "Real GDP (2010 prices)"
+  ))
+
+ggplot(gdp_both, aes(x = time, y = value / 1000, color = type, linetype = type)) +
+  geom_line(linewidth = 1.3) +
+  scale_color_manual(values = c(
+    "Nominal GDP"            = ue_red,
+    "Real GDP (2010 prices)" = ue_black
+  )) +
+  scale_linetype_manual(values = c(
+    "Nominal GDP"            = "solid",
+    "Real GDP (2010 prices)" = "dashed"
+  )) +
+  labs(
+    title = "Portugal: Nominal vs Real GDP",
+    x = NULL, y = "€ billion", color = NULL, linetype = NULL,
+    caption = "Source: Eurostat (nama_10_gdp). Real GDP at 2010 chain-linked prices."
+  ) +
+  scale_x_continuous(breaks = seq(2000, 2024, 4)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title      = element_text(color = ue_red, face = "bold"),
+    legend.position = "bottom",
+    panel.grid.minor = element_blank()
+  )
+```
+
+:point_right: The gap between the two lines = the **price level** rising over time. Always use **real GDP** for growth comparisons.
+
+# Part IV: GDP Per Capita and Its Limits
+
+## GDP Per Capita — Comparing Across Countries :globe_with_meridians:
+
+A country with a larger population naturally has more GDP. To compare **living standards**, we use **GDP per capita**:
+
+$$\text{GDP per capita} = \frac{\text{GDP}}{\text{Population}}$$
+
+. . .
+
+```{r}
+#| fig-width: 11
+#| fig-height: 3.8
+
+pc_raw <- get_eurostat("nama_10_pc",
+  filters = list(
+    geo     = c("PT", "ES", "FR", "DE", "GR", "EU27_2020"),
+    na_item = "B1GQ",
+    unit    = "CP_EUR_HAB"          # Euro per inhabitant at current prices
+  ),
+  time_format = "num"
+) |> filter(time == max(time[!is.na(values)])) |>
+  mutate(geo_label = case_when(
+    geo == "PT"        ~ "Portugal",
+    geo == "ES"        ~ "Spain",
+    geo == "FR"        ~ "France",
+    geo == "DE"        ~ "Germany",
+    geo == "GR"        ~ "Greece",
+    geo == "EU27_2020" ~ "EU-27 avg"
+  )) |>
+  filter(!is.na(values))
+
+ggplot(pc_raw, aes(x = reorder(geo_label, values), y = values / 1000)) +
+  geom_col(aes(fill = geo_label == "Portugal"), show.legend = FALSE) +
+  scale_fill_manual(values = c("TRUE" = ue_red, "FALSE" = ue_gray)) +
+  geom_text(aes(label = paste0("€", round(values / 1000, 0), "k")),
+            hjust = -0.1, size = 3.5, color = ue_black) +
+  coord_flip() +
+  scale_y_continuous(limits = c(0, max(pc_raw$values / 1000) * 1.18)) +
+  labs(
+    title = paste0("GDP per Capita (€) — Latest available year"),
+    x = NULL, y = "Thousand €",
+    caption = "Source: Eurostat (nama_10_pc). Current prices, euro per inhabitant."
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold"),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank()
+  )
+```
+
+## What GDP Does NOT Measure :x:
+
+GDP is a powerful summary statistic — but it has important **limitations**:
+
+:::: {.columns}
+::: {.column width="50%"}
+:x: **Inequality**
+
+GDP can grow while the bottom half of society gets poorer. A country with GDP/capita €30,000 might have most people earning far less.
+
+:x: **Unpaid work**
+
+Home cooking, childcare, volunteering — economically valuable, but **invisible** in GDP.
+
+:x: **Environmental degradation**
+
+Cutting down a forest raises GDP (timber production). Rebuilding it does too. The *loss* of the natural asset is not recorded.
+:::
+::: {.column width="50%"}
+:x: **Quality of life**
+
+Health, safety, trust, leisure time — not captured by GDP.
+
+:x: **Informal economy**
+
+Cash transactions, barter, illegal activity — all absent.
+
+:beach_umbrella: **For tourism specifically:**
+
+A tourist's satisfaction with their experience, the quality of the landscape, or the cultural authenticity of a destination — none of these show up in GDP.
+
+:point_right: Hence complementary measures: **Human Development Index (HDI)**, **Genuine Progress Indicator (GPI)**, **Tourism Satellite Accounts (TSA)**.
+:::
+::::
+
+## GDP and Tourism Receipts — How Big is the Sector? :chart_with_upwards_trend:
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.4
+
+# Tourism receipts: BOP travel credits (SB = Travel services, CRE = credits/receipts)
+tr_bop <- get_eurostat("bop_its6_det",
+  filters = list(
+    geo      = c("PT", "ES", "FR", "GR", "HR"),
+    bop_item = "SB",
+    currency = "MIO_EUR",
+    stk_flow = "CRE",
+    partner  = "EXT_EU27_2020"
+  ),
+  time_format = "num"
+) |>
+  filter(time == 2019) |>
+  select(geo, receipts = values)
+
+gdp_comp <- get_eurostat("nama_10_gdp",
+  filters = list(
+    geo     = c("PT", "ES", "FR", "GR", "HR"),
+    na_item = "B1GQ",
+    unit    = "CP_MEUR"
+  ),
+  time_format = "num"
+) |> filter(time == 2019) |> select(geo, gdp = values)
+
+tourism_share <- inner_join(tr_bop, gdp_comp, by = "geo") |>
+  mutate(
+    share = receipts / gdp * 100,
+    geo_label = case_when(
+      geo == "PT" ~ "Portugal",
+      geo == "ES" ~ "Spain",
+      geo == "FR" ~ "France",
+      geo == "GR" ~ "Greece",
+      geo == "HR" ~ "Croatia"
+    )
+  ) |>
+  filter(!is.na(share))
+
+ggplot(tourism_share, aes(x = reorder(geo_label, share), y = share)) +
+  geom_col(aes(fill = geo_label == "Portugal"), show.legend = FALSE) +
+  scale_fill_manual(values = c("TRUE" = ue_red, "FALSE" = ue_gray)) +
+  geom_text(aes(label = paste0(round(share, 1), "%")),
+            hjust = -0.15, size = 4, color = ue_black) +
+  coord_flip() +
+  scale_y_continuous(limits = c(0, max(tourism_share$share) * 1.2)) +
+  labs(
+    title = "Tourism Receipts (from non-EU) as % of GDP — 2019",
+    subtitle = "Pre-COVID benchmark year",
+    x = NULL, y = "% of GDP",
+    caption = "Source: Eurostat (bop_its6_det, nama_10_gdp)"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title    = element_text(color = ue_red, face = "bold"),
+    plot.subtitle = element_text(color = ue_gray, size = 10),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank()
+  )
+```
+
+# Exercises
+
+## :pencil: Exercise 1 — Multiple Choice
+
+**In 2022, a small economy produced 100 hotel nights at €80 each and 50 restaurant meals at €20 each. In 2023, it produced 120 hotel nights at €90 each and 60 meals at €25 each. Using 2022 as the base year, what is the real GDP growth rate from 2022 to 2023?**
+
+. . .
+
+**(A)** 20%
+
+**(B)** 25%
+
+**(C)** 32%
+
+**(D)** 20% in real terms and 32% in nominal terms — they are the same
+
+::: {.fragment}
+::: {.highlight-box}
+**Correct answer: (A)**
+
+Real GDP 2022 = (100×80) + (50×20) = €8,000 + €1,000 = **€9,000**
+
+Real GDP 2023 (at 2022 prices) = (120×80) + (60×20) = €9,600 + €1,200 = **€10,800**
+
+Growth = (10,800 − 9,000) / 9,000 = **20%**
+
+Nominal GDP 2023 = (120×90) + (60×25) = €10,800 + €1,500 = **€12,300** → nominal growth ≈ 36.7%. Option D is wrong: they differ precisely because prices changed.
+:::
+:::
+
+## :pencil: Exercise 2 — Multiple Choice
+
+**Which of the following is the most accurate statement about GDP per capita as a measure of well-being?**
+
+. . .
+
+**(A)** It is a perfect measure of living standards since it adjusts GDP for the size of the population
+
+**(B)** It captures inequality within the country, making it a reliable welfare indicator
+
+**(C)** It is a useful but incomplete measure — it misses inequality, unpaid work, environmental quality, and leisure
+
+**(D)** It includes the value of informal tourism activities such as home-sharing between friends
+
+::: {.fragment}
+::: {.highlight-box}
+**Correct answer: (C)**
+
+GDP per capita is a useful starting point but misses inequality (the same average can hide vast differences), unpaid work, environmental costs, and quality of life. Options A and B overstate its power. Option D is incorrect — informal/non-market transactions are excluded from GDP.
+:::
+:::
+
+## :pencil: Exercise 3 — Open Question
+
+**The table below shows prices and quantities for a small tourism economy (Wakanda) that produces only two goods: hotel nights and guided tours.**
+
+| Year | Q Hotels | P Hotels | Q Tours | P Tours |
+|---|---|---|---|---|
+| 2022 | 500 | €100 | 200 | €50 |
+| 2023 | 600 | €115 | 250 | €60 |
+
+**(a)** Calculate **nominal GDP** for 2022 and 2023. *(2 marks)*
+
+**(b)** Using 2022 as the base year, calculate **real GDP** for 2023. *(2 marks)*
+
+**(c)** Calculate the **GDP deflator** for 2023 and interpret it. *(2 marks)*
+
+**(d)** A tourism minister claims: *"Our economy grew by 38% last year."* Is this claim correct? What would be a more accurate statement? *(4 marks)*
+
+---
+
+::: {.fragment}
+**Solution:**
+
+**(a)**
+Nominal GDP 2022 = (500×100) + (200×50) = €50,000 + €10,000 = **€60,000**
+Nominal GDP 2023 = (600×115) + (250×60) = €69,000 + €15,000 = **€84,000**
+
+**(b)**
+Real GDP 2023 = (600×100) + (250×50) = €60,000 + €12,500 = **€72,500**
+
+**(c)**
+GDP Deflator 2023 = (84,000 / 72,500) × 100 = **115.9**
+Interpretation: the price level rose by approximately **15.9%** between 2022 and 2023.
+
+**(d)**
+The minister is citing **nominal** growth: (84,000 − 60,000)/60,000 = **40%** (even higher — the claim is already understated). The **real** growth rate is (72,500 − 60,000)/60,000 = **20.8%**. The correct statement is: *"Our economy's real output grew by approximately 21% — the rest of the nominal increase reflects inflation."*
+:::
+
+## Summary :books:
+
+**Today we covered:**
+
+:white_check_mark: The **three-part definition** of GDP: market value / final goods / produced in a country
+
+:white_check_mark: The **value-added approach** — avoiding double counting
+
+:white_check_mark: What is and isn't included (transfer payments, financial transactions, used goods: **out**)
+
+:white_check_mark: The **expenditure approach**: $Y = C + I + G + NX$
+
+:white_check_mark: **Nominal vs Real GDP** — why we strip out inflation using base-year prices
+
+:white_check_mark: The **GDP deflator** as a measure of economy-wide price changes
+
+:white_check_mark: **GDP per capita** — useful but incomplete as a welfare measure
+
+. . .
+
+**Next lecture (Lecture 23):**
+
+:fire: Inflation in depth — the CPI, how it is measured, consequences of high inflation, and implications for tourism
+
+## Thank You! :wave: {.center}
+
+**Questions?**
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+*Next class: Thursday, May 14th, 2026*

@@ -43,3 +43,11 @@ title: "Material"
 18. [Game Theory: Sequential Games](slides/lecture19-sequential-games.qmd)
 
 ### Macroeconomics
+
+19. [Macroeconomic Issues](slides/lecture20-macro-issues.qmd)
+20. [Aggregation](slides/lecture21-aggregation.qmd)
+21. [Gross Domestic Product](slides/lecture22-gdp.qmd)
+22. [Inflation](slides/lecture23-inflation.qmd)
+23. [Monetary Policy](slides/lecture24-monetary-policy.qmd)
+25. [Fiscal Policy](slides/lecture25-fiscal-policy.qmd)
+26. [Balance of Payments](slides/lecture26-bop.qmd)

@@ -1,0 +1,759 @@
+---
+title: "Aggregation: The Concept"
+subtitle: "Lecture 21: From Individual Transactions to the Economy as a Whole"
+author: "Paulo Fagandini"
+date: today
+date-format: "YYYY"
+format:
+  revealjs:
+    from: markdown+emoji
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    scrollable: false
+    footer: "Economics of Tourism | Lecture 21"
+    logo: ../images/logo.png
+    width: 1600
+    height: 900
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(eurostat)
+library(tidyverse)
+library(lubridate)
+
+ue_red   <- "#C8102E"
+ue_black <- "#1D1D1B"
+ue_gray  <- "#6D6E71"
+ue_white <- "#FFFFFF"
+ue_light <- "#F5F5F5"
+```
+
+## Recap: The Macro Panorama :rewind:
+
+Last lecture we identified the **six big macroeconomic issues**:
+
+:::: {.columns}
+::: {.column width="50%"}
+:seedling: Economic growth & living standards
+
+:factory: Productivity
+
+:roller_coaster: Recessions & expansions
+
+:::
+::: {.column width="50%"}
+:briefcase: Unemployment
+
+:fire: Inflation
+
+:globe_with_meridians: International interdependence
+:::
+::::
+
+. . .
+
+To study all of these, we need one fundamental tool:
+
+:point_right: **Aggregation** — summing up millions of individual decisions into a single economy-wide picture.
+
+# Part I: What is Aggregation?
+
+## The Problem of Scale :microscope:
+
+In microeconomics, we studied **one consumer**, **one firm**, **one market**.
+
+. . .
+
+But Portugal has:
+
+:::: {.columns}
+::: {.column width="50%"}
+:busts_in_silhouette: ~10 million consumers
+
+:factory: ~1.3 million registered firms
+
+:handshake: Billions of transactions per year
+
+:hotel: ~8,000 hotels and similar accommodations
+:::
+::: {.column width="50%"}
+We cannot track every transaction. We need a way to **compress** all of this information into a manageable set of numbers.
+
+:point_right: That is exactly what **aggregation** does.
+:::
+::::
+
+## What is Aggregation? :jigsaw:
+
+::: {.key-concept}
+**Aggregation** is the process of **summing individual economic variables** — the spending decisions of millions of households, the output of thousands of firms — to obtain **totals for the economy as a whole**.
+:::
+
+. . .
+
+**Examples:**
+
+| Individual variable | Aggregate variable |
+|---|---|
+| Ana spends €80/month on restaurant meals | Household consumption |
+| Pestana Hotels invests in a new resort | Business investment |
+| Portuguese government builds a new highway | Government expenditure |
+| A Lisbon hotel sells rooms to German tourists | Exports of services |
+
+## Why Does Aggregation Work? :thinking:
+
+Aggregation works because — even though individuals differ — their **combined behaviour** follows **predictable patterns**.
+
+. . .
+
+:::: {.columns}
+::: {.column width="55%"}
+Think of a **thermometer** :thermometer:
+
+You cannot track every molecule of air in this room individually. But the **average kinetic energy** of all molecules gives you a reliable, useful number: **temperature**.
+
+Similarly, we cannot track every euro spent in Portugal. But the **sum of all spending** gives us a reliable number: **GDP**.
+:::
+::: {.column width="45%"}
+:bulb: **Key insight:**
+
+Individual details get "averaged out". What remains is the **systematic, predictable** part of economic behaviour — which is exactly what policy needs to respond to.
+
+:warning: **The cost:** Aggregation hides **distribution** — who gets what.
+:::
+::::
+
+## The Trade-off of Aggregation :balance_scale:
+
+:::: {.columns}
+::: {.column width="50%"}
+:heavy_check_mark: **What aggregation gives us:**
+
+- A manageable picture of the whole economy
+- Comparisons across time and countries
+- Targets for economic policy
+- Early warning indicators (recessions, inflation)
+:::
+::: {.column width="50%"}
+:warning: **What aggregation hides:**
+
+- Inequality: who earns the income?
+- Regional differences: Lisbon vs interior Portugal
+- Sectoral differences: tourism booming while manufacturing shrinks
+- Quality of jobs: full-time vs precarious seasonal work
+:::
+::::
+
+. . .
+
+:point_right: A country's GDP can grow while most workers see their wages **fall** — if growth is concentrated at the top. Aggregation alone does not tell us this.
+
+# Part II: The Circular Flow of Income
+
+## Economies as a Flow :recycle:
+
+The best way to understand aggregation is through the **circular flow of income** model.
+
+. . .
+
+::: {.key-concept}
+The **circular flow model** shows how money, goods, and services continuously flow between the main economic agents — households, firms, the government, and the rest of the world.
+:::
+
+. . .
+
+We will build it up **step by step**, starting simple and adding complexity.
+
+## Step 1: Two Agents — Households & Firms :arrows_counterclockwise:
+
+:::: {.columns}
+::: {.column width="55%"}
+In the simplest economy:
+
+**Households** :family:
+
+- Own the factors of production (labour, capital, land)
+- Sell them to firms → earn **income**
+- Spend that income on goods and services → **consumption**
+
+**Firms** :factory:
+
+- Buy factors of production → pay **wages, rents, profits**
+- Produce goods and services → earn **revenue**
+
+:point_right: Money flows in a **circle**: from firms to households (as income), and back from households to firms (as spending).
+:::
+::: {.column width="45%"}
+```{r}
+#| fig-width: 5
+#| fig-height: 5
+
+# Simple circular flow diagram using ggplot2 arrows
+library(grid)
+
+df_boxes <- data.frame(
+  x    = c(0.5, 0.5),
+  y    = c(0.82, 0.18),
+  lab  = c("HOUSEHOLDS\n(Families)", "FIRMS\n(Companies)"),
+  stringsAsFactors = FALSE
+)
+
+ggplot() +
+  # boxes
+  geom_tile(data = df_boxes, aes(x = x, y = y),
+            width = 0.32, height = 0.14,
+            fill = ue_red, color = NA) +
+  geom_text(data = df_boxes, aes(x = x, y = y, label = lab),
+            color = "white", fontface = "bold", size = 4.5) +
+  # top arrow left: goods & services (firms → households)
+  annotate("segment", x = 0.34, xend = 0.18, y = 0.77, yend = 0.77,
+           arrow = arrow(length = unit(0.25, "cm"), type = "closed"),
+           color = ue_black, linewidth = 1) +
+  annotate("text", x = 0.26, y = 0.83,
+           label = "Goods &\nServices", size = 3.2, color = ue_black, fontface = "italic") +
+  # top arrow right: spending (households → firms)
+  annotate("segment", x = 0.66, xend = 0.82, y = 0.77, yend = 0.77,
+           arrow = arrow(length = unit(0.25, "cm"), type = "closed"),
+           color = ue_red, linewidth = 1) +
+  annotate("text", x = 0.74, y = 0.83,
+           label = "Spending\n(C)", size = 3.2, color = ue_red, fontface = "bold") +
+  # bottom arrow left: factors of prod (households → firms)
+  annotate("segment", x = 0.34, xend = 0.18, y = 0.23, yend = 0.23,
+           arrow = arrow(length = unit(0.25, "cm"), type = "closed"),
+           color = ue_black, linewidth = 1) +
+  annotate("text", x = 0.26, y = 0.17,
+           label = "Labour,\nCapital, Land", size = 3.2, color = ue_black, fontface = "italic") +
+  # bottom arrow right: income (firms → households)
+  annotate("segment", x = 0.66, xend = 0.82, y = 0.23, yend = 0.23,
+           arrow = arrow(length = unit(0.25, "cm"), type = "closed"),
+           color = ue_red, linewidth = 1) +
+  annotate("text", x = 0.74, y = 0.17,
+           label = "Wages,\nProfits, Rents", size = 3.2, color = ue_red, fontface = "bold") +
+  # left arc connecting
+  annotate("segment", x = 0.18, xend = 0.18, y = 0.77, yend = 0.23,
+           color = ue_black, linewidth = 0.8, linetype = "dashed") +
+  # right arc connecting
+  annotate("segment", x = 0.82, xend = 0.82, y = 0.77, yend = 0.23,
+           color = ue_red, linewidth = 0.8, linetype = "dashed") +
+  # labels for markets
+  annotate("text", x = 0.12, y = 0.5,
+           label = "GOODS\nMARKET", size = 3, color = ue_gray, angle = 90) +
+  annotate("text", x = 0.88, y = 0.5,
+           label = "FACTOR\nMARKET", size = 3, color = ue_gray, angle = 90) +
+  xlim(0.05, 0.95) + ylim(0.05, 0.95) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = ue_light, color = NA))
+```
+:::
+::::
+
+## Step 2: Adding the Government :classical_building:
+
+In a real economy, the **government** plays a major role:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Government collects:**
+
+:moneybag: **Taxes** — from households (income tax) and firms (corporate tax)
+
+**Government spends:**
+
+:school: Public services — education, health, infrastructure
+
+:handshake: **Transfer payments** — pensions, unemployment benefits (money back to households without a service in return)
+:::
+::: {.column width="50%"}
+**Key implication:**
+
+Not all household income is spent on consumption. Some leaks out as **taxes**.
+
+Not all firm revenue stays in the private sector. Government **injects** spending back in.
+
+:point_right: The flow is still circular, but the government acts as a **redistribution node**.
+:::
+::::
+
+## Step 3: Adding the Rest of the World :globe_with_meridians:
+
+Real economies also trade with the outside world:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Exports** :outbox_tray:
+
+Foreigners buy Portuguese goods and services
+
+:point_right: Money **flows in** to Portugal
+
+For tourism: foreign visitors spending in Portuguese hotels, restaurants, attractions = **export of services**
+
+**Imports** :inbox_tray:
+
+Portuguese households and firms buy foreign goods
+
+:point_right: Money **flows out** of Portugal
+:::
+::: {.column width="50%"}
+::: {.key-concept}
+**Net Exports (NX)**
+
+$$NX = \text{Exports} - \text{Imports}$$
+
+If NX > 0: more money flowing **in** than out (trade surplus)
+
+If NX < 0: more money flowing **out** than in (trade deficit)
+:::
+
+Portugal typically runs a **services surplus** (tourism!) but a **goods deficit**.
+:::
+::::
+
+## The Full Circular Flow :earth_africa:
+
+:::: {.columns}
+::: {.column width="58%"}
+The complete model has **four agents** and **four types of spending**:
+
+| Agent | Type of spending | Symbol |
+|---|---|---|
+| Households | Consumption | C |
+| Firms | Investment | I |
+| Government | Government expenditure | G |
+| Rest of world | Net exports | NX |
+
+. . .
+
+**The fundamental identity:**
+
+$$Y = C + I + G + NX$$
+
+:point_right: Every euro of output produced in Portugal must be **purchased** by someone — this equation always holds, by definition. This is the **expenditure approach** to GDP (next lecture).
+:::
+::: {.column width="42%"}
+**Leakages vs Injections**
+
+| Leakages :outbox_tray: | Injections :inbox_tray: |
+|---|---|
+| Savings (S) | Investment (I) |
+| Taxes (T) | Government spending (G) |
+| Imports (M) | Exports (X) |
+
+In equilibrium:
+
+$$S + T + M = I + G + X$$
+
+:bulb: What leaks out of the circular flow must be matched by injections back in.
+:::
+::::
+
+# Part III: Aggregating Output — What Counts?
+
+## The Value-Added Principle :link:
+
+When we aggregate output, we face a problem: **double counting**.
+
+. . .
+
+**Example — a tourist breakfast in Porto:**
+
+| Stage | Seller | Revenue | Cost of inputs | **Value Added** |
+|---|---|---|---|---|
+| Wheat farm | Farmer | €0.50 | €0 | **€0.50** |
+| Flour mill | Miller | €1.20 | €0.50 | **€0.70** |
+| Bakery | Baker | €2.00 | €1.20 | **€0.80** |
+| **Total GDP contribution** | | | | **€2.00** |
+
+. . .
+
+:point_right: We **do not** add €0.50 + €1.20 + €2.00 = €3.70 (that would count the bread three times).
+
+We add only the **value added** at each stage: €0.50 + €0.70 + €0.80 = **€2.00**.
+
+## What Gets Included in Aggregation? :white_check_mark:
+
+:::: {.columns}
+::: {.column width="50%"}
+:heavy_check_mark: **Included:**
+
+- Final goods and services (sold to end users)
+- Government services (at cost)
+- New housing construction
+- Changes in business inventories
+- Exports of goods and services
+
+:hotel: *A German tourist staying at a Lisbon hotel: the room rate is included as an **export of services**.*
+:::
+::: {.column width="50%"}
+:x: **Not included:**
+
+- Intermediate goods (used to produce other goods)
+- Sales of existing assets (second-hand house sales)
+- Financial transactions (buying shares)
+- Transfer payments (pensions, subsidies)
+- Unpaid work (home cooking, volunteering)
+
+:thinking: *Why not second-hand houses? The house was already counted when it was first built.*
+:::
+::::
+
+## The Tourism Aggregation Problem :beach_umbrella:
+
+Tourism is a **cross-cutting industry** — it does not have a single production line. This makes aggregation tricky.
+
+. . .
+
+:::: {.columns}
+::: {.column width="55%"}
+When a British tourist spends €1,000 in Portugal:
+
+- €350 at hotels :hotel: → counted under **accommodation services**
+- €200 at restaurants :fork_and_knife: → counted under **food & beverage**
+- €150 on transport :bus: → counted under **transport services**
+- €200 on retail :shopping_bags: → counted under **retail trade**
+- €100 on cultural attractions :performing_arts: → counted under **arts & entertainment**
+
+:point_right: That €1,000 is **spread across multiple sectors** in the national accounts. There is no single "tourism line" in GDP — it must be reconstructed using **Tourism Satellite Accounts (TSA)**.
+:::
+::: {.column width="45%"}
+```{r}
+#| fig-width: 4.8
+#| fig-height: 4.5
+
+# Hypothetical share breakdown — for illustration only
+# Labelled clearly as illustrative
+shares <- data.frame(
+  sector = c("Accommodation", "F&B", "Transport", "Retail", "Culture & Other"),
+  pct    = c(35, 20, 15, 20, 10)
+)
+
+ggplot(shares, aes(x = reorder(sector, pct), y = pct)) +
+  geom_col(fill = ue_red, alpha = 0.85) +
+  geom_text(aes(label = paste0(pct, "%")),
+            hjust = -0.15, size = 3.8, color = ue_black) +
+  coord_flip() +
+  scale_y_continuous(limits = c(0, 42)) +
+  labs(
+    title = "Tourist Spending by Sector",
+    subtitle = "Hypothetical breakdown — illustrative only",
+    x = NULL, y = "Share of total tourist spending (%)",
+    caption = "Hypothetical data for illustration"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title    = element_text(color = ue_red, face = "bold"),
+    plot.subtitle = element_text(color = ue_gray, size = 9),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank()
+  )
+```
+:::
+::::
+
+## Tourism's Share in the Portuguese Economy :portugal:
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.2
+
+# Travel receipts as % of GDP — World Bank / Eurostat bop_its6_det
+# Using Eurostat BOP: tourism receipts
+receipts_raw <- get_eurostat("bop_its6_det",
+  filters = list(
+    geo      = "PT",
+    bop_item = "SB",       # Travel (credit = receipts)
+    currency = "MIO_EUR",
+    stk_flow = "CRE",
+    partner  = "EXT_EU27_2020"
+  ),
+  time_format = "num"
+)
+
+gdp_raw2 <- get_eurostat("nama_10_gdp",
+  filters = list(geo = "PT", na_item = "B1GQ", unit = "CP_MEUR"),
+  time_format = "num"
+)
+
+receipts <- receipts_raw |>
+  filter(time >= 2010) |>
+  select(time, receipts = values)
+
+gdp2 <- gdp_raw2 |>
+  filter(time >= 2010) |>
+  select(time, gdp = values)
+
+travel_gdp <- inner_join(receipts, gdp2, by = "time") |>
+  mutate(share = receipts / gdp * 100) |>
+  filter(!is.na(share))
+
+ggplot(travel_gdp, aes(x = time, y = share)) +
+  geom_col(fill = ue_red, alpha = 0.85) +
+  geom_text(aes(label = sprintf("%.1f%%", share)),
+            vjust = -0.4, size = 3.2, color = ue_black) +
+  labs(
+    title = "Tourism Receipts as % of GDP — Portugal",
+    x = NULL, y = "% of GDP",
+    caption = "Source: Eurostat (bop_its6_det, nama_10_gdp). Travel receipts from non-EU partners."
+  ) +
+  scale_x_continuous(breaks = seq(2010, 2024, 2)) +
+  scale_y_continuous(limits = c(0, max(travel_gdp$share, na.rm = TRUE) * 1.2)) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(color = ue_red, face = "bold"),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank()
+  )
+```
+
+:point_right: Tourism represents a **significant and growing share** of Portugal's GDP — making macroeconomic performance especially important for this industry.
+
+# Part IV: Aggregate Demand and Aggregate Supply
+
+## From Individual to Aggregate Curves :chart_with_upwards_trend:
+
+In microeconomics we drew **individual demand** and **supply curves** for single markets.
+
+In macroeconomics we aggregate these into:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+:shopping_cart: **Aggregate Demand (AD)**
+
+The total demand for all goods and services in an economy at each **price level**.
+
+$$AD = C + I + G + NX$$
+
+Downward sloping: when prices rise, real purchasing power falls, real wealth falls, and exports become less competitive.
+:::
+::: {.column width="50%"}
+:factory: **Aggregate Supply (AS)**
+
+The total output all firms in an economy are willing to produce at each **price level**.
+
+Upward sloping in the **short run**: higher prices make production more profitable.
+
+Vertical in the **long run**: output is determined by real factors (technology, labour, capital), not prices.
+:::
+::::
+
+## The AD-AS Model (Preview) :bar_chart:
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.8
+
+x <- seq(0.1, 2, length.out = 200)
+
+ad  <- 2.5 - x
+sras <- 0.8 * x + 0.3
+lras_x <- 1.1
+
+df_curves <- data.frame(
+  x    = c(x, x),
+  y    = c(ad, sras),
+  type = rep(c("Aggregate Demand (AD)", "Short-Run AS (SRAS)"), each = 200)
+) |> filter(y > 0.1, y < 2.2)
+
+ggplot() +
+  geom_line(data = df_curves, aes(x = x, y = y, color = type, linetype = type),
+            linewidth = 1.3) +
+  geom_vline(xintercept = lras_x, color = ue_black, linewidth = 1.3, linetype = "solid") +
+  annotate("text", x = lras_x + 0.07, y = 2.0,
+           label = "Long-Run AS\n(LRAS)", color = ue_black, size = 3.5, hjust = 0) +
+  # equilibrium point
+  annotate("point", x = 1.1, y = 2.5 - 1.1, size = 4, color = ue_red) +
+  annotate("text", x = 1.17, y = 2.5 - 1.1 + 0.1,
+           label = "Equilibrium\n(Y*, P*)", color = ue_red, size = 3.3) +
+  annotate("segment", x = 1.1, xend = 1.1, y = 0, yend = 2.5 - 1.1,
+           linetype = "dashed", color = ue_gray, linewidth = 0.6) +
+  annotate("segment", x = 0, xend = 1.1, y = 2.5 - 1.1, yend = 2.5 - 1.1,
+           linetype = "dashed", color = ue_gray, linewidth = 0.6) +
+  scale_color_manual(values = c("Aggregate Demand (AD)" = ue_red,
+                                "Short-Run AS (SRAS)"   = ue_black)) +
+  scale_linetype_manual(values = c("Aggregate Demand (AD)" = "solid",
+                                   "Short-Run AS (SRAS)"   = "dashed")) +
+  labs(
+    title = "The AD-AS Model — Preview",
+    subtitle = "Hypothetical illustration — formal treatment in later lectures",
+    x = "Real Output (Y)", y = "Price Level (P)",
+    color = NULL, linetype = NULL,
+    caption = "Hypothetical data for illustration"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title    = element_text(color = ue_red, face = "bold"),
+    plot.subtitle = element_text(color = ue_gray, size = 10),
+    legend.position = "bottom",
+    panel.grid.minor = element_blank()
+  )
+```
+
+:point_right: This model gives us the macroeconomic equivalent of the supply-demand diagram we used in microeconomics. We will use it throughout the macro block.
+
+## The Three Approaches to Measuring Aggregate Output :straight_ruler:
+
+Any economy can be measured from **three equivalent angles** — they always give the same answer:
+
+. . .
+
+:::: {.columns}
+::: {.column width="33%"}
+:outbox_tray: **Expenditure approach**
+
+Add up all **spending** on final goods and services
+
+$$Y = C + I + G + NX$$
+
+*Who buys the output?*
+:::
+::: {.column width="33%"}
+:incoming_envelope: **Income approach**
+
+Add up all **incomes** earned in production
+
+$$Y = W + R + \Pi + \text{taxes}$$
+
+*(Wages + Rents + Profits)*
+
+*Who earns from production?*
+:::
+::: {.column width="33%"}
+:factory: **Production (value-added) approach**
+
+Add up **value added** at each stage of production
+
+$$Y = \sum \text{Value Added}$$
+
+*What is produced?*
+:::
+::::
+
+. . .
+
+:bulb: All three approaches measure the **same thing** — total economic activity — just from different perspectives. Next lecture we focus on the expenditure approach: **GDP**.
+
+# Exercises
+
+## :pencil: Exercise 1 — Multiple Choice
+
+**A local tour operator in the Algarve buys sunscreen bottles from a wholesaler for €4 each, and sells them to tourists for €7 each. What is the value added by the tour operator, and how much does this contribute to GDP?**
+
+. . .
+
+**(A)** €7 — the full selling price is GDP
+
+**(B)** €4 — only intermediate costs count
+
+**(C)** €3 — only the value added by the tour operator counts
+
+**(D)** €11 — the sum of all transactions counts
+
+::: {.fragment}
+::: {.highlight-box}
+**Correct answer: (C)**
+
+The tour operator's **value added** = €7 − €4 = **€3**. GDP counts only value added at each stage to avoid double-counting. The €4 paid to the wholesaler was already (or will be) counted as the wholesaler's value added. Option A double-counts the wholesale stage; D triple-counts it.
+:::
+:::
+
+## :pencil: Exercise 2 — Multiple Choice
+
+**Which of the following transactions would NOT be included in Portugal's GDP?**
+
+. . .
+
+**(A)** A German tourist pays €150 to stay in a Porto hotel
+
+**(B)** The Portuguese government pays €2,000/month in pensions to a retired teacher
+
+**(C)** A new Airbus A320 is purchased by TAP Air Portugal for its fleet
+
+**(D)** A Portuguese construction company builds 10 new apartments
+
+::: {.fragment}
+::: {.highlight-box}
+**Correct answer: (B)**
+
+**Transfer payments** (pensions, unemployment benefits) are **not** included in GDP — they redistribute existing income but do not correspond to new production of goods or services. Option A is an export of services (counted). Option C is investment (counted). Option D is investment in new construction (counted).
+:::
+:::
+
+## :pencil: Exercise 3 — Open Question
+
+**Consider a simplified tourism economy with three firms:**
+
+- **Quinta do Algarve** (wine producer): sells wine to a restaurant for **€60**. Inputs from outside the economy cost **€10**.
+- **Restaurante Praia** (restaurant): buys wine for €60 and other ingredients for €20, and sells meals to tourists for **€160**.
+- **Hotel Maré** (hotel): builds a new outdoor terrace at a cost of **€500** (inputs purchased from local suppliers for **€300**, rest is labour).
+
+**(a)** Calculate the **value added** by each firm. *(3 marks)*
+
+**(b)** What is the **total contribution to GDP** of these three firms? *(2 marks)*
+
+**(c)** To which component of GDP (C, I, G, or NX) does each transaction belong? Justify briefly. *(3 marks)*
+
+**(d)** If the meals at Restaurante Praia were purchased exclusively by **foreign tourists**, how would your classification in (c) change? *(2 marks)*
+
+---
+
+::: {.fragment}
+
+**Solution:**
+
+**(a)**
+- Quinta do Algarve: €60 − €10 = **€50**
+- Restaurante Praia: €160 − €60 − €20 = **€80**
+- Hotel Maré: €500 − €300 = **€200** (value of new terrace less purchased inputs)
+
+**(b)** Total GDP contribution = €50 + €80 + €200 = **€330**
+
+**(c)** Restaurant meals sold to domestic consumers → **C** (consumption). Hotel terrace construction → **I** (investment, as it is a new capital asset). Wine sold to the restaurant is an intermediate good → **not counted directly** (captured via value added).
+
+**(d)** If meals are purchased by foreign tourists, they represent an **export of services** → classified under **NX** (net exports), not C. The money flows **into** Portugal from abroad.
+
+:::
+
+## Summary :books:
+
+**Today we covered:**
+
+:white_check_mark: **Aggregation** — summing individual variables into economy-wide totals
+
+:white_check_mark: The **circular flow of income** — households, firms, government, and the rest of the world
+
+:white_check_mark: **Leakages** (savings, taxes, imports) and **injections** (investment, government spending, exports)
+
+:white_check_mark: The **value-added principle** — how to avoid double counting
+
+:white_check_mark: What is and is not **included** in aggregate output
+
+:white_check_mark: The **three approaches** to measuring output (expenditure, income, production)
+
+. . .
+
+**Next lecture (Lecture 22):**
+
+:mag: GDP in depth — the expenditure approach, nominal vs real GDP, and what GDP tells us (and doesn't tell us) about well-being.
+
+## Thank You! :wave: {.center}
+
+**Questions?**
+
+:email: paulo.fagandini@ext.universidadeeuropeia.pt
+
+---
+*Next class: Friday, May 8th, 2026*
