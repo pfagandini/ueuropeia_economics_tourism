@@ -477,7 +477,7 @@ ggplot() +
   # Annotations
   annotate("text", x = 30, y = 22, label = "PS = ½ × 100 × 25\n= €1,250",
            color = ue_red, fontface = "bold", size = 4.5) +
-  annotate("text", x = 180, y = 48, label = "S: P = 5 + 0.25Q",
+  annotate("text", x = 180, y = 45, label = "S: P = 5 + 0.25Q",
            color = ue_red, fontface = "bold", size = 4.5) +
   annotate("text", x = Q_ex + 5, y = 2, label = "Q* = 100",
            fontface = "bold", size = 4, color = ue_black) +
@@ -556,9 +556,9 @@ ggplot() +
            fontface = "bold", size = 5) +
   annotate("text", x = 20, y = 20, label = "PS", color = ue_red,
            fontface = "bold", size = 5) +
-  annotate("text", x = 170, y = 8, label = "D", color = ue_blue,
+  annotate("text", x = 170, y = 9, label = "D", color = ue_blue,
            fontface = "bold.italic", size = 6) +
-  annotate("text", x = 170, y = 52, label = "S", color = ue_red,
+  annotate("text", x = 170, y = 51, label = "S", color = ue_red,
            fontface = "bold.italic", size = 6) +
   annotate("text", x = Q_eq + 3, y = P_eq + 2, label = "E",
            fontface = "bold", size = 5) +
@@ -725,8 +725,6 @@ $$PS = \frac{1}{2} \times Q^* \times (P^* - c) = \frac{1}{2} \times 100 \times (
 
 **e)** Calculate the **total producer surplus** at $P = €25$. (Calculate PS for each group separately, then sum.)
 
-**f)** A new regulation requires all guides to have a €5 license per tour. How does this affect the market supply curve? Write the new market supply equation(s).
-
 </div>
 
 ## Exercise 3: Solution — Parts a & b
@@ -789,29 +787,6 @@ Total PS for freelancers: $30 \times 50 = €1{,}500$
 **Total market PS** = €1,445 + €1,500 = **€2,945**
 
 :bulb: Professionals have a higher PS per firm (€72.25 vs €50) because their costs are lower — they capture more surplus from each sale. But freelancers contribute more in aggregate because there are more of them.
-
-</div>
-
-## Exercise 3: Solution — Part f
-
-<div style="font-size: 70%;">
-
-**f)** A €5 license fee per tour **increases MC by €5** for every firm.
-
-New individual supply curves (MC shifts up by €5):
-
-- **Professionals**: $P = (8 + 5) + 2q_P = 13 + 2q_P$ → $q_P = \frac{P - 13}{2}$ for $P \geq 13$
-- **Freelancers**: $P = (15 + 5) + q_F = 20 + q_F$ → $q_F = P - 20$ for $P \geq 20$
-
-New market supply:
-
-**For $13 \leq P < 20$**: $Q_S = 20 \times \frac{P - 13}{2} = 10P - 130$
-
-**For $P \geq 20$**: $Q_S = 10P - 130 + 30(P - 20) = 40P - 730$
-
-:point_right: The supply curve shifts **left** (up by €5). At $P = €25$: new $Q_S = 40(25) - 730 = 270$ tours (down from 470!). The kink moves from $P = 15$ to $P = 20$.
-
-The license fee has a **large effect**: supply falls by almost half because many freelancers are priced out of the market.
 
 </div>
 

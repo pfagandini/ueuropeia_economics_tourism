@@ -29,18 +29,18 @@ title: "Material"
 
 #### Producer Theory: Behind the Supply
 
-10. [Costs](slides/lecture10-costs.qmd)
-11. [Profit Maximization](slides/lecture11-profit-max.qmd)
-12. [Supply](slides/lecture12-shutdown-supply.qmd)
-13. [Supply rule](slides/lecture13-supply-rule.qmd)
-14. [Producer Surplus and Market Supply](slides/lecture14-ps-market-supply.qmd)
-15. [Supply (and demand) Elasticity](slides/lecture15-supply-elasticity.qmd)
+10. [Costs](slides/lecture10-costs.qmd):page_facing_up: [PDF](PDF/lecture10-costs.pdf)
+11. [Profit Maximization](slides/lecture11-profit-max.qmd):page_facing_up: [PDF](PDF/lecture11-profit-max.pdf)
+12. [Supply](slides/lecture12-shutdown-supply.qmd):page_facing_up: [PDF](PDF/lecture12-shutdown-supply.pdf)
+13. [Supply rule](slides/lecture13-supply-rule.qmd):page_facing_up: [PDF](PDF/lecture13-supply-rule.pdf)
+14. [Producer Surplus and Market Supply](slides/lecture14-ps-market-supply.qmd):page_facing_up: [PDF](PDF/lecture14-ps-market-supply.pdf)
+15. [Supply (and demand) Elasticity](slides/lecture15-supply-elasticity.qmd):page_facing_up: [PDF](PDF/lecture15-supply-elasticity.pdf)
 
 #### Market Equilibrium and Game Theory
 
-16. [Equilibrium](slides/lecture16-equilibrium.qmd)
-17. [Game Theory: Intro](slides/lecture18-game-theory.qmd)
-18. [Game Theory: Sequential Games](slides/lecture19-sequential-games.qmd)
+16. [Equilibrium](slides/lecture16-equilibrium.qmd):page_facing_up: [PDF](PDF/lecture16-equilibrium.pdf)
+17. [Game Theory: Intro](slides/lecture18-game-theory.qmd):page_facing_up: [PDF](PDF/lecture18-game-theory.pdf)
+18. [Game Theory: Sequential Games](slides/lecture19-sequential-games.qmd):page_facing_up: [PDF](PDF/lecture19-sequential-games.pdf)
 
 ### Macroeconomics
 

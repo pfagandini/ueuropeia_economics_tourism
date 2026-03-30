@@ -89,7 +89,7 @@ ue_orange <- "#E67E22"
 . . .
 
 ::: {.key-concept}
-**Why it matters**: When you move first, you can **influence** what the other player does. This gives the first mover a strategic advantage (or disadvantage!) that doesn't exist in simultaneous games.
+**Why it matters** When you move first, you can **influence** what the other player does. This gives the first mover a strategic advantage (or disadvantage!) that doesn't exist in simultaneous games.
 :::
 
 </div>
@@ -136,7 +136,7 @@ ggplot() +
            size = 4.5, color = ue_green) +
   annotate("text", x = 1.8, y = 2.2, label = "Fight\n(price war)", fontface = "bold",
            size = 3.8, color = ue_red) +
-  annotate("text", x = 4.2, y = 2.2, label = "Accommodate\n(share market)", fontface = "bold",
+  annotate("text", x = 4.6, y = 2.2, label = "Accommodate\n(share market)", fontface = "bold",
            size = 3.8, color = ue_blue) +
   # Payoffs (Entrant, Incumbent)
   annotate("label", x = -3, y = 0.3, label = "(0 , 500)",
@@ -224,8 +224,6 @@ Solve a sequential game by starting at the **end** and working **backwards** to 
 - Enter → Incumbent will Accommodate → Entrant gets **€200k** :white_check_mark:
 
 :point_right: The Entrant **enters**, and the Incumbent **accommodates**.
-
-. . .
 
 ::: {.key-concept}
 **Backward Induction Solution**
@@ -341,7 +339,7 @@ ggplot() +
   # Labels
   annotate("text", x = 0, y = 5.6, label = "Entrant", fontface = "bold",
            size = 5, color = ue_black) +
-  annotate("text", x = 3, y = 3.6, label = "Incumbent\n(with excess capacity)",
+  annotate("text", x = 4, y = 3.6, label = "Incumbent\n(with excess capacity)",
            fontface = "bold", size = 4.5, color = ue_red) +
   annotate("text", x = -2, y = 4.3, label = "Stay Out", fontface = "bold",
            size = 4.5, color = ue_gray) +
@@ -349,7 +347,7 @@ ggplot() +
            size = 4.5, color = ue_green) +
   annotate("text", x = 1.8, y = 2.2, label = "Fight", fontface = "bold",
            size = 4, color = ue_red) +
-  annotate("text", x = 4.2, y = 2.2, label = "Accommodate", fontface = "bold",
+  annotate("text", x = 4.6, y = 2.2, label = "Accommodate", fontface = "bold",
            size = 4, color = ue_blue) +
   # Payoffs — now Fight is better for Incumbent!
   annotate("label", x = -3, y = 0.3, label = "(0 , 300)",
@@ -359,9 +357,9 @@ ggplot() +
   annotate("label", x = 4.5, y = 0.3, label = "(200 , 50)",
            size = 4.5, fontface = "bold", fill = "#E0F0FF", color = ue_blue) +
   # Backward induction arrows
-  annotate("text", x = 3.8, y = 1.6, label = "100 > 50 ✓",
+  annotate("text", x = 3, y = 0.8, label = "100 > 50 ✓",
            size = 3.5, color = ue_red, fontface = "bold") +
-  annotate("text", x = -1.8, y = 3.5, label = "0 > -100 ✓",
+  annotate("text", x = 0, y = 1, label = "0 > -100 ✓",
            size = 3.5, color = ue_black, fontface = "bold") +
   # Solution path
   annotate("text", x = -4.5, y = 3, label = "BI Solution:\nStay Out → (0, 300)",
@@ -408,9 +406,8 @@ When waiting lets you **observe** and **adapt**.
 :::
 ::::
 
-. . .
 
-:point_right: Whether first or second mover is better depends on the **specific game structure** — there's no universal rule!
+* :point_right: Whether first or second mover is better depends on the **specific game structure** — there's no universal rule!
 
 </div>
 
@@ -497,7 +494,7 @@ Government decides whether to build a new airport terminal.
 | **Timing** | Doesn't matter who "goes first" | First mover can gain or lose |
 | **Tourism** | Price wars, PD in competition | Entry decisions, investment, regulation |
 
-:point_right: Real-world strategic situations often combine elements of both — some decisions are simultaneous, others are sequential. Game theory gives us tools for all of them!
+* :point_right: Real-world strategic situations often combine elements of both — some decisions are simultaneous, others are sequential. Game theory gives us tools for all of them!
 
 </div>
 
@@ -605,7 +602,7 @@ Payoffs (€k per season): (Entrant, Incumbent)
 
 </div>
 
-## Exercise 3: Solution — Parts a & b
+## Exercise 3: Solution — Parts a & b {.smaller}
 
 <div style="font-size: 72%;">
 

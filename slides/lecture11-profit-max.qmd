@@ -379,7 +379,7 @@ ggplot() +
            color = ue_black, fontface = "bold.italic", size = 5.5) +
   annotate("text", x = 15, y = P_line + 3, label = "P = MR",
            color = ue_green, fontface = "bold", size = 4.5) +
-  annotate("text", x = q_star_mc + 2, y = P_line + 5,
+  annotate("text", x = q_star_mc + -1, y = P_line + 5,
            label = "P = MC", fontface = "bold", size = 4.5, color = ue_red) +
   annotate("text", x = q_star_mc, y = -2, label = "Q*",
            fontface = "bold", size = 5, color = ue_black) +
@@ -824,7 +824,7 @@ The firm is making **positive economic profit**. It should NOT increase output (
 
 </div>
 
-## Exercise 3: Open Question :writing_hand:
+## Exercise 3: Open Question :writing_hand: {.smaller}
 
 <div style="font-size: 64%;">
 
@@ -855,7 +855,7 @@ The firm is making **positive economic profit**. It should NOT increase output (
 
 </div>
 
-## Exercise 3: Solution — Part a
+## Exercise 3: Solution — Part a {.smaller}
 
 <div style="font-size: 62%;">
 

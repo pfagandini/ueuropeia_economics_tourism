@@ -100,11 +100,11 @@ This is just **marginal analysis** — the same logic we've used since the very 
 
 *Source: Course textbook (sebenta), Table 10*
 
+</div>
+
 :point_right: **Optimal output: Q* = 400 bottles/day**. At Q = 400, the MC of the next batch (€0.40) exceeds the price (€0.35), so expanding further would **reduce** profit.
 
 :bulb: At Q = 300, MC = €0.20 < P = €0.35 — there's still €0.15/bottle of "profit margin" to capture. That's why the firm doesn't stop at 300!
-
-</div>
 
 ## Why "Rising Portion" Matters :warning:
 
@@ -193,9 +193,9 @@ The individual supply curve is the **MC curve above AVC_min**.
 | **Whether** to produce? | Only if $P \geq AVC$ |
 | **How much profit?** | $\pi = (P - ATC) \times Q^*$ |
 
-:point_right: One rule, three answers — that's the power of marginal analysis!
-
 </div>
+
+:point_right: One rule, three answers — that's the power of marginal analysis!
 
 # What Happens When Costs Change?
 
@@ -392,7 +392,7 @@ Less is supplied at every price when:
 
 # Left: movement along supply curve
 p_move <- ggplot() +
-  geom_segment(aes(x = 0, y = 2, xend = 10, yend = 8),
+  geom_segment(aes(x = 0, y = 2, xend = 10, yend = 10),
                color = ue_red, linewidth = 1.5) +
   geom_point(aes(x = 3.75, y = 5), size = 4, color = ue_black) +
   geom_point(aes(x = 6.25, y = 7), size = 4, color = ue_black) +
@@ -402,9 +402,9 @@ p_move <- ggplot() +
                linetype = "dashed", color = ue_gray) +
   geom_segment(aes(x = 0, y = 7, xend = 6.25, yend = 7),
                linetype = "dashed", color = ue_gray) +
-  annotate("segment", x = 4.5, y = 5.5, xend = 5.5, yend = 6.5,
-           arrow = arrow(length = unit(0.2, "cm")), color = ue_red, linewidth = 1) +
-  annotate("text", x = 9, y = 7.5, label = "S", color = ue_red,
+  annotate("segment", x = 4.5, y = 5.6, xend = 5.5, yend = 6.4,
+           arrow = arrow(length = unit(0.2, "cm")), color = ue_black, linewidth = 1) +
+  annotate("text", x = 8.5, y = 8, label = "S", color = ue_red,
            fontface = "bold.italic", size = 6) +
   scale_x_continuous(limits = c(0, 11), expand = c(0, 0)) +
   scale_y_continuous(limits = c(0, 10), expand = c(0, 0),
@@ -422,11 +422,9 @@ p_shift <- ggplot() +
                color = ue_gray, linewidth = 1.5) +
   geom_segment(aes(x = 0, y = 2, xend = 8, yend = 8),
                color = ue_red, linewidth = 1.5) +
-  annotate("text", x = 9.5, y = 7.5, label = expression(S[1]), color = ue_gray,
-           fontface = "bold.italic", size = 5) +
-  annotate("text", x = 7.5, y = 7.5, label = expression(S[2]), color = ue_red,
-           fontface = "bold.italic", size = 5) +
-  annotate("segment", x = 7, y = 5, xend = 5, yend = 5,
+  annotate("text", x = 9.5, y = 7, label = expression(S[1]), color = ue_gray, fontface = "bold.italic", size = 5) +
+  annotate("text", x = 7.5, y = 7, label = expression(S[2]), color = ue_red, fontface = "bold.italic", size = 5) +
+  annotate("segment", x = 6, y = 5, xend = 4, yend = 5,
            arrow = arrow(length = unit(0.2, "cm")), color = ue_black, linewidth = 1) +
   annotate("text", x = 6, y = 5.6, label = "Shift left",
            fontface = "bold", size = 3.5, color = ue_black) +
@@ -435,8 +433,7 @@ p_shift <- ggplot() +
   labs(x = "Q", y = "P",
        title = "Shift of Supply (input costs ↑)") +
   theme_minimal(base_size = 12) +
-  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5),
-        axis.title = element_text(face = "bold"),
+  theme(plot.title = element_text(color = ue_red, face = "bold", hjust = 0.5), axis.title = element_text(face = "bold"),
         panel.grid.minor = element_blank())
 
 p_move + p_shift +
@@ -628,7 +625,7 @@ At any given market price, the hotel now produces **less** because $P = MC$ is r
 
 </div>
 
-## Exercise 3: Open Question :writing_hand:
+## Exercise 3: Open Question :writing_hand: {.smaller}
 
 <div style="font-size: 62%;">
 
@@ -709,7 +706,7 @@ New profit: $\pi = (40 \times 6) - 456 = 240 - 456 = -€216$ (loss worsened fro
 
 </div>
 
-## Exercise 3: Solution — Parts d & e
+## Exercise 3: Solution — Parts d & e {.smaller}
 
 <div style="font-size: 72%;">
 

@@ -155,7 +155,7 @@ In the **short run**, the firm has both fixed and variable inputs. In the **long
 
 </div>
 
-## The Law of Diminishing Returns :chart_with_downwards_trend:
+## The Law of Diminishing Returns :chart_with_downwards_trend: {.smaller}
 
 <div style="font-size: 78%;">
 
@@ -443,10 +443,10 @@ ggplot(df_avg, aes(x = Q, y = Cost, color = Type, linetype = Type)) +
   geom_point(data = data.frame(Q = c(avc_min_q, atc_min_q),
                                 Cost = c(avc_min_val, atc_min_val)),
              aes(x = Q, y = Cost), color = ue_red, size = 3, inherit.aes = FALSE) +
-  annotate("text", x = avc_min_q + 20, y = avc_min_val - 0.3,
+  annotate("text", x = avc_min_q + 10, y = avc_min_val - 1.3,
            label = "MC crosses\nAVC at min", color = "#2E86AB",
            fontface = "italic", size = 3.2, hjust = 0) +
-  annotate("text", x = atc_min_q + 15, y = atc_min_val + 0.5,
+  annotate("text", x = atc_min_q + 0, y = atc_min_val + 1.5,
            label = "MC crosses\nATC at min", color = ue_black,
            fontface = "italic", size = 3.2, hjust = 0) +
   coord_cartesian(ylim = c(0, 16), xlim = c(0, 330)) +
@@ -573,7 +573,7 @@ These costs explain why hotels hate **empty rooms** — FC is already committed!
 
 </div>
 
-## Spreading Fixed Costs: Why Airlines Overbook :airplane:
+## Spreading Fixed Costs: Why Airlines Overbook :airplane: {.smaller}
 
 <div style="font-size: 78%;">
 

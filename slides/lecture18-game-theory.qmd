@@ -87,7 +87,7 @@ The study of **strategic decision-making** — situations where the outcome for 
 | :joystick: **Strategies** | The options available to each player | High price or Low price |
 | :trophy: **Payoffs** | The outcome (profit, utility) for each combination of strategies | Revenue from each pricing scenario |
 
-:point_right: We'll start with **simultaneous games** (players choose at the same time, without knowing the other's choice). Next lecture: **sequential games** (one player moves first).
+* :point_right: We'll start with **simultaneous games** (players choose at the same time, without knowing the other's choice). Next lecture: **sequential games** (one player moves first).
 
 </div>
 
@@ -101,7 +101,7 @@ The study of **strategic decision-making** — situations where the outcome for 
 
 <div style="margin: 0 auto; width: 70%;">
 
-|  | **Ryanair: High** | **Ryanair: Low** |
+|  | Ryanair: High | Ryanair: Low |
 |:---:|:---:|:---:|
 | **TAP: High** | (€500k , €500k) | (€200k , €600k) |
 | **TAP: Low** | (€600k , €200k) | (€350k , €350k) |
@@ -126,16 +126,25 @@ The study of **strategic decision-making** — situations where the outcome for 
 
 **TAP's reasoning** (looking at its own payoffs — the **first** number):
 
+::::{.columns}
+:::{.column}
+
 **If Ryanair chooses High**:
 
 - TAP High → €500k
 - TAP Low → €600k :arrow_left: **Better!**
+
+:::
+
+:::{.column}
 
 **If Ryanair chooses Low**:
 
 - TAP High → €200k
 - TAP Low → €350k :arrow_left: **Better!**
 
+:::
+::::
 . . .
 
 ::: {.key-concept}
@@ -160,7 +169,7 @@ Two suspects are arrested and interrogated **separately**. Each can **Confess** 
 
 <div style="margin: 0 auto; width: 75%;">
 
-|  | **Suspect B: Silent** | **Suspect B: Confess** |
+|  | Suspect B: Silent | Suspect B: Confess |
 |:---:|:---:|:---:|
 | **Suspect A: Silent** | (1 year , 1 year) | (10 years , 0 years) |
 | **Suspect A: Confess** | (0 years , 10 years) | (5 years , 5 years) |
@@ -187,7 +196,7 @@ Look at our airline game again:
 
 <div style="margin: 0 auto; width: 70%;">
 
-|  | **Ryanair: High** | **Ryanair: Low** |
+|  | Ryanair: High | Ryanair: Low |
 |:---:|:---:|:---:|
 | **TAP: High** | **(€500k , €500k)** :star: | (€200k , €600k) |
 | **TAP: Low** | (€600k , €200k) | **(€350k , €350k)** :lock: |
@@ -274,7 +283,7 @@ In a Nash Equilibrium, every player is doing the **best they can** given the oth
 
 <div style="margin: 0 auto; width: 70%;">
 
-|  | **Ryanair: High** | **Ryanair: Low** |
+|  | Ryanair: High | Ryanair: Low |
 |:---:|:---:|:---:|
 | **TAP: High** | (500k , 500k) | (200k , [**600k**]{style="text-decoration: underline;"}) |
 | **TAP: Low** | ([**600k**]{style="text-decoration: underline;"} , 200k) | ([**350k**]{style="text-decoration: underline;"} , [**350k**]{style="text-decoration: underline;"}) |
@@ -293,7 +302,7 @@ In a Nash Equilibrium, every player is doing the **best they can** given the oth
 
 <div style="margin: 0 auto; width: 75%;">
 
-|  | **Hotel B: Luxury** | **Hotel B: Budget** |
+|  | Hotel B: Luxury | Hotel B: Budget |
 |:---:|:---:|:---:|
 | **Hotel A: Luxury** | (€300k , €300k) | (€500k , €400k) |
 | **Hotel A: Budget** | (€400k , €500k) | (€200k , €200k) |
@@ -331,8 +340,6 @@ In a Nash Equilibrium, every player is doing the **best they can** given the oth
 - :x: NE is not necessarily **unique** (the hotel game has two)
 - :x: NE doesn't require dominant strategies
 
-. . .
-
 ::: {.key-concept}
 **The Power of Nash Equilibrium**
 
@@ -353,7 +360,7 @@ It gives us a way to predict outcomes in **any** strategic situation — not jus
 
 Should a hotel lower prices to fight Airbnb, or differentiate on quality?
 
-|  | **Airbnb: Expand** | **Airbnb: Hold** |
+|  | Airbnb: Expand | Airbnb: Hold |
 |:---:|:---:|:---:|
 | **Hotel: Cut Price** | (Low , Medium) | (Medium , Low) |
 | **Hotel: Differentiate** | (Medium , High) | (High , Medium) |
@@ -407,7 +414,7 @@ Payoff matrices, dominant strategies, and Nash Equilibrium.
 
 **Question**: Two tour operators in Lisbon decide simultaneously whether to offer **Free cancellation** or **No cancellation** policies. The payoff matrix (profits in €k) is:
 
-|  | **Op B: Free** | **Op B: No** |
+|  | Op B: Free | Op B: No |
 |:---:|:---:|:---:|
 | **Op A: Free** | (80 , 80) | (120 , 60) |
 | **Op A: No** | (60 , 120) | (100 , 100) |
@@ -458,7 +465,7 @@ NE is defined as: no player can **unilaterally** improve. It does **not** requir
 
 <div style="margin: 0 auto; width: 60%;">
 
-|  | **Bar B: High (€8)** | **Bar B: Low (€5)** |
+|  | Bar B: High (€8) | Bar B: Low (€5) |
 |:---:|:---:|:---:|
 | **Bar A: High (€8)** | (400 , 400) | (150 , 450) |
 | **Bar A: Low (€5)** | (450 , 150) | (250 , 250) |
@@ -494,7 +501,7 @@ NE is defined as: no player can **unilaterally** improve. It does **not** requir
 
 **b)** Underline method:
 
-|  | **B: High** | **B: Low** |
+|  | B: High | B: Low |
 |:---:|:---:|:---:|
 | **A: High** | (400 , 400) | (150 , [**450**]{style="text-decoration: underline;"}) |
 | **A: Low** | ([**450**]{style="text-decoration: underline;"} , 150) | ([**250**]{style="text-decoration: underline;"} , [**250**]{style="text-decoration: underline;"}) |

@@ -57,7 +57,7 @@ Before we tackle **supply** elasticity, we need a quick recap of the **demand** 
 
 # Demand Elasticity: The Key Ideas
 
-## Price Elasticity of Demand :chart_with_downwards_trend:
+## Price Elasticity of Demand :chart_with_downwards_trend: {.smaller}
 
 <div style="font-size: 76%;">
 
@@ -115,9 +115,11 @@ $|\varepsilon_d| = 1.22 > 1$ → **elastic**
 :::
 ::::
 
+</div>
+
 :bulb: Key insight for linear demand: elasticity **varies** along the curve — elastic at the top (high P, low Q), inelastic at the bottom (low P, high Q), unit elastic at the midpoint.
 
-</div>
+
 
 ## The Revenue Test & Determinants :moneybag:
 
@@ -135,7 +137,7 @@ How does total revenue ($TR = P \times Q$) respond to a price increase?
 | Unit elastic ($|\varepsilon_d| = 1$) | TR **unchanged** | Effects cancel |
 | Inelastic ($|\varepsilon_d| < 1$) | TR **rises** :arrow_up: | Q drops less than P rises |
 
-:point_right: Hotel prices up 10%, but bookings only drop 3%? Demand is inelastic → revenue **rises**!
+* :point_right: Hotel prices up 10%, but bookings only drop 3%? Demand is inelastic → revenue **rises**!
 :::
 
 ::: {.column width="50%"}
@@ -203,7 +205,7 @@ $$\varepsilon_s = \frac{\%\Delta Q_s}{\%\Delta P} = \frac{\Delta Q / Q}{\Delta P
 
 </div>
 
-## Classification :bar_chart:
+## Classification :bar_chart: {.smaller}
 
 <div style="font-size: 78%;">
 
@@ -315,7 +317,7 @@ p2 <- ggplot() +
             fontface = "bold", size = 3.5, color = ue_black, hjust = 0) +
   annotate("text", x = 15, y = 12, label = "S (positive intercept)",
            color = ue_blue, fontface = "bold", size = 4) +
-  annotate("text", x = 1.2, y = 3, label = "c = 2",
+  annotate("text", x = 1.5, y = 2, label = "c = 2",
            color = ue_gray, fontface = "italic", size = 3.5) +
   coord_cartesian(ylim = c(0, 20), xlim = c(0, 20)) +
   scale_x_continuous(expand = c(0, 0)) +
@@ -490,7 +492,7 @@ ggplot() +
            color = ue_red, fontface = "bold", size = 3.8) +
   annotate("text", x = 85, y = 28, label = "Short Run",
            color = ue_orange, fontface = "bold", size = 3.8) +
-  annotate("text", x = 105, y = 12, label = "Long Run\n(all inputs adjustable)",
+  annotate("text", x = 105, y = 11, label = "Long Run\n(all inputs adjustable)",
            color = ue_green, fontface = "bold", size = 3.8) +
   coord_cartesian(ylim = c(0, 45), xlim = c(0, 120)) +
   scale_x_continuous(expand = c(0, 0)) +
@@ -536,7 +538,7 @@ The **longer the time horizon**, the more firms can adjust all inputs → supply
 
 . . .
 
-:point_right: **Both elasticities together** determine **who bears the burden** of taxes and price shocks! The side with **less elastic** response absorbs more of the burden.
+* :point_right: **Both elasticities together** determine **who bears the burden** of taxes and price shocks! The side with **less elastic** response absorbs more of the burden.
 
 </div>
 
@@ -555,7 +557,7 @@ The **longer the time horizon**, the more firms can adjust all inputs → supply
 | **Perfectly inelastic** | Vertical demand | Vertical supply |
 | **Perfectly elastic** | Horizontal demand | Horizontal supply |
 
-:point_right: Both sides use the **same formula** and **same classification**. The determinants differ because they reflect different underlying decisions (buying vs producing).
+* :point_right: Both sides use the **same formula** and **same classification**. The determinants differ because they reflect different underlying decisions (buying vs producing).
 
 </div>
 
