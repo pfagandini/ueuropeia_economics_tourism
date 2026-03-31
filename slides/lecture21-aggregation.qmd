@@ -16,8 +16,9 @@ format:
     logo: ../images/logo.png
     width: 1600
     height: 900
+    resources:
+      - ../images/circularity_chart_0.html
 ---
-
 ```{r}
 #| echo: false
 #| message: false
@@ -172,10 +173,8 @@ The **circular flow model** shows how money, goods, and services continuously fl
 
 We will build it up **step by step**, starting simple and adding complexity.
 
-## Step 1: Two Agents — Households & Firms :arrows_counterclockwise:
+## Step 1: Two Agents — Households & Firms :arrows_counterclockwise: {.smaller}
 
-:::: {.columns}
-::: {.column width="55%"}
 In the simplest economy:
 
 **Households** :family:
@@ -190,70 +189,86 @@ In the simplest economy:
 - Produce goods and services → earn **revenue**
 
 :point_right: Money flows in a **circle**: from firms to households (as income), and back from households to firms (as spending).
-:::
-::: {.column width="45%"}
-```{r}
+
+## Step 1: Two Agents — Households & Firms :arrows_counterclockwise: {.smaller}
+
+```{r, engine='tikz'}
 #| fig-width: 5
-#| fig-height: 5
+#| fig-height: 20
+#| fig-align: center
+#| echo: false
 
-# Simple circular flow diagram using ggplot2 arrows
-library(grid)
+\usetikzlibrary{arrows.meta, positioning, bending, backgrounds}
 
-df_boxes <- data.frame(
-  x    = c(0.5, 0.5),
-  y    = c(0.82, 0.18),
-  lab  = c("HOUSEHOLDS\n(Families)", "FIRMS\n(Companies)"),
-  stringsAsFactors = FALSE
-)
+\definecolor{uered}{RGB}{190,30,45}
+\definecolor{uegray}{RGB}{100,100,100}
+\definecolor{uelight}{RGB}{245,245,245}
 
-ggplot() +
-  # boxes
-  geom_tile(data = df_boxes, aes(x = x, y = y),
-            width = 0.32, height = 0.14,
-            fill = ue_red, color = NA) +
-  geom_text(data = df_boxes, aes(x = x, y = y, label = lab),
-            color = "white", fontface = "bold", size = 4.5) +
-  # top arrow left: goods & services (firms → households)
-  annotate("segment", x = 0.34, xend = 0.18, y = 0.77, yend = 0.77,
-           arrow = arrow(length = unit(0.25, "cm"), type = "closed"),
-           color = ue_black, linewidth = 1) +
-  annotate("text", x = 0.26, y = 0.83,
-           label = "Goods &\nServices", size = 3.2, color = ue_black, fontface = "italic") +
-  # top arrow right: spending (households → firms)
-  annotate("segment", x = 0.66, xend = 0.82, y = 0.77, yend = 0.77,
-           arrow = arrow(length = unit(0.25, "cm"), type = "closed"),
-           color = ue_red, linewidth = 1) +
-  annotate("text", x = 0.74, y = 0.83,
-           label = "Spending\n(C)", size = 3.2, color = ue_red, fontface = "bold") +
-  # bottom arrow left: factors of prod (households → firms)
-  annotate("segment", x = 0.34, xend = 0.18, y = 0.23, yend = 0.23,
-           arrow = arrow(length = unit(0.25, "cm"), type = "closed"),
-           color = ue_black, linewidth = 1) +
-  annotate("text", x = 0.26, y = 0.17,
-           label = "Labour,\nCapital, Land", size = 3.2, color = ue_black, fontface = "italic") +
-  # bottom arrow right: income (firms → households)
-  annotate("segment", x = 0.66, xend = 0.82, y = 0.23, yend = 0.23,
-           arrow = arrow(length = unit(0.25, "cm"), type = "closed"),
-           color = ue_red, linewidth = 1) +
-  annotate("text", x = 0.74, y = 0.17,
-           label = "Wages,\nProfits, Rents", size = 3.2, color = ue_red, fontface = "bold") +
-  # left arc connecting
-  annotate("segment", x = 0.18, xend = 0.18, y = 0.77, yend = 0.23,
-           color = ue_black, linewidth = 0.8, linetype = "dashed") +
-  # right arc connecting
-  annotate("segment", x = 0.82, xend = 0.82, y = 0.77, yend = 0.23,
-           color = ue_red, linewidth = 0.8, linetype = "dashed") +
-  # labels for markets
-  annotate("text", x = 0.12, y = 0.5,
-           label = "GOODS\nMARKET", size = 3, color = ue_gray, angle = 90) +
-  annotate("text", x = 0.88, y = 0.5,
-           label = "FACTOR\nMARKET", size = 3, color = ue_gray, angle = 90) +
-  xlim(0.05, 0.95) + ylim(0.05, 0.95) +
-  theme_void() +
-  theme(plot.background = element_rect(fill = ue_light, color = NA))
+\begin{tikzpicture}[
+  box/.style={
+    rectangle, rounded corners=4pt,
+    fill=uered, text=white, font=\bfseries\normalsize,
+    minimum width=3.6cm, minimum height=1.2cm,
+    align=center
+  },
+  myarrow/.style={
+    ->, >=Stealth, line width=1.2pt,
+    shorten >=3pt, shorten <=3pt
+  }
+]
+
+%% ── Nodes ───────────────────────────────────────────────────────────
+\node[box] (HH) at (0,  3.2) {HOUSEHOLDS\\[2pt]{\normalfont\small(Families)}};
+\node[box] (FF) at (0, -3.2) {FIRMS\\[2pt]{\normalfont\small(Companies)}};
+
+%% ── LEFT SIDE ───────────────────────────────────────────────────────
+%% Outer arc: Real flow — Firms → Households (goods & services)
+\draw[myarrow, color=uegray, line width=1.3pt]
+  (FF.west) to[out=160, in=200, looseness=2.0] (HH.west);
+
+%% Inner arc: Monetary flow — Households → Firms (spending)
+\draw[myarrow, color=uered, dashed, line width=1.3pt]
+  (HH.west) to[out=220, in=140, looseness=3.2] (FF.west);
+
+%% Left labels — staggered vertically
+\node[align=center, font=\small\itshape, color=uegray]
+  at (-3.5,  0.9) {Goods \&\\Services};
+
+\node[align=center, font=\small\bfseries, color=uered]
+  at (-4.4, -0.9) {Spending\\(C)};
+
+%% ── RIGHT SIDE ──────────────────────────────────────────────────────
+%% Outer arc: Real flow — Households → Firms (labour, capital, land)
+\draw[myarrow, color=uegray, line width=1.3pt]
+  (HH.east) to[out=340, in=20, looseness=2.0] (FF.east);
+
+%% Inner arc: Monetary flow — Firms → Households (wages, profits, rents)
+\draw[myarrow, color=uered, dashed, line width=1.3pt]
+  (FF.east) to[out=40, in=320, looseness=3.2] (HH.east);
+
+%% Right labels — staggered vertically
+\node[align=center, font=\small\itshape, color=uegray]
+  at (3.5, -0.9) {Labour,\\Capital, Land};
+
+\node[align=center, font=\small\bfseries, color=uered]
+  at (4.4,  0.9) {Wages,\\Profits, Rents};
+
+%% ── Market labels (centre, between arcs) ────────────────────────────
+\node[align=center, font=\footnotesize\bfseries, color=uegray]
+  at (-1.6, 0) {GOODS \&\\SERVICES\\MARKET};
+
+\node[align=center, font=\footnotesize\bfseries, color=uegray]
+  at ( 1.6, 0) {FACTOR\\MARKET};
+
+\end{tikzpicture}
 ```
-:::
-::::
+
+## The Circular Flow of Income
+
+<iframe src="../images/circularity_chart_0.html" 
+        width="100%" height="80%" 
+        style="border:none;">
+</iframe>
 
 ## Step 2: Adding the Government :classical_building:
 
@@ -321,7 +336,7 @@ Portugal typically runs a **services surplus** (tourism!) but a **goods deficit*
 :::
 ::::
 
-## The Full Circular Flow :earth_africa:
+## The Full Circular Flow :earth_africa: {.smaller}
 
 :::: {.columns}
 ::: {.column width="58%"}
@@ -334,7 +349,6 @@ The complete model has **four agents** and **four types of spending**:
 | Government | Government expenditure | G |
 | Rest of world | Net exports | NX |
 
-. . .
 
 **The fundamental identity:**
 
@@ -409,7 +423,7 @@ We add only the **value added** at each stage: €0.50 + €0.70 + €0.80 = **�
 :::
 ::::
 
-## The Tourism Aggregation Problem :beach_umbrella:
+## The Tourism Aggregation Problem :beach_umbrella: {.smaller}
 
 Tourism is a **cross-cutting industry** — it does not have a single production line. This makes aggregation tricky.
 
@@ -422,7 +436,7 @@ When a British tourist spends €1,000 in Portugal:
 - €350 at hotels :hotel: → counted under **accommodation services**
 - €200 at restaurants :fork_and_knife: → counted under **food & beverage**
 - €150 on transport :bus: → counted under **transport services**
-- €200 on retail :shopping_bags: → counted under **retail trade**
+- €200 on retail :shopping_cart: → counted under **retail trade**
 - €100 on cultural attractions :performing_arts: → counted under **arts & entertainment**
 
 :point_right: That €1,000 is **spread across multiple sectors** in the national accounts. There is no single "tourism line" in GDP — it must be reconstructed using **Tourism Satellite Accounts (TSA)**.
@@ -500,8 +514,8 @@ travel_gdp <- inner_join(receipts, gdp2, by = "time") |>
 
 ggplot(travel_gdp, aes(x = time, y = share)) +
   geom_col(fill = ue_red, alpha = 0.85) +
-  geom_text(aes(label = sprintf("%.1f%%", share)),
-            vjust = -0.4, size = 3.2, color = ue_black) +
+#  geom_text(aes(label = sprintf("%.1f%%", share)),
+#            vjust = -0.4, size = 3.2, color = ue_black) +
   labs(
     title = "Tourism Receipts as % of GDP — Portugal",
     x = NULL, y = "% of GDP",
@@ -551,55 +565,56 @@ Vertical in the **long run**: output is determined by real factors (technology, 
 ::::
 
 ## The AD-AS Model (Preview) :bar_chart:
+```{r, engine='tikz'}
+#| fig-align: center
+#| echo: false
+#| out-width: "85%"
+\usetikzlibrary{arrows.meta}
 
-```{r}
-#| fig-width: 10
-#| fig-height: 4.8
+\definecolor{uered}{RGB}{190,30,45}
+\definecolor{uegray}{RGB}{120,120,120}
 
-x <- seq(0.1, 2, length.out = 200)
+\begin{tikzpicture}[
+  >=Stealth,
+  every node/.style={font=\small}
+]
 
-ad  <- 2.5 - x
-sras <- 0.8 * x + 0.3
-lras_x <- 1.1
+%% ── Axes ────────────────────────────────────────────────────────────
+\draw[->, line width=1pt] (0,0) -- (8.5,0)
+  node[right] {Real GDP ($Y$)};
+\draw[->, line width=1pt] (0,0) -- (0,6.5)
+  node[above] {Price Level ($P$)};
 
-df_curves <- data.frame(
-  x    = c(x, x),
-  y    = c(ad, sras),
-  type = rep(c("Aggregate Demand (AD)", "Short-Run AS (SRAS)"), each = 200)
-) |> filter(y > 0.1, y < 2.2)
+%% ── LRAS (vertical at Y*) ───────────────────────────────────────────
+\draw[line width=1.5pt, color=black]
+  (5.5,0) -- (5.5,6.2);
+\node[above, color=black] at (5.5,6.2) {\textbf{LRAS}};
+\node[below, color=black] at (5.5,0) {$Y^*$};
 
-ggplot() +
-  geom_line(data = df_curves, aes(x = x, y = y, color = type, linetype = type),
-            linewidth = 1.3) +
-  geom_vline(xintercept = lras_x, color = ue_black, linewidth = 1.3, linetype = "solid") +
-  annotate("text", x = lras_x + 0.07, y = 2.0,
-           label = "Long-Run AS\n(LRAS)", color = ue_black, size = 3.5, hjust = 0) +
-  # equilibrium point
-  annotate("point", x = 1.1, y = 2.5 - 1.1, size = 4, color = ue_red) +
-  annotate("text", x = 1.17, y = 2.5 - 1.1 + 0.1,
-           label = "Equilibrium\n(Y*, P*)", color = ue_red, size = 3.3) +
-  annotate("segment", x = 1.1, xend = 1.1, y = 0, yend = 2.5 - 1.1,
-           linetype = "dashed", color = ue_gray, linewidth = 0.6) +
-  annotate("segment", x = 0, xend = 1.1, y = 2.5 - 1.1, yend = 2.5 - 1.1,
-           linetype = "dashed", color = ue_gray, linewidth = 0.6) +
-  scale_color_manual(values = c("Aggregate Demand (AD)" = ue_red,
-                                "Short-Run AS (SRAS)"   = ue_black)) +
-  scale_linetype_manual(values = c("Aggregate Demand (AD)" = "solid",
-                                   "Short-Run AS (SRAS)"   = "dashed")) +
-  labs(
-    title = "The AD-AS Model — Preview",
-    subtitle = "Hypothetical illustration — formal treatment in later lectures",
-    x = "Real Output (Y)", y = "Price Level (P)",
-    color = NULL, linetype = NULL,
-    caption = "Hypothetical data for illustration"
-  ) +
-  theme_minimal(base_size = 13) +
-  theme(
-    plot.title    = element_text(color = ue_red, face = "bold"),
-    plot.subtitle = element_text(color = ue_gray, size = 10),
-    legend.position = "bottom",
-    panel.grid.minor = element_blank()
-  )
+%% ── AD curve ────────────────────────────────────────────────────────
+%% Passes through equilibrium (5, 3.5)
+\draw[line width=1.5pt, color=uered]
+  (1.5,5.8) .. controls (3,4.5) and (4,4.0) .. (5,3.5)
+             .. controls (6,3.0) and (7,2.3) .. (8,1.5);
+\node[right, color=uered] at (8,1.5) {\textbf{AD}};
+
+%% ── SRAS curve ──────────────────────────────────────────────────────
+%% Passes through equilibrium (5, 3.5)
+\draw[line width=1.5pt, color=black, dashed]
+  (1,1.2) .. controls (2.5,2.0) and (3.8,2.8) .. (5,3.5)
+           .. controls (5.5,4.2) and (5.8,4.8) .. (6,5.5);
+\node[right, color=black] at (6.2,5.5) {\textbf{SRAS}};
+
+%% ── Equilibrium point ───────────────────────────────────────────────
+\filldraw[color=uered] (5,3.5) circle (4pt);
+\node[above right, color=uered] at (5,3.5) {Equilibrium};
+
+%% ── Dashed reference lines ──────────────────────────────────────────
+\draw[dashed, color=uegray, line width=0.7pt]
+  (0,3.5) -- (5,3.5);
+\node[left, color=uegray] at (0,3.5) {$P^*$};
+
+\end{tikzpicture}
 ```
 
 :point_right: This model gives us the macroeconomic equivalent of the supply-demand diagram we used in microeconomics. We will use it throughout the macro block.
@@ -692,7 +707,7 @@ The tour operator's **value added** = €7 − €4 = **€3**. GDP counts only 
 :::
 :::
 
-## :pencil: Exercise 3 — Open Question
+## :pencil: Exercise 3 — Open Question {.smaller}
 
 **Consider a simplified tourism economy with three firms:**
 
@@ -700,13 +715,13 @@ The tour operator's **value added** = €7 − €4 = **€3**. GDP counts only 
 - **Restaurante Praia** (restaurant): buys wine for €60 and other ingredients for €20, and sells meals to tourists for **€160**.
 - **Hotel Maré** (hotel): builds a new outdoor terrace at a cost of **€500** (inputs purchased from local suppliers for **€300**, rest is labour).
 
-**(a)** Calculate the **value added** by each firm. *(3 marks)*
+**(a)** Calculate the **value added** by each firm. 
 
-**(b)** What is the **total contribution to GDP** of these three firms? *(2 marks)*
+**(b)** What is the **total contribution to GDP** of these three firms? 
 
-**(c)** To which component of GDP (C, I, G, or NX) does each transaction belong? Justify briefly. *(3 marks)*
+**(c)** To which component of GDP (C, I, G, or NX) does each transaction belong? Justify briefly. 
 
-**(d)** If the meals at Restaurante Praia were purchased exclusively by **foreign tourists**, how would your classification in (c) change? *(2 marks)*
+**(d)** If the meals at Restaurante Praia were purchased exclusively by **foreign tourists**, how would your classification in (c) change? 
 
 ---
 

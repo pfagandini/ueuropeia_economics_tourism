@@ -45,7 +45,7 @@ title: "Material"
 ### Macroeconomics
 
 19. [Macroeconomic Issues](slides/lecture20-macro-issues.qmd):page_facing_up: [PDF](PDF/lecture20-macro-issues.pdf)
-20. [Aggregation](slides/lecture21-aggregation.qmd)
+20. [Aggregation](slides/lecture21-aggregation.qmd):page_facing_up: [PDF](PDF/lecture21-aggregation.pdf)
 21. [Gross Domestic Product](slides/lecture22-gdp.qmd)
 22. [Inflation](slides/lecture23-inflation.qmd)
 23. [Monetary Policy](slides/lecture24-monetary-policy.qmd)

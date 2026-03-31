@@ -1,266 +1,150 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="author" content="Paulo Fagandini">
-<meta name="dcterms.date" content="2026-01-01">
-
-<title>Aggregation: The Concept – Economics of Tourism</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
-
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<html lang="en"><head>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
+  <meta name="author" content="Paulo Fagandini">
+  <meta name="dcterms.date" content="2026-01-01">
+  <title>Economics of Tourism – Aggregation: The Concept</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
     }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e109428474854d908f205605d54b47e4.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
 </head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
-<body class="nav-fixed quarto-light">
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Aggregation: The Concept</h1>
+  <p class="subtitle">Lecture 21: From Individual Transactions to the Economy as a Whole</p>
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/logo.png" alt="" class="navbar-logo light-content">
-    <img src="../images/logo.png" alt="" class="navbar-logo dark-content">
-    </a>
-    <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Economics of Tourism</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../material.html"> 
-<span class="menu-text">Material</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Paulo Fagandini 
 </div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#recap-the-macro-panorama" id="toc-recap-the-macro-panorama" class="nav-link active" data-scroll-target="#recap-the-macro-panorama">Recap: The Macro Panorama <span class="emoji" data-emoji="rewind">⏪</span></a></li>
-  <li><a href="#part-i-what-is-aggregation" id="toc-part-i-what-is-aggregation" class="nav-link" data-scroll-target="#part-i-what-is-aggregation">Part I: What is Aggregation?</a>
-  <ul class="collapse">
-  <li><a href="#the-problem-of-scale" id="toc-the-problem-of-scale" class="nav-link" data-scroll-target="#the-problem-of-scale">The Problem of Scale <span class="emoji" data-emoji="microscope">🔬</span></a></li>
-  <li><a href="#what-is-aggregation" id="toc-what-is-aggregation" class="nav-link" data-scroll-target="#what-is-aggregation">What is Aggregation? <span class="emoji" data-emoji="jigsaw">🧩</span></a></li>
-  <li><a href="#why-does-aggregation-work" id="toc-why-does-aggregation-work" class="nav-link" data-scroll-target="#why-does-aggregation-work">Why Does Aggregation Work? <span class="emoji" data-emoji="thinking">🤔</span></a></li>
-  <li><a href="#the-trade-off-of-aggregation" id="toc-the-trade-off-of-aggregation" class="nav-link" data-scroll-target="#the-trade-off-of-aggregation">The Trade-off of Aggregation <span class="emoji" data-emoji="balance_scale">⚖️</span></a></li>
-  </ul></li>
-  <li><a href="#part-ii-the-circular-flow-of-income" id="toc-part-ii-the-circular-flow-of-income" class="nav-link" data-scroll-target="#part-ii-the-circular-flow-of-income">Part II: The Circular Flow of Income</a>
-  <ul class="collapse">
-  <li><a href="#economies-as-a-flow" id="toc-economies-as-a-flow" class="nav-link" data-scroll-target="#economies-as-a-flow">Economies as a Flow <span class="emoji" data-emoji="recycle">♻️</span></a></li>
-  <li><a href="#step-1-two-agents-households-firms" id="toc-step-1-two-agents-households-firms" class="nav-link" data-scroll-target="#step-1-two-agents-households-firms">Step 1: Two Agents — Households &amp; Firms <span class="emoji" data-emoji="arrows_counterclockwise">🔄</span></a></li>
-  <li><a href="#step-2-adding-the-government" id="toc-step-2-adding-the-government" class="nav-link" data-scroll-target="#step-2-adding-the-government">Step 2: Adding the Government <span class="emoji" data-emoji="classical_building">🏛️</span></a></li>
-  <li><a href="#step-3-adding-the-rest-of-the-world" id="toc-step-3-adding-the-rest-of-the-world" class="nav-link" data-scroll-target="#step-3-adding-the-rest-of-the-world">Step 3: Adding the Rest of the World <span class="emoji" data-emoji="globe_with_meridians">🌐</span></a></li>
-  <li><a href="#the-full-circular-flow" id="toc-the-full-circular-flow" class="nav-link" data-scroll-target="#the-full-circular-flow">The Full Circular Flow <span class="emoji" data-emoji="earth_africa">🌍</span></a></li>
-  </ul></li>
-  <li><a href="#part-iii-aggregating-output-what-counts" id="toc-part-iii-aggregating-output-what-counts" class="nav-link" data-scroll-target="#part-iii-aggregating-output-what-counts">Part III: Aggregating Output — What Counts?</a>
-  <ul class="collapse">
-  <li><a href="#the-value-added-principle" id="toc-the-value-added-principle" class="nav-link" data-scroll-target="#the-value-added-principle">The Value-Added Principle <span class="emoji" data-emoji="link">🔗</span></a></li>
-  <li><a href="#what-gets-included-in-aggregation" id="toc-what-gets-included-in-aggregation" class="nav-link" data-scroll-target="#what-gets-included-in-aggregation">What Gets Included in Aggregation? <span class="emoji" data-emoji="white_check_mark">✅</span></a></li>
-  <li><a href="#the-tourism-aggregation-problem" id="toc-the-tourism-aggregation-problem" class="nav-link" data-scroll-target="#the-tourism-aggregation-problem">The Tourism Aggregation Problem <span class="emoji" data-emoji="beach_umbrella">🏖️</span></a></li>
-  <li><a href="#tourisms-share-in-the-portuguese-economy" id="toc-tourisms-share-in-the-portuguese-economy" class="nav-link" data-scroll-target="#tourisms-share-in-the-portuguese-economy">Tourism’s Share in the Portuguese Economy <span class="emoji" data-emoji="portugal">🇵🇹</span></a></li>
-  </ul></li>
-  <li><a href="#part-iv-aggregate-demand-and-aggregate-supply" id="toc-part-iv-aggregate-demand-and-aggregate-supply" class="nav-link" data-scroll-target="#part-iv-aggregate-demand-and-aggregate-supply">Part IV: Aggregate Demand and Aggregate Supply</a>
-  <ul class="collapse">
-  <li><a href="#from-individual-to-aggregate-curves" id="toc-from-individual-to-aggregate-curves" class="nav-link" data-scroll-target="#from-individual-to-aggregate-curves">From Individual to Aggregate Curves <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></a></li>
-  <li><a href="#the-ad-as-model-preview" id="toc-the-ad-as-model-preview" class="nav-link" data-scroll-target="#the-ad-as-model-preview">The AD-AS Model (Preview) <span class="emoji" data-emoji="bar_chart">📊</span></a></li>
-  <li><a href="#the-three-approaches-to-measuring-aggregate-output" id="toc-the-three-approaches-to-measuring-aggregate-output" class="nav-link" data-scroll-target="#the-three-approaches-to-measuring-aggregate-output">The Three Approaches to Measuring Aggregate Output <span class="emoji" data-emoji="straight_ruler">📏</span></a></li>
-  </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
-  <ul class="collapse">
-  <li><a href="#exercise-1-multiple-choice" id="toc-exercise-1-multiple-choice" class="nav-link" data-scroll-target="#exercise-1-multiple-choice"><span class="emoji" data-emoji="pencil">📝</span> Exercise 1 — Multiple Choice</a></li>
-  <li><a href="#exercise-2-multiple-choice" id="toc-exercise-2-multiple-choice" class="nav-link" data-scroll-target="#exercise-2-multiple-choice"><span class="emoji" data-emoji="pencil">📝</span> Exercise 2 — Multiple Choice</a></li>
-  <li><a href="#exercise-3-open-question" id="toc-exercise-3-open-question" class="nav-link" data-scroll-target="#exercise-3-open-question"><span class="emoji" data-emoji="pencil">📝</span> Exercise 3 — Open Question</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary <span class="emoji" data-emoji="books">📚</span></a></li>
-  <li><a href="#thank-you" id="toc-thank-you" class="nav-link" data-scroll-target="#thank-you">Thank You! <span class="emoji" data-emoji="wave">👋</span></a></li>
-  </ul></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture21-aggregation.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Aggregation: The Concept</h1>
-<p class="subtitle lead">Lecture 21: From Individual Transactions to the Economy as a Whole</p>
+</div>
 </div>
 
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Paulo Fagandini </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2026</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="recap-the-macro-panorama" class="level2">
-<h2 class="anchored" data-anchor-id="recap-the-macro-panorama">Recap: The Macro Panorama <span class="emoji" data-emoji="rewind">⏪</span></h2>
+  <p class="date">2026</p>
+</section>
+<section id="recap-the-macro-panorama" class="slide level2">
+<h2>Recap: The Macro Panorama <span class="emoji" data-emoji="rewind">⏪</span></h2>
 <p>Last lecture we identified the <strong>six big macroeconomic issues</strong>:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -271,18 +155,21 @@ window.Quarto = {
 <p><span class="emoji" data-emoji="briefcase">💼</span> Unemployment</p>
 <p><span class="emoji" data-emoji="fire">🔥</span> Inflation</p>
 <p><span class="emoji" data-emoji="globe_with_meridians">🌐</span> International interdependence</p>
-</div>
-</div>
-<p>. . .</p>
+</div></div>
+<div class="fragment">
 <p>To study all of these, we need one fundamental tool:</p>
 <p><span class="emoji" data-emoji="point_right">👉</span> <strong>Aggregation</strong> — summing up millions of individual decisions into a single economy-wide picture.</p>
+</div>
 </section>
-<section id="part-i-what-is-aggregation" class="level1">
+<section>
+<section id="part-i-what-is-aggregation" class="title-slide slide level1 center">
 <h1>Part I: What is Aggregation?</h1>
-<section id="the-problem-of-scale" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-of-scale">The Problem of Scale <span class="emoji" data-emoji="microscope">🔬</span></h2>
+
+</section>
+<section id="the-problem-of-scale" class="slide level2">
+<h2>The Problem of Scale <span class="emoji" data-emoji="microscope">🔬</span></h2>
 <p>In microeconomics, we studied <strong>one consumer</strong>, <strong>one firm</strong>, <strong>one market</strong>.</p>
-<p>. . .</p>
+<div class="fragment">
 <p>But Portugal has:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -293,17 +180,17 @@ window.Quarto = {
 </div><div class="column" style="width:50%;">
 <p>We cannot track every transaction. We need a way to <strong>compress</strong> all of this information into a manageable set of numbers.</p>
 <p><span class="emoji" data-emoji="point_right">👉</span> That is exactly what <strong>aggregation</strong> does.</p>
-</div>
+</div></div>
 </div>
 </section>
-<section id="what-is-aggregation" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-aggregation">What is Aggregation? <span class="emoji" data-emoji="jigsaw">🧩</span></h2>
+<section id="what-is-aggregation" class="slide level2">
+<h2>What is Aggregation? <span class="emoji" data-emoji="jigsaw">🧩</span></h2>
 <div class="key-concept">
 <p><strong>Aggregation</strong> is the process of <strong>summing individual economic variables</strong> — the spending decisions of millions of households, the output of thousands of firms — to obtain <strong>totals for the economy as a whole</strong>.</p>
 </div>
-<p>. . .</p>
+<div class="fragment">
 <p><strong>Examples:</strong></p>
-<table class="caption-top table">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Individual variable</th>
@@ -329,11 +216,12 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+</div>
 </section>
-<section id="why-does-aggregation-work" class="level2">
-<h2 class="anchored" data-anchor-id="why-does-aggregation-work">Why Does Aggregation Work? <span class="emoji" data-emoji="thinking">🤔</span></h2>
+<section id="why-does-aggregation-work" class="slide level2">
+<h2>Why Does Aggregation Work? <span class="emoji" data-emoji="thinking">🤔</span></h2>
 <p>Aggregation works because — even though individuals differ — their <strong>combined behaviour</strong> follows <strong>predictable patterns</strong>.</p>
-<p>. . .</p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p>Think of a <strong>thermometer</strong> <span class="emoji" data-emoji="thermometer">🌡️</span></p>
@@ -343,11 +231,11 @@ window.Quarto = {
 <p><span class="emoji" data-emoji="bulb">💡</span> <strong>Key insight:</strong></p>
 <p>Individual details get “averaged out”. What remains is the <strong>systematic, predictable</strong> part of economic behaviour — which is exactly what policy needs to respond to.</p>
 <p><span class="emoji" data-emoji="warning">⚠️</span> <strong>The cost:</strong> Aggregation hides <strong>distribution</strong> — who gets what.</p>
-</div>
+</div></div>
 </div>
 </section>
-<section id="the-trade-off-of-aggregation" class="level2">
-<h2 class="anchored" data-anchor-id="the-trade-off-of-aggregation">The Trade-off of Aggregation <span class="emoji" data-emoji="balance_scale">⚖️</span></h2>
+<section id="the-trade-off-of-aggregation" class="slide level2">
+<h2>The Trade-off of Aggregation <span class="emoji" data-emoji="balance_scale">⚖️</span></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span class="emoji" data-emoji="heavy_check_mark">✔️</span> <strong>What aggregation gives us:</strong></p>
@@ -365,28 +253,30 @@ window.Quarto = {
 <li>Sectoral differences: tourism booming while manufacturing shrinks</li>
 <li>Quality of jobs: full-time vs precarious seasonal work</li>
 </ul>
-</div>
-</div>
-<p>. . .</p>
+</div></div>
+<div class="fragment">
 <p><span class="emoji" data-emoji="point_right">👉</span> A country’s GDP can grow while most workers see their wages <strong>fall</strong> — if growth is concentrated at the top. Aggregation alone does not tell us this.</p>
-</section>
-</section>
-<section id="part-ii-the-circular-flow-of-income" class="level1">
+</div>
+</section></section>
+<section>
+<section id="part-ii-the-circular-flow-of-income" class="title-slide slide level1 center">
 <h1>Part II: The Circular Flow of Income</h1>
-<section id="economies-as-a-flow" class="level2">
-<h2 class="anchored" data-anchor-id="economies-as-a-flow">Economies as a Flow <span class="emoji" data-emoji="recycle">♻️</span></h2>
+
+</section>
+<section id="economies-as-a-flow" class="slide level2">
+<h2>Economies as a Flow <span class="emoji" data-emoji="recycle">♻️</span></h2>
 <p>The best way to understand aggregation is through the <strong>circular flow of income</strong> model.</p>
-<p>. . .</p>
+<div class="fragment">
 <div class="key-concept">
 <p>The <strong>circular flow model</strong> shows how money, goods, and services continuously flow between the main economic agents — households, firms, the government, and the rest of the world.</p>
 </div>
-<p>. . .</p>
+</div>
+<div class="fragment">
 <p>We will build it up <strong>step by step</strong>, starting simple and adding complexity.</p>
+</div>
 </section>
-<section id="step-1-two-agents-households-firms" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-two-agents-households-firms">Step 1: Two Agents — Households &amp; Firms <span class="emoji" data-emoji="arrows_counterclockwise">🔄</span></h2>
-<div class="columns">
-<div class="column" style="width:55%;">
+<section id="step-1-two-agents-households-firms" class="slide level2 smaller">
+<h2>Step 1: Two Agents — Households &amp; Firms <span class="emoji" data-emoji="arrows_counterclockwise">🔄</span></h2>
 <p>In the simplest economy:</p>
 <p><strong>Households</strong> <span class="emoji" data-emoji="family">👪</span></p>
 <ul>
@@ -400,78 +290,20 @@ window.Quarto = {
 <li>Produce goods and services → earn <strong>revenue</strong></li>
 </ul>
 <p><span class="emoji" data-emoji="point_right">👉</span> Money flows in a <strong>circle</strong>: from firms to households (as income), and back from households to firms (as spending).</p>
-</div><div class="column" style="width:45%;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple circular flow diagram using ggplot2 arrows</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df_boxes <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">x    =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">y    =</span> <span class="fu">c</span>(<span class="fl">0.82</span>, <span class="fl">0.18</span>),</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">lab  =</span> <span class="fu">c</span>(<span class="st">"HOUSEHOLDS</span><span class="sc">\n</span><span class="st">(Families)"</span>, <span class="st">"FIRMS</span><span class="sc">\n</span><span class="st">(Companies)"</span>),</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># boxes</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">data =</span> df_boxes, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y),</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">width =</span> <span class="fl">0.32</span>, <span class="at">height =</span> <span class="fl">0.14</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">fill =</span> ue_red, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> df_boxes, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> lab),</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fl">4.5</span>) <span class="sc">+</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># top arrow left: goods &amp; services (firms → households)</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="fl">0.34</span>, <span class="at">xend =</span> <span class="fl">0.18</span>, <span class="at">y =</span> <span class="fl">0.77</span>, <span class="at">yend =</span> <span class="fl">0.77</span>,</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>, <span class="st">"cm"</span>), <span class="at">type =</span> <span class="st">"closed"</span>),</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> ue_black, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.26</span>, <span class="at">y =</span> <span class="fl">0.83</span>,</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Goods &amp;</span><span class="sc">\n</span><span class="st">Services"</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">color =</span> ue_black, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># top arrow right: spending (households → firms)</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="fl">0.66</span>, <span class="at">xend =</span> <span class="fl">0.82</span>, <span class="at">y =</span> <span class="fl">0.77</span>, <span class="at">yend =</span> <span class="fl">0.77</span>,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>, <span class="st">"cm"</span>), <span class="at">type =</span> <span class="st">"closed"</span>),</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> ue_red, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.74</span>, <span class="at">y =</span> <span class="fl">0.83</span>,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Spending</span><span class="sc">\n</span><span class="st">(C)"</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">color =</span> ue_red, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># bottom arrow left: factors of prod (households → firms)</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="fl">0.34</span>, <span class="at">xend =</span> <span class="fl">0.18</span>, <span class="at">y =</span> <span class="fl">0.23</span>, <span class="at">yend =</span> <span class="fl">0.23</span>,</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>, <span class="st">"cm"</span>), <span class="at">type =</span> <span class="st">"closed"</span>),</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> ue_black, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.26</span>, <span class="at">y =</span> <span class="fl">0.17</span>,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Labour,</span><span class="sc">\n</span><span class="st">Capital, Land"</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">color =</span> ue_black, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># bottom arrow right: income (firms → households)</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="fl">0.66</span>, <span class="at">xend =</span> <span class="fl">0.82</span>, <span class="at">y =</span> <span class="fl">0.23</span>, <span class="at">yend =</span> <span class="fl">0.23</span>,</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>, <span class="st">"cm"</span>), <span class="at">type =</span> <span class="st">"closed"</span>),</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> ue_red, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.74</span>, <span class="at">y =</span> <span class="fl">0.17</span>,</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Wages,</span><span class="sc">\n</span><span class="st">Profits, Rents"</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">color =</span> ue_red, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># left arc connecting</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="fl">0.18</span>, <span class="at">xend =</span> <span class="fl">0.18</span>, <span class="at">y =</span> <span class="fl">0.77</span>, <span class="at">yend =</span> <span class="fl">0.23</span>,</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> ue_black, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="co"># right arc connecting</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="fl">0.82</span>, <span class="at">xend =</span> <span class="fl">0.82</span>, <span class="at">y =</span> <span class="fl">0.77</span>, <span class="at">yend =</span> <span class="fl">0.23</span>,</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> ue_red, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels for markets</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.12</span>, <span class="at">y =</span> <span class="fl">0.5</span>,</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"GOODS</span><span class="sc">\n</span><span class="st">MARKET"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> ue_gray, <span class="at">angle =</span> <span class="dv">90</span>) <span class="sc">+</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.88</span>, <span class="at">y =</span> <span class="fl">0.5</span>,</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"FACTOR</span><span class="sc">\n</span><span class="st">MARKET"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> ue_gray, <span class="at">angle =</span> <span class="dv">90</span>) <span class="sc">+</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>) <span class="sc">+</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> ue_light, <span class="at">color =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lecture21-aggregation_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
-<section id="step-2-adding-the-government" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-adding-the-government">Step 2: Adding the Government <span class="emoji" data-emoji="classical_building">🏛️</span></h2>
+<section id="step-1-two-agents-households-firms-1" class="slide level2 smaller">
+<h2>Step 1: Two Agents — Households &amp; Firms <span class="emoji" data-emoji="arrows_counterclockwise">🔄</span></h2>
+
+<img data-src="lecture21-aggregation_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"></section>
+<section id="the-circular-flow-of-income" class="slide level2">
+<h2>The Circular Flow of Income</h2>
+<iframe src="../images/circularity_chart_0.html" width="100%" height="80%" style="border:none;">
+</iframe>
+</section>
+<section id="step-2-adding-the-government" class="slide level2">
+<h2>Step 2: Adding the Government <span class="emoji" data-emoji="classical_building">🏛️</span></h2>
 <p>In a real economy, the <strong>government</strong> plays a major role:</p>
-<p>. . .</p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Government collects:</strong></p>
@@ -484,13 +316,13 @@ window.Quarto = {
 <p>Not all household income is spent on consumption. Some leaks out as <strong>taxes</strong>.</p>
 <p>Not all firm revenue stays in the private sector. Government <strong>injects</strong> spending back in.</p>
 <p><span class="emoji" data-emoji="point_right">👉</span> The flow is still circular, but the government acts as a <strong>redistribution node</strong>.</p>
-</div>
+</div></div>
 </div>
 </section>
-<section id="step-3-adding-the-rest-of-the-world" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-adding-the-rest-of-the-world">Step 3: Adding the Rest of the World <span class="emoji" data-emoji="globe_with_meridians">🌐</span></h2>
+<section id="step-3-adding-the-rest-of-the-world" class="slide level2">
+<h2>Step 3: Adding the Rest of the World <span class="emoji" data-emoji="globe_with_meridians">🌐</span></h2>
 <p>Real economies also trade with the outside world:</p>
-<p>. . .</p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Exports</strong> <span class="emoji" data-emoji="outbox_tray">📤</span></p>
@@ -508,15 +340,15 @@ window.Quarto = {
 <p>If NX &lt; 0: more money flowing <strong>out</strong> than in (trade deficit)</p>
 </div>
 <p>Portugal typically runs a <strong>services surplus</strong> (tourism!) but a <strong>goods deficit</strong>.</p>
-</div>
+</div></div>
 </div>
 </section>
-<section id="the-full-circular-flow" class="level2">
-<h2 class="anchored" data-anchor-id="the-full-circular-flow">The Full Circular Flow <span class="emoji" data-emoji="earth_africa">🌍</span></h2>
+<section id="the-full-circular-flow" class="slide level2 smaller">
+<h2>The Full Circular Flow <span class="emoji" data-emoji="earth_africa">🌍</span></h2>
 <div class="columns">
 <div class="column" style="width:58%;">
 <p>The complete model has <strong>four agents</strong> and <strong>four types of spending</strong>:</p>
-<table class="caption-top table">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Agent</th>
@@ -547,13 +379,12 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>. . .</p>
 <p><strong>The fundamental identity:</strong></p>
 <p><span class="math display">\[Y = C + I + G + NX\]</span></p>
 <p><span class="emoji" data-emoji="point_right">👉</span> Every euro of output produced in Portugal must be <strong>purchased</strong> by someone — this equation always holds, by definition. This is the <strong>expenditure approach</strong> to GDP (next lecture).</p>
 </div><div class="column" style="width:42%;">
 <p><strong>Leakages vs Injections</strong></p>
-<table class="caption-top table">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Leakages <span class="emoji" data-emoji="outbox_tray">📤</span></th>
@@ -578,18 +409,19 @@ window.Quarto = {
 <p>In equilibrium:</p>
 <p><span class="math display">\[S + T + M = I + G + X\]</span></p>
 <p><span class="emoji" data-emoji="bulb">💡</span> What leaks out of the circular flow must be matched by injections back in.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="part-iii-aggregating-output-what-counts" class="level1">
+</div></div>
+</section></section>
+<section>
+<section id="part-iii-aggregating-output-what-counts" class="title-slide slide level1 center">
 <h1>Part III: Aggregating Output — What Counts?</h1>
-<section id="the-value-added-principle" class="level2">
-<h2 class="anchored" data-anchor-id="the-value-added-principle">The Value-Added Principle <span class="emoji" data-emoji="link">🔗</span></h2>
+
+</section>
+<section id="the-value-added-principle" class="slide level2">
+<h2>The Value-Added Principle <span class="emoji" data-emoji="link">🔗</span></h2>
 <p>When we aggregate output, we face a problem: <strong>double counting</strong>.</p>
-<p>. . .</p>
+<div class="fragment">
 <p><strong>Example — a tourist breakfast in Porto:</strong></p>
-<table class="caption-top table">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Stage</th>
@@ -630,12 +462,14 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>. . .</p>
+</div>
+<div class="fragment">
 <p><span class="emoji" data-emoji="point_right">👉</span> We <strong>do not</strong> add €0.50 + €1.20 + €2.00 = €3.70 (that would count the bread three times).</p>
 <p>We add only the <strong>value added</strong> at each stage: €0.50 + €0.70 + €0.80 = <strong>€2.00</strong>.</p>
+</div>
 </section>
-<section id="what-gets-included-in-aggregation" class="level2">
-<h2 class="anchored" data-anchor-id="what-gets-included-in-aggregation">What Gets Included in Aggregation? <span class="emoji" data-emoji="white_check_mark">✅</span></h2>
+<section id="what-gets-included-in-aggregation" class="slide level2">
+<h2>What Gets Included in Aggregation? <span class="emoji" data-emoji="white_check_mark">✅</span></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span class="emoji" data-emoji="heavy_check_mark">✔️</span> <strong>Included:</strong></p>
@@ -657,13 +491,12 @@ window.Quarto = {
 <li>Unpaid work (home cooking, volunteering)</li>
 </ul>
 <p><span class="emoji" data-emoji="thinking">🤔</span> <em>Why not second-hand houses? The house was already counted when it was first built.</em></p>
-</div>
-</div>
+</div></div>
 </section>
-<section id="the-tourism-aggregation-problem" class="level2">
-<h2 class="anchored" data-anchor-id="the-tourism-aggregation-problem">The Tourism Aggregation Problem <span class="emoji" data-emoji="beach_umbrella">🏖️</span></h2>
+<section id="the-tourism-aggregation-problem" class="slide level2 smaller">
+<h2>The Tourism Aggregation Problem <span class="emoji" data-emoji="beach_umbrella">🏖️</span></h2>
 <p>Tourism is a <strong>cross-cutting industry</strong> — it does not have a single production line. This makes aggregation tricky.</p>
-<p>. . .</p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p>When a British tourist spends €1,000 in Portugal:</p>
@@ -671,121 +504,38 @@ window.Quarto = {
 <li>€350 at hotels <span class="emoji" data-emoji="hotel">🏨</span> → counted under <strong>accommodation services</strong></li>
 <li>€200 at restaurants <span class="emoji" data-emoji="fork_and_knife">🍴</span> → counted under <strong>food &amp; beverage</strong></li>
 <li>€150 on transport <span class="emoji" data-emoji="bus">🚌</span> → counted under <strong>transport services</strong></li>
-<li>€200 on retail :shopping_bags: → counted under <strong>retail trade</strong></li>
+<li>€200 on retail <span class="emoji" data-emoji="shopping_cart">🛒</span> → counted under <strong>retail trade</strong></li>
 <li>€100 on cultural attractions <span class="emoji" data-emoji="performing_arts">🎭</span> → counted under <strong>arts &amp; entertainment</strong></li>
 </ul>
 <p><span class="emoji" data-emoji="point_right">👉</span> That €1,000 is <strong>spread across multiple sectors</strong> in the national accounts. There is no single “tourism line” in GDP — it must be reconstructed using <strong>Tourism Satellite Accounts (TSA)</strong>.</p>
 </div><div class="column" style="width:45%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hypothetical share breakdown — for illustration only</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Labelled clearly as illustrative</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>shares <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">sector =</span> <span class="fu">c</span>(<span class="st">"Accommodation"</span>, <span class="st">"F&amp;B"</span>, <span class="st">"Transport"</span>, <span class="st">"Retail"</span>, <span class="st">"Culture &amp; Other"</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">pct    =</span> <span class="fu">c</span>(<span class="dv">35</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">10</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(shares, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(sector, pct), <span class="at">y =</span> pct)) <span class="sc">+</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> ue_red, <span class="at">alpha =</span> <span class="fl">0.85</span>) <span class="sc">+</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(pct, <span class="st">"%"</span>)),</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.15</span>, <span class="at">size =</span> <span class="fl">3.8</span>, <span class="at">color =</span> ue_black) <span class="sc">+</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">42</span>)) <span class="sc">+</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Tourist Spending by Sector"</span>,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Hypothetical breakdown — illustrative only"</span>,</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Share of total tourist spending (%)"</span>,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Hypothetical data for illustration"</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title    =</span> <span class="fu">element_text</span>(<span class="at">color =</span> ue_red, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> ue_gray, <span class="at">size =</span> <span class="dv">9</span>),</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="lecture21-aggregation_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="460"></p>
+<figure>
+<p><img data-src="lecture21-aggregation_files/figure-revealjs/unnamed-chunk-3-1.png" width="460"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
+</div></div>
 </div>
 </section>
-<section id="tourisms-share-in-the-portuguese-economy" class="level2">
-<h2 class="anchored" data-anchor-id="tourisms-share-in-the-portuguese-economy">Tourism’s Share in the Portuguese Economy <span class="emoji" data-emoji="portugal">🇵🇹</span></h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Travel receipts as % of GDP — World Bank / Eurostat bop_its6_det</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Using Eurostat BOP: tourism receipts</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>receipts_raw <span class="ot">&lt;-</span> <span class="fu">get_eurostat</span>(<span class="st">"bop_its6_det"</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">filters =</span> <span class="fu">list</span>(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">geo      =</span> <span class="st">"PT"</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">bop_item =</span> <span class="st">"SB"</span>,       <span class="co"># Travel (credit = receipts)</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">currency =</span> <span class="st">"MIO_EUR"</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">stk_flow =</span> <span class="st">"CRE"</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">partner  =</span> <span class="st">"EXT_EU27_2020"</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">time_format =</span> <span class="st">"num"</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Table bop_its6_det cached at /tmp/RtmpKmxIaS/eurostat/b40a63a82f20ce34d02ed06fbb05a451.rds</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gdp_raw2 <span class="ot">&lt;-</span> <span class="fu">get_eurostat</span>(<span class="st">"nama_10_gdp"</span>,</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">filters =</span> <span class="fu">list</span>(<span class="at">geo =</span> <span class="st">"PT"</span>, <span class="at">na_item =</span> <span class="st">"B1GQ"</span>, <span class="at">unit =</span> <span class="st">"CP_MEUR"</span>),</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">time_format =</span> <span class="st">"num"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Table nama_10_gdp cached at /tmp/RtmpKmxIaS/eurostat/896609113ca40bc1406626c856ac3625.rds</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>receipts <span class="ot">&lt;-</span> receipts_raw <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(time <span class="sc">&gt;=</span> <span class="dv">2010</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(time, <span class="at">receipts =</span> values)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>gdp2 <span class="ot">&lt;-</span> gdp_raw2 <span class="sc">|&gt;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(time <span class="sc">&gt;=</span> <span class="dv">2010</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(time, <span class="at">gdp =</span> values)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>travel_gdp <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(receipts, gdp2, <span class="at">by =</span> <span class="st">"time"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">share =</span> receipts <span class="sc">/</span> gdp <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(share))</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(travel_gdp, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> share)) <span class="sc">+</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> ue_red, <span class="at">alpha =</span> <span class="fl">0.85</span>) <span class="sc">+</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"%.1f%%"</span>, share)),</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.4</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">color =</span> ue_black) <span class="sc">+</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Tourism Receipts as % of GDP — Portugal"</span>,</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"% of GDP"</span>,</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: Eurostat (bop_its6_det, nama_10_gdp). Travel receipts from non-EU partners."</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2010</span>, <span class="dv">2024</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(travel_gdp<span class="sc">$</span>share, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fl">1.2</span>)) <span class="sc">+</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> ue_red, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lecture21-aggregation_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="1056"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><span class="emoji" data-emoji="point_right">👉</span> Tourism represents a <strong>significant and growing share</strong> of Portugal’s GDP — making macroeconomic performance especially important for this industry.</p>
-</section>
-</section>
-<section id="part-iv-aggregate-demand-and-aggregate-supply" class="level1">
+<section id="tourisms-share-in-the-portuguese-economy" class="slide level2">
+<h2>Tourism’s Share in the Portuguese Economy <span class="emoji" data-emoji="portugal">🇵🇹</span></h2>
+
+<img data-src="lecture21-aggregation_files/figure-revealjs/unnamed-chunk-4-1.png" width="1056" class="r-stretch"><p><span class="emoji" data-emoji="point_right">👉</span> Tourism represents a <strong>significant and growing share</strong> of Portugal’s GDP — making macroeconomic performance especially important for this industry.</p>
+</section></section>
+<section>
+<section id="part-iv-aggregate-demand-and-aggregate-supply" class="title-slide slide level1 center">
 <h1>Part IV: Aggregate Demand and Aggregate Supply</h1>
-<section id="from-individual-to-aggregate-curves" class="level2">
-<h2 class="anchored" data-anchor-id="from-individual-to-aggregate-curves">From Individual to Aggregate Curves <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
+
+</section>
+<section id="from-individual-to-aggregate-curves" class="slide level2">
+<h2>From Individual to Aggregate Curves <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
 <p>In microeconomics we drew <strong>individual demand</strong> and <strong>supply curves</strong> for single markets.</p>
 <p>In macroeconomics we aggregate these into:</p>
-<p>. . .</p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span class="emoji" data-emoji="shopping_cart">🛒</span> <strong>Aggregate Demand (AD)</strong></p>
@@ -797,70 +547,18 @@ window.Quarto = {
 <p>The total output all firms in an economy are willing to produce at each <strong>price level</strong>.</p>
 <p>Upward sloping in the <strong>short run</strong>: higher prices make production more profitable.</p>
 <p>Vertical in the <strong>long run</strong>: output is determined by real factors (technology, labour, capital), not prices.</p>
-</div>
+</div></div>
 </div>
 </section>
-<section id="the-ad-as-model-preview" class="level2">
-<h2 class="anchored" data-anchor-id="the-ad-as-model-preview">The AD-AS Model (Preview) <span class="emoji" data-emoji="bar_chart">📊</span></h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">2</span>, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>ad  <span class="ot">&lt;-</span> <span class="fl">2.5</span> <span class="sc">-</span> x</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>sras <span class="ot">&lt;-</span> <span class="fl">0.8</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fl">0.3</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>lras_x <span class="ot">&lt;-</span> <span class="fl">1.1</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>df_curves <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">x    =</span> <span class="fu">c</span>(x, x),</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">y    =</span> <span class="fu">c</span>(ad, sras),</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Aggregate Demand (AD)"</span>, <span class="st">"Short-Run AS (SRAS)"</span>), <span class="at">each =</span> <span class="dv">200</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">filter</span>(y <span class="sc">&gt;</span> <span class="fl">0.1</span>, y <span class="sc">&lt;</span> <span class="fl">2.2</span>)</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> df_curves, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> type, <span class="at">linetype =</span> type),</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">linewidth =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> lras_x, <span class="at">color =</span> ue_black, <span class="at">linewidth =</span> <span class="fl">1.3</span>, <span class="at">linetype =</span> <span class="st">"solid"</span>) <span class="sc">+</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> lras_x <span class="sc">+</span> <span class="fl">0.07</span>, <span class="at">y =</span> <span class="fl">2.0</span>,</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Long-Run AS</span><span class="sc">\n</span><span class="st">(LRAS)"</span>, <span class="at">color =</span> ue_black, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># equilibrium point</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="fl">1.1</span>, <span class="at">y =</span> <span class="fl">2.5</span> <span class="sc">-</span> <span class="fl">1.1</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> ue_red) <span class="sc">+</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">1.17</span>, <span class="at">y =</span> <span class="fl">2.5</span> <span class="sc">-</span> <span class="fl">1.1</span> <span class="sc">+</span> <span class="fl">0.1</span>,</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Equilibrium</span><span class="sc">\n</span><span class="st">(Y*, P*)"</span>, <span class="at">color =</span> ue_red, <span class="at">size =</span> <span class="fl">3.3</span>) <span class="sc">+</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="fl">1.1</span>, <span class="at">xend =</span> <span class="fl">1.1</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="fl">2.5</span> <span class="sc">-</span> <span class="fl">1.1</span>,</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> ue_gray, <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">xend =</span> <span class="fl">1.1</span>, <span class="at">y =</span> <span class="fl">2.5</span> <span class="sc">-</span> <span class="fl">1.1</span>, <span class="at">yend =</span> <span class="fl">2.5</span> <span class="sc">-</span> <span class="fl">1.1</span>,</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> ue_gray, <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Aggregate Demand (AD)"</span> <span class="ot">=</span> ue_red,</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Short-Run AS (SRAS)"</span>   <span class="ot">=</span> ue_black)) <span class="sc">+</span></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Aggregate Demand (AD)"</span> <span class="ot">=</span> <span class="st">"solid"</span>,</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Short-Run AS (SRAS)"</span>   <span class="ot">=</span> <span class="st">"dashed"</span>)) <span class="sc">+</span></span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"The AD-AS Model — Preview"</span>,</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Hypothetical illustration — formal treatment in later lectures"</span>,</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Real Output (Y)"</span>, <span class="at">y =</span> <span class="st">"Price Level (P)"</span>,</span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">linetype =</span> <span class="cn">NULL</span>,</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Hypothetical data for illustration"</span></span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>) <span class="sc">+</span></span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title    =</span> <span class="fu">element_text</span>(<span class="at">color =</span> ue_red, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> ue_gray, <span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="lecture21-aggregation_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><span class="emoji" data-emoji="point_right">👉</span> This model gives us the macroeconomic equivalent of the supply-demand diagram we used in microeconomics. We will use it throughout the macro block.</p>
+<section id="the-ad-as-model-preview" class="slide level2">
+<h2>The AD-AS Model (Preview) <span class="emoji" data-emoji="bar_chart">📊</span></h2>
+
+<img data-src="lecture21-aggregation_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:85.0%"><p><span class="emoji" data-emoji="point_right">👉</span> This model gives us the macroeconomic equivalent of the supply-demand diagram we used in microeconomics. We will use it throughout the macro block.</p>
 </section>
-<section id="the-three-approaches-to-measuring-aggregate-output" class="level2">
-<h2 class="anchored" data-anchor-id="the-three-approaches-to-measuring-aggregate-output">The Three Approaches to Measuring Aggregate Output <span class="emoji" data-emoji="straight_ruler">📏</span></h2>
+<section id="the-three-approaches-to-measuring-aggregate-output" class="slide level2">
+<h2>The Three Approaches to Measuring Aggregate Output <span class="emoji" data-emoji="straight_ruler">📏</span></h2>
 <p>Any economy can be measured from <strong>three equivalent angles</strong> — they always give the same answer:</p>
-<p>. . .</p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:33%;">
 <p><span class="emoji" data-emoji="outbox_tray">📤</span> <strong>Expenditure approach</strong></p>
@@ -878,18 +576,21 @@ window.Quarto = {
 <p>Add up <strong>value added</strong> at each stage of production</p>
 <p><span class="math display">\[Y = \sum \text{Value Added}\]</span></p>
 <p><em>What is produced?</em></p>
+</div></div>
 </div>
-</div>
-<p>. . .</p>
+<div class="fragment">
 <p><span class="emoji" data-emoji="bulb">💡</span> All three approaches measure the <strong>same thing</strong> — total economic activity — just from different perspectives. Next lecture we focus on the expenditure approach: <strong>GDP</strong>.</p>
-</section>
-</section>
-<section id="exercises" class="level1">
+</div>
+</section></section>
+<section>
+<section id="exercises" class="title-slide slide level1 center">
 <h1>Exercises</h1>
-<section id="exercise-1-multiple-choice" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1-multiple-choice"><span class="emoji" data-emoji="pencil">📝</span> Exercise 1 — Multiple Choice</h2>
+
+</section>
+<section id="exercise-1-multiple-choice" class="slide level2">
+<h2><span class="emoji" data-emoji="pencil">📝</span> Exercise 1 — Multiple Choice</h2>
 <p><strong>A local tour operator in the Algarve buys sunscreen bottles from a wholesaler for €4 each, and sells them to tourists for €7 each. What is the value added by the tour operator, and how much does this contribute to GDP?</strong></p>
-<p>. . .</p>
+<div class="fragment">
 <p><strong>(A)</strong> €7 — the full selling price is GDP</p>
 <p><strong>(B)</strong> €4 — only intermediate costs count</p>
 <p><strong>(C)</strong> €3 — only the value added by the tour operator counts</p>
@@ -900,11 +601,12 @@ window.Quarto = {
 <p>The tour operator’s <strong>value added</strong> = €7 − €4 = <strong>€3</strong>. GDP counts only value added at each stage to avoid double-counting. The €4 paid to the wholesaler was already (or will be) counted as the wholesaler’s value added. Option A double-counts the wholesale stage; D triple-counts it.</p>
 </div>
 </div>
+</div>
 </section>
-<section id="exercise-2-multiple-choice" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2-multiple-choice"><span class="emoji" data-emoji="pencil">📝</span> Exercise 2 — Multiple Choice</h2>
+<section id="exercise-2-multiple-choice" class="slide level2">
+<h2><span class="emoji" data-emoji="pencil">📝</span> Exercise 2 — Multiple Choice</h2>
 <p><strong>Which of the following transactions would NOT be included in Portugal’s GDP?</strong></p>
-<p>. . .</p>
+<div class="fragment">
 <p><strong>(A)</strong> A German tourist pays €150 to stay in a Porto hotel</p>
 <p><strong>(B)</strong> The Portuguese government pays €2,000/month in pensions to a retired teacher</p>
 <p><strong>(C)</strong> A new Airbus A320 is purchased by TAP Air Portugal for its fleet</p>
@@ -915,20 +617,23 @@ window.Quarto = {
 <p><strong>Transfer payments</strong> (pensions, unemployment benefits) are <strong>not</strong> included in GDP — they redistribute existing income but do not correspond to new production of goods or services. Option A is an export of services (counted). Option C is investment (counted). Option D is investment in new construction (counted).</p>
 </div>
 </div>
+</div>
 </section>
-<section id="exercise-3-open-question" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-open-question"><span class="emoji" data-emoji="pencil">📝</span> Exercise 3 — Open Question</h2>
+<section id="exercise-3-open-question" class="slide level2 smaller">
+<h2><span class="emoji" data-emoji="pencil">📝</span> Exercise 3 — Open Question</h2>
 <p><strong>Consider a simplified tourism economy with three firms:</strong></p>
 <ul>
 <li><strong>Quinta do Algarve</strong> (wine producer): sells wine to a restaurant for <strong>€60</strong>. Inputs from outside the economy cost <strong>€10</strong>.</li>
 <li><strong>Restaurante Praia</strong> (restaurant): buys wine for €60 and other ingredients for €20, and sells meals to tourists for <strong>€160</strong>.</li>
 <li><strong>Hotel Maré</strong> (hotel): builds a new outdoor terrace at a cost of <strong>€500</strong> (inputs purchased from local suppliers for <strong>€300</strong>, rest is labour).</li>
 </ul>
-<p><strong>(a)</strong> Calculate the <strong>value added</strong> by each firm. <em>(3 marks)</em></p>
-<p><strong>(b)</strong> What is the <strong>total contribution to GDP</strong> of these three firms? <em>(2 marks)</em></p>
-<p><strong>(c)</strong> To which component of GDP (C, I, G, or NX) does each transaction belong? Justify briefly. <em>(3 marks)</em></p>
-<p><strong>(d)</strong> If the meals at Restaurante Praia were purchased exclusively by <strong>foreign tourists</strong>, how would your classification in (c) change? <em>(2 marks)</em></p>
-<hr>
+<p><strong>(a)</strong> Calculate the <strong>value added</strong> by each firm.</p>
+<p><strong>(b)</strong> What is the <strong>total contribution to GDP</strong> of these three firms?</p>
+<p><strong>(c)</strong> To which component of GDP (C, I, G, or NX) does each transaction belong? Justify briefly.</p>
+<p><strong>(d)</strong> If the meals at Restaurante Praia were purchased exclusively by <strong>foreign tourists</strong>, how would your classification in (c) change?</p>
+</section>
+<section class="slide level2">
+
 <div class="fragment">
 <p><strong>Solution:</strong></p>
 <p><strong>(a)</strong> - Quinta do Algarve: €60 − €10 = <strong>€50</strong> - Restaurante Praia: €160 − €60 − €20 = <strong>€80</strong> - Hotel Maré: €500 − €300 = <strong>€200</strong> (value of new terrace less purchased inputs)</p>
@@ -937,8 +642,8 @@ window.Quarto = {
 <p><strong>(d)</strong> If meals are purchased by foreign tourists, they represent an <strong>export of services</strong> → classified under <strong>NX</strong> (net exports), not C. The money flows <strong>into</strong> Portugal from abroad.</p>
 </div>
 </section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary <span class="emoji" data-emoji="books">📚</span></h2>
+<section id="summary" class="slide level2">
+<h2>Summary <span class="emoji" data-emoji="books">📚</span></h2>
 <p><strong>Today we covered:</strong></p>
 <p><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Aggregation</strong> — summing individual variables into economy-wide totals</p>
 <p><span class="emoji" data-emoji="white_check_mark">✅</span> The <strong>circular flow of income</strong> — households, firms, government, and the rest of the world</p>
@@ -946,425 +651,446 @@ window.Quarto = {
 <p><span class="emoji" data-emoji="white_check_mark">✅</span> The <strong>value-added principle</strong> — how to avoid double counting</p>
 <p><span class="emoji" data-emoji="white_check_mark">✅</span> What is and is not <strong>included</strong> in aggregate output</p>
 <p><span class="emoji" data-emoji="white_check_mark">✅</span> The <strong>three approaches</strong> to measuring output (expenditure, income, production)</p>
-<p>. . .</p>
+<div class="fragment">
 <p><strong>Next lecture (Lecture 22):</strong></p>
 <p><span class="emoji" data-emoji="mag">🔍</span> GDP in depth — the expenditure approach, nominal vs real GDP, and what GDP tells us (and doesn’t tell us) about well-being.</p>
+</div>
 </section>
-<section id="thank-you" class="level2 center">
-<h2 class="center anchored" data-anchor-id="thank-you">Thank You! <span class="emoji" data-emoji="wave">👋</span></h2>
+<section id="thank-you" class="slide level2 center">
+<h2>Thank You! <span class="emoji" data-emoji="wave">👋</span></h2>
 <p><strong>Questions?</strong></p>
 <p><span class="emoji" data-emoji="email">📧</span> paulo.fagandini@ext.universidadeeuropeia.pt</p>
-<hr>
+</section>
+<section class="slide level2">
+
 <p><em>Next class: Friday, May 8th, 2026</em></p>
 
 
-</section>
-</section>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Economics of Tourism | Lecture 21</p>
+</div>
+</div></div>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
         },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
       });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
         }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
             }
           }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
           }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          return note.innerHTML;
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
         }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
         }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
             }
           } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
             });
           }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
         }
-      }, function(instance) {
       });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script>
-</div> <!-- /content -->
-
-
-
+      </script>
+    
 
 </body></html>

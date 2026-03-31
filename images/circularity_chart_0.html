@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circular Flow of Economics</title>
+<style>
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        display: flex; justify-content: center; align-items: center;
+        height: 100vh; margin: 0; background-color: transparent;
+    }
+    .diagram-container { position: relative; width: 600px; height: 600px; }
+
+    /* The SVG animated lines */
+    svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+
+    /* Outer Loop: Real Flow (Blue, Clockwise) */
+    .real-flow {
+        fill: none; stroke: #3b82f6; stroke-width: 6;
+        stroke-dasharray: 15, 15; animation: flow 40s linear infinite reverse;
+    }
+
+    /* Inner Loop: Money Flow (Green, Counter-Clockwise) */
+    .money-flow {
+        fill: none; stroke: #10b981; stroke-width: 6;
+        stroke-dasharray: 15, 15; animation: flow 40s linear infinite;
+    }
+
+    @keyframes flow {
+        to { stroke-dashoffset: 1000; }
+    }
+
+    /* The Four Hubs */
+    .hub {
+        position: absolute; width: 150px; height: 75px;
+        background: white; border: 2px solid #1e293b; border-radius: 8px;
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+        text-align: center; font-weight: bold; font-size: 14px; color: #0f172a;
+        z-index: 10; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .hub small { font-weight: normal; font-size: 11px; color: #64748b; margin-top: 4px; }
+
+    /* Hub Positioning */
+    .top { top: 40px; left: 50%; transform: translateX(-50%); }
+    .bottom { bottom: 40px; left: 50%; transform: translateX(-50%); }
+    .left { top: 50%; left: 40px; transform: translateY(-50%); }
+    .right { top: 50%; right: 40px; transform: translateY(-50%); }
+
+    /* Legend */
+    .legend {
+        position: absolute; top: 10px; left: 10px; font-size: 13px;
+        background: rgba(255,255,255,0.9); padding: 10px;
+        border: 1px solid #cbd5e1; border-radius: 6px; z-index: 20;
+    }
+    .blue-text { color: #3b82f6; font-weight: bold; }
+    .green-text { color: #10b981; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="diagram-container">
+    <svg viewBox="0 0 600 600">
+        <rect x="115" y="77" width="370" height="446" rx="30" class="real-flow" />
+        <rect x="145" y="107" width="310" height="386" rx="20" class="money-flow" />
+    </svg>
+
+    <div class="legend">
+        <div><span class="blue-text">───</span> Real Flow (Goods/Resources)</div>
+        <div style="margin-top: 5px;"><span class="green-text">───</span> Monetary Flow (Money)</div>
+    </div>
+
+    <div class="hub top">Product Market<small>Goods & Services</small></div>
+    <div class="hub right">Firms<small>Producers</small></div>
+    <div class="hub bottom">Factor Market<small>Resources</small></div>
+    <div class="hub left">Households<small>Consumers</small></div>
+</div>
+
+</body>
+</html>
