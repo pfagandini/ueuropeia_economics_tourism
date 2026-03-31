@@ -1,150 +1,234 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Paulo Fagandini">
+<meta name="dcterms.date" content="2026-01-01">
+
+<title>Producer Theory – Economics of Tourism</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
-  <meta name="author" content="Paulo Fagandini">
-  <meta name="dcterms.date" content="2026-01-01">
-  <title>Economics of Tourism – Producer Theory</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-      vertical-align: middle;
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
     }
-  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e109428474854d908f205605d54b47e4.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-    .reveal div.sourceCode {
-      margin: 0;
-      overflow: auto;
-    }
-    .reveal div.hanging-indent {
-      margin-left: 1em;
-      text-indent: -1em;
-    }
-    .reveal .slide:not(.center) {
-      height: 100%;
-    }
-    .reveal .slide.scrollable {
-      overflow-y: auto;
-    }
-    .reveal .footnotes {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide .absolute {
-      position: absolute;
-      display: block;
-    }
-    .reveal .footnotes ol {
-      counter-reset: ol;
-      list-style-type: none; 
-      margin-left: 0;
-    }
-    .reveal .footnotes ol li:before {
-      counter-increment: ol;
-      content: counter(ol) ". "; 
-    }
-    .reveal .footnotes ol li > p:first-child {
-      display: inline-block;
-    }
-    .reveal .slide ul,
-    .reveal .slide ol {
-      margin-bottom: 0.5em;
-    }
-    .reveal .slide ul li,
-    .reveal .slide ol li {
-      margin-top: 0.4em;
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide ul[role="tablist"] li {
-      margin-bottom: 0;
-    }
-    .reveal .slide ul li > *:first-child,
-    .reveal .slide ol li > *:first-child {
-      margin-block-start: 0;
-    }
-    .reveal .slide ul li > *:last-child,
-    .reveal .slide ol li > *:last-child {
-      margin-block-end: 0;
-    }
-    .reveal .slide .columns:nth-child(3) {
-      margin-block-start: 0.8em;
-    }
-    .reveal blockquote {
-      box-shadow: none;
-    }
-    .reveal .tippy-content>* {
-      margin-top: 0.2em;
-      margin-bottom: 0.7em;
-    }
-    .reveal .tippy-content>*:last-child {
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide > img.stretch.quarto-figure-center,
-    .reveal .slide > img.r-stretch.quarto-figure-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-left,
-    .reveal .slide > img.r-stretch.quarto-figure-left  {
-      display: block;
-      margin-left: 0;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-right,
-    .reveal .slide > img.r-stretch.quarto-figure-right  {
-      display: block;
-      margin-left: auto;
-      margin-right: 0; 
-    }
-  </style>
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
-<body class="quarto-light">
-  <div class="reveal">
-    <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Producer Theory</h1>
-  <p class="subtitle">Lecture 15: Elasticity — Demand Recap &amp; Supply Elasticity</p>
+<body class="nav-fixed quarto-light">
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Paulo Fagandini 
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Economics of Tourism</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../material.html"> 
+<span class="menu-text">Material</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
 </div>
-</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#recap-lecture-14" id="toc-recap-lecture-14" class="nav-link active" data-scroll-target="#recap-lecture-14">Recap: Lecture 14 <span class="emoji" data-emoji="rewind">⏪</span></a></li>
+  <li><a href="#demand-elasticity-the-key-ideas" id="toc-demand-elasticity-the-key-ideas" class="nav-link" data-scroll-target="#demand-elasticity-the-key-ideas">Demand Elasticity: The Key Ideas</a>
+  <ul class="collapse">
+  <li><a href="#price-elasticity-of-demand" id="toc-price-elasticity-of-demand" class="nav-link" data-scroll-target="#price-elasticity-of-demand">Price Elasticity of Demand <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></a></li>
+  <li><a href="#calculating-demand-elasticity" id="toc-calculating-demand-elasticity" class="nav-link" data-scroll-target="#calculating-demand-elasticity">Calculating Demand Elasticity <span class="emoji" data-emoji="pencil2">✏️</span></a></li>
+  <li><a href="#the-revenue-test-determinants" id="toc-the-revenue-test-determinants" class="nav-link" data-scroll-target="#the-revenue-test-determinants">The Revenue Test &amp; Determinants <span class="emoji" data-emoji="moneybag">💰</span></a></li>
+  <li><a href="#demand-elasticity-quick-practice" id="toc-demand-elasticity-quick-practice" class="nav-link" data-scroll-target="#demand-elasticity-quick-practice">Demand Elasticity: Quick Practice <span class="emoji" data-emoji="dart">🎯</span></a></li>
+  </ul></li>
+  <li><a href="#price-elasticity-of-supply" id="toc-price-elasticity-of-supply" class="nav-link" data-scroll-target="#price-elasticity-of-supply">Price Elasticity of Supply</a>
+  <ul class="collapse">
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition <span class="emoji" data-emoji="straight_ruler">📏</span></a></li>
+  <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">Classification <span class="emoji" data-emoji="bar_chart">📊</span></a></li>
+  </ul></li>
+  <li><a href="#calculating-supply-elasticity" id="toc-calculating-supply-elasticity" class="nav-link" data-scroll-target="#calculating-supply-elasticity">Calculating Supply Elasticity</a>
+  <ul class="collapse">
+  <li><a href="#point-and-arc-methods" id="toc-point-and-arc-methods" class="nav-link" data-scroll-target="#point-and-arc-methods">Point and Arc Methods <span class="emoji" data-emoji="pencil2">✏️</span></a></li>
+  <li><a href="#elasticity-along-a-linear-supply-curve" id="toc-elasticity-along-a-linear-supply-curve" class="nav-link" data-scroll-target="#elasticity-along-a-linear-supply-curve">Elasticity Along a Linear Supply Curve <span class="emoji" data-emoji="straight_ruler">📏</span></a></li>
+  <li><a href="#the-origin-rule-quick-guide" id="toc-the-origin-rule-quick-guide" class="nav-link" data-scroll-target="#the-origin-rule-quick-guide">The Origin Rule &amp; Quick Guide <span class="emoji" data-emoji="bulb">💡</span></a></li>
+  <li><a href="#extreme-cases" id="toc-extreme-cases" class="nav-link" data-scroll-target="#extreme-cases">Extreme Cases <span class="emoji" data-emoji="triangular_ruler">📐</span></a></li>
+  </ul></li>
+  <li><a href="#determinants-of-supply-elasticity" id="toc-determinants-of-supply-elasticity" class="nav-link" data-scroll-target="#determinants-of-supply-elasticity">Determinants of Supply Elasticity</a>
+  <ul class="collapse">
+  <li><a href="#what-makes-supply-more-or-less-elastic" id="toc-what-makes-supply-more-or-less-elastic" class="nav-link" data-scroll-target="#what-makes-supply-more-or-less-elastic">What Makes Supply More or Less Elastic? <span class="emoji" data-emoji="thinking">🤔</span></a></li>
+  <li><a href="#time-and-supply-elasticity" id="toc-time-and-supply-elasticity" class="nav-link" data-scroll-target="#time-and-supply-elasticity">Time and Supply Elasticity <span class="emoji" data-emoji="hourglass">⌛</span></a></li>
+  </ul></li>
+  <li><a href="#tourism-applications" id="toc-tourism-applications" class="nav-link" data-scroll-target="#tourism-applications">Tourism Applications</a>
+  <ul class="collapse">
+  <li><a href="#elasticity-in-tourism-both-sides" id="toc-elasticity-in-tourism-both-sides" class="nav-link" data-scroll-target="#elasticity-in-tourism-both-sides">Elasticity in Tourism: Both Sides <span class="emoji" data-emoji="airplane">✈️</span></a></li>
+  <li><a href="#the-full-parallel-demand-vs-supply-elasticity" id="toc-the-full-parallel-demand-vs-supply-elasticity" class="nav-link" data-scroll-target="#the-full-parallel-demand-vs-supply-elasticity">The Full Parallel: Demand vs Supply Elasticity <span class="emoji" data-emoji="handshake">🤝</span></a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary <span class="emoji" data-emoji="memo">📝</span></a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercise-1-multiple-choice" id="toc-exercise-1-multiple-choice" class="nav-link" data-scroll-target="#exercise-1-multiple-choice">Exercise 1: Multiple Choice</a></li>
+  <li><a href="#exercise-2-multiple-choice" id="toc-exercise-2-multiple-choice" class="nav-link" data-scroll-target="#exercise-2-multiple-choice">Exercise 2: Multiple Choice</a></li>
+  <li><a href="#exercise-3-open-question" id="toc-exercise-3-open-question" class="nav-link" data-scroll-target="#exercise-3-open-question">Exercise 3: Open Question <span class="emoji" data-emoji="writing_hand">✍️</span></a></li>
+  <li><a href="#exercise-3-solution-parts-a-b-c" id="toc-exercise-3-solution-parts-a-b-c" class="nav-link" data-scroll-target="#exercise-3-solution-parts-a-b-c">Exercise 3: Solution — Parts a, b &amp; c</a></li>
+  <li><a href="#exercise-3-solution-parts-d-e" id="toc-exercise-3-solution-parts-d-e" class="nav-link" data-scroll-target="#exercise-3-solution-parts-d-e">Exercise 3: Solution — Parts d &amp; e</a></li>
+  <li><a href="#exercise-3-solution-part-f" id="toc-exercise-3-solution-part-f" class="nav-link" data-scroll-target="#exercise-3-solution-part-f">Exercise 3: Solution — Part f</a></li>
+  <li><a href="#next-lecture" id="toc-next-lecture" class="nav-link" data-scroll-target="#next-lecture">Next Lecture</a></li>
+  <li><a href="#thank-you" id="toc-thank-you" class="nav-link" data-scroll-target="#thank-you">Thank You!</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture15-supply-elasticity.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Producer Theory</h1>
+<p class="subtitle lead">Lecture 15: Elasticity — Demand Recap &amp; Supply Elasticity</p>
 </div>
 
-  <p class="date">2026</p>
-</section>
-<section id="recap-lecture-14" class="slide level2">
-<h2>Recap: Lecture 14 <span class="emoji" data-emoji="rewind">⏪</span></h2>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Paulo Fagandini </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="recap-lecture-14" class="level2">
+<h2 class="anchored" data-anchor-id="recap-lecture-14">Recap: Lecture 14 <span class="emoji" data-emoji="rewind">⏪</span></h2>
 <div style="font-size: 80%;">
 <p><strong>What we covered last time</strong>:</p>
 <ul>
@@ -157,13 +241,10 @@ Paulo Fagandini
 <p>Before we tackle <strong>supply</strong> elasticity, we need a quick recap of the <strong>demand</strong> elasticity concept — we ran out of time for it earlier in the course. The good news: the idea is the same on both sides!</p>
 </div>
 </section>
-<section>
-<section id="demand-elasticity-the-key-ideas" class="title-slide slide level1 center">
+<section id="demand-elasticity-the-key-ideas" class="level1">
 <h1>Demand Elasticity: The Key Ideas</h1>
-
-</section>
-<section id="price-elasticity-of-demand" class="slide level2 smaller">
-<h2>Price Elasticity of Demand <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></h2>
+<section id="price-elasticity-of-demand" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="price-elasticity-of-demand">Price Elasticity of Demand <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></h2>
 <div style="font-size: 76%;">
 <div class="key-concept">
 <p><strong>Price Elasticity of Demand (<span class="math inline">\(\varepsilon_d\)</span>)</strong></p>
@@ -171,7 +252,7 @@ Paulo Fagandini
 <p><span class="math display">\[\varepsilon_d = \frac{\%\Delta Q_d}{\%\Delta P} = \frac{\Delta Q / Q}{\Delta P / P}\]</span></p>
 </div>
 <p>Since demand slopes downward (P↑ → Q↓), <span class="math inline">\(\varepsilon_d\)</span> is <strong>negative</strong>. We often use the <strong>absolute value</strong> <span class="math inline">\(|\varepsilon_d|\)</span>.</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 35%">
 <col style="width: 21%">
@@ -221,8 +302,8 @@ Paulo Fagandini
 </table>
 </div>
 </section>
-<section id="calculating-demand-elasticity" class="slide level2">
-<h2>Calculating Demand Elasticity <span class="emoji" data-emoji="pencil2">✏️</span></h2>
+<section id="calculating-demand-elasticity" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-demand-elasticity">Calculating Demand Elasticity <span class="emoji" data-emoji="pencil2">✏️</span></h2>
 <div style="font-size: 74%;">
 <p><strong>Two methods</strong> (same as we’ll use for supply):</p>
 <div class="columns">
@@ -239,18 +320,19 @@ Paulo Fagandini
 <p><strong>Example</strong>: A museum raises price from €10 to €12. Visitors fall from 1,000 to 800.</p>
 <p><span class="math display">\[\varepsilon_d = \frac{-200}{900} \div \frac{2}{11} = -1.22\]</span></p>
 <p><span class="math inline">\(|\varepsilon_d| = 1.22 &gt; 1\)</span> → <strong>elastic</strong></p>
-</div></div>
+</div>
+</div>
 </div>
 <p><span class="emoji" data-emoji="bulb">💡</span> Key insight for linear demand: elasticity <strong>varies</strong> along the curve — elastic at the top (high P, low Q), inelastic at the bottom (low P, high Q), unit elastic at the midpoint.</p>
 </section>
-<section id="the-revenue-test-determinants" class="slide level2">
-<h2>The Revenue Test &amp; Determinants <span class="emoji" data-emoji="moneybag">💰</span></h2>
+<section id="the-revenue-test-determinants" class="level2">
+<h2 class="anchored" data-anchor-id="the-revenue-test-determinants">The Revenue Test &amp; Determinants <span class="emoji" data-emoji="moneybag">💰</span></h2>
 <div style="font-size: 72%;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>The Revenue Test</strong>:</p>
 <p>How does total revenue (<span class="math inline">\(TR = P \times Q\)</span>) respond to a price increase?</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -294,11 +376,12 @@ Paulo Fagandini
 <li><span class="emoji" data-emoji="world_map">🗺️</span> <strong>Market definition</strong>: narrower → more elastic</li>
 </ol>
 <p><strong>Tourism</strong>: Leisure travel is very elastic (<span class="math inline">\(|\varepsilon_d| \approx 2\)</span>–3), business travel is inelastic (<span class="math inline">\(|\varepsilon_d| \approx 0.3\)</span>). Airlines use this to price-discriminate!</p>
-</div></div>
+</div>
+</div>
 </div>
 </section>
-<section id="demand-elasticity-quick-practice" class="slide level2">
-<h2>Demand Elasticity: Quick Practice <span class="emoji" data-emoji="dart">🎯</span></h2>
+<section id="demand-elasticity-quick-practice" class="level2">
+<h2 class="anchored" data-anchor-id="demand-elasticity-quick-practice">Demand Elasticity: Quick Practice <span class="emoji" data-emoji="dart">🎯</span></h2>
 <div style="font-size: 78%;">
 <p><strong>Quick check — try these mentally before revealing the answers!</strong></p>
 <p><strong>Q1</strong>: Algarve resort demand: <span class="math inline">\(P = 500 - 0.05Q\)</span>. At <span class="math inline">\(P = 100\)</span>, <span class="math inline">\(Q = 8{,}000\)</span>. Is demand elastic or inelastic?</p>
@@ -312,14 +395,12 @@ Paulo Fagandini
 <p>. . .</p>
 <p><span class="emoji" data-emoji="point_right">👉</span> Now let’s apply the <strong>exact same logic</strong> to the supply side!</p>
 </div>
-</section></section>
-<section>
-<section id="price-elasticity-of-supply" class="title-slide slide level1 center">
-<h1>Price Elasticity of Supply</h1>
-
 </section>
-<section id="definition" class="slide level2">
-<h2>Definition <span class="emoji" data-emoji="straight_ruler">📏</span></h2>
+</section>
+<section id="price-elasticity-of-supply" class="level1">
+<h1>Price Elasticity of Supply</h1>
+<section id="definition" class="level2">
+<h2 class="anchored" data-anchor-id="definition">Definition <span class="emoji" data-emoji="straight_ruler">📏</span></h2>
 <div style="font-size: 78%;">
 <div class="key-concept">
 <p><strong>Price Elasticity of Supply (<span class="math inline">\(\varepsilon_s\)</span>)</strong></p>
@@ -327,7 +408,7 @@ Paulo Fagandini
 <p><span class="math display">\[\varepsilon_s = \frac{\%\Delta Q_s}{\%\Delta P} = \frac{\Delta Q / Q}{\Delta P / P}\]</span></p>
 </div>
 <p><strong>Key differences from demand elasticity</strong>:</p>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>bulb: The formula is <strong>identical</strong> — the only difference is that supply slopes upward, so <span class="math inline">\(\varepsilon_s &gt; 0\)</span>.</caption>
 <colgroup>
 <col style="width: 33%">
@@ -361,10 +442,10 @@ Paulo Fagandini
 </table>
 </div>
 </section>
-<section id="classification" class="slide level2 smaller">
-<h2>Classification <span class="emoji" data-emoji="bar_chart">📊</span></h2>
+<section id="classification" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="classification">Classification <span class="emoji" data-emoji="bar_chart">📊</span></h2>
 <div style="font-size: 78%;">
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 45%">
 <col style="width: 27%">
@@ -413,14 +494,12 @@ Paulo Fagandini
 <li><span class="emoji" data-emoji="classical_building">🏛️</span> UNESCO heritage sites → <strong>perfectly inelastic</strong> (supply is fixed!)</li>
 </ul>
 </div>
-</section></section>
-<section>
-<section id="calculating-supply-elasticity" class="title-slide slide level1 center">
-<h1>Calculating Supply Elasticity</h1>
-
 </section>
-<section id="point-and-arc-methods" class="slide level2">
-<h2>Point and Arc Methods <span class="emoji" data-emoji="pencil2">✏️</span></h2>
+</section>
+<section id="calculating-supply-elasticity" class="level1">
+<h1>Calculating Supply Elasticity</h1>
+<section id="point-and-arc-methods" class="level2">
+<h2 class="anchored" data-anchor-id="point-and-arc-methods">Point and Arc Methods <span class="emoji" data-emoji="pencil2">✏️</span></h2>
 <div style="font-size: 72%;">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -436,18 +515,19 @@ Paulo Fagandini
 <p><strong>Example</strong>: Tour operator increases tours from 40 to 50/month when price rises from €80 to €100.</p>
 <p><span class="math display">\[\varepsilon_s = \frac{10}{45} \div \frac{20}{90} = 0.222 \div 0.222 = 1.0\]</span></p>
 <p><strong>Unit elastic</strong> — quantity and price change by the same percentage.</p>
-</div></div>
+</div>
+</div>
 <p><span class="emoji" data-emoji="point_right">👉</span> Same methods as demand elasticity — just applied to the supply curve!</p>
 </div>
 </section>
-<section id="elasticity-along-a-linear-supply-curve" class="slide level2">
-<h2>Elasticity Along a Linear Supply Curve <span class="emoji" data-emoji="straight_ruler">📏</span></h2>
+<section id="elasticity-along-a-linear-supply-curve" class="level2">
+<h2 class="anchored" data-anchor-id="elasticity-along-a-linear-supply-curve">Elasticity Along a Linear Supply Curve <span class="emoji" data-emoji="straight_ruler">📏</span></h2>
 <div style="font-size: 72%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="lecture15-supply-elasticity_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="1152"></p>
+<figure class="figure">
+<p><img src="lecture15-supply-elasticity_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
 </figure>
 </div>
 </div>
@@ -456,8 +536,8 @@ Paulo Fagandini
 <p><strong>Right</strong>: Supply with positive intercept (<span class="math inline">\(c &gt; 0\)</span>) → <span class="math inline">\(\varepsilon_s &gt; 1\)</span> near the intercept, <strong>falling</strong> as Q increases.</p>
 </div>
 </section>
-<section id="the-origin-rule-quick-guide" class="slide level2">
-<h2>The Origin Rule &amp; Quick Guide <span class="emoji" data-emoji="bulb">💡</span></h2>
+<section id="the-origin-rule-quick-guide" class="level2">
+<h2 class="anchored" data-anchor-id="the-origin-rule-quick-guide">The Origin Rule &amp; Quick Guide <span class="emoji" data-emoji="bulb">💡</span></h2>
 <div style="font-size: 78%;">
 <p><strong>Why does supply through the origin always have <span class="math inline">\(\varepsilon_s = 1\)</span>?</strong></p>
 <p>If <span class="math inline">\(P = dQ\)</span>: <span class="math inline">\(\quad \varepsilon_s = \frac{1}{d} \times \frac{P}{Q} = \frac{1}{d} \times \frac{dQ}{Q} = 1\)</span></p>
@@ -465,7 +545,7 @@ Paulo Fagandini
 <p>. . .</p>
 <div class="key-concept">
 <p><strong>Quick Elasticity Guide for Linear Supply <span class="math inline">\(P = c + dQ\)</span></strong></p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -500,14 +580,14 @@ Paulo Fagandini
 <p><span class="emoji" data-emoji="point_right">👉</span> <strong>Contrast with demand</strong>: demand elasticity varies from <span class="math inline">\(\infty\)</span> to <span class="math inline">\(0\)</span> along a linear curve. Supply elasticity is more “stable.”</p>
 </div>
 </section>
-<section id="extreme-cases" class="slide level2">
-<h2>Extreme Cases <span class="emoji" data-emoji="triangular_ruler">📐</span></h2>
+<section id="extreme-cases" class="level2">
+<h2 class="anchored" data-anchor-id="extreme-cases">Extreme Cases <span class="emoji" data-emoji="triangular_ruler">📐</span></h2>
 <div style="font-size: 72%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="lecture15-supply-elasticity_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="1152"></p>
+<figure class="figure">
+<p><img src="lecture15-supply-elasticity_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
 </figure>
 </div>
 </div>
@@ -519,16 +599,15 @@ Paulo Fagandini
 </div><div class="column" style="width:50%;">
 <p><strong>Perfectly elastic</strong> (<span class="math inline">\(\varepsilon_s = \infty\)</span>): Any quantity at one price — constant MC.</p>
 <p><em>Tourism</em>: Digital products (e-tickets, online guides) — near-zero MC per copy.</p>
-</div></div>
 </div>
-</section></section>
-<section>
-<section id="determinants-of-supply-elasticity" class="title-slide slide level1 center">
-<h1>Determinants of Supply Elasticity</h1>
-
+</div>
+</div>
 </section>
-<section id="what-makes-supply-more-or-less-elastic" class="slide level2">
-<h2>What Makes Supply More or Less Elastic? <span class="emoji" data-emoji="thinking">🤔</span></h2>
+</section>
+<section id="determinants-of-supply-elasticity" class="level1">
+<h1>Determinants of Supply Elasticity</h1>
+<section id="what-makes-supply-more-or-less-elastic" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-supply-more-or-less-elastic">What Makes Supply More or Less Elastic? <span class="emoji" data-emoji="thinking">🤔</span></h2>
 <div style="font-size: 72%;">
 <p>The textbook identifies <strong>four key determinants</strong> (plus time):</p>
 <div class="columns">
@@ -558,31 +637,30 @@ Paulo Fagandini
 <li><strong>Long run</strong>: All inputs adjustable → more <strong>elastic</strong></li>
 <li><strong>Very short run</strong> (market period): supply is nearly <strong>vertical</strong></li>
 </ul>
-</div></div>
+</div>
+</div>
 </div>
 </section>
-<section id="time-and-supply-elasticity" class="slide level2">
-<h2>Time and Supply Elasticity <span class="emoji" data-emoji="hourglass">⌛</span></h2>
+<section id="time-and-supply-elasticity" class="level2">
+<h2 class="anchored" data-anchor-id="time-and-supply-elasticity">Time and Supply Elasticity <span class="emoji" data-emoji="hourglass">⌛</span></h2>
 <div style="font-size: 70%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="lecture15-supply-elasticity_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="1152"></p>
+<figure class="figure">
+<p><img src="lecture15-supply-elasticity_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The <strong>longer the time horizon</strong>, the more firms can adjust all inputs → supply becomes <strong>flatter</strong> (more elastic).</p>
 </div>
-</section></section>
-<section>
-<section id="tourism-applications" class="title-slide slide level1 center">
-<h1>Tourism Applications</h1>
-
 </section>
-<section id="elasticity-in-tourism-both-sides" class="slide level2">
-<h2>Elasticity in Tourism: Both Sides <span class="emoji" data-emoji="airplane">✈️</span></h2>
+</section>
+<section id="tourism-applications" class="level1">
+<h1>Tourism Applications</h1>
+<section id="elasticity-in-tourism-both-sides" class="level2">
+<h2 class="anchored" data-anchor-id="elasticity-in-tourism-both-sides">Elasticity in Tourism: Both Sides <span class="emoji" data-emoji="airplane">✈️</span></h2>
 <div style="font-size: 72%;">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -601,17 +679,18 @@ Paulo Fagandini
 <li><span class="emoji" data-emoji="iphone">📱</span> <strong>Online booking services</strong>: near-zero cost to scale</li>
 </ul>
 <p><strong>Implication</strong>: When demand rises, quantity adjusts more than price — price stays relatively stable.</p>
-</div></div>
+</div>
+</div>
 <p>. . .</p>
 <ul>
 <li><span class="emoji" data-emoji="point_right">👉</span> <strong>Both elasticities together</strong> determine <strong>who bears the burden</strong> of taxes and price shocks! The side with <strong>less elastic</strong> response absorbs more of the burden.</li>
 </ul>
 </div>
 </section>
-<section id="the-full-parallel-demand-vs-supply-elasticity" class="slide level2">
-<h2>The Full Parallel: Demand vs Supply Elasticity <span class="emoji" data-emoji="handshake">🤝</span></h2>
+<section id="the-full-parallel-demand-vs-supply-elasticity" class="level2">
+<h2 class="anchored" data-anchor-id="the-full-parallel-demand-vs-supply-elasticity">The Full Parallel: Demand vs Supply Elasticity <span class="emoji" data-emoji="handshake">🤝</span></h2>
 <div style="font-size: 70%;">
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -672,8 +751,8 @@ Paulo Fagandini
 </ul>
 </div>
 </section>
-<section id="summary" class="slide level2">
-<h2>Summary <span class="emoji" data-emoji="memo">📝</span></h2>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary <span class="emoji" data-emoji="memo">📝</span></h2>
 <div style="font-size: 70%;">
 <p><strong>Today’s Key Takeaways</strong>:</p>
 <p><strong>Demand elasticity recap</strong>:</p>
@@ -693,13 +772,13 @@ Paulo Fagandini
 <p><strong>Next (Lecture 16, April 16)</strong>: Short Run and Long Run Market Equilibrium <span class="emoji" data-emoji="balance_scale">⚖️</span></p>
 </div>
 </section>
-<section id="exercises" class="slide level2 center">
-<h2>Exercises</h2>
+<section id="exercises" class="level2 center">
+<h2 class="center anchored" data-anchor-id="exercises">Exercises</h2>
 <p><strong>Practice Time!</strong> <span class="emoji" data-emoji="pencil2">✏️</span></p>
 <p>Demand and supply elasticity calculation.</p>
 </section>
-<section id="exercise-1-multiple-choice" class="slide level2">
-<h2>Exercise 1: Multiple Choice</h2>
+<section id="exercise-1-multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-multiple-choice">Exercise 1: Multiple Choice</h2>
 <div style="font-size: 82%;">
 <p><strong>Question</strong>: The supply of hotel rooms in Porto’s city center has <span class="math inline">\(\varepsilon_s = 0.3\)</span>. If room prices increase by 20%, what happens to the quantity of rooms supplied?</p>
 <p>A. Quantity increases by 60%</p>
@@ -715,8 +794,8 @@ Paulo Fagandini
 </div>
 </div>
 </section>
-<section id="exercise-2-multiple-choice" class="slide level2">
-<h2>Exercise 2: Multiple Choice</h2>
+<section id="exercise-2-multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-multiple-choice">Exercise 2: Multiple Choice</h2>
 <div style="font-size: 82%;">
 <p><strong>Question</strong>: Demand for TAP flights from Lisbon to London has <span class="math inline">\(|\varepsilon_d| = 1.8\)</span>. If TAP raises fares by 10%, what happens to total revenue from this route?</p>
 <p>A. Revenue increases by 18%</p>
@@ -731,8 +810,8 @@ Paulo Fagandini
 </div>
 </div>
 </section>
-<section id="exercise-3-open-question" class="slide level2">
-<h2>Exercise 3: Open Question <span class="emoji" data-emoji="writing_hand">✍️</span></h2>
+<section id="exercise-3-open-question" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-open-question">Exercise 3: Open Question <span class="emoji" data-emoji="writing_hand">✍️</span></h2>
 <div style="font-size: 60%;">
 <p><strong>The market for <em>tuk-tuk</em> tours in Lisbon</strong> has the following estimated curves:</p>
 <ul>
@@ -747,8 +826,8 @@ Paulo Fagandini
 <p><strong>f)</strong> The city council considers a €3 per-tour tax on operators. This shifts supply to <span class="math inline">\(P = 9 + 0.1Q\)</span>. Find the new equilibrium. Who bears more of the tax burden — tourists or operators? Relate your answer to the elasticities you calculated.</p>
 </div>
 </section>
-<section id="exercise-3-solution-parts-a-b-c" class="slide level2">
-<h2>Exercise 3: Solution — Parts a, b &amp; c</h2>
+<section id="exercise-3-solution-parts-a-b-c" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-solution-parts-a-b-c">Exercise 3: Solution — Parts a, b &amp; c</h2>
 <div style="font-size: 66%;">
 <p><strong>a)</strong> Equilibrium: <span class="math inline">\(36 - 0.2Q = 6 + 0.1Q\)</span> → <span class="math inline">\(30 = 0.3Q\)</span> → <span class="math inline">\(Q^* = 100\)</span>, <span class="math inline">\(P^* = 36 - 0.2(100) = €16\)</span></p>
 <p><strong>b)</strong> Demand elasticity at <span class="math inline">\((Q^* = 100, P^* = 16)\)</span>:</p>
@@ -761,8 +840,8 @@ Paulo Fagandini
 <p><span class="math inline">\(\varepsilon_s = 1.6 &gt; 1\)</span> → Supply is <strong>elastic</strong> at the equilibrium.</p>
 </div>
 </section>
-<section id="exercise-3-solution-parts-d-e" class="slide level2">
-<h2>Exercise 3: Solution — Parts d &amp; e</h2>
+<section id="exercise-3-solution-parts-d-e" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-solution-parts-d-e">Exercise 3: Solution — Parts d &amp; e</h2>
 <div style="font-size: 70%;">
 <p><strong>d)</strong> Since demand is <strong>inelastic</strong> (<span class="math inline">\(|\varepsilon_d| = 0.8 &lt; 1\)</span>), the revenue test says: a price increase → total revenue <strong>rises</strong>. Quantity falls, but by a smaller percentage than price rises. The €1 increase would increase TR.</p>
 <p><strong>e)</strong> Shortcut: <span class="math inline">\(\varepsilon_s = \frac{P}{P - c} = \frac{16}{16 - 6} = \frac{16}{10} = 1.6\)</span> <span class="emoji" data-emoji="white_check_mark">✅</span> Matches part (c)!</p>
@@ -770,12 +849,12 @@ Paulo Fagandini
 <p>At <span class="math inline">\(P = 12\)</span>: <span class="math inline">\(Q = \frac{12 - 6}{0.1} = 60\)</span> tours. So supply is more elastic at <strong>lower prices</strong> (closer to the intercept).</p>
 </div>
 </section>
-<section id="exercise-3-solution-part-f" class="slide level2">
-<h2>Exercise 3: Solution — Part f</h2>
+<section id="exercise-3-solution-part-f" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-solution-part-f">Exercise 3: Solution — Part f</h2>
 <div style="font-size: 68%;">
 <p><strong>f)</strong> New supply with €3 tax: <span class="math inline">\(P = 9 + 0.1Q\)</span></p>
 <p>New equilibrium: <span class="math inline">\(36 - 0.2Q = 9 + 0.1Q\)</span> → <span class="math inline">\(27 = 0.3Q\)</span> → <span class="math inline">\(Q^* = 90\)</span>, <span class="math inline">\(P^* = 36 - 0.2(90) = €18\)</span></p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 27%">
@@ -816,462 +895,431 @@ Paulo Fagandini
 <p><span class="emoji" data-emoji="bulb">💡</span> This is a <strong>general rule</strong>: tax burden falls more heavily on the side of the market that is <strong>less responsive</strong> to price changes.</p>
 </div>
 </section>
-<section id="next-lecture" class="slide level2 center">
-<h2>Next Lecture</h2>
+<section id="next-lecture" class="level2 center">
+<h2 class="center anchored" data-anchor-id="next-lecture">Next Lecture</h2>
 <p><strong>April 16, 2026</strong>: Short Run and Long Run Market Equilibrium <span class="emoji" data-emoji="balance_scale">⚖️</span></p>
 <p>We finally put <strong>demand and supply together</strong> to find prices and quantities!</p>
-<div class="fragment">
+<p>. . .</p>
 <p><span class="emoji" data-emoji="point_right">👉</span> This is the payoff of Lectures 5–15: consumer theory meets producer theory!</p>
-</div>
 </section>
-<section id="thank-you" class="slide level2 center">
-<h2>Thank You!</h2>
+<section id="thank-you" class="level2 center">
+<h2 class="center anchored" data-anchor-id="thank-you">Thank You!</h2>
 <p><strong>Questions?</strong> <span class="emoji" data-emoji="raising_hand">🙋</span></p>
 <p><span class="emoji" data-emoji="email">📧</span> paulo.fagandini@ext.universidadeeuropeia.pt</p>
-</section>
-<section class="slide level2">
-
+<hr>
 <p><em>Next class: Thursday, April 16, 2026</em></p>
-<aside class="notes">
+<div class="notes">
 <p>This lecture serves double duty: it provides the demand elasticity content that was skipped (L9) in condensed form, then teaches supply elasticity as its mirror. The demand recap is kept to 3-4 slides covering definition, calculation, revenue test, and determinants — just enough for students to use the concept. The supply elasticity section follows the same structure. The exercise integrates both sides with a tax incidence analysis that requires comparing demand and supply elasticities, which is the conceptual payoff of learning both.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-
-</section></section>
-    </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="../images/logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
-<p>Economics of Tourism | Lecture 15</p>
 </div>
-</div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
 
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+</section>
+</section>
 
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
-'smaller': false,
- 
-        // Display controls in the bottom right corner
-        controls: false,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: 'c/t',
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: false,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'linear',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: false,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'slide',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: 1600,
-
-        height: 900,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.1,
-
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
-        // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
-
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
-    </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-
-      })();
-    </script>
-
-    <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
-          return false;
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
-        }
-        const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
             } else {
-              return "";
+              container.appendChild(child.cloneNode(true));
+              break;
             }
-          });
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
             }
           } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
             });
           }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
         }
+      }, function(instance) {
       });
-      </script>
-    
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
 
 </body></html>

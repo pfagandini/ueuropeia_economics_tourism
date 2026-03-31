@@ -1,150 +1,236 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Paulo Fagandini">
+<meta name="dcterms.date" content="2026-01-01">
+
+<title>Producer Theory – Economics of Tourism</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
-  <meta name="author" content="Paulo Fagandini">
-  <meta name="dcterms.date" content="2026-01-01">
-  <title>Economics of Tourism – Producer Theory</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-      vertical-align: middle;
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
     }
-  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e109428474854d908f205605d54b47e4.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-    .reveal div.sourceCode {
-      margin: 0;
-      overflow: auto;
-    }
-    .reveal div.hanging-indent {
-      margin-left: 1em;
-      text-indent: -1em;
-    }
-    .reveal .slide:not(.center) {
-      height: 100%;
-    }
-    .reveal .slide.scrollable {
-      overflow-y: auto;
-    }
-    .reveal .footnotes {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide .absolute {
-      position: absolute;
-      display: block;
-    }
-    .reveal .footnotes ol {
-      counter-reset: ol;
-      list-style-type: none; 
-      margin-left: 0;
-    }
-    .reveal .footnotes ol li:before {
-      counter-increment: ol;
-      content: counter(ol) ". "; 
-    }
-    .reveal .footnotes ol li > p:first-child {
-      display: inline-block;
-    }
-    .reveal .slide ul,
-    .reveal .slide ol {
-      margin-bottom: 0.5em;
-    }
-    .reveal .slide ul li,
-    .reveal .slide ol li {
-      margin-top: 0.4em;
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide ul[role="tablist"] li {
-      margin-bottom: 0;
-    }
-    .reveal .slide ul li > *:first-child,
-    .reveal .slide ol li > *:first-child {
-      margin-block-start: 0;
-    }
-    .reveal .slide ul li > *:last-child,
-    .reveal .slide ol li > *:last-child {
-      margin-block-end: 0;
-    }
-    .reveal .slide .columns:nth-child(3) {
-      margin-block-start: 0.8em;
-    }
-    .reveal blockquote {
-      box-shadow: none;
-    }
-    .reveal .tippy-content>* {
-      margin-top: 0.2em;
-      margin-bottom: 0.7em;
-    }
-    .reveal .tippy-content>*:last-child {
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide > img.stretch.quarto-figure-center,
-    .reveal .slide > img.r-stretch.quarto-figure-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-left,
-    .reveal .slide > img.r-stretch.quarto-figure-left  {
-      display: block;
-      margin-left: 0;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-right,
-    .reveal .slide > img.r-stretch.quarto-figure-right  {
-      display: block;
-      margin-left: auto;
-      margin-right: 0; 
-    }
-  </style>
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
-<body class="quarto-light">
-  <div class="reveal">
-    <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Producer Theory</h1>
-  <p class="subtitle">Lecture 11: Companies — Profit Maximization</p>
+<body class="nav-fixed quarto-light">
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Paulo Fagandini 
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Economics of Tourism</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../material.html"> 
+<span class="menu-text">Material</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
 </div>
-</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#recap-lecture-10" id="toc-recap-lecture-10" class="nav-link active" data-scroll-target="#recap-lecture-10">Recap: Lecture 10 <span class="emoji" data-emoji="rewind">⏪</span></a></li>
+  <li><a href="#perfect-competition" id="toc-perfect-competition" class="nav-link" data-scroll-target="#perfect-competition">Perfect Competition</a>
+  <ul class="collapse">
+  <li><a href="#what-kind-of-market-are-we-studying" id="toc-what-kind-of-market-are-we-studying" class="nav-link" data-scroll-target="#what-kind-of-market-are-we-studying">What Kind of Market Are We Studying? <span class="emoji" data-emoji="classical_building">🏛️</span></a></li>
+  <li><a href="#the-price-taker" id="toc-the-price-taker" class="nav-link" data-scroll-target="#the-price-taker">The Price Taker <span class="emoji" data-emoji="label">🏷️</span></a></li>
+  <li><a href="#the-firms-demand-curve-in-perfect-competition" id="toc-the-firms-demand-curve-in-perfect-competition" class="nav-link" data-scroll-target="#the-firms-demand-curve-in-perfect-competition">The Firm’s Demand Curve in Perfect Competition <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></a></li>
+  </ul></li>
+  <li><a href="#the-profit-maximization-problem" id="toc-the-profit-maximization-problem" class="nav-link" data-scroll-target="#the-profit-maximization-problem">The Profit Maximization Problem</a>
+  <ul class="collapse">
+  <li><a href="#profit-the-basics" id="toc-profit-the-basics" class="nav-link" data-scroll-target="#profit-the-basics">Profit: The Basics <span class="emoji" data-emoji="moneybag">💰</span></a></li>
+  <li><a href="#approach-1-tr-vs-tc-the-total-curves" id="toc-approach-1-tr-vs-tc-the-total-curves" class="nav-link" data-scroll-target="#approach-1-tr-vs-tc-the-total-curves">Approach 1: TR vs TC — The Total Curves <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></a></li>
+  <li><a href="#approach-2-mr-vs-mc-the-per-unit-view" id="toc-approach-2-mr-vs-mc-the-per-unit-view" class="nav-link" data-scroll-target="#approach-2-mr-vs-mc-the-per-unit-view">Approach 2: MR vs MC — The Per-Unit View <span class="emoji" data-emoji="star">⭐</span></a></li>
+  <li><a href="#p-mc-graphically" id="toc-p-mc-graphically" class="nav-link" data-scroll-target="#p-mc-graphically">P = MC Graphically <span class="emoji" data-emoji="triangular_ruler">📐</span></a></li>
+  <li><a href="#reading-profit-on-the-graph" id="toc-reading-profit-on-the-graph" class="nav-link" data-scroll-target="#reading-profit-on-the-graph">Reading Profit on the Graph <span class="emoji" data-emoji="mag">🔍</span></a></li>
+  <li><a href="#profit-zero-profit-and-loss-three-scenarios" id="toc-profit-zero-profit-and-loss-three-scenarios" class="nav-link" data-scroll-target="#profit-zero-profit-and-loss-three-scenarios">Profit, Zero Profit, and Loss: Three Scenarios <span class="emoji" data-emoji="bar_chart">📊</span></a></li>
+  </ul></li>
+  <li><a href="#worked-example-tourism" id="toc-worked-example-tourism" class="nav-link" data-scroll-target="#worked-example-tourism">Worked Example: Tourism</a>
+  <ul class="collapse">
+  <li><a href="#bottle-factory-from-the-textbook-bottle" id="toc-bottle-factory-from-the-textbook-bottle" class="nav-link" data-scroll-target="#bottle-factory-from-the-textbook-bottle">Bottle Factory from the Textbook :bottle:</a></li>
+  <li><a href="#what-if-the-price-changes" id="toc-what-if-the-price-changes" class="nav-link" data-scroll-target="#what-if-the-price-changes">What If the Price Changes? <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></a></li>
+  <li><a href="#the-general-lesson" id="toc-the-general-lesson" class="nav-link" data-scroll-target="#the-general-lesson">The General Lesson <span class="emoji" data-emoji="bulb">💡</span></a></li>
+  <li><a href="#what-about-changes-in-fixed-costs" id="toc-what-about-changes-in-fixed-costs" class="nav-link" data-scroll-target="#what-about-changes-in-fixed-costs">What About Changes in Fixed Costs? <span class="emoji" data-emoji="lock">🔒</span></a></li>
+  </ul></li>
+  <li><a href="#marginal-revenue-in-detail" id="toc-marginal-revenue-in-detail" class="nav-link" data-scroll-target="#marginal-revenue-in-detail">Marginal Revenue in Detail</a>
+  <ul class="collapse">
+  <li><a href="#why-p-mr-in-perfect-competition" id="toc-why-p-mr-in-perfect-competition" class="nav-link" data-scroll-target="#why-p-mr-in-perfect-competition">Why P = MR in Perfect Competition <span class="emoji" data-emoji="balance_scale">⚖️</span></a></li>
+  <li><a href="#the-marginal-approach-step-by-step" id="toc-the-marginal-approach-step-by-step" class="nav-link" data-scroll-target="#the-marginal-approach-step-by-step">The Marginal Approach: Step by Step <span class="emoji" data-emoji="footprints">👣</span></a></li>
+  </ul></li>
+  <li><a href="#tourism-application" id="toc-tourism-application" class="nav-link" data-scroll-target="#tourism-application">Tourism Application</a>
+  <ul class="collapse">
+  <li><a href="#hotel-revenue-management-a-profit-maximization-story" id="toc-hotel-revenue-management-a-profit-maximization-story" class="nav-link" data-scroll-target="#hotel-revenue-management-a-profit-maximization-story">Hotel Revenue Management: A Profit Maximization Story <span class="emoji" data-emoji="hotel">🏨</span></a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary <span class="emoji" data-emoji="memo">📝</span></a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercise-1-multiple-choice" id="toc-exercise-1-multiple-choice" class="nav-link" data-scroll-target="#exercise-1-multiple-choice">Exercise 1: Multiple Choice</a></li>
+  <li><a href="#exercise-2-multiple-choice" id="toc-exercise-2-multiple-choice" class="nav-link" data-scroll-target="#exercise-2-multiple-choice">Exercise 2: Multiple Choice</a></li>
+  <li><a href="#exercise-3-open-question" id="toc-exercise-3-open-question" class="nav-link" data-scroll-target="#exercise-3-open-question">Exercise 3: Open Question <span class="emoji" data-emoji="writing_hand">✍️</span></a></li>
+  <li><a href="#exercise-3-solution-part-a" id="toc-exercise-3-solution-part-a" class="nav-link" data-scroll-target="#exercise-3-solution-part-a">Exercise 3: Solution — Part a</a></li>
+  <li><a href="#exercise-3-solution-parts-b-c" id="toc-exercise-3-solution-parts-b-c" class="nav-link" data-scroll-target="#exercise-3-solution-parts-b-c">Exercise 3: Solution — Parts b &amp; c</a></li>
+  <li><a href="#exercise-3-solution-parts-d-e" id="toc-exercise-3-solution-parts-d-e" class="nav-link" data-scroll-target="#exercise-3-solution-parts-d-e">Exercise 3: Solution — Parts d &amp; e</a></li>
+  <li><a href="#next-lecture" id="toc-next-lecture" class="nav-link" data-scroll-target="#next-lecture">Next Lecture</a></li>
+  <li><a href="#thank-you" id="toc-thank-you" class="nav-link" data-scroll-target="#thank-you">Thank You!</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture11-profit-max.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Producer Theory</h1>
+<p class="subtitle lead">Lecture 11: Companies — Profit Maximization</p>
 </div>
 
-  <p class="date">2026</p>
-</section>
-<section id="recap-lecture-10" class="slide level2">
-<h2>Recap: Lecture 10 <span class="emoji" data-emoji="rewind">⏪</span></h2>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Paulo Fagandini </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="recap-lecture-10" class="level2">
+<h2 class="anchored" data-anchor-id="recap-lecture-10">Recap: Lecture 10 <span class="emoji" data-emoji="rewind">⏪</span></h2>
 <div style="font-size: 80%;">
 <p><strong>What we covered last time</strong>:</p>
 <ul>
@@ -158,13 +244,10 @@ Paulo Fagandini
 <p><span class="emoji" data-emoji="dart">🎯</span> <strong>Today</strong>: Now that we know costs, how does a firm decide <strong>how much to produce</strong> to make the most profit?</p>
 </div>
 </section>
-<section>
-<section id="perfect-competition" class="title-slide slide level1 center">
+<section id="perfect-competition" class="level1">
 <h1>Perfect Competition</h1>
-
-</section>
-<section id="what-kind-of-market-are-we-studying" class="slide level2">
-<h2>What Kind of Market Are We Studying? <span class="emoji" data-emoji="classical_building">🏛️</span></h2>
+<section id="what-kind-of-market-are-we-studying" class="level2">
+<h2 class="anchored" data-anchor-id="what-kind-of-market-are-we-studying">What Kind of Market Are We Studying? <span class="emoji" data-emoji="classical_building">🏛️</span></h2>
 <div style="font-size: 78%;">
 <div class="key-concept">
 <p><strong>Perfect Competition</strong></p>
@@ -192,11 +275,12 @@ Paulo Fagandini
 <li>Luxury hotels (brand, location matter)</li>
 <li>Disney parks (unique product)</li>
 </ul>
-</div></div>
+</div>
+</div>
 </div>
 </section>
-<section id="the-price-taker" class="slide level2">
-<h2>The Price Taker <span class="emoji" data-emoji="label">🏷️</span></h2>
+<section id="the-price-taker" class="level2">
+<h2 class="anchored" data-anchor-id="the-price-taker">The Price Taker <span class="emoji" data-emoji="label">🏷️</span></h2>
 <div style="font-size: 78%;">
 <div class="key-concept">
 <p><strong>Price Taker</strong></p>
@@ -212,14 +296,14 @@ Paulo Fagandini
 <p><strong>Tourism analogy</strong>: Imagine dozens of identical beach umbrella rental stands on a long Algarve beach. If one charges €12/day when all others charge €10/day, tourists just walk to the next stand. The market price is €10 — take it or leave it.</p>
 </div>
 </section>
-<section id="the-firms-demand-curve-in-perfect-competition" class="slide level2">
-<h2>The Firm’s Demand Curve in Perfect Competition <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></h2>
+<section id="the-firms-demand-curve-in-perfect-competition" class="level2">
+<h2 class="anchored" data-anchor-id="the-firms-demand-curve-in-perfect-competition">The Firm’s Demand Curve in Perfect Competition <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></h2>
 <div style="font-size: 72%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="lecture11-profit-max_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="1152"></p>
+<figure class="figure">
+<p><img src="lecture11-profit-max_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
 </figure>
 </div>
 </div>
@@ -228,14 +312,12 @@ Paulo Fagandini
 <p><strong>Right</strong>: Each individual firm faces a <strong>perfectly horizontal demand curve</strong> at <span class="math inline">\(P^*\)</span>. It can sell as much as it wants at this price — but <strong>nothing</strong> above it.</p>
 <p><span class="emoji" data-emoji="point_right">👉</span> For a price taker: <strong>Price = Marginal Revenue</strong>. Every extra unit sold brings in exactly <span class="math inline">\(P^*\)</span>.</p>
 </div>
-</section></section>
-<section>
-<section id="the-profit-maximization-problem" class="title-slide slide level1 center">
-<h1>The Profit Maximization Problem</h1>
-
 </section>
-<section id="profit-the-basics" class="slide level2">
-<h2>Profit: The Basics <span class="emoji" data-emoji="moneybag">💰</span></h2>
+</section>
+<section id="the-profit-maximization-problem" class="level1">
+<h1>The Profit Maximization Problem</h1>
+<section id="profit-the-basics" class="level2">
+<h2 class="anchored" data-anchor-id="profit-the-basics">Profit: The Basics <span class="emoji" data-emoji="moneybag">💰</span></h2>
 <div style="font-size: 80%;">
 <div class="key-concept">
 <p><strong>Profit</strong></p>
@@ -244,7 +326,7 @@ Paulo Fagandini
 </div>
 <p><strong>The firm’s question</strong>: At what quantity <span class="math inline">\(Q\)</span> is <span class="math inline">\(\pi = TR - TC\)</span> as large as possible?</p>
 <p><strong>Two equivalent approaches</strong> to find the answer:</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -273,14 +355,14 @@ Paulo Fagandini
 <p>Both give the <strong>same answer</strong>! Approach <span class="emoji" data-emoji="two">2️⃣</span> is more practical and leads us to the supply curve.</p>
 </div>
 </section>
-<section id="approach-1-tr-vs-tc-the-total-curves" class="slide level2">
-<h2>Approach 1: TR vs TC — The Total Curves <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
+<section id="approach-1-tr-vs-tc-the-total-curves" class="level2">
+<h2 class="anchored" data-anchor-id="approach-1-tr-vs-tc-the-total-curves">Approach 1: TR vs TC — The Total Curves <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
 <div style="font-size: 72%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="lecture11-profit-max_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="1152"></p>
+<figure class="figure">
+<p><img src="lecture11-profit-max_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
 </figure>
 </div>
 </div>
@@ -289,8 +371,8 @@ Paulo Fagandini
 <p><em>This uses the surf school data from last lecture’s exercise, with P = €120/student.</em></p>
 </div>
 </section>
-<section id="approach-2-mr-vs-mc-the-per-unit-view" class="slide level2">
-<h2>Approach 2: MR vs MC — The Per-Unit View <span class="emoji" data-emoji="star">⭐</span></h2>
+<section id="approach-2-mr-vs-mc-the-per-unit-view" class="level2">
+<h2 class="anchored" data-anchor-id="approach-2-mr-vs-mc-the-per-unit-view">Approach 2: MR vs MC — The Per-Unit View <span class="emoji" data-emoji="star">⭐</span></h2>
 <div style="font-size: 78%;">
 <div class="key-concept">
 <p><strong>The Profit-Maximizing Rule</strong></p>
@@ -308,12 +390,20 @@ Paulo Fagandini
 <p><span class="emoji" data-emoji="bulb">💡</span> This is just <strong>marginal analysis</strong> from Lecture 3 applied to the firm!</p>
 </div>
 </section>
-<section id="p-mc-graphically" class="slide level2">
-<h2>P = MC Graphically <span class="emoji" data-emoji="triangular_ruler">📐</span></h2>
-
-<img data-src="lecture11-profit-max_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1056"></section>
-<section id="reading-profit-on-the-graph" class="slide level2">
-<h2>Reading Profit on the Graph <span class="emoji" data-emoji="mag">🔍</span></h2>
+<section id="p-mc-graphically" class="level2">
+<h2 class="anchored" data-anchor-id="p-mc-graphically">P = MC Graphically <span class="emoji" data-emoji="triangular_ruler">📐</span></h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lecture11-profit-max_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1056"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="reading-profit-on-the-graph" class="level2">
+<h2 class="anchored" data-anchor-id="reading-profit-on-the-graph">Reading Profit on the Graph <span class="emoji" data-emoji="mag">🔍</span></h2>
 <div style="font-size: 76%;">
 <div class="key-concept">
 <p><strong>Profit as a Rectangle</strong></p>
@@ -333,36 +423,35 @@ Paulo Fagandini
 <p><strong>Important nuance</strong>: “Zero economic profit” is <strong>not bad</strong>!</p>
 <p>It means the firm covers <strong>all</strong> costs, including the owner’s opportunity cost of time and capital.</p>
 <p>The firm earns a <strong>normal return</strong> — the same as its best alternative. No reason to leave!</p>
-</div></div>
+</div>
+</div>
 <p>. . .</p>
 <p><span class="emoji" data-emoji="point_right">👉</span> Next lecture we’ll explore the loss case in detail: when should a firm <strong>shut down</strong> vs.&nbsp;<strong>keep operating at a loss</strong>?</p>
 </div>
 </section>
-<section id="profit-zero-profit-and-loss-three-scenarios" class="slide level2">
-<h2>Profit, Zero Profit, and Loss: Three Scenarios <span class="emoji" data-emoji="bar_chart">📊</span></h2>
+<section id="profit-zero-profit-and-loss-three-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="profit-zero-profit-and-loss-three-scenarios">Profit, Zero Profit, and Loss: Three Scenarios <span class="emoji" data-emoji="bar_chart">📊</span></h2>
 <div style="font-size: 68%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="lecture11-profit-max_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="1344"></p>
+<figure class="figure">
+<p><img src="lecture11-profit-max_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1344"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>In all three cases, the firm produces where <strong>P = MC</strong>. What changes is the <strong>relationship between P and ATC</strong> at that quantity.</p>
 </div>
-</section></section>
-<section>
-<section id="worked-example-tourism" class="title-slide slide level1 center">
-<h1>Worked Example: Tourism</h1>
-
 </section>
-<section id="bottle-factory-from-the-textbook-bottle" class="slide level2">
-<h2>Bottle Factory from the Textbook :bottle:</h2>
+</section>
+<section id="worked-example-tourism" class="level1">
+<h1>Worked Example: Tourism</h1>
+<section id="bottle-factory-from-the-textbook-bottle" class="level2">
+<h2 class="anchored" data-anchor-id="bottle-factory-from-the-textbook-bottle">Bottle Factory from the Textbook :bottle:</h2>
 <div style="font-size: 66%;">
 <p>The sebenta’s glass bottle factory has FC = €40/day and the following cost structure:</p>
-<table class="caption-top" style="width:100%;">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -452,11 +541,11 @@ Paulo Fagandini
 <p><span class="emoji" data-emoji="point_right">👉</span> Maximum profit (€30/day) at <strong>Q = 400 bottles/day</strong>. This is where MC is closest to the price (€0.35/bottle) on the rising portion of MC!</p>
 </div>
 </section>
-<section id="what-if-the-price-changes" class="slide level2">
-<h2>What If the Price Changes? <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
+<section id="what-if-the-price-changes" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-the-price-changes">What If the Price Changes? <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></h2>
 <div style="font-size: 68%;">
 <p>The textbook shows what happens when the bottle price <strong>rises to €0.45/bottle</strong>:</p>
-<table class="caption-top" style="width:100%;">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -546,8 +635,8 @@ Paulo Fagandini
 <p><span class="emoji" data-emoji="bulb">💡</span> <strong>Key insight</strong>: When price rises from €0.35 to €0.45, the firm <strong>produces more</strong> (400 → 500 bottles) and <strong>earns more profit</strong> (€30 → €75). The new optimum is where MC ≈ €0.40, closer to the new higher price.</p>
 </div>
 </section>
-<section id="the-general-lesson" class="slide level2">
-<h2>The General Lesson <span class="emoji" data-emoji="bulb">💡</span></h2>
+<section id="the-general-lesson" class="level2">
+<h2 class="anchored" data-anchor-id="the-general-lesson">The General Lesson <span class="emoji" data-emoji="bulb">💡</span></h2>
 <div style="font-size: 80%;">
 <div class="key-concept">
 <p><strong>Higher Price → More Production → More Profit</strong></p>
@@ -572,11 +661,12 @@ Paulo Fagandini
 <li>Profit per room rises</li>
 <li>More production at higher cost → <span class="math inline">\(P = MC\)</span> at a new, higher quantity</li>
 </ul>
-</div></div>
+</div>
+</div>
 </div>
 </section>
-<section id="what-about-changes-in-fixed-costs" class="slide level2">
-<h2>What About Changes in Fixed Costs? <span class="emoji" data-emoji="lock">🔒</span></h2>
+<section id="what-about-changes-in-fixed-costs" class="level2">
+<h2 class="anchored" data-anchor-id="what-about-changes-in-fixed-costs">What About Changes in Fixed Costs? <span class="emoji" data-emoji="lock">🔒</span></h2>
 <div style="font-size: 76%;">
 <p>The textbook shows an important result: when <strong>fixed costs rise</strong> (from €40 to €70/day), the <strong>profit-maximizing quantity stays the same</strong> (Q = 400).</p>
 <p><strong>Why?</strong> Because <span class="math inline">\(P = MC\)</span> doesn’t involve FC at all! MC only reflects changes in <strong>variable costs</strong>.</p>
@@ -587,7 +677,7 @@ Paulo Fagandini
 <p>FC shifts the total cost curve <strong>up</strong> (and ATC up), reducing profit, but the <strong>optimal Q</strong> stays where P = MC.</p>
 </div>
 </div><div class="column" style="width:50%;">
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th></th>
@@ -614,18 +704,17 @@ Paulo Fagandini
 </tbody>
 </table>
 <p><em>Same Q, but profit drops by exactly the FC increase (€30).</em></p>
-</div></div>
+</div>
+</div>
 <p>. . .</p>
 <p><span class="emoji" data-emoji="warning">⚠️</span> FC <strong>does</strong> matter for the <strong>stay or exit</strong> decision — which we cover next lecture!</p>
 </div>
-</section></section>
-<section>
-<section id="marginal-revenue-in-detail" class="title-slide slide level1 center">
-<h1>Marginal Revenue in Detail</h1>
-
 </section>
-<section id="why-p-mr-in-perfect-competition" class="slide level2">
-<h2>Why P = MR in Perfect Competition <span class="emoji" data-emoji="balance_scale">⚖️</span></h2>
+</section>
+<section id="marginal-revenue-in-detail" class="level1">
+<h1>Marginal Revenue in Detail</h1>
+<section id="why-p-mr-in-perfect-competition" class="level2">
+<h2 class="anchored" data-anchor-id="why-p-mr-in-perfect-competition">Why P = MR in Perfect Competition <span class="emoji" data-emoji="balance_scale">⚖️</span></h2>
 <div style="font-size: 78%;">
 <p><strong>Marginal Revenue</strong> is the extra revenue from selling <strong>one more unit</strong>:</p>
 <p><span class="math display">\[MR = \frac{\Delta TR}{\Delta Q}\]</span></p>
@@ -637,11 +726,11 @@ Paulo Fagandini
 <p>For now: <strong>Price taker</strong> → <span class="math inline">\(P = MR\)</span> → profit-maximizing rule is simply <span class="math inline">\(P = MC\)</span>.</p>
 </div>
 </section>
-<section id="the-marginal-approach-step-by-step" class="slide level2">
-<h2>The Marginal Approach: Step by Step <span class="emoji" data-emoji="footprints">👣</span></h2>
+<section id="the-marginal-approach-step-by-step" class="level2">
+<h2 class="anchored" data-anchor-id="the-marginal-approach-step-by-step">The Marginal Approach: Step by Step <span class="emoji" data-emoji="footprints">👣</span></h2>
 <div style="font-size: 72%;">
 <p><strong>Applying the P = MC rule to the bottle factory</strong> (P = €0.35/bottle):</p>
-<table class="caption-top" style="width:100%;">
+<table class="caption-top table">
 <caption>point_right: <strong>Stop at Q = 400</strong>: the last unit where MR ≥ MC. Going to 500 would cost more (€0.40) than it earns (€0.35).</caption>
 <colgroup>
 <col style="width: 16%">
@@ -706,14 +795,12 @@ Paulo Fagandini
 </table>
 <p><span class="emoji" data-emoji="bulb">💡</span> This step-by-step reasoning confirms the table’s answer: <strong>Q* = 400 bottles/day</strong>.</p>
 </div>
-</section></section>
-<section>
-<section id="tourism-application" class="title-slide slide level1 center">
-<h1>Tourism Application</h1>
-
 </section>
-<section id="hotel-revenue-management-a-profit-maximization-story" class="slide level2">
-<h2>Hotel Revenue Management: A Profit Maximization Story <span class="emoji" data-emoji="hotel">🏨</span></h2>
+</section>
+<section id="tourism-application" class="level1">
+<h1>Tourism Application</h1>
+<section id="hotel-revenue-management-a-profit-maximization-story" class="level2">
+<h2 class="anchored" data-anchor-id="hotel-revenue-management-a-profit-maximization-story">Hotel Revenue Management: A Profit Maximization Story <span class="emoji" data-emoji="hotel">🏨</span></h2>
 <div style="font-size: 76%;">
 <p><strong>Why do hotels charge different prices at different times?</strong></p>
 <p>The <span class="math inline">\(P = MC\)</span> rule explains dynamic pricing:</p>
@@ -734,13 +821,14 @@ Paulo Fagandini
 <li>Profit per room is <strong>small</strong> (or even losses)</li>
 <li>Hotels <strong>scale back</strong></li>
 </ul>
-</div></div>
+</div>
+</div>
 <p>. . .</p>
 <p><span class="emoji" data-emoji="point_right">👉</span> The <span class="math inline">\(P = MC\)</span> rule doesn’t just say “how much to produce” — it explains the <strong>seasonal rhythm</strong> of tourism businesses!</p>
 </div>
 </section>
-<section id="summary" class="slide level2">
-<h2>Summary <span class="emoji" data-emoji="memo">📝</span></h2>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary <span class="emoji" data-emoji="memo">📝</span></h2>
 <div style="font-size: 74%;">
 <p><strong>Today’s Key Takeaways</strong>:</p>
 <ol type="1">
@@ -757,13 +845,13 @@ Paulo Fagandini
 <p><strong>Next (Lecture 12, March 26)</strong>: Profits, Shutdown and Breakeven Price Levels. Supply.</p>
 </div>
 </section>
-<section id="exercises" class="slide level2 center">
-<h2>Exercises</h2>
+<section id="exercises" class="level2 center">
+<h2 class="center anchored" data-anchor-id="exercises">Exercises</h2>
 <p><strong>Practice Time!</strong> <span class="emoji" data-emoji="pencil2">✏️</span></p>
 <p>Profit maximization with the <span class="math inline">\(P = MC\)</span> rule.</p>
 </section>
-<section id="exercise-1-multiple-choice" class="slide level2">
-<h2>Exercise 1: Multiple Choice</h2>
+<section id="exercise-1-multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-multiple-choice">Exercise 1: Multiple Choice</h2>
 <div style="font-size: 82%;">
 <p><strong>Question</strong>: A small souvenir shop in Sintra operates in a competitive market. The market price for a standard Sintra tile replica is €8. The shop’s marginal cost of producing the 50th tile per day is €6, and the marginal cost of the 51st tile is €8.50. How many tiles should the shop produce?</p>
 <p>A. 49 tiles</p>
@@ -780,8 +868,8 @@ Paulo Fagandini
 </div>
 </div>
 </section>
-<section id="exercise-2-multiple-choice" class="slide level2">
-<h2>Exercise 2: Multiple Choice</h2>
+<section id="exercise-2-multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-multiple-choice">Exercise 2: Multiple Choice</h2>
 <div style="font-size: 82%;">
 <p><strong>Question</strong>: A perfectly competitive firm is producing at Q* where P = MC = €25. At this quantity, ATC = €20. What can we say about this firm?</p>
 <p>A. The firm is making a loss and should shut down</p>
@@ -797,11 +885,11 @@ Paulo Fagandini
 </div>
 </div>
 </section>
-<section id="exercise-3-open-question" class="slide level2 smaller">
-<h2>Exercise 3: Open Question <span class="emoji" data-emoji="writing_hand">✍️</span></h2>
+<section id="exercise-3-open-question" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercise-3-open-question">Exercise 3: Open Question <span class="emoji" data-emoji="writing_hand">✍️</span></h2>
 <div style="font-size: 64%;">
 <p><strong>A small boat tour operator in Lagos (Algarve)</strong> offers coastal cave tours in a competitive market. The market price is <strong>€35 per ticket</strong>. The operator has the following cost structure:</p>
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Tours/day (Q)</th>
@@ -878,11 +966,11 @@ Paulo Fagandini
 <p><strong>e)</strong> If fixed costs rise from €200 to €300 (e.g., due to a higher boat lease), does the profit-maximizing quantity at P = €35 change? Explain.</p>
 </div>
 </section>
-<section id="exercise-3-solution-part-a" class="slide level2 smaller">
-<h2>Exercise 3: Solution — Part a</h2>
+<section id="exercise-3-solution-part-a" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercise-3-solution-part-a">Exercise 3: Solution — Part a</h2>
 <div style="font-size: 62%;">
 <p><strong>a)</strong> TR = P × Q = €35 × Q</p>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>point_right: Profit is maximized (least negative = smallest loss) at <strong>Q = 4 or Q = 5</strong> (both yield −€140).</caption>
 <thead>
 <tr class="header">
@@ -947,8 +1035,8 @@ Paulo Fagandini
 <p><span class="emoji" data-emoji="warning">⚠️</span> Note: the firm is making a <strong>loss</strong> at every output level! But Q = 5 minimizes that loss. Whether to keep operating or shut down is the topic of the next lecture.</p>
 </div>
 </section>
-<section id="exercise-3-solution-parts-b-c" class="slide level2">
-<h2>Exercise 3: Solution — Parts b &amp; c</h2>
+<section id="exercise-3-solution-parts-b-c" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-solution-parts-b-c">Exercise 3: Solution — Parts b &amp; c</h2>
 <div style="font-size: 72%;">
 <p><strong>b)</strong> Using the <span class="math inline">\(P = MC\)</span> rule:</p>
 <ul>
@@ -964,8 +1052,8 @@ Paulo Fagandini
 <p>The firm is losing €140/day. <span class="emoji" data-emoji="chart_with_downwards_trend">📉</span></p>
 </div>
 </section>
-<section id="exercise-3-solution-parts-d-e" class="slide level2">
-<h2>Exercise 3: Solution — Parts d &amp; e</h2>
+<section id="exercise-3-solution-parts-d-e" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-solution-parts-d-e">Exercise 3: Solution — Parts d &amp; e</h2>
 <div style="font-size: 72%;">
 <p><strong>d)</strong> At P = €20:</p>
 <ul>
@@ -982,462 +1070,431 @@ Paulo Fagandini
 <p><span class="emoji" data-emoji="point_right">👉</span> Fixed costs affect <strong>how much</strong> profit you earn, but not <strong>how many</strong> units to produce.</p>
 </div>
 </section>
-<section id="next-lecture" class="slide level2 center">
-<h2>Next Lecture</h2>
+<section id="next-lecture" class="level2 center">
+<h2 class="center anchored" data-anchor-id="next-lecture">Next Lecture</h2>
 <p><strong>March 26, 2026</strong>: Profits, Shutdown and Breakeven Price Levels. Supply. <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></p>
 <p>If the firm is making a <strong>loss</strong>, when should it keep operating and when should it <strong>shut down</strong>?</p>
-<div class="fragment">
+<p>. . .</p>
 <p><span class="emoji" data-emoji="bulb">💡</span> <strong>Hint</strong>: The answer involves comparing <span class="math inline">\(P\)</span> to <strong>AVC</strong>, not ATC!</p>
-</div>
 </section>
-<section id="thank-you" class="slide level2 center">
-<h2>Thank You!</h2>
+<section id="thank-you" class="level2 center">
+<h2 class="center anchored" data-anchor-id="thank-you">Thank You!</h2>
 <p><strong>Questions?</strong> <span class="emoji" data-emoji="raising_hand">🙋</span></p>
 <p><span class="emoji" data-emoji="email">📧</span> paulo.fagandini@ext.universidadeeuropeia.pt</p>
-</section>
-<section class="slide level2">
-
+<hr>
 <p><em>Next class: Thursday, March 26, 2026</em></p>
-<aside class="notes">
+<div class="notes">
 <p>This lecture establishes the central result of producer theory: firms maximize profit where P = MC. The key pedagogical goals are (1) understanding why P = MC works (marginal thinking), (2) reading profit as a rectangle on the graph, and (3) the irrelevance of FC for the production decision. The worked example from the textbook’s bottle factory grounds the theory in familiar material. Next lecture builds on the loss scenario to introduce shutdown and breakeven conditions, and connect MC to the supply curve.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-
-
-</section></section>
-    </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="../images/logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
-<p>Economics of Tourism | Lecture 11</p>
 </div>
-</div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
 
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+</section>
+</section>
 
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
-'smaller': false,
- 
-        // Display controls in the bottom right corner
-        controls: false,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: 'c/t',
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: false,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'linear',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: false,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'slide',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: 1600,
-
-        height: 900,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.1,
-
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
-        // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
-
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
-    </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-
-      })();
-    </script>
-
-    <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
-          return false;
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
-        }
-        const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
             } else {
-              return "";
+              container.appendChild(child.cloneNode(true));
+              break;
             }
-          });
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
             }
           } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
             });
           }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
         }
+      }, function(instance) {
       });
-      </script>
-    
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
 
 </body></html>

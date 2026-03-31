@@ -57,13 +57,14 @@ ue_light  <- "#F5F5F5"
 
 :six: Sequential games — backward induction
 
+:::
+::::
+
 . . .
 
 :point_right: **Today we zoom out** :telescope:
 
 We move from individual markets to the **economy as a whole**
-:::
-::::
 
 # Part I: From Micro to Macro
 
@@ -110,9 +111,8 @@ Instead, pilots watch **aggregate** gauges:
 
 :wind_face: Air pressure
 
-:fuel_pump: Total fuel remaining
+:fuelpump: Total fuel remaining
 
-. . .
 
 Macroeconomics works the same way. We cannot track every transaction, so we build **aggregate indicators** that summarize the economy's health.
 :::
@@ -530,8 +530,6 @@ Policymakers juggle three goals that are often **in tension**:
 
 :fire: **Low inflation** — keep prices stable
 
-. . .
-
 **The tension:**
 
 Policies that boost growth and cut unemployment often *raise* inflation.
@@ -628,7 +626,7 @@ Over the next lectures, we will build the **macro toolkit** piece by piece:
 | 25 | Fiscal Policy |
 | 26 | Balance of Payments |
 
-:calendar: **Test 2** covers producer theory and macroeconomics — May 28th.
+* :calendar: **Test 2** covers producer theory and macroeconomics — May 28th.
 
 # Exercises
 
@@ -682,11 +680,11 @@ Tourism behaves as a luxury/normal good with income elasticity > 1. When unemplo
 
 A severe recession hits the Eurozone. GDP contracts by 3%, unemployment rises to 15%, and inflation falls to near zero. The British pound also depreciates 15% against the euro.
 
-**(a)** Using the macroeconomic issues covered in this lecture, identify **three** distinct channels through which this scenario affects Portugal's tourism sector. *(6 marks)*
+**(a)** Using the macroeconomic issues covered in this lecture, identify **three** distinct channels through which this scenario affects Portugal's tourism sector.
 
-**(b)** For each channel, indicate whether the effect on tourism demand is **positive or negative**, and briefly justify. *(6 marks)*
+**(b)** For each channel, indicate whether the effect on tourism demand is **positive or negative**, and briefly justify. 
 
-**(c)** The recession in the Eurozone is accompanied by a **strong growth period in Brazil**. How might this partially offset the effects identified in (a)? *(3 marks)*
+**(c)** The recession in the Eurozone is accompanied by a **strong growth period in Brazil**. How might this partially offset the effects identified in (a)? 
 
 ---
 

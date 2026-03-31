@@ -18,7 +18,7 @@
     "href": "material.html#slides",
     "title": "Material",
     "section": "Slides",
-    "text": "Slides\n\nEconomics Fundamentals\n\nIntroduction 📄 PDF\nEconomic Systems 📄 PDF\nOpportunity Cost 📄 PDF\nProduction Possibility Frontier 📄 PDF\n\n\n\nMicroeconomics\n\nConsumer Theory: Behind the Demand\n\nBudget Set and Constraint 📄 PDF\nPreferences 📄 PDF\nMRS and Utility 📄 PDF\nDemand 📄 PDF\nElasticity of Demand 📄 PDF\n\n\n\nProducer Theory: Behind the Supply\n\nCosts📄 PDF\nProfit Maximization📄 PDF\nSupply📄 PDF\nSupply rule📄 PDF\nProducer Surplus and Market Supply📄 PDF\nSupply (and demand) Elasticity📄 PDF\n\n\n\nMarket Equilibrium and Game Theory\n\nEquilibrium📄 PDF\nGame Theory: Intro📄 PDF\nGame Theory: Sequential Games📄 PDF\n\n\n\n\nMacroeconomics\n\nMacroeconomic Issues\nAggregation\nGross Domestic Product\nInflation\nMonetary Policy\nFiscal Policy\nBalance of Payments"
+    "text": "Slides\n\nEconomics Fundamentals\n\nIntroduction 📄 PDF\nEconomic Systems 📄 PDF\nOpportunity Cost 📄 PDF\nProduction Possibility Frontier 📄 PDF\n\n\n\nMicroeconomics\n\nConsumer Theory: Behind the Demand\n\nBudget Set and Constraint 📄 PDF\nPreferences 📄 PDF\nMRS and Utility 📄 PDF\nDemand 📄 PDF\nElasticity of Demand 📄 PDF\n\n\n\nProducer Theory: Behind the Supply\n\nCosts📄 PDF\nProfit Maximization📄 PDF\nSupply📄 PDF\nSupply rule📄 PDF\nProducer Surplus and Market Supply📄 PDF\nSupply (and demand) Elasticity📄 PDF\n\n\n\nMarket Equilibrium and Game Theory\n\nEquilibrium📄 PDF\nGame Theory: Intro📄 PDF\nGame Theory: Sequential Games📄 PDF\n\n\n\n\nMacroeconomics\n\nMacroeconomic Issues📄 PDF\nAggregation\nGross Domestic Product\nInflation\nMonetary Policy\nFiscal Policy\nBalance of Payments"
   },
   {
     "objectID": "slides/lecture23-inflation.html#recap-gdp",
@@ -74,14 +74,14 @@
     "href": "slides/lecture23-inflation.html#portugals-hicp-inflation",
     "title": "Inflation",
     "section": "Portugal’s HICP Inflation 🇵🇹",
-    "text": "Portugal’s HICP Inflation 🇵🇹"
+    "text": "Portugal’s HICP Inflation 🇵🇹\n\nhicp_raw &lt;- get_eurostat(\"prc_hicp_aind\",\n  filters = list(\n    geo    = \"PT\",\n    coicop = \"CP00\",\n    unit   = \"RCH_A_AVG\"\n  ),\n  time_format = \"num\"\n) |&gt;\n  filter(time &gt;= 2000, !is.na(values)) |&gt;\n  arrange(time)\n\nTable prc_hicp_aind cached at /tmp/RtmpfCeVnY/eurostat/e6ab18ca0cc64eedad884b4cde727dbe.rds\n\nggplot(hicp_raw, aes(x = time, y = values)) +\n  geom_col(aes(fill = values &gt;= 0), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"TRUE\" = ue_red, \"FALSE\" = \"#5B8DB8\")) +\n  geom_hline(yintercept = 0, color = ue_black, linewidth = 0.5) +\n  geom_hline(yintercept = 2, color = ue_gray, linewidth = 0.8,\n             linetype = \"dashed\") +\n  annotate(\"text\", x = 2001, y = 2.4, label = \"ECB target: ~2%\",\n           color = ue_gray, size = 3.2, fontface = \"italic\") +\n  annotate(\"rect\", xmin = 2021.5, xmax = 2023.5,\n           ymin = -Inf, ymax = Inf, fill = ue_red, alpha = 0.07) +\n  annotate(\"text\", x = 2022.5, y = 9.5,\n           label = \"Energy\\ncrisis\", color = ue_red,\n           size = 3, fontface = \"italic\") +\n  labs(\n    title = \"Portugal: HICP Inflation (annual rate)\",\n    x = NULL, y = \"% change year-on-year\",\n    caption = \"Source: Eurostat (prc_hicp_aind, CP00). Blue bars = deflation.\"\n  ) +\n  scale_x_continuous(breaks = seq(2000, 2024, 4)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\"),\n    panel.grid.minor = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture23-inflation.html#inflation-across-eu-countries-the-2022-spike",
     "href": "slides/lecture23-inflation.html#inflation-across-eu-countries-the-2022-spike",
     "title": "Inflation",
     "section": "Inflation Across EU Countries — The 2022 Spike 🌐",
-    "text": "Inflation Across EU Countries — The 2022 Spike 🌐\n\n\n\n\n\n\n\n\n\n👉 The 2022 energy shock hit all EU countries — but Eastern Europe faced much higher peaks."
+    "text": "Inflation Across EU Countries — The 2022 Spike 🌐\n\nhicp_eu &lt;- get_eurostat(\"prc_hicp_aind\",\n  filters = list(\n    geo    = c(\"PT\", \"ES\", \"DE\", \"FR\", \"PL\", \"EE\", \"EU27_2020\"),\n    coicop = \"CP00\",\n    unit   = \"RCH_A_AVG\"\n  ),\n  time_format = \"num\"\n) |&gt;\n  filter(time &gt;= 2018, !is.na(values)) |&gt;\n  mutate(geo_label = case_when(\n    geo == \"PT\"        ~ \"Portugal\",\n    geo == \"ES\"        ~ \"Spain\",\n    geo == \"DE\"        ~ \"Germany\",\n    geo == \"FR\"        ~ \"France\",\n    geo == \"PL\"        ~ \"Poland\",\n    geo == \"EE\"        ~ \"Estonia\",\n    geo == \"EU27_2020\" ~ \"EU-27\"\n  ))\n\nTable prc_hicp_aind cached at /tmp/RtmpfCeVnY/eurostat/d24c07308daa14cc7fb83ae639276127.rds\n\nggplot(hicp_eu, aes(x = time, y = values,\n                    color = geo_label,\n                    linewidth = geo_label == \"Portugal\")) +\n  geom_line() +\n  scale_linewidth_manual(values = c(\"TRUE\" = 1.6, \"FALSE\" = 0.9),\n                         guide = \"none\") +\n  scale_color_manual(values = c(\n    \"Portugal\" = ue_red,\n    \"Spain\"    = \"#E07B00\",\n    \"Germany\"  = ue_black,\n    \"France\"   = \"#4472C4\",\n    \"Poland\"   = \"#70AD47\",\n    \"Estonia\"  = \"#7030A0\",\n    \"EU-27\"    = ue_gray\n  )) +\n  geom_hline(yintercept = 2, linetype = \"dashed\",\n             color = ue_gray, linewidth = 0.6) +\n  labs(\n    title = \"HICP Inflation — Selected EU Countries\",\n    x = NULL, y = \"% change year-on-year\",\n    color = NULL,\n    caption = \"Source: Eurostat (prc_hicp_aind)\"\n  ) +\n  scale_x_continuous(breaks = 2018:2024) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\"),\n    legend.position  = \"right\",\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n👉 The 2022 energy shock hit all EU countries — but Eastern Europe faced much higher peaks."
   },
   {
     "objectID": "slides/lecture23-inflation.html#loss-of-purchasing-power",
@@ -95,7 +95,7 @@
     "href": "slides/lecture23-inflation.html#erosion-of-savings",
     "title": "Inflation",
     "section": "2. Erosion of Savings 🏦",
-    "text": "2. Erosion of Savings 🏦\n\n\nReal interest rate = nominal interest rate − inflation rate\n\\[r = i - \\pi\\]\n💡 Example:\n\nBank pays 2% annual interest on savings\nInflation is 8%\nReal return = \\(2\\% - 8\\% = \\mathbf{-6\\%}\\)\n\nYour savings are losing 6% of their real value every year.\n. . .\n👉 Rational response: spend now rather than save, or move money into real assets (property, gold, foreign currency) — which can fuel further inflation."
+    "text": "2. Erosion of Savings 🏦\n\n\nReal interest rate = nominal interest rate − inflation rate\n\\[r = i - \\pi\\]\n💡 Example:\n\nBank pays 2% annual interest on savings\nInflation is 8%\nReal return = \\(2\\% - 8\\% = \\mathbf{-6\\%}\\)\n\nYour savings are losing 6% of their real value every year.\n. . .\n👉 Rational response: spend now rather than save, or move money into real assets (property, gold, foreign currency) — which can fuel further inflation.\n\n\n# Illustrate real interest rate erosion\nyears &lt;- 0:10\ninflation_rate &lt;- 0.08\nnominal_rate   &lt;- 0.02\n\nsavings_nominal &lt;- 1000 * (1 + nominal_rate)^years\nsavings_real    &lt;- 1000 * ((1 + nominal_rate) / (1 + inflation_rate))^years\n\ndf_sav &lt;- data.frame(\n  year    = rep(years, 2),\n  value   = c(savings_nominal, savings_real),\n  type    = rep(c(\"Nominal value\", \"Real value (purchasing power)\"),\n                each = length(years))\n)\n\nggplot(df_sav, aes(x = year, y = value, color = type, linetype = type)) +\n  geom_line(linewidth = 1.3) +\n  geom_hline(yintercept = 1000, color = ue_gray,\n             linetype = \"dotted\", linewidth = 0.7) +\n  scale_color_manual(values = c(\n    \"Nominal value\"                   = ue_black,\n    \"Real value (purchasing power)\"   = ue_red\n  )) +\n  scale_linetype_manual(values = c(\n    \"Nominal value\"                   = \"dashed\",\n    \"Real value (purchasing power)\"   = \"solid\"\n  )) +\n  labs(\n    title = \"€1,000 savings: 2% interest, 8% inflation\",\n    subtitle = \"Hypothetical — illustrative only\",\n    x = \"Years\", y = \"Value (€)\",\n    color = NULL, linetype = NULL,\n    caption = \"Hypothetical data for illustration\"\n  ) +\n  scale_y_continuous(labels = scales::label_dollar(prefix = \"€\", suffix = \"\")) +\n  theme_minimal(base_size = 11) +\n  theme(\n    plot.title      = element_text(color = ue_red, face = \"bold\", size = 11),\n    plot.subtitle   = element_text(color = ue_gray, size = 9),\n    legend.position = \"bottom\",\n    panel.grid.minor = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture23-inflation.html#economic-uncertainty",
@@ -130,7 +130,7 @@
     "href": "slides/lecture23-inflation.html#portugal-hicp-tourism-component",
     "title": "Inflation",
     "section": "Portugal HICP — Tourism Component 🏖️",
-    "text": "Portugal HICP — Tourism Component 🏖️\n\n\n\n\n\n\n\n\n\n👉 Accommodation and restaurant prices often diverge from overall inflation — sometimes rising faster (peak demand), sometimes slower (competitive pressure)."
+    "text": "Portugal HICP — Tourism Component 🏖️\n\nhicp_comp &lt;- get_eurostat(\"prc_hicp_aind\",\n  filters = list(\n    geo    = \"PT\",\n    coicop = c(\"CP00\", \"CP111\", \"CP112\"),\n    unit   = \"RCH_A_AVG\"\n  ),\n  time_format = \"num\"\n) |&gt;\n  filter(time &gt;= 2005, !is.na(values)) |&gt;\n  mutate(label = case_when(\n    coicop == \"CP00\"  ~ \"Overall HICP\",\n    coicop == \"CP111\" ~ \"Restaurants & cafes\",\n    coicop == \"CP112\" ~ \"Accommodation services\"\n  ))\n\nTable prc_hicp_aind cached at /tmp/RtmpfCeVnY/eurostat/0f2907ac4ba03d454af33a7707a657d7.rds\n\nggplot(hicp_comp, aes(x = time, y = values,\n                      color = label, linewidth = label == \"Overall HICP\")) +\n  geom_line() +\n  scale_linewidth_manual(values = c(\"TRUE\" = 0.9, \"FALSE\" = 1.4),\n                         guide = \"none\") +\n  scale_color_manual(values = c(\n    \"Overall HICP\"          = ue_gray,\n    \"Restaurants & cafes\"   = ue_red,\n    \"Accommodation services\"= ue_black\n  )) +\n  geom_hline(yintercept = 0, linewidth = 0.4, color = ue_gray) +\n  labs(\n    title = \"Portugal: HICP Inflation — Tourism vs Overall\",\n    x = NULL, y = \"% change year-on-year\",\n    color = NULL,\n    caption = \"Source: Eurostat (prc_hicp_aind). CP111 = Restaurants & cafes; CP112 = Accommodation.\"\n  ) +\n  scale_x_continuous(breaks = seq(2005, 2024, 3)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\"),\n    legend.position  = \"bottom\",\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n👉 Accommodation and restaurant prices often diverge from overall inflation — sometimes rising faster (peak demand), sometimes slower (competitive pressure)."
   },
   {
     "objectID": "slides/lecture23-inflation.html#exercise-1-multiple-choice",
@@ -200,7 +200,7 @@
     "href": "slides/lecture25-fiscal-policy.html#the-multiplier-effect",
     "title": "Fiscal Policy",
     "section": "The Multiplier Effect 📢",
-    "text": "The Multiplier Effect 📢\nOne of the most important concepts in fiscal policy:\n\nThe fiscal multiplier measures how much GDP changes for each euro of government spending (or tax change). If the multiplier &gt; 1, the initial stimulus has a larger-than-proportional effect on output.\n\n. . .\nWhy does it work?"
+    "text": "The Multiplier Effect 📢\nOne of the most important concepts in fiscal policy:\n\nThe fiscal multiplier measures how much GDP changes for each euro of government spending (or tax change). If the multiplier &gt; 1, the initial stimulus has a larger-than-proportional effect on output.\n\n. . .\nWhy does it work?\n\nsteps &lt;- data.frame(\n  x = 1:5,\n  label = c(\n    \"Government\\nspends €100M\\non new roads\",\n    \"Construction\\nworkers earn\\n€100M in wages\",\n    \"Workers spend\\npart of wages\\n(e.g. €70M)\",\n    \"Restaurants,\\nshops, hotels\\nearn €70M more\",\n    \"They in turn\\nspend part...\\nand so on\"\n  ),\n  col = c(ue_red, ue_red, \"#E07B00\", \"#E07B00\", ue_black)\n)\n\nggplot(steps) +\n  geom_tile(aes(x = x, y = 1), width = 0.85, height = 0.7,\n            fill = steps$col, alpha = 0.85) +\n  geom_text(aes(x = x, y = 1, label = label),\n            color = \"white\", fontface = \"bold\", size = 3.1,\n            lineheight = 0.9) +\n  geom_segment(\n    data = data.frame(x = 1:4 + 0.43, xend = 1:4 + 0.57, y = 1, yend = 1),\n    aes(x = x, xend = xend, y = y, yend = yend),\n    arrow = arrow(length = unit(0.25, \"cm\"), type = \"closed\"),\n    color = ue_gray, linewidth = 1\n  ) +\n  annotate(\"text\", x = 3, y = 0.45,\n           label = \"Total GDP impact &gt; €100M initial injection — the multiplier at work\",\n           color = ue_gray, size = 3.2, fontface = \"italic\") +\n  xlim(0.5, 5.5) + ylim(0.2, 1.6) +\n  theme_void() +\n  labs(title = \"The Multiplier Effect — Government Spending\",\n       subtitle = \"Hypothetical illustration\") +\n  theme(\n    plot.title    = element_text(color = ue_red, face = \"bold\",\n                                 size = 13, hjust = 0.5),\n    plot.subtitle = element_text(color = ue_gray, size = 9, hjust = 0.5)\n  )"
   },
   {
     "objectID": "slides/lecture25-fiscal-policy.html#contractionary-fiscal-policy",
@@ -221,14 +221,14 @@
     "href": "slides/lecture25-fiscal-policy.html#government-revenue-and-spending",
     "title": "Fiscal Policy",
     "section": "Government Revenue and Spending 🇵🇹",
-    "text": "Government Revenue and Spending 🇵🇹"
+    "text": "Government Revenue and Spending 🇵🇹\n\n# Government revenue and expenditure as % of GDP\n# Eurostat: gov_10a_main — government finance statistics\ngov_raw &lt;- get_eurostat(\"gov_10a_main\",\n  filters = list(\n    geo    = \"PT\",\n    na_item = c(\"TE\", \"TR\"),   # TE = total expenditure, TR = total revenue\n    unit   = \"PC_GDP\",\n    sector = \"S13\"             # General government\n  ),\n  time_format = \"num\"\n) |&gt;\n  filter(time &gt;= 2000, !is.na(values)) |&gt;\n  mutate(label = case_when(\n    na_item == \"TE\" ~ \"Total Expenditure (G)\",\n    na_item == \"TR\" ~ \"Total Revenue (T)\"\n  ))\n\nTable gov_10a_main cached at /tmp/RtmpebBJl2/eurostat/b9abb4cf88bb4aef5ae55415c252ccbd.rds\n\nggplot(gov_raw, aes(x = time, y = values, color = label)) +\n  geom_line(linewidth = 1.3) +\n  geom_ribbon(\n    data = gov_raw |&gt; pivot_wider(names_from = na_item, values_from = values) |&gt;\n      filter(!is.na(TE), !is.na(TR)),\n    aes(x = time, ymin = TR, ymax = TE, fill = TE &gt; TR),\n    inherit.aes = FALSE, alpha = 0.12\n  ) +\n  scale_fill_manual(values = c(\"TRUE\" = ue_red, \"FALSE\" = \"#5B8DB8\"),\n                    guide = \"none\") +\n  scale_color_manual(values = c(\n    \"Total Expenditure (G)\" = ue_red,\n    \"Total Revenue (T)\"     = ue_black\n  )) +\n  annotate(\"rect\", xmin = 2010.5, xmax = 2014.5,\n           ymin = -Inf, ymax = Inf, fill = ue_gray, alpha = 0.12) +\n  annotate(\"text\", x = 2012.5, y = 56,\n           label = \"Troika\\nausterity\", color = ue_gray,\n           size = 3, fontface = \"italic\") +\n  annotate(\"rect\", xmin = 2020, xmax = 2021,\n           ymin = -Inf, ymax = Inf, fill = ue_gray, alpha = 0.12) +\n  annotate(\"text\", x = 2020.5, y = 56,\n           label = \"COVID\\nstimulus\", color = ue_gray,\n           size = 2.8, fontface = \"italic\") +\n  labs(\n    title = \"Portugal: Government Revenue vs Expenditure (% of GDP)\",\n    subtitle = \"Red shading = deficit; blue shading = surplus\",\n    x = NULL, y = \"% of GDP\", color = NULL,\n    caption = \"Source: Eurostat (gov_10a_main, S13, PC_GDP)\"\n  ) +\n  scale_x_continuous(breaks = seq(2000, 2024, 4)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\"),\n    plot.subtitle    = element_text(color = ue_gray, size = 10),\n    legend.position  = \"bottom\",\n    panel.grid.minor = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture25-fiscal-policy.html#portugals-public-debt",
     "href": "slides/lecture25-fiscal-policy.html#portugals-public-debt",
     "title": "Fiscal Policy",
     "section": "Portugal’s Public Debt 📊",
-    "text": "Portugal’s Public Debt 📊\n\n\n\n\n\n\n\n\n\n👉 Portugal’s debt exceeded 130% of GDP at its 2014 peak — nearly double the EU limit. Reducing it required sustained contractionary fiscal policy."
+    "text": "Portugal’s Public Debt 📊\n\ndebt_raw &lt;- get_eurostat(\"gov_10dd_edpt1\",\n  filters = list(\n    geo    = \"PT\",\n    na_item = \"GD\",\n    unit   = \"PC_GDP\",\n    sector = \"S13\"\n  ),\n  time_format = \"num\"\n) |&gt;\n  filter(time &gt;= 2000, !is.na(values)) |&gt;\n  arrange(time)\n\nTable gov_10dd_edpt1 cached at /tmp/RtmpebBJl2/eurostat/79bceb2c5e89d6e16d8b3755b46b3f4a.rds\n\nggplot(debt_raw, aes(x = time, y = values)) +\n  geom_col(aes(fill = values &gt; 60), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"FALSE\" = ue_gray, \"TRUE\" = ue_red)) +\n  geom_hline(yintercept = 60, linetype = \"dashed\",\n             color = ue_black, linewidth = 0.8) +\n  annotate(\"text\", x = 2001, y = 63,\n           label = \"EU Stability Pact limit: 60%\",\n           color = ue_black, size = 3.2, fontface = \"italic\") +\n  annotate(\"text\", x = 2014, y = 135,\n           label = \"Peak: ~130%\\n(2014)\", color = ue_red,\n           size = 3.2, fontface = \"bold\") +\n  labs(\n    title = \"Portugal: Government Debt (% of GDP)\",\n    subtitle = \"Red bars = above EU 60% threshold\",\n    x = NULL, y = \"% of GDP\",\n    caption = \"Source: Eurostat (gov_10dd_edpt1, S13)\"\n  ) +\n  scale_x_continuous(breaks = seq(2000, 2024, 4)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\"),\n    plot.subtitle    = element_text(color = ue_gray, size = 10),\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n👉 Portugal’s debt exceeded 130% of GDP at its 2014 peak — nearly double the EU limit. Reducing it required sustained contractionary fiscal policy."
   },
   {
     "objectID": "slides/lecture25-fiscal-policy.html#built-in-fiscal-cushions-cushion",
@@ -242,7 +242,7 @@
     "href": "slides/lecture25-fiscal-policy.html#tourist-taxes-fiscal-policy-in-action",
     "title": "Fiscal Policy",
     "section": "Tourist Taxes — Fiscal Policy in Action 🏖️",
-    "text": "Tourist Taxes — Fiscal Policy in Action 🏖️\nTourist taxes are a form of fiscal policy specifically targeting the tourism sector:\n. . .\n\n\nHow they work:\n🌇 Cities impose a per-night levy on overnight stays (e.g. €2/night in Lisbon)\n💰 Revenue goes to municipal budgets — fund local services, infrastructure, culture\n📊 Acts as a Pigouvian tax — prices in the externalities of overtourism (congestion, noise, waste)\nExamples:\n\n\n\nCity\nTax per night\n\n\n\n\nLisbon 🇵🇹\n€2.00\n\n\nAmsterdam 🇳🇱\n12.5% of room rate\n\n\nVenice 🇮🇹\n€1–5 (day visitors)\n\n\nBarcelona 🇪🇸\n€3.25–4.50\n\n\n\n\nThe trade-off — the Laffer Curve for tourism:"
+    "text": "Tourist Taxes — Fiscal Policy in Action 🏖️\nTourist taxes are a form of fiscal policy specifically targeting the tourism sector:\n. . .\n\n\nHow they work:\n🌇 Cities impose a per-night levy on overnight stays (e.g. €2/night in Lisbon)\n💰 Revenue goes to municipal budgets — fund local services, infrastructure, culture\n📊 Acts as a Pigouvian tax — prices in the externalities of overtourism (congestion, noise, waste)\nExamples:\n\n\n\nCity\nTax per night\n\n\n\n\nLisbon 🇵🇹\n€2.00\n\n\nAmsterdam 🇳🇱\n12.5% of room rate\n\n\nVenice 🇮🇹\n€1–5 (day visitors)\n\n\nBarcelona 🇪🇸\n€3.25–4.50\n\n\n\n\nThe trade-off — the Laffer Curve for tourism:\n\ntax &lt;- seq(0, 20, length.out = 200)\nrevenue &lt;- tax * (100 - 4 * tax) / 100\nrevenue[revenue &lt; 0] &lt;- 0\n\ndf_laffer &lt;- data.frame(tax = tax, revenue = revenue)\npeak_tax &lt;- tax[which.max(revenue)]\n\nggplot(df_laffer, aes(x = tax, y = revenue)) +\n  geom_line(color = ue_red, linewidth = 1.4) +\n  geom_vline(xintercept = peak_tax, linetype = \"dashed\",\n             color = ue_gray, linewidth = 0.8) +\n  annotate(\"text\", x = peak_tax + 0.8, y = 2,\n           label = \"Revenue-\\nmaximising\\ntax rate\",\n           color = ue_gray, size = 3, hjust = 0) +\n  annotate(\"text\", x = 3, y = 18,\n           label = \"Too low:\\nunder-collects\", color = ue_black,\n           size = 3) +\n  annotate(\"text\", x = 16, y = 18,\n           label = \"Too high:\\ndrives tourists\\naway\", color = ue_red,\n           size = 3) +\n  labs(\n    title = \"Laffer Curve: Tourist Tax\",\n    subtitle = \"Hypothetical — illustrative only\",\n    x = \"Tourist tax (€/night)\",\n    y = \"Total tax revenue\",\n    caption = \"Hypothetical data for illustration\"\n  ) +\n  theme_minimal(base_size = 11) +\n  theme(\n    plot.title    = element_text(color = ue_red, face = \"bold\", size = 11),\n    plot.subtitle = element_text(color = ue_gray, size = 9),\n    panel.grid.minor = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture25-fiscal-policy.html#tourism-subsidies-expansionary-fiscal-policy",
@@ -256,7 +256,7 @@
     "href": "slides/lecture25-fiscal-policy.html#fiscal-policy-coordination-in-the-eu",
     "title": "Fiscal Policy",
     "section": "Fiscal Policy Coordination in the EU 🇪🇺",
-    "text": "Fiscal Policy Coordination in the EU 🇪🇺\n\n\nWithin the EU, fiscal policy faces two constraints:\n1️⃣ Stability and Growth Pact: - Deficit ≤ 3% of GDP - Debt ≤ 60% of GDP (or declining toward it) - Excessive Deficit Procedure (EDP) if breached\n2️⃣ No mutual bail-out rule: - EU member states cannot expect other members to cover their debts - Each country bears the consequences of its own fiscal decisions\n. . .\nThe tension:\nDuring a severe recession, these rules may prevent the expansionary policy that is needed.\nThe Pact was suspended during COVID (2020–2021) — a rare recognition that rigid rules can be counterproductive."
+    "text": "Fiscal Policy Coordination in the EU 🇪🇺\n\n\nWithin the EU, fiscal policy faces two constraints:\n1️⃣ Stability and Growth Pact: - Deficit ≤ 3% of GDP - Debt ≤ 60% of GDP (or declining toward it) - Excessive Deficit Procedure (EDP) if breached\n2️⃣ No mutual bail-out rule: - EU member states cannot expect other members to cover their debts - Each country bears the consequences of its own fiscal decisions\n. . .\nThe tension:\nDuring a severe recession, these rules may prevent the expansionary policy that is needed.\nThe Pact was suspended during COVID (2020–2021) — a rare recognition that rigid rules can be counterproductive.\n\n\n# EU comparison of deficit/surplus\ndeficit_raw &lt;- get_eurostat(\"gov_10a_main\",\n  filters = list(\n    geo    = c(\"PT\", \"ES\", \"DE\", \"FR\", \"IE\", \"EU27_2020\"),\n    na_item = \"B9\",        # Net lending / net borrowing = budget balance\n    unit   = \"PC_GDP\",\n    sector = \"S13\"\n  ),\n  time_format = \"num\"\n) |&gt;\n  filter(time == 2023, !is.na(values)) |&gt;\n  mutate(geo_label = case_when(\n    geo == \"PT\"        ~ \"Portugal\",\n    geo == \"ES\"        ~ \"Spain\",\n    geo == \"DE\"        ~ \"Germany\",\n    geo == \"FR\"        ~ \"France\",\n    geo == \"IE\"        ~ \"Ireland\",\n    geo == \"EU27_2020\" ~ \"EU-27\"\n  ))\n\nTable gov_10a_main cached at /tmp/RtmpebBJl2/eurostat/ca70526b74847df5896db8c6d8804bf6.rds\n\nggplot(deficit_raw, aes(x = reorder(geo_label, values), y = values)) +\n  geom_col(aes(fill = values &gt;= 0), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"TRUE\" = \"#5B8DB8\", \"FALSE\" = ue_red)) +\n  geom_hline(yintercept = -3, linetype = \"dashed\",\n             color = ue_black, linewidth = 0.7) +\n  annotate(\"text\", x = 1.5, y = -2.6,\n           label = \"EU −3% limit\", size = 3, color = ue_black,\n           fontface = \"italic\") +\n  coord_flip() +\n  labs(\n    title = \"Budget Balance, 2023\",\n    subtitle = \"% of GDP (negative = deficit)\",\n    x = NULL, y = \"% of GDP\",\n    caption = \"Source: Eurostat (gov_10a_main)\"\n  ) +\n  theme_minimal(base_size = 11) +\n  theme(\n    plot.title    = element_text(color = ue_red, face = \"bold\", size = 11),\n    plot.subtitle = element_text(color = ue_gray, size = 9),\n    panel.grid.minor  = element_blank(),\n    panel.grid.major.y = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture25-fiscal-policy.html#exercise-1-multiple-choice",
@@ -297,29 +297,29 @@
     "objectID": "slides/lecture20-macro-issues.html#recap-where-we-have-been",
     "href": "slides/lecture20-macro-issues.html#recap-where-we-have-been",
     "title": "The Panorama of Macroeconomics",
-    "section": "",
-    "text": "Microeconomics block 🔬\n1️⃣ Fundamentals, scarcity, opportunity cost\n2️⃣ Consumer theory — preferences, utility, demand\n3️⃣ Producer theory — costs, profit, supply\n4️⃣ Market equilibrium — price & quantity\n\nGame Theory block ♟️\n5️⃣ Strategic interaction — Nash equilibrium\n6️⃣ Sequential games — backward induction\n. . .\n👉 Today we zoom out 🔭\nWe move from individual markets to the economy as a whole"
+    "section": "Recap: Where We Have Been ⏪",
+    "text": "Recap: Where We Have Been ⏪\n\n\nMicroeconomics block 🔬\n1️⃣ Fundamentals, scarcity, opportunity cost\n2️⃣ Consumer theory — preferences, utility, demand\n3️⃣ Producer theory — costs, profit, supply\n4️⃣ Market equilibrium — price & quantity\n\nGame Theory block ♟️\n5️⃣ Strategic interaction — Nash equilibrium\n6️⃣ Sequential games — backward induction\n\n\n👉 Today we zoom out 🔭\nWe move from individual markets to the economy as a whole"
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#the-key-difference",
     "href": "slides/lecture20-macro-issues.html#the-key-difference",
     "title": "The Panorama of Macroeconomics",
     "section": "The Key Difference 🔍",
-    "text": "The Key Difference 🔍\n\n\n🔬 Microeconomics\nStudies individual agents and specific markets\n\nOne firm’s pricing decision\nOne consumer’s demand for hotel nights\nEquilibrium in the Lisbon restaurant market\n\n\n\n\n🔭 Macroeconomics\nStudies the economy as a whole\n\nTotal output of the entire Portuguese economy\nOverall unemployment rate\nThe general level of prices (inflation)\n\n\n\n\n\nAggregation is the tool that bridges the two. Macroeconomists sum up individual variables — millions of consumers, thousands of firms — into economy-wide totals."
+    "text": "The Key Difference 🔍\n\n\n🔬 Microeconomics\nStudies individual agents and specific markets\n\nOne firm’s pricing decision\nOne consumer’s demand for hotel nights\nEquilibrium in the Lisbon restaurant market\n\n\n\n\n🔭 Macroeconomics\nStudies the economy as a whole\n\nTotal output of the entire Portuguese economy\nOverall unemployment rate\nThe general level of prices (inflation)\n\n\n\n\nAggregation is the tool that bridges the two. Macroeconomists sum up individual variables — millions of consumers, thousands of firms — into economy-wide totals."
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#why-aggregation",
     "href": "slides/lecture20-macro-issues.html#why-aggregation",
     "title": "The Panorama of Macroeconomics",
     "section": "Why Aggregation? 🧩",
-    "text": "Why Aggregation? 🧩\n\n\nImagine trying to manage a flight by tracking every single air molecule in the cabin.\nInstead, pilots watch aggregate gauges:\n🌡️ Cabin temperature\n🌬️ Air pressure\n:fuel_pump: Total fuel remaining\n. . .\nMacroeconomics works the same way. We cannot track every transaction, so we build aggregate indicators that summarize the economy’s health.\n\n\n\n\nIndividual variable\nAggregate\n\n\n\n\nYour wage\nTotal wages in the economy\n\n\nOne firm’s output\nGDP\n\n\nOne hotel’s prices\nOverall inflation\n\n\nOne worker unemployed\nUnemployment rate"
+    "text": "Why Aggregation? 🧩\n\n\nImagine trying to manage a flight by tracking every single air molecule in the cabin.\nInstead, pilots watch aggregate gauges:\n🌡️ Cabin temperature\n🌬️ Air pressure\n⛽ Total fuel remaining\nMacroeconomics works the same way. We cannot track every transaction, so we build aggregate indicators that summarize the economy’s health.\n\n\n\n\nIndividual variable\nAggregate\n\n\n\n\nYour wage\nTotal wages in the economy\n\n\nOne firm’s output\nGDP\n\n\nOne hotel’s prices\nOverall inflation\n\n\nOne worker unemployed\nUnemployment rate"
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#the-macroeconomic-dashboard",
     "href": "slides/lecture20-macro-issues.html#the-macroeconomic-dashboard",
     "title": "The Panorama of Macroeconomics",
     "section": "The Macroeconomic Dashboard 📊",
-    "text": "The Macroeconomic Dashboard 📊\n\nMacroeconomics is the study of the performance of the national economy and the policy measures used to improve it.\n\n. . .\nSix big questions macroeconomists ask:\n🌱 Economic growth & living standards\n🏭 Productivity\n🎢 Recessions & expansions\n💼 Unemployment\n🔥 Inflation\n🌐 Economic interdependence of nations"
+    "text": "The Macroeconomic Dashboard 📊\n\nMacroeconomics is the study of the performance of the national economy and the policy measures used to improve it.\n\n\nSix big questions macroeconomists ask:\n🌱 Economic growth & living standards\n🏭 Productivity\n🎢 Recessions & expansions\n💼 Unemployment\n🔥 Inflation\n🌐 Economic interdependence of nations"
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#economic-growth-living-standards",
@@ -333,7 +333,7 @@
     "href": "slides/lecture20-macro-issues.html#productivity",
     "title": "The Panorama of Macroeconomics",
     "section": "🏭 2. Productivity",
-    "text": "🏭 2. Productivity\n\nLabour productivity = Output per worker employed\nIt is the single most important determinant of living standards in the long run.\n\n. . .\n\n\nWhy does it matter for tourism?\n🏖️ A hotel with better-trained staff can serve more guests at higher quality\n✈️ A tour operator using better software books more itineraries per employee\n💰 Higher productivity → higher wages → higher living standards\n\nWhat drives productivity?\n📚 Education & training\n💻 Technology & capital\n⚙️ Better management practices\n♻️ Infrastructure (transport, broadband)\n👉 Countries that invest in these grow faster and richer"
+    "text": "🏭 2. Productivity\n\nLabour productivity = Output per worker employed\nIt is the single most important determinant of living standards in the long run.\n\n\n\n\nWhy does it matter for tourism?\n🏖️ A hotel with better-trained staff can serve more guests at higher quality\n✈️ A tour operator using better software books more itineraries per employee\n💰 Higher productivity → higher wages → higher living standards\n\nWhat drives productivity?\n📚 Education & training\n💻 Technology & capital\n⚙️ Better management practices\n♻️ Infrastructure (transport, broadband)\n👉 Countries that invest in these grow faster and richer"
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#recessions-expansions",
@@ -347,14 +347,14 @@
     "href": "slides/lecture20-macro-issues.html#unemployment",
     "title": "The Panorama of Macroeconomics",
     "section": "💼 4. Unemployment",
-    "text": "💼 4. Unemployment\n\nUnemployment rate = % of people who are willing and able to work but cannot find a job\n\n. . .\n\n\nKey facts:\n\nUnemployment rises sharply in recessions\nEven in booms, some unemployment always exists (people switching jobs, new graduates entering the market)\nYouth unemployment tends to be much higher than overall unemployment\nTourism creates a lot of employment — but often seasonal and precarious"
+    "text": "💼 4. Unemployment\n\nUnemployment rate = % of people who are willing and able to work but cannot find a job\n\n\n\n\nKey facts:\n\nUnemployment rises sharply in recessions\nEven in booms, some unemployment always exists (people switching jobs, new graduates entering the market)\nYouth unemployment tends to be much higher than overall unemployment\nTourism creates a lot of employment — but often seasonal and precarious"
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#inflation",
     "href": "slides/lecture20-macro-issues.html#inflation",
     "title": "The Panorama of Macroeconomics",
     "section": "🔥 5. Inflation",
-    "text": "🔥 5. Inflation\n\nInflation = the rate at which the general level of prices rises over time. If inflation is 3%, a basket of goods that cost €100 today will cost €103 next year.\n\n. . .\n\n\nWhy does it matter for tourism?\n🏨 Higher hotel prices reduce the purchasing power of tourists\n✈️ Flight costs affect travel decisions\n💱 Inflation differences between countries affect exchange rates and competitiveness\n👉 Portugal’s inflation relative to Germany or the UK affects how attractive it is as a destination"
+    "text": "🔥 5. Inflation\n\nInflation = the rate at which the general level of prices rises over time. If inflation is 3%, a basket of goods that cost €100 today will cost €103 next year.\n\n\n\n\nWhy does it matter for tourism?\n🏨 Higher hotel prices reduce the purchasing power of tourists\n✈️ Flight costs affect travel decisions\n💱 Inflation differences between countries affect exchange rates and competitiveness\n👉 Portugal’s inflation relative to Germany or the UK affects how attractive it is as a destination"
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#economic-interdependence-of-nations",
@@ -368,63 +368,63 @@
     "href": "slides/lecture20-macro-issues.html#how-do-macroeconomists-think",
     "title": "The Panorama of Macroeconomics",
     "section": "How Do Macroeconomists Think? 🔧",
-    "text": "How Do Macroeconomists Think? 🔧\nMacroeconomics does not just describe problems — it tries to explain and fix them.\n. . .\n\n\nTwo types of analysis:\n📏 Positive analysis\nObjective study of cause and effect. “If interest rates rise, what happens to investment?”\n⚖️ Normative analysis\nValue judgments about what should be done. “Should the government reduce unemployment even if it raises inflation?”\n\nTwo main policy levers:\n🏦 Monetary policy\nCentral banks control money supply and interest rates (e.g., the ECB for Portugal)\n🧾 Fiscal policy\nGovernment controls taxes and public spending\n👉 We will study both in detail in the coming lectures."
+    "text": "How Do Macroeconomists Think? 🔧\nMacroeconomics does not just describe problems — it tries to explain and fix them.\n\n\n\nTwo types of analysis:\n📏 Positive analysis\nObjective study of cause and effect. “If interest rates rise, what happens to investment?”\n⚖️ Normative analysis\nValue judgments about what should be done. “Should the government reduce unemployment even if it raises inflation?”\n\nTwo main policy levers:\n🏦 Monetary policy\nCentral banks control money supply and interest rates (e.g., the ECB for Portugal)\n🧾 Fiscal policy\nGovernment controls taxes and public spending\n👉 We will study both in detail in the coming lectures."
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#the-macroeconomic-policy-triangle",
     "href": "slides/lecture20-macro-issues.html#the-macroeconomic-policy-triangle",
     "title": "The Panorama of Macroeconomics",
     "section": "The Macroeconomic Policy Triangle 🚩",
-    "text": "The Macroeconomic Policy Triangle 🚩\n\n\nPolicymakers juggle three goals that are often in tension:\n📈 Growth — increase output and living standards\n💼 Low unemployment — keep people employed\n🔥 Low inflation — keep prices stable\n. . .\nThe tension:\nPolicies that boost growth and cut unemployment often raise inflation.\nPolicies that reduce inflation often slow growth and raise unemployment.\n👉 This is the classic Phillips Curve trade-off (we will revisit this)."
+    "text": "The Macroeconomic Policy Triangle 🚩\n\n\nPolicymakers juggle three goals that are often in tension:\n📈 Growth — increase output and living standards\n💼 Low unemployment — keep people employed\n🔥 Low inflation — keep prices stable\nThe tension:\nPolicies that boost growth and cut unemployment often raise inflation.\nPolicies that reduce inflation often slow growth and raise unemployment.\n👉 This is the classic Phillips Curve trade-off (we will revisit this)."
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#tourism-and-macroeconomics",
     "href": "slides/lecture20-macro-issues.html#tourism-and-macroeconomics",
     "title": "The Panorama of Macroeconomics",
     "section": "Tourism and Macroeconomics 🏖️",
-    "text": "Tourism and Macroeconomics 🏖️\nMacroeconomic variables directly shape tourism:\n. . .\n\n\n📈 GDP Growth\nWhen incomes rise, households spend more on tourism — especially international trips.\nTourism is a normal good with income elasticity &gt; 1 (luxury good behaviour).\n\n💼 Unemployment\nHigh unemployment → lower household incomes → less discretionary spending on travel.\nTourism jobs are often the first cut in downturns.\n\n🔥 Inflation\nRising prices in destination countries reduce price competitiveness.\nExchange rate shifts alter the real cost of foreign travel.\n\n\n. . .\n👉 The 2008 financial crisis, COVID-19 in 2020, and the 2022 inflation spike all hit tourism hard and fast — illustrating exactly why macro matters for this industry."
+    "text": "Tourism and Macroeconomics 🏖️\nMacroeconomic variables directly shape tourism:\n\n\n\n📈 GDP Growth\nWhen incomes rise, households spend more on tourism — especially international trips.\nTourism is a normal good with income elasticity &gt; 1 (luxury good behaviour).\n\n💼 Unemployment\nHigh unemployment → lower household incomes → less discretionary spending on travel.\nTourism jobs are often the first cut in downturns.\n\n🔥 Inflation\nRising prices in destination countries reduce price competitiveness.\nExchange rate shifts alter the real cost of foreign travel.\n\n\n\n👉 The 2008 financial crisis, COVID-19 in 2020, and the 2022 inflation spike all hit tourism hard and fast — illustrating exactly why macro matters for this industry."
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#the-road-ahead-map",
     "href": "slides/lecture20-macro-issues.html#the-road-ahead-map",
     "title": "The Panorama of Macroeconomics",
     "section": "The Road Ahead :map:",
-    "text": "The Road Ahead :map:\nOver the next lectures, we will build the macro toolkit piece by piece:\n\ncalendar: Test 2 covers producer theory and macroeconomics — May 28th.\n\n\nLecture\nTopic\n\n\n\n\n21\nAggregation: the concept\n\n\n22\nGDP: measuring total production\n\n\n23\nInflation\n\n\n24\nCentral Banks & Monetary Policy\n\n\n25\nFiscal Policy\n\n\n26\nBalance of Payments"
+    "text": "The Road Ahead :map:\nOver the next lectures, we will build the macro toolkit piece by piece:\n\n\n\nLecture\nTopic\n\n\n\n\n21\nAggregation: the concept\n\n\n22\nGDP: measuring total production\n\n\n23\nInflation\n\n\n24\nCentral Banks & Monetary Policy\n\n\n25\nFiscal Policy\n\n\n26\nBalance of Payments\n\n\n\n\n📆 Test 2 covers producer theory and macroeconomics — May 28th."
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#exercise-1-multiple-choice",
     "href": "slides/lecture20-macro-issues.html#exercise-1-multiple-choice",
     "title": "The Panorama of Macroeconomics",
     "section": "📝 Exercise 1 — Multiple Choice",
-    "text": "📝 Exercise 1 — Multiple Choice\nWhich of the following best describes macroeconomics?\n. . .\n(A) The study of how an individual firm decides how much to produce\n(B) The study of the performance of the national economy and the policies used to improve it\n(C) The analysis of how a single consumer chooses between two goods given a budget constraint\n(D) The study of price formation in a single competitive market\n\n\nCorrect answer: (B)\nMacroeconomics studies economy-wide outcomes — GDP, unemployment, inflation — and the policies that affect them. Options A, C, and D are microeconomic questions."
+    "text": "📝 Exercise 1 — Multiple Choice\nWhich of the following best describes macroeconomics?\n\n(A) The study of how an individual firm decides how much to produce\n(B) The study of the performance of the national economy and the policies used to improve it\n(C) The analysis of how a single consumer chooses between two goods given a budget constraint\n(D) The study of price formation in a single competitive market\n\n\nCorrect answer: (B)\nMacroeconomics studies economy-wide outcomes — GDP, unemployment, inflation — and the policies that affect them. Options A, C, and D are microeconomic questions."
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#exercise-2-multiple-choice",
     "href": "slides/lecture20-macro-issues.html#exercise-2-multiple-choice",
     "title": "The Panorama of Macroeconomics",
     "section": "📝 Exercise 2 — Multiple Choice",
-    "text": "📝 Exercise 2 — Multiple Choice\nPortugal’s unemployment rate rose sharply after 2008 and again in 2020. Which macroeconomic concept best explains why tourism revenues typically fall during such periods?\n. . .\n(A) Tourism is an inferior good, so demand rises when incomes fall\n(B) Inflation is always lower during recessions, making tourism cheaper\n(C) Tourism has high income elasticity; falling incomes reduce discretionary travel spending\n(D) Monetary policy automatically increases tourism demand during downturns\n\n\nCorrect answer: (C)\nTourism behaves as a luxury/normal good with income elasticity &gt; 1. When unemployment rises and household incomes fall, discretionary spending — like holidays — is cut first. Option A is incorrect (it is a normal good), B is unrelated, and D is wrong."
+    "text": "📝 Exercise 2 — Multiple Choice\nPortugal’s unemployment rate rose sharply after 2008 and again in 2020. Which macroeconomic concept best explains why tourism revenues typically fall during such periods?\n\n(A) Tourism is an inferior good, so demand rises when incomes fall\n(B) Inflation is always lower during recessions, making tourism cheaper\n(C) Tourism has high income elasticity; falling incomes reduce discretionary travel spending\n(D) Monetary policy automatically increases tourism demand during downturns\n\n\nCorrect answer: (C)\nTourism behaves as a luxury/normal good with income elasticity &gt; 1. When unemployment rises and household incomes fall, discretionary spending — like holidays — is cut first. Option A is incorrect (it is a normal good), B is unrelated, and D is wrong."
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#exercise-3-open-question",
     "href": "slides/lecture20-macro-issues.html#exercise-3-open-question",
     "title": "The Panorama of Macroeconomics",
     "section": "📝 Exercise 3 — Open Question",
-    "text": "📝 Exercise 3 — Open Question\nConsider the following macroeconomic context for Portugal:\nA severe recession hits the Eurozone. GDP contracts by 3%, unemployment rises to 15%, and inflation falls to near zero. The British pound also depreciates 15% against the euro.\n(a) Using the macroeconomic issues covered in this lecture, identify three distinct channels through which this scenario affects Portugal’s tourism sector. (6 marks)\n(b) For each channel, indicate whether the effect on tourism demand is positive or negative, and briefly justify. (6 marks)\n(c) The recession in the Eurozone is accompanied by a strong growth period in Brazil. How might this partially offset the effects identified in (a)? (3 marks)\n\n\nSolution outline:\n(a) Channels: (1) GDP/income of EU tourists falls → less demand from Germany, France, Spain; (2) Unemployment rises → fewer households can afford international travel; (3) GBP depreciation → UK tourists face higher real price for Portuguese holidays.\n(b) (1) Negative — lower incomes reduce outbound tourism; (2) Negative — unemployed households cut discretionary travel first; (3) Negative — Portugal becomes 15% more expensive for British visitors.\n(c) Brazilian GDP growth → Brazilian tourists have higher incomes and more demand for European travel. Brazil is a key source market for Portugal (language, cultural ties). Positive demand shock from non-EU markets can partially offset EU-origin declines."
+    "text": "📝 Exercise 3 — Open Question\nConsider the following macroeconomic context for Portugal:\nA severe recession hits the Eurozone. GDP contracts by 3%, unemployment rises to 15%, and inflation falls to near zero. The British pound also depreciates 15% against the euro.\n(a) Using the macroeconomic issues covered in this lecture, identify three distinct channels through which this scenario affects Portugal’s tourism sector.\n(b) For each channel, indicate whether the effect on tourism demand is positive or negative, and briefly justify.\n(c) The recession in the Eurozone is accompanied by a strong growth period in Brazil. How might this partially offset the effects identified in (a)?"
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#summary",
     "href": "slides/lecture20-macro-issues.html#summary",
     "title": "The Panorama of Macroeconomics",
     "section": "Summary 📚",
-    "text": "Summary 📚\nToday we covered:\n✅ The micro-macro distinction — individual markets vs economy-wide aggregates\n✅ Aggregation as the key tool of macroeconomics\n✅ The six main macroeconomic issues: growth, productivity, recessions/expansions, unemployment, inflation, and international interdependence\n✅ The two policy levers: monetary and fiscal policy\n✅ Why all of this matters directly for tourism\n. . .\nNext lecture (Lecture 21):\n🧩 Aggregation — the concept in depth; building up from individual transactions to economy-wide totals"
+    "text": "Summary 📚\nToday we covered:\n✅ The micro-macro distinction — individual markets vs economy-wide aggregates\n✅ Aggregation as the key tool of macroeconomics\n✅ The six main macroeconomic issues: growth, productivity, recessions/expansions, unemployment, inflation, and international interdependence\n✅ The two policy levers: monetary and fiscal policy\n✅ Why all of this matters directly for tourism\n\nNext lecture (Lecture 21):\n🧩 Aggregation — the concept in depth; building up from individual transactions to economy-wide totals"
   },
   {
     "objectID": "slides/lecture20-macro-issues.html#thank-you",
     "href": "slides/lecture20-macro-issues.html#thank-you",
     "title": "The Panorama of Macroeconomics",
     "section": "Thank You! 👋",
-    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Wednesday, May 7th, 2026"
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
   },
   {
     "objectID": "slides/lecture21-aggregation.html#recap-the-macro-panorama",
@@ -473,7 +473,7 @@
     "href": "slides/lecture21-aggregation.html#step-1-two-agents-households-firms",
     "title": "Aggregation: The Concept",
     "section": "Step 1: Two Agents — Households & Firms 🔄",
-    "text": "Step 1: Two Agents — Households & Firms 🔄\n\n\nIn the simplest economy:\nHouseholds 👪\n\nOwn the factors of production (labour, capital, land)\nSell them to firms → earn income\nSpend that income on goods and services → consumption\n\nFirms 🏭\n\nBuy factors of production → pay wages, rents, profits\nProduce goods and services → earn revenue\n\n👉 Money flows in a circle: from firms to households (as income), and back from households to firms (as spending)."
+    "text": "Step 1: Two Agents — Households & Firms 🔄\n\n\nIn the simplest economy:\nHouseholds 👪\n\nOwn the factors of production (labour, capital, land)\nSell them to firms → earn income\nSpend that income on goods and services → consumption\n\nFirms 🏭\n\nBuy factors of production → pay wages, rents, profits\nProduce goods and services → earn revenue\n\n👉 Money flows in a circle: from firms to households (as income), and back from households to firms (as spending).\n\n\n# Simple circular flow diagram using ggplot2 arrows\nlibrary(grid)\n\ndf_boxes &lt;- data.frame(\n  x    = c(0.5, 0.5),\n  y    = c(0.82, 0.18),\n  lab  = c(\"HOUSEHOLDS\\n(Families)\", \"FIRMS\\n(Companies)\"),\n  stringsAsFactors = FALSE\n)\n\nggplot() +\n  # boxes\n  geom_tile(data = df_boxes, aes(x = x, y = y),\n            width = 0.32, height = 0.14,\n            fill = ue_red, color = NA) +\n  geom_text(data = df_boxes, aes(x = x, y = y, label = lab),\n            color = \"white\", fontface = \"bold\", size = 4.5) +\n  # top arrow left: goods & services (firms → households)\n  annotate(\"segment\", x = 0.34, xend = 0.18, y = 0.77, yend = 0.77,\n           arrow = arrow(length = unit(0.25, \"cm\"), type = \"closed\"),\n           color = ue_black, linewidth = 1) +\n  annotate(\"text\", x = 0.26, y = 0.83,\n           label = \"Goods &\\nServices\", size = 3.2, color = ue_black, fontface = \"italic\") +\n  # top arrow right: spending (households → firms)\n  annotate(\"segment\", x = 0.66, xend = 0.82, y = 0.77, yend = 0.77,\n           arrow = arrow(length = unit(0.25, \"cm\"), type = \"closed\"),\n           color = ue_red, linewidth = 1) +\n  annotate(\"text\", x = 0.74, y = 0.83,\n           label = \"Spending\\n(C)\", size = 3.2, color = ue_red, fontface = \"bold\") +\n  # bottom arrow left: factors of prod (households → firms)\n  annotate(\"segment\", x = 0.34, xend = 0.18, y = 0.23, yend = 0.23,\n           arrow = arrow(length = unit(0.25, \"cm\"), type = \"closed\"),\n           color = ue_black, linewidth = 1) +\n  annotate(\"text\", x = 0.26, y = 0.17,\n           label = \"Labour,\\nCapital, Land\", size = 3.2, color = ue_black, fontface = \"italic\") +\n  # bottom arrow right: income (firms → households)\n  annotate(\"segment\", x = 0.66, xend = 0.82, y = 0.23, yend = 0.23,\n           arrow = arrow(length = unit(0.25, \"cm\"), type = \"closed\"),\n           color = ue_red, linewidth = 1) +\n  annotate(\"text\", x = 0.74, y = 0.17,\n           label = \"Wages,\\nProfits, Rents\", size = 3.2, color = ue_red, fontface = \"bold\") +\n  # left arc connecting\n  annotate(\"segment\", x = 0.18, xend = 0.18, y = 0.77, yend = 0.23,\n           color = ue_black, linewidth = 0.8, linetype = \"dashed\") +\n  # right arc connecting\n  annotate(\"segment\", x = 0.82, xend = 0.82, y = 0.77, yend = 0.23,\n           color = ue_red, linewidth = 0.8, linetype = \"dashed\") +\n  # labels for markets\n  annotate(\"text\", x = 0.12, y = 0.5,\n           label = \"GOODS\\nMARKET\", size = 3, color = ue_gray, angle = 90) +\n  annotate(\"text\", x = 0.88, y = 0.5,\n           label = \"FACTOR\\nMARKET\", size = 3, color = ue_gray, angle = 90) +\n  xlim(0.05, 0.95) + ylim(0.05, 0.95) +\n  theme_void() +\n  theme(plot.background = element_rect(fill = ue_light, color = NA))"
   },
   {
     "objectID": "slides/lecture21-aggregation.html#step-2-adding-the-government",
@@ -515,14 +515,14 @@
     "href": "slides/lecture21-aggregation.html#the-tourism-aggregation-problem",
     "title": "Aggregation: The Concept",
     "section": "The Tourism Aggregation Problem 🏖️",
-    "text": "The Tourism Aggregation Problem 🏖️\nTourism is a cross-cutting industry — it does not have a single production line. This makes aggregation tricky.\n. . .\n\n\nWhen a British tourist spends €1,000 in Portugal:\n\n€350 at hotels 🏨 → counted under accommodation services\n€200 at restaurants 🍴 → counted under food & beverage\n€150 on transport 🚌 → counted under transport services\n€200 on retail :shopping_bags: → counted under retail trade\n€100 on cultural attractions 🎭 → counted under arts & entertainment\n\n👉 That €1,000 is spread across multiple sectors in the national accounts. There is no single “tourism line” in GDP — it must be reconstructed using Tourism Satellite Accounts (TSA)."
+    "text": "The Tourism Aggregation Problem 🏖️\nTourism is a cross-cutting industry — it does not have a single production line. This makes aggregation tricky.\n. . .\n\n\nWhen a British tourist spends €1,000 in Portugal:\n\n€350 at hotels 🏨 → counted under accommodation services\n€200 at restaurants 🍴 → counted under food & beverage\n€150 on transport 🚌 → counted under transport services\n€200 on retail :shopping_bags: → counted under retail trade\n€100 on cultural attractions 🎭 → counted under arts & entertainment\n\n👉 That €1,000 is spread across multiple sectors in the national accounts. There is no single “tourism line” in GDP — it must be reconstructed using Tourism Satellite Accounts (TSA).\n\n\n# Hypothetical share breakdown — for illustration only\n# Labelled clearly as illustrative\nshares &lt;- data.frame(\n  sector = c(\"Accommodation\", \"F&B\", \"Transport\", \"Retail\", \"Culture & Other\"),\n  pct    = c(35, 20, 15, 20, 10)\n)\n\nggplot(shares, aes(x = reorder(sector, pct), y = pct)) +\n  geom_col(fill = ue_red, alpha = 0.85) +\n  geom_text(aes(label = paste0(pct, \"%\")),\n            hjust = -0.15, size = 3.8, color = ue_black) +\n  coord_flip() +\n  scale_y_continuous(limits = c(0, 42)) +\n  labs(\n    title = \"Tourist Spending by Sector\",\n    subtitle = \"Hypothetical breakdown — illustrative only\",\n    x = NULL, y = \"Share of total tourist spending (%)\",\n    caption = \"Hypothetical data for illustration\"\n  ) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title    = element_text(color = ue_red, face = \"bold\"),\n    plot.subtitle = element_text(color = ue_gray, size = 9),\n    panel.grid.minor = element_blank(),\n    panel.grid.major.y = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture21-aggregation.html#tourisms-share-in-the-portuguese-economy",
     "href": "slides/lecture21-aggregation.html#tourisms-share-in-the-portuguese-economy",
     "title": "Aggregation: The Concept",
     "section": "Tourism’s Share in the Portuguese Economy 🇵🇹",
-    "text": "Tourism’s Share in the Portuguese Economy 🇵🇹\n\n\n\n\n\n\n\n\n\n👉 Tourism represents a significant and growing share of Portugal’s GDP — making macroeconomic performance especially important for this industry."
+    "text": "Tourism’s Share in the Portuguese Economy 🇵🇹\n\n# Travel receipts as % of GDP — World Bank / Eurostat bop_its6_det\n# Using Eurostat BOP: tourism receipts\nreceipts_raw &lt;- get_eurostat(\"bop_its6_det\",\n  filters = list(\n    geo      = \"PT\",\n    bop_item = \"SB\",       # Travel (credit = receipts)\n    currency = \"MIO_EUR\",\n    stk_flow = \"CRE\",\n    partner  = \"EXT_EU27_2020\"\n  ),\n  time_format = \"num\"\n)\n\nTable bop_its6_det cached at /tmp/RtmpKmxIaS/eurostat/b40a63a82f20ce34d02ed06fbb05a451.rds\n\ngdp_raw2 &lt;- get_eurostat(\"nama_10_gdp\",\n  filters = list(geo = \"PT\", na_item = \"B1GQ\", unit = \"CP_MEUR\"),\n  time_format = \"num\"\n)\n\nTable nama_10_gdp cached at /tmp/RtmpKmxIaS/eurostat/896609113ca40bc1406626c856ac3625.rds\n\nreceipts &lt;- receipts_raw |&gt;\n  filter(time &gt;= 2010) |&gt;\n  select(time, receipts = values)\n\ngdp2 &lt;- gdp_raw2 |&gt;\n  filter(time &gt;= 2010) |&gt;\n  select(time, gdp = values)\n\ntravel_gdp &lt;- inner_join(receipts, gdp2, by = \"time\") |&gt;\n  mutate(share = receipts / gdp * 100) |&gt;\n  filter(!is.na(share))\n\nggplot(travel_gdp, aes(x = time, y = share)) +\n  geom_col(fill = ue_red, alpha = 0.85) +\n  geom_text(aes(label = sprintf(\"%.1f%%\", share)),\n            vjust = -0.4, size = 3.2, color = ue_black) +\n  labs(\n    title = \"Tourism Receipts as % of GDP — Portugal\",\n    x = NULL, y = \"% of GDP\",\n    caption = \"Source: Eurostat (bop_its6_det, nama_10_gdp). Travel receipts from non-EU partners.\"\n  ) +\n  scale_x_continuous(breaks = seq(2010, 2024, 2)) +\n  scale_y_continuous(limits = c(0, max(travel_gdp$share, na.rm = TRUE) * 1.2)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title = element_text(color = ue_red, face = \"bold\"),\n    panel.grid.minor = element_blank(),\n    panel.grid.major.x = element_blank()\n  )\n\n\n\n\n\n\n\n\n👉 Tourism represents a significant and growing share of Portugal’s GDP — making macroeconomic performance especially important for this industry."
   },
   {
     "objectID": "slides/lecture21-aggregation.html#from-individual-to-aggregate-curves",
@@ -536,7 +536,7 @@
     "href": "slides/lecture21-aggregation.html#the-ad-as-model-preview",
     "title": "Aggregation: The Concept",
     "section": "The AD-AS Model (Preview) 📊",
-    "text": "The AD-AS Model (Preview) 📊\n\n\n\n\n\n\n\n\n\n👉 This model gives us the macroeconomic equivalent of the supply-demand diagram we used in microeconomics. We will use it throughout the macro block."
+    "text": "The AD-AS Model (Preview) 📊\n\nx &lt;- seq(0.1, 2, length.out = 200)\n\nad  &lt;- 2.5 - x\nsras &lt;- 0.8 * x + 0.3\nlras_x &lt;- 1.1\n\ndf_curves &lt;- data.frame(\n  x    = c(x, x),\n  y    = c(ad, sras),\n  type = rep(c(\"Aggregate Demand (AD)\", \"Short-Run AS (SRAS)\"), each = 200)\n) |&gt; filter(y &gt; 0.1, y &lt; 2.2)\n\nggplot() +\n  geom_line(data = df_curves, aes(x = x, y = y, color = type, linetype = type),\n            linewidth = 1.3) +\n  geom_vline(xintercept = lras_x, color = ue_black, linewidth = 1.3, linetype = \"solid\") +\n  annotate(\"text\", x = lras_x + 0.07, y = 2.0,\n           label = \"Long-Run AS\\n(LRAS)\", color = ue_black, size = 3.5, hjust = 0) +\n  # equilibrium point\n  annotate(\"point\", x = 1.1, y = 2.5 - 1.1, size = 4, color = ue_red) +\n  annotate(\"text\", x = 1.17, y = 2.5 - 1.1 + 0.1,\n           label = \"Equilibrium\\n(Y*, P*)\", color = ue_red, size = 3.3) +\n  annotate(\"segment\", x = 1.1, xend = 1.1, y = 0, yend = 2.5 - 1.1,\n           linetype = \"dashed\", color = ue_gray, linewidth = 0.6) +\n  annotate(\"segment\", x = 0, xend = 1.1, y = 2.5 - 1.1, yend = 2.5 - 1.1,\n           linetype = \"dashed\", color = ue_gray, linewidth = 0.6) +\n  scale_color_manual(values = c(\"Aggregate Demand (AD)\" = ue_red,\n                                \"Short-Run AS (SRAS)\"   = ue_black)) +\n  scale_linetype_manual(values = c(\"Aggregate Demand (AD)\" = \"solid\",\n                                   \"Short-Run AS (SRAS)\"   = \"dashed\")) +\n  labs(\n    title = \"The AD-AS Model — Preview\",\n    subtitle = \"Hypothetical illustration — formal treatment in later lectures\",\n    x = \"Real Output (Y)\", y = \"Price Level (P)\",\n    color = NULL, linetype = NULL,\n    caption = \"Hypothetical data for illustration\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(\n    plot.title    = element_text(color = ue_red, face = \"bold\"),\n    plot.subtitle = element_text(color = ue_gray, size = 10),\n    legend.position = \"bottom\",\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n👉 This model gives us the macroeconomic equivalent of the supply-demand diagram we used in microeconomics. We will use it throughout the macro block."
   },
   {
     "objectID": "slides/lecture21-aggregation.html#the-three-approaches-to-measuring-aggregate-output",
@@ -584,8 +584,8 @@
     "objectID": "slides/lecture18-game-theory.html#a-new-world-beyond-perfect-competition",
     "href": "slides/lecture18-game-theory.html#a-new-world-beyond-perfect-competition",
     "title": "Game Theory",
-    "section": "A New World: Beyond Perfect Competition 🗺️",
-    "text": "A New World: Beyond Perfect Competition 🗺️\n\nIn Lectures 10–17, we studied perfect competition: many firms, identical products, no firm affects the market price.\nBut most real markets aren’t like that!\n\n\n❌ Not perfect competition:\n\n✈️ Airlines: TAP vs Ryanair on the same route\n🏨 Hotels: Marriott vs Hilton in the same city\n📱 Platforms: Booking.com vs Airbnb\n🍔 Restaurants: competing for tourists on the same street\n\n\n🤔 The key difference:\nIn these markets, each firm’s decision depends on what the other firms do.\n\nIf Ryanair cuts prices, TAP must respond\nIf one hotel offers free breakfast, the neighbor considers matching\n\nThis is strategic interaction — the domain of Game Theory!"
+    "section": "",
+    "text": "In Lectures 10–17, we studied perfect competition: many firms, identical products, no firm affects the market price.\nBut most real markets aren’t like that!\n\n\n❌ Not perfect competition:\n\n✈️ Airlines: TAP vs Ryanair on the same route\n🏨 Hotels: Marriott vs Hilton in the same city\n📱 Platforms: Booking.com vs Airbnb\n🍔 Restaurants: competing for tourists on the same street\n\n\n🤔 The key difference:\nIn these markets, each firm’s decision depends on what the other firms do.\n\nIf Ryanair cuts prices, TAP must respond\nIf one hotel offers free breakfast, the neighbor considers matching\n\nThis is strategic interaction — the domain of Game Theory!"
   },
   {
     "objectID": "slides/lecture18-game-theory.html#what-is-game-theory",
@@ -606,7 +606,7 @@
     "href": "slides/lecture18-game-theory.html#how-should-tap-decide",
     "title": "Game Theory",
     "section": "How Should TAP Decide? 🤔",
-    "text": "How Should TAP Decide? 🤔\n\nTAP’s reasoning (looking at its own payoffs — the first number):\n\n\nIf Ryanair chooses High:\n\nTAP High → €500k\nTAP Low → €600k ⬅️ Better!\n\n\nIf Ryanair chooses Low:\n\nTAP High → €200k\nTAP Low → €350k ⬅️ Better!\n\n\n. . .\n\nDominant Strategy\nA strategy that gives a better payoff regardless of what the other player does.\nFor TAP: Low is a dominant strategy — it’s better no matter what Ryanair does!\n\n👉 By the same logic, Ryanair also finds Low is dominant (check the second numbers!)."
+    "text": "How Should TAP Decide? 🤔\n\nTAP’s reasoning (looking at its own payoffs — the first number):\n\n\nIf Ryanair chooses High:\n\nTAP High → €500k\nTAP Low → €600k ⬅️ Better!\n\n\nIf Ryanair chooses Low:\n\nTAP High → €200k\nTAP Low → €350k ⬅️ Better!\n\n\n\n. . .\n\nDominant Strategy\nA strategy that gives a better payoff regardless of what the other player does.\nFor TAP: Low is a dominant strategy — it’s better no matter what Ryanair does!\n\n👉 By the same logic, Ryanair also finds Low is dominant (check the second numbers!)."
   },
   {
     "objectID": "slides/lecture18-game-theory.html#the-classic-story",
@@ -725,21 +725,21 @@
     "href": "slides/lecture18-game-theory.html#next-lecture",
     "title": "Game Theory",
     "section": "Next Lecture",
-    "text": "Next Lecture\nApril 23, 2026: Sequential Games & Backward Induction 🌳\nWhat happens when one player moves first? Entry games and reputation in tourism.\n\n👉 We’ll learn to think backwards from the end of the game!"
+    "text": "Next Lecture\nApril 23, 2026: Sequential Games & Backward Induction 🌳\nWhat happens when one player moves first? Entry games and reputation in tourism.\n. . .\n👉 We’ll learn to think backwards from the end of the game!"
   },
   {
     "objectID": "slides/lecture18-game-theory.html#thank-you",
     "href": "slides/lecture18-game-theory.html#thank-you",
     "title": "Game Theory",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Thursday, April 23, 2026\n\nThis lecture introduces game theory as a new analytical framework beyond perfect competition. The key pedagogical goals are: (1) students can read and construct payoff matrices, (2) they understand dominant strategies and can identify them, (3) they grasp the Prisoner’s Dilemma as a fundamental tension between individual and collective rationality, (4) they can find Nash Equilibria using the underline method. The tourism examples (airline pricing, hotel differentiation, Airbnb entry, beach bar competition) make the abstract concepts tangible. The exercise walks through the full analysis of a Prisoner’s Dilemma and extends to coordination (merger) and repeated games, previewing next lecture."
   },
   {
     "objectID": "slides/lecture13-supply-rule.html#recap-lecture-12",
     "href": "slides/lecture13-supply-rule.html#recap-lecture-12",
     "title": "Producer Theory",
-    "section": "Recap: Lecture 12 ⏪",
-    "text": "Recap: Lecture 12 ⏪\n\nWhat we covered last time:\n\nShutdown rule: Operate if \\(P \\geq AVC\\); shut down if \\(P &lt; AVC\\)\nBreakeven price = \\(ATC_{\\min}\\) (zero economic profit)\nShutdown price = \\(AVC_{\\min}\\) (below this, stop producing)\nThe firm’s supply curve = the MC curve above AVC\n\n. . .\n🎯 Today: We formalize the seller’s supply rule and explore what makes the supply curve shift.\n👉 The supply rule is the producer’s equivalent of the demand curve we derived in Lecture 8!"
+    "section": "",
+    "text": "What we covered last time:\n\nShutdown rule: Operate if \\(P \\geq AVC\\); shut down if \\(P &lt; AVC\\)\nBreakeven price = \\(ATC_{\\min}\\) (zero economic profit)\nShutdown price = \\(AVC_{\\min}\\) (below this, stop producing)\nThe firm’s supply curve = the MC curve above AVC\n\n. . .\n🎯 Today: We formalize the seller’s supply rule and explore what makes the supply curve shift.\n👉 The supply rule is the producer’s equivalent of the demand curve we derived in Lecture 8!"
   },
   {
     "objectID": "slides/lecture13-supply-rule.html#the-cost-benefit-principle-applied-to-firms",
@@ -816,14 +816,14 @@
     "href": "slides/lecture13-supply-rule.html#supply-shifts-in-portuguese-tourism",
     "title": "Producer Theory",
     "section": "Supply Shifts in Portuguese Tourism 🇵🇹",
-    "text": "Supply Shifts in Portuguese Tourism 🇵🇹\n\n\n\nExample 1: Minimum wage increase 💰\nPortugal’s minimum wage has been rising. For tourism businesses:\n\nLabor is a major variable cost (housekeeping, waitstaff, guides)\nHigher wages → MC shifts up → supply shifts left\nAt the same hotel room price, fewer rooms are profitably offered\nSome marginal businesses may shut down (\\(P &lt; AVC\\) at new costs)\n\nEffect: fewer beds at every price level, or higher prices to compensate\n\nExample 2: Online booking technology 💻\nPlatforms like Booking.com, Airbnb:\n\nReduce distribution costs (no need for travel agents)\nLower marketing costs per booking\nMC shifts down → supply shifts right\nMore accommodation available at every price point\n\nEffect: more rooms at every price level — which has been the trend!\n\n. . .\n👉 Both examples change variable costs, which shifts MC and therefore the supply curve."
+    "text": "Supply Shifts in Portuguese Tourism 🇵🇹\n\n\n\nExample 1: Minimum wage increase 💰\nPortugal’s minimum wage has been rising. For tourism businesses:\n\nLabor is a major variable cost (housekeeping, waitstaff, guides)\nHigher wages → MC shifts up → supply shifts left\nAt the same hotel room price, fewer rooms are profitably offered\nSome marginal businesses may shut down (\\(P &lt; AVC\\) at new costs)\n\nEffect: fewer beds at every price level, or higher prices to compensate\n\nExample 2: Online booking technology 💻\nPlatforms like Booking.com, Airbnb:\n\nReduce distribution costs (no need for travel agents)\nLower marketing costs per booking\nMC shifts down → supply shifts right\nMore accommodation available at every price point\n\nEffect: more rooms at every price level — which has been the trend!\n\n\n. . .\n👉 Both examples change variable costs, which shifts MC and therefore the supply curve."
   },
   {
     "objectID": "slides/lecture13-supply-rule.html#supply-shifts-seasonal-staffing-in-the-algarve",
     "href": "slides/lecture13-supply-rule.html#supply-shifts-seasonal-staffing-in-the-algarve",
     "title": "Producer Theory",
     "section": "Supply Shifts: Seasonal Staffing in the Algarve ☀️",
-    "text": "Supply Shifts: Seasonal Staffing in the Algarve ☀️\n\nWhy is the supply of tourism services different in summer vs winter?\nThe \\(P = MC\\) rule explains it:\n\n\n☀️ Summer:\n\nAbundant seasonal workers → wages moderate\nMC is relatively low for extra services\nSupply curve is further right\nMore tours, restaurants, activities offered\n\n\n❄️ Winter:\n\nWorkers move to other sectors → must pay more to retain\nEnergy costs higher (heating)\nMC is higher for the same services\nSupply curve shifts left\nFewer services offered\n\n\n. . .\n💡 Combined with demand shifts: In summer, both supply and demand are higher. In winter, both shift left. The net effect on price depends on which shift is larger — this is market equilibrium (Lecture 17)!"
+    "text": "Supply Shifts: Seasonal Staffing in the Algarve ☀️\n\nWhy is the supply of tourism services different in summer vs winter?\nThe \\(P = MC\\) rule explains it:\n\n\n☀️ Summer:\n\nAbundant seasonal workers → wages moderate\nMC is relatively low for extra services\nSupply curve is further right\nMore tours, restaurants, activities offered\n\n\n❄️ Winter:\n\nWorkers move to other sectors → must pay more to retain\nEnergy costs higher (heating)\nMC is higher for the same services\nSupply curve shifts left\nFewer services offered\n\n\n\n. . .\n💡 Combined with demand shifts: In summer, both supply and demand are higher. In winter, both shift left. The net effect on price depends on which shift is larger — this is market equilibrium (Lecture 17)!"
   },
   {
     "objectID": "slides/lecture13-supply-rule.html#the-parallel-with-demand",
@@ -893,21 +893,21 @@
     "href": "slides/lecture13-supply-rule.html#next-lecture",
     "title": "Producer Theory",
     "section": "Next Lecture",
-    "text": "Next Lecture\nApril 9, 2026: Producer Surplus, Market Supply, and Linear Supply 📈\n\nWe’ll introduce producer surplus (the supply-side mirror of consumer surplus), build market supply from individual firms, and work with linear supply equations."
+    "text": "Next Lecture\nApril 9, 2026: Producer Surplus, Market Supply, and Linear Supply 📈\n. . .\nWe’ll introduce producer surplus (the supply-side mirror of consumer surplus), build market supply from individual firms, and work with linear supply equations."
   },
   {
     "objectID": "slides/lecture13-supply-rule.html#thank-you",
     "href": "slides/lecture13-supply-rule.html#thank-you",
     "title": "Producer Theory",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Wednesday, April 9, 2026\n\nThis lecture formalizes the P = MC supply rule that has been building across Lectures 10–12. The textbook examples (bottle factory) ground the abstract rule in familiar numerical territory. The key new content is supply shifters — students need to distinguish clearly between movements along the supply curve (own price) and shifts (input costs, technology). The parallel table with demand concepts helps students see the symmetry. The exercise includes a fuel cost increase that shifts MC, giving students practice with the difference between movement and shift."
   },
   {
     "objectID": "slides/lecture15-supply-elasticity.html#recap-lecture-14",
     "href": "slides/lecture15-supply-elasticity.html#recap-lecture-14",
     "title": "Producer Theory",
-    "section": "Recap: Lecture 14 ⏪",
-    "text": "Recap: Lecture 14 ⏪\n\nWhat we covered last time:\n\nProducer surplus: \\(PS = TR - VC\\) = area above supply, below price\nMarket supply: horizontal sum of individual supply curves (kinks when firms enter)\nLinear supply: \\(P = c + dQ\\), with \\(PS = \\frac{1}{2} \\times Q^* \\times (P^* - c)\\)\n\n. . .\n🎯 Today: How responsive are quantities to price changes?\nBefore we tackle supply elasticity, we need a quick recap of the demand elasticity concept — we ran out of time for it earlier in the course. The good news: the idea is the same on both sides!"
+    "section": "",
+    "text": "What we covered last time:\n\nProducer surplus: \\(PS = TR - VC\\) = area above supply, below price\nMarket supply: horizontal sum of individual supply curves (kinks when firms enter)\nLinear supply: \\(P = c + dQ\\), with \\(PS = \\frac{1}{2} \\times Q^* \\times (P^* - c)\\)\n\n. . .\n🎯 Today: How responsive are quantities to price changes?\nBefore we tackle supply elasticity, we need a quick recap of the demand elasticity concept — we ran out of time for it earlier in the course. The good news: the idea is the same on both sides!"
   },
   {
     "objectID": "slides/lecture15-supply-elasticity.html#price-elasticity-of-demand",
@@ -921,7 +921,7 @@
     "href": "slides/lecture15-supply-elasticity.html#calculating-demand-elasticity",
     "title": "Producer Theory",
     "section": "Calculating Demand Elasticity ✏️",
-    "text": "Calculating Demand Elasticity ✏️\n\nTwo methods (same as we’ll use for supply):\n\n\n1️⃣ Point elasticity (at one point):\n\\[\\varepsilon_d = \\frac{\\Delta Q}{\\Delta P} \\times \\frac{P}{Q} = \\frac{1}{\\text{slope}} \\times \\frac{P}{Q}\\]\nExample: Demand is \\(P = 50 - 2Q\\).\nAt \\(P = 30\\), \\(Q = 10\\): slope = \\(-2\\)\n\\[\\varepsilon_d = \\frac{1}{-2} \\times \\frac{30}{10} = -1.5\\]\n\\(|\\varepsilon_d| = 1.5 &gt; 1\\) → elastic\n\n2️⃣ Arc elasticity (midpoint method):\n\\[\\varepsilon_d = \\frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \\div \\frac{P_2 - P_1}{(P_1 + P_2)/2}\\]\nExample: A museum raises price from €10 to €12. Visitors fall from 1,000 to 800.\n\\[\\varepsilon_d = \\frac{-200}{900} \\div \\frac{2}{11} = -1.22\\]\n\\(|\\varepsilon_d| = 1.22 &gt; 1\\) → elastic\n\n\n💡 Key insight for linear demand: elasticity varies along the curve — elastic at the top (high P, low Q), inelastic at the bottom (low P, high Q), unit elastic at the midpoint."
+    "text": "Calculating Demand Elasticity ✏️\n\nTwo methods (same as we’ll use for supply):\n\n\n1️⃣ Point elasticity (at one point):\n\\[\\varepsilon_d = \\frac{\\Delta Q}{\\Delta P} \\times \\frac{P}{Q} = \\frac{1}{\\text{slope}} \\times \\frac{P}{Q}\\]\nExample: Demand is \\(P = 50 - 2Q\\).\nAt \\(P = 30\\), \\(Q = 10\\): slope = \\(-2\\)\n\\[\\varepsilon_d = \\frac{1}{-2} \\times \\frac{30}{10} = -1.5\\]\n\\(|\\varepsilon_d| = 1.5 &gt; 1\\) → elastic\n\n2️⃣ Arc elasticity (midpoint method):\n\\[\\varepsilon_d = \\frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \\div \\frac{P_2 - P_1}{(P_1 + P_2)/2}\\]\nExample: A museum raises price from €10 to €12. Visitors fall from 1,000 to 800.\n\\[\\varepsilon_d = \\frac{-200}{900} \\div \\frac{2}{11} = -1.22\\]\n\\(|\\varepsilon_d| = 1.22 &gt; 1\\) → elastic\n\n\n\n💡 Key insight for linear demand: elasticity varies along the curve — elastic at the top (high P, low Q), inelastic at the bottom (low P, high Q), unit elastic at the midpoint."
   },
   {
     "objectID": "slides/lecture15-supply-elasticity.html#the-revenue-test-determinants",
@@ -956,7 +956,7 @@
     "href": "slides/lecture15-supply-elasticity.html#point-and-arc-methods",
     "title": "Producer Theory",
     "section": "Point and Arc Methods ✏️",
-    "text": "Point and Arc Methods ✏️\n\n\n\n1️⃣ Point elasticity:\n\\[\\varepsilon_s = \\frac{1}{\\text{slope}} \\times \\frac{P}{Q}\\]\nExample: Supply is \\(P = 5 + 0.25Q\\). At \\(P = 30\\), \\(Q = 100\\):\nSlope = \\(0.25\\), so \\(\\frac{1}{\\text{slope}} = 4\\)\n\\[\\varepsilon_s = 4 \\times \\frac{30}{100} = 1.2\\]\nElastic — a 1% price increase leads to a 1.2% increase in quantity supplied.\n\n2️⃣ Arc elasticity (midpoint):\n\\[\\varepsilon_s = \\frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \\div \\frac{P_2 - P_1}{(P_1 + P_2)/2}\\]\nExample: Tour operator increases tours from 40 to 50/month when price rises from €80 to €100.\n\\[\\varepsilon_s = \\frac{10}{45} \\div \\frac{20}{90} = 0.222 \\div 0.222 = 1.0\\]\nUnit elastic — quantity and price change by the same percentage.\n\n👉 Same methods as demand elasticity — just applied to the supply curve!"
+    "text": "Point and Arc Methods ✏️\n\n\n\n1️⃣ Point elasticity:\n\\[\\varepsilon_s = \\frac{1}{\\text{slope}} \\times \\frac{P}{Q}\\]\nExample: Supply is \\(P = 5 + 0.25Q\\). At \\(P = 30\\), \\(Q = 100\\):\nSlope = \\(0.25\\), so \\(\\frac{1}{\\text{slope}} = 4\\)\n\\[\\varepsilon_s = 4 \\times \\frac{30}{100} = 1.2\\]\nElastic — a 1% price increase leads to a 1.2% increase in quantity supplied.\n\n2️⃣ Arc elasticity (midpoint):\n\\[\\varepsilon_s = \\frac{Q_2 - Q_1}{(Q_1 + Q_2)/2} \\div \\frac{P_2 - P_1}{(P_1 + P_2)/2}\\]\nExample: Tour operator increases tours from 40 to 50/month when price rises from €80 to €100.\n\\[\\varepsilon_s = \\frac{10}{45} \\div \\frac{20}{90} = 0.222 \\div 0.222 = 1.0\\]\nUnit elastic — quantity and price change by the same percentage.\n\n\n👉 Same methods as demand elasticity — just applied to the supply curve!"
   },
   {
     "objectID": "slides/lecture15-supply-elasticity.html#elasticity-along-a-linear-supply-curve",
@@ -998,7 +998,7 @@
     "href": "slides/lecture15-supply-elasticity.html#elasticity-in-tourism-both-sides",
     "title": "Producer Theory",
     "section": "Elasticity in Tourism: Both Sides ✈️",
-    "text": "Elasticity in Tourism: Both Sides ✈️\n\n\n\nInelastic supply (\\(\\varepsilon_s\\) small):\n\n🏨 Hotel rooms in central Lisbon: limited space, takes years to build\n🏛️ Museum capacity: Jerónimos can’t add rooms\n🏖️ Beach access in Algarve: fixed coastline\n\nImplication: When demand rises (peak season), price rises sharply because supply can’t respond much.\n\nElastic supply (\\(\\varepsilon_s\\) large):\n\n🚌 Tour buses: can add more buses relatively quickly\n🍴 Food trucks at festivals: quick to set up\n📱 Online booking services: near-zero cost to scale\n\nImplication: When demand rises, quantity adjusts more than price — price stays relatively stable.\n\n. . .\n\n👉 Both elasticities together determine who bears the burden of taxes and price shocks! The side with less elastic response absorbs more of the burden."
+    "text": "Elasticity in Tourism: Both Sides ✈️\n\n\n\nInelastic supply (\\(\\varepsilon_s\\) small):\n\n🏨 Hotel rooms in central Lisbon: limited space, takes years to build\n🏛️ Museum capacity: Jerónimos can’t add rooms\n🏖️ Beach access in Algarve: fixed coastline\n\nImplication: When demand rises (peak season), price rises sharply because supply can’t respond much.\n\nElastic supply (\\(\\varepsilon_s\\) large):\n\n🚌 Tour buses: can add more buses relatively quickly\n🍴 Food trucks at festivals: quick to set up\n📱 Online booking services: near-zero cost to scale\n\nImplication: When demand rises, quantity adjusts more than price — price stays relatively stable.\n\n\n. . .\n\n👉 Both elasticities together determine who bears the burden of taxes and price shocks! The side with less elastic response absorbs more of the burden."
   },
   {
     "objectID": "slides/lecture15-supply-elasticity.html#the-full-parallel-demand-vs-supply-elasticity",
@@ -1068,28 +1068,28 @@
     "href": "slides/lecture15-supply-elasticity.html#next-lecture",
     "title": "Producer Theory",
     "section": "Next Lecture",
-    "text": "Next Lecture\nApril 16, 2026: Short Run and Long Run Market Equilibrium ⚖️\nWe finally put demand and supply together to find prices and quantities!\n\n👉 This is the payoff of Lectures 5–15: consumer theory meets producer theory!"
+    "text": "Next Lecture\nApril 16, 2026: Short Run and Long Run Market Equilibrium ⚖️\nWe finally put demand and supply together to find prices and quantities!\n. . .\n👉 This is the payoff of Lectures 5–15: consumer theory meets producer theory!"
   },
   {
     "objectID": "slides/lecture15-supply-elasticity.html#thank-you",
     "href": "slides/lecture15-supply-elasticity.html#thank-you",
     "title": "Producer Theory",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Thursday, April 16, 2026\n\nThis lecture serves double duty: it provides the demand elasticity content that was skipped (L9) in condensed form, then teaches supply elasticity as its mirror. The demand recap is kept to 3-4 slides covering definition, calculation, revenue test, and determinants — just enough for students to use the concept. The supply elasticity section follows the same structure. The exercise integrates both sides with a tax incidence analysis that requires comparing demand and supply elasticities, which is the conceptual payoff of learning both."
   },
   {
     "objectID": "slides/lecture10-costs.html#welcome-back",
     "href": "slides/lecture10-costs.html#welcome-back",
     "title": "Producer Theory",
-    "section": "Welcome Back! 👋",
-    "text": "Welcome Back! 👋\nWe’ve crossed the aisle:\n🛒 Lectures 5–9: Consumer Theory (demand side)\n🏭 Lectures 10–15: Producer Theory (supply side)\n\n🎯 Today’s Goal: Understand the cost structure of firms\nHow do costs behave as production changes?"
+    "section": "",
+    "text": "We’ve crossed the aisle:\n🛒 Lectures 5–9: Consumer Theory (demand side)\n🏭 Lectures 10–15: Producer Theory (supply side)\n. . .\n🎯 Today’s Goal: Understand the cost structure of firms\nHow do costs behave as production changes?"
   },
   {
     "objectID": "slides/lecture10-costs.html#the-other-side-of-the-market",
     "href": "slides/lecture10-costs.html#the-other-side-of-the-market",
     "title": "Producer Theory",
     "section": "The Other Side of the Market 🤝",
-    "text": "The Other Side of the Market 🤝\n\n\n\nConsumer (Lectures 5–9):\n\nMaximizes utility 📈\nSubject to budget constraint\nGenerates demand curves\nTools: indifference curves, MRS, budget line\n\n\nProducer (Lectures 10–15):\n\nMaximizes profit 💰\nSubject to cost structure\nGenerates supply curves\nTools: cost curves, marginal analysis\n\n\n. . .\n💡 Key parallel: Just as consumers face trade-offs with limited income, producers face trade-offs with limited resources and technology."
+    "text": "The Other Side of the Market 🤝\n\n\n\nConsumer (Lectures 5–9):\n\nMaximizes utility 📈\nSubject to budget constraint\nGenerates demand curves\nTools: indifference curves, MRS, budget line\n\n\nProducer (Lectures 10–15):\n\nMaximizes profit 💰\nSubject to cost structure\nGenerates supply curves\nTools: cost curves, marginal analysis\n\n\n\n. . .\n💡 Key parallel: Just as consumers face trade-offs with limited income, producers face trade-offs with limited resources and technology."
   },
   {
     "objectID": "slides/lecture10-costs.html#the-producers-problem",
@@ -1124,7 +1124,7 @@
     "href": "slides/lecture10-costs.html#the-cost-family",
     "title": "Producer Theory",
     "section": "The Cost Family 👪",
-    "text": "The Cost Family 👪\n\nAll short-run costs derive from three building blocks:\n\n\n🔒 Fixed Cost (FC)\nCosts that do not change with output.\nMust be paid even if \\(Q = 0\\).\nHotel: mortgage, insurance, property tax\n\n🔄 Variable Cost (VC)\nCosts that change with the level of output.\nZero when \\(Q = 0\\).\nHotel: staff wages, laundry, food, energy\n\n➕ Total Cost (TC)\nThe sum of all costs.\n\\[TC = FC + VC\\]\nHotel: everything combined\n\n. . .\n⚠️ Important: FC is a sunk cost in the short run — it cannot be recovered. Remember Lecture 3!"
+    "text": "The Cost Family 👪\n\nAll short-run costs derive from three building blocks:\n\n\n🔒 Fixed Cost (FC)\nCosts that do not change with output.\nMust be paid even if \\(Q = 0\\).\nHotel: mortgage, insurance, property tax\n\n🔄 Variable Cost (VC)\nCosts that change with the level of output.\nZero when \\(Q = 0\\).\nHotel: staff wages, laundry, food, energy\n\n➕ Total Cost (TC)\nThe sum of all costs.\n\\[TC = FC + VC\\]\nHotel: everything combined\n\n\n. . .\n⚠️ Important: FC is a sunk cost in the short run — it cannot be recovered. Remember Lecture 3!"
   },
   {
     "objectID": "slides/lecture10-costs.html#a-worked-example-algarve-beach-bar",
@@ -1180,14 +1180,14 @@
     "href": "slides/lecture10-costs.html#the-shapes-you-must-know",
     "title": "Producer Theory",
     "section": "The Shapes You Must Know 🎨",
-    "text": "The Shapes You Must Know 🎨\n\n\n\nTotal Cost Curves:\n\nFC: Horizontal line (constant)\nVC: Starts at origin, S-shaped (first rises slowly, then steeply)\nTC: VC shifted up by FC (same S-shape)\n\nThe S-shape comes from diminishing returns — costs eventually accelerate.\n\nPer-Unit Cost Curves:\n\nAFC: Always declining (hyperbola)\nAVC: U-shaped (falls then rises)\nATC: U-shaped, above AVC (the gap is AFC)\nMC: U-shaped, crosses AVC and ATC at their minimums\n\n👉 As Q grows, ATC gets closer to AVC because AFC shrinks.\n\n. . .\n⚠️ Don’t confuse: MC can be below ATC while ATC is still falling. ATC rises only after MC crosses above it."
+    "text": "The Shapes You Must Know 🎨\n\n\n\nTotal Cost Curves:\n\nFC: Horizontal line (constant)\nVC: Starts at origin, S-shaped (first rises slowly, then steeply)\nTC: VC shifted up by FC (same S-shape)\n\nThe S-shape comes from diminishing returns — costs eventually accelerate.\n\nPer-Unit Cost Curves:\n\nAFC: Always declining (hyperbola)\nAVC: U-shaped (falls then rises)\nATC: U-shaped, above AVC (the gap is AFC)\nMC: U-shaped, crosses AVC and ATC at their minimums\n\n👉 As Q grows, ATC gets closer to AVC because AFC shrinks.\n\n\n. . .\n⚠️ Don’t confuse: MC can be below ATC while ATC is still falling. ATC rises only after MC crosses above it."
   },
   {
     "objectID": "slides/lecture10-costs.html#costs-in-the-hotel-industry",
     "href": "slides/lecture10-costs.html#costs-in-the-hotel-industry",
     "title": "Producer Theory",
     "section": "Costs in the Hotel Industry 🏨",
-    "text": "Costs in the Hotel Industry 🏨\n\n\n\nFixed costs (don’t change with occupancy):\n\n🏠 Mortgage / building lease\n🛡️ Insurance\n🧾 Property tax\n💻 Booking system software license\n🤵‍♂️ Core management salaries\n🛠️ Scheduled maintenance\n\nThese costs explain why hotels hate empty rooms — FC is already committed!\n\nVariable costs (change with occupancy):\n\n🧼 Cleaning and laundry per room\n🔌 Energy and water per guest\n🥐 Breakfast/meal supplies\n🛏️ Linen and amenity replacement\n👥 Part-time/seasonal staff\n\nThat’s why hotels offer last-minute discounts — as long as \\(P &gt; MC\\) of hosting one more guest, it’s worth it!\n\n. . .\n💡 The difference between FC and VC explains why low-season pricing exists: covering variable costs and some fixed costs is better than covering none."
+    "text": "Costs in the Hotel Industry 🏨\n\n\n\nFixed costs (don’t change with occupancy):\n\n🏠 Mortgage / building lease\n🛡️ Insurance\n🧾 Property tax\n💻 Booking system software license\n🤵‍♂️ Core management salaries\n🛠️ Scheduled maintenance\n\nThese costs explain why hotels hate empty rooms — FC is already committed!\n\nVariable costs (change with occupancy):\n\n🧼 Cleaning and laundry per room\n🔌 Energy and water per guest\n🥐 Breakfast/meal supplies\n🛏️ Linen and amenity replacement\n👥 Part-time/seasonal staff\n\nThat’s why hotels offer last-minute discounts — as long as \\(P &gt; MC\\) of hosting one more guest, it’s worth it!\n\n\n. . .\n💡 The difference between FC and VC explains why low-season pricing exists: covering variable costs and some fixed costs is better than covering none."
   },
   {
     "objectID": "slides/lecture10-costs.html#spreading-fixed-costs-why-airlines-overbook",
@@ -1215,7 +1215,7 @@
     "href": "slides/lecture10-costs.html#economies-and-diseconomies-of-scale",
     "title": "Producer Theory",
     "section": "Economies and Diseconomies of Scale ⚖️",
-    "text": "Economies and Diseconomies of Scale ⚖️\n\nThe shape of the LRAC curve reveals three zones:\n\n\n⬇️ Economies of Scale\nLRAC is falling\nBigger → cheaper per unit\nTourism: Large hotel chains get bulk discounts, shared booking platforms, brand recognition\n“Getting bigger makes us more efficient”\n\n↔︎️ Constant Returns\nLRAC is flat\nDoubling inputs doubles output (cost per unit stays the same)\nTourism: Mid-sized operators replicating a proven format across locations\n“We’re at the right size”\n\n⬆️ Diseconomies of Scale\nLRAC is rising\nBigger → more expensive per unit\nTourism: Huge resorts with bureaucracy, coordination problems, slow decision-making\n“We’ve grown too big”\n\n. . .\n💡 Minimum Efficient Scale (MES): the smallest output where LRAC reaches its minimum. Firms should aim to operate at or beyond this point."
+    "text": "Economies and Diseconomies of Scale ⚖️\n\nThe shape of the LRAC curve reveals three zones:\n\n\n⬇️ Economies of Scale\nLRAC is falling\nBigger → cheaper per unit\nTourism: Large hotel chains get bulk discounts, shared booking platforms, brand recognition\n“Getting bigger makes us more efficient”\n\n↔︎️ Constant Returns\nLRAC is flat\nDoubling inputs doubles output (cost per unit stays the same)\nTourism: Mid-sized operators replicating a proven format across locations\n“We’re at the right size”\n\n⬆️ Diseconomies of Scale\nLRAC is rising\nBigger → more expensive per unit\nTourism: Huge resorts with bureaucracy, coordination problems, slow decision-making\n“We’ve grown too big”\n\n\n. . .\n💡 Minimum Efficient Scale (MES): the smallest output where LRAC reaches its minimum. Firms should aim to operate at or beyond this point."
   },
   {
     "objectID": "slides/lecture10-costs.html#economies-of-scale-in-tourism-real-world-logic",
@@ -1292,63 +1292,63 @@
     "href": "slides/lecture10-costs.html#next-lecture",
     "title": "Producer Theory",
     "section": "Next Lecture",
-    "text": "Next Lecture\nMarch 20, 2026: Companies — Profit Maximization 💰\nHow do firms use cost curves to choose the optimal output?\n\n👉 Spoiler: The answer involves setting Price = MC in perfect competition!"
+    "text": "Next Lecture\nMarch 20, 2026: Companies — Profit Maximization 💰\nHow do firms use cost curves to choose the optimal output?\n. . .\n👉 Spoiler: The answer involves setting Price = MC in perfect competition!"
   },
   {
     "objectID": "slides/lecture10-costs.html#thank-you",
     "href": "slides/lecture10-costs.html#thank-you",
     "title": "Producer Theory",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Friday, March 20, 2026\n\nThis lecture introduces the full cost structure that underpins producer theory. Students should leave understanding that (1) costs have a clear geometry with predictable shapes, (2) MC is the key decision-making curve, and (3) the short run/long run distinction is about flexibility of inputs, not calendar time. The LRAC envelope concept connects to why tourism has both large chains and small operators. Next lecture builds directly on this to find the profit-maximizing output level."
   },
   {
     "objectID": "slides/lecture03-opportunity.html#recap-previous-lectures",
     "href": "slides/lecture03-opportunity.html#recap-previous-lectures",
     "title": "Economics Fundamentals",
-    "section": "Recap: Previous Lectures ⏪",
-    "text": "Recap: Previous Lectures ⏪\nLecture 1: Economics, Scarcity, Efficiency, Macro vs. Micro\nLecture 2: Three economic problems (WHAT, HOW, FOR WHOM) and economic systems (Market, Planned, Mixed)\n\n🎯 Today’s Focus:\n🧠 How do people make economic decisions?\n🤔 What is rationality?\n💰 Opportunity cost — one of economics’ most powerful concepts!"
+    "section": "",
+    "text": "Lecture 1: Economics, Scarcity, Efficiency, Macro vs. Micro\nLecture 2: Three economic problems (WHAT, HOW, FOR WHOM) and economic systems (Market, Planned, Mixed)\n. . .\n🎯 Today’s Focus:\n🧠 How do people make economic decisions?\n🤔 What is rationality?\n💰 Opportunity cost — one of economics’ most powerful concepts!"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#what-does-rational-mean",
     "href": "slides/lecture03-opportunity.html#what-does-rational-mean",
     "title": "Economics Fundamentals",
     "section": "What Does “Rational” Mean? 🧠",
-    "text": "What Does “Rational” Mean? 🧠\n\nEconomic Rationality\nPeople are rational decision-makers who seek to maximize their well-being (utility) by using cost-benefit analysis and responding predictably to incentives.\n\n\nKey characteristics:\n✅ People have clear preferences\n✅ They seek to maximize their well-being (utility)\n✅ They respond predictably to incentives\n✅ They use cost-benefit analysis\n\n💡 Important: Rational ≠ Perfect or emotionless! People can be rational within their information and cognitive limits (bounded rationality)"
+    "text": "What Does “Rational” Mean? 🧠\n\nEconomic Rationality\nPeople are rational decision-makers who seek to maximize their well-being (utility) by using cost-benefit analysis and responding predictably to incentives.\n\n. . .\nKey characteristics:\n✅ People have clear preferences\n✅ They seek to maximize their well-being (utility)\n✅ They respond predictably to incentives\n✅ They use cost-benefit analysis\n\n💡 Important: Rational ≠ Perfect or emotionless! People can be rational within their information and cognitive limits (bounded rationality)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#cost-benefit-principle",
     "href": "slides/lecture03-opportunity.html#cost-benefit-principle",
     "title": "Economics Fundamentals",
     "section": "Cost-Benefit Principle ⚖️",
-    "text": "Cost-Benefit Principle ⚖️\n\nThe Foundation of Rational Choice\nAn action should be undertaken if and only if the benefits exceed the costs.\n\n\nDecision Rule:\n\\[\\text{Decision Rule: } \\begin{cases}\n\\text{Do it} & \\text{if } Benefits \\geq Costs \\\\\n\\text{Don't do it} & \\text{if } Benefits &lt; Costs\n\\end{cases}\\]\n\n\nIn practice:\n\nBenefits = What you gain\nCosts = What you give up\nCompare net benefit of alternatives"
+    "text": "Cost-Benefit Principle ⚖️\n\nThe Foundation of Rational Choice\nAn action should be undertaken if and only if the benefits exceed the costs.\n\n. . .\nDecision Rule:\n\\[\\text{Decision Rule: } \\begin{cases}\n\\text{Do it} & \\text{if } Benefits \\geq Costs \\\\\n\\text{Don't do it} & \\text{if } Benefits &lt; Costs\n\\end{cases}\\]\n. . .\nIn practice:\n\nBenefits = What you gain\nCosts = What you give up\nCompare net benefit of alternatives"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#tourism-example-cost-benefit",
     "href": "slides/lecture03-opportunity.html#tourism-example-cost-benefit",
     "title": "Economics Fundamentals",
     "section": "Tourism Example: Cost-Benefit 🏛️",
-    "text": "Tourism Example: Cost-Benefit 🏛️\nShould a tourist visit the Belém Tower in Lisbon?\n\n\nBenefits ✅\n📷 Photos & memories\n📚 Educational value\n❤️ Historical experience\n😄 Satisfaction\nEstimated value: €20\n\nCosts 💸\n🎫 Entry ticket: €6\n🚌 Travel time: 30 min\n⌛ Waiting time: 20 min\n🕐 Value of time: €15/hr\nTime cost: €12.50\nTotal cost: €18.50\n\n\n👉 Decision: Benefits (€20) &gt; Costs (€18.50) → Visit!\nBut if waiting time increases to 60 min, costs rise to €28.50 → Don’t visit!"
+    "text": "Tourism Example: Cost-Benefit 🏛️\nShould a tourist visit the Belém Tower in Lisbon?\n\n\nBenefits ✅\n📷 Photos & memories\n📚 Educational value\n❤️ Historical experience\n😄 Satisfaction\nEstimated value: €20\n\nCosts 💸\n🎫 Entry ticket: €6\n🚌 Travel time: 30 min\n⌛ Waiting time: 20 min\n🕐 Value of time: €15/hr\nTime cost: €12.50\nTotal cost: €18.50\n\n\n\n👉 Decision: Benefits (€20) &gt; Costs (€18.50) → Visit!\nBut if waiting time increases to 60 min, costs rise to €28.50 → Don’t visit!"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#decisions-at-the-margin",
     "href": "slides/lecture03-opportunity.html#decisions-at-the-margin",
     "title": "Economics Fundamentals",
     "section": "Decisions at the Margin 📈",
-    "text": "Decisions at the Margin 📈\n\nMarginal Analysis\nDecisions are made at the margin — evaluating the additional benefit versus the additional cost of one more unit.\n\n\nKey terms:\n⬆️ Marginal Benefit (MB): Benefit from one additional unit\n⬆️ Marginal Cost (MC): Cost of one additional unit\n\n\nOptimal Decision Rule:\n\\[\\text{Continue activity while } MB \\geq MC\\]\nStop when \\(MB &lt; MC\\)"
+    "text": "Decisions at the Margin 📈\n\nMarginal Analysis\nDecisions are made at the margin — evaluating the additional benefit versus the additional cost of one more unit.\n\n. . .\nKey terms:\n⬆️ Marginal Benefit (MB): Benefit from one additional unit\n⬆️ Marginal Cost (MC): Cost of one additional unit\n. . .\nOptimal Decision Rule:\n\\[\\text{Continue activity while } MB \\geq MC\\]\nStop when \\(MB &lt; MC\\)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#marginal-analysis-hotel-rooms",
     "href": "slides/lecture03-opportunity.html#marginal-analysis-hotel-rooms",
     "title": "Economics Fundamentals",
     "section": "Marginal Analysis: Hotel Rooms 🏨",
-    "text": "Marginal Analysis: Hotel Rooms 🏨\nShould a hotel accept one more booking?\n\nHypothetical illustration of marginal decision-making"
+    "text": "Marginal Analysis: Hotel Rooms 🏨\nShould a hotel accept one more booking?\n\n\n\n\n\nHypothetical illustration of marginal decision-making"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#the-most-important-concept",
     "href": "slides/lecture03-opportunity.html#the-most-important-concept",
     "title": "Economics Fundamentals",
     "section": "The Most Important Concept! 🌟",
-    "text": "The Most Important Concept! 🌟\n\nOpportunity Cost\nThe value of the best alternative foregone when making a choice. It’s what you give up, not what you pay.\n\n\nKey Points 🔑\n👉 It’s what you give up, not what you pay\n👉 It’s the next-best alternative (not all alternatives)\n👉 It includes both explicit (money) and implicit costs (time, foregone opportunities)"
+    "text": "The Most Important Concept! 🌟\n\nOpportunity Cost\nThe value of the best alternative foregone when making a choice. It’s what you give up, not what you pay.\n\n. . .\nKey Points 🔑\n👉 It’s what you give up, not what you pay\n👉 It’s the next-best alternative (not all alternatives)\n👉 It includes both explicit (money) and implicit costs (time, foregone opportunities)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#decision-rule-with-opportunity-cost",
@@ -1369,28 +1369,28 @@
     "href": "slides/lecture03-opportunity.html#opportunity-cost-in-tourism-investment",
     "title": "Economics Fundamentals",
     "section": "Opportunity Cost in Tourism Investment 🏢",
-    "text": "Opportunity Cost in Tourism Investment 🏢\n\nHypothetical illustration of investment alternatives"
+    "text": "Opportunity Cost in Tourism Investment 🏢\n\n\n\n\n\nHypothetical illustration of investment alternatives"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#sunk-costs-ignore-them",
     "href": "slides/lecture03-opportunity.html#sunk-costs-ignore-them",
     "title": "Economics Fundamentals",
     "section": "Sunk Costs: Ignore Them! 🚫",
-    "text": "Sunk Costs: Ignore Them! 🚫\n\nSunk Cost\nA cost that has already been incurred and cannot be recovered, regardless of what decision you make now. Sunk costs should be ignored in decision-making!\n\n\nExamples of sunk costs:\n❌ Non-refundable deposits\n❌ Past advertising expenses\n❌ Money already spent on failed projects\n❌ Time already invested (can’t get it back)\n\n⚠️ Common mistake: “I’ve already invested so much, I must continue!”\n✅ Correct thinking: “What are my future costs and benefits from here?”"
+    "text": "Sunk Costs: Ignore Them! 🚫\n\nSunk Cost\nA cost that has already been incurred and cannot be recovered, regardless of what decision you make now. Sunk costs should be ignored in decision-making!\n\n. . .\nExamples of sunk costs:\n❌ Non-refundable deposits\n❌ Past advertising expenses\n❌ Money already spent on failed projects\n❌ Time already invested (can’t get it back)\n\n⚠️ Common mistake: “I’ve already invested so much, I must continue!”\n✅ Correct thinking: “What are my future costs and benefits from here?”"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#sunk-cost-example-tourism-investment",
     "href": "slides/lecture03-opportunity.html#sunk-cost-example-tourism-investment",
     "title": "Economics Fundamentals",
     "section": "Sunk Cost Example: Tourism Investment 🚧",
-    "text": "Sunk Cost Example: Tourism Investment 🚧\nScenario: Hotel construction halfway done\n\n\nSpent so far (SUNK):\n\n€2M on land\n€3M on construction\nTotal: €5M\n\n❌ Cannot be recovered!\n\nTo complete (FUTURE):\n\n€4M more needed\nExpected profit: €500k/year\n\n❓ Should you finish?\n\n\n👉 Correct analysis: Ignore the €5M sunk cost!\nCompare: €4M future cost vs. future benefits\nIf NPV of future benefits &gt; €4M → Finish it!\nIf NPV of future benefits &lt; €4M → Abandon! (Don’t throw good money after bad)"
+    "text": "Sunk Cost Example: Tourism Investment 🚧\nScenario: Hotel construction halfway done\n\n\nSpent so far (SUNK):\n\n€2M on land\n€3M on construction\nTotal: €5M\n\n❌ Cannot be recovered!\n\nTo complete (FUTURE):\n\n€4M more needed\nExpected profit: €500k/year\n\n❓ Should you finish?\n\n\n\n👉 Correct analysis: Ignore the €5M sunk cost!\nCompare: €4M future cost vs. future benefits\nIf NPV of future benefits &gt; €4M → Finish it!\nIf NPV of future benefits &lt; €4M → Abandon! (Don’t throw good money after bad)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#trade-offs-in-tourism-policy",
     "href": "slides/lecture03-opportunity.html#trade-offs-in-tourism-policy",
     "title": "Economics Fundamentals",
     "section": "Trade-offs in Tourism Policy ⚖️",
-    "text": "Trade-offs in Tourism Policy ⚖️\n\n👉 Opportunity cost of increasing cultural preservation by €15M = €20M less for mass tourism infrastructure"
+    "text": "Trade-offs in Tourism Policy ⚖️\n\n\n\n\n\n\n\n\n\n👉 Opportunity cost of increasing cultural preservation by €15M = €20M less for mass tourism infrastructure"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#making-better-decisions",
@@ -1411,7 +1411,7 @@
     "href": "slides/lecture03-opportunity.html#real-business-case-ryanair-strategy",
     "title": "Economics Fundamentals",
     "section": "Real Business Case: Ryanair Strategy ✈️",
-    "text": "Real Business Case: Ryanair Strategy ✈️\n\n👉 Decision: Cancel Brussels route, add London frequency → Better use of aircraft (opportunity cost logic)"
+    "text": "Real Business Case: Ryanair Strategy ✈️\n\n\n\n\n\n\n\n\n\n👉 Decision: Cancel Brussels route, add London frequency → Better use of aircraft (opportunity cost logic)"
   },
   {
     "objectID": "slides/lecture03-opportunity.html#key-concepts-summary",
@@ -1474,7 +1474,7 @@
     "href": "slides/lecture03-opportunity.html#thank-you",
     "title": "Economics Fundamentals",
     "section": "Thank You! 👋",
-    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You! 👋\nQuestions?\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Thursday, February 13, 2026\n\nOpportunity cost is one of the most powerful concepts in economics. Make sure students understand it deeply — it will appear throughout the entire course!"
   },
   {
     "objectID": "slides/lecture08-demand.html#recap-lecture-7",
@@ -3069,8 +3069,8 @@
     "objectID": "slides/lecture11-profit-max.html#recap-lecture-10",
     "href": "slides/lecture11-profit-max.html#recap-lecture-10",
     "title": "Producer Theory",
-    "section": "Recap: Lecture 10 ⏪",
-    "text": "Recap: Lecture 10 ⏪\n\nWhat we covered last time:\n\nShort run vs Long run: fixed inputs vs all variable\nCost types: FC, VC, TC and their per-unit versions (AFC, AVC, ATC)\nMarginal cost (MC): the extra cost of one more unit — the key curve\nMC crosses AVC and ATC at their minimums (the “exam grade” rule)\nLRAC: the long-run envelope — economies and diseconomies of scale\n\n. . .\n🎯 Today: Now that we know costs, how does a firm decide how much to produce to make the most profit?"
+    "section": "",
+    "text": "What we covered last time:\n\nShort run vs Long run: fixed inputs vs all variable\nCost types: FC, VC, TC and their per-unit versions (AFC, AVC, ATC)\nMarginal cost (MC): the extra cost of one more unit — the key curve\nMC crosses AVC and ATC at their minimums (the “exam grade” rule)\nLRAC: the long-run envelope — economies and diseconomies of scale\n\n. . .\n🎯 Today: Now that we know costs, how does a firm decide how much to produce to make the most profit?"
   },
   {
     "objectID": "slides/lecture11-profit-max.html#what-kind-of-market-are-we-studying",
@@ -3126,7 +3126,7 @@
     "href": "slides/lecture11-profit-max.html#reading-profit-on-the-graph",
     "title": "Producer Theory",
     "section": "Reading Profit on the Graph 🔍",
-    "text": "Reading Profit on the Graph 🔍\n\n\nProfit as a Rectangle\nAt the profit-maximizing quantity \\(Q^*\\):\n\\[\\pi = (P - ATC) \\times Q^*\\]\nThis appears on the graph as a rectangle with height \\((P - ATC)\\) and width \\(Q^*\\).\n\n\n\nThree possible outcomes:\n\n📈 \\(P &gt; ATC\\) → Positive profit (green rectangle)\n↔︎️ \\(P = ATC\\) → Zero economic profit (breakeven)\n📉 \\(P &lt; ATC\\) → Loss (red rectangle)\n\n\nImportant nuance: “Zero economic profit” is not bad!\nIt means the firm covers all costs, including the owner’s opportunity cost of time and capital.\nThe firm earns a normal return — the same as its best alternative. No reason to leave!\n\n. . .\n👉 Next lecture we’ll explore the loss case in detail: when should a firm shut down vs. keep operating at a loss?"
+    "text": "Reading Profit on the Graph 🔍\n\n\nProfit as a Rectangle\nAt the profit-maximizing quantity \\(Q^*\\):\n\\[\\pi = (P - ATC) \\times Q^*\\]\nThis appears on the graph as a rectangle with height \\((P - ATC)\\) and width \\(Q^*\\).\n\n\n\nThree possible outcomes:\n\n📈 \\(P &gt; ATC\\) → Positive profit (green rectangle)\n↔︎️ \\(P = ATC\\) → Zero economic profit (breakeven)\n📉 \\(P &lt; ATC\\) → Loss (red rectangle)\n\n\nImportant nuance: “Zero economic profit” is not bad!\nIt means the firm covers all costs, including the owner’s opportunity cost of time and capital.\nThe firm earns a normal return — the same as its best alternative. No reason to leave!\n\n\n. . .\n👉 Next lecture we’ll explore the loss case in detail: when should a firm shut down vs. keep operating at a loss?"
   },
   {
     "objectID": "slides/lecture11-profit-max.html#profit-zero-profit-and-loss-three-scenarios",
@@ -3161,7 +3161,7 @@
     "href": "slides/lecture11-profit-max.html#what-about-changes-in-fixed-costs",
     "title": "Producer Theory",
     "section": "What About Changes in Fixed Costs? 🔒",
-    "text": "What About Changes in Fixed Costs? 🔒\n\nThe textbook shows an important result: when fixed costs rise (from €40 to €70/day), the profit-maximizing quantity stays the same (Q = 400).\nWhy? Because \\(P = MC\\) doesn’t involve FC at all! MC only reflects changes in variable costs.\n\n\n\nFixed Costs Don’t Affect the Optimal Quantity\nFC shifts the total cost curve up (and ATC up), reducing profit, but the optimal Q stays where P = MC.\n\n\n\n\n\n\nFC = €40\nFC = €70\n\n\n\n\nOptimal Q\n400\n400\n\n\nProfit\n€30\n€0\n\n\nMC at Q = 400\n€0.30\n€0.30\n\n\n\nSame Q, but profit drops by exactly the FC increase (€30).\n\n. . .\n⚠️ FC does matter for the stay or exit decision — which we cover next lecture!"
+    "text": "What About Changes in Fixed Costs? 🔒\n\nThe textbook shows an important result: when fixed costs rise (from €40 to €70/day), the profit-maximizing quantity stays the same (Q = 400).\nWhy? Because \\(P = MC\\) doesn’t involve FC at all! MC only reflects changes in variable costs.\n\n\n\nFixed Costs Don’t Affect the Optimal Quantity\nFC shifts the total cost curve up (and ATC up), reducing profit, but the optimal Q stays where P = MC.\n\n\n\n\n\n\nFC = €40\nFC = €70\n\n\n\n\nOptimal Q\n400\n400\n\n\nProfit\n€30\n€0\n\n\nMC at Q = 400\n€0.30\n€0.30\n\n\n\nSame Q, but profit drops by exactly the FC increase (€30).\n\n\n. . .\n⚠️ FC does matter for the stay or exit decision — which we cover next lecture!"
   },
   {
     "objectID": "slides/lecture11-profit-max.html#why-p-mr-in-perfect-competition",
@@ -3182,7 +3182,7 @@
     "href": "slides/lecture11-profit-max.html#hotel-revenue-management-a-profit-maximization-story",
     "title": "Producer Theory",
     "section": "Hotel Revenue Management: A Profit Maximization Story 🏨",
-    "text": "Hotel Revenue Management: A Profit Maximization Story 🏨\n\nWhy do hotels charge different prices at different times?\nThe \\(P = MC\\) rule explains dynamic pricing:\n\n\n☀️ Peak season (summer, Lisbon festivals):\n\nMarket price \\(P\\) is high (demand is high)\nP = MC at a higher Q → hire more staff, open all rooms\nProfit per room is large\nHotels expand services\n\n\n☁️ Off-season (January):\n\nMarket price \\(P\\) is low\nP = MC at a lower Q → reduce staff, close a wing\nProfit per room is small (or even losses)\nHotels scale back\n\n\n. . .\n👉 The \\(P = MC\\) rule doesn’t just say “how much to produce” — it explains the seasonal rhythm of tourism businesses!"
+    "text": "Hotel Revenue Management: A Profit Maximization Story 🏨\n\nWhy do hotels charge different prices at different times?\nThe \\(P = MC\\) rule explains dynamic pricing:\n\n\n☀️ Peak season (summer, Lisbon festivals):\n\nMarket price \\(P\\) is high (demand is high)\nP = MC at a higher Q → hire more staff, open all rooms\nProfit per room is large\nHotels expand services\n\n\n☁️ Off-season (January):\n\nMarket price \\(P\\) is low\nP = MC at a lower Q → reduce staff, close a wing\nProfit per room is small (or even losses)\nHotels scale back\n\n\n\n. . .\n👉 The \\(P = MC\\) rule doesn’t just say “how much to produce” — it explains the seasonal rhythm of tourism businesses!"
   },
   {
     "objectID": "slides/lecture11-profit-max.html#summary",
@@ -3245,28 +3245,28 @@
     "href": "slides/lecture11-profit-max.html#next-lecture",
     "title": "Producer Theory",
     "section": "Next Lecture",
-    "text": "Next Lecture\nMarch 26, 2026: Profits, Shutdown and Breakeven Price Levels. Supply. 📈\nIf the firm is making a loss, when should it keep operating and when should it shut down?\n\n💡 Hint: The answer involves comparing \\(P\\) to AVC, not ATC!"
+    "text": "Next Lecture\nMarch 26, 2026: Profits, Shutdown and Breakeven Price Levels. Supply. 📈\nIf the firm is making a loss, when should it keep operating and when should it shut down?\n. . .\n💡 Hint: The answer involves comparing \\(P\\) to AVC, not ATC!"
   },
   {
     "objectID": "slides/lecture11-profit-max.html#thank-you",
     "href": "slides/lecture11-profit-max.html#thank-you",
     "title": "Producer Theory",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Thursday, March 26, 2026\n\nThis lecture establishes the central result of producer theory: firms maximize profit where P = MC. The key pedagogical goals are (1) understanding why P = MC works (marginal thinking), (2) reading profit as a rectangle on the graph, and (3) the irrelevance of FC for the production decision. The worked example from the textbook’s bottle factory grounds the theory in familiar material. Next lecture builds on the loss scenario to introduce shutdown and breakeven conditions, and connect MC to the supply curve."
   },
   {
     "objectID": "slides/lecture12-shutdown-supply.html#recap-lecture-11",
     "href": "slides/lecture12-shutdown-supply.html#recap-lecture-11",
     "title": "Producer Theory",
-    "section": "Recap: Lecture 11 ⏪",
-    "text": "Recap: Lecture 11 ⏪\n\nWhat we covered last time:\n\nPerfect competition: many firms, identical product, price taker\nProfit: \\(\\pi = TR - TC = (P - ATC) \\times Q\\)\nThe golden rule: produce where \\(P = MC\\) (on the rising portion)\nIf \\(P &gt; ATC\\) → profit; if \\(P = ATC\\) → breakeven; if \\(P &lt; ATC\\) → loss\n\n. . .\n🎯 Today: We left a big question unanswered — if a firm is making a loss, should it keep producing or shut down?\nAnd once we answer that, we’ll see how MC becomes the supply curve!"
+    "section": "",
+    "text": "What we covered last time:\n\nPerfect competition: many firms, identical product, price taker\nProfit: \\(\\pi = TR - TC = (P - ATC) \\times Q\\)\nThe golden rule: produce where \\(P = MC\\) (on the rising portion)\nIf \\(P &gt; ATC\\) → profit; if \\(P = ATC\\) → breakeven; if \\(P &lt; ATC\\) → loss\n\n. . .\n🎯 Today: We left a big question unanswered — if a firm is making a loss, should it keep producing or shut down?\nAnd once we answer that, we’ll see how MC becomes the supply curve!"
   },
   {
     "objectID": "slides/lecture12-shutdown-supply.html#a-loss-making-firms-dilemma",
     "href": "slides/lecture12-shutdown-supply.html#a-loss-making-firms-dilemma",
     "title": "Producer Theory",
     "section": "A Loss-Making Firm’s Dilemma 🤔",
-    "text": "A Loss-Making Firm’s Dilemma 🤔\n\nSituation: A hotel in the Algarve during winter. The market price is low, and the hotel is losing money (\\(P &lt; ATC\\)).\nTwo options:\n\n\n🏭 Keep operating\n\nEarns revenue: \\(TR = P \\times Q\\)\nPays all costs: \\(FC + VC\\)\nLoss = \\(TC - TR\\)\n\n\n🚫 Shut down (produce Q = 0)\n\nEarns no revenue: \\(TR = 0\\)\nStill pays fixed costs: \\(FC\\) (lease, insurance, mortgage)\nLoss = \\(FC\\)\n\n\n. . .\n\nThe Key Question\nWhen \\(P &lt; ATC\\), which loss is smaller? The loss from operating, or the loss from shutting down (= FC)?"
+    "text": "A Loss-Making Firm’s Dilemma 🤔\n\nSituation: A hotel in the Algarve during winter. The market price is low, and the hotel is losing money (\\(P &lt; ATC\\)).\nTwo options:\n\n\n🏭 Keep operating\n\nEarns revenue: \\(TR = P \\times Q\\)\nPays all costs: \\(FC + VC\\)\nLoss = \\(TC - TR\\)\n\n\n🚫 Shut down (produce Q = 0)\n\nEarns no revenue: \\(TR = 0\\)\nStill pays fixed costs: \\(FC\\) (lease, insurance, mortgage)\nLoss = \\(FC\\)\n\n\n\n. . .\n\nThe Key Question\nWhen \\(P &lt; ATC\\), which loss is smaller? The loss from operating, or the loss from shutting down (= FC)?"
   },
   {
     "objectID": "slides/lecture12-shutdown-supply.html#the-logic-compare-the-two-losses",
@@ -3315,14 +3315,14 @@
     "href": "slides/lecture12-shutdown-supply.html#why-does-the-shutdown-rule-use-avc-not-atc",
     "title": "Producer Theory",
     "section": "Why Does the Shutdown Rule Use AVC, Not ATC? 💡",
-    "text": "Why Does the Shutdown Rule Use AVC, Not ATC? 💡\n\nThis is the most common confusion students have. Let’s be very clear:\n\n\nATC includes fixed costs.\nIf P &lt; ATC, the firm loses money — but it might still be better off operating.\nWhy? Because FC must be paid regardless.\nATC answers: “Am I profitable?”\n\nAVC excludes fixed costs.\nIf P &lt; AVC, every unit sold costs more to produce than it earns in revenue.\nOperating doesn’t just fail to cover FC — it adds to losses.\nAVC answers: “Does producing make things worse?”\n\n. . .\n\nThe Rule of Thumb\n\nCompare \\(P\\) to ATC to know if you’re making a profit or loss\nCompare \\(P\\) to AVC to know if you should operate or shut down"
+    "text": "Why Does the Shutdown Rule Use AVC, Not ATC? 💡\n\nThis is the most common confusion students have. Let’s be very clear:\n\n\nATC includes fixed costs.\nIf P &lt; ATC, the firm loses money — but it might still be better off operating.\nWhy? Because FC must be paid regardless.\nATC answers: “Am I profitable?”\n\nAVC excludes fixed costs.\nIf P &lt; AVC, every unit sold costs more to produce than it earns in revenue.\nOperating doesn’t just fail to cover FC — it adds to losses.\nAVC answers: “Does producing make things worse?”\n\n\n. . .\n\nThe Rule of Thumb\n\nCompare \\(P\\) to ATC to know if you’re making a profit or loss\nCompare \\(P\\) to AVC to know if you should operate or shut down"
   },
   {
     "objectID": "slides/lecture12-shutdown-supply.html#the-hotel-off-season-a-real-world-application",
     "href": "slides/lecture12-shutdown-supply.html#the-hotel-off-season-a-real-world-application",
     "title": "Producer Theory",
     "section": "The Hotel Off-Season: A Real-World Application 🏨",
-    "text": "The Hotel Off-Season: A Real-World Application 🏨\n\nWhy do Algarve hotels stay open in winter at very low occupancy?\n\n\nThe math:\n\nFC (lease, mortgage, insurance): €30,000/month\nAVC per guest-night: €25\nWinter price: €35/night\nOccupancy: 30%\n\nSince \\(P = €35 &gt; AVC = €25\\): stay open!\nEach guest contributes €10 toward FC.\nEven at 30% occupancy, they recover some FC rather than none.\n\nBut what if they close for winter?\n\nLoss = FC = €30,000/month\nNo revenue, no variable costs\n\nOperating at a loss (say −€20,000/month) is better than shutting down (−€30,000/month).\n👉 This explains why you see hotels with near-empty lobbies in January — they’re still better off open than closed!\n\n. . .\n⚠️ But if winter prices drop to €20/night (\\(P &lt; AVC = €25\\)): now it’s cheaper to close temporarily."
+    "text": "The Hotel Off-Season: A Real-World Application 🏨\n\nWhy do Algarve hotels stay open in winter at very low occupancy?\n\n\nThe math:\n\nFC (lease, mortgage, insurance): €30,000/month\nAVC per guest-night: €25\nWinter price: €35/night\nOccupancy: 30%\n\nSince \\(P = €35 &gt; AVC = €25\\): stay open!\nEach guest contributes €10 toward FC.\nEven at 30% occupancy, they recover some FC rather than none.\n\nBut what if they close for winter?\n\nLoss = FC = €30,000/month\nNo revenue, no variable costs\n\nOperating at a loss (say −€20,000/month) is better than shutting down (−€30,000/month).\n👉 This explains why you see hotels with near-empty lobbies in January — they’re still better off open than closed!\n\n\n. . .\n⚠️ But if winter prices drop to €20/night (\\(P &lt; AVC = €25\\)): now it’s cheaper to close temporarily."
   },
   {
     "objectID": "slides/lecture12-shutdown-supply.html#the-birth-of-the-supply-curve",
@@ -3357,7 +3357,7 @@
     "href": "slides/lecture12-shutdown-supply.html#seasonal-tourism-and-the-shutdown-rule",
     "title": "Producer Theory",
     "section": "Seasonal Tourism and the Shutdown Rule ☀️ ☁️",
-    "text": "Seasonal Tourism and the Shutdown Rule ☀️ ☁️\n\nThe shutdown rule explains a major pattern in tourism businesses:\n\n\n☀️ Peak season (June–September)\n\nHigh demand → high market price\n\\(P &gt; ATC\\) → positive profits\nHotels fully staffed, all facilities open\nNew temporary businesses open (beach bars, tour operators)\n\nThis is the profit zone!\n\n☁️ Off-season (November–February)\n\nLow demand → low market price\nThree possibilities:\n\n\\(P &gt; ATC\\): still profitable (rare in deep off-season)\n\\(AVC &lt; P &lt; ATC\\): loss but keep operating (common!)\n\\(P &lt; AVC\\): shut down temporarily (some businesses do this!)\n\n\n\n. . .\n👉 This is why some Algarve restaurants close entirely from November to March (P &lt; AVC), while hotels stay open at reduced capacity (AVC &lt; P &lt; ATC). Different cost structures, different shutdown prices!"
+    "text": "Seasonal Tourism and the Shutdown Rule ☀️ ☁️\n\nThe shutdown rule explains a major pattern in tourism businesses:\n\n\n☀️ Peak season (June–September)\n\nHigh demand → high market price\n\\(P &gt; ATC\\) → positive profits\nHotels fully staffed, all facilities open\nNew temporary businesses open (beach bars, tour operators)\n\nThis is the profit zone!\n\n☁️ Off-season (November–February)\n\nLow demand → low market price\nThree possibilities:\n\n\\(P &gt; ATC\\): still profitable (rare in deep off-season)\n\\(AVC &lt; P &lt; ATC\\): loss but keep operating (common!)\n\\(P &lt; AVC\\): shut down temporarily (some businesses do this!)\n\n\n\n\n. . .\n👉 This is why some Algarve restaurants close entirely from November to March (P &lt; AVC), while hotels stay open at reduced capacity (AVC &lt; P &lt; ATC). Different cost structures, different shutdown prices!"
   },
   {
     "objectID": "slides/lecture12-shutdown-supply.html#airlines-load-factor-and-the-shutdown-logic",
@@ -3427,21 +3427,21 @@
     "href": "slides/lecture12-shutdown-supply.html#next-lecture",
     "title": "Producer Theory",
     "section": "Next Lecture",
-    "text": "Next Lecture\nApril 8th, 2026: The Seller’s Supply Rule — P = MC in depth 📈\n\nWe’ll formalize the \\(P = MC\\) supply rule, derive the concept of producer surplus, and build the market supply curve from individual firms."
+    "text": "Next Lecture\nApril 8th, 2026: The Seller’s Supply Rule — P = MC in depth 📈\n. . .\nWe’ll formalize the \\(P = MC\\) supply rule, derive the concept of producer surplus, and build the market supply curve from individual firms."
   },
   {
     "objectID": "slides/lecture12-shutdown-supply.html#thank-you",
     "href": "slides/lecture12-shutdown-supply.html#thank-you",
     "title": "Producer Theory",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Friday, April 8th, 2026\n\nThis lecture resolves the key open question from Lecture 11: what to do when making a loss. The shutdown condition (P vs AVC) is the crucial new concept, and students often confuse it with breakeven (P vs ATC). The graphical derivation of the supply curve from MC above AVC is the payoff — it connects cost theory to supply. The tourism examples (seasonal hotels, airlines, off-season closings) make this very tangible. The exercise deliberately walks through both the “operate at a loss” and “shut down” scenarios numerically."
   },
   {
     "objectID": "slides/lecture14-ps-market-supply.html#recap-lecture-13",
     "href": "slides/lecture14-ps-market-supply.html#recap-lecture-13",
     "title": "Producer Theory",
-    "section": "Recap: Lecture 13 ⏪",
-    "text": "Recap: Lecture 13 ⏪\n\nWhat we covered last time:\n\nThe seller’s supply rule: Produce where \\(P = MC\\) (rising portion, \\(P \\geq AVC\\))\nThe individual supply curve = MC above AVC\nSupply shifts: input costs ↑ → supply shifts left; technology ↑ → supply shifts right\nFixed costs don’t shift the short-run supply curve\n\n. . .\n🎯 Today: Three new pieces to complete the supply-side toolkit:\n\n1️⃣ Producer surplus — the supply-side mirror of consumer surplus\n2️⃣ Market supply — adding up individual firms’ supply curves\n3️⃣ Linear supply — the equation \\(P = c + dQ\\) and how to work with it"
+    "section": "",
+    "text": "What we covered last time:\n\nThe seller’s supply rule: Produce where \\(P = MC\\) (rising portion, \\(P \\geq AVC\\))\nThe individual supply curve = MC above AVC\nSupply shifts: input costs ↑ → supply shifts left; technology ↑ → supply shifts right\nFixed costs don’t shift the short-run supply curve\n\n. . .\n🎯 Today: Three new pieces to complete the supply-side toolkit:\n\n1️⃣ Producer surplus — the supply-side mirror of consumer surplus\n2️⃣ Market supply — adding up individual firms’ supply curves\n3️⃣ Linear supply — the equation \\(P = c + dQ\\) and how to work with it"
   },
   {
     "objectID": "slides/lecture14-ps-market-supply.html#the-intuition-what-do-producers-gain",
@@ -3455,7 +3455,7 @@
     "href": "slides/lecture14-ps-market-supply.html#ps-vs-profit-why-the-difference-matters",
     "title": "Producer Theory",
     "section": "PS vs Profit: Why the Difference Matters 🤔",
-    "text": "PS vs Profit: Why the Difference Matters 🤔\n\n\n\nProducer Surplus = \\(TR - VC\\)\n\nMeasures the gain from trading in this market\nDoes not subtract FC (which must be paid regardless)\nEquals the area above the supply curve, below P\nAlways ≥ 0 (if the firm is operating)\n\n\nEconomic Profit = \\(TR - TC = TR - VC - FC\\)\n\nMeasures the bottom-line result after all costs\nSubtracts both VC and FC\nCan be positive, zero, or negative\n\\(\\pi = PS - FC\\)\n\n\n. . .\nExample: A hotel earns TR = €50,000, has VC = €30,000 and FC = €25,000.\n\n\\(PS = 50{,}000 - 30{,}000 = €20{,}000\\) ➡️ the hotel gains €20,000 from operating\n\\(\\pi = 50{,}000 - 55{,}000 = -€5{,}000\\) ➡️ the hotel makes a loss!\nBut \\(PS &gt; 0\\) means the hotel is still better off operating (it covers VC and contributes €20,000 toward FC)\n\n👉 This is exactly the shutdown logic from Lecture 12!"
+    "text": "PS vs Profit: Why the Difference Matters 🤔\n\n\n\nProducer Surplus = \\(TR - VC\\)\n\nMeasures the gain from trading in this market\nDoes not subtract FC (which must be paid regardless)\nEquals the area above the supply curve, below P\nAlways ≥ 0 (if the firm is operating)\n\n\nEconomic Profit = \\(TR - TC = TR - VC - FC\\)\n\nMeasures the bottom-line result after all costs\nSubtracts both VC and FC\nCan be positive, zero, or negative\n\\(\\pi = PS - FC\\)\n\n\n\n. . .\nExample: A hotel earns TR = €50,000, has VC = €30,000 and FC = €25,000.\n\n\\(PS = 50{,}000 - 30{,}000 = €20{,}000\\) ➡️ the hotel gains €20,000 from operating\n\\(\\pi = 50{,}000 - 55{,}000 = -€5{,}000\\) ➡️ the hotel makes a loss!\nBut \\(PS &gt; 0\\) means the hotel is still better off operating (it covers VC and contributes €20,000 toward FC)\n\n👉 This is exactly the shutdown logic from Lecture 12!"
   },
   {
     "objectID": "slides/lecture14-ps-market-supply.html#producer-surplus-graphically",
@@ -3525,7 +3525,7 @@
     "href": "slides/lecture14-ps-market-supply.html#tourism-market-cs-and-ps-in-action",
     "title": "Producer Theory",
     "section": "Tourism Market: CS and PS in Action 🌴",
-    "text": "Tourism Market: CS and PS in Action 🌴\n\nImagine the market for guided tours in Lisbon:\n\n\nDemand (tourists): \\(P = 50 - 0.25Q\\)\n\nTourists are willing to pay up to €50 for a unique tour\nAs price rises, fewer tourists book\n\nConsumer surplus at equilibrium:\n\\[CS = \\frac{1}{2} \\times 80 \\times (50 - 30) = €800\\]\nTourists collectively gain €800 from buying tours below their willingness to pay.\n\nSupply (tour operators): \\(P = 10 + 0.25Q\\)\n\nTour guides need at least €10 to cover their minimum cost\nAs more tours are offered, MC rises (hiring less experienced guides, longer hours)\n\nProducer surplus at equilibrium:\n\\[PS = \\frac{1}{2} \\times 80 \\times (30 - 10) = €800\\]\nOperators collectively gain €800 from selling tours above their minimum acceptable price.\n\n. . .\n👉 Total welfare = €800 + €800 = €1,600. This is the total gain from trade in this market!"
+    "text": "Tourism Market: CS and PS in Action 🌴\n\nImagine the market for guided tours in Lisbon:\n\n\nDemand (tourists): \\(P = 50 - 0.25Q\\)\n\nTourists are willing to pay up to €50 for a unique tour\nAs price rises, fewer tourists book\n\nConsumer surplus at equilibrium:\n\\[CS = \\frac{1}{2} \\times 80 \\times (50 - 30) = €800\\]\nTourists collectively gain €800 from buying tours below their willingness to pay.\n\nSupply (tour operators): \\(P = 10 + 0.25Q\\)\n\nTour guides need at least €10 to cover their minimum cost\nAs more tours are offered, MC rises (hiring less experienced guides, longer hours)\n\nProducer surplus at equilibrium:\n\\[PS = \\frac{1}{2} \\times 80 \\times (30 - 10) = €800\\]\nOperators collectively gain €800 from selling tours above their minimum acceptable price.\n\n\n. . .\n👉 Total welfare = €800 + €800 = €1,600. This is the total gain from trade in this market!"
   },
   {
     "objectID": "slides/lecture14-ps-market-supply.html#summary",
@@ -3595,28 +3595,28 @@
     "href": "slides/lecture14-ps-market-supply.html#next-lecture",
     "title": "Producer Theory",
     "section": "Next Lecture",
-    "text": "Next Lecture\nApril 10, 2026: Calculation and Determinants of Supply Elasticity 📈\nHow sensitive is quantity supplied to price changes?\n\n👉 This mirrors Lecture 9 (demand elasticity) — the same formula, applied to supply!"
+    "text": "Next Lecture\nApril 10, 2026: Calculation and Determinants of Supply Elasticity 📈\nHow sensitive is quantity supplied to price changes?\n. . .\n👉 This mirrors Lecture 9 (demand elasticity) — the same formula, applied to supply!"
   },
   {
     "objectID": "slides/lecture14-ps-market-supply.html#thank-you",
     "href": "slides/lecture14-ps-market-supply.html#thank-you",
     "title": "Producer Theory",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Friday, April 10, 2026\n\nThis lecture completes the supply-side toolkit by introducing producer surplus and market supply construction. The PS concept mirrors CS from Lecture 8, and the horizontal summation of supply mirrors the horizontal summation of demand. The linear supply equation gives students the algebraic tools they’ll need for equilibrium analysis. The exercise is deliberately parallel to Lecture 8’s market demand exercise (two types of agents, kink, summation) so students see the symmetry. The license fee in part (f) connects back to supply shifters from Lecture 13."
   },
   {
     "objectID": "slides/lecture19-sequential-games.html#recap-lecture-18",
     "href": "slides/lecture19-sequential-games.html#recap-lecture-18",
     "title": "Game Theory",
-    "section": "Recap: Lecture 18 ⏪",
-    "text": "Recap: Lecture 18 ⏪\n\nWhat we covered last time:\n\nGame theory: strategic interaction (players, strategies, payoffs)\nPayoff matrix: reading outcomes in simultaneous games\nDominant strategy: best regardless of what others do\nPrisoner’s Dilemma: individual rationality → collectively worse outcome\nNash Equilibrium: no player can improve by deviating alone\n\n. . .\n🎯 Today: What changes when players move one at a time rather than simultaneously?\n👉 Sequential games introduce timing, observation, and the crucial concept of credible threats."
+    "section": "",
+    "text": "What we covered last time:\n\nGame theory: strategic interaction (players, strategies, payoffs)\nPayoff matrix: reading outcomes in simultaneous games\nDominant strategy: best regardless of what others do\nPrisoner’s Dilemma: individual rationality → collectively worse outcome\nNash Equilibrium: no player can improve by deviating alone\n\n. . .\n🎯 Today: What changes when players move one at a time rather than simultaneously?\n👉 Sequential games introduce timing, observation, and the crucial concept of credible threats."
   },
   {
     "objectID": "slides/lecture19-sequential-games.html#the-key-difference",
     "href": "slides/lecture19-sequential-games.html#the-key-difference",
     "title": "Game Theory",
     "section": "The Key Difference ⌛",
-    "text": "The Key Difference ⌛\n\n\n\n🔄 Simultaneous (Lecture 18):\n\nPlayers choose at the same time\nNeither knows the other’s choice\nRepresented by a payoff matrix\nSolution: Nash Equilibrium\n\nExample: Two airlines set prices for next season without knowing the other’s decision.\n\n▶️ Sequential (today):\n\nPlayers move in order\nLater players observe earlier moves\nRepresented by a game tree\nSolution: Backward Induction\n\nExample: Ryanair announces a new route, then TAP decides whether to respond.\n\n. . .\n\nWhy it matters When you move first, you can influence what the other player does. This gives the first mover a strategic advantage (or disadvantage!) that doesn’t exist in simultaneous games."
+    "text": "The Key Difference ⌛\n\n\n\n🔄 Simultaneous (Lecture 18):\n\nPlayers choose at the same time\nNeither knows the other’s choice\nRepresented by a payoff matrix\nSolution: Nash Equilibrium\n\nExample: Two airlines set prices for next season without knowing the other’s decision.\n\n▶️ Sequential (today):\n\nPlayers move in order\nLater players observe earlier moves\nRepresented by a game tree\nSolution: Backward Induction\n\nExample: Ryanair announces a new route, then TAP decides whether to respond.\n\n\n. . .\n\nWhy it matters When you move first, you can influence what the other player does. This gives the first mover a strategic advantage (or disadvantage!) that doesn’t exist in simultaneous games."
   },
   {
     "objectID": "slides/lecture19-sequential-games.html#extensive-form-drawing-the-game",
@@ -3672,7 +3672,7 @@
     "href": "slides/lecture19-sequential-games.html#does-moving-first-always-help",
     "title": "Game Theory",
     "section": "Does Moving First Always Help? 🏆",
-    "text": "Does Moving First Always Help? 🏆\n\n\n\n✅ First-mover advantage:\nWhen moving first lets you commit to a favorable position.\n\n✈️ Ryanair opens a new route first → captures market share → TAP faces a harder entry decision\n🏨 A hotel chain secures the best beachfront location → later entrants get inferior spots\n💻 Booking.com builds the platform first → network effects make it hard for competitors\n\n“The early bird catches the worm”\n\n❌ Second-mover advantage:\nWhen waiting lets you observe and adapt.\n\n📱 A tourism app watches competitors’ mistakes before launching a better version\n🍴 A restaurant sees what menu concepts work on a tourist street before opening\n📈 Late entrants can free-ride on first movers’ market research\n\n“Good artists copy, great artists steal”\n\n\n👉 Whether first or second mover is better depends on the specific game structure — there’s no universal rule!"
+    "text": "Does Moving First Always Help? 🏆\n\n\n\n✅ First-mover advantage:\nWhen moving first lets you commit to a favorable position.\n\n✈️ Ryanair opens a new route first → captures market share → TAP faces a harder entry decision\n🏨 A hotel chain secures the best beachfront location → later entrants get inferior spots\n💻 Booking.com builds the platform first → network effects make it hard for competitors\n\n“The early bird catches the worm”\n\n❌ Second-mover advantage:\nWhen waiting lets you observe and adapt.\n\n📱 A tourism app watches competitors’ mistakes before launching a better version\n🍴 A restaurant sees what menu concepts work on a tourist street before opening\n📈 Late entrants can free-ride on first movers’ market research\n\n“Good artists copy, great artists steal”\n\n\n\n👉 Whether first or second mover is better depends on the specific game structure — there’s no universal rule!"
   },
   {
     "objectID": "slides/lecture19-sequential-games.html#stackelberg-leadership-first-mover-in-quantity",
@@ -3756,21 +3756,21 @@
     "href": "slides/lecture19-sequential-games.html#next-lecture",
     "title": "Game Theory",
     "section": "Next Lecture",
-    "text": "Next Lecture\nApril 24, 2026: The Main Macroeconomic Issues 🌐\nWe zoom out from individual firms and strategic games to the whole economy!\n\n👋 This completes the Game Theory block!\nMicro is done (Consumer + Producer + Game Theory). Now: Macro!"
+    "text": "Next Lecture\nApril 24, 2026: The Main Macroeconomic Issues 🌐\nWe zoom out from individual firms and strategic games to the whole economy!\n. . .\n👋 This completes the Game Theory block!\nMicro is done (Consumer + Producer + Game Theory). Now: Macro!"
   },
   {
     "objectID": "slides/lecture19-sequential-games.html#thank-you",
     "href": "slides/lecture19-sequential-games.html#thank-you",
     "title": "Game Theory",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Thursday, April 24, 2026\n\nThis lecture completes the game theory module by introducing sequential games, game trees, and backward induction. The key conceptual payoff is the distinction between credible and non-credible threats — students learn that not all threats should be believed, and that backward induction automatically filters out bluffs. The entry game is the central example, first without commitment (entry succeeds) and then with commitment (entry deterred). The exercise deliberately includes a case where the investment FAILS to deter entry, teaching students that commitment only works if it changes the incentive structure at the relevant decision node. This avoids the common misconception that any investment deters entry."
   },
   {
     "objectID": "slides/lecture16-equilibrium.html#recap-where-we-are",
     "href": "slides/lecture16-equilibrium.html#recap-where-we-are",
     "title": "Producer Theory",
-    "section": "Recap: Where We Are ⏪",
-    "text": "Recap: Where We Are ⏪\n\nOver Lectures 5–15, we built both sides of the market:\n\n\n🛒 Demand side (L5–L9):\n\nUtility maximization → demand curve\nMarket demand (horizontal sum)\nConsumer surplus\nDemand elasticity\n\n\n🏭 Supply side (L10–L15):\n\nCost structure → \\(P = MC\\) → supply curve\nMarket supply (horizontal sum)\nProducer surplus\nSupply elasticity\n\n\n. . .\n🎯 Today: We put them together to find the market equilibrium — the price and quantity where buyers and sellers agree. This is the payoff of the entire course so far!"
+    "section": "",
+    "text": "Over Lectures 5–15, we built both sides of the market:\n\n\n🛒 Demand side (L5–L9):\n\nUtility maximization → demand curve\nMarket demand (horizontal sum)\nConsumer surplus\nDemand elasticity\n\n\n🏭 Supply side (L10–L15):\n\nCost structure → \\(P = MC\\) → supply curve\nMarket supply (horizontal sum)\nProducer surplus\nSupply elasticity\n\n\n\n. . .\n🎯 Today: We put them together to find the market equilibrium — the price and quantity where buyers and sellers agree. This is the payoff of the entire course so far!"
   },
   {
     "objectID": "slides/lecture16-equilibrium.html#where-supply-meets-demand",
@@ -3791,7 +3791,7 @@
     "href": "slides/lecture16-equilibrium.html#what-happens-away-from-equilibrium",
     "title": "Producer Theory",
     "section": "What Happens Away from Equilibrium? ⚠️",
-    "text": "What Happens Away from Equilibrium? ⚠️\n\n\n\nPrice too HIGH (\\(P &gt; P^*\\)): Surplus (excess supply)\n\n\\(Q_s &gt; Q_d\\) → goods pile up\nSellers compete by lowering prices\nPrice falls toward \\(P^*\\)\n\n🏨 Tourism: Hotels with too many empty rooms in off-season → prices drop on Booking.com\n\nPrice too LOW (\\(P &lt; P^*\\)): Shortage (excess demand)\n\n\\(Q_d &gt; Q_s\\) → not enough goods\nBuyers compete by bidding prices up\nPrice rises toward \\(P^*\\)\n\n✈️ Tourism: Flight demand exceeds seats during holidays → prices rise, last-minute fares skyrocket\n\n. . .\n\nSelf-Correcting Mechanism\nMarkets naturally tend toward equilibrium. Surpluses push prices down; shortages push prices up. This process continues until \\(Q_d = Q_s\\)."
+    "text": "What Happens Away from Equilibrium? ⚠️\n\n\n\nPrice too HIGH (\\(P &gt; P^*\\)): Surplus (excess supply)\n\n\\(Q_s &gt; Q_d\\) → goods pile up\nSellers compete by lowering prices\nPrice falls toward \\(P^*\\)\n\n🏨 Tourism: Hotels with too many empty rooms in off-season → prices drop on Booking.com\n\nPrice too LOW (\\(P &lt; P^*\\)): Shortage (excess demand)\n\n\\(Q_d &gt; Q_s\\) → not enough goods\nBuyers compete by bidding prices up\nPrice rises toward \\(P^*\\)\n\n✈️ Tourism: Flight demand exceeds seats during holidays → prices rise, last-minute fares skyrocket\n\n\n. . .\n\nSelf-Correcting Mechanism\nMarkets naturally tend toward equilibrium. Surpluses push prices down; shortages push prices up. This process continues until \\(Q_d = Q_s\\)."
   },
   {
     "objectID": "slides/lecture16-equilibrium.html#the-four-shift-rules",
@@ -3819,14 +3819,14 @@
     "href": "slides/lecture16-equilibrium.html#the-short-run-vs-long-run-revisited",
     "title": "Producer Theory",
     "section": "The Short Run vs Long Run Revisited ⌛",
-    "text": "The Short Run vs Long Run Revisited ⌛\n\n\n\n🔒 Short-run equilibrium:\n\nNumber of firms is fixed\nFirms may earn positive profit, zero profit, or losses\nSome factors of production are fixed\nThis is what we’ve been analyzing!\n\n\n🔓 Long-run equilibrium:\n\nFirms can enter or exit the market\nAll factors of production are variable\nA special condition emerges: zero economic profit\nThe market adjusts to a new, more fundamental equilibrium\n\n\n. . .\n\nThe Key Long-Run Question\nWhat happens over time when firms in a competitive market are earning positive profits? Or making losses?"
+    "text": "The Short Run vs Long Run Revisited ⌛\n\n\n\n🔒 Short-run equilibrium:\n\nNumber of firms is fixed\nFirms may earn positive profit, zero profit, or losses\nSome factors of production are fixed\nThis is what we’ve been analyzing!\n\n\n🔓 Long-run equilibrium:\n\nFirms can enter or exit the market\nAll factors of production are variable\nA special condition emerges: zero economic profit\nThe market adjusts to a new, more fundamental equilibrium\n\n\n\n. . .\n\nThe Key Long-Run Question\nWhat happens over time when firms in a competitive market are earning positive profits? Or making losses?"
   },
   {
     "objectID": "slides/lecture16-equilibrium.html#the-entry-and-exit-mechanism",
     "href": "slides/lecture16-equilibrium.html#the-entry-and-exit-mechanism",
     "title": "Producer Theory",
     "section": "The Entry and Exit Mechanism 🚪",
-    "text": "The Entry and Exit Mechanism 🚪\n\n\n\nIf firms earn positive economic profit (\\(P &gt; ATC\\)):\n\n➡️ New firms are attracted → they enter the market\n📈 Market supply shifts right (more firms = more supply)\n⬇️ Equilibrium price falls\n🔁 Process continues until \\(P = ATC_{\\min}\\) → zero economic profit\n\n\nIf firms make losses (\\(P &lt; ATC\\)):\n\n⬅️ Some firms exit the market\n📉 Market supply shifts left (fewer firms = less supply)\n⬆️ Equilibrium price rises\n🔁 Process continues until \\(P = ATC_{\\min}\\) → zero economic profit\n\n\n. . .\n\nLong-Run Equilibrium Condition\nIn a perfectly competitive market: \\(P = MC = ATC_{\\min}\\)\nFirms produce at minimum average cost and earn zero economic profit."
+    "text": "The Entry and Exit Mechanism 🚪\n\n\n\nIf firms earn positive economic profit (\\(P &gt; ATC\\)):\n\n➡️ New firms are attracted → they enter the market\n📈 Market supply shifts right (more firms = more supply)\n⬇️ Equilibrium price falls\n🔁 Process continues until \\(P = ATC_{\\min}\\) → zero economic profit\n\n\nIf firms make losses (\\(P &lt; ATC\\)):\n\n⬅️ Some firms exit the market\n📉 Market supply shifts left (fewer firms = less supply)\n⬆️ Equilibrium price rises\n🔁 Process continues until \\(P = ATC_{\\min}\\) → zero economic profit\n\n\n\n. . .\n\nLong-Run Equilibrium Condition\nIn a perfectly competitive market: \\(P = MC = ATC_{\\min}\\)\nFirms produce at minimum average cost and earn zero economic profit."
   },
   {
     "objectID": "slides/lecture16-equilibrium.html#visualizing-the-long-run-adjustment",
@@ -3854,7 +3854,7 @@
     "href": "slides/lecture16-equilibrium.html#tourism-markets-sr-vs-lr",
     "title": "Producer Theory",
     "section": "Tourism Markets: SR vs LR ✈️",
-    "text": "Tourism Markets: SR vs LR ✈️\n\nWhat happened to Lisbon’s hotel market after the tourism boom (post-2015)?\n\n\n1️⃣ Short run (2015–2017):\n\nDemand surged (low-cost airlines, Lisbon’s popularity)\nSupply was fixed (existing hotels)\nResult: prices skyrocketed, occupancy hit record highs\nExisting hotels earned large profits\n\\(P &gt;&gt; ATC_{\\min}\\) → well above breakeven\n\n\n2️⃣ Long run (2018–2024):\n\nProfits attracted entry: new hotels, Airbnb, hostels\nSupply shifted right significantly\nResult: prices stabilized (or even fell for some segments)\nCompetition increased, profit margins narrowed\nMarket moved toward \\(P \\approx ATC_{\\min}\\)\n\n👉 This is the entry mechanism in action!\n\n. . .\n💡 The pandemic (2020–2021) reversed this: demand collapsed → firms exited → supply shifted left → the cycle restarted."
+    "text": "Tourism Markets: SR vs LR ✈️\n\nWhat happened to Lisbon’s hotel market after the tourism boom (post-2015)?\n\n\n1️⃣ Short run (2015–2017):\n\nDemand surged (low-cost airlines, Lisbon’s popularity)\nSupply was fixed (existing hotels)\nResult: prices skyrocketed, occupancy hit record highs\nExisting hotels earned large profits\n\\(P &gt;&gt; ATC_{\\min}\\) → well above breakeven\n\n\n2️⃣ Long run (2018–2024):\n\nProfits attracted entry: new hotels, Airbnb, hostels\nSupply shifted right significantly\nResult: prices stabilized (or even fell for some segments)\nCompetition increased, profit margins narrowed\nMarket moved toward \\(P \\approx ATC_{\\min}\\)\n\n👉 This is the entry mechanism in action!\n\n\n. . .\n💡 The pandemic (2020–2021) reversed this: demand collapsed → firms exited → supply shifted left → the cycle restarted."
   },
   {
     "objectID": "slides/lecture16-equilibrium.html#summary",
@@ -3917,14 +3917,14 @@
     "href": "slides/lecture16-equilibrium.html#next-lecture",
     "title": "Producer Theory",
     "section": "Next Lecture",
-    "text": "Next Lecture\nApril 17, 2026: Introduction to Game Theory — Prisoner’s Dilemma & Nash Equilibrium ♟️\nA brand new topic — what happens when firms are not price takers and interact strategically?\n\n👋 This completes the Producer Theory block! Time to move beyond perfect competition."
+    "text": "Next Lecture\nApril 17, 2026: Introduction to Game Theory — Prisoner’s Dilemma & Nash Equilibrium ♟️\nA brand new topic — what happens when firms are not price takers and interact strategically?\n. . .\n👋 This completes the Producer Theory block! Time to move beyond perfect competition."
   },
   {
     "objectID": "slides/lecture16-equilibrium.html#thank-you",
     "href": "slides/lecture16-equilibrium.html#thank-you",
     "title": "Producer Theory",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Friday, April 17, 2026\n\nThis is the capstone lecture of the producer theory block. It ties together everything from Lectures 10–15: cost curves determine supply, supply meets demand at equilibrium, and the long-run entry/exit mechanism drives profits to zero. The Lisbon hotel boom example makes the LR adjustment process tangible. Students should leave understanding that competitive markets self-correct through entry and exit, and that zero economic profit is the natural long-run state — not a sign of failure. The exercise deliberately starts at a long-run equilibrium, then shocks demand to show the full SR→LR adjustment process."
   },
   {
     "objectID": "slides/lecture22-gdp.html#recap-aggregation",
@@ -3980,7 +3980,7 @@
     "href": "slides/lecture22-gdp.html#portugals-gdp-components-a-look-at-the-data",
     "title": "Gross Domestic Product",
     "section": "Portugal’s GDP Components — A Look at the Data 🇵🇹",
-    "text": "Portugal’s GDP Components — A Look at the Data 🇵🇹\n\n\n\n\n\n\n\n\n\n👉 Notice how exports have grown substantially — tourism plays a major role here."
+    "text": "Portugal’s GDP Components — A Look at the Data 🇵🇹\n\n# Eurostat nama_10_gdp — expenditure components as % of GDP\ncomp_raw &lt;- get_eurostat(\"nama_10_gdp\",\n  filters = list(\n    geo     = \"PT\",\n    na_item = c(\"P31_S14_S15\", \"P51G\", \"P3_S13\", \"P6\", \"P7\"),\n    unit    = \"CP_MEUR\"\n  ),\n  time_format = \"num\"\n)\n\nTable nama_10_gdp cached at /tmp/RtmpSKKQqI/eurostat/9f7f17f6e5a7fe411968453ed3f51fcf.rds\n\ngdp_tot &lt;- get_eurostat(\"nama_10_gdp\",\n  filters = list(geo = \"PT\", na_item = \"B1GQ\", unit = \"CP_MEUR\"),\n  time_format = \"num\"\n) |&gt; select(time, gdp = values)\n\nTable nama_10_gdp cached at /tmp/RtmpSKKQqI/eurostat/896609113ca40bc1406626c856ac3625.rds\n\ncomp &lt;- comp_raw |&gt;\n  filter(time &gt;= 2005) |&gt;\n  left_join(gdp_tot, by = \"time\") |&gt;\n  mutate(\n    share = values / gdp * 100,\n    component = case_when(\n      na_item == \"P31_S14_S15\" ~ \"Consumption (C)\",\n      na_item == \"P51G\"       ~ \"Investment (I)\",\n      na_item == \"P3_S13\"     ~ \"Government (G)\",\n      na_item == \"P6\"         ~ \"Exports (X)\",\n      na_item == \"P7\"         ~ \"Imports (M)\"\n    )\n  ) |&gt;\n  filter(!is.na(share))\n\nggplot(comp, aes(x = time, y = share, color = component)) +\n  geom_line(linewidth = 1.1) +\n  scale_color_manual(values = c(\n    \"Consumption (C)\" = ue_red,\n    \"Investment (I)\"  = ue_black,\n    \"Government (G)\"  = ue_gray,\n    \"Exports (X)\"     = \"#E07B00\",\n    \"Imports (M)\"     = \"#5B8DB8\"\n  )) +\n  labs(\n    title = \"Portugal: GDP Expenditure Components (% of GDP)\",\n    x = NULL, y = \"% of GDP\", color = NULL,\n    caption = \"Source: Eurostat (nama_10_gdp)\"\n  ) +\n  scale_x_continuous(breaks = seq(2005, 2024, 3)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title      = element_text(color = ue_red, face = \"bold\"),\n    legend.position = \"right\",\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n👉 Notice how exports have grown substantially — tourism plays a major role here."
   },
   {
     "objectID": "slides/lecture22-gdp.html#a-worked-example-portugal-sized-economy",
@@ -4015,14 +4015,14 @@
     "href": "slides/lecture22-gdp.html#nominal-vs-real-gdp-portugal",
     "title": "Gross Domestic Product",
     "section": "Nominal vs Real GDP — Portugal 🇵🇹",
-    "text": "Nominal vs Real GDP — Portugal 🇵🇹\n\n\n\n\n\n\n\n\n\n👉 The gap between the two lines = the price level rising over time. Always use real GDP for growth comparisons."
+    "text": "Nominal vs Real GDP — Portugal 🇵🇹\n\nnom_raw &lt;- get_eurostat(\"nama_10_gdp\",\n  filters = list(geo = \"PT\", na_item = \"B1GQ\", unit = \"CP_MEUR\"),\n  time_format = \"num\"\n) |&gt; filter(time &gt;= 2000) |&gt; select(time, nominal = values)\n\nDataset query already saved in cache_list.json...\n\n\nReading cache file /tmp/RtmpSKKQqI/eurostat/896609113ca40bc1406626c856ac3625.rds\n\n\nTable  nama_10_gdp  read from cache file:  /tmp/RtmpSKKQqI/eurostat/896609113ca40bc1406626c856ac3625.rds\n\nreal_raw &lt;- get_eurostat(\"nama_10_gdp\",\n  filters = list(geo = \"PT\", na_item = \"B1GQ\", unit = \"CLV10_MEUR\"),\n  time_format = \"num\"\n) |&gt; filter(time &gt;= 2000) |&gt; select(time, real = values)\n\nTable nama_10_gdp cached at /tmp/RtmpSKKQqI/eurostat/fc566aaf1ef4d09a45de7b4b8823409d.rds\n\ngdp_both &lt;- inner_join(nom_raw, real_raw, by = \"time\") |&gt;\n  pivot_longer(cols = c(nominal, real),\n               names_to = \"type\", values_to = \"value\") |&gt;\n  mutate(type = case_when(\n    type == \"nominal\" ~ \"Nominal GDP\",\n    type == \"real\"    ~ \"Real GDP (2010 prices)\"\n  ))\n\nggplot(gdp_both, aes(x = time, y = value / 1000, color = type, linetype = type)) +\n  geom_line(linewidth = 1.3) +\n  scale_color_manual(values = c(\n    \"Nominal GDP\"            = ue_red,\n    \"Real GDP (2010 prices)\" = ue_black\n  )) +\n  scale_linetype_manual(values = c(\n    \"Nominal GDP\"            = \"solid\",\n    \"Real GDP (2010 prices)\" = \"dashed\"\n  )) +\n  labs(\n    title = \"Portugal: Nominal vs Real GDP\",\n    x = NULL, y = \"€ billion\", color = NULL, linetype = NULL,\n    caption = \"Source: Eurostat (nama_10_gdp). Real GDP at 2010 chain-linked prices.\"\n  ) +\n  scale_x_continuous(breaks = seq(2000, 2024, 4)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title      = element_text(color = ue_red, face = \"bold\"),\n    legend.position = \"bottom\",\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n👉 The gap between the two lines = the price level rising over time. Always use real GDP for growth comparisons."
   },
   {
     "objectID": "slides/lecture22-gdp.html#gdp-per-capita-comparing-across-countries",
     "href": "slides/lecture22-gdp.html#gdp-per-capita-comparing-across-countries",
     "title": "Gross Domestic Product",
     "section": "GDP Per Capita — Comparing Across Countries 🌐",
-    "text": "GDP Per Capita — Comparing Across Countries 🌐\nA country with a larger population naturally has more GDP. To compare living standards, we use GDP per capita:\n\\[\\text{GDP per capita} = \\frac{\\text{GDP}}{\\text{Population}}\\]\n. . ."
+    "text": "GDP Per Capita — Comparing Across Countries 🌐\nA country with a larger population naturally has more GDP. To compare living standards, we use GDP per capita:\n\\[\\text{GDP per capita} = \\frac{\\text{GDP}}{\\text{Population}}\\]\n. . .\n\npc_raw &lt;- get_eurostat(\"nama_10_pc\",\n  filters = list(\n    geo     = c(\"PT\", \"ES\", \"FR\", \"DE\", \"GR\", \"EU27_2020\"),\n    na_item = \"B1GQ\",\n    unit    = \"CP_EUR_HAB\"          # Euro per inhabitant at current prices\n  ),\n  time_format = \"num\"\n) |&gt; filter(time == max(time[!is.na(values)])) |&gt;\n  mutate(geo_label = case_when(\n    geo == \"PT\"        ~ \"Portugal\",\n    geo == \"ES\"        ~ \"Spain\",\n    geo == \"FR\"        ~ \"France\",\n    geo == \"DE\"        ~ \"Germany\",\n    geo == \"GR\"        ~ \"Greece\",\n    geo == \"EU27_2020\" ~ \"EU-27 avg\"\n  )) |&gt;\n  filter(!is.na(values))\n\nTable nama_10_pc cached at /tmp/RtmpSKKQqI/eurostat/a7deb3545b95849d4e91b885d9098aa1.rds\n\nggplot(pc_raw, aes(x = reorder(geo_label, values), y = values / 1000)) +\n  geom_col(aes(fill = geo_label == \"Portugal\"), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"TRUE\" = ue_red, \"FALSE\" = ue_gray)) +\n  geom_text(aes(label = paste0(\"€\", round(values / 1000, 0), \"k\")),\n            hjust = -0.1, size = 3.5, color = ue_black) +\n  coord_flip() +\n  scale_y_continuous(limits = c(0, max(pc_raw$values / 1000) * 1.18)) +\n  labs(\n    title = paste0(\"GDP per Capita (€) — Latest available year\"),\n    x = NULL, y = \"Thousand €\",\n    caption = \"Source: Eurostat (nama_10_pc). Current prices, euro per inhabitant.\"\n  ) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title = element_text(color = ue_red, face = \"bold\"),\n    panel.grid.minor = element_blank(),\n    panel.grid.major.y = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture22-gdp.html#what-gdp-does-not-measure",
@@ -4036,7 +4036,7 @@
     "href": "slides/lecture22-gdp.html#gdp-and-tourism-receipts-how-big-is-the-sector",
     "title": "Gross Domestic Product",
     "section": "GDP and Tourism Receipts — How Big is the Sector? 📈",
-    "text": "GDP and Tourism Receipts — How Big is the Sector? 📈"
+    "text": "GDP and Tourism Receipts — How Big is the Sector? 📈\n\n# Tourism receipts: BOP travel credits (SB = Travel services, CRE = credits/receipts)\ntr_bop &lt;- get_eurostat(\"bop_its6_det\",\n  filters = list(\n    geo      = c(\"PT\", \"ES\", \"FR\", \"GR\", \"HR\"),\n    bop_item = \"SB\",\n    currency = \"MIO_EUR\",\n    stk_flow = \"CRE\",\n    partner  = \"EXT_EU27_2020\"\n  ),\n  time_format = \"num\"\n) |&gt;\n  filter(time == 2019) |&gt;\n  select(geo, receipts = values)\n\nTable bop_its6_det cached at /tmp/RtmpSKKQqI/eurostat/8d0205576b772af3130c6519d85dae05.rds\n\ngdp_comp &lt;- get_eurostat(\"nama_10_gdp\",\n  filters = list(\n    geo     = c(\"PT\", \"ES\", \"FR\", \"GR\", \"HR\"),\n    na_item = \"B1GQ\",\n    unit    = \"CP_MEUR\"\n  ),\n  time_format = \"num\"\n) |&gt; filter(time == 2019) |&gt; select(geo, gdp = values)\n\nTable nama_10_gdp cached at /tmp/RtmpSKKQqI/eurostat/feded9a81a340c6659ff1e3a6d192960.rds\n\ntourism_share &lt;- inner_join(tr_bop, gdp_comp, by = \"geo\") |&gt;\n  mutate(\n    share = receipts / gdp * 100,\n    geo_label = case_when(\n      geo == \"PT\" ~ \"Portugal\",\n      geo == \"ES\" ~ \"Spain\",\n      geo == \"FR\" ~ \"France\",\n      geo == \"GR\" ~ \"Greece\",\n      geo == \"HR\" ~ \"Croatia\"\n    )\n  ) |&gt;\n  filter(!is.na(share))\n\nggplot(tourism_share, aes(x = reorder(geo_label, share), y = share)) +\n  geom_col(aes(fill = geo_label == \"Portugal\"), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"TRUE\" = ue_red, \"FALSE\" = ue_gray)) +\n  geom_text(aes(label = paste0(round(share, 1), \"%\")),\n            hjust = -0.15, size = 4, color = ue_black) +\n  coord_flip() +\n  scale_y_continuous(limits = c(0, max(tourism_share$share) * 1.2)) +\n  labs(\n    title = \"Tourism Receipts (from non-EU) as % of GDP — 2019\",\n    subtitle = \"Pre-COVID benchmark year\",\n    x = NULL, y = \"% of GDP\",\n    caption = \"Source: Eurostat (bop_its6_det, nama_10_gdp)\"\n  ) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title    = element_text(color = ue_red, face = \"bold\"),\n    plot.subtitle = element_text(color = ue_gray, size = 10),\n    panel.grid.minor = element_blank(),\n    panel.grid.major.y = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture22-gdp.html#exercise-1-multiple-choice",
@@ -4120,14 +4120,14 @@
     "href": "slides/lecture24-monetary-policy.html#expansionary-policy-the-mechanics",
     "title": "Central Banks & Monetary Policy",
     "section": "Expansionary Policy — The Mechanics 📈",
-    "text": "Expansionary Policy — The Mechanics 📈\nScenario: Portugal (and the Eurozone) enters recession. Unemployment rises. Inflation is below target.\n. . ."
+    "text": "Expansionary Policy — The Mechanics 📈\nScenario: Portugal (and the Eurozone) enters recession. Unemployment rises. Inflation is below target.\n. . .\n\nsteps &lt;- data.frame(\n  x     = 1:6,\n  label = c(\n    \"ECB cuts\\npolicy rate\",\n    \"Banks lower\\nlending rates\",\n    \"Cheaper\\nmortgages\\n& business loans\",\n    \"Households &\\nfirms borrow\\n& spend more\",\n    \"AD rises:\\nmore output\\n& employment\",\n    \"Inflation\\nmoves toward\\n2% target\"\n  ),\n  col = c(ue_red, ue_red, \"#E07B00\", \"#E07B00\", ue_black, ue_black)\n)\n\nggplot(steps) +\n  geom_tile(aes(x = x, y = 1), width = 0.85, height = 0.7,\n            fill = steps$col, alpha = 0.85) +\n  geom_text(aes(x = x, y = 1, label = label),\n            color = \"white\", fontface = \"bold\", size = 3.1,\n            lineheight = 0.9) +\n  geom_segment(\n    data = data.frame(x = 1:5 + 0.43, xend = 1:5 + 0.57, y = 1, yend = 1),\n    aes(x = x, xend = xend, y = y, yend = yend),\n    arrow = arrow(length = unit(0.25, \"cm\"), type = \"closed\"),\n    color = ue_gray, linewidth = 1\n  ) +\n  annotate(\"text\", x = 3.5, y = 0.45,\n           label = \"Transmission mechanism — takes 12–18 months\",\n           color = ue_gray, size = 3, fontface = \"italic\") +\n  xlim(0.5, 6.5) + ylim(0.2, 1.6) +\n  theme_void() +\n  labs(title = \"Expansionary Monetary Policy: Transmission Chain\",\n       subtitle = \"Hypothetical illustration\") +\n  theme(\n    plot.title    = element_text(color = ue_red, face = \"bold\", size = 13,\n                                 hjust = 0.5),\n    plot.subtitle = element_text(color = ue_gray, size = 9, hjust = 0.5)\n  )"
   },
   {
     "objectID": "slides/lecture24-monetary-policy.html#contractionary-policy-the-mechanics",
     "href": "slides/lecture24-monetary-policy.html#contractionary-policy-the-mechanics",
     "title": "Central Banks & Monetary Policy",
     "section": "Contractionary Policy — The Mechanics 📉",
-    "text": "Contractionary Policy — The Mechanics 📉\nScenario: Inflation surges to 8% (as in 2022). The ECB must act.\n. . ."
+    "text": "Contractionary Policy — The Mechanics 📉\nScenario: Inflation surges to 8% (as in 2022). The ECB must act.\n. . .\n\nsteps2 &lt;- data.frame(\n  x     = 1:6,\n  label = c(\n    \"ECB raises\\npolicy rate\",\n    \"Banks raise\\nlending rates\",\n    \"Expensive\\nmortgages\\n& business loans\",\n    \"Households &\\nfirms borrow\\n& spend less\",\n    \"AD falls:\\nless demand\\npressure\",\n    \"Inflation\\nfalls toward\\n2% target\"\n  ),\n  col = c(ue_black, ue_black, \"#5B8DB8\", \"#5B8DB8\", \"#E07B00\", ue_red)\n)\n\nggplot(steps2) +\n  geom_tile(aes(x = x, y = 1), width = 0.85, height = 0.7,\n            fill = steps2$col, alpha = 0.85) +\n  geom_text(aes(x = x, y = 1, label = label),\n            color = \"white\", fontface = \"bold\", size = 3.1,\n            lineheight = 0.9) +\n  geom_segment(\n    data = data.frame(x = 1:5 + 0.43, xend = 1:5 + 0.57, y = 1, yend = 1),\n    aes(x = x, xend = xend, y = y, yend = yend),\n    arrow = arrow(length = unit(0.25, \"cm\"), type = \"closed\"),\n    color = ue_gray, linewidth = 1\n  ) +\n  annotate(\"text\", x = 3.5, y = 0.45,\n           label = \"Risk: slowdown & higher unemployment as side effect\",\n           color = ue_gray, size = 3, fontface = \"italic\") +\n  xlim(0.5, 6.5) + ylim(0.2, 1.6) +\n  theme_void() +\n  labs(title = \"Contractionary Monetary Policy: Transmission Chain\",\n       subtitle = \"Hypothetical illustration\") +\n  theme(\n    plot.title    = element_text(color = ue_red, face = \"bold\", size = 13,\n                                 hjust = 0.5),\n    plot.subtitle = element_text(color = ue_gray, size = 9, hjust = 0.5)\n  )"
   },
   {
     "objectID": "slides/lecture24-monetary-policy.html#side-by-side-comparison",
@@ -4141,7 +4141,7 @@
     "href": "slides/lecture24-monetary-policy.html#ecb-interest-rates-history",
     "title": "Central Banks & Monetary Policy",
     "section": "ECB Interest Rates — History 🇵🇹",
-    "text": "ECB Interest Rates — History 🇵🇹"
+    "text": "ECB Interest Rates — History 🇵🇹\n\n# ECB deposit facility rate — Eurostat irt_st_a (short-term interest rates annual)\n# Using MIR (money market) or ECB rate from Eurostat\n# Most reliable: irt_lt_mcby_a (long rates) or irt_st_a (short rates)\n# For ECB policy rates, use irt_st_a — EURIBOR overnight (EONIA/ESTR as proxy)\n\necb_raw &lt;- get_eurostat(\"irt_st_a\",\n  filters = list(\n    geo   = \"EA\",\n    int_rt = \"IRT_M3\"          # 3-month money market rate — close proxy for policy\n  ),\n  time_format = \"num\"\n) |&gt;\n  filter(time &gt;= 1999, !is.na(values)) |&gt;\n  arrange(time)\n\nTable irt_st_a cached at /tmp/RtmpkwHRMR/eurostat/63671438fffbb55f33394868af955a36.rds\n\nggplot(ecb_raw, aes(x = time, y = values)) +\n  geom_line(color = ue_red, linewidth = 1.4) +\n  geom_area(fill = ue_red, alpha = 0.08) +\n  geom_hline(yintercept = 0, color = ue_black, linewidth = 0.4) +\n  # Key episodes\n  annotate(\"rect\", xmin = 2008, xmax = 2010,\n           ymin = -Inf, ymax = Inf, fill = ue_gray, alpha = 0.1) +\n  annotate(\"text\", x = 2009, y = 4.2, label = \"GFC\",\n           color = ue_gray, size = 3, fontface = \"italic\") +\n  annotate(\"rect\", xmin = 2011.8, xmax = 2013.5,\n           ymin = -Inf, ymax = Inf, fill = ue_gray, alpha = 0.1) +\n  annotate(\"text\", x = 2012.5, y = 4.2, label = \"Debt\\ncrisis\",\n           color = ue_gray, size = 3, fontface = \"italic\") +\n  annotate(\"rect\", xmin = 2020, xmax = 2021,\n           ymin = -Inf, ymax = Inf, fill = ue_gray, alpha = 0.1) +\n  annotate(\"text\", x = 2020.5, y = 4.2, label = \"COVID\",\n           color = ue_gray, size = 3, fontface = \"italic\") +\n  annotate(\"rect\", xmin = 2022, xmax = 2024,\n           ymin = -Inf, ymax = Inf, fill = \"#E07B00\", alpha = 0.08) +\n  annotate(\"text\", x = 2023, y = 4.2, label = \"Rate\\nhike cycle\",\n           color = \"#E07B00\", size = 3, fontface = \"italic\") +\n  labs(\n    title = \"Eurozone: 3-Month Money Market Rate (annual average)\",\n    subtitle = \"Proxy for ECB monetary policy stance\",\n    x = NULL, y = \"% per annum\",\n    caption = \"Source: Eurostat (irt_st_a, IRT_M3, EA)\"\n  ) +\n  scale_x_continuous(breaks = seq(1999, 2024, 3)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\"),\n    plot.subtitle    = element_text(color = ue_gray, size = 10),\n    panel.grid.minor = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture24-monetary-policy.html#reading-the-rate-history",
@@ -4155,7 +4155,7 @@
     "href": "slides/lecture24-monetary-policy.html#interest-rates-and-tourism-investment",
     "title": "Central Banks & Monetary Policy",
     "section": "Interest Rates and Tourism Investment 🏨",
-    "text": "Interest Rates and Tourism Investment 🏨\n\n\nHow monetary policy affects tourism supply:\n⬇️ Low interest rates (expansionary):\n\nHotel construction loans become affordable\nTour operators can invest in new equipment/fleets\nAirbnb hosts finance renovations cheaply\nNew capacity is built → tourism supply expands\n\n⬆️ High interest rates (contractionary):\n\nDebt servicing costs rise for existing hotel loans\nNew investment projects shelved\nSome leveraged hotel groups face financial stress\nSupply expansion slows or reverses\n\n👉 The 2015–2022 low-rate era directly contributed to the tourism boom and hotel construction wave in Lisbon, Porto, and the Algarve."
+    "text": "Interest Rates and Tourism Investment 🏨\n\n\nHow monetary policy affects tourism supply:\n⬇️ Low interest rates (expansionary):\n\nHotel construction loans become affordable\nTour operators can invest in new equipment/fleets\nAirbnb hosts finance renovations cheaply\nNew capacity is built → tourism supply expands\n\n⬆️ High interest rates (contractionary):\n\nDebt servicing costs rise for existing hotel loans\nNew investment projects shelved\nSome leveraged hotel groups face financial stress\nSupply expansion slows or reverses\n\n👉 The 2015–2022 low-rate era directly contributed to the tourism boom and hotel construction wave in Lisbon, Porto, and the Algarve.\n\n\n# Mortgage/lending rates in Portugal — irt_h_eurclt_a\n# Using harmonised long-term interest rates as proxy\nlt_raw &lt;- get_eurostat(\"irt_lt_mcby_a\",\n  filters = list(geo = \"PT\"),\n  time_format = \"num\"\n) |&gt;\n  filter(time &gt;= 2005, !is.na(values)) |&gt;\n  arrange(time)\n\nTable irt_lt_mcby_a cached at /tmp/RtmpkwHRMR/eurostat/ae747b6bcc36cb1e4ce55a60b92aefbd.rds\n\nggplot(lt_raw, aes(x = time, y = values)) +\n  geom_line(color = ue_red, linewidth = 1.3) +\n  geom_area(fill = ue_red, alpha = 0.08) +\n  geom_hline(yintercept = 0, color = ue_black, linewidth = 0.4) +\n  labs(\n    title = \"Portugal: Long-Term\\nGovernment Bond Yield\",\n    subtitle = \"Proxy for borrowing costs\",\n    x = NULL, y = \"% per annum\",\n    caption = \"Source: Eurostat (irt_lt_mcby_a)\"\n  ) +\n  scale_x_continuous(breaks = seq(2005, 2024, 4)) +\n  theme_minimal(base_size = 11) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\", size = 11),\n    plot.subtitle    = element_text(color = ue_gray, size = 9),\n    panel.grid.minor = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture24-monetary-policy.html#the-impossible-trinity",
@@ -4169,7 +4169,7 @@
     "href": "slides/lecture24-monetary-policy.html#the-inflationunemployment-trade-off-revisited",
     "title": "Central Banks & Monetary Policy",
     "section": "The Inflation–Unemployment Trade-off Revisited ⚖️",
-    "text": "The Inflation–Unemployment Trade-off Revisited ⚖️\n\n\n\n\n\n\n\n\n\n👉 Contractionary policy (fighting inflation) moves the economy right along the curve — lower inflation but higher unemployment. Central bankers navigate this trade-off constantly."
+    "text": "The Inflation–Unemployment Trade-off Revisited ⚖️\n\n# Illustrative Phillips Curve\nu_range &lt;- seq(3, 15, length.out = 200)\nphillips &lt;- 14 - 0.9 * u_range + rnorm(200, 0, 0.3)\n\ndf_pc &lt;- data.frame(u = u_range, pi = phillips)\n\nggplot(df_pc, aes(x = u, y = pi)) +\n  geom_line(color = ue_red, linewidth = 1.4) +\n  geom_hline(yintercept = 2, linetype = \"dashed\",\n             color = ue_gray, linewidth = 0.8) +\n  annotate(\"text\", x = 14, y = 2.6,\n           label = \"ECB target: 2%\", color = ue_gray,\n           size = 3.2, fontface = \"italic\") +\n  # Contractionary zone\n  annotate(\"rect\", xmin = 8, xmax = 15,\n           ymin = -Inf, ymax = Inf, fill = \"#5B8DB8\", alpha = 0.07) +\n  annotate(\"text\", x = 11.5, y = 8,\n           label = \"High unemployment\\nLow inflation\\n(Expansionary policy needed)\",\n           color = \"#5B8DB8\", size = 3, hjust = 0.5) +\n  # Expansionary zone\n  annotate(\"rect\", xmin = 3, xmax = 6,\n           ymin = -Inf, ymax = Inf, fill = ue_red, alpha = 0.07) +\n  annotate(\"text\", x = 4.5, y = 1,\n           label = \"Low unemployment\\nHigh inflation\\n(Contractionary policy needed)\",\n           color = ue_red, size = 3, hjust = 0.5) +\n  labs(\n    title = \"The Phillips Curve: Inflation–Unemployment Trade-off\",\n    subtitle = \"Hypothetical — illustrative only\",\n    x = \"Unemployment rate (%)\", y = \"Inflation rate (%)\",\n    caption = \"Hypothetical data for illustration\"\n  ) +\n  scale_x_continuous(breaks = seq(3, 15, 2)) +\n  scale_y_continuous(breaks = seq(0, 12, 2)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\"),\n    plot.subtitle    = element_text(color = ue_gray, size = 10),\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n👉 Contractionary policy (fighting inflation) moves the economy right along the curve — lower inflation but higher unemployment. Central bankers navigate this trade-off constantly."
   },
   {
     "objectID": "slides/lecture24-monetary-policy.html#monetary-policy-and-tourism-putting-it-together",
@@ -4253,7 +4253,7 @@
     "href": "slides/lecture26-bop.html#current-account-balance-portugal",
     "title": "The Balance of Payments",
     "section": "Current Account Balance — Portugal 🇵🇹",
-    "text": "Current Account Balance — Portugal 🇵🇹\n\n\n\n\n\n\n\n\n\n👉 Portugal ran persistent current account deficits before 2013 — a key driver of the debt crisis. The adjustment to surplus was painful but necessary."
+    "text": "Current Account Balance — Portugal 🇵🇹\n\n# Current account components as % of GDP — Eurostat bop_eu6_q annual\n# Use bop_c6_q or bop_gdp6_q for annual CA data\n# Most reliable: nama_10_gdp for NX, and separate CA from bop\n# Using tipsii10 — current account balance as % of GDP (EDP)\nca_raw &lt;- get_eurostat(\"tipsbp20\",\n  filters = list(geo = \"PT\"),\n  time_format = \"num\"\n) |&gt;\n  filter(time &gt;= 2000, !is.na(values)) |&gt;\n  arrange(time)\n\nTable tipsbp20 cached at /tmp/RtmpUQgCVn/eurostat/4a30002b0bf6d33b5cbca2b51cb54aaa.rds\n\nggplot(ca_raw, aes(x = time, y = values)) +\n  geom_col(aes(fill = values &gt;= 0), show.legend = FALSE) +\n  scale_fill_manual(values = c(\"TRUE\" = \"#5B8DB8\", \"FALSE\" = ue_red)) +\n  geom_hline(yintercept = 0, color = ue_black, linewidth = 0.5) +\n  annotate(\"rect\", xmin = 2010.5, xmax = 2014.5,\n           ymin = -Inf, ymax = Inf, fill = ue_gray, alpha = 0.1) +\n  annotate(\"text\", x = 2012.5, y = -11,\n           label = \"Troika\\nadjustment\", color = ue_gray,\n           size = 3, fontface = \"italic\") +\n  annotate(\"rect\", xmin = 2020, xmax = 2021,\n           ymin = -Inf, ymax = Inf, fill = ue_gray, alpha = 0.1) +\n  annotate(\"text\", x = 2020.5, y = -11,\n           label = \"COVID\", color = ue_gray,\n           size = 3, fontface = \"italic\") +\n  labs(\n    title = \"Portugal: Current Account Balance (% of GDP)\",\n    subtitle = \"Blue = surplus, Red = deficit\",\n    x = NULL, y = \"% of GDP\",\n    caption = \"Source: Eurostat (tipsbp20)\"\n  ) +\n  scale_x_continuous(breaks = seq(2000, 2024, 4)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\"),\n    plot.subtitle    = element_text(color = ue_gray, size = 10),\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n👉 Portugal ran persistent current account deficits before 2013 — a key driver of the debt crisis. The adjustment to surplus was painful but necessary."
   },
   {
     "objectID": "slides/lecture26-bop.html#tourism-as-an-export-of-services",
@@ -4267,7 +4267,7 @@
     "href": "slides/lecture26-bop.html#portugals-tourism-in-the-current-account",
     "title": "The Balance of Payments",
     "section": "Portugal’s Tourism in the Current Account 📈",
-    "text": "Portugal’s Tourism in the Current Account 📈"
+    "text": "Portugal’s Tourism in the Current Account 📈\n\n# Trade in services — goods and services from nama_10_gdp for context\n# For actual tourism share, use the exports of services from nama_10_gdp\n# P6 = exports of goods and services total, already validated\n# For services specifically, use bop via trade in services table\n\n# Use validated dataset: nama_10_gdp P6 and P7 (total exports/imports) vs GDP\n# and supplement with HICP services component as narrative support\n\n# Simple validated approach: exports vs imports of goods+services as % of GDP\ntrade_raw &lt;- get_eurostat(\"nama_10_gdp\",\n  filters = list(\n    geo     = \"PT\",\n    na_item = c(\"P6\", \"P7\", \"B1GQ\"),\n    unit    = \"CP_MEUR\"\n  ),\n  time_format = \"num\"\n) |&gt;\n  filter(time &gt;= 2000, !is.na(values)) |&gt;\n  select(time, na_item, values) |&gt;\n  pivot_wider(names_from = na_item, values_from = values) |&gt;\n  filter(!is.na(P6), !is.na(P7), !is.na(B1GQ)) |&gt;\n  mutate(\n    exports_gdp = P6 / B1GQ * 100,\n    imports_gdp = P7 / B1GQ * 100,\n    nx_gdp      = (P6 - P7) / B1GQ * 100\n  ) |&gt;\n  select(time, exports_gdp, imports_gdp, nx_gdp) |&gt;\n  pivot_longer(cols = c(exports_gdp, imports_gdp),\n               names_to = \"flow\", values_to = \"value\") |&gt;\n  mutate(flow = case_when(\n    flow == \"exports_gdp\" ~ \"Exports (X)\",\n    flow == \"imports_gdp\" ~ \"Imports (M)\"\n  ))\n\nTable nama_10_gdp cached at /tmp/RtmpUQgCVn/eurostat/04a3a4ac4e5c6bce5f4d625a0a58f4b3.rds\n\nggplot(trade_raw, aes(x = time, y = value, color = flow)) +\n  geom_line(linewidth = 1.3) +\n  scale_color_manual(values = c(\n    \"Exports (X)\" = ue_red,\n    \"Imports (M)\" = ue_black\n  )) +\n  labs(\n    title = \"Portugal: Total Exports and Imports of Goods & Services (% of GDP)\",\n    x = NULL, y = \"% of GDP\", color = NULL,\n    caption = \"Source: Eurostat (nama_10_gdp). Includes goods and services.\"\n  ) +\n  scale_x_continuous(breaks = seq(2000, 2024, 4)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\"),\n    legend.position  = \"bottom\",\n    panel.grid.minor = element_blank()\n  )"
   },
   {
     "objectID": "slides/lecture26-bop.html#why-tourism-matters-so-much-for-portugal",
@@ -4288,7 +4288,7 @@
     "href": "slides/lecture26-bop.html#exchange-rates-and-tourism-flows",
     "title": "The Balance of Payments",
     "section": "Exchange Rates and Tourism Flows ✈️",
-    "text": "Exchange Rates and Tourism Flows ✈️\n\n\n\n\n\n\n\n\n\n👉 Brexit (2016) caused a sharp GBP depreciation — British tourists found Portugal more expensive overnight. A key example of exchange rate risk for tourism."
+    "text": "Exchange Rates and Tourism Flows ✈️\n\n# EUR/GBP and EUR/USD exchange rates from Eurostat ert_bil_eur_a\nfx_raw &lt;- get_eurostat(\"ert_bil_eur_a\",\n  filters = list(\n    currency = c(\"GBP\", \"USD\"),\n    statinfo = \"AVG\"\n  ),\n  time_format = \"num\"\n) |&gt;\n  filter(time &gt;= 2000, !is.na(values)) |&gt;\n  mutate(label = case_when(\n    currency == \"GBP\" ~ \"EUR/GBP (€ per £)\",\n    currency == \"USD\" ~ \"EUR/USD (€ per $)\"\n  ))\n\nTable ert_bil_eur_a cached at /tmp/RtmpUQgCVn/eurostat/42ab33d016f68f40ccc05c77ecd9c4cf.rds\n\nggplot(fx_raw, aes(x = time, y = values, color = label)) +\n  geom_line(linewidth = 1.3) +\n  scale_color_manual(values = c(\n    \"EUR/GBP (€ per £)\" = ue_red,\n    \"EUR/USD (€ per $)\" = ue_black\n  )) +\n  geom_hline(yintercept = 1, linetype = \"dashed\",\n             color = ue_gray, linewidth = 0.6) +\n  annotate(\"text\", x = 2001.5, y = 1.02,\n           label = \"Parity (1:1)\", color = ue_gray,\n           size = 3, fontface = \"italic\") +\n  labs(\n    title = \"EUR/GBP and EUR/USD Exchange Rates (annual average)\",\n    subtitle = \"Higher value = euro is stronger (more expensive for UK/US visitors)\",\n    x = NULL, y = \"Euros per foreign currency unit\",\n    color = NULL,\n    caption = \"Source: Eurostat (ert_bil_eur_a)\"\n  ) +\n  scale_x_continuous(breaks = seq(2000, 2024, 4)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title       = element_text(color = ue_red, face = \"bold\"),\n    plot.subtitle    = element_text(color = ue_gray, size = 10),\n    legend.position  = \"bottom\",\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n👉 Brexit (2016) caused a sharp GBP depreciation — British tourists found Portugal more expensive overnight. A key example of exchange rate risk for tourism."
   },
   {
     "objectID": "slides/lecture26-bop.html#the-macro-block-what-we-have-learned",
@@ -4401,5 +4401,75 @@
     "title": "Fiscal Policy",
     "section": "",
     "text": "Last lecture we studied monetary policy — the Central Bank’s lever:\n✅ Expansionary: cut rates → cheaper credit → more spending → boost GDP\n✅ Contractionary: raise rates → expensive credit → less spending → reduce inflation\n✅ Portugal cannot set its own rates — the ECB decides for the whole Eurozone\n. . .\n👉 Today: the government’s lever — fiscal policy\nTaxes and public spending are the tools. Unlike monetary policy, each government controls its own fiscal policy — even within the Eurozone."
+  },
+  {
+    "objectID": "slides/lecture19-sequential-games.html",
+    "href": "slides/lecture19-sequential-games.html",
+    "title": "Game Theory",
+    "section": "",
+    "text": "What we covered last time:\n\nGame theory: strategic interaction (players, strategies, payoffs)\nPayoff matrix: reading outcomes in simultaneous games\nDominant strategy: best regardless of what others do\nPrisoner’s Dilemma: individual rationality → collectively worse outcome\nNash Equilibrium: no player can improve by deviating alone\n\n. . .\n🎯 Today: What changes when players move one at a time rather than simultaneously?\n👉 Sequential games introduce timing, observation, and the crucial concept of credible threats."
+  },
+  {
+    "objectID": "slides/lecture16-equilibrium.html",
+    "href": "slides/lecture16-equilibrium.html",
+    "title": "Producer Theory",
+    "section": "",
+    "text": "Over Lectures 5–15, we built both sides of the market:\n\n\n🛒 Demand side (L5–L9):\n\nUtility maximization → demand curve\nMarket demand (horizontal sum)\nConsumer surplus\nDemand elasticity\n\n\n🏭 Supply side (L10–L15):\n\nCost structure → \\(P = MC\\) → supply curve\nMarket supply (horizontal sum)\nProducer surplus\nSupply elasticity\n\n\n\n. . .\n🎯 Today: We put them together to find the market equilibrium — the price and quantity where buyers and sellers agree. This is the payoff of the entire course so far!"
+  },
+  {
+    "objectID": "slides/lecture14-ps-market-supply.html",
+    "href": "slides/lecture14-ps-market-supply.html",
+    "title": "Producer Theory",
+    "section": "",
+    "text": "What we covered last time:\n\nThe seller’s supply rule: Produce where \\(P = MC\\) (rising portion, \\(P \\geq AVC\\))\nThe individual supply curve = MC above AVC\nSupply shifts: input costs ↑ → supply shifts left; technology ↑ → supply shifts right\nFixed costs don’t shift the short-run supply curve\n\n. . .\n🎯 Today: Three new pieces to complete the supply-side toolkit:\n\n1️⃣ Producer surplus — the supply-side mirror of consumer surplus\n2️⃣ Market supply — adding up individual firms’ supply curves\n3️⃣ Linear supply — the equation \\(P = c + dQ\\) and how to work with it"
+  },
+  {
+    "objectID": "slides/lecture12-shutdown-supply.html",
+    "href": "slides/lecture12-shutdown-supply.html",
+    "title": "Producer Theory",
+    "section": "",
+    "text": "What we covered last time:\n\nPerfect competition: many firms, identical product, price taker\nProfit: \\(\\pi = TR - TC = (P - ATC) \\times Q\\)\nThe golden rule: produce where \\(P = MC\\) (on the rising portion)\nIf \\(P &gt; ATC\\) → profit; if \\(P = ATC\\) → breakeven; if \\(P &lt; ATC\\) → loss\n\n. . .\n🎯 Today: We left a big question unanswered — if a firm is making a loss, should it keep producing or shut down?\nAnd once we answer that, we’ll see how MC becomes the supply curve!"
+  },
+  {
+    "objectID": "slides/lecture10-costs.html",
+    "href": "slides/lecture10-costs.html",
+    "title": "Producer Theory",
+    "section": "",
+    "text": "We’ve crossed the aisle:\n🛒 Lectures 5–9: Consumer Theory (demand side)\n🏭 Lectures 10–15: Producer Theory (supply side)\n. . .\n🎯 Today’s Goal: Understand the cost structure of firms\nHow do costs behave as production changes?"
+  },
+  {
+    "objectID": "slides/lecture03-opportunity.html",
+    "href": "slides/lecture03-opportunity.html",
+    "title": "Economics Fundamentals",
+    "section": "",
+    "text": "Lecture 1: Economics, Scarcity, Efficiency, Macro vs. Micro\nLecture 2: Three economic problems (WHAT, HOW, FOR WHOM) and economic systems (Market, Planned, Mixed)\n. . .\n🎯 Today’s Focus:\n🧠 How do people make economic decisions?\n🤔 What is rationality?\n💰 Opportunity cost — one of economics’ most powerful concepts!"
+  },
+  {
+    "objectID": "slides/lecture11-profit-max.html",
+    "href": "slides/lecture11-profit-max.html",
+    "title": "Producer Theory",
+    "section": "",
+    "text": "What we covered last time:\n\nShort run vs Long run: fixed inputs vs all variable\nCost types: FC, VC, TC and their per-unit versions (AFC, AVC, ATC)\nMarginal cost (MC): the extra cost of one more unit — the key curve\nMC crosses AVC and ATC at their minimums (the “exam grade” rule)\nLRAC: the long-run envelope — economies and diseconomies of scale\n\n. . .\n🎯 Today: Now that we know costs, how does a firm decide how much to produce to make the most profit?"
+  },
+  {
+    "objectID": "slides/lecture13-supply-rule.html",
+    "href": "slides/lecture13-supply-rule.html",
+    "title": "Producer Theory",
+    "section": "",
+    "text": "What we covered last time:\n\nShutdown rule: Operate if \\(P \\geq AVC\\); shut down if \\(P &lt; AVC\\)\nBreakeven price = \\(ATC_{\\min}\\) (zero economic profit)\nShutdown price = \\(AVC_{\\min}\\) (below this, stop producing)\nThe firm’s supply curve = the MC curve above AVC\n\n. . .\n🎯 Today: We formalize the seller’s supply rule and explore what makes the supply curve shift.\n👉 The supply rule is the producer’s equivalent of the demand curve we derived in Lecture 8!"
+  },
+  {
+    "objectID": "slides/lecture15-supply-elasticity.html",
+    "href": "slides/lecture15-supply-elasticity.html",
+    "title": "Producer Theory",
+    "section": "",
+    "text": "What we covered last time:\n\nProducer surplus: \\(PS = TR - VC\\) = area above supply, below price\nMarket supply: horizontal sum of individual supply curves (kinks when firms enter)\nLinear supply: \\(P = c + dQ\\), with \\(PS = \\frac{1}{2} \\times Q^* \\times (P^* - c)\\)\n\n. . .\n🎯 Today: How responsive are quantities to price changes?\nBefore we tackle supply elasticity, we need a quick recap of the demand elasticity concept — we ran out of time for it earlier in the course. The good news: the idea is the same on both sides!"
+  },
+  {
+    "objectID": "slides/lecture18-game-theory.html",
+    "href": "slides/lecture18-game-theory.html",
+    "title": "Game Theory",
+    "section": "",
+    "text": "In Lectures 10–17, we studied perfect competition: many firms, identical products, no firm affects the market price.\nBut most real markets aren’t like that!\n\n\n❌ Not perfect competition:\n\n✈️ Airlines: TAP vs Ryanair on the same route\n🏨 Hotels: Marriott vs Hilton in the same city\n📱 Platforms: Booking.com vs Airbnb\n🍔 Restaurants: competing for tourists on the same street\n\n\n🤔 The key difference:\nIn these markets, each firm’s decision depends on what the other firms do.\n\nIf Ryanair cuts prices, TAP must respond\nIf one hotel offers free breakfast, the neighbor considers matching\n\nThis is strategic interaction — the domain of Game Theory!"
   }
 ]
