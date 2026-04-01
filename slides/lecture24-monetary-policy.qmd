@@ -56,10 +56,10 @@ The answer is **Central Banks** — and the tool is **monetary policy**.
 
 # Part I: What is a Central Bank?
 
-## The Central Bank :bank:
+## The Central Bank :bank: {.smaller}
 
 ::: {.key-concept}
-A **Central Bank** is the institution responsible for managing a country's (or currency area's) **money supply and interest rates**. It acts as the "bank of banks" and the ultimate guardian of monetary stability.
+**Central Bank** is the institution responsible for managing a country's (or currency area's) **money supply and interest rates**. It acts as the "bank of banks" and the ultimate guardian of monetary stability.
 :::
 
 . . .
@@ -97,7 +97,7 @@ Japan
 :::
 ::::
 
-## Central Bank Independence :classical_building:
+## Central Bank Independence :classical_building: {.smaller}
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -109,7 +109,6 @@ Politicians face election pressure to stimulate growth (cut rates, print money) 
 
 An independent central bank can make **unpopular but necessary** decisions — like raising rates to fight inflation — without fear of being removed.
 
-. . .
 
 :bulb: **The time inconsistency problem:**
 
@@ -130,7 +129,7 @@ Secondary: support the general economic policies of the EU (growth, employment) 
 
 # Part II: Monetary Policy Tools
 
-## The Key Tool: Interest Rates :control_knobs:
+## The Key Tool: Interest Rates :control_knobs: {.smaller}
 
 The main instrument of monetary policy is the **policy interest rate** — the rate at which commercial banks borrow from the central bank overnight.
 
@@ -404,8 +403,6 @@ The chart tells the story of modern monetary policy in four acts:
 ::: {.column width="50%"}
 :four: **2022–2024:** Fastest rate-hiking cycle in ECB history. Inflation hit 10%+ across the Eurozone. ECB raised rates from -0.5% to 4% in just 14 months.
 
-. . .
-
 :bulb: **For tourism:**
 
 - Near-zero rates (2015–2022) made hotel investment loans very cheap → boom in new capacity
@@ -551,7 +548,7 @@ ggplot(df_pc, aes(x = u, y = pi)) +
 
 :point_right: Contractionary policy (fighting inflation) moves the economy **right along the curve** — lower inflation but higher unemployment. Central bankers navigate this trade-off constantly.
 
-## Monetary Policy and Tourism — Putting it Together :beach_umbrella:
+## Monetary Policy and Tourism — Putting it Together :beach_umbrella: {.smaller}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -565,7 +562,6 @@ ggplot(df_pc, aes(x = u, y = pi)) +
 
 :chart_with_upwards_trend: Economic recovery → rising incomes → more tourism demand
 
-. . .
 
 **Example:** ECB near-zero rates 2015–2019 coincided with **record tourism years** in Portugal
 :::
@@ -579,8 +575,6 @@ ggplot(df_pc, aes(x = u, y = pi)) +
 :currency_exchange: Potential currency appreciation → destination becomes pricier for non-euro visitors
 
 :chart_with_downwards_trend: Slowdown risk → uncertainty → consumers postpone holidays
-
-. . .
 
 **Example:** ECB rate hikes 2022–2023 raised Euribor sharply → many Portuguese homeowners' mortgage payments increased by €200–400/month → less money for holidays
 :::
@@ -636,17 +630,16 @@ This is the "one size fits all" problem of a currency union. The ECB sets a sing
 
 **In 2022, Eurozone inflation surged to over 8%, driven primarily by energy and food price shocks following the war in Ukraine. The ECB responded by raising its policy rate from -0.5% in June 2022 to 4.0% by September 2023 — the fastest rate-hiking cycle in its history.**
 
-**(a)** Classify this ECB action as expansionary or contractionary monetary policy, and explain why this classification applies. *(2 marks)*
+**(a)** Classify this ECB action as expansionary or contractionary monetary policy, and explain why this classification applies. 
 
-**(b)** Describe the **transmission mechanism** through which this rate increase was intended to reduce inflation. Identify at least three steps in the chain. *(4 marks)*
+**(b)** Describe the **transmission mechanism** through which this rate increase was intended to reduce inflation. Identify at least three steps in the chain. 
 
-**(c)** A hotel group in Lisbon had taken on €20 million in variable-rate debt to finance a new property, at an interest rate of Euribor + 1%. When Euribor was -0.3%, the annual interest bill was approximately €140,000. After the rate hike cycle, Euribor reached 3.9%. Calculate the new annual interest bill and comment on the implications for the hotel group's investment decisions. *(4 marks)*
+**(c)** A hotel group in Lisbon had taken on €20 million in variable-rate debt to finance a new property, at an interest rate of Euribor + 1%. When Euribor was -0.3%, the annual interest bill was approximately €140,000. After the rate hike cycle, Euribor reached 3.9%. Calculate the new annual interest bill and comment on the implications for the hotel group's investment decisions. 
 
----
+## Solution {.smaller}
 
 ::: {.fragment}
 
-**Solution:**
 
 **(a)** This is **contractionary monetary policy**. The ECB raised rates and implicitly tightened financial conditions. The goal was to reduce aggregate demand and bring inflation back toward the 2% target by making credit more expensive and slowing borrowing and spending. Contractionary policy is appropriate when inflation is above target, as it was (8% >> 2%).
 
