@@ -81,7 +81,7 @@ Every time a Portuguese resident interacts economically with a foreign counterpa
 The **Balance of Payments (BoP)** is a systematic record of **all economic transactions** between residents of a country and the rest of the world over a given period of time. It always **balances** — every transaction has a debit and a credit entry.
 :::
 
-## The Structure of the Balance of Payments :bar_chart:
+## The Structure of the Balance of Payments :bar_chart: {.smaller}
 
 The BoP is divided into three main accounts:
 
@@ -130,10 +130,10 @@ Every euro that leaves the current account must come back through the financial 
 
 # Part II: The Current Account in Depth
 
-## Current Account Components :receipt:
+## Current Account Components :receipt: {.smaller}
 
 ::: {.key-concept}
-The **Current Account** records **all flows of real resources** (goods, services, income) between a country and the rest of the world.
+**Current Account** records **all flows of real resources** (goods, services, income) between a country and the rest of the world.
 $$CA = \text{Trade in Goods} + \text{Trade in Services} + \text{Primary Income} + \text{Secondary Income}$$
 :::
 
@@ -225,12 +225,12 @@ ggplot(ca_raw, aes(x = time, y = values)) +
 
 # Part III: Tourism in the Balance of Payments
 
-## Tourism as an Export of Services :airplane:
+## Tourism as an Export of Services :airplane: {.smaller}
 
 This is one of the most important conceptual points of the course:
 
 ::: {.key-concept}
-When a **foreign tourist spends money in Portugal**, that spending counts as an **export of services** — money flows **into** Portugal from abroad, appearing as a **credit** in the current account.
+**A foreign tourist spends money in Portugal** That spending counts as an **export of services** — money flows **into** Portugal from abroad, appearing as a **credit** in the current account.
 
 When a **Portuguese resident travels abroad**, that spending counts as an **import of services** — money flows **out** of Portugal, appearing as a **debit** in the current account.
 :::
@@ -326,7 +326,7 @@ ggplot(trade_raw, aes(x = time, y = value, color = flow)) +
   )
 ```
 
-## Why Tourism Matters So Much for Portugal :portugal:
+## Why Tourism Matters So Much for Portugal :portugal: {.smaller}
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -362,7 +362,7 @@ Tourism — as a service export — was essential to Portugal's economic rebalan
 
 # Part IV: Exchange Rates and the Current Account
 
-## The Exchange Rate :currency_exchange:
+## The Exchange Rate :currency_exchange: {.smaller}
 
 ::: {.key-concept}
 The **exchange rate** is the price of one currency in terms of another.
@@ -486,7 +486,7 @@ Over the last seven lectures, we have built a complete macroeconomic framework:
 :::
 ::::
 
-## Tourism Through Every Macro Lens :beach_umbrella:
+## Tourism Through Every Macro Lens :beach_umbrella: {.smaller}
 
 | Macro concept | Tourism connection |
 |---|---|
@@ -533,7 +533,7 @@ Covers: Producer theory (Lectures 11–17) + Macroeconomics (Lectures 20–26)
 
 # Exercises
 
-## :pencil: Exercise 1 — Multiple Choice
+## :pencil: Exercise 1 — Multiple Choice {.smaller}
 
 **A British travel company brings 5,000 tourists to Portugal each summer, each spending an average of €1,200 in the country. From the perspective of Portugal's Balance of Payments, how are these transactions classified?**
 
@@ -555,7 +555,7 @@ When foreigners spend money on services provided in Portugal, it is an **export 
 :::
 :::
 
-## :pencil: Exercise 2 — Multiple Choice
+## :pencil: Exercise 2 — Multiple Choice {.smaller}
 
 **In 2016, the UK voted to leave the EU (Brexit). The British pound immediately depreciated approximately 15% against the euro. Which of the following best describes the likely short-run effect on Portugal's tourism sector?**
 
@@ -577,7 +577,7 @@ A GBP depreciation means each pound buys **fewer euros**. From a British tourist
 :::
 :::
 
-## :pencil: Exercise 3 — Open Question
+## :pencil: Exercise 3 — Open Question {.smaller}
 
 **The table below shows simplified Balance of Payments data for Portugal in a given year (€ billion):**
 
@@ -592,17 +592,15 @@ A GBP depreciation means each pound buys **fewer euros**. From a British tourist
 | Capital account (net) | +3 |
 | Financial account (net) | ? |
 
-**(a)** Calculate the **trade in goods balance**, the **trade in services balance**, and the **current account balance**. *(4 marks)*
+**(a)** Calculate the **trade in goods balance**, the **trade in services balance**, and the **current account balance**. 
 
-**(b)** Using the fundamental BoP identity, calculate the **financial account balance**. *(2 marks)*
+**(b)** Using the fundamental BoP identity, calculate the **financial account balance**.
 
-**(c)** Tourism receipts account for **€28bn** of the services exports figure. Calculate tourism's share of total goods and services exports, and briefly explain what this implies for Portugal's economic vulnerability. *(4 marks)*
+**(c)** Tourism receipts account for **€28bn** of the services exports figure. Calculate tourism's share of total goods and services exports, and briefly explain what this implies for Portugal's economic vulnerability. 
 
----
+## Solution {.smaller}
 
 ::: {.fragment}
-
-**Solution:**
 
 **(a)**
 
@@ -662,4 +660,3 @@ Producer theory (Lectures 11–17) + Macroeconomics (Lectures 20–26)
 
 :email: paulo.fagandini@ext.universidadeeuropeia.pt
 
-*"An economist is someone who sees something working in practice and wonders if it would work in theory."* — Ronald Reagan

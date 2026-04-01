@@ -55,7 +55,7 @@ Taxes and public spending are the tools. Unlike monetary policy, **each governme
 
 # Part I: What is Fiscal Policy?
 
-## The Definition :classical_building:
+## The Definition :classical_building: {.smaller}
 
 ::: {.key-concept}
 **Fiscal policy** refers to the government's decisions about **tax collection** and **public spending** to influence the level of economic activity, employment, and inflation.
@@ -92,7 +92,7 @@ Revenue exactly covers spending.
 :::
 ::::
 
-## Fiscal Policy vs Monetary Policy :balance_scale:
+## Fiscal Policy vs Monetary Policy :balance_scale: {.smaller}
 
 | | :bank: Monetary Policy | :classical_building: Fiscal Policy |
 |---|---|---|
@@ -109,7 +109,7 @@ Revenue exactly covers spending.
 
 # Part II: The Two Directions
 
-## Expansionary Fiscal Policy :chart_with_upwards_trend:
+## Expansionary Fiscal Policy :chart_with_upwards_trend: {.smaller}
 
 ::: {.key-concept}
 **Expansionary fiscal policy:** used when the economy is in **recession or slow growth**.
@@ -200,7 +200,7 @@ ggplot(steps) +
   )
 ```
 
-## Contractionary Fiscal Policy :chart_with_downwards_trend:
+## Contractionary Fiscal Policy :chart_with_downwards_trend: {.smaller}
 
 ::: {.key-concept}
 **Contractionary fiscal policy:** used when the economy faces **high inflation or unsustainable growth** (or when public debt is too high).
@@ -367,7 +367,7 @@ ggplot(debt_raw, aes(x = time, y = values)) +
 
 # Part IV: Automatic Stabilisers
 
-## Built-in Fiscal Cushions :cushion:
+## Built-in Fiscal Cushions {.smaller}
 
 Not all fiscal policy is deliberate. Some spending and tax rules act **automatically** to stabilise the economy — without any new political decision.
 
@@ -410,7 +410,7 @@ Not all fiscal policy is deliberate. Some spending and tax rules act **automatic
 
 # Part V: Fiscal Policy and Tourism
 
-## Tourist Taxes — Fiscal Policy in Action :beach_umbrella:
+## Tourist Taxes — Fiscal Policy in Action :beach_umbrella: {.smaller}
 
 Tourist taxes are a form of **fiscal policy specifically targeting the tourism sector**:
 
@@ -459,7 +459,7 @@ ggplot(df_laffer, aes(x = tax, y = revenue)) +
   annotate("text", x = 3, y = 18,
            label = "Too low:\nunder-collects", color = ue_black,
            size = 3) +
-  annotate("text", x = 16, y = 18,
+  annotate("text", x = 16, y = 17,
            label = "Too high:\ndrives tourists\naway", color = ue_red,
            size = 3) +
   labs(
@@ -479,7 +479,7 @@ ggplot(df_laffer, aes(x = tax, y = revenue)) +
 :::
 ::::
 
-## Tourism Subsidies — Expansionary Fiscal Policy :airplane:
+## Tourism Subsidies — Expansionary Fiscal Policy :airplane: {.smaller}
 
 Governments can also use **expansionary fiscal tools** to stimulate tourism:
 
@@ -529,8 +529,6 @@ Within the EU, fiscal policy faces two constraints:
 :two: **No mutual bail-out rule:**
 - EU member states cannot expect other members to cover their debts
 - Each country bears the consequences of its own fiscal decisions
-
-. . .
 
 **The tension:**
 
@@ -591,7 +589,7 @@ ggplot(deficit_raw, aes(x = reorder(geo_label, values), y = values)) +
 
 # Exercises
 
-## :pencil: Exercise 1 — Multiple Choice
+## :pencil: Exercise 1 — Multiple Choice {.smaller}
 
 **In 2020, the Portuguese government significantly increased unemployment benefits and provided direct grants to tourism businesses affected by COVID-19 lockdowns. At the same time, tax revenues fell sharply as economic activity collapsed. Which statement best describes this fiscal situation?**
 
@@ -613,7 +611,7 @@ The grants were **discretionary expansionary fiscal policy** — a deliberate go
 :::
 :::
 
-## :pencil: Exercise 2 — Multiple Choice
+## :pencil: Exercise 2 — Multiple Choice {.smaller}
 
 **Lisbon's city council is considering raising the tourist tax from €2 to €5 per night to fund a new tram line. A local hotel association warns this will reduce overnight stays. Which economic concept best describes the trade-off the council is navigating?**
 
@@ -645,11 +643,11 @@ The Laffer Curve captures exactly this trade-off: a tax that is too high can red
 
 **(c)** Despite the pain of austerity, Portugal successfully exited its bailout programme in 2014 and achieved a budget surplus by 2019. Explain the fiscal policy classification of this surplus and what it implies for the government's fiscal space. *(3 marks)*
 
----
+## Solution {.smaller}
 
 ::: {.fragment}
 
-**Solution:**
+
 
 **(a)** Contractionary fiscal policy reduces aggregate demand through two channels. First, tax increases reduce households' disposable income, lowering consumption (C falls in Y = C+I+G+NX). Second, government spending cuts reduce G directly. Via the multiplier, the initial fall in spending ripples through the economy — each euro cut triggers further reductions as workers and firms who lose income also spend less. The overall contraction in GDP exceeds the initial fiscal tightening. The goal was to reduce the deficit and restore market confidence in Portugal's debt sustainability, at the cost of short-term output and employment.
 
@@ -659,7 +657,8 @@ The Laffer Curve captures exactly this trade-off: a tax that is too high can red
 
 :::
 
-## Summary :books:
+## Summary :books: {.smaller}
+
 
 **Today we covered:**
 
