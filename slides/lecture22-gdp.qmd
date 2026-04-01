@@ -77,7 +77,7 @@ A modern economy produces **thousands** of different goods and services:
 - Sunscreen :sunny:
 - Legal advice :briefcase:
 
-. . .
+## :one: Market Value — Why Use Prices?
 
 You cannot simply **add them up** in physical units. How many hotel nights equal one flight?
 
@@ -125,7 +125,7 @@ GDP is *higher* — even though fewer filters and plugs were made — because **
 **Final goods and services** are sold to **end users**. **Intermediate goods** are used as inputs in the production of other goods and are **not counted separately** in GDP.
 :::
 
-. . .
+## :two: Final Goods and Services — No Double Counting
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -155,7 +155,7 @@ A tour operator buys bus transport (€20/person) and packages it into a day tri
 :::
 ::::
 
-## :three: Produced in a Country, in a Given Period
+## :three: Produced in a Country, in a Given Period {.smaller}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -164,8 +164,6 @@ A tour operator buys bus transport (€20/person) and packages it into a day tri
 :heavy_check_mark: A German-owned hotel operating in Lisbon → counted in **Portugal's GDP**
 
 :x: A Portuguese-owned hotel operating in London → counted in **UK's GDP**, not Portugal's
-
-. . .
 
 **"During a given period"** = only **current production** counts
 
@@ -272,9 +270,7 @@ ggplot(comp, aes(x = time, y = share, color = component)) +
 
 :point_right: Notice how **exports** have grown substantially — tourism plays a major role here.
 
-## A Worked Example: Portugal-Sized Economy :pencil:
-
-Using the structure from the textbook (Table 15), here is a hypothetical national accounts table:
+## A Worked Example: Portugal-Sized Economy :pencil: {.smaller}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -295,6 +291,9 @@ Using the structure from the textbook (Table 15), here is a hypothetical nationa
 | **GDP = C+I+G+NX** | | **773** |
 :::
 ::: {.column width="50%"}
+
+Using the structure from the textbook (Table 15), here is a hypothetical national accounts table:
+
 :bulb: **Key observations:**
 
 - **C** is always the largest component (~50% of GDP in most economies)
@@ -312,7 +311,7 @@ When a Portuguese resident holidays abroad, it counts as an **import of services
 
 # Part III: Nominal vs Real GDP
 
-## The Problem with Nominal GDP :warning:
+## The Problem with Nominal GDP :warning: {.smaller}
 
 **Nominal GDP** is calculated using **current year prices**.
 
@@ -337,7 +336,7 @@ Nominal GDP rose by a factor of **2.4**. But quantities only **doubled**. Why th
 
 :point_right: **Prices also rose** — inflation inflated the nominal figure.
 
-## Real GDP — Stripping Out Inflation :broom:
+## Real GDP — Stripping Out Inflation :broom: {.smaller}
 
 ::: {.key-concept}
 **Real GDP** values quantities at **base year prices**, removing the effect of inflation:
@@ -356,9 +355,9 @@ $$\text{Real GDP}_{2023} = (20 \times \underbrace{€10}_{\text{2022 price}}) + 
 | 2023 | €420 | €350 |
 | **Change** | **×2.4** | **×2.0** ✓ |
 
-:heavy_check_mark: Real GDP correctly shows production **doubled** — matching the actual quantities.
+* :heavy_check_mark: Real GDP correctly shows production **doubled** — matching the actual quantities.
 
-## The GDP Deflator :fire:
+## The GDP Deflator :fire:  {.smaller}
 
 The gap between nominal and real GDP tells us about **inflation**.
 
@@ -481,7 +480,7 @@ ggplot(pc_raw, aes(x = reorder(geo_label, values), y = values / 1000)) +
   )
 ```
 
-## What GDP Does NOT Measure :x:
+## What GDP Does NOT Measure :x: {.smaller}
 
 GDP is a powerful summary statistic — but it has important **limitations**:
 
@@ -641,13 +640,13 @@ GDP per capita is a useful starting point but misses inequality (the same averag
 | 2022 | 500 | €100 | 200 | €50 |
 | 2023 | 600 | €115 | 250 | €60 |
 
-**(a)** Calculate **nominal GDP** for 2022 and 2023. *(2 marks)*
+**(a)** Calculate **nominal GDP** for 2022 and 2023. 
 
-**(b)** Using 2022 as the base year, calculate **real GDP** for 2023. *(2 marks)*
+**(b)** Using 2022 as the base year, calculate **real GDP** for 2023.
 
-**(c)** Calculate the **GDP deflator** for 2023 and interpret it. *(2 marks)*
+**(c)** Calculate the **GDP deflator** for 2023 and interpret it. 
 
-**(d)** A tourism minister claims: *"Our economy grew by 38% last year."* Is this claim correct? What would be a more accurate statement? *(4 marks)*
+**(d)** A tourism minister claims: *"Our economy grew by 38% last year."* Is this claim correct? What would be a more accurate statement? 
 
 ---
 
