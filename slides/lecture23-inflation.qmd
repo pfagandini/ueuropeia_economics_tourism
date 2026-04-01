@@ -56,7 +56,7 @@ What is it? How is it measured? What does it do to an economy — and to tourism
 
 # Part I: What is Inflation?
 
-## The Definition :fire:
+## The Definition :fire: {.smaller}
 
 ::: {.key-concept}
 **Inflation** is the **general and sustained increase** in the prices of goods and services over time.
@@ -163,7 +163,7 @@ $$\text{CPI}_t = \frac{\text{Cost of basket in year } t}{\text{Cost of basket in
 
 $$\text{Inflation rate} = \frac{\text{CPI}_t - \text{CPI}_{t-1}}{\text{CPI}_{t-1}} \times 100\%$$
 
-## Building the CPI Basket :basket:
+## Building the CPI Basket :basket: {.smaller}
 
 The basket is constructed to reflect **what a typical household buys**. In the EU, this is called the **HICP** (Harmonised Index of Consumer Prices) — harmonised across member states for comparability.
 
@@ -198,7 +198,7 @@ The basket is constructed to reflect **what a typical household buys**. In the E
 :::
 ::::
 
-## CPI Calculation — Worked Example :pencil:
+## CPI Calculation — Worked Example :pencil: {.smaller}
 
 **A simple economy with three goods — a tourist town in the Algarve:**
 
@@ -334,10 +334,10 @@ ggplot(hicp_eu, aes(x = time, y = values,
 
 # Part III: Consequences of High Inflation
 
-## 1. Loss of Purchasing Power :money_with_wings:
+## 1. Loss of Purchasing Power :money_with_wings: {.smaller}
 
 ::: {.key-concept}
-The most immediate consequence: **the same wage buys less**.
+The most immediate consequence: **the same wage buys less**
 
 $$\text{Real wage} = \frac{\text{Nominal wage}}{\text{Price level}}$$
 
@@ -367,7 +367,7 @@ If your salary rises 3% but inflation is 8% → your **real wage fell by ~5%**.
 :::
 ::::
 
-## 2. Erosion of Savings :bank:
+## 2. Erosion of Savings :bank: {.smaller}
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -382,8 +382,6 @@ $$r = i - \pi$$
 - Real return = $2\% - 8\% = \mathbf{-6\%}$
 
 Your savings are **losing 6% of their real value every year**.
-
-. . .
 
 :point_right: Rational response: spend now rather than save, or move money into **real assets** (property, gold, foreign currency) — which can fuel further inflation.
 :::
@@ -438,7 +436,7 @@ ggplot(df_sav, aes(x = year, y = value, color = type, linetype = type)) +
 :::
 ::::
 
-## 3. Economic Uncertainty :question:
+## 3. Economic Uncertainty :question: {.smaller}
 
 High inflation makes it **harder to plan**:
 
@@ -453,7 +451,6 @@ High inflation makes it **harder to plan**:
 - Investment decisions (new pool? renovation?) become riskier
 - Long-term contracts become liabilities
 
-. . .
 
 :airplane: **For tour operators:**
 
@@ -475,7 +472,7 @@ Investment falls → growth slows → potentially **more unemployment**
 :::
 ::::
 
-## 4. Social and Political Consequences :protest:
+## 4. Social and Political Consequences :loudspeaker: {.smaller}
 
 ::: {.key-concept}
 Uncontrolled inflation — **hyperinflation** — can destabilise entire societies.
@@ -506,13 +503,13 @@ Uncontrolled inflation — **hyperinflation** — can destabilise entire societi
 
 :handshake: Social contracts break down
 
-. . .
+
 
 :bulb: **For tourism:** political instability and currency collapse make a country immediately unattractive as a destination *and* unaffordable for domestic travel.
 :::
 ::::
 
-## 5. Export Competitiveness :globe_with_meridians:
+## 5. Export Competitiveness :globe_with_meridians: {.smaller}
 
 ::: {.key-concept}
 If Portugal's prices rise **faster** than those of competitor destinations, Portuguese tourism becomes **relatively more expensive** for foreign visitors.
@@ -552,7 +549,7 @@ The risk is mainly vs **non-euro** source markets: UK :gb:, USA :us:, Brazil :br
 
 # Part IV: CPI vs GDP Deflator
 
-## Two Ways to Measure Prices :straight_ruler:
+## Two Ways to Measure Prices :straight_ruler: {.smaller}
 
 We now have **two inflation measures** — it's important to understand when to use which:
 
@@ -645,7 +642,7 @@ Option A (7.2%) is the absolute point difference, not the rate — a common erro
 :::
 :::
 
-## :pencil: Exercise 2 — Multiple Choice
+## :pencil: Exercise 2 — Multiple Choice {.smaller}
 
 **A Portuguese hotel manager locks in a supply contract for food at fixed prices for 12 months, starting January 2022. Inflation then hits 8% over the year. Which statement best describes the outcome?**
 
@@ -677,19 +674,17 @@ The hotel **locked in input costs** — it pays the same nominal price for food 
 | Meal at restaurant | 8 | €25 | €28 | €29 |
 | Museum ticket | 3 | €12 | €12.50 | €13 |
 
-**(a)** Calculate the **CPI** for 2022, 2023 and 2024, using 2022 as the base year. *(3 marks)*
+**(a)** Calculate the **CPI** for 2022, 2023 and 2024, using 2022 as the base year.
 
-**(b)** Calculate the **inflation rate** for 2023 and 2024. *(2 marks)*
+**(b)** Calculate the **inflation rate** for 2023 and 2024. 
 
-**(c)** Is the economy experiencing **inflation, disinflation, or deflation** between 2023 and 2024? Explain. *(2 marks)*
+**(c)** Is the economy experiencing **inflation, disinflation, or deflation** between 2023 and 2024? Explain. 
 
-**(d)** A hotel worker earns **€1,800/month** in 2022. Their wage rises to **€1,950** in 2023 and **€2,000** in 2024. Calculate their **real wage** in each year (in 2022 prices) and comment on whether they are better or worse off. *(3 marks)*
+**(d)** A hotel worker earns **€1,800/month** in 2022. Their wage rises to **€1,950** in 2023 and **€2,000** in 2024. Calculate their **real wage** in each year (in 2022 prices) and comment on whether they are better or worse off. 
 
----
+## Solution {.smaller}
 
 ::: {.fragment}
-
-**Solution:**
 
 **(a)** Cost of basket:
 
