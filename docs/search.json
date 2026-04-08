@@ -738,8 +738,8 @@
     "objectID": "slides/lecture13-supply-rule.html#recap-lecture-12",
     "href": "slides/lecture13-supply-rule.html#recap-lecture-12",
     "title": "Producer Theory",
-    "section": "",
-    "text": "What we covered last time:\n\nShutdown rule: Operate if \\(P \\geq AVC\\); shut down if \\(P &lt; AVC\\)\nBreakeven price = \\(ATC_{\\min}\\) (zero economic profit)\nShutdown price = \\(AVC_{\\min}\\) (below this, stop producing)\nThe firm’s supply curve = the MC curve above AVC\n\n. . .\n🎯 Today: We formalize the seller’s supply rule and explore what makes the supply curve shift.\n👉 The supply rule is the producer’s equivalent of the demand curve we derived in Lecture 8!"
+    "section": "Recap: Lecture 12 ⏪",
+    "text": "Recap: Lecture 12 ⏪\n\nWhat we covered last time:\n\nShutdown rule: Operate if \\(P \\geq AVC\\); shut down if \\(P &lt; AVC\\)\nBreakeven price = \\(ATC_{\\min}\\) (zero economic profit)\nShutdown price = \\(AVC_{\\min}\\) (below this, stop producing)\nThe firm’s supply curve = the MC curve above AVC\n\n. . .\n🎯 Today: We formalize the seller’s supply rule and explore what makes the supply curve shift.\n👉 The supply rule is the producer’s equivalent of the demand curve we derived in Lecture 8!"
   },
   {
     "objectID": "slides/lecture13-supply-rule.html#the-cost-benefit-principle-applied-to-firms",
@@ -816,14 +816,14 @@
     "href": "slides/lecture13-supply-rule.html#supply-shifts-in-portuguese-tourism",
     "title": "Producer Theory",
     "section": "Supply Shifts in Portuguese Tourism 🇵🇹",
-    "text": "Supply Shifts in Portuguese Tourism 🇵🇹\n\n\n\nExample 1: Minimum wage increase 💰\nPortugal’s minimum wage has been rising. For tourism businesses:\n\nLabor is a major variable cost (housekeeping, waitstaff, guides)\nHigher wages → MC shifts up → supply shifts left\nAt the same hotel room price, fewer rooms are profitably offered\nSome marginal businesses may shut down (\\(P &lt; AVC\\) at new costs)\n\nEffect: fewer beds at every price level, or higher prices to compensate\n\nExample 2: Online booking technology 💻\nPlatforms like Booking.com, Airbnb:\n\nReduce distribution costs (no need for travel agents)\nLower marketing costs per booking\nMC shifts down → supply shifts right\nMore accommodation available at every price point\n\nEffect: more rooms at every price level — which has been the trend!\n\n\n. . .\n👉 Both examples change variable costs, which shifts MC and therefore the supply curve."
+    "text": "Supply Shifts in Portuguese Tourism 🇵🇹\n\n\n\nExample 1: Minimum wage increase 💰\nPortugal’s minimum wage has been rising. For tourism businesses:\n\nLabor is a major variable cost (housekeeping, waitstaff, guides)\nHigher wages → MC shifts up → supply shifts left\nAt the same hotel room price, fewer rooms are profitably offered\nSome marginal businesses may shut down (\\(P &lt; AVC\\) at new costs)\n\nEffect: fewer beds at every price level, or higher prices to compensate\n\nExample 2: Online booking technology 💻\nPlatforms like Booking.com, Airbnb:\n\nReduce distribution costs (no need for travel agents)\nLower marketing costs per booking\nMC shifts down → supply shifts right\nMore accommodation available at every price point\n\nEffect: more rooms at every price level — which has been the trend!\n\n. . .\n👉 Both examples change variable costs, which shifts MC and therefore the supply curve."
   },
   {
     "objectID": "slides/lecture13-supply-rule.html#supply-shifts-seasonal-staffing-in-the-algarve",
     "href": "slides/lecture13-supply-rule.html#supply-shifts-seasonal-staffing-in-the-algarve",
     "title": "Producer Theory",
     "section": "Supply Shifts: Seasonal Staffing in the Algarve ☀️",
-    "text": "Supply Shifts: Seasonal Staffing in the Algarve ☀️\n\nWhy is the supply of tourism services different in summer vs winter?\nThe \\(P = MC\\) rule explains it:\n\n\n☀️ Summer:\n\nAbundant seasonal workers → wages moderate\nMC is relatively low for extra services\nSupply curve is further right\nMore tours, restaurants, activities offered\n\n\n❄️ Winter:\n\nWorkers move to other sectors → must pay more to retain\nEnergy costs higher (heating)\nMC is higher for the same services\nSupply curve shifts left\nFewer services offered\n\n\n\n. . .\n💡 Combined with demand shifts: In summer, both supply and demand are higher. In winter, both shift left. The net effect on price depends on which shift is larger — this is market equilibrium (Lecture 17)!"
+    "text": "Supply Shifts: Seasonal Staffing in the Algarve ☀️\n\nWhy is the supply of tourism services different in summer vs winter?\nThe \\(P = MC\\) rule explains it:\n\n\n☀️ Summer:\n\nAbundant seasonal workers → wages moderate\nMC is relatively low for extra services\nSupply curve is further right\nMore tours, restaurants, activities offered\n\n\n❄️ Winter:\n\nWorkers move to other sectors → must pay more to retain\nEnergy costs higher (heating)\nMC is higher for the same services\nSupply curve shifts left\nFewer services offered\n\n\n. . .\n💡 Combined with demand shifts: In summer, both supply and demand are higher. In winter, both shift left. The net effect on price depends on which shift is larger — this is market equilibrium (Lecture 17)!"
   },
   {
     "objectID": "slides/lecture13-supply-rule.html#the-parallel-with-demand",
@@ -893,14 +893,14 @@
     "href": "slides/lecture13-supply-rule.html#next-lecture",
     "title": "Producer Theory",
     "section": "Next Lecture",
-    "text": "Next Lecture\nApril 9, 2026: Producer Surplus, Market Supply, and Linear Supply 📈\n. . .\nWe’ll introduce producer surplus (the supply-side mirror of consumer surplus), build market supply from individual firms, and work with linear supply equations."
+    "text": "Next Lecture\nApril 9, 2026: Producer Surplus, Market Supply, and Linear Supply 📈\n\nWe’ll introduce producer surplus (the supply-side mirror of consumer surplus), build market supply from individual firms, and work with linear supply equations."
   },
   {
     "objectID": "slides/lecture13-supply-rule.html#thank-you",
     "href": "slides/lecture13-supply-rule.html#thank-you",
     "title": "Producer Theory",
     "section": "Thank You!",
-    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt\n\nNext class: Wednesday, April 9, 2026\n\nThis lecture formalizes the P = MC supply rule that has been building across Lectures 10–12. The textbook examples (bottle factory) ground the abstract rule in familiar numerical territory. The key new content is supply shifters — students need to distinguish clearly between movements along the supply curve (own price) and shifts (input costs, technology). The parallel table with demand concepts helps students see the symmetry. The exercise includes a fuel cost increase that shifts MC, giving students practice with the difference between movement and shift."
+    "text": "Thank You!\nQuestions? 🙋\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
   },
   {
     "objectID": "slides/lecture15-supply-elasticity.html#recap-lecture-14",
