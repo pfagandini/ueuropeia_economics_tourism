@@ -1,6 +1,6 @@
 ---
-title: "Economics Fundamentals"
-subtitle: "Lecture 4: Production Factors & Production Possibilities Frontier"
+title: "Producer Theory"
+subtitle: "Lecture 15: Elasticity — Demand Recap & Supply Elasticity"
 author: "Paulo Fagandini"
 date: today
 date-format: "YYYY"
@@ -10,12 +10,13 @@ format:
     theme: [default, custom.scss]
     transition: slide
     slide-number: true
-    chalkboard: true
+    chalkboard: false        # ⚠️ must disable — incompatible with embed-resources
     scrollable: false
-    footer: "Economics of Tourism | Lecture 4"
+    footer: "Economics of Tourism | Lecture 15"
     logo: ../images/logo.png
     width: 1600
     height: 900
+    embed-resources: true
 ---
 
 ```{r}

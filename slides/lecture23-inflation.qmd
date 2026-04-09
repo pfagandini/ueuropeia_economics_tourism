@@ -10,12 +10,13 @@ format:
     theme: [default, custom.scss]
     transition: slide
     slide-number: true
-    chalkboard: true
+    chalkboard: false
     scrollable: false
     footer: "Economics of Tourism | Lecture 23"
     logo: ../images/logo.png
     width: 1600
     height: 900
+    embed-resources: true
 ---
 
 ```{r}
