@@ -422,7 +422,10 @@ Payoff matrices, dominant strategies, and Nash Equilibrium.
 
 What is the Nash Equilibrium?
 
-A. (Free, Free) — B. (No, No) — C. (Free, No) — D. (No, Free)
+A. (Free, Free)  
+B (No, No)  
+C. (Free, No)  
+D. (No, Free)
 
 ::: {.fragment}
 ::: {.highlight-box}
