@@ -191,78 +191,6 @@ In the simplest economy:
 
 :point_right: Money flows in a **circle**: from firms to households (as income), and back from households to firms (as spending).
 
-## Step 1: Two Agents — Households & Firms :arrows_counterclockwise: {.smaller}
-
-```{r, engine='tikz'}
-#| fig-width: 5
-#| fig-height: 20
-#| fig-align: center
-#| echo: false
-
-\usetikzlibrary{arrows.meta, positioning, bending, backgrounds}
-
-\definecolor{uered}{RGB}{190,30,45}
-\definecolor{uegray}{RGB}{100,100,100}
-\definecolor{uelight}{RGB}{245,245,245}
-
-\begin{tikzpicture}[
-  box/.style={
-    rectangle, rounded corners=4pt,
-    fill=uered, text=white, font=\bfseries\normalsize,
-    minimum width=3.6cm, minimum height=1.2cm,
-    align=center
-  },
-  myarrow/.style={
-    ->, >=Stealth, line width=1.2pt,
-    shorten >=3pt, shorten <=3pt
-  }
-]
-
-%% ── Nodes ───────────────────────────────────────────────────────────
-\node[box] (HH) at (0,  3.2) {HOUSEHOLDS\\[2pt]{\normalfont\small(Families)}};
-\node[box] (FF) at (0, -3.2) {FIRMS\\[2pt]{\normalfont\small(Companies)}};
-
-%% ── LEFT SIDE ───────────────────────────────────────────────────────
-%% Outer arc: Real flow — Firms → Households (goods & services)
-\draw[myarrow, color=uegray, line width=1.3pt]
-  (FF.west) to[out=160, in=200, looseness=2.0] (HH.west);
-
-%% Inner arc: Monetary flow — Households → Firms (spending)
-\draw[myarrow, color=uered, dashed, line width=1.3pt]
-  (HH.west) to[out=220, in=140, looseness=3.2] (FF.west);
-
-%% Left labels — staggered vertically
-\node[align=center, font=\small\itshape, color=uegray]
-  at (-3.5,  0.9) {Goods \&\\Services};
-
-\node[align=center, font=\small\bfseries, color=uered]
-  at (-4.4, -0.9) {Spending\\(C)};
-
-%% ── RIGHT SIDE ──────────────────────────────────────────────────────
-%% Outer arc: Real flow — Households → Firms (labour, capital, land)
-\draw[myarrow, color=uegray, line width=1.3pt]
-  (HH.east) to[out=340, in=20, looseness=2.0] (FF.east);
-
-%% Inner arc: Monetary flow — Firms → Households (wages, profits, rents)
-\draw[myarrow, color=uered, dashed, line width=1.3pt]
-  (FF.east) to[out=40, in=320, looseness=3.2] (HH.east);
-
-%% Right labels — staggered vertically
-\node[align=center, font=\small\itshape, color=uegray]
-  at (3.5, -0.9) {Labour,\\Capital, Land};
-
-\node[align=center, font=\small\bfseries, color=uered]
-  at (4.4,  0.9) {Wages,\\Profits, Rents};
-
-%% ── Market labels (centre, between arcs) ────────────────────────────
-\node[align=center, font=\footnotesize\bfseries, color=uegray]
-  at (-1.6, 0) {GOODS \&\\SERVICES\\MARKET};
-
-\node[align=center, font=\footnotesize\bfseries, color=uegray]
-  at ( 1.6, 0) {FACTOR\\MARKET};
-
-\end{tikzpicture}
-```
 
 ## The Circular Flow of Income
 
@@ -270,6 +198,8 @@ In the simplest economy:
         width="100%" height="80%" 
         style="border:none;">
 </iframe>
+
+**Note:** Just noted, the colors are wrong, <span style="color: blue;">Blue is Monetary Flow (Payments)</span>, <span style="color: green;">Green is Real Flow (products services)</span>
 
 ## Step 2: Adding the Government :classical_building:
 
@@ -440,7 +370,7 @@ When a British tourist spends €1,000 in Portugal:
 - €200 on retail :shopping_cart: → counted under **retail trade**
 - €100 on cultural attractions :performing_arts: → counted under **arts & entertainment**
 
-:point_right: That €1,000 is **spread across multiple sectors** in the national accounts. There is no single "tourism line" in GDP — it must be reconstructed using **Tourism Satellite Accounts (TSA)**.
+:point_right: That €1,000 is **spread across multiple sectors** in the national accounts. There is no single "tourism line" in GDP — it must be reconstructed using **Tourism Satellite Accounts (TSA)** [More information](https://www.trade.gov/travel-and-tourism-satellite-account-ttsa-program).
 :::
 ::: {.column width="45%"}
 ```{r}
