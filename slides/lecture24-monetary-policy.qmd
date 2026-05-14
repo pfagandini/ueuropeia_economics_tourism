@@ -161,7 +161,7 @@ The main instrument of monetary policy is the **policy interest rate** — the r
 | **Main refinancing** | Core policy rate — banks borrow for 1 week |
 | **Marginal lending** | Emergency overnight borrowing |
 
-:point_right: When we talk about ECB rate hikes/cuts, we usually mean changes to the **deposit facility rate** and **main refinancing rate** together.
+.:point_right: When we talk about ECB rate hikes/cuts, we usually mean changes to the **deposit facility rate** and **main refinancing rate** together.
 :::
 ::::
 
@@ -178,7 +178,7 @@ Used when interest rates are already near **zero** (the "zero lower bound").
 ECB deployed massively after 2012 (Draghi: "whatever it takes") and again in 2020 (COVID).
 :::
 ::: {.column width="33%"}
-:bank: **Reserve Requirements**
+.:bank: **Reserve Requirements**
 
 Commercial banks must hold a fraction of their deposits as reserves (not lent out).
 
