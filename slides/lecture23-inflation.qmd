@@ -184,7 +184,8 @@ The basket is constructed to reflect **what a typical household buys**. In the E
 | Clothing & footwear | ~6% |
 | Other | ~19% |
 
-:point_right: **Restaurants & hotels** is explicitly tracked — tourism prices feed directly into the CPI.
+.:point_right: **Restaurants & hotels** is explicitly tracked — tourism prices feed directly into the CPI.
+
 :::
 ::: {.column width="45%"}
 :bulb: **Key properties of the CPI basket:**
