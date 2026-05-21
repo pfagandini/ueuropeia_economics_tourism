@@ -638,11 +638,11 @@ The Laffer Curve captures exactly this trade-off: a tax that is too high can red
 
 **Portugal entered a severe recession in 2011. GDP fell, unemployment rose to 17%, and the government ran a deficit of over 10% of GDP. Under pressure from the EU, ECB, and IMF (the Troika), Portugal implemented a programme of contractionary fiscal policy: raising taxes (VAT from 21% to 23%, income tax surcharges) and cutting public spending (wages, pensions, social transfers).**
 
-**(a)** Explain, using the concepts of aggregate demand and the multiplier, how this contractionary fiscal policy was expected to affect the economy. *(3 marks)*
+**(a)** Explain, using the concepts of aggregate demand and the multiplier, how this contractionary fiscal policy was expected to affect the economy.
 
-**(b)** Identify **two specific channels** through which these austerity measures would affect Portugal's tourism sector. *(4 marks)*
+**(b)** Identify **two specific channels** through which these austerity measures would affect Portugal's tourism sector. 
 
-**(c)** Despite the pain of austerity, Portugal successfully exited its bailout programme in 2014 and achieved a budget surplus by 2019. Explain the fiscal policy classification of this surplus and what it implies for the government's fiscal space. *(3 marks)*
+**(c)** Despite the pain of austerity, Portugal successfully exited its bailout programme in 2014 and achieved a budget surplus by 2019. Explain the fiscal policy classification of this surplus and what it implies for the government's fiscal space. 
 
 ## Solution {.smaller}
 

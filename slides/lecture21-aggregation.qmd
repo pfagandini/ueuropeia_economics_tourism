@@ -733,11 +733,11 @@ The tour operator's **value added** = €7 − €4 = **€3**. GDP counts only 
 **(a)**
 - Quinta do Algarve: €60 − €10 = **€50**
 - Restaurante Praia: €160 − €60 − €20 = **€80**
-- Hotel Maré: €500 − €300 = **€200** (value of new terrace less purchased inputs)
+- Hotel Maré: €500 − €300 = **€200** (value of new terrace less purchased inputs) This is the case if labour is hired by the Hotel directly. If they hire an external company to do it (expectable) this is not added value, and we would need to study the added value of that firm. We will assume the Hotel does not have builders in their payroll.
 
-**(b)** Total GDP contribution = €50 + €80 + €200 = **€330**
+**(b)** Total GDP contribution = €50 + €80 + €0 = **€130**
 
-**(c)** Restaurant meals sold to domestic consumers → **C** (consumption). Hotel terrace construction → **I** (investment, as it is a new capital asset). Wine sold to the restaurant is an intermediate good → **not counted directly** (captured via value added).
+**(c)** Restaurant meals sold to domestic consumers → **C** (consumption). Hotel terrace construction → **I** (investment, as it is a new capital asset). Wine sold to the restaurant is an intermediate good → **not counted directly** (captured via value added), Inputs from outside the economy  for wine → **M** (imports) and hten **XN** (net exports).
 
 **(d)** If meals are purchased by foreign tourists, they represent an **export of services** → classified under **NX** (net exports), not C. The money flows **into** Portugal from abroad.
 
