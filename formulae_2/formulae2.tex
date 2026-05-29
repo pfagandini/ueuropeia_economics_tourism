@@ -1,0 +1,574 @@
+% ============================================================
+%  FORMULA SHEET — Test 2
+%  Economics of Tourism | Universidade Europeia
+%  Covers: Lectures 10–16 (Producer Theory, Elasticity,
+%          Equilibrium) + Lectures 18–26 (Game Theory,
+%          Macroeconomics)
+% ============================================================
+
+\documentclass[9pt]{article}
+
+% --- Packages -----------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, top=0.7cm, bottom=0.7cm,
+            left=0.7cm, right=0.7cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{mdframed}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{marvosym}
+\usepackage{needspace}
+\newcommand{\euro}{\EURdig}
+
+% --- Colours ------------------------------------------------
+\definecolor{ue_red}{HTML}{C8102E}
+\definecolor{ue_black}{HTML}{1D1D1B}
+\definecolor{ue_gray}{HTML}{6D6E71}
+\definecolor{ue_light}{HTML}{F5F5F5}
+\definecolor{micro_blue}{HTML}{003580}
+\definecolor{macro_green}{HTML}{1A6B3C}
+\definecolor{game_orange}{HTML}{C05000}
+
+% --- Section box style --------------------------------------
+\newmdenv[
+  linecolor=ue_red,
+  linewidth=1.2pt,
+  backgroundcolor=ue_light,
+  innertopmargin=3pt,
+  innerbottommargin=3pt,
+  innerleftmargin=5pt,
+  innerrightmargin=5pt,
+  skipabove=2pt,
+  skipbelow=2pt,
+  nobreak=true
+]{redbox}
+
+\newmdenv[
+  linecolor=micro_blue,
+  linewidth=1.2pt,
+  backgroundcolor=ue_light,
+  innertopmargin=3pt,
+  innerbottommargin=3pt,
+  innerleftmargin=5pt,
+  innerrightmargin=5pt,
+  skipabove=2pt,
+  skipbelow=2pt,
+  nobreak=true
+]{bluebox}
+
+\newmdenv[
+  linecolor=macro_green,
+  linewidth=1.2pt,
+  backgroundcolor=ue_light,
+  innertopmargin=3pt,
+  innerbottommargin=3pt,
+  innerleftmargin=5pt,
+  innerrightmargin=5pt,
+  skipabove=2pt,
+  skipbelow=2pt,
+  nobreak=true
+]{greenbox}
+
+\newmdenv[
+  linecolor=game_orange,
+  linewidth=1.2pt,
+  backgroundcolor=ue_light,
+  innertopmargin=3pt,
+  innerbottommargin=3pt,
+  innerleftmargin=5pt,
+  innerrightmargin=5pt,
+  skipabove=2pt,
+  skipbelow=2pt,
+  nobreak=true
+]{orangebox}
+
+% --- Helpers ------------------------------------------------
+\newcommand{\sectiontitle}[2]{%
+  \noindent{\large\bfseries\color{#1}#2}\\[-2pt]
+  \noindent{\color{#1}\rule{\linewidth}{1pt}}\\[1pt]
+}
+
+\newcommand{\formula}[2]{%
+  \noindent\textbf{#1}:\quad $#2$\\[2pt]
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{8pt}
+
+\pagestyle{empty}
+
+% ============================================================
+\begin{document}
+
+% --- Header -------------------------------------------------
+\begin{center}
+  {\Large\bfseries\color{ue_red} Formula Sheet --- Test 2}\\[2pt]
+  {\normalsize Economics of Tourism \textbar{} Universidade Europeia \textbar{} Paulo Fagandini}\\[1pt]
+  {\small\color{ue_gray}Lectures 10--16: Producer Theory, Elasticity \& Equilibrium
+   \quad|\quad Lectures 18--26: Game Theory \& Macroeconomics}
+\end{center}
+
+\noindent\rule{\linewidth}{1.5pt}
+\vspace{1pt}
+
+% ============================================================
+%  PART I — PRODUCER THEORY & EQUILIBRIUM (L10–16)
+% ============================================================
+
+\sectiontitle{micro_blue}{Part I --- Producer Theory, Elasticity \& Equilibrium (Lectures 10--16)}
+
+\begin{multicols}{2}
+
+% --- Block 1: Costs -----------------------------------------
+\begin{bluebox}
+\textbf{\color{micro_blue}1. Cost Concepts (L10)}
+
+\smallskip
+\begin{tabular}{@{}ll@{}}
+$TC = FC + VC$ & Total Cost \\[2pt]
+$AFC = \dfrac{FC}{Q}$ & Avg.\ Fixed Cost \\[6pt]
+$AVC = \dfrac{VC}{Q}$ & Avg.\ Variable Cost \\[6pt]
+$ATC = \dfrac{TC}{Q} = AFC + AVC$ & Avg.\ Total Cost \\[6pt]
+$MC = \dfrac{\Delta TC}{\Delta Q} = \dfrac{\Delta VC}{\Delta Q}$ & Marginal Cost \\[4pt]
+\end{tabular}
+
+\smallskip
+\textit{Key property}: MC crosses AVC and ATC at their \textbf{minimum} points.\\
+AFC always falls as $Q$ rises.
+\end{bluebox}
+
+% --- Block 2: Profit Max ------------------------------------
+\begin{bluebox}
+\textbf{\color{micro_blue}2. Profit Maximisation (L11)}
+
+\smallskip
+\begin{tabular}{@{}ll@{}}
+$TR = P \times Q$ & Total Revenue \\[3pt]
+$\pi = TR - TC$ & Economic Profit \\[3pt]
+$\pi = (P - ATC) \times Q^*$ & Profit at $Q^*$ \\[3pt]
+$MR = P$ & (perfect competition) \\[3pt]
+\end{tabular}
+
+\smallskip
+\textbf{Golden Rule}: produce where $\boldsymbol{P = MC}$ (rising portion of MC).\\
+$P > MC$ \textrightarrow\ expand; \quad $P < MC$ \textrightarrow\ contract.
+
+\smallskip
+\begin{tabular}{@{}ll@{}}
+$P > ATC$ & positive profit \\[2pt]
+$P = ATC$ & zero economic profit (breakeven) \\[2pt]
+$P < ATC$ & loss (may still operate) \\[2pt]
+\end{tabular}
+\end{bluebox}
+
+% --- Block 3: Shutdown / Breakeven --------------------------
+\begin{bluebox}
+\textbf{\color{micro_blue}3. Shutdown \& Breakeven Rules (L12)}
+
+\smallskip
+\begin{tabular}{@{}p{4.2cm}l@{}}
+\textbf{Shutdown price} $= AVC_{\min}$ & \\[3pt]
+\multicolumn{2}{@{}l@{}}{$\bullet\ P \geq AVC_{\min}$: \textbf{operate} (even at a loss)}\\
+\multicolumn{2}{@{}l@{}}{$\bullet\ P < AVC_{\min}$: \textbf{shut down} ($Q = 0$)}\\[3pt]
+\textbf{Breakeven price} $= ATC_{\min}$ & \\[3pt]
+\multicolumn{2}{@{}l@{}}{$\bullet\ P \geq ATC_{\min}$: non-negative profit}\\
+\end{tabular}
+
+\smallskip
+\textit{Intuition}: shut down only if operating \textbf{worsens} the loss beyond~$FC$.
+If $P > AVC$, revenue covers variable costs and contributes to $FC$.
+\end{bluebox}
+
+% --- Block 4: Supply Rule & PS ------------------------------
+\begin{bluebox}
+\textbf{\color{micro_blue}4. Supply, Producer Surplus \& Market Supply (L13--14)}
+
+\smallskip
+The individual \textbf{supply curve} = MC above $AVC_{\min}$.
+
+\smallskip
+\textbf{Producer Surplus (PS)} --- area above supply, below price:
+\[
+  PS = TR - VC = \tfrac{1}{2} \times Q^* \times (P^* - c)
+\]
+\textit{(linear supply $P = c + dQ$; $c$ = intercept)}
+
+\begin{tabular}{@{}ll@{}}
+$\pi = PS - FC$ & Profit from PS \\[3pt]
+$PS = \pi + FC$ & PS from profit \\[3pt]
+\end{tabular}
+
+\smallskip
+\textbf{Market Supply} (horizontal summation, $n$ identical firms):
+\[
+  Q^{\text{market}} = n \times q_i(P)
+\]
+Invert each firm's supply to get $q_i(P)$, then multiply by $n$.
+\end{bluebox}
+
+\columnbreak
+
+% --- Block 5: Elasticity ------------------------------------
+\begin{bluebox}
+\textbf{\color{micro_blue}5. Elasticity (L15)}
+
+\textit{Price Elasticity of Demand:}
+\[
+  \varepsilon_d = \frac{\%\Delta Q_d}{\%\Delta P}
+  \qquad
+  \varepsilon_d = \frac{1}{\text{slope}_{P}} \times \frac{P}{Q}
+\]
+
+\textit{Price Elasticity of Supply:}
+\[
+  \varepsilon_s = \frac{\%\Delta Q_s}{\%\Delta P}
+  \qquad
+  \varepsilon_s = \frac{1}{\text{slope}_{P}} \times \frac{P}{Q}
+\]
+
+\textit{Arc (midpoint) elasticity --- works for both:}
+\[
+  \varepsilon = \frac{Q_2 - Q_1}{\,(Q_1+Q_2)/2\,}
+             \div
+             \frac{P_2 - P_1}{\,(P_1+P_2)/2\,}
+\]
+
+\textit{Supply shortcut (linear supply $P = c + dQ$):}
+\[
+  \varepsilon_s = \frac{P}{P - c}
+  \qquad
+  \begin{cases}
+    c > 0 \Rightarrow \varepsilon_s > 1\\
+    c = 0 \Rightarrow \varepsilon_s = 1\\
+    c < 0 \Rightarrow \varepsilon_s < 1
+  \end{cases}
+\]
+
+\smallskip
+\textit{Demand: revenue test (price increase)}:\\
+$|\varepsilon_d|>1$ (elastic): $TR\downarrow$ \quad
+$|\varepsilon_d|=1$: $TR$ unchanged \quad
+$|\varepsilon_d|<1$ (inelastic): $TR\uparrow$
+
+\smallskip
+\textbf{Tax incidence}: burden falls more on the \textbf{less elastic} side.
+\end{bluebox}
+
+% --- Block 6: Equilibrium -----------------------------------
+\begin{bluebox}
+\textbf{\color{micro_blue}6. Market Equilibrium \& Welfare (L16)}
+
+\textit{Equilibrium}: set $Q_d = Q_s$ (or $D = S$) and solve.
+
+\smallskip
+\textbf{Consumer Surplus (CS)} --- area above price, below demand:
+\[
+  CS = \tfrac{1}{2} \times Q^* \times (P_{\max} - P^*)
+\]
+where $P_{\max}$ is the demand vertical intercept.
+
+\smallskip
+\textbf{Total Welfare}: $\quad W = CS + PS$
+
+\smallskip
+Competitive equilibrium \textbf{maximises} $W$. Taxes, price ceilings, and price floors create \textbf{deadweight loss} (DWL).
+
+\smallskip
+\textit{Long-run equilibrium (perfect competition):}
+\[
+  P = MC = ATC_{\min}
+  \quad \Rightarrow \quad \pi = 0
+\]
+$\bullet$ Profit $> 0$: entry shifts supply right, $P$ falls.\\
+$\bullet$ Profit $< 0$: exit shifts supply left, $P$ rises.\\
+Long-run supply is \textbf{horizontal} at $ATC_{\min}$.
+\end{bluebox}
+
+\end{multicols}
+
+\needspace{6\baselineskip}
+\vspace{2pt}
+\noindent\rule{\linewidth}{1pt}
+\vspace{1pt}
+
+% ============================================================
+%  PART II — GAME THEORY (L18–19)
+% ============================================================
+
+\sectiontitle{game_orange}{Part II --- Game Theory (Lectures 18--19)}
+
+\begin{multicols}{2}
+
+% --- Block 7: Simultaneous games ----------------------------
+\begin{orangebox}
+\textbf{\color{game_orange}7. Simultaneous Games \& Nash Equilibrium (L18)}
+
+\smallskip
+\textbf{Three ingredients}: players · strategies · payoffs.\\[2pt]
+\textbf{Dominant strategy}: best regardless of what the rival does.\\[2pt]
+\textbf{Nash Equilibrium (NE)}: no player can improve by unilaterally deviating.\\[2pt]
+\textit{Finding NE --- underline method}:
+\begin{enumerate}[leftmargin=*, noitemsep, topsep=2pt]
+  \item For each column, underline the \textbf{row player's} highest payoff.
+  \item For each row, underline the \textbf{column player's} highest payoff.
+  \item A cell with \textbf{both} payoffs underlined = Nash Equilibrium.
+\end{enumerate}
+
+\smallskip
+\textbf{Prisoner's Dilemma}: both players have a dominant strategy; the resulting NE is \textbf{Pareto inferior} (both could be better off cooperating). \\
+\textit{Escape}: repeated games, reputation, tit-for-tat.
+\end{orangebox}
+
+\columnbreak
+
+% --- Block 8: Sequential games ------------------------------
+\begin{orangebox}
+\textbf{\color{game_orange}8. Sequential Games \& Backward Induction (L19)}
+
+\smallskip
+\textbf{Backward induction}: solve from the \textbf{last} node backwards.
+\begin{enumerate}[leftmargin=*, noitemsep, topsep=2pt]
+  \item Identify the last mover's optimal choice at each terminal node.
+  \item Fold back: the earlier mover anticipates this and chooses accordingly.
+  \item Repeat until the first node is reached.
+\end{enumerate}
+
+\smallskip
+\textbf{Credible vs non-credible threats}: a threat is \textbf{credible} only if carrying it out is \textbf{rational} when the time comes. Backward induction automatically filters out non-credible threats (bluffs).\\[3pt]
+\textbf{Commitment}: a sunk investment can make a threat credible by changing the payoff structure so that fighting becomes rational after entry.\\[3pt]
+\textbf{First-mover advantage}: exists when commitment to a large quantity/position gives the leader a structural edge (Stackelberg intuition).
+\end{orangebox}
+
+\end{multicols}
+
+\needspace{6\baselineskip}
+\vspace{2pt}
+\noindent\rule{\linewidth}{1pt}
+\vspace{1pt}
+
+% ============================================================
+%  PART III — MACROECONOMICS (L20–26)
+% ============================================================
+
+\sectiontitle{macro_green}{Part III --- Macroeconomics (Lectures 20--26)}
+
+\begin{multicols}{2}
+
+% --- Block 9: Aggregation & GDP -----------------------------
+\begin{greenbox}
+\textbf{\color{macro_green}9. Aggregation, GDP \& Circular Flow (L20--22)}
+
+\smallskip
+\textbf{Expenditure approach}:
+\[
+  Y = C + I + G + NX
+\]
+$C$: consumption \quad $I$: investment \quad $G$: govt spending \quad $NX$: net exports\\[3pt]
+
+\textbf{Value-added approach}: sum \textbf{value added} at each production stage (avoids double-counting).
+\[
+  \text{Value Added} = \text{Output price} - \text{Cost of inputs}
+\]
+
+\textit{What is \textbf{NOT} in GDP}: transfer payments (pensions, benefits); financial transactions; used goods; informal/non-market production.\\[3pt]
+
+\textbf{Tourism in GDP}: foreign tourist spending in Portugal = \textbf{export of services} ($NX$, credit).
+
+\smallskip
+\textbf{Nominal vs Real GDP}:
+\[
+  \text{Real GDP}_t = \sum P_{\text{base}} \times Q_t
+\]
+\textbf{GDP Deflator}:
+\[
+  \text{GDP Deflator}_t = \frac{\text{Nominal GDP}_t}{\text{Real GDP}_t} \times 100
+\]
+\textbf{Real GDP growth} uses \textbf{real} GDP (base-year prices), not nominal.
+\end{greenbox}
+
+% --- Block 10: Inflation ------------------------------------
+\begin{greenbox}
+\textbf{\color{macro_green}10. Inflation \& the CPI (L23)}
+
+\smallskip
+\textbf{CPI} measures the cost of a \textbf{fixed basket} at current prices:
+\[
+  CPI_t = \frac{\text{Cost of basket at }P_t}{\text{Cost of basket at }P_{\text{base}}} \times 100
+\]
+
+\textbf{Inflation rate} (year-on-year):
+\[
+  \pi_t = \frac{CPI_t - CPI_{t-1}}{CPI_{t-1}} \times 100\%
+\]
+\textit{Common error}: do not subtract CPIs directly --- always divide by the starting CPI.
+
+\smallskip
+\textbf{Real wage} (purchasing power):
+\[
+  \text{Real wage}_t = \frac{\text{Nominal wage}_t}{CPI_t / 100}
+\]
+
+\textit{Three causes of inflation}: demand-pull $\cdot$ cost-push $\cdot$ monetary.\\[2pt]
+\textit{Disinflation}: inflation rate \textbf{falling} (prices still rising, but more slowly).\\
+\textit{Deflation}: price level \textbf{falling} ($CPI_t < CPI_{t-1}$).\\[2pt]
+\textbf{CPI vs GDP Deflator}: CPI = fixed basket (consumer goods); GDP Deflator = all domestic production (basket changes).
+\end{greenbox}
+
+\columnbreak
+
+% --- Block 11: Monetary Policy ------------------------------
+\begin{greenbox}
+\textbf{\color{macro_green}11. Monetary Policy (L24)}
+
+\smallskip
+\textbf{ECB mandate}: price stability ($\approx 2\%$ inflation target).\\[2pt]
+\textbf{Main tool}: policy interest rate.\\[2pt]
+
+\begin{tabular}{@{}p{2.8cm}p{4cm}@{}}
+\textbf{Expansionary} & Cut rates $\Rightarrow$ cheaper credit $\Rightarrow$ $C\uparrow$, $I\uparrow$ $\Rightarrow$ $AD\uparrow$ \\[3pt]
+\textbf{Contractionary} & Raise rates $\Rightarrow$ dearer credit $\Rightarrow$ $C\downarrow$, $I\downarrow$ $\Rightarrow$ $AD\downarrow$, $\pi\downarrow$ \\[3pt]
+\end{tabular}
+
+\smallskip
+\textbf{Interest bill formula}:
+\[
+  \text{Annual interest} = \text{Debt} \times r
+\]
+where $r = $ Euribor $+$ spread (e.g., Euribor $+1\%$).
+
+\smallskip
+\textbf{Eurozone constraint}: Portugal cannot set its own rate.
+The ECB sets \textbf{one rate} for all 20 members --- may not be optimal for every country
+(``one size fits all'' problem).
+\end{greenbox}
+
+% --- Block 12: Fiscal Policy --------------------------------
+\begin{greenbox}
+\textbf{\color{macro_green}12. Fiscal Policy (L25)}
+
+\smallskip
+\textbf{Budget balance} ($T - G$): surplus ($T>G$, contractionary); deficit ($T<G$, expansionary); balanced ($T=G$, neutral).
+
+\smallskip
+\begin{tabular}{@{}ll@{}}
+\textbf{Expansionary} & $G{\uparrow}$ or $T{\downarrow}$: $AD{\uparrow}$ \\[3pt]
+\textbf{Contractionary} & $G{\downarrow}$ or $T{\uparrow}$: $AD{\downarrow}$ \\[3pt]
+\end{tabular}
+
+\smallskip
+\textbf{Multiplier effect}: a \euro{}1 increase in $G$ raises GDP by more than \euro{}1 (each euro of spending creates further rounds of income and spending).
+
+\smallskip
+\textbf{Discretionary vs automatic stabilisers}:\\
+Discretionary = deliberate policy decisions (e.g.\ tax cuts, infrastructure spending).\\
+Automatic = respond without new decisions (unemployment benefits rise in recessions; tax revenue falls).
+
+\smallskip
+\textbf{Laffer Curve}: beyond a critical tax rate, higher rates can \textbf{reduce} total revenue by shrinking the taxable base.
+\end{greenbox}
+
+% --- Block 13: Balance of Payments --------------------------
+\begin{greenbox}
+\textbf{\color{macro_green}13. Balance of Payments (L26)}
+
+\smallskip
+\textbf{BoP identity}:
+\[
+  \underbrace{CA}_{\text{current}} + \underbrace{KA}_{\text{capital}} + \underbrace{FA}_{\text{financial}} = 0
+\]
+
+\textbf{Current Account (CA)}:
+\begin{itemize}[noitemsep, topsep=2pt, leftmargin=*]
+  \item Goods: exports (credit $+$) / imports (debit $-$)
+  \item Services: foreign tourist spending in Portugal = \textbf{export} ($+$)
+  \item Primary income (wages, dividends)
+  \item Secondary income (transfers, remittances)
+\end{itemize}
+
+\textbf{Financial Account (FA)}: investment flows (FDI, portfolio). Buying a foreign asset = capital outflow (debit $-$).
+
+\smallskip
+\textit{Exchange rates and tourism}:\\[2pt]
+\begin{tabular}{@{}p{3.5cm}p{3.5cm}@{}}
+Euro \textbf{depreciates} vs GBP & Portugal \textbf{cheaper} for UK visitors $\Rightarrow$ inbound $\uparrow$ \\[3pt]
+Euro \textbf{appreciates} vs GBP & Portugal \textbf{dearer} for UK visitors $\Rightarrow$ inbound $\downarrow$ \\[3pt]
+\end{tabular}
+\end{greenbox}
+
+\end{multicols}
+
+\needspace{6\baselineskip}
+\vspace{2pt}
+\noindent\rule{\linewidth}{1pt}
+\vspace{1pt}
+
+% ============================================================
+%  QUICK-REFERENCE TABLE
+% ============================================================
+%
+% \sectiontitle{ue_black}{Quick-Reference: Key Formulas at a Glance}
+%
+% \begin{center}
+% \renewcommand{\arraystretch}{1.2}
+% \small
+% \begin{tabularx}{\linewidth}{%
+%   >{\bfseries\color{ue_black}}l
+%   >{\centering\arraybackslash}X
+%   >{\centering\arraybackslash}X
+%   >{\centering\arraybackslash}X}
+% \toprule
+% \normalfont\textbf{Topic} & \textbf{Formula} & \textbf{Use when\ldots} & \textbf{Lecture} \\
+% \midrule
+% \rowcolor{ue_light}
+% Profit & $\pi = TR - TC = (P - ATC)\times Q^*$ & computing profit or loss & L10--11 \\
+% Marginal Cost & $MC = \Delta TC / \Delta Q$ & deciding whether to produce one more unit & L10 \\
+% \rowcolor{ue_light}
+% Shutdown rule & $P \geq AVC_{\min}$ \textrightarrow\ operate & $P < ATC$ and deciding whether to close & L12 \\
+% Producer Surplus & $PS = \frac{1}{2} Q^*(P^* - c)$ & linear supply $P = c + dQ$ & L14 \\
+% \rowcolor{ue_light}
+% PS \& Profit & $PS = \pi + FC$ & given PS (or $\pi$), find the other & L14 \\
+% Consumer Surplus & $CS = \frac{1}{2} Q^*(P_{\max} - P^*)$ & linear demand, welfare analysis & L16 \\
+% \rowcolor{ue_light}
+% Total Welfare & $W = CS + PS$ & evaluating market efficiency & L16 \\
+% Point Elasticity & $\varepsilon = \frac{1}{\text{slope}_P}\times\frac{P}{Q}$ & at a specific point on D or S & L15 \\
+% \rowcolor{ue_light}
+% Arc Elasticity & $\varepsilon = \frac{\Delta Q / \bar{Q}}{\Delta P / \bar{P}}$ & between two points (midpoint method) & L15 \\
+% Supply shortcut & $\varepsilon_s = P/(P-c)$ & linear supply with intercept $c$ & L15 \\
+% \rowcolor{ue_light}
+% Market supply & $Q_S = n \times q_i(P)$ & $n$ identical firms & L14 \\
+% Nominal GDP & $\text{NGDP} = \sum P_t \times Q_t$ & measuring output at current prices & L22 \\
+% \rowcolor{ue_light}
+% Real GDP & $\text{RGDP} = \sum P_{\text{base}} \times Q_t$ & removing inflation from GDP & L22 \\
+% GDP Deflator & $\text{Deflator} = \frac{\text{NGDP}}{\text{RGDP}} \times 100$ & economy-wide price level & L22 \\
+% \rowcolor{ue_light}
+% CPI & $CPI_t = \frac{\text{Basket cost}_t}{\text{Basket cost}_{\text{base}}}\times 100$ & consumer price index & L23 \\
+% Inflation rate & $\pi_t = \frac{CPI_t - CPI_{t-1}}{CPI_{t-1}}\times 100\%$ & year-on-year price change & L23 \\
+% \rowcolor{ue_light}
+% Real wage & $w_{\text{real}} = w_{\text{nom}} \div (CPI/100)$ & purchasing power of wages & L23 \\
+% Interest bill & $I = \text{Debt} \times r$ & cost of variable-rate debt & L24 \\
+% \rowcolor{ue_light}
+% BoP identity & $CA + KA + FA = 0$ & checking BoP consistency & L26 \\
+% \bottomrule
+% \end{tabularx}
+% \end{center}
+%
+% \vspace{2pt}
+% \noindent\rule{\linewidth}{1pt}
+%
+% % --- Footer note -------------------------------------------
+% \begin{center}
+% \small\color{ue_gray}
+% \textit{This sheet summarises the key formulas and concepts for Test 2.
+% Always check that you are applying the correct formula to the correct side of the market
+% (demand vs supply; nominal vs real; short run vs long run).
+% For game theory questions, draw the payoff matrix or game tree first, then apply the relevant method.}
+% \end{center}
+
+\end{document}
