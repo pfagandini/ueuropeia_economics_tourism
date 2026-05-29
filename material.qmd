@@ -51,3 +51,7 @@ title: "Material"
 23. [Monetary Policy](slides/lecture24-monetary-policy.qmd):page_facing_up: [PDF](PDF/lecture24-monetary-policy.pdf)
 24. [Fiscal Policy](slides/lecture25-fiscal-policy.qmd):page_facing_up: [PDF](PDF/lecture25-fiscal-policy.pdf)
 25. [Balance of Payments](slides/lecture26-bop.qmd):page_facing_up: [PDF](PDF/lecture26-bop.pdf)
+
+## Folder with videos
+
+[Videos](https://drive.google.com/drive/folders/1lJzOPI2gm3OySwb1qxCB8o7K8YyFWuU9?usp=sharing)

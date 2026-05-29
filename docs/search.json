@@ -8524,5 +8524,61 @@
     "title": "The Panorama of Macroeconomics",
     "section": "Thank You — and Good Luck! 👋 🍀",
     "text": "Thank You — and Good Luck! 👋 🍀\nTest 2: May 28th\nProducer theory (Lectures 11–17) + Macroeconomics (Lectures 20–26)\nGroup Presentations: May 29th\n\n📧 paulo.fagandini@ext.universidadeeuropeia.pt"
+  },
+  {
+    "objectID": "material.html#folder-with-videos",
+    "href": "material.html#folder-with-videos",
+    "title": "Material",
+    "section": "Folder with videos",
+    "text": "Folder with videos\nVideos"
+  },
+  {
+    "objectID": "instructions.html",
+    "href": "instructions.html",
+    "title": "Task: Update YAML Front Matter in All Quarto Slide Decks",
+    "section": "",
+    "text": "This is a Quarto project. The slide decks are .qmd files located in the slides/ subfolder. Each file has a YAML front matter block delimited by --- at the top of the file.\n\n\n\nFor every .qmd file in the slides/ folder, update the format: revealjs: block in the YAML front matter by adding the following two lines:\n    embed-resources: true\n    chalkboard: false\n\n\n\n\nFind all .qmd files recursively inside the slides/ folder.\nRead the YAML front matter of each file (everything between the opening --- and closing ---).\nLocate the format: key, then within it the revealjs: sub-key.\nAdd embed-resources: true as a new line under revealjs:, respecting the existing indentation (2 spaces per level).\nReplace chalkboard: true with chalkboard: false if it exists. If chalkboard: is absent, add chalkboard: false under revealjs:.\nDo not modify anything outside the YAML front matter block.\nDo not modify any other YAML keys.\nPreserve all existing indentation, ordering, and formatting of the rest of the YAML.\nIf a file already has embed-resources: true, skip it (do not duplicate).\nAfter editing, report which files were modified and which were skipped.\n\n\n\n\nEvery revealjs: block should end up containing at minimum:\nformat:\n  revealjs:\n    embed-resources: true\n    chalkboard: false\n    # ... all other existing keys unchanged ...\n\n\n\n\n\n---\ntitle: \"Producer Theory\"\nformat:\n  revealjs:\n    theme: [default, custom.scss]\n    transition: slide\n    slide-number: true\n    chalkboard: true\n    scrollable: false\n---\n\n\n\n---\ntitle: \"Producer Theory\"\nformat:\n  revealjs:\n    theme: [default, custom.scss]\n    transition: slide\n    slide-number: true\n    chalkboard: false\n    scrollable: false\n    embed-resources: true\n---\n\n\n\n\n\nembed-resources: true and chalkboard: true are incompatible in Quarto and will cause a render error. This is why chalkboard must be set to false.\nDo not use a YAML parser that strips comments — preserve any # comment lines in the front matter.\nMake a dry run first (print what would change without writing) and ask for confirmation before applying changes."
+  },
+  {
+    "objectID": "instructions.html#context",
+    "href": "instructions.html#context",
+    "title": "Task: Update YAML Front Matter in All Quarto Slide Decks",
+    "section": "",
+    "text": "This is a Quarto project. The slide decks are .qmd files located in the slides/ subfolder. Each file has a YAML front matter block delimited by --- at the top of the file."
+  },
+  {
+    "objectID": "instructions.html#objective",
+    "href": "instructions.html#objective",
+    "title": "Task: Update YAML Front Matter in All Quarto Slide Decks",
+    "section": "",
+    "text": "For every .qmd file in the slides/ folder, update the format: revealjs: block in the YAML front matter by adding the following two lines:\n    embed-resources: true\n    chalkboard: false"
+  },
+  {
+    "objectID": "instructions.html#rules",
+    "href": "instructions.html#rules",
+    "title": "Task: Update YAML Front Matter in All Quarto Slide Decks",
+    "section": "",
+    "text": "Find all .qmd files recursively inside the slides/ folder.\nRead the YAML front matter of each file (everything between the opening --- and closing ---).\nLocate the format: key, then within it the revealjs: sub-key.\nAdd embed-resources: true as a new line under revealjs:, respecting the existing indentation (2 spaces per level).\nReplace chalkboard: true with chalkboard: false if it exists. If chalkboard: is absent, add chalkboard: false under revealjs:.\nDo not modify anything outside the YAML front matter block.\nDo not modify any other YAML keys.\nPreserve all existing indentation, ordering, and formatting of the rest of the YAML.\nIf a file already has embed-resources: true, skip it (do not duplicate).\nAfter editing, report which files were modified and which were skipped."
+  },
+  {
+    "objectID": "instructions.html#expected-result",
+    "href": "instructions.html#expected-result",
+    "title": "Task: Update YAML Front Matter in All Quarto Slide Decks",
+    "section": "",
+    "text": "Every revealjs: block should end up containing at minimum:\nformat:\n  revealjs:\n    embed-resources: true\n    chalkboard: false\n    # ... all other existing keys unchanged ..."
+  },
+  {
+    "objectID": "instructions.html#example",
+    "href": "instructions.html#example",
+    "title": "Task: Update YAML Front Matter in All Quarto Slide Decks",
+    "section": "",
+    "text": "---\ntitle: \"Producer Theory\"\nformat:\n  revealjs:\n    theme: [default, custom.scss]\n    transition: slide\n    slide-number: true\n    chalkboard: true\n    scrollable: false\n---\n\n\n\n---\ntitle: \"Producer Theory\"\nformat:\n  revealjs:\n    theme: [default, custom.scss]\n    transition: slide\n    slide-number: true\n    chalkboard: false\n    scrollable: false\n    embed-resources: true\n---"
+  },
+  {
+    "objectID": "instructions.html#important-warnings",
+    "href": "instructions.html#important-warnings",
+    "title": "Task: Update YAML Front Matter in All Quarto Slide Decks",
+    "section": "",
+    "text": "embed-resources: true and chalkboard: true are incompatible in Quarto and will cause a render error. This is why chalkboard must be set to false.\nDo not use a YAML parser that strips comments — preserve any # comment lines in the front matter.\nMake a dry run first (print what would change without writing) and ask for confirmation before applying changes."
   }
 ]
